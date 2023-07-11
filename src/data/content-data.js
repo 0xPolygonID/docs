@@ -11,7 +11,7 @@ export const contentData = {
             type: 'secondary'
         }
     ],
-    headVideoLink: 'https://www.youtube.com/embed/3noHXFVdiKE',
+    headVideoLink: 'https://www.youtube.com/embed/i3exuUa65sE?autoplay=1&controls=0&cc_load_policy=0&showinfo=0&rel=0&modestbranding=1',
     linksCard: [
         {
             iconSrc:'/images/verify-credential.png',
