@@ -12,6 +12,9 @@ export const TutorialsCard = (props) => {
   const onCardClick = () => {
     window.open(cardLink, '_blank').focus();
   };
+  const onLinkClick = (e) => {
+    e.stopPropagation();
+  };
   return (
     <div onClick={onCardClick} className="grey-card flex-row justify-content-center ">
       <div className="tutorial-icon">
@@ -34,7 +37,7 @@ export const TutorialsCard = (props) => {
             tutorialsInfo.map(({title, link}, idx) => {
               return (
                 <li key={idx}>
-                  <a href={link} className="tutorial-link">{title}</a>
+                  <a onClick={onLinkClick} href={link} target="_blank" className="tutorial-link">{title}</a>
                 </li>
               );
             })

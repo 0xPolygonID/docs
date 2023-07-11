@@ -260,7 +260,7 @@ module.exports = {
         },
         {
           position: 'left',
-          label: 'SDK',
+          label: 'Tools',
           items: [
             {
               href: 'https://schema-builder-dev.polygonid.me/',
