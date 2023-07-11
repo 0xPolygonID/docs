@@ -29,6 +29,14 @@ module.exports = {
 
   onBrokenLinks: 'log',
   themeConfig: {
+    announcementBar: {
+      id: 'learn_more',
+      content:
+          'New release: On-chain issuer, Schema repository & builder <a class="announcement-link" target="_blank" rel="noopener noreferrer" href="https://0xpolygonid.github.io/tutorials/"> Learn more</a>',
+      backgroundColor: '#20232a',
+      textColor: '#fff',
+      isCloseable: false,
+    },
     metadata: [{name: 'description', content: 'Welcome to Polygon ID Documentation, the official documentation for Polygon ID.'}],
     colorMode: {
       defaultMode: 'dark',
@@ -221,61 +229,95 @@ module.exports = {
        },
       items: [
         {
-          type: 'docSidebar',
           position: 'left',
-          sidebarId: 'guides',
-          label: 'Guides',
-          target: '_self',
-        },
-        {
-          type: 'docSidebar',
-          position: 'left',
-          sidebarId: 'sdk',
-          label: 'SDK',
-          target: '_self',
-        },
-        {
-          type: 'docSidebar',
-          position: 'left',
-          sidebarId: 'nodes',
-          label: 'Nodes',
-          target: '_self',
-        },
-        {
-          label: "Solutions",
-          position: "right",
+          label: 'Build',
           items: [
             {
-              href: 'https://wiki.polygon.technology/docs/pos/polygon-architecture',
-              label: 'PoS',
+              href: 'https://0xpolygonid.github.io/tutorials/issuer/issuer-node-ui/',
+              label: 'Issuer API+UI',
               target: '_blank',
               rel: null,
             },
             {
-              href: 'https://zkevm.polygon.technology',
-              label: 'zkEVM',
+              href: 'https://0xpolygonid.github.io/tutorials/verifier/verifier-overview/',
+              label: 'Verifier SDK',
               target: '_blank',
               rel: null,
             },
             {
-              href: 'https://wiki.polygon.technology/docs/supernets',
-              label: 'Supernets',
+              href: 'https://0xpolygonid.github.io/tutorials/wallet/wallet-overview/',
+              label: 'Wallet SDK',
               target: '_blank',
               rel: null,
             },
             {
-              href: 'https://wiki.polygon.technology/docs/miden',
-              label: 'Miden',
+              href: 'https://0xpolygonid.github.io/tutorials/js-sdk/js-sdk-overview/',
+              label: 'JS-SDK',
+              target: '_blank',
+              rel: null,
+            }
+          ]
+        },
+        {
+          position: 'left',
+          label: 'SDK',
+          items: [
+            {
+              href: 'https://schema-builder-dev.polygonid.me/',
+              label: 'Schema Builder',
               target: '_blank',
               rel: null,
             },
             {
-              href: '/',
-              label: 'ID',
-              target: '_self',
+              href: 'https://schema-builder-dev.polygonid.me/query-builder',
+              label: 'Query builder',
+              target: '_blank',
               rel: null,
             },
-          ],
+            {
+              href: '/fakeurl',
+              label: 'JWZ (coming soon)',
+              target: '_blank',
+              className: "disabled",
+            },
+          ]
+        },
+        {
+          position: 'left',
+          label: 'Learn',
+          items: [
+            {
+              href: 'https://www.youtube.com/watch?v=6octwuwi4Gs&list=PLslsfan1R_z2PW_cRkBumQiUJs4tPc455&index=1',
+              label: 'Fundamentals',
+              target: '_blank',
+              rel: null,
+            },
+            {
+              href: 'https://www.youtube.com/watch?v=V7xggL4msB4&list=PLslsfan1R_z2PW_cRkBumQiUJs4tPc455&index=5',
+              label: 'Architecture',
+              target: '_blank',
+              rel: null,
+            },
+            {
+              href: '/fakeurl',
+              label: 'Inside Polygon ID (coming soon)',
+              target: '_blank',
+              className: "disabled",
+            },
+          ]
+
+        },
+        {
+          position: 'left',
+          label: 'Releases',
+          href: 'https://0xpolygonid.github.io/tutorials/',
+          target: '_blank',
+        },
+        {
+          position: 'left',
+          label: 'Support',
+          href: 'https://support.polygon.technology/support/solutions/82000473421',
+          target: '_blank',
         },
         {
           href: "https://github.com/0xPolygonID",
@@ -324,7 +366,7 @@ module.exports = {
         },
         gtag: {
           // Need to create new tags for zkEVM docs
-           trackingID: 'G-LLNECLTBDN',
+           trackingID: 'GTM-5TKTB44',
            anonymizeIP: true,
         },
       },
