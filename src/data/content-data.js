@@ -3,11 +3,11 @@ export const contentData = {
     headButtons: [
         {
             title: 'Build',
-            link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge',
+            link: 'https://0xpolygonid.github.io/tutorials/',
         },
         {
             title: 'Quick start guide',
-            link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge',
+            link: 'https://0xpolygonid.github.io/tutorials/',
             type: 'secondary'
         }
     ],
@@ -16,7 +16,7 @@ export const contentData = {
         {
             iconSrc:'/images/verify-credential.png',
             title: 'Verify credentials',
-            cardLink: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge',
+            cardLink: 'https://0xpolygonid.github.io/tutorials/verifier/verifier-overview/',
             blockInfo: [
                 'Seamless onboarding,',
                 'User authentication,',
@@ -28,30 +28,30 @@ export const contentData = {
             tutorialsInfo: [
                 {
                     title: 'Quick start',
-                    link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                    link: 'https://0xpolygonid.github.io/tutorials/verifier/demo-verifier/'
                 },
                 {
                     title: 'Verify data off-chain with Verifier SDK',
-                    link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                    link: 'https://0xpolygonid.github.io/tutorials/verifier/verification-library/verifier-library-intro/'
                 },
                 {
                     title: 'Verify data on-chain with Verifier SDK',
-                    link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                    link: 'https://0xpolygonid.github.io/tutorials/verifier/on-chain-verification/overview/'
                 },
                 {
                     title: 'Integrate to a smart contract',
-                    link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                    link: 'https://0xpolygonid.github.io/tutorials/contracts/overview/'
                 },
                 {
                     title: 'Set verification conditions',
-                    link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                    link: 'https://0xpolygonid.github.io/tutorials/verifier/verification-library/zk-query-language/'
                 }
             ]
         },
         {
             iconSrc:'/images/issue-credentials.png',
             title: 'Issue credentials',
-            cardLink: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge',
+            cardLink: 'https://0xpolygonid.github.io/tutorials/issuer/issuer-overview/',
             blockInfo: [
                 'Data portability,',
                 'KYC,',
@@ -64,30 +64,30 @@ export const contentData = {
             tutorialsInfo: [
                 {
                     title: 'Quick start',
-                    link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                    link: 'https://0xpolygonid.github.io/tutorials/issuer/setup-issuer-core/'
                 },
                 {
                     title: 'Issue credentials via Issuer Node API & UI',
-                    link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                    link: 'https://0xpolygonid.github.io/tutorials/issuer/issuer-node-ui/'
                 },
                 {
                     title: 'Create identity wallets, browser extensions and nodes via JS SDK',
-                    link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                    link: 'https://0xpolygonid.github.io/tutorials/js-sdk/js-sdk-overview/'
                 },
                 {
                     title: 'Create or reuse credential schemas',
-                    link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                    link: 'https://0xpolygonid.github.io/tutorials/issuer/schema-builder/'
                 },
                 {
                     title: 'Link credentials to different blockchains',
-                    link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                    link: 'https://0xpolygonid.github.io/tutorials/contracts/credential-linkage/#credential-linkage-to-different-blockchains'
                 }
             ]
         },
         {
             iconSrc:'/images/identity-wallet.png',
             title: 'Identity wallet',
-            cardLink: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge',
+            cardLink: 'https://0xpolygonid.github.io/tutorials/wallet/wallet-overview/',
             blockInfo: [
                 'User controls their data,',
                 'Data management,',
@@ -100,23 +100,23 @@ export const contentData = {
             tutorialsInfo: [
                 {
                     title: 'Quick start',
-                    link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                    link: 'https://0xpolygonid.github.io/tutorials/wallet/wallet-overview/'
                 },
                 {
                     title: 'Build app with Flutter SDK',
-                    link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                    link: 'https://0xpolygonid.github.io/tutorials/wallet/wallet-sdk/flutter-sdk/flutter-sdk-overview/'
                 },
                 {
                     title: 'Build app with Android SDK',
-                    link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                    link: 'https://0xpolygonid.github.io/tutorials/wallet/wallet-sdk/android-sdk/install-android-sdk/'
                 },
                 {
                     title: 'Polygon ID SDK and reference application',
-                    link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                    link: 'https://0xpolygonid.github.io/tutorials/wallet/wallet-sdk/polygonid-sdk/polygonid-sdk-overview/'
                 },
                 {
                     title: 'Web wallet via JS SDK',
-                    link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                    link: 'https://0xpolygonid.github.io/tutorials/js-sdk/js-sdk-browser-wallet-demo/#demo-for-js-sdk-browser-extension-wallet'
                 }
             ]
         },
@@ -128,22 +128,22 @@ export const contentData = {
         },
         events: [
             {
-                name: 'Credential Corgi',
+                name: 'LocalPro',
                 info: 'ETH Lisbon',
-                description: '@AuthorsTwitter or Name and Surname',
-                link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                description: 'Niccolò Prada',
+                link: 'https://ethglobal.com/showcase/localpro-xckra'
             },
             {
-                name: 'Credential Corgi',
-                info: 'ETH Lisbon',
-                description: '@AuthorsTwitter or Name and Surname',
-                link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                name: 'Decentral Coach',
+                info: 'ETH San Francisco',
+                description: 'Jeffrey Wang',
+                link: 'https://ethglobal.com/showcase/decentral-couch-g1xtk'
             },
             {
-                name: 'Credential Corgi',
-                info: 'ETH Lisbon',
-                description: '@AuthorsTwitter or Name and Surname',
-                link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                name: 'Contingent',
+                info: 'ETH San Francisco',
+                description: 'Campbellb',
+                link: 'https://ethglobal.com/showcase/contingent-vwx0b'
             }
         ]
     },
@@ -155,26 +155,26 @@ export const contentData = {
         type: 'dateEvent',
         head: {
             title: 'Events & Hackathons',
-            description: 'Events where there is a Polygon ID track in a hackathon or there are related talks.',
+            description: 'Events Polygon ID is joining or related to.',
         },
         events: [
             {
                 name: 'EthCC 6',
                 info: 'July 17-20, 2023',
                 description: 'Paris, Frane',
-                link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                link: 'https://www.ethcc.io/'
             },
             {
                 name: 'ETHGlobal Istanbul',
                 info: 'November 17–19, 2023',
                 description: 'Istanbul, Turkey',
-                link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                link: 'https://ethglobal.com/events/istanbul'
             },
             {
                 name: 'ETHSingapore',
                 info: 'December 17–19, 2023',
                 description: 'Singapore',
-                link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                link: ''
             }
         ]
     },
@@ -189,18 +189,17 @@ export const contentData = {
             {
                 title: 'Fundamentals',
                 info: 'Watch on Youtube',
-                link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                link: 'https://www.youtube.com/watch?v=6octwuwi4Gs&list=PLslsfan1R_z0Fq9olucMTEOeHunoBX58h'
             },
             {
                 title: 'Architecture',
                 info: 'Watch on Youtube',
-                link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge'
+                link: 'https://www.youtube.com/watch?v=V7xggL4msB4&list=PLslsfan1R_z3-COvNH6FhBJCDrWNGNdZL'
             },
             {
                 title: 'Inside Polygon ID',
-                info: 'Watch on Youtube',
-                link: 'https://wallet.polygon.technology/zkEVM-Bridge/bridge',
-                coming: '(coming soon)'
+                info: 'Watch on Youtube (coming soon)',
+                link: ''
             }
         ]
     },
