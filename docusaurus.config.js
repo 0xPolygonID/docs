@@ -320,6 +320,12 @@ module.exports = {
           target: '_blank',
         },
         {
+          position: 'left',
+          label: 'Protocol (Iden3)',
+          href: 'https://docs.iden3.io/',
+          target: '_blank',
+        },
+        {
           href: "https://github.com/0xPolygonID",
           position: "right",
           className: "header-github-link",

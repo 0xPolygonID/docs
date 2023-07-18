@@ -3,7 +3,7 @@ export const contentData = {
     headButtons: [
         {
             title: 'Build',
-            link: 'https://0xpolygonid.github.io/tutorials/',
+            link: 'docs/introduction',
         },
         {
             title: 'Quick start guide',
