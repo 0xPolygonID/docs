@@ -7,7 +7,7 @@ export const contentData = {
         },
         {
             title: 'Quick start guide',
-            link: 'https://0xpolygonid.github.io/tutorials/',
+            link: 'docs/quick-start-demo',
             type: 'secondary'
         }
     ],
@@ -161,7 +161,7 @@ export const contentData = {
             {
                 name: 'EthCC 6',
                 info: 'July 17-20, 2023',
-                description: 'Paris, Frane',
+                description: 'Paris, France',
                 link: 'https://www.ethcc.io/'
             },
             {
