@@ -46,7 +46,7 @@ The architecture of the framework is composed of three modules: Identity Holder,
 
 The simplest example of a Verifier is a bar that wants to verify if a client is over 18. In the real world, the Identity Holder would need to provide an ID and show all their personal information. With Polygon ID, they only need to pass a proof.
 
-A core concept here is the *trust* that must exist between a Verifier and an Issuer: the fact that the information contained inside a VC is cryptographically verifiable doesn't guarantee its truth. The Issuer must be a trusted and reputable party so that Verifier can consume the VCs originated by that Issuer.
+A core concept here is the *trust* that must exist between a Verifier and an Issuer: the fact that the information contained inside a VC is cryptographically verifiable doesn't guarantee it's true. The Issuer must be a trusted and reputable party so that Verifier can consume the VCs originated by that Issuer.
 
 <div align="center">
 <img src= {useBaseUrl('/img/triangle-of-trust-simple.png')} align="center" width="700"/>
@@ -75,10 +75,11 @@ Another aspect of privacy comes from the fact that the Issuer would not be able 
 ## Further Resources On Polygon ID
 - [Polygon University - Courses on Polygon ID](https://university.polygon.technology/polygonid/)
 - [Polygon ID Youtube Playlists](https://www.youtube.com/@0xPolygonTV/playlists?view=50&sort=dd&shelf_id=5)
-- [Identity Layer for Web3 - Paris - July 2022](https://youtu.be/bmRvQNmxFkM)
+- [Polygon ID DID Method Overview at SSI Meetup (April 2023)](https://ssimeetup.org/polygonid-zero-knowledge-identity-web2-web3-otto-mora-webinar-62/)
+- [Adding Verifiable Credentials to your crypto wallet - Eth CC July 2023](https://www.youtube.com/watch?v=5fv8e-k8t98)
 - [The Future of Identity is Self-Sovereign: Build a dapp with Polygon ID - ETH Global - November 2022](https://youtu.be/utpazrLrSbY)
 - [A Deep Dive into Polygon ID - ETH Vietnam - November 2022](https://youtu.be/fQ9DiGUnvwA)
-- [Frequently Asked Questions on Polygon ID (FAQ)](https://support.polygon.technology/support/solutions/82000473421)
+- [Identity Layer for Web3 - Paris - July 2022](https://youtu.be/bmRvQNmxFkM)
 
 ## Further Resources On Verifiable Credentials
 
