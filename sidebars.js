@@ -6,13 +6,14 @@
  */
 
 module.exports = {
-  guides: [
+  polygonid: [
     {
       type: 'html',
-      value: 'Guides',
+      value: 'Polygon ID',
       className: 'sidebar-title',
     },
     "introduction",
+    "quick-start-demo",
     {
       type: "category",
       label: "Issuer",
@@ -21,9 +22,9 @@ module.exports = {
       },
       collapsed: false,
       items: [
-        "guides/issuer/overview",
-        "guides/issuer/issuer-demo",
-        "guides/issuer/custom-schema",
+        "issuer/overview",
+        "issuer/issuer-demo",
+        "issuer/custom-schema",
       ],
     },
     {
@@ -34,8 +35,8 @@ module.exports = {
       },
       collapsed: false,
       items: [
-        "guides/verifier/overview",
-        "guides/verifier/demo-verifier",
+        "verifier/overview",
+        "verifier/demo-verifier",
         {
           type: "category",
           label: "Off-chain Verification",
@@ -44,8 +45,8 @@ module.exports = {
           },
           collapsed: true,
           items: [
-            "guides/verifier/off-chain-verification",
-            "guides/verifier/verifier-setup",
+            "verifier/off-chain-verification",
+            "verifier/verifier-setup",
             {
               type: "category",
               label: "API",
@@ -54,15 +55,15 @@ module.exports = {
               },
               collapsed: true,
               items: [
-                "guides/verifier/config",
-                "guides/verifier/request-api",
-                "guides/verifier/verification-api",
+                "verifier/config",
+                "verifier/request-api",
+                "verifier/verification-api",
               ],
             },
           ],
         },
-        "guides/verifier/on-chain-verification",
-        "guides/verifier/zk-query-language",
+        "verifier/on-chain-verification",
+        "verifier/zk-query-language",
       ],
     },
     {
@@ -73,7 +74,7 @@ module.exports = {
       },
       collapsed: false,
       items: [
-        "guides/wallet/overview",
+        "wallet/overview",
       ],
     },
     "smart-contracts"
