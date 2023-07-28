@@ -274,7 +274,7 @@ export const contentData = {
             },
             {
                 title: 'Is there any Polygon ID wallet browser extension link like MetaMask?',
-                content: "There is a mobile application available for Polygon ID, but no public browser extension. We do have a sample browser wallet extension built on our JS SDK. Read more on https://0xpolygonid.github.io/tutorials/js-sdk/js-sdk-browser-wallet-demo/."
+                content: "There is a mobile application available for Polygon ID, but no public browser extension. We do have a sample browser wallet extension built on our JS SDK. Read more on https://0xpolygonid.github.io/tutorials/js-sdk/js-sdk-browser-wallet-demo/. Also check out the browser extension from [Wallid.io which supports Polygon ID.](https://wallid.io/)"
             },
             {
                 title: 'How to get Test MATIC to test Polygon ID?',
