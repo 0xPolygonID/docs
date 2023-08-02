@@ -8,6 +8,7 @@ keywords:
   - polygon id
   - issuer
   - claim
+  - verifiable credentials
 ---
 
 An Issuer is any subject that issues Verifiable Credentials. You can think of a credentials as a statement: something an Issuer says about another subject. For example, when a university (Issuer) says that a student (subject) has a degree, this is a credential.
