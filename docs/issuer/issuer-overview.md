@@ -34,7 +34,7 @@ There are some different ways one can perform issuer-related actions, that is, m
 
 - Running an [Issuer Node](/docs/issuer/issuer-core) directly in your infrastructure.
 
-- Utilizing the issuer node available in the Google Cloud Marketplace (soon available also on the AWS Marketplace). 
+- Utilizing the issuer node available in the[ Google Cloud Marketplace](https://console.cloud.google.com/marketplace/product/polygon-public/polygon-id-issuer-node?pli=1) (soon available also on the AWS Marketplace). 
 
 - Adapting the [JS SDK](https://0xpolygonid.github.io/tutorials/js-sdk/js-sdk-overview/) to your application that issues credentials.
 
