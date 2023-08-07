@@ -233,9 +233,8 @@ module.exports = {
           label: 'Build',
           items: [
             {
-              href: 'https://0xpolygonid.github.io/tutorials/issuer/issuer-node-ui/',
+              href: '/docs/issuer/issuer-node-ui',
               label: 'Issuer API+UI',
-              target: '_blank',
               rel: null,
             },
             {
