@@ -90,7 +90,7 @@ Any of the following RPC providers can be used:
 
 :::note "Mainnet or Testnet?"
 
-Using Mainnet or Testnet will depend on the RPC URL you are going to use in this step. After you decide which of thRPC providers you will be using, like any of the examples above, you will need to copy the URL for the network yoare willing to use.
+Using Mainnet or Testnet will depend on the RPC URL you are going to use in this step. After you decide which of the RPC providers you will be using, like any of the examples above, you will need to copy the URL for the network you are willing to use.
 
 :::
 
@@ -169,7 +169,7 @@ make clean-vault;
 
 :::
 
-#### Start Redis Postgres & Vault
+#### Start Redis, Postgres & Vault
 
 This will start the necessary local services needed to store the wallet private key to the Hashicorp vault and allow storing data associated to the issuer. Don't forget to initialize Docker before running this command.
 
@@ -236,7 +236,7 @@ make private_key=<YOUR_WALLET_PRIVATE_KEY> add-private-key;
 #   Success! Data written to: iden3/import/pbkey
 ```
 
-#### Add Vault To Configuration File
+#### Add Vault Token to Configuration File
 
 This will get the vault token from the Hashicorp vault docker instance and add it to our `./env-issuer` file.
 
