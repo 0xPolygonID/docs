@@ -171,7 +171,7 @@ make clean-vault;
 #   rm -R infrastructure/local/.vault/file/sys/
 ```
 
-#### Start Redis Postgres & Vault
+#### Start Redis, Postgres & Vault
 
 This will start the necessary local services needed to store the wallet private key to the Hashicorp vault and allowstoring data associated to the issuer. Don't forget to initialize Docker before running this command.
 
