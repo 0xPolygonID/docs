@@ -238,7 +238,7 @@ make private_key=<YOUR_WALLET_PRIVATE_KEY> add-private-key;
 #   Success! Data written to: iden3/import/pbkey
 ```
 
-#### Add Vault To Configuration File
+#### Add Vault Token to Configuration File
 
 This will get the vault token from the Hashicorp vault docker instance and add it to our `./env-issuer` file.
 
