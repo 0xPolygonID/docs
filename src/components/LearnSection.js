@@ -1,5 +1,6 @@
 import * as React from "react";
 import {HeadSection} from "./HeadSection";
+import classNames from "classnames";
 
 export const LearnSection = (props) => {
   const {
@@ -13,7 +14,7 @@ export const LearnSection = (props) => {
         {
           videos.map(({title, info, link, coming}, idx) => {
             return <div key={idx} className="card-wrapper col-md-4">
-              <a href={link} className="grey-card" target="_blank">
+              <a href={link || undefined} className={classNames("grey-card")} target="_blank">
                 <span className="title-youtube">{title}</span>
                 <div className="info-youtube">
                   <img src="/images/youtube.png" alt=""/>

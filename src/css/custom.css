@@ -933,6 +933,9 @@ a.grey-card {
   align-items: center;
   flex-direction: column;
 }
+a.disabled {
+  pointer-events: none;
+}
 .violet-card {
   border-radius: 20px;
   border: 1px solid #5100DF;
