@@ -933,6 +933,9 @@ a.grey-card {
   align-items: center;
   flex-direction: column;
 }
+a.disabled {
+  pointer-events: none;
+}
 .violet-card {
   border-radius: 20px;
   border: 1px solid #5100DF;
@@ -1012,8 +1015,14 @@ a.grey-card {
   line-height: 40px;
   margin-bottom: 20px;
 }
-
-.event-section > a:last-of-type {
+.event-section {
+  display: flex;
+  flex-direction: column;
+}
+.event-section .head-section {
+  margin-bottom: auto;
+}
+.event-section a:last-of-type {
   margin-bottom: 0;
 }
 .event-section a {
@@ -2276,7 +2285,7 @@ code:not(.language-text) {
   .navbar__items.navbar__items--right > :last-child {
     padding-right: 0;
     width: unset;
-  }  
+  }
 }
 
 .DocSearch {
