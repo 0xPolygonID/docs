@@ -20,11 +20,74 @@ module.exports = {
       link: {
         type: "generated-index",
       },
-      collapsed: false,
+      collapsed: true,
       items: [
-        "issuer/overview",
-        "issuer/issuer-demo",
-        "issuer/custom-schema",
+        "issuer/issuer-overview",
+        {
+          type: "category",
+          label: "Issuer Node Core API",
+          link: {
+            type: "generated-index",
+          },
+          collapsed: true,
+          items: [
+            "issuer/issuer-core",
+            "issuer/setup-issuer-core",
+            {
+              type: "category",
+              label: "API Reference",
+              link: {
+                type: "generated-index",
+              },
+              collapsed: true,
+              items: [
+                "issuer-node/issuer-node-api/introduction",
+                "issuer-node/issuer-node-api/identity/apis",
+                "issuer-node/issuer-node-api/claim/apis",
+                "issuer-node/issuer-node-api/agent/apis",
+              ],
+            }
+          ],
+        },
+        {
+          type: "category",
+          label: "Issuer Node UI",
+          link: {
+            type: "generated-index",
+          },
+          items: [
+            "issuer/issuer-node-ui",
+            "issuer/setup-issuer-ui",
+            "issuer-node/issuer-node-guide",
+          ]
+        },
+        {
+          type: "category",
+          label: "On-chain Issuer",
+          link: {
+            type: "generated-index",
+          },
+          items: [
+            "issuer/on-chain-issuer/on-chain-overview",
+            "issuer/on-chain-issuer/on-chain-tutorial"
+          ]
+        },
+        {
+          type: "category",
+          label: "Schemas",
+          link: {
+            type: "generated-index",
+          },
+          items: [
+            "issuer/schema-builder",
+            "issuer/schema",
+            "issuer/schema-exs",
+          ]
+        },
+        "contracts/credential-linkage",
+        "issuer/cred-issue-methods",
+        "issuer-node/issue-credential-cli",
+        "issuer/source-code",
       ],
     },
     {
@@ -33,7 +96,7 @@ module.exports = {
       link: {
         type: "generated-index",
       },
-      collapsed: false,
+      collapsed: true,
       items: [
         "verifier/overview",
         "verifier/demo-verifier",
@@ -72,7 +135,7 @@ module.exports = {
       link: {
         type: "generated-index",
       },
-      collapsed: false,
+      collapsed: true,
       items: [
         "wallet/overview",
       ],
@@ -94,7 +157,7 @@ module.exports = {
       link: {
         type: "generated-index",
       },
-      collapsed: false,
+      collapsed: true,
       items: [
         "node/identity-apis",
         "node/claim-apis",
