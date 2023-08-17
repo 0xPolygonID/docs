@@ -1,0 +1,95 @@
+{
+	"requiresCompatibilities": [
+		"FARGATE"
+	],
+	"inferenceAccelerators": [],
+	"containerDefinitions": [{
+		"dnsSearchDomains": null,
+		"environmentFiles": [],
+		"entryPoint": null,
+		"portMappings": [{
+			"hostPort": 80,
+			"protocol": "tcp",
+			"containerPort": 80
+		}],
+		"command": null,
+		"linuxParameters": null,
+		"cpu": 0,
+		"environment": null,
+		"resourceRequirements": null,
+		"ulimits": null,
+		"dnsServers": null,
+		"mountPoints": null,
+		"workingDirectory": null,
+		"secrets": null,
+		"dockerSecurityOptions": null,
+		"memory": null,
+		"memoryReservation": null,
+		"volumesFrom": null,
+		"stopTimeout": null,
+		"image": "test",
+		"startTimeout": null,
+		"firelensConfiguration": null,
+		"dependsOn": null,
+		"disableNetworking": null,
+		"interactive": null,
+		"healthCheck": null,
+		"essential": true,
+		"links": null,
+		"hostname": null,
+		"extraHosts": null,
+		"pseudoTerminal": null,
+		"user": null,
+		"readonlyRootFilesystem": null,
+		"dockerLabels": null,
+		"systemControls": null,
+		"privileged": null,
+		"name": "devs-staging",
+		"repositoryCredentials": {
+			"credentialsParameter": ""
+		}
+	}],
+	"volumes": [],
+	"networkMode": "awsvpc",
+	"memory": "4092",
+	"cpu": "2048",
+	"executionRoleArn": "arn:aws:iam::021594655844:role/devs-staging-TaskRole",
+	"family": "devs-staging-taskdefinition",
+	"taskRoleArn": "arn:aws:iam::021594655844:role/devs-staging-TaskRole",
+	"runtimePlatform": {
+		"operatingSystemFamily": "LINUX"
+	},
+	"tags": [{
+			"key": "Role",
+			"value": "frontend-application"
+		},
+		{
+			"key": "ParentService",
+			"value": "devs-staging"
+		},
+		{
+			"key": "Environment",
+			"value": "staging"
+		},
+		{
+			"key": "Service",
+			"value": "devs-staging.polygonid.com"
+		},
+		{
+			"key": "Host",
+			"value": "AWS"
+		},
+		{
+			"key": "IAC",
+			"value": "terraform-workspace-aws-polygonid-testnet-eu-west-1-apps-devs-staging-polygonid-com"
+		},
+		{
+			"key": "Team",
+			"value": "documentation"
+		},
+		{
+			"key": "Name",
+			"value": "devs-staging-taskdefinition"
+		}
+	]
+}
