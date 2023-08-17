@@ -1025,7 +1025,7 @@ a.disabled {
 .event-section a:last-of-type {
   margin-bottom: 0;
 }
-.event-section a {
+.event-section div a {
   display: inline-block;
 }
 .event-section .name-info {
