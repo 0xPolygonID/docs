@@ -98,8 +98,9 @@ module.exports = {
       },
       collapsed: true,
       items: [
-        "verifier/overview",
+        "verifier/verifier-overview",
         "verifier/demo-verifier",
+        "verifier/features",
         {
           type: "category",
           label: "Off-chain Verification",
@@ -108,8 +109,7 @@ module.exports = {
           },
           collapsed: true,
           items: [
-            "verifier/off-chain-verification",
-            "verifier/verifier-setup",
+            "verifier/verification-library/verifier-library-intro",
             {
               type: "category",
               label: "API",
@@ -118,15 +118,17 @@ module.exports = {
               },
               collapsed: true,
               items: [
-                "verifier/config",
-                "verifier/request-api",
-                "verifier/verification-api",
+                "verifier/verification-library/config",
+                "verifier/verification-library/request-api",
+                "verifier/verification-library/verification-api",
               ],
             },
+            "verifier/verification-library/verifier-setup",
           ],
         },
-        "verifier/on-chain-verification",
-        "verifier/zk-query-language",
+        "verifier/on-chain-verification/overview",
+        "verifier/query-builder",
+        "verifier/verification-library/zk-query-language",
       ],
     },
     {
