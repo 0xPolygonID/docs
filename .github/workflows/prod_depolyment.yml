@@ -1,24 +1,32 @@
-name: Polygon ID Docs Staging Deployment
+name: Polygon ID Docs Prod Deployment
 on:
   push:
     branches: ['main']
   workflow_dispatch:
+    inputs:
+      stage:
+        description: 'Stage to deploy (production)'
+        required: true
+      run_production:
+        description: 'Staging deployment completed (yes, no)'
+        required: true
 
 jobs:
-  deploy_staging:
-    name: Staging Deployment
+  deploy_prod:
+    name: Prod Deployment
     permissions:
       id-token: write
       contents: write
-    environment: staging
+    environment: prod
     runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.stage == 'production' && github.event.inputs.run_production == 'yes'
     env:
       AWS_REGION: eu-west-1
-      ECR_REPOSITORY: devs-staging-ecr
-      ECS_SERVICE: devs-staging-ecs-service
-      ECS_CLUSTER: frontend-staging-ecs-cluster
-      ECS_TASK_DEFINITION: staging-taskdef.json
-      CONTAINER_NAME: devs-staging
+      ECR_REPOSITORY: devs-ecr
+      ECS_SERVICE: devs-ecs-service
+      ECS_CLUSTER: frontend-prod-ecs-cluster
+      ECS_TASK_DEFINITION: prod-taskdef.json
+      CONTAINER_NAME: devs
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -26,7 +34,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1-node16
         with:
           aws-region: ${{ env.AWS_REGION }}
-          role-to-assume: arn:aws:iam::021594655844:role/devs-staging-GithubActionsRole
+          role-to-assume: arn:aws:iam::399679353009:role/devs-GithubActionsRole
           role-session-name: GithubActionsSession
 
       - name: Login to Amazon ECR
@@ -71,4 +79,4 @@ jobs:
         with:
           cf_zone: ${{ secrets.CLOUDFLARE_ZONE }}
           cf_auth: ${{ secrets.CLOUDFLARE_AUTH_KEY }}
-          hosts: devs-staging.polygonid.com
+          hosts: devs.polygonid.com
