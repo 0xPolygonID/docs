@@ -32,6 +32,8 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
+        with:
+          mask-password: 'true'
 
       - name: INSTALL
         run: rm -rf node_modules && yarn install --immutable --immutable-cache --check-cache
