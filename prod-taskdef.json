@@ -53,9 +53,9 @@
 	"networkMode": "awsvpc",
 	"memory": "2048",
 	"cpu": "1024",
-	"executionRoleArn": "arn:aws:iam::021594655844:role/devs-TaskRole",
+	"executionRoleArn": "arn:aws:iam::399679353009:role/devs-TaskRole",
 	"family": "devs-taskdefinition",
-	"taskRoleArn": "arn:aws:iam::021594655844:role/devs-TaskRole",
+	"taskRoleArn": "arn:aws:iam::399679353009:role/devs-TaskRole",
 	"runtimePlatform": {
 		"operatingSystemFamily": "LINUX"
 	},
