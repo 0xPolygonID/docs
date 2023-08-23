@@ -288,6 +288,33 @@ module.exports = {
         }
       ],
     },
-    "smart-contracts"
+    "smart-contracts",
+    {
+      type: "category",
+      label: "JS-SDK",
+      link: {
+        type: "generated-index",
+      },
+      collapsed: true,
+      items: [
+        "js-sdk/js-sdk-overview",
+        {
+          type: "category",
+          label: "Components",
+          link: {
+            type: "generated-index",
+          },
+          collapsed: true,
+          items: [
+            "js-sdk/js-sdk-components/identity-wallet",
+            "js-sdk/js-sdk-components/credential-wallet",
+            "js-sdk/js-sdk-components/iden3comm",
+            "js-sdk/js-sdk-components/proof"
+          ],
+        },
+        "js-sdk/js-sdk-example",
+        "js-sdk/js-sdk-browser-wallet-demo",
+      ],
+    }
   ],
 }
