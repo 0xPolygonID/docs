@@ -68,6 +68,6 @@ An Integrator, to interact with an Issuer, needs to authenticate with it first.
  
       ![](/img/jwz.png)
  
-      > Read more on JWZ [here](jwz.md).
+      > Read more on JWZ [here](/docs/wallet/wallet-sdk/polygonid-sdk/iden3comm/jwz.md).
  
 4. The Issuer receives the data sent by the Integrator and based on its correctness, authenticates or rejects the identity. The wallet analyzes this response from the Issuer.

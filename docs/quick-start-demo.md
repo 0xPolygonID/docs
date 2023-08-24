@@ -19,7 +19,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This tutorial is a quick demonstration of some of Polygon ID's main functionalities. To illustrate how Polygon ID works, we will walk you through some of its products and tools by following along a simple POAP use case.
 POAP stands for Proof of Attendance Protocol, which is used to prove that someone has taken part in a given event.
  
-This guide will briefly touch on the 3 roles of the [Triangle of Trust](index.md#core-concepts-of-polygon-id-verifiable-credentials-identity-holder-issuer-and-verifier-triangle-of-trust), namely the Identity Holder, the Issuer and the Verifier. For that, we will take the case of an individual who needs to prove that they were able to participate in a particular event.
+This guide will briefly touch on the 3 roles of the [Triangle of Trust](introduction.md#core-concepts-of-polygon-id-verifiable-credentials-identity-holder-issuer-and-verifier), namely the Identity Holder, the Issuer and the Verifier. For that, we will take the case of an individual who needs to prove that they were able to participate in a particular event.
 
 These are the steps we will cover in this article:
 

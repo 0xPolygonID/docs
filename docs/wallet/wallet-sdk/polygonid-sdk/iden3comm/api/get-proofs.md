@@ -35,7 +35,7 @@ Future<List<JWZProofEntity>> getProofs({
 
 - `did` is the unique ID of the identity. 
 
-- `JWZProofEntity`is the JWZ message that the Integrator sends to the Issuer/Verifier after scanning the QR code. Read more about JWZ [here](jwz.md).
+- `JWZProofEntity`is the JWZ message that the Integrator sends to the Issuer/Verifier after scanning the QR code. Read more about JWZ [here](/docs/wallet/wallet-sdk/polygonid-sdk/iden3comm/jwz.md).
 
 :::info
 
