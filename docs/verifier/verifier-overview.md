@@ -18,9 +18,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A Verifier is any web2 or web3 platform that wants to authenticate users based on their Credentials.
 
-Verifiers can set up queries based on **users’ existing Credentials** collected from a broad set of [Issuers](/docs/issuer/overview.md). A [Query](zk-query-language.md) encapsulates the criteria that a user must match to authenticate, such as “must be a member of XYZ DAO” or “must be over 18 years old”. Polygon ID provides a seamless, customized and privacy-based authentication experience to users.
+Verifiers can set up queries based on **users’ existing Credentials** collected from a broad set of [Issuers](/docs/issuer/issuer-overview.md). A [Query](/docs/verifier/verification-library/zk-query-language.md) encapsulates the criteria that a user must match to authenticate, such as “must be a member of XYZ DAO” or “must be over 18 years old”. Polygon ID provides a seamless, customized and privacy-based authentication experience to users.
 
-The request of the Verifier is designed using our fully expressive [zk Query Language](zk-query-language.md) and encapsulated into a QR code (or via deep linking) to be shown to the user. The user scans the QR code with its [Wallet](/docs/wallet/overview.md) to prompt the proof generation. 
+The request of the Verifier is designed using our fully expressive [zk Query Language](/docs/verifier/verification-library/zk-query-language.md) and encapsulated into a QR code (or via deep linking) to be shown to the user. The user scans the QR code with its [Wallet](/docs/wallet/wallet-overview.md) to prompt the proof generation. 
 
 The verification process doesn’t involve any interaction between the Verifier and the Issuer of the requested credential. As part of the Query, the Verifier includes the identifiers of the trusted issuers. For example, a Verifier should add XYZ DAO as the only trusted Issuer when verifying that an individual is a member of XYZ DAO. The XYZ DAO doesn’t need to accept nor interact with the Verifier.
 

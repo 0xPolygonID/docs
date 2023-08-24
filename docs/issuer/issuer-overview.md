@@ -36,7 +36,7 @@ There are some different ways one can perform issuer-related actions, that is, m
 
 - Utilizing the issuer node available in the[ Google Cloud Marketplace](https://console.cloud.google.com/marketplace/product/polygon-public/polygon-id-issuer-node?pli=1) (soon available also on the AWS Marketplace). 
 
-- Adapting the [JS SDK](https://0xpolygonid.github.io/tutorials/js-sdk/js-sdk-overview/) to your application that issues credentials.
+- Adapting the [JS SDK](/docs/js-sdk/js-sdk-overview.md) to your application that issues credentials.
 
 - Using [SaaS vendors](https://ecosystem.polygon.technology/PolygonID/) that leverage Polygon ID solutions.
 
@@ -44,7 +44,7 @@ There are some different ways one can perform issuer-related actions, that is, m
 
 ## Issuer Nodes
 
-To operate, an Issuer must run an [Issuer Node](/docs/issuer-node/issuer-node-overview.md), which is a self-hosted Node that exposes all the functionalities necessary to run an issuer.
+To operate, an Issuer must run an Issuer Node, which is a self-hosted Node that exposes all the functionalities necessary to run an issuer.
 
 <div align="center">
 <img src= {useBaseUrl("img/issuer-intro.png")} align="center" />

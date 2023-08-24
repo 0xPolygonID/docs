@@ -16,7 +16,7 @@ keywords:
 
 :::info
 
-Before you actually act as an Issuer and provide credentials, you need to set up a Polygon ID Issuer Node. You can find instructions to get your Issuer Node up and running [here](getting-started-flow.md).
+Before you actually act as an Issuer and provide credentials, you need to set up a Polygon ID Issuer Node. You can find instructions to get your Issuer Node up and running [here](/docs/issuer/setup-issuer-ui.md).
 
 :::
 

@@ -35,7 +35,7 @@ The Query Language follows the same rules whether the verification is implemente
 
 :::note
 
-The entire scripts to set a query are available here: [off-chain verification](verifier-setup.md), [on-chain verification](on-chain-verification.md)
+The entire scripts to set a query are available here: [off-chain verification](verifier-set-up.md), [on-chain verification](/docs/verifier/on-chain-verification/overview.md)
 
 :::
 
