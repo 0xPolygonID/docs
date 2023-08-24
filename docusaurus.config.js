@@ -224,7 +224,7 @@ module.exports = {
         alt: "Polygon logo",
         src: "img/polygon-id.svg",
         srcDark: "img/polygon-id.svg",
-        href: 'https://id.polygon.technology',
+        href: '/',
         target: "_self",
        },
       items: [
@@ -238,21 +238,18 @@ module.exports = {
               rel: null,
             },
             {
-              href: 'https://0xpolygonid.github.io/tutorials/verifier/verifier-overview/',
+              href: '/docs/verifier/verifier-overview/',
               label: 'Verifier SDK',
-              target: '_blank',
               rel: null,
             },
             {
-              href: 'https://0xpolygonid.github.io/tutorials/wallet/wallet-overview/',
+              href: '/docs/wallet/wallet-overview/',
               label: 'Wallet SDK',
-              target: '_blank',
               rel: null,
             },
             {
-              href: 'https://0xpolygonid.github.io/tutorials/js-sdk/js-sdk-overview/',
+              href: '/docs/js-sdk/js-sdk-overview/',
               label: 'JS-SDK',
-              target: '_blank',
               rel: null,
             }
           ]
@@ -262,13 +259,13 @@ module.exports = {
           label: 'Tools',
           items: [
             {
-              href: 'https://schema-builder-dev.polygonid.me/',
+              href: 'https://schema-builder.polygonid.me/',
               label: 'Schema Builder',
               target: '_blank',
               rel: null,
             },
             {
-              href: 'https://schema-builder-dev.polygonid.me/query-builder',
+              href: 'https://schema-builder.polygonid.me/query-builder',
               label: 'Query builder',
               target: '_blank',
               rel: null,
@@ -298,10 +295,9 @@ module.exports = {
               rel: null,
             },
             {
-              href: '/fakeurl',
-              label: 'Inside Polygon ID (coming soon)',
-              target: '_blank',
-              className: "disabled",
+              href: 'https://youtu.be/gd9rxlq1GxM?si=pXPIKzyo57xm9ga0',
+              label: 'Inside Polygon ID',
+              target: '_blank'
             },
           ]
 
@@ -309,8 +305,7 @@ module.exports = {
         {
           position: 'left',
           label: 'Releases',
-          href: 'https://0xpolygonid.github.io/tutorials/',
-          target: '_blank',
+          href: '/docs/releases'
         },
         {
           position: 'left',
@@ -336,7 +331,7 @@ module.exports = {
           className: "header-twitter-link",
         },
         {
-          href: "https://discord.com/invite/0xPolygon",
+          href: "https://discord.com/invite/0xPolygonDevs",
           position: "right",
           className: "header-discord-link",
         },

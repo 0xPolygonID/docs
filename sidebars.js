@@ -315,6 +315,7 @@ module.exports = {
         "js-sdk/js-sdk-example",
         "js-sdk/js-sdk-browser-wallet-demo",
       ],
-    }
+    },
+    "releases"
   ],
 }
