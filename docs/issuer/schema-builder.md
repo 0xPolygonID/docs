@@ -20,12 +20,12 @@ In order to create new types of credentials, it is necessary to generate JSON sc
 
 [The Schema Builder](https://schema-builder.polygonid.me/) is a tool created to simplify the process of creating schemas by using an intuitive user interface and enabling everyone to check previously made schemas.
 
-:::info
-    
-All the information on this page is also in video format. You can check [this playlist](https://www.youtube.com/playlist?list=PLslsfan1R_z1IF-dTx8xMiF_qNAlcc7GP) on Youtube to learn more about the Schema Explorer and the Schema Builder. 
-<iframe src="https://www.youtube.com/embed/FR1UgJo1Irk" width="100%" length="100%" height="250" allowfullscreen></iframe>
+Learn more about the Schema Explorer in the video below:
 
-:::
+<div align="center">
+<iframe src="https://www.youtube.com/embed/FR1UgJo1Irk" width="800" length="800" height="450" allowfullscreen></iframe>
+</div>
+
 
 ## Schema Explorer
 [The Schema Builder landing page](https://schema-builder.polygonid.me/) presents a Schema Explorer, where you can find all previously created schemas and drill down your search for specific kinds of schemas. Not all schemas need to be created from scratch. 
@@ -71,10 +71,18 @@ Schema form and its JSON outcome.
 If you already have access to a file containing a JSON schema or a URL where that schema might be located, you can always add it to the Schema Builder by clicking on the **Import Schema** button. Then you will be able to edit, create new JSON and JSON-LD files and publish it on IPFS.  
     
 <div align = "center">
+
 ![Import Schema](/img/import-schema.png)
+
 </div>
 
 :::
+    
+Learn more about the Schema Builder in the video below: 
+
+<div align="center">
+<iframe src="https://www.youtube.com/embed/66b_jJYW78A?si=FYF10Tfand0zJD8O" width="800" length="800" height="450" allowfullscreen></iframe>
+</div>
 
 ### Schema definition
 The first page of the Schema Builder flow lets you define the basic aspects of the schema, namely its title, type, version and description.
@@ -100,6 +108,12 @@ You can add multiple attributes to your schema. All of them need to have the fol
 - Data type: the kind of data the schema will support, such as integer, string, boolean etc.
 - Description: a short human-readable explanation of the attribute.
 
+Learn about the advanced features of the Schema Builder in the video below:
+
+<div align="center">
+<iframe src="https://www.youtube.com/embed/YZEg3iIQFhE?si=6m76mNobUkdf5f4-" width="800" length="800" height="450" allowfullscreen></iframe>
+</div>
+
 #### Publish on IPFS or Download JSON file
 The last step of building a new schema is publishing it on [IPFS](https://ipfs.tech/). As an alternative, you can download the JSON file and store it in the location of your choice.
-
+    

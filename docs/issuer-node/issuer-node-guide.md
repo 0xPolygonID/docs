@@ -73,7 +73,7 @@ The Credentials main page shows information about all the credentials that have 
 Whenever an Issuer decides to revoke a credential, they have to publish the issuer state to the blockchain. This can be done on the **Issuer state**. Notice that there will be a **Pending actions** right next to the sidebar button.
 
 <div align="center">
-<img src= "/img/issuer-state.png" align="center" width="100"/>
+<img src= "/img/issuer-state.png" align="center" width="350"/>
 </div>
 
 :::
