@@ -16,7 +16,7 @@ export const contentData = {
         {
             iconSrc:'/images/verify-credential.png',
             title: 'Verify credentials',
-            cardLink: 'https://0xpolygonid.github.io/tutorials/verifier/verifier-overview/',
+            cardLink: '/docs/verifier/verifier-overview',
             blockInfo: [
                 'Seamless onboarding,',
                 'User authentication,',
@@ -27,31 +27,31 @@ export const contentData = {
             ],
             tutorialsInfo: [
                 {
-                    title: 'Quick start',
-                    link: 'https://0xpolygonid.github.io/tutorials/verifier/demo-verifier/'
+                    title: 'Demo Verifier',
+                    link: '/docs/verifier/demo-verifier'
                 },
                 {
                     title: 'Verify data off-chain with Verifier SDK',
-                    link: 'https://0xpolygonid.github.io/tutorials/verifier/verification-library/verifier-library-intro/'
+                    link: '/docs/category/off-chain-verification'
                 },
                 {
                     title: 'Verify data on-chain with Verifier SDK',
-                    link: 'https://0xpolygonid.github.io/tutorials/verifier/on-chain-verification/overview/'
+                    link: '/docs/verifier/on-chain-verification/overview'
                 },
                 {
-                    title: 'Integrate to a smart contract',
-                    link: 'https://0xpolygonid.github.io/tutorials/contracts/overview/'
+                    title: 'Build specific queries',
+                    link: '/docs/verifier/query-builder'
                 },
                 {
                     title: 'Set verification conditions',
-                    link: 'https://0xpolygonid.github.io/tutorials/verifier/verification-library/zk-query-language/'
+                    link: '/docs/verifier/verification-library/zk-query-language'
                 }
             ]
         },
         {
             iconSrc:'/images/issue-credentials.png',
             title: 'Issue credentials',
-            cardLink: 'https://0xpolygonid.github.io/tutorials/issuer/issuer-overview/',
+            cardLink: '/docs/issuer/issuer-overview',
             blockInfo: [
                 'Data portability,',
                 'KYC,',
@@ -64,30 +64,30 @@ export const contentData = {
             tutorialsInfo: [
                 {
                     title: 'Quick start',
-                    link: 'https://0xpolygonid.github.io/tutorials/issuer/setup-issuer-core/'
+                    link: '/docs/issuer/setup-issuer-core'
                 },
                 {
                     title: 'Issue credentials via Issuer Node API & UI',
-                    link: 'https://0xpolygonid.github.io/tutorials/issuer/issuer-node-ui/'
+                    link: '/docs/issuer/setup-issuer-ui'
                 },
                 {
                     title: 'Create identity wallets, browser extensions and nodes via JS SDK',
-                    link: 'https://0xpolygonid.github.io/tutorials/js-sdk/js-sdk-overview/'
+                    link: '/docs/js-sdk/js-sdk-overview'
                 },
                 {
                     title: 'Create or reuse credential schemas',
-                    link: 'https://0xpolygonid.github.io/tutorials/issuer/schema-builder/'
+                    link: '/docs/issuer/schema-builder'
                 },
                 {
                     title: 'Link credentials to different blockchains',
-                    link: 'https://0xpolygonid.github.io/tutorials/contracts/credential-linkage/#credential-linkage-to-different-blockchains'
+                    link: '/docs/contracts/credential-linkage'
                 }
             ]
         },
         {
             iconSrc:'/images/identity-wallet.png',
             title: 'Identity wallet',
-            cardLink: 'https://0xpolygonid.github.io/tutorials/wallet/wallet-overview/',
+            cardLink: '/docs/wallet/wallet-overview',
             blockInfo: [
                 'User controls their data,',
                 'Data management,',
@@ -99,24 +99,24 @@ export const contentData = {
             ],
             tutorialsInfo: [
                 {
-                    title: 'Quick start',
-                    link: 'https://0xpolygonid.github.io/tutorials/wallet/wallet-overview/'
+                    title: 'Build an app with Flutter SDK',
+                    link: '/docs/wallet/wallet-sdk/flutter-sdk/build-app-with-flutter-sdk'
                 },
                 {
-                    title: 'Build app with Flutter SDK',
-                    link: 'https://0xpolygonid.github.io/tutorials/wallet/wallet-sdk/flutter-sdk/flutter-sdk-overview/'
+                    title: 'Build an app with Android SDK',
+                    link: '/docs/wallet/wallet-sdk/android-sdk/install-android-sdk'
                 },
                 {
-                    title: 'Build app with Android SDK',
-                    link: 'https://0xpolygonid.github.io/tutorials/wallet/wallet-sdk/android-sdk/install-android-sdk/'
+                    title: 'Wallet APIs',
+                    link: '/docs/category/wallet-apis'
                 },
                 {
-                    title: 'Polygon ID SDK and reference application',
-                    link: 'https://0xpolygonid.github.io/tutorials/wallet/wallet-sdk/polygonid-sdk/polygonid-sdk-overview/'
+                    title: 'Polygon ID Wallet app: SDK reference implementation',
+                    link: '/docs/wallet/wallet-sdk/polygonid-app'
                 },
                 {
                     title: 'Web wallet via JS SDK',
-                    link: 'https://0xpolygonid.github.io/tutorials/js-sdk/js-sdk-browser-wallet-demo/#demo-for-js-sdk-browser-extension-wallet'
+                    link: '/docs/js-sdk/js-sdk-browser-wallet-demo'
                 }
             ]
         },
@@ -165,23 +165,23 @@ export const contentData = {
                 link: 'https://www.ethcc.io/'
             },
             {
+                name: 'ETHSingapore',
+                info: 'September 10-12, 2023',
+                description: 'Singapore',
+                link: 'https://www.ethereumsingapore.com/'
+            },
+            {
                 name: 'ETHGlobal Istanbul',
                 info: 'November 17–19, 2023',
                 description: 'Istanbul, Turkey',
                 link: 'https://ethglobal.com/events/istanbul'
             },
-            {
-                name: 'ETHSingapore',
-                info: 'December 17–19, 2023',
-                description: 'Singapore',
-                link: ''
-            }
         ]
     },
     learnSection: {
         head: {
             title: 'Learn about Polygon ID',
-            description: 'Ggain the knowledge and confidence to leverage the\n full potential of Polygon ID.',
+            description: 'Gain the knowledge and confidence to leverage the\n full potential of Polygon ID.',
             link: 'https://ecosystem.polygon.technology/PolygonID',
             linkText: 'Explore ecosystem',
         },
@@ -199,8 +199,8 @@ export const contentData = {
             {
                 title: 'Inside Polygon ID',
                 info: 'Watch on Youtube',
-                link: '',
-                coming: '(coming soon)'
+                link: 'https://youtu.be/gd9rxlq1GxM?si=3tMxawYoK4b_GP-2',
+//                coming: '(coming soon)'
             }
         ]
     },
