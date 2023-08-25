@@ -4,10 +4,12 @@ export const contentData = {
         {
             title: 'Build',
             link: 'docs/introduction',
+            target: '',
         },
         {
             title: 'Quick start guide',
             link: 'docs/quick-start-demo',
+            target: '',
             type: 'secondary'
         }
     ],
