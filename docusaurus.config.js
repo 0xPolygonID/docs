@@ -209,16 +209,16 @@ module.exports = {
       defaultLanguage: "javascript",
       additionalLanguages: ['solidity']
     },
-/*    algolia: {
+    algolia: {
       // need to update this: old implementation
       indexName: "matic_developer",
-      appId: '16JCDEHCCN',
-      apiKey: "757c19b23127e9c6959da7f13b71cfab",
+      appId: 'VHJ21ILMOQ',
+      apiKey: "2281aa8fc382facc33ebfbb1e745e442",
       contextualSearch: true,
       algoliaOptions: {
         attributesToSnippet: ['content:20'],
       }, 
-    },*/
+    },
     navbar: {
       hideOnScroll: true,
       logo: {
