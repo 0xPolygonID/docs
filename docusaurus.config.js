@@ -210,7 +210,7 @@ module.exports = {
     },
     algolia: {
       // need to update this
-      indexName: "matic_developer",
+      indexName: "devs-polygonid",
       appId: 'VHJ21ILMOQ',
       apiKey: "2281aa8fc382facc33ebfbb1e745e442",
       contextualSearch: true,
