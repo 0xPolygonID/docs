@@ -126,131 +126,131 @@ This is a document that contains the serialization rule and the instruction for 
 - Inside `CredentialSubject` update the information related to your field:
 
 
-    ```json {6,7,109,117,118} 
-    {
-        "$schema": "http://json-schema.org/draft-07/schema#",
-        "type": "object",
-        "$metadata": {
-          "uris": {
-            "jsonLdContext": "https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.jsonld",
-            "jsonSchema": "https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.json"
-          }
-        },
+```json {6,7,109,117,118} 
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "$metadata": {
+      "uris": {
+        "jsonLdContext": "https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.jsonld",
+        "jsonSchema": "https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.json"
+      }
+    },
+    "required": [
+      "@context",
+      "id",
+      "type",
+      "issuanceDate",
+      "credentialSubject",
+      "credentialSchema",
+      "credentialStatus",
+      "issuer"
+    ],
+    "properties": {
+      "@context": {
+        "type": [
+          "string",
+          "array",
+          "object"
+        ]
+      },
+      "id": {
+        "type": "string"
+      },
+      "type": {
+        "type": [
+          "string",
+          "array"
+        ],
+        "items": {
+          "type": "string"
+        }
+      },
+      "issuer": {
+        "type": [
+          "string",
+          "object"
+        ],
+        "format": "uri",
         "required": [
-          "@context",
-          "id",
-          "type",
-          "issuanceDate",
-          "credentialSubject",
-          "credentialSchema",
-          "credentialStatus",
-          "issuer"
+          "id"
         ],
         "properties": {
-          "@context": {
-            "type": [
-              "string",
-              "array",
-              "object"
-            ]
-          },
           "id": {
-            "type": "string"
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      },
+      "issuanceDate": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "expirationDate": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "credentialSchema": {
+        "type": "object",
+        "required": [
+          "id",
+          "type"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uri"
           },
           "type": {
-            "type": [
-              "string",
-              "array"
-            ],
-            "items": {
-              "type": "string"
-            }
-          },
-          "issuer": {
-            "type": [
-              "string",
-              "object"
-            ],
-            "format": "uri",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string",
-                "format": "uri"
-              }
-            }
-          },
-          "issuanceDate": {
+            "type": "string"
+          }
+        }
+      },
+      "subjectPosition": {
+        "type": "string",
+        "enum": [
+          "none",
+          "index",
+          "value"
+        ]
+      },
+      "merklizationRootPosition": {
+        "type": "string",
+        "enum": [
+          "none",
+          "index",
+          "value"
+        ]
+      },
+      "revNonce": {
+        "type": "integer"
+      },
+      "version": {
+        "type": "integer"
+      },
+      "updatable": {
+        "type": "boolean"
+      },
+      "credentialSubject": {
+        "type": "object",
+        "required": [
+          "id",
+          "entryDate"
+        ],
+        "properties": {
+          "id": {
+            "title": "Credential Subject ID",
             "type": "string",
-            "format": "date-time"
+            "format": "uri"
           },
-          "expirationDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "credentialSchema": {
-            "type": "object",
-            "required": [
-              "id",
-              "type"
-            ],
-            "properties": {
-              "id": {
-                "type": "string",
-                "format": "uri"
-              },
-              "type": {
-                "type": "string"
-              }
-            }
-          },
-          "subjectPosition": {
-            "type": "string",
-            "enum": [
-              "none",
-              "index",
-              "value"
-            ]
-          },
-          "merklizationRootPosition": {
-            "type": "string",
-            "enum": [
-              "none",
-              "index",
-              "value"
-            ]
-          },
-          "revNonce": {
+          "entryDate": {
             "type": "integer"
-          },
-          "version": {
-            "type": "integer"
-          },
-          "updatable": {
-            "type": "boolean"
-          },
-          "credentialSubject": {
-            "type": "object",
-            "required": [
-              "id",
-              "entryDate"
-            ],
-            "properties": {
-              "id": {
-                "title": "Credential Subject ID",
-                "type": "string",
-                "format": "uri"
-              },
-              "entryDate": {
-                "type": "integer"
-              }
-            }
           }
         }
       }
-    ```
+    }
+  }
+```
     
 **6. Publish it!**
 
