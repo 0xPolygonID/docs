@@ -32,7 +32,7 @@ module.exports = {
     announcementBar: {
       id: 'learn_more',
       content:
-          'New release: On-chain issuer, Schema repository & builder <a class="announcement-link" target="_blank" rel="noopener noreferrer" href="https://0xpolygonid.github.io/tutorials/"> Learn more</a>',
+          'New release: On-chain issuer, Schema repository & builder <a class="announcement-link" target="_blank" rel="noopener noreferrer" href="https://polygon.technology/blog/polygon-id-release-4-new-tools-seamless-integration"> Learn more</a>',
       backgroundColor: '#20232a',
       textColor: '#fff',
       isCloseable: false,
