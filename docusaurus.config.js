@@ -4,7 +4,7 @@ const katex = require('rehype-katex');
 module.exports = {
   title: "Polygon ID Documentation",
   tagline: "The official developer documentation hub for Polygon ID.",
-  url: "https://id.polygon.technology",
+  url: "https://devs.polygonid.com",
   baseUrl: "/",
   favicon: "/img/logo-round-purple.png",
   organizationName: "maticnetwork",
@@ -354,7 +354,7 @@ module.exports = {
         docs: {
           routeBasePath: '/docs',
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/maticnetwork/id-docs/tree/main/",
+          editUrl: "https://github.com/0xPolygonID/id-docs/tree/main",
           path: "docs",
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
