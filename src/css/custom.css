@@ -2583,9 +2583,11 @@ p {
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.5s ease-out;
 }
-.faq-dropdown-list p {
+.faq-dropdown-list div.lead {
   margin: 0;
   padding-bottom: 12px;
+  line-height: 1.75rem;
+  letter-spacing: 0.01rem /* for better visibility */;
 }
 .faq-dropdown-list-content {
   overflow: hidden;
