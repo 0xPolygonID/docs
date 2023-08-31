@@ -19,7 +19,7 @@ export const FAQAccordion = (props) => {
       </div>
       <nav className="faq-dropdown-list">
         <div className="faq-dropdown-list-content">
-          <p className="lead grey-text" dangerouslySetInnerHTML={{__html: content}}></p>
+          <div className="lead grey-text" dangerouslySetInnerHTML={{__html: content}}></div>
         </div>
       </nav>
     </div>

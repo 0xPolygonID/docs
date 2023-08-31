@@ -201,7 +201,7 @@ export const contentData = {
             {
                 title: 'Inside Polygon ID',
                 info: 'Watch on Youtube',
-                link: 'https://youtu.be/gd9rxlq1GxM?si=3tMxawYoK4b_GP-2',
+                link: 'https://www.youtube.com/watch?v=gd9rxlq1GxM&list=PLslsfan1R_z2PW_cRkBumQiUJs4tPc455',
 //                coming: '(coming soon)'
             }
         ]
