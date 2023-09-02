@@ -20,8 +20,8 @@ Any application that wants to authenticate users based on their Polygon ID Ident
 
 The Server generates [the ZK Request](./request-api-guide.md) according to the requirements of the platform. There are two types of authentication:
 
-- [**Basic Auth**](./request-api-guide.md#basic-auth): for example, a platform that issues Credentials must authenticate users by their identifiers before sharing Credentials with them. 
-- [**Query-based Auth**](./request-api-guide.md#query-based-auth): for example, a platform that gives access only to those users that are over 18 years of age.
+- [**Basic Auth**](./request-api-guide.md#basic-auth-request): for example, a platform that issues Credentials must authenticate users by their identifiers before sharing Credentials with them. 
+- [**Query-based Auth**](./request-api-guide.md#query-based-auth-request): for example, a platform that gives access only to those users that are over 18 years of age.
 
 The second role of the Server is to execute [Verification](./verification-api-guide.md) of the proof sent by the Identity Wallet.
 
@@ -70,7 +70,8 @@ Initiate a server that contains two endpoints:
 <Tabs>
 <TabItem value="Golang">
 		
-```go 
+
+```go
 package main
 
 import(
@@ -129,6 +130,7 @@ app.listen(port, () => {
 const requestMap = new Map();
 
 ```  
+
 </TabItem>
 </Tabs>
 
@@ -140,6 +142,7 @@ This endpoint generates the auth request for the user. Using this endpoint, the 
 
 <Tabs>
 <TabItem value="Golang">
+
 	
 ```go {11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31}
 
@@ -250,7 +253,7 @@ When we use `*` in the "allowed issuers" segment (`allowedIssuers: ['*']`), we m
 
 :::note
 
-The highlighted lines are to be added only if the authentication needs to design a [query](./zk-query-language.md) for a specific proof as in the case of [Query-based Auth](./request-api-guide.md#query-based-auth). When not included, it will perform a [Basic Auth](./request-api-guide.md#basic-auth). 
+The highlighted lines are to be added only if the authentication needs to design a [<ins>query</ins>](./zk-query-language.md) for a specific proof as in the case of [<ins>Query-based Auth</ins>](./request-api-guide.md#query-based-auth). When not included, it will perform a [<ins>Basic Auth</ins>](./request-api-guide.md#basic-auth). 
 
 :::
 
@@ -287,7 +290,7 @@ A Verifier can work with multiple networks simultaneously. Even users and issuer
 
 :::note
 
-The public verification keys for Iden3 circuits generated after the trusted setup can be found <a href="https://github.com/0xPolygonID/phase2ceremony" target="_blank">here</a> and must be added to your project inside a folder called `keys`. 
+The public verification keys for Iden3 circuits generated after the trusted setup can be found <ins><a href="https://github.com/0xPolygonID/phase2ceremony" target="_blank">here</a></ins> and must be added to your project inside a folder called `keys`. 
 
 :::
 
@@ -592,6 +595,7 @@ console.log('Express server is running on port 3000');
 
 </TabItem>
 </Tabs>
+
 	
 **Implement Further Logic**
 

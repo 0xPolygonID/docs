@@ -17,7 +17,7 @@ keywords:
 
 :::info
 
-Polygon ID offers an intuitive, user-friendly interface to create schemas: the Schema Builder. [Here](schema-builder.md) you can find a tutorial for this tool. You can also access it on [https://schema-builder.polygonid.me/](https://schema-builder.polygonid.me/). 
+Polygon ID offers an intuitive, user-friendly interface to create schemas: the Schema Builder. [<ins>Here</ins>](schema-builder.md) you can find a tutorial for this tool. You can also access it on <ins>[https://schema-builder.polygonid.me/](https://schema-builder.polygonid.me/)</ins>. 
 
 :::
 
@@ -39,7 +39,7 @@ Without further ado, let's jump into building a new Schema Type!
 
 :::note
 
-The executable code and **further schemas examples** for this section can be found <a href="https://github.com/0xPolygonID/tutorial-examples/tree/main/credential-schema" target="_blank">here</a>. 
+The executable code and **further schemas examples** for this section can be found <ins><a href="https://github.com/0xPolygonID/tutorial-examples/tree/main/credential-schema" target="_blank">here</a></ins>. 
 
 :::
 

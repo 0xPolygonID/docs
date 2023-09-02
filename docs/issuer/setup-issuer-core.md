@@ -99,7 +99,8 @@ Using Mainnet or Testnet will depend on the RPC URL you are going to use in this
 It is desired to run a public forwarding URL,  pointing to a host, as it is going to be stored inside the credential. Localhost can't be used in this situation because the mobile app can't access it. 
 
 :::note  "Getting a free Public URL"
-For testing purposes, you can use a public URL. A way to set this up is by using [ngrok](https://ngrok.com) as a forwarding service that maps to a local port.
+
+For testing purposes, you can use a public URL. A way to set this up is by using [<ins>ngrok</ins>](https://ngrok.com) as a forwarding service that maps to a local port.
 After downloading and installing ngrok, run the following command and copy the **Forwarding** URL:
 
 ```bash
@@ -218,7 +219,7 @@ In order to secure the wallet private key so that the issuer can use it to issue
 
 :::note
 
-Make sure the wallet that is provided has Testnet Matic to be able to send transactions and that you are providing the Private Key. Here's how you can [extract the private key from MetaMask](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key#:~:text=On%20the%20account%20page%2C%20click,click%20%E2%80%9CConfirm%E2%80%9D%20to%20proceed.), for instance.
+Make sure the wallet that is provided has Testnet Matic to be able to send transactions and that you are providing the Private Key. Here's how you can [<ins>extract the private key from MetaMask</ins>](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key#:~:text=On%20the%20account%20page%2C%20click,click%20%E2%80%9CConfirm%E2%80%9D%20to%20proceed.), for instance.
 
 :::
 

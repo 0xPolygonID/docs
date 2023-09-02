@@ -49,7 +49,7 @@ In this tutorial, we will create an ERC20 ZK Airdrop Contract. The chosen query 
 
 :::note
 
-To set up a different query check out the [ZK Query Language section](/docs/verifier/verification-library/zk-query-language.md).
+To set up a different query check out the [<ins>ZK Query Language section</ins>](/docs/verifier/verification-library/zk-query-language.md).
 
 :::
 
@@ -202,7 +202,7 @@ The contract is now fully written!
 
 :::note "Hardhat"
 
-For this tutorial, we are using the Hardhat development environment to facilitate the contract deployment. You can learn how to get started with this tool by checking [their documentation](https://hardhat.org/hardhat-runner/docs/getting-started).  
+For this tutorial, we are using the Hardhat development environment to facilitate the contract deployment. You can learn how to get started with this tool by checking [<ins>their documentation</ins>](https://hardhat.org/hardhat-runner/docs/getting-started).  
 
 :::
 
@@ -247,7 +247,7 @@ npx hardhat run polygon-mumbai scripts/deploy.js
 
 ### Set the ZKP Request
 
-The actual ZKP request "to be born before 01/01/2002" hasn't been added to the Smart Contract yet. To do so it is necessary to call <a href="https://github.com/iden3/contracts/blob/master/contracts/verifiers/ZKPVerifier.sol#L58" target="_blank">`setZKPRequest`</a> function inherited inside the ERC20Verifier which takes 6 inputs:
+The actual ZKP request "to be born before 01/01/2002" hasn't been added to the Smart Contract yet. To do so it is necessary to call <a href="https://github.com/iden3/contracts/blob/master/contracts/verifiers/ZKPVerifier.sol#L58" target="_blank">setZKPRequest</a> function inherited inside the ERC20Verifier which takes 6 inputs:
 
 1. `requestId`: the ID associated with the request.
 2. `validator`: the address of the <a href="https://github.com/0xPolygonID/contracts/tree/main/contracts/validators" target="_blank">Validators Smart Contract</a> already deployed on Mumbai. This is the contract that executes the verification on the ZK proof submitted by the user. It can be of type [CredentialAtomicQuerySigValidator](/docs/contracts/overview.md#credentialatomicquerysigvalidator) or [CredentialAtomicQueryMTPValidator](/docs/contracts/overview.md#credentialatomicquerymtpvalidator).
@@ -258,7 +258,7 @@ The actual ZKP request "to be born before 01/01/2002" hasn't been added to the S
 
 :::info
 
-Check out our [Smart Contract section](/docs/contracts/overview.md) to learn more about the set of verifications executed on the zk proof.
+Check out our [<ins>Smart Contract section</ins>](/docs/contracts/overview.md) to learn more about the set of verifications executed on the zk proof.
 
 :::
 
@@ -366,7 +366,7 @@ The last step is to design the proof request to be embedded inside a QR code. In
 Note that the request resembles, in most of its parts, the one designed for [off-chain verification](/docs/verifier/verification-library/request-api-guide.md). The extra part that has been added here is the `transcation_data` that includes:
 
 - `contract_address`, namely the address of the Verifier contract, in this case, ERC20Verifier.
-- `method_id`, namely the [Function Selector](https://solidity-by-example.org/function-selector/) of the <a href="https://github.com/iden3/contracts/blob/master/contracts/verifiers/ZKPVerifier.sol#L20" target="_blank">`submitZKPResponse`</a> function.
+- `method_id`, namely the [Function Selector](https://solidity-by-example.org/function-selector/) of the <a href="https://github.com/iden3/contracts/blob/master/contracts/verifiers/ZKPVerifier.sol#L20" target="_blank">submitZKPResponse</a> function.
 - `chain_id`, the ID of the chain where the Smart Contract has been deployed.
 - `network`, the name of the network where the Smart contract has been deployed.
 
@@ -398,7 +398,7 @@ Or you can directly test it by scanning the QR Code below using your Polygon ID 
 
 ### How is the proof submission executed?
 
-The wallet needs to call the `submitZKPResponse()` function before it can submit the proof for the requirements set in the Airdrop Participation process. This function forms part of the ZKPVerifier Interface [`IZKPVerifier`](https://github.com/iden3/contracts/blob/master/contracts/interfaces/IZKPVerifier.sol#L7) and is actually implemented inside the [`ZKPVerifier Contract`](https://github.com/iden3/contracts/blob/master/contracts/ZKPVerifier.sol#L21).
+The wallet needs to call the `submitZKPResponse()` function before it can submit the proof for the requirements set in the Airdrop Participation process. This function forms part of the ZKPVerifier Interface [IZKPVerifier](https://github.com/iden3/contracts/blob/master/contracts/interfaces/IZKPVerifier.sol#L7) and is actually implemented inside the [ZKPVerifier Contract](https://github.com/iden3/contracts/blob/master/contracts/ZKPVerifier.sol#L21).
 
 ```solidity
 import "./ICircuitValidator.sol";

@@ -21,7 +21,7 @@ This tutorial shows the steps to run different modules of the Polygon ID JS SDK 
 
 ## Steps to Run Example Code
 
-  We have created a [JS SDK Example repository](https://github.com/0xPolygonID/js-sdk-examples/blob/main/index.ts) that you can download and run. Follow these steps:
+  We have created a [JS SDK Example repository](https://github.com/0xPolygonID/js-sdk-examples) that you can download and run. Follow these steps:
 
   1. Download the latest circuits  from the following curl command:
 
@@ -141,7 +141,7 @@ If we do not use `rhsUrl` within createIdentity() method, we get a `credentialSt
 
 :::note
 
-`revocationOpts` should provide info on how to fetch the status of a credential. If we use `CredentialStatusType.Iden3ReverseSparseMerkleTreeProof` within createIdentity() method, we get a `credentialStatus` with a Reverse Hash Service URL (`rhsUrl`) as `id`, which, upon running on a browser, shows a response that contains information about the identity state. If we use `CredentialStatusType.Iden3SparseMerkleTreeProof` within createIdentity() method, we get a `credentialStatus` with a URL as `id`, which contains an API to fetch the revocation status.
+`revocationOpts` should provide info on how to fetch the status of a credential. If we use `CredentialStatusType.Iden3ReverseSparseMerkleTreeProof` within createIdentity() method, we get a `credentialStatus` with a Reverse Hash Service URL (`rhsUrl`) as `id`, which, upon running on a browser, shows a response that contains information about the identity state. If we use `CredentialStatusType.Iden3SparseMerkleTreeProof` within `createIdentity()` method, we get a `credentialStatus` with a URL as `id`, which contains an API to fetch the revocation status.
 
 :::
 

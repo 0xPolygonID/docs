@@ -26,7 +26,7 @@ In simple words, you can see everything happening: all the logic used to generat
 
 :::info
         
-An On-chain Issuer, in fact, is a special case of the On-chain Identity. You can find more information about it on the [Iden3 documentation](https://docs.iden3.io/getting-started/identity/onchain-identity/).
+An On-chain Issuer, in fact, is a special case of the On-chain Identity. You can find more information about it on the [<ins>Iden3 documentation</ins>](https://docs.iden3.io/getting-started/identity/onchain-identity/).
 
 :::
 

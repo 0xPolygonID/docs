@@ -33,7 +33,7 @@ As an Identity Holder, the individual who wants to have a credential to prove hi
 
 :::note
 
-You can also use any Polygon ID compatible wallet. Please, check our [Ecosystem page](https://ecosystem.polygon.technology/PolygonID/) for other options.
+You can also use any Polygon ID compatible wallet. Please, check our [<ins>Ecosystem page</ins>](https://ecosystem.polygon.technology/PolygonID/) for other options.
 
 :::
 
@@ -44,13 +44,13 @@ To get started with the Polygon ID Wallet, download the Polygon ID Wallet App an
 
 :::note
 
-Polygon ID wallet is an implementation of the Wallet SDK, as a way of showcasing its possibilities. Head to [the Polygon ID SDK documentation](./wallet/wallet-sdk/polygonid-sdk/polygonid-sdk-overview.md) to know more about how it works. 
+Polygon ID wallet is an implementation of the Wallet SDK, as a way of showcasing its possibilities. Head to [<ins>the Polygon ID SDK documentation</ins>](./wallet/wallet-sdk/polygonid-sdk/polygonid-sdk-overview.md) to know more about how it works. 
 
 :::
 
 The process from downloading to creating an identity on the Polygon ID Wallet is just as it is shown below. You need to download the app, create a wallet, set up a PIN number and the wallet is ready to be used. 
 
-Mumbai" is selected instead of "Polygon Main".
+"Mumbai" is selected instead of "Polygon Main".
 
 <div align="center">
     <img src={useBaseUrl("img/quick-start-demo/quick-start-demo-wallet.png")}></img>
@@ -69,7 +69,7 @@ This demo is using Polygon's Mumbai testnet. Go to the gear icon at the top righ
 ## Issue a new credential to attest to the ID Holder's event attendance
 A trusted entity, for instance, a private institution will now play the role of an issuer. It will be responsible for creating the credential and sending it to the ID Holder.
 
-We are using a testing environment to manage credentials: [https://issuer-ui.polygonid.me](https://issuer-ui.polygonid.me). This is the place where the trusted entity can create credentials, manage schemas and generate connections. 
+We are using <a href="https://user-ui:password-ui@issuer-ui.polygonid.me">the Issuer Node UI testing environment</a> to manage credentials. This is the place where the trusted entity can create credentials, manage schemas and generate connections. 
 
 However, if you are using a new credential type, you actually need to create a schema for that credential, which basically is the set of JSON files that gather all the attributes of that specific credential. 
 
@@ -82,28 +82,26 @@ To facilitate this issuance process, we have already created the credential sche
 
 :::note
 
-To learn how to set up your own issuer environment by deploying an issuer node, visit the [Issuer section in the documentation](./issuer/issuer-overview.md).
+To learn how to set up your own issuer environment by deploying an issuer node, visit the [<ins>Issuer section in the documentation</ins>](./issuer/issuer-overview.md).
 
 :::
 
 :::info
 
-Learn more about creating new schemas on the [Schema Builder UI guide](./issuer/schema-builder.md) 
+The schema used in this demo was built using the Polygon ID Schema Builder and is available on [<ins>the Polygon ID Schema Explorer</ins>](https://schema-builder.polygonid.me/schemas/1fa99457-b2ae-4884-ae12-d658bd6abf69). Learn more about creating new schemas on [<ins>the Schema Builder UI guide</ins>](https://devs.polygonid.com/docs/issuer/schema-builder/).
 
 :::
 
 ### Issue the credential
 With the new schema in hand, the issuer should now be able to generate a credential.
 
-1. First, go to the [Issuer Node UI testing environment](https://issuer-ui.polygonid.me).
+1. First, go to the <a href="https://user-ui:password-ui@issuer-ui.polygonid.me">the Issuer Node UI testing environment</a>.
+
+    :::warning
     
-    Provide the following login data:
+    This Issuer Node is publicly available and used only for testing purposes. Do not use personal or sensitive data. All data is deleted every 48 hours.
 
-    - user: `user-ui`
-    - password: `password-ui`
-
-    !!!warning
-        This Issuer Node is publicly available and used only for testing purposes. Do not use personal or sensitive data. All data is deleted every 48 hours.
+    :::
 
 2. Now you need to import the schema. Click on **Import Schema** and paste our previously generated schema IPFS address `ipfs://QmTSwnuCB9grYMB2z5EKXDagfChurK5MiMCS6efrRbsyVX`:
 

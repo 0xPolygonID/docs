@@ -29,7 +29,7 @@ These steps can be done either via the API UI (<http://localhost:3001>) or direc
 
 :::note
 
-This is an alternative to the following: [Create Issuer ID](../issuer/setup-issuer-ui.md#create-issuer-did).
+This is an alternative to the following: [<ins>Create Issuer ID</ins>](/docs/issuer/setup-issuer-ui.md#create-issuer-did).
 
 :::
 
@@ -56,7 +56,7 @@ A connection is a DID that is linked to the issuer when they authenticate via an
 
 :::note
 
-You can check all the connections on the [Issue Node UI](issuer-node-guide.md#connections).
+You can check all the connections on the [<ins>Issue Node UI</ins>](issuer-node-guide.md#connections).
 
 :::
 
@@ -86,7 +86,7 @@ This will go through creating a `KYCAgeCredential` credential based on the follo
 
 :::note
 
-Learn how to create credentials on [the Issuer Node guide](issuer-node-guide.md#schemas).
+Learn how to create credentials on [<ins>the Issuer Node guide</ins>](issuer-node-guide.md#schemas).
 
 :::
 
@@ -146,7 +146,7 @@ This will walk you through the steps of issuing a credential to the Polygon ID w
 
 :::note 
 
-To learn how to issue credentials to a Polygon ID Wallet User, please refer to the [Issuer Node Guide](issuer-node-guide.md#schemas).
+To learn how to issue credentials to a Polygon ID Wallet User, please refer to the [<ins>Issuer Node Guide</ins>](issuer-node-guide.md#schemas).
 
 :::
 

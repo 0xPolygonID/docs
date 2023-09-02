@@ -16,7 +16,7 @@ keywords:
 
 :::info
 
-Before you actually act as an Issuer and provide credentials, you need to set up a Polygon ID Issuer Node. You can find instructions to get your Issuer Node up and running [here](/docs/issuer/setup-issuer-ui.md).
+Before you actually act as an Issuer and provide credentials, you need to set up a Polygon ID Issuer Node. You can find instructions to get your Issuer Node up and running [<ins>here</ins>](/docs/issuer/setup-issuer-ui.md).
 
 :::
 
@@ -125,7 +125,7 @@ If you already have a connection with an identifier or you have its DID, you can
 
 :::note
 
-If you clicked on the **Issue credential** button, you will later be prompted to choose which Schema Type you woullike to create your credential with.
+If you clicked on the **Issue credential** button, you will later be prompted to choose which Schema Type you would like to create your credential with.
 
 <div align="center">
 <img src= "/img/issue-credential-3.png" align="center" width="1000" height="1000"/>

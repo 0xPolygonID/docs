@@ -34,16 +34,9 @@ The Polygon ID JS SDK has been developed to provide the following functionalitie
 
 ## Components of JS SDK
 
-The following components form the inherent part of the JS SDK:
+The following components form the inherent part of the JS SDK. In the upcoming tutorials, we shall read more about the implementation of these components in JS SDK. To know what each of these components stands for, go through their links:
 
-- Identity Wallet
-- Credential Wallet
-- Iden3comm (Authentication Handler/Fetch Handler)
-- Proof Generation
-
-In the upcoming tutorials, we shall read more about the implementation of these components in JS SDK. To know what each of these components stands for, go through the following links:
-
-- [Identity Wallet](http://localhost:3000/docs/category/identity)
+- [Identity Wallet](/docs/category/identity)
 
 - [Credential Wallet](/docs/category/credential)
 

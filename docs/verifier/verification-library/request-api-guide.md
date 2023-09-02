@@ -55,7 +55,7 @@ const request : protocol.AuthorizationRequestMessage = auth.createAuthorizationR
 
 :::info
 
-An example of the usage of this API can be found [here](https://github.com/0xPolygonID/tutorial-examples/blob/main/verifier-integration/go/index.go#L41)(GO) and [here](https://github.com/0xPolygonID/tutorial-examples/blob/main/verifier-integration/js/index.js#L39)(JS).
+An example of the usage of this API can be found <ins>[here](https://github.com/0xPolygonID/tutorial-examples/blob/main/verifier-integration/go/index.go#L41)(GO)</ins> and <ins>[here](https://github.com/0xPolygonID/tutorial-examples/blob/main/verifier-integration/js/index.js#L39)(JS)</ins>.
 
 :::
 
@@ -167,18 +167,18 @@ mtpProofRequest.Query = map[string]interface{}{
 
 :::info
 
-An example of the usage of this API can be found [here](https://github.com/0xPolygonID/tutorial-examples/blob/main/verifier-integration/go/index.go#L47) (GO) and [here](https://github.com/0xPolygonID/tutorial-examples/blob/main/verifier-integration/js/index.js#L49) (JS).
+An example of the usage of this API can be found <ins>[here](https://github.com/0xPolygonID/tutorial-examples/blob/main/verifier-integration/go/index.go#L47) (GO)</ins> and <ins>[here](https://github.com/0xPolygonID/tutorial-examples/blob/main/verifier-integration/js/index.js#L49) (JS)</ins>.
 
 :::
 
 :::info
 
-Check out our [Query Language guide](./zk-query-language.md) to design any type of query request you can think of!
+Check out our [<ins>Query Language guide</ins>](./zk-query-language.md) to design any type of query request you can think of!
 
 :::
 
 :::info
 
-Check out the [Iden3Comm](/docs/wallet/wallet-sdk/polygonid-sdk/iden3comm/overview.md) section inside the Wallet SDK to learn more about how these requests are interpreted by the wallet in order to generate a zk proof.
+Check out the [<ins>Iden3Comm</ins>](/docs/wallet/wallet-sdk/polygonid-sdk/iden3comm/overview.md) section inside the Wallet SDK to learn more about how these requests are interpreted by the wallet in order to generate a zk proof.
 
 :::

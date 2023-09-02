@@ -39,7 +39,7 @@ Future<List<JWZProofEntity>> getProofs({
 
 :::info
 
-The iden3comm's `getProofs` method retrieves the proofs from the proof request of the Verifier. The actual proof is created by the `prove()` method, which you will read about in the [Proof section](/docs/wallet/wallet-sdk/polygonid-sdk/proof/proof-generation-api.md#prove) of the APIs.
+The iden3comm's `getProofs` method retrieves the proofs from the proof request of the Verifier. The actual proof is created by the `prove()` method, which you will read about in the [<ins>Proof section</ins>](/docs/wallet/wallet-sdk/polygonid-sdk/proof/proof-generation-api.md#prove) of the APIs.
 
 For this to happen, iden3comm makes a call to `prove()`.
 

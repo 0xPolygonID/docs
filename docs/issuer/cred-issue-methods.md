@@ -32,7 +32,7 @@ There are two ways those credentials can be issued: using **BJJ key Signature** 
 The credential is not added to the Issuer’s Merkle tree, instead a **Baby Jubjub (BJJ)** signature is used which is then verified upon presentation. With this method, issuers can issue a large number of credentials without needing to spend any gas to issue the credentials.
 
 <div align="center">
-<img src= {useBaseUrl("img//img/babyjubjub.png.png")} align="center" />
+<img src= {useBaseUrl("img/babyjubjub.png")} align="center" />
 </div>
 
 ### MTP Method: Issuance of Credentials with Merkle Tree Proof
@@ -42,5 +42,5 @@ The validation of the proof is done against the state published on-chain. No per
 Another important difference is that through this method smart contracts can issue credentials. The estimated cost of calling this function is approximately 2 million gas on average ( 0.36 MATIC in the Polygon PoS mainnet as of June 2023). Furthermore, credential issuance batching could be done to optimize the gas cost of the issuance process.
 
 <div align="center">
-<img src= {useBaseUrl("img//img/mtp.png")} align="center" />
+<img src= {useBaseUrl("img/mtp.png")} align="center" />
 </div>

@@ -42,7 +42,7 @@ Once initialized, you can use the SDK through its singleton `PolygonIdSdk.getIns
 
 :::info "Under the hood"
 
-This SDK is calling the [Flutter SDK](https://github.com/0xPolygonID/polygonid-flutter-sdk) through `MethodChannel`, that's why each method has a `Context` param to initialize the get `FlutterEngine`.
+This SDK is calling the [<ins>Flutter SDK</ins>](https://github.com/0xPolygonID/polygonid-flutter-sdk) through `MethodChannel`, that's why each method has a `Context` param to initialize the get `FlutterEngine`.
 You don't need to install or know anything about Flutter.
 
 :::

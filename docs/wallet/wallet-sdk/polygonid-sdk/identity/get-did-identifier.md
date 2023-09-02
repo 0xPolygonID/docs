@@ -38,7 +38,7 @@ Future<String> getDidIdentifier({
 
 It is worth noting that `did` is a Decentralized Identifier associated with an identity and enables verifiable identities. A `did` could be a person, thing, organization, or even an abstract entity. The controller of the `did` can prove that it is the real owner of the identity without the need of seeking permissions/approvals from any centralized authority. 
 
-A `did` is expressed in the following format (as per [w3.org](https://www.w3.org/) standards):
+A `did` is expressed in the following format (as per [<ins>w3.org</ins>](https://www.w3.org/) standards):
 
 `did: did method: did method-specific identifier`
 

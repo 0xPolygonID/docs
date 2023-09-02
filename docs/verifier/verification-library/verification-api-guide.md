@@ -19,13 +19,6 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs>
-<TabItem value="Golang">
-</TabItem>
-<TabItem value="Javascript">
-</TabItem>
-</Tabs>
-
 After having presented a [Request](./request-api-guide.md) to the user's wallet, the wallet will process the request and generate a proof that is sent back to the Verifier. 
 The proof must be verified in order to authenticate the user. 
 Let us see how to execute this verification.
