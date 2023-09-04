@@ -61,7 +61,7 @@ Currently, the state contract on the mainnet does not support onchain issuers. P
 
     :::note
     
-    You can find more information on how to deploy a smart contract using Hardhat [in this readme](https://github.com/iden3/contracts#readme).
+    You can find more information on how to deploy a smart contract using Hardhat [<ins>in this readme</ins>](https://github.com/iden3/contracts#readme).
     
     :::
 
@@ -86,8 +86,8 @@ Currently, the state contract on the mainnet does not support onchain issuers. P
 
 Don't forget to download and install the Polygon ID wallet app before you go the next steps. 
 
-- For Android: <a href="https://play.google.com/store/apps/details?id=com.polygonid.wallet" target="_blank">Polygon ID on Google Play</a>
-- For iOS: <a href="https://apps.apple.com/us/app/polygon-id/id1629870183" target="_blank">Polygon ID on the App Store</a>
+- For Android: <ins><a href="https://play.google.com/store/apps/details?id=com.polygonid.wallet" target="_blank">Polygon ID on Google Play</a></ins>
+- For iOS: <ins><a href="https://apps.apple.com/us/app/polygon-id/id1629870183" target="_blank">Polygon ID on the App Store</a></ins>
 
 :::
 

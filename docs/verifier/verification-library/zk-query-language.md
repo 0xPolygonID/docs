@@ -18,7 +18,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The <a href="https://docs.iden3.io/protocol/main-circuits/#credentialatomicquerysigV2" target="_blank">Atomic Query Signature V2 Circuit</a> and <a href="https://docs.iden3.io/protocol/main-circuits/#credentialatomicquerymtpV2" target="_blank">Atomic Query MTP V2 Circuit</a> circuits have been designed as generic circuits to do the ZK verification based on users' claims. 
+The <a href="https://docs.iden3.io/protocol/main-circuits/#credentialatomicquerysigv2" target="_blank">Atomic Query Signature V2 Circuit</a> and <a href="https://docs.iden3.io/protocol/main-circuits/#credentialatomicquerymtpv2" target="_blank">Atomic Query MTP V2 Circuit</a> circuits have been designed as generic circuits to do the ZK verification based on users' claims. 
 
 The Query Language sits on top of these circuits to provide a simple way for developers to design customized authentication requirements for someone's credentials. As long as the user holds a credential of a specific type, the Verifier can design a query based on 6 operators, for example:  
 
@@ -35,7 +35,7 @@ The Query Language follows the same rules whether the verification is implemente
 
 :::note
 
-The entire scripts to set a query are available here: [off-chain verification](verifier-set-up.md), [on-chain verification](/docs/verifier/on-chain-verification/overview.md)
+The entire scripts to set a query are available here: [<ins>off-chain verification</ins>](verifier-set-up.md), [<ins>on-chain verification</ins>](/docs/verifier/on-chain-verification/overview.md)
 
 :::
 
@@ -512,13 +512,6 @@ The `KYCCountryOfResidenceCredential` Schema encodes the countryCode of residenc
 **Query**
 
 When presented with this query, the user must prove that he/she is not a resident of the country `840` identified by the ISO Standard.
-
-<Tabs>
-<TabItem value="off-chain">
-</TabItem>
-<TabItem value="on-chain">
-</TabItem>
-</Tabs>
 
 <Tabs>
 <TabItem value="off-chain">

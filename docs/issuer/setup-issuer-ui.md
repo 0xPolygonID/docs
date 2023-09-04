@@ -102,7 +102,7 @@ It is desired to run a public forwarding URL, pointing to a host, as it is going
 
 :::note "Getting a free Public URL"
 
-For testing purposes, you can use a public URL. A way to set this up is by using [ngrok](https://ngrok.com) as a forwarding service that maps to a local port.
+For testing purposes, you can use a public URL. A way to set this up is by using [<ins>ngrok</ins>](https://ngrok.com) as a forwarding service that maps to a local port.
 After downloading and installing ngrok, run the following command and copy the **Forwarding** URL:
 
 ```bash
@@ -220,7 +220,7 @@ In order to secure the wallet private key so that the issuer can use it to issue
 
 :::note
 
-Make sure the wallet that is provided has Testnet Matic to be able to send transactions and that you are providing the Private Key. Here's how you can [extract the private key from MetaMask](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key#:~:text=On%20the%20account%20page%2C%20click,click%20%E2%80%9CConfirm%E2%80%9D%20to%20proceed.), for instance.
+Make sure the wallet that is provided has Testnet Matic to be able to send transactions and that you are providing the Private Key. Here's how you can [<ins>extract the private key from MetaMask</ins>](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key#:~:text=On%20the%20account%20page%2C%20click,click%20%E2%80%9CConfirm%E2%80%9D%20to%20proceed.), for instance.
 
 :::
 
@@ -259,7 +259,7 @@ make add-vault-token;
 
 :::note
 
-This can also be done via the [UI API](#using-the-ui-api).
+This can also be done via the [<ins>UI API</ins>](#using-the-ui-api).
 
 :::
 
@@ -327,7 +327,7 @@ This step is required to run the separate UI application, which allows intuitive
 
 :::tip
 
-Running and using the UI is optional since it implements functionalities already exposed via the [UI API](#using-the-ui-api). It is highly recommended though, because it makes issuer management far simpler and more intuitive.
+Running and using the UI is optional since it implements functionalities already exposed via the [<ins>UI API</ins>](#using-the-ui-api). It is highly recommended though, because it makes issuer management far simpler and more intuitive.
 
 :::
 
@@ -437,7 +437,7 @@ ISSUER_UI_AUTH_PASSWORD=password-ui
 
 :::note
 
-If you want to run the UI app in development mode, i.e. with HMR enabled, please follow the steps in the [Development (UI)](#development-ui) section.
+If you want to run the UI app in development mode, i.e. with HMR enabled, please follow the steps in the [<ins>Development (UI)</ins>](#development-ui) section.
 
 :::
 

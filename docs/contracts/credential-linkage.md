@@ -19,15 +19,20 @@ There are 2 types of relationships between credentials and their issuers:
 
 ![img](/img/anchoring-linkage.png)
 
-!!!note
-    If the credential is issued using the MTP method, then the credential data is also “anchored” (via an indirect merkle tree proof) to the blockchain. Otherwise, only the Issuer’s DID is anchored to the blockchain.
+:::note
+    
+If the credential is issued using the MTP method, then the credential data is also “anchored” (via an indirect merkle tree proof) to the blockchain. Otherwise, only the Issuer’s DID is anchored to the blockchain.
 
+:::
 
 ## Credential Linkage to Different Blockchains
 
 Credentials could be linked to different Ethereum Virtual Machine (EVM) blockchains, they are not limited to only being linked to the Polygon Mainnet when they are issued. For instance, credentials could be linked to a Supernets chain or another EVM chain. The issuer state contract could be deployed to other EVM-compatible chains, and verifiers could validate the proofs from these credentials as long as they have access to the particular chain. 
 
-!!!note
-    Credential linkage is only supported for a single chain for each credential (a credential cannot be linked to multiple blockchains at the same time).
+:::note
+
+Credential linkage is only supported for a single chain for each credential (a credential cannot be linked to multiple blockchains at the same time).
+
+:::
 
 ![img](/img/linkage-multiple.png)

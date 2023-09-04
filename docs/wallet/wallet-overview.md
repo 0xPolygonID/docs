@@ -40,7 +40,7 @@ Depending on which type of developer (integrator) you are, you can use different
 
 :::info
 
-If you are interested in building web-based applications with Polygon ID, please visit the [JS SDK documentation](/docs/js-sdk/js-sdk-overview.md). 
+If you are interested in building web-based applications with Polygon ID, please visit the [<ins>JS SDK documentation</ins>](/docs/js-sdk/js-sdk-overview.md). 
 
 :::
 

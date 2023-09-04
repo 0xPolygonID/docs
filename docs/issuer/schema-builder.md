@@ -92,7 +92,7 @@ The first page of the Schema Builder flow lets you define the basic aspects of t
 </div>
 
 - Title: a name for the schema.
-- Schema Type: a set of attributes used to shape the data stored in one credential. 
+- Schema Type: similar to (and in most cases coincides with) the schema name. The text provided in this field will become the name of the type in the JSON LD context associated with this schema. 
 - Version: this is important to register the current version of the schema, as it might be updated in the future.
 - Description: a description of the schema should explain in simple terms what it will be used for. 
 

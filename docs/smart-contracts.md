@@ -14,7 +14,7 @@ keywords:
 
 ## Blockchain addresses
 
-For situations where one needs to publish data on the blockchain, such as creating a mtp-type credential, generating on-chain proofs and make credential revocations effective, it is important to have the Smart Contracts addresses:
+For situations where one needs to publish data on the blockchain, such as creating an MTP-type credential, generating on-chain proofs and making credential revocations effective, it is important to have the following Smart Contracts addresses:
 
 - Testnet(mumbai) -> `0x134B1BE34911E39A8397ec6289782989729807a4`
 - Mainnet -> `0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D`
@@ -28,7 +28,7 @@ Current addresses on Polygon Mumbai testnet.
 | ERC20 examples |0x9017a99afb69CB7B21C7DD29827b4762DECD53FD  |0x3Bf7f4774DC3f92431fA690fa000f636562dCC18 |
 
 
-Current addresses on Polygon Main. (ERC20 example with airdrop use case, restricted to 1 request).
+Current addresses on Polygon Mainnet (ERC20 example with airdrop use case, restricted to 1 request).
 
 |                    |                    Sig                     |                  MTP                      |
 |:------------------:|:------------------------------------------:|:-----------------------------------------:|
