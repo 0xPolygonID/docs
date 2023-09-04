@@ -2391,7 +2391,21 @@ p {
   letter-spacing: 0.01rem /* for better visibility */
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1050px) {
+  .navbar__item {
+    display: none
+  }
+  .navbar__toggle {
+    display: inherit;
+  }
+}
+
+@media (max-width: 1200px) {
+  .navbar__items--right > a {
+    display: none;
+  }
+}
+@media (max-width: 1325px) {
   /*.tabs_animation-wrapper {*/
   /*  display: none;*/
   /*}*/
