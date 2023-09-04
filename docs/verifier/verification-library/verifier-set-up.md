@@ -21,7 +21,7 @@ Any application that wants to authenticate users based on their Polygon ID Ident
 The Server generates [the ZK Request](./request-api-guide.md) according to the requirements of the platform. There are two types of authentication:
 
 - [**Basic Auth**](./request-api-guide.md#basic-auth-request): for example, a platform that issues Credentials must authenticate users by their identifiers before sharing Credentials with them. 
-- [**Query-based Auth**](./request-api-guide.md#query-based-auth-request): for example, a platform that gives access only to those users that are over 18 years of age.
+- [**Query-based Auth**](./request-api-guide.md#query-based-request): for example, a platform that gives access only to those users that are over 18 years of age.
 
 The second role of the Server is to execute [Verification](./verification-api-guide.md) of the proof sent by the Identity Wallet.
 
