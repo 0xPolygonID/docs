@@ -47,7 +47,7 @@ If you don't own domain names, you can deploy the issuer node through the Google
 </div>
 
 
-You should pay attention to the `The Name of the Reserved External IP` field; this field should be filled in with the name of the external IP you have. Then, in the fields related to domain names, you can enter names following the pattern ç, where XXX is the number of the IP associated with the name entered in the `The Name of the Reserved External IP` field. In this example, that IP number is 34.160.87.138.
+You should pay attention to the `The Name of the Reserved External IP` field; this field should be filled in with the name of the external IP you have. Then, in the fields related to domain names, you can enter names following the pattern domain-name.XXX.nip.io, where XXX is the number of the IP associated with the name entered in the `The Name of the Reserved External IP` field. In this example, that IP number is 34.160.87.138.
 After pressing "deploy," you should wait a few minutes, and the issuer node will be ready.
 
 ## Install Issuer Node with domain names
