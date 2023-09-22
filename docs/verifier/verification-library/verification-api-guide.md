@@ -71,7 +71,8 @@ resolvers := map[string]pubsignals.StateResolver{
 	resolverPrefix: resolver,
 }
 
-verifier, err := auth.NewVerifierWithExplicitError(verificationKeyloader, loaders.DefaultSchemaLoader{IpfsURL: "ipfsio"}, resolvers)
+verifier, err := auth.NewVerifier(
+			verificationKeyloader, resolvers, auth.WithIPFSGateway("<gateway url>"))
 ```
 
 

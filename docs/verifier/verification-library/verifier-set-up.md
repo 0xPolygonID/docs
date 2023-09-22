@@ -47,7 +47,7 @@ The executable code for this section can be found <ins><a href="https://github.c
 <TabItem value="Golang">
 
 ```bash 
-go get github.com/iden3/go-iden3-auth
+go get github.com/iden3/go-iden3-auth/v2
 ```
 
 </TabItem>
@@ -83,12 +83,12 @@ import(
 	"strconv"
 	"time"
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/iden3/go-circuits"
-	auth "github.com/iden3/go-iden3-auth"
-	"github.com/iden3/go-iden3-auth/loaders"
-	"github.com/iden3/go-iden3-auth/pubsignals"
-	"github.com/iden3/go-iden3-auth/state"
-	"github.com/iden3/iden3comm/protocol"
+	"github.com/iden3/go-circuits/v2"
+	auth "github.com/iden3/go-iden3-auth/v2"
+	"github.com/iden3/go-iden3-auth/v2/loaders"
+	"github.com/iden3/go-iden3-auth/v2/pubsignals"
+	"github.com/iden3/go-iden3-auth/v2/state"
+	"github.com/iden3/iden3comm/v2/protocol"
 )
 
 func main() {
@@ -106,7 +106,7 @@ var requestMap = make(map[string]interface{})
 
 ```js
 const express = require('express');
-const {auth, resolver, loaders} = require('@iden3/js-iden3-auth')
+const {auth, resolver, protocol} = require('@iden3/js-iden3-auth')
 const getRawBody = require('raw-body')
 
 const app = express();
@@ -310,6 +310,9 @@ func Callback(w http.ResponseWriter, r *http.Request) {
 	// Add Polygon Mumbai RPC node endpoint - needed to read on-chain state
 	ethURL := "https://polygon-testnet-rpc.allthatnode.com:8545"
 
+	// Add IPFS url - needed to load schemas from IPFS 
+	ipfsURL := "https://ipfs.io"
+
 	// Add identity state contract address
 	contractAddress := "0x134B1BE34911E39A8397ec6289782989729807a4"
 
@@ -336,7 +339,7 @@ func Callback(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// EXECUTE VERIFICATION
-	verifier, err := auth.NewVerifierWithExplicitError(verificationKeyloader, loaders.DefaultSchemaLoader{IpfsURL"ipfs.io"}, resolvers)
+	verifier, err := auth.NewVerifier(verificationKeyloader, resolvers, auth.WithIPFSGateway(ipfsURL))
 	if err != nil {
 		log.Println(err.Error())
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -614,7 +617,7 @@ To serve static files, we use the <a href="https://expressjs.com/en/starter/stat
 
 ```js {8}
 const express = require('express');
-const {auth, resolver, loaders} = require('@iden3/js-iden3-auth')
+const {auth, resolver, protocol} = require('@iden3/js-iden3-auth')
 const getRawBody = require('raw-body')
 
 const app = express();
