@@ -285,7 +285,8 @@ module.exports = {
             "wallet/wallet-sdk/polygonid-app",
             "wallet/features"
           ]
-        }
+        },
+        "wallet/push-notification"
       ],
     },
     "smart-contracts",
