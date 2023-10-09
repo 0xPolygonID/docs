@@ -69,7 +69,7 @@ An encryption key must be used from the notification service.
 }
 ```
 
-1. Add push service for DID document to service section
+3. Add push service for DID document to service section
 
     ```json
     {
