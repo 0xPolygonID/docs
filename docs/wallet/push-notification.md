@@ -58,7 +58,7 @@ DID document contains the user DID and service to send push notifications. The u
 
 You can add information about keys / authentication info optionally. Follow [this specification](https://github.com/0xPolygonID/did-polygonid/blob/main/did-polygonid-method-draft.md) 
 
-1. Create encrypted device information. 
+2. Create encrypted device information. 
 Device information must be a valid JSON and encrypted with the public key of the Push Gateway.  Apply base64 encoding to encrypted byte array.
 An encryption key must be used from the notification service.
 
