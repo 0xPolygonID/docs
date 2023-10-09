@@ -95,7 +95,7 @@ An encryption key must be used from the notification service.
     ```
 
 4. Include the DID document as a `did_doc` field in the authorization response message [https://iden3-communication.io/authorization/1.0/response/](https://iden3-communication.io/authorization/1.0/response/)
-3. Notification message format that is expected to be sent to mobile. URL field is a valid URL to fetch a message. Fetch request must be   HTTP GET request with no authorization required. The message is available for 24 hours on Push gateway or deleted after the fetch request.
+Notification message format that is expected to be sent to mobile. URL field is a valid URL to fetch a message. Fetch request must be   HTTP GET request with no authorization required. The message is available for 24 hours on Push gateway or deleted after the fetch request.
 
 ```json
 {
