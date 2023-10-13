@@ -261,6 +261,12 @@ module.exports = {
           items: [
             {
               href: 'https://schema-builder.polygonid.me/',
+              label: 'Schema Explorer',
+              target: '_blank',
+              rel: null,
+            },
+            {
+              href: 'https://schema-builder.polygonid.me/builder',
               label: 'Schema Builder',
               target: '_blank',
               rel: null,
