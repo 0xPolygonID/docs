@@ -316,9 +316,19 @@ module.exports = {
         },
         {
           position: 'left',
-          label: 'Protocol (Iden3)',
-          href: 'https://docs.iden3.io/',
-          target: '_blank',
+          label: 'Protocol',
+          items: [
+            {
+              href: 'https://docs.iden3.io/',
+              label: 'Iden3 General Docs',
+              target: '_blank',
+            },
+            {
+              href: 'https://iden3-communication.io/',
+              label: 'Iden3comm',
+              target: '_blank',
+            },
+          ]
         },
         {
           href: "https://github.com/0xPolygonID",
