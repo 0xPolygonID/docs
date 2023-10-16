@@ -302,7 +302,7 @@ module.exports = {
               rel: null,
             },
             {
-              href: 'https://youtu.be/gd9rxlq1GxM?si=pXPIKzyo57xm9ga0',
+              href: 'https://www.youtube.com/watch?v=gd9rxlq1GxM&list=PLslsfan1R_z2PW_cRkBumQiUJs4tPc455',
               label: 'Inside Polygon ID',
               target: '_blank'
             },
