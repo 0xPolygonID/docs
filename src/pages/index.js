@@ -79,6 +79,11 @@ function Home() {
           <section className="faq">
             <FAQSection {...contentData.faq}/>
           </section>
+          <section>
+            <div align="center">
+              By using our services you agree to Polygon ID's <a src="./privacy-policy.pdf">Privacy Policy</a>, <a>Cookie Policy</a> and <a>Terms of Use</a>.
+            </div>
+          </section>
         </div>
         <div className="section-divider-40"></div>
         <section className="newsletter">
