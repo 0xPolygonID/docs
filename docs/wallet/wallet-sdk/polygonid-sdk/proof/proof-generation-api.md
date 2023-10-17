@@ -14,29 +14,35 @@ keywords:
  
 The `prove()` function generates zero-knowledge proof using the valid credentials requested from the Identity.
 
-It passes `did`, `profileNonce`, `claim`, `circuitData`, `request`, `privateKey` and `challenge` as input parameters and generates a JWZ proof. 
+It passes `identifier`, `profileNonce`, `credential`, `circuitData`, `proofScopeRequest`, and `challenge` as input parameters and generates a `ZKProofEntity` proof. 
 
 ```dart
-Future<JWZProof> prove(
-      {required String did,
-      int? profileNonce,  
-      required ClaimEntity claim,
-      required CircuitDataEntity circuitData, required ProofScopeRequest request, String? privateKey, String? challenge});
-   
-   Future<Stream<DownloadInfo>> get initCircuitsDownloadAndGetInfoStream;
-
-  Future<bool> isAlreadyDownloadedCircuitsFromServer(); 
-  }
+Future<ZKProofEntity> prove({
+  required String identifier,
+  required BigInt profileNonce,
+  required BigInt claimSubjectProfileNonce,
+  required ClaimEntity credential,
+  required CircuitDataEntity circuitData,
+  required Map<String, dynamic> proofScopeRequest,
+  List<String>? authClaim,
+  MTProofEntity? incProof,
+  MTProofEntity? nonRevProof,
+  GistMTProofEntity? gistProof,
+  Map<String, dynamic>? treeState,
+  String? challenge,
+  String? signature,
+  Map<String, dynamic>? config,
+});
 ```
 
-- `did` is the unique ID of the identity
+- `identifier` is the unique ID of the identity
 - `profileNonce` is the nonce of the profile of the identity
-- `claim` is the Verifiable Credential 
+- `credential` is the Verifiable Credential 
 - `circuitData` are the circuits used for generating a proof
-- `request` is the proof request information that comes from the Verifier
-- `privateKey` of the identity is a key that is used to access the sensitive information of the identity. This key is also used for generating proofs by using the credentials associated with the identity.
+- `proofScopeRequest` is the proof request information that comes from the Verifier
 - `challenge` is a message the Verifier requires an Integrator to sign with its identity so that an Integrator can verify its identity
+- `claimSubjectProfileNonce` is the nonce of the profile of the identity that is the subject of the credential
 
 `initCircuitsDownloadAndGetInfoStream()` and `isAlreadyDownloadedCircuitsFromServer()` methods above are used for downloading the circuit files as these circuits are too big to be stored on the SDK. 
 
-The `prove()` function generates a `JWZProof` that fulfills the proof query parameters with valid identity and credentials. This proof is shared by an Integrator with a Verifier. The `prove()` returns a `JWZProof` object so that the Integrator is able to verify the requested information (requested from Identity) with the Verifier. 
+The `prove()` function generates a `ZKProofEntity` that fulfills the proof query parameters with valid identity and credentials. This proof is shared by an Integrator with a Verifier. The `prove()` returns a `ZKProofEntity` object so that the Integrator is able to verify the requested information (requested from Identity) with the Verifier. 
