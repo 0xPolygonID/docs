@@ -161,16 +161,10 @@ export const contentData = {
         },
         events: [
             {
-                name: 'EthCC 6',
-                info: 'July 17-20, 2023',
-                description: 'Paris, France',
-                link: 'https://www.ethcc.io/'
-            },
-            {
-                name: 'ETHSingapore',
-                info: 'September 10-12, 2023',
-                description: 'Singapore',
-                link: 'https://www.ethereumsingapore.com/'
+                name: 'DIF Hackathon',
+                info: 'October 26 - December 1, 2023',
+                description: 'Online',
+                link: 'https://difhackathon.devpost.com/'
             },
             {
                 name: 'ETHGlobal Istanbul',
@@ -178,6 +172,12 @@ export const contentData = {
                 description: 'Istanbul, Turkey',
                 link: 'https://ethglobal.com/events/istanbul'
             },
+            {
+                name: 'ETHSingapore',
+                info: 'September 10-12, 2023',
+                description: 'Singapore',
+                link: 'https://www.ethereumsingapore.com/'
+            }
         ]
     },
     learnSection: {
