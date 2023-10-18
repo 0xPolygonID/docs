@@ -80,12 +80,12 @@ function Home() {
             <FAQSection {...contentData.faq}/>
           </section>
           <section>
-            <div align="center">
-              By using our services you agree to Polygon ID's <a src="./privacy-policy.pdf">Privacy Policy</a>, <a>Cookie Policy</a> and <a>Terms of Use</a>.
+            <div className="legal-docs">
+              By using our services you agree to Polygon ID's <a href="privacy-policy.pdf" target='_blank'>Privacy Policy</a>, <a href="cookie-policy.pdf" target='_blank'>Cookie Policy</a> and <a href="terms-of-use.pdf" target='_blank'>Terms of Use</a>.
             </div>
           </section>
         </div>
-        <div className="section-divider-40"></div>
+        {/*<div className="section-divider-40"></div>*/}
         <section className="newsletter">
           <div className="newsletter_anim-wrapper pb_intersection">
             <div className="animation_embed w-embed w-iframe">
@@ -93,7 +93,7 @@ function Home() {
             </div>
           </div>
           <div className="padding-global">
-            <div className="container-medium">  
+            <div className="container-medium">
               <div className="padding-section-large">
                 <div className="newsletter-section_max-width">
                   <div className="tiny-text">{contentData.stayUpToDate.title}</div>
