@@ -157,7 +157,6 @@ module.exports = {
               collapsed: true,
               items: [
                 "wallet/wallet-sdk/polygonid-sdk/polygonid-sdk-overview",
-                "wallet/wallet-sdk/flutter-sdk/install-flutter-sdk",
                 "wallet/wallet-sdk/flutter-sdk/build-app-with-flutter-sdk",
                 "wallet/wallet-sdk/polygonid-sdk/polygonid-sdk-plugin",
                 "wallet/wallet-sdk/polygonid-sdk/example-app"
