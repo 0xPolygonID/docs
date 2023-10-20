@@ -1,0 +1,15 @@
+---
+id: error-trace-stream
+title: Error Trace Stream
+sidebar_label: Error Trace Stream
+description: "Get the error stream to listen to it."
+keywords:
+  - docs
+  - polygon id
+  - holder
+  - issuer
+  - verifier
+  - wallet sdk
+  - error handling
+  - stacktrace
+---

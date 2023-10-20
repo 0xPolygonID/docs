@@ -290,6 +290,22 @@ module.exports = {
                 "wallet/wallet-sdk/polygonid-sdk/profile/add-profile",
                 "wallet/wallet-sdk/polygonid-sdk/profile/remove-profile"
               ]
+            },
+            {
+              type: "category",
+              label: "Error Handling",
+              link: {
+                type: "generated-index",
+                description: "This session presents a set of methods used to clarify error comunnication and improve its visibility."
+              },
+              items: [
+                "wallet/wallet-sdk/polygonid-sdk/error-handling/switch-stacktrace",
+                "wallet/wallet-sdk/polygonid-sdk/error-handling/stacktrace-stream",
+                "wallet/wallet-sdk/polygonid-sdk/error-handling/get-stacktrace",
+                "wallet/wallet-sdk/polygonid-sdk/error-handling/error-trace-stream",
+                "wallet/wallet-sdk/polygonid-sdk/error-handling/get-error-trace",
+
+              ]
             }
           ]
         },
