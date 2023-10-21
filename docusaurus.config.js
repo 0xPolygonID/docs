@@ -273,7 +273,7 @@ module.exports = {
             },
             {
               href: 'https://schema-builder.polygonid.me/query-builder',
-              label: 'Query builder',
+              label: 'Query Builder',
               target: '_blank',
               rel: null,
             },

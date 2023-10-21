@@ -184,8 +184,6 @@ export const contentData = {
         head: {
             title: 'Learn about Polygon ID',
             description: 'Gain the knowledge and confidence to leverage the\n full potential of Polygon ID.',
-            link: 'https://ecosystem.polygon.technology/PolygonID',
-            linkText: 'Explore ecosystem',
         },
         videos: [
             {
