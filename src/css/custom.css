@@ -2606,6 +2606,10 @@ p {
 .faq-dropdown-list-content {
   overflow: hidden;
 }
+.legal-docs {
+  padding-top: 1rem;
+  text-align: center;
+}
 .section-divider {
   margin-bottom: 64px;
 }
