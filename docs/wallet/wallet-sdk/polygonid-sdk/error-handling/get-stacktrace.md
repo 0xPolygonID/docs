@@ -1,8 +1,8 @@
 ---
 id: get-stacktrace
-title: Get Stacktrace
-sidebar_label: Get Stacktrace
-description: "Get the entire Stacktrace of the latest flow execution."
+title: Get Stack Trace
+sidebar_label: Get Stack Trace
+description: "Get the entire Stack Trace of the latest flow execution."
 keywords:
   - docs
   - polygon id
@@ -13,3 +13,9 @@ keywords:
   - error handling
   - stacktrace
 ---
+
+Get the entire execution trace of the latest performed action.
+
+```dart
+String getStacktrace();
+```

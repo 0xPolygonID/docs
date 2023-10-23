@@ -13,3 +13,9 @@ keywords:
   - error handling
   - stacktrace
 ---
+
+Get the error of the latest flow execution.
+
+```dart
+Stream<String> errorTraceStream();
+```

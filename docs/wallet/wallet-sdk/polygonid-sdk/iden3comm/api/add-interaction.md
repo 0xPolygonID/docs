@@ -13,3 +13,19 @@ keywords:
   - DID
   - Interaction Base Entity
 ---
+
+ Save an `InteractionBaseEntity` in the Polygon ID SDK.  
+
+```dart
+Future<InteractionBaseEntity> addInteraction({
+  required InteractionBaseEntity interaction,
+  String? genesisDid,
+  String? privateKey,
+});
+```
+
+The `interaction` is the interaction to be saved.
+
+The `genesisDid` is the unique ID of the identity.
+
+The `privateKey` is the key used to access all the sensitive information from the identity and also to realize operations like generating proofs.

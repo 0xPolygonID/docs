@@ -14,3 +14,10 @@ keywords:
   - schema
   - iden3 message entity
 ---
+
+Returns the schemas from an `Iden3MessageEntity`.
+  
+```dart
+Future<List<Map<String, dynamic>>> getSchemas(
+  {required Iden3MessageEntity message});
+```  

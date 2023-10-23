@@ -13,3 +13,18 @@ keywords:
   - DID
   - profile
 ---
+
+Get information about a list of DIDs we interacted with.
+
+
+```dart
+Future<List<Map<String, dynamic>>> getDidProfileInfoList({
+  required String did,
+  required String privateKey,
+  required List<FilterEntity>? filters,
+});
+```
+
+`did` is the DID we interactedd with.
+
+The `privateKey` is the key used to access all the sensitive information from the identity and also to realize operations like generating proofs.

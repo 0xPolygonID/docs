@@ -218,9 +218,7 @@ module.exports = {
               items: [
                 "wallet/wallet-sdk/polygonid-sdk/credential/save-claims",
                 "wallet/wallet-sdk/polygonid-sdk/credential/get-claims",
-                "wallet/wallet-sdk/polygonid-sdk/credential/get-claims-by-id",
                 "wallet/wallet-sdk/polygonid-sdk/credential/get-claim-revocation-status",
-                "wallet/wallet-sdk/polygonid-sdk/credential/remove-claim",
                 "wallet/wallet-sdk/polygonid-sdk/credential/remove-claims",
                 "wallet/wallet-sdk/polygonid-sdk/credential/update-claims"
               ]
@@ -296,7 +294,7 @@ module.exports = {
               label: "Error Handling",
               link: {
                 type: "generated-index",
-                description: "This session presents a set of methods used to clarify error comunnication and improve its visibility."
+                description: "This session presents a set of methods used to clarify error comunnication and facilitate debugging."
               },
               items: [
                 "wallet/wallet-sdk/polygonid-sdk/error-handling/switch-stacktrace",

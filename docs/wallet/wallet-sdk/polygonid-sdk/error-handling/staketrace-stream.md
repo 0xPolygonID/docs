@@ -1,8 +1,8 @@
 ---
 id: stacktrace-stream
-title: Stacktrace Stream
-sidebar_label: Stacktrace Stream
-description: "Get the Stacktrace stream to can listen to it."
+title: Stack Trace Stream
+sidebar_label: Stack Trace Stream
+description: "Get the Stack Trace stream to can listen to it."
 keywords:
   - docs
   - polygon id
@@ -13,3 +13,9 @@ keywords:
   - error handling
   - stacktrace
 ---
+
+Listen to the Stack Trace stream to verify the steps of all actions performed in the application.
+
+```dart
+Stream<String> stacktraceStream();
+```

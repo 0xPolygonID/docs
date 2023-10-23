@@ -14,3 +14,10 @@ keywords:
   - schema
   - cache
 ---
+
+  Clean the schema cache.
+
+  ```dart
+  Future<void> cleanSchemaCache();
+  ```
+  

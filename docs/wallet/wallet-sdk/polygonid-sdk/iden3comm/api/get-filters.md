@@ -14,3 +14,11 @@ keywords:
   - Filter entity
   - iden3comm
 ---
+
+Returns a list of `FilterEntity` from an iden3comm message to apply to `Credential.getClaims`.
+
+```dart
+Future<List<FilterEntity>> getFilters({required Iden3MessageEntity message});`
+```
+
+The `message` is the iden3comm message entity.
