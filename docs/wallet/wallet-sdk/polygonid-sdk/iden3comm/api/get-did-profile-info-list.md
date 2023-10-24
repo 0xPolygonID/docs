@@ -14,7 +14,7 @@ keywords:
   - profile
 ---
 
-Get information about a list of DIDs we interacted with.
+Get information about a list of DIDs that connect with a service.
 
 
 ```dart
@@ -28,3 +28,5 @@ Future<List<Map<String, dynamic>>> getDidProfileInfoList({
 `did` is the DID we interactedd with.
 
 The `privateKey` is the key used to access all the sensitive information from the identity and also to realize operations like generating proofs.
+
+`filters` are used to apply queries to the information saved.

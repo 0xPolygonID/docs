@@ -27,3 +27,5 @@ Future<void> removeDidProfileInfo({
 `did` is the DID we interactedd with.
 
 The `privateKey` is the key used to access all the sensitive information from the identity and also to realize operations like generating proofs.
+
+`interactedWithDid` is the identifier of the service we have interacted with. This is used to be able to recognize/use it in another occasion.

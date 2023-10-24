@@ -14,7 +14,7 @@ keywords:
   - profile
 ---
 
-Add info about a DID we interacted with.
+Add information of a connection between a DID and a service.
    
 ```dart
 Future<void> addDidProfileInfo({
@@ -29,4 +29,6 @@ Future<void> addDidProfileInfo({
 
 The `privateKey` is the key used to access all the sensitive information from the identity and also to realize operations like generating proofs.
 
-  
+`interactedWithDid` is the identifier of the service we have interacted with. This is used to be able to recognize/use it in another occasion.
+
+`info` represents the information saved within the service.
