@@ -12,6 +12,8 @@ keywords:
   - verifier
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Credential Marketplace is the go-to place for verifiers to find trusted sources for specific credentials related to their business cases. With an ever-growing set of options, verifiers can compare and choose from a variety of credential providers and select the most suitable ones for their needs. 
 
 It also offers an environment for issuers to display the credentials they are offering and demonstrate to the community how their credentials can solve business cases. 
@@ -36,19 +38,25 @@ Issuers can apply to register their organizations within the marketplace. Upon s
 
 Verifiers have a carefully selected range of issuers and their credentials at their disposal, which might serve as an enforcement for the trust between the Issuer and the Verifier. They can contact those issuers to sign contracts.
 
-[Screenshot of Homepage]
+<div align="center">
+<img src= {useBaseUrl("img/credential-marketplace/homepage.png")} align="center" length="100" width="500" />
+</div>
 
 ## Credentials
 
 Searching for credentials on the Credential Marketplace by using a comprehensive filter, where users can consider the major categories, pricing, data storage options, credential proof type, compliance and many other features.
 
-[Screenshot of Credentials]
+<div align="center">
+<img src= {useBaseUrl("img/credential-marketplace/credentials.png")} align="center" length="100" width="600" />
+</div>
 
 ## Ecosystem
 
 The Ecosystem page shows all the projects involved in the Polygon ID environment, be they verifiers, issuers or integrators. Those are organizations that really stand out with their solutions for the Digital Identity challenge by leveraging at least one of Polygon ID’s tools and products.
 
-[Screenshot of Ecosystem]
+<div align="center">
+<img src= {useBaseUrl("img/credential-marketplace/ecosystem.png")} align="center" length="100" width="600" />
+</div>
 
 ## Issuer Portal
 
@@ -56,7 +64,9 @@ The Issuer Portal is the go-to place for every credential provider who wants to 
 
 This is the place where Issuers register their organization, by filling up a form with their identification:
 
-[Screenshot of Form]
+<div align="center">
+<img src= {useBaseUrl("img/credential-marketplace/register-form.png")} align="center" length="100" width="700" />
+</div>
 
 It is important to note that this is an application process, which means that the Polygon ID  team reviews all applications and replies to them within 2-3 business days.
 
@@ -66,14 +76,18 @@ With all set up, Issuers can add, edit and list new credentials and also display
 
 Adding credentials involves setting all of its characteristics, such as general information,  pricing details and specific credential features.
 
-[Screenshot of Add Credential form]
+<div align="center">
+<img src= {useBaseUrl("img/credential-marketplace/add-credential-form.png")} align="center" length="100" width="700" />
+</div>
 
 ### Setting up contact information
 
 It is crucial for the credential provider to display relevant information for their prospective users. Having filled up the contact information form, the issuer will have a comprehensive public profile, which will be useful for verifiers and other actors to be in contact and request more information about their offering. It is important to note that there are a few mandatory fields, such as Organization logo, name, description, DIDs, email and website.
 
 
-[Screenshot of Contact Information]
+<div align="center">
+<img src= {useBaseUrl("img/credential-marketplace/organization.png")} align="center" length="100" width="700" />
+</div>
 
 ### Launching credential store
 
