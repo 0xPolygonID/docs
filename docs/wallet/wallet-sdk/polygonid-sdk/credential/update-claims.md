@@ -14,13 +14,13 @@ keywords:
  
 The credentials stored on the SDK can be updated using the credential's ID.
 
-The `updateClaim()` method uses `claimId`, `issuer`, `did`, `state`, `expiration`, `type`, `data`, and `privateKey` as input parameters and updates the credential information. 
+The `updateClaim()` method uses `claimId`, `issuer`, `genesisDid`, `state`, `expiration`, `type`, `data`, and `privateKey` as input parameters and updates the credential information. 
  
 ```dart
 Future<ClaimEntity> updateClaim({
   required String claimId,
   String? issuer,
-  required String did,
+  required String genesisDid,
   ClaimState? state,
   String? expiration,
   String? type,
@@ -33,7 +33,7 @@ where:
 
 - `claimId` is the credential's ID.
 - `issuer` is the `did` of the issuer.
-- `did` is the unique ID of the identity.
+- `genesisDid` is the unique ID of the identity.
 - `state` is the credential's current state.
 - `expiration` is the date and time of the expiration of the credential in string format.
 - `type` is the type of verifiable credential, for example: **KYCAgeCredential**.

@@ -168,7 +168,6 @@ module.exports = {
               collapsed: true,
               items: [
                 "wallet/wallet-sdk/polygonid-sdk/polygonid-sdk-overview",
-                "wallet/wallet-sdk/flutter-sdk/install-flutter-sdk",
                 "wallet/wallet-sdk/flutter-sdk/build-app-with-flutter-sdk",
                 "wallet/wallet-sdk/polygonid-sdk/polygonid-sdk-plugin",
                 "wallet/wallet-sdk/polygonid-sdk/example-app"
@@ -206,10 +205,13 @@ module.exports = {
               collapsed: true,
               items: [
                 "wallet/wallet-sdk/polygonid-sdk/identity/create-identity",
+                "wallet/wallet-sdk/polygonid-sdk/identity/check-identity-validity",
+                "wallet/wallet-sdk/polygonid-sdk/identity/get-private-key",
                 "wallet/wallet-sdk/polygonid-sdk/identity/get-identity",
                 "wallet/wallet-sdk/polygonid-sdk/identity/get-identities",
                 "wallet/wallet-sdk/polygonid-sdk/identity/backup-identity",
                 "wallet/wallet-sdk/polygonid-sdk/identity/get-did-identifier",
+                "wallet/wallet-sdk/polygonid-sdk/identity/get-did-entity",
                 "wallet/wallet-sdk/polygonid-sdk/identity/get-state",
                 "wallet/wallet-sdk/polygonid-sdk/identity/sign",
                 "wallet/wallet-sdk/polygonid-sdk/identity/remove-identity",
@@ -225,10 +227,11 @@ module.exports = {
               },
               collapsed: true,
               items: [
-                "wallet/wallet-sdk/polygonid-sdk/credential/fetch-and-save",
+                "wallet/wallet-sdk/polygonid-sdk/credential/save-claims",
                 "wallet/wallet-sdk/polygonid-sdk/credential/get-claims",
-                "wallet/wallet-sdk/polygonid-sdk/credential/update-claims",
-                "wallet/wallet-sdk/polygonid-sdk/credential/remove-claims"
+                "wallet/wallet-sdk/polygonid-sdk/credential/get-claim-revocation-status",
+                "wallet/wallet-sdk/polygonid-sdk/credential/remove-claims",
+                "wallet/wallet-sdk/polygonid-sdk/credential/update-claims"
               ]
             },
             {
@@ -250,9 +253,23 @@ module.exports = {
                   },
                   items:[
                     "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/authenticate",
+                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/fetch-and-save",
                     "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-proofs",
-                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-vocabs",
-                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-iden3-msg"
+                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-iden3-msg",
+                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-schemas",
+                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-filters",
+                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-claims-from-iden3-message",
+                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-claims-rev-nonce-from-iden3-message",
+                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-interactions",
+                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/add-interaction",
+                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/remove-interactions",
+                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/update-interaction",
+                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/clean-schema-cache",
+                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/add-did-profile-info",
+                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-did-profile-info",
+                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-did-profile-info-list",
+
+
                   ]
                 }
               ]
@@ -281,6 +298,22 @@ module.exports = {
                 "wallet/wallet-sdk/polygonid-sdk/profile/get-profiles",
                 "wallet/wallet-sdk/polygonid-sdk/profile/add-profile",
                 "wallet/wallet-sdk/polygonid-sdk/profile/remove-profile"
+              ]
+            },
+            {
+              type: "category",
+              label: "Error Handling",
+              link: {
+                type: "generated-index",
+                description: "This session presents a set of methods used to clarify error comunnication and facilitate debugging."
+              },
+              items: [
+                "wallet/wallet-sdk/polygonid-sdk/error-handling/switch-stacktrace",
+                "wallet/wallet-sdk/polygonid-sdk/error-handling/stacktrace-stream",
+                "wallet/wallet-sdk/polygonid-sdk/error-handling/get-stacktrace",
+                "wallet/wallet-sdk/polygonid-sdk/error-handling/error-trace-stream",
+                "wallet/wallet-sdk/polygonid-sdk/error-handling/get-error-trace",
+
               ]
             }
           ]

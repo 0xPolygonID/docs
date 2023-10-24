@@ -18,19 +18,22 @@ An Integrator can fetch credentials stored on an Issuer and then save them in hi
 
 ```dart
 Future<List<ClaimEntity>> fetchAndSaveClaims({
-  required OfferIden3MessageEntity message,
-  required String did,
-  required String privateKey
+  required Iden3MessageEntity message,
+  required String genesisDid,
+  BigInt? profileNonce,
+  required String privateKey,
 });  
 ``` 
 
-The `fetchAndSaveClaims()` function uses `OfferIden3MessageEntity`, `privateKey`, and `did` as the input parameters. and returns a list of `ClaimEntity`.
+The `fetchAndSaveClaims()` function uses `Iden3MessageEntity`, `privateKey`, `genesisDid` and `profileNonce` as the input parameters. and returns a list of `ClaimEntity`.
 
-`OfferIden3MessageEntity` is a type of `Iden3MessageEntity`. As you can see in the [iden3 Message API](/docs/wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-iden3-msg.md) tutorial, we get `Iden3MessageEntity` when we call the `getIden3Message()`method. 
+`OfferIden3MessageEntity` is a type of `Iden3MessageEntity` and is needed as `message` input, otherwise an exception of type InvalidIden3MsgTypeException will be thrown. As you can see in the [iden3 Message API](/docs/wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-iden3-msg.md) tutorial, we get `Iden3MessageEntity` when we call the `getIden3Message()`method. 
 
 `privateKey` of the identity is a key that is used to access the sensitive information of the identity. This key is also used for generating proofs by using the credentials associated with the identity. 
 
-`did` is the unique ID of the identity. 
+`genesisDid` is the unique ID of the identity. 
+
+`profileNonce` is the nonce of the profile used from the identity to obtain the DID identifier.
 
 ## Wallet-Issuer Interaction for Fetching Credentials
  

@@ -16,27 +16,31 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 An Integrator, in order to use the services of an Issuer, needs to authenticate itself with that Issuer. For this to happen, the Integrator needs to call the `authenticate()` method. 
 
-The `authenticate()` method uses `Iden3MessageEntity`, `did`, `profileNonce`, `privateKey`, and an optional `pushToken` as input parameters.
+The `authenticate()` method uses `Iden3MessageEntity`, `genesisDid`, `privateKey`, and optional `pushToken`, `profileNonce`, `nonRevocationProofs` and `challenge` as input parameters.
 
-```
+```dart
 Future<void> authenticate({
-  required Iden3MessageEntity message,
-  required String did,
-  int? profileNonce,
-  required String privateKey,
-  String? pushToken
-});
+    required Iden3MessageEntity message,
+    required String genesisDid,
+    BigInt? profileNonce,
+    required String privateKey,
+    String? pushToken,
+    Map<int, Map<String, dynamic>>? nonRevocationProofs,
+    String? challenge,
+  });
 ```
 
 - `Iden3MessageEntity` is the Iden3 message retrieved from the `getIden3Message()` method.
 
-- `did` is the unique ID of the identity.
+- `genesisDid` is the unique ID of the identity.
 
 - `profileNonce` is the nonce of the profile of an identity.
 
 - `privateKey` of the identity is a key that is used to access the sensitive information of the identity. This key is also used for generating proofs by using the credentials associated with the identity.
 
 - `pushToken` lets an Integrator receive the Iden3 messages through push notification.
+
+- `nonRevocationProofs` is a map of non-revocation proofs associated with the credentials of the identity.
 
 ## Steps
 

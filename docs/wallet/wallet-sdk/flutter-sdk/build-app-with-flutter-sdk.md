@@ -12,6 +12,12 @@ keywords:
   - sdk
 ---
 
+:::tip
+
+Follow the instructions on the [<ins>Flutter docs</ins>](https://docs.flutter.dev/get-started/install) to install and get started with Flutter and the Dart programming language.
+
+:::
+
 Once your Flutter and Dart plugins are installed, you can start creating your first Flutter app.
  
 1. On the Terminal or Powershell, change your directory to where you want to install your app:

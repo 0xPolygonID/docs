@@ -21,7 +21,7 @@ Future<String> getDidIdentifier({
   required String privateKey, 
   required String blockchain, 
   required String network, 
-  int? profileNonce
+  BigInt? profileNonce
 }); 
 ```
 

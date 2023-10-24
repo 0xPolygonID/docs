@@ -16,15 +16,20 @@ The `getProofs` function uses identity to generate the zero-knowledge proofs req
  
 ## Get Proof
 
-The `getProofs()` method uses `Iden3MessageEntity`, `did`, `profileNonce`, and `privateKey` as the input parameters and returns a `JWZProofEntity`.
+The `getProofs()` method uses `Iden3MessageEntity`, `did`, `profileNonce`, and `privateKey` as the input parameters and returns a list of `Iden3commProofEntity`.
 
-```
-Future<List<JWZProofEntity>> getProofs({
-  required Iden3MessageEntity message,
-  required String did,
-  int? profileNonce,
-  required String privateKey
-}); 
+```dart
+Future<List<Iden3commProofEntity>> getProofs({
+    required Iden3MessageEntity message,
+    required String genesisDid,
+    BigInt? profileNonce,
+    required String privateKey,
+    String? challenge,
+    String? ethereumUrl,
+    String? stateContractAddr,
+    String? ipfsNodeUrl,
+    Map<int, Map<String, dynamic>>? nonRevocationProofs,
+  }); 
 ```
    
 - `Iden3MessageEntity`: returned from `getIden3Message` method after a user scans the QR code on Issuer/Verifier website. 
@@ -35,7 +40,7 @@ Future<List<JWZProofEntity>> getProofs({
 
 - `did` is the unique ID of the identity. 
 
-- `JWZProofEntity`is the JWZ message that the Integrator sends to the Issuer/Verifier after scanning the QR code. Read more about JWZ [here](/docs/wallet/wallet-sdk/polygonid-sdk/iden3comm/jwz.md).
+- `Iden3commProofEntity` is the object containing the proof that the Integrator sends to the Issuer/Verifier after scanning the QR code. Read more about JWZ [here](/docs/wallet/wallet-sdk/polygonid-sdk/iden3comm/jwz.md).
 
 :::info
 
