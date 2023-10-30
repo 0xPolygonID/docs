@@ -19,17 +19,12 @@
    
 </p>
 
-Polygon ID Documentation is the documentation hub providing extensive documentation, community resources, and guides for enthusiasts and developers interested in learning about or building on zkEVM.
+Polygon ID Documentation is the documentation hub providing extensive documentation, community resources, and guides for enthusiasts and developers interested in learning about or building solutions using Polygon ID.
 
-The [Polygon ID Documentation](https://id.polygon.technology) website is built using [Docusaurus](https://docusaurus.io/), 
+The [Polygon ID Documentation](https://devs.polygonid.com) website is built using [Docusaurus](https://docusaurus.io/), 
 a modern static website generator to build optimized websites quickly.
 
 ## Contribute to Polygon ID Documentation
-
-We believe one of the things that makes Polygon Labs unique is its coherent design, and we seek to retain this defining 
-characteristic across all our solutions. We have defined some guidelines to ensure new contributions only ever enhance the 
-developer docs from the outset.
-
 ### Requirements
 
 Note that on macOS, you also need Xcode and Command Line Tools.
@@ -37,7 +32,7 @@ Note that on macOS, you also need Xcode and Command Line Tools.
 * Install [Node.js](https://nodejs.org/en/download/) version >= 16.14.1
 * Install [Yarn](https://yarnpkg.com/getting-started/install) version >= 1.22  
 
-### Run the Wiki locally
+### Run the docs locally
 
 1. Fork the repo. 
    > For help, refer to [GitHub Docs: Fork a repo](https://help.github.com/en/articles/fork-a-repo).
@@ -58,7 +53,7 @@ Note that on macOS, you also need Xcode and Command Line Tools.
    > For help, see [GitHub Docs: Configuring a remote for a fork](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork).
    
     ```
-    git remote add upstream https://github.com/maticnetwork/id-docs
+    git remote add upstream https://github.com/0xPolygonID/id-docs
     ```
 
 5. If you have already cloned the repository, be sure to sync your fork with the latest changes. 
@@ -76,7 +71,7 @@ Note that on macOS, you also need Xcode and Command Line Tools.
     yarn install
     ```
     
-   The site is built using Docusaurus. You may need to install Docusaurus before running the Wiki locally.
+   The site is built using Docusaurus. You may need to install Docusaurus before running the docs locally.
 
    ```
    yarn add docusaurus
@@ -88,7 +83,7 @@ Note that on macOS, you also need Xcode and Command Line Tools.
    yarn upgrade @docusaurus/core@latest @docusaurus/preset-classic@latest
    ```
 
-7. Run the Wiki locally. 
+7. Run the docs locally. 
    The following command will start a local development server and open a browser window. 
    Most changes are reflected live without having to restart the server.
 
@@ -98,7 +93,7 @@ Note that on macOS, you also need Xcode and Command Line Tools.
 
 ### Make changes using Git GUI and code editor
 
-After running the Wiki locally on your machine, use a code editor to apply your changes before submitting 
+After running the docs locally on your machine, use a code editor to apply your changes before submitting 
 your PR. Note that you must have a GitHub account and an understanding of Markdown syntax.
 
 1. Create a new branch for your changes.
@@ -107,7 +102,7 @@ your PR. Note that you must have a GitHub account and an understanding of Markdo
     git checkout -b [new_branch_name]
     ```
 
-2. Commit your changes. Please be sure to review our [Git Rules](https://wiki.polygon.technology/docs/contribute/orientation#git-rules). 
+2. Commit your changes. 
    In the commit message, please reference the issue it resolves. 
    For help, see [GitHub Docs: Linking a pull request to an issue using a keyword](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword).
 
@@ -137,11 +132,11 @@ You can apply UI changes, sidebar, and configuration design through the followin
 - To modify the website page layout, edit **docusaurus.config.js**
 - To modify the blocks structure and the footer links, edit **src/pages/index.js**
 
-### Making changes using the Wiki website
+### Making changes using the Polygon Id docs website
 
 You can easily submit an edit suggestion. Note that you must have a GitHub account and good knowledge of Markdown syntax.
 
-1. Navigate to the [Polygon ID Documentation page](https://id.polygon.technology) that you want to edit.
+1. Navigate to the [Polygon ID Documentation page](https://devs.polygonid.com) that you want to edit.
 
 2. Scroll down until the end of that page.
 
@@ -163,13 +158,13 @@ You can easily submit an edit suggestion. Note that you must have a GitHub accou
 10. Click on the green button **Propose changes** to submit your changes. Note that submitting a change will write 
     it to a new branch in your fork.
 
-One of the Wiki maintainers will review your PR and either accept it or submit their review.
+One of the docs maintainers will review your PR and either accept it or submit their review.
 
 Acceptable PRs will be approved & merged into the `main` branch.
 
 ## Submit an Issue
 
-- Create a [new issue](https://github.com/maticnetwork/id-docs/issues/new/choose) to report a bug, request a feature, 
+- Create a [new issue](https://github.com/0xPolygonID/id-docs/issues) to report a bug, request a feature, 
   or suggest changes.
 
 - Comment on the issue if you want to be assigned to it so [our team can assign the issue to you](https://github.blog/2019-06-25-assign-issues-to-issue-commenters/).
