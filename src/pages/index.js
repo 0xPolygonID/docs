@@ -86,24 +86,6 @@ function Home() {
           </section>
         </div>
         {/*<div className="section-divider-40"></div>*/}
-        <section className="newsletter">
-          <div className="newsletter_anim-wrapper pb_intersection">
-            <div className="animation_embed w-embed w-iframe">
-              <iframe src="https://player.vimeo.com/video/791149043?h=a0b62c3daa&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1&amp;autoplay=1&amp;background=1" frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen="" style={{position: 'absolute', top:0, left:0, width:'100%', height:'100%'}} title="Hero" data-ready="true"></iframe>
-            </div>
-          </div>
-          <div className="padding-global">
-            <div className="container-medium">
-              <div className="padding-section-large">
-                <div className="newsletter-section_max-width">
-                  <div className="tiny-text">{contentData.stayUpToDate.title}</div>
-                  <div className="padding-bottom padding-xsmall"></div>
-                  <h3 className="heading-style-h4"><a href={contentData.stayUpToDate.link} target="_blank"><span className="white-text">{contentData.stayUpToDate.linkText}</span><span className="newsletter_link-icon" /></a></h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
         <Overlay isOpen={isOpen} onClose={toggleOverlay}>
           <iframe
             src={contentData.headVideoLink}
