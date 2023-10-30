@@ -194,7 +194,7 @@ export const contentData = {
             {
                 title: 'Architecture',
                 info: 'Watch on Youtube',
-                link: 'https://www.youtube.com/watch?v=V7xggL4msB4&list=PLslsfan1R_z3-COvNH6FhBJCDrWNGNdZL'
+                link: 'https://www.youtube.com/playlist?list=PLRD3rkREa7mLjDB1qL4KkCtob6kPJIvhS'
             },
             {
                 title: 'Inside Polygon ID',
