@@ -189,7 +189,7 @@ export const contentData = {
             {
                 title: 'Fundamentals',
                 info: 'Watch on Youtube',
-                link: 'https://www.youtube.com/watch?v=6octwuwi4Gs&list=PLslsfan1R_z0Fq9olucMTEOeHunoBX58h'
+                link: 'https://www.youtube.com/playlist?list=PLRD3rkREa7mLLJ6jfUTygXV1iK_AvsDdw'
             },
             {
                 title: 'Architecture',
@@ -214,21 +214,21 @@ export const contentData = {
         tabs: [
             {
                 name: 'WallID',
-                contentText: 'First ever browser wallet with zero knowledge protocol that allows users to verify credentials in their web browser. Products used:',
+                contentText: 'First ever browser wallet with zero knowledge protocol that allows users to verify credentials in their web browser.',
                 contentListTitle: 'Products used:',
                 contentList: [
                     'JS SDK'
                 ],
-                link: 'https://www.youtube.com/embed/3noHXFVdiKE'
+                link: 'https://www.youtube.com/embed/I6fqJfH8dyk?si=mR5GKg5iDwfWADf'
             },
             {
-                name: 'IDfy',
-                contentText: 'IDfy builds technology solutions to help companies accurately identify people, run background checks, conduct KYC, mitigate lending risks, and onboard associates. IDfy issues credentials around Personhood, Uniqueness, KYC, KYB which can be consumed to build sybil resistance and regulatory compliant Web3 platforms.',
+                name: 'Synaps',
+                contentText: 'Synaps provides a Proof of Life solution enabling individuals to prove their humanity when interacting with dApps and protocols.',
                 contentListTitle: 'Products used:',
                 contentList: [
-                    'JS SDK'
+                    'Issuer Node'
                 ],
-                link: 'https://www.youtube.com/embed/Yz0UVs5B6Wk'
+                link: 'https://www.youtube.com/embed/ZK0fXk2X_mE?si=PklySL1YTrXxVMhe'
             },
             {
                 name: 'Gatekeeper',
@@ -237,7 +237,7 @@ export const contentData = {
                 contentList: [
                     'JS SDK'
                 ],
-                link: 'https://www.youtube.com/embed/Mj5YivAiIWE'
+                link: 'https://www.youtube.com/embed/LRs62z8qCnc?si=MR4njeNJCPyM-mGE'
             }
         ]
     },
