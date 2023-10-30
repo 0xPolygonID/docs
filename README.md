@@ -21,7 +21,7 @@
 
 Polygon ID Documentation is the documentation hub providing extensive documentation, community resources, and guides for enthusiasts and developers interested in learning about or building solutions using Polygon ID.
 
-The [Polygon ID Documentation](https://polygon.technology/polygon-id) website is built using [Docusaurus](https://docusaurus.io/), 
+The [Polygon ID Documentation](https://devs.polygonid.com) website is built using [Docusaurus](https://docusaurus.io/), 
 a modern static website generator to build optimized websites quickly.
 
 ## Contribute to Polygon ID Documentation
