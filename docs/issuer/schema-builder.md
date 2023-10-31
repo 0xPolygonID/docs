@@ -117,3 +117,11 @@ Learn about the advanced features of the Schema Builder in the video below:
 #### Publish on IPFS or Download JSON file
 The last step of building a new schema is publishing it on [IPFS](https://ipfs.tech/). As an alternative, you can download the JSON file and store it in the location of your choice.
     
+:::info Non-merklized credentials
+
+Non-merklized credentials are specially important for on-chain issuers, because Solidity can't fetch JSON-LD schemas directly via HTTP or IPFS. 
+
+Here is an example of [a non-merklized schema](https://github.com/iden3/claim-schema-vocab/blob/main/schemas/json-ld/player-nonmerklized.jsonld). Compare it to [this merklized one](https://github.com/iden3/claim-schema-vocab/blob/main/schemas/json-ld/kyc-v4.jsonld). Notice that the schema is defined by utilizing an `iden3_serialization` attribute.
+
+Read more about non-merklized credentials on the <ins>[Iden3 documentation](https://docs.iden3.io/protocol/non-merklized/)</ins>.
+:::
