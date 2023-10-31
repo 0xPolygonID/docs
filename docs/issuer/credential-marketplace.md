@@ -52,7 +52,7 @@ Searching for credentials on the Credential Marketplace by using a comprehensive
 
 ## Ecosystem
 
-The Ecosystem page shows all the projects involved in the Polygon ID environment, be they verifiers, issuers or integrators. Those are organizations that really stand out with their solutions for the Digital Identity challenge by leveraging at least one of Polygon ID’s tools and products.
+The Ecosystem page shows all the projects involved in the Polygon ID environment, be they verifiers, issuer, integrators and wallet providers. Those are organizations that really stand out with their solutions for the Digital Identity challenge by leveraging at least one of Polygon ID’s tools and products.
 
 <div align="center">
 <img src= {useBaseUrl("img/credential-marketplace/ecosystem.png")} align="center" length="100" width="600" />
@@ -99,9 +99,3 @@ Before the credential store goes live, credential providers need to perform 2 ta
 ### Taking the store offline
 
 Issuers can make their stores temporarily private without actually removing them. This is useful when they want to rework their offering or omit their credentials for the moment without deleting them.
-
-:::danger Removing organization
-
-In case the issuers want to completely withdraw from the marketplace, their organization and offering will be deleted permanently.
-
-:::
