@@ -139,13 +139,13 @@ module.exports = {
           label: 'Learn',
           items: [
             {
-              href: 'https://www.youtube.com/watch?v=6octwuwi4Gs&list=PLslsfan1R_z0Fq9olucMTEOeHunoBX58h',
+              href: 'https://www.youtube.com/playlist?list=PLRD3rkREa7mLLJ6jfUTygXV1iK_AvsDdw',
               label: 'Fundamentals',
               target: '_blank',
               rel: null,
             },
             {
-              href: 'https://www.youtube.com/watch?v=V7xggL4msB4&list=PLslsfan1R_z3-COvNH6FhBJCDrWNGNdZL',
+              href: 'https://www.youtube.com/playlist?list=PLRD3rkREa7mLjDB1qL4KkCtob6kPJIvhS',
               label: 'Architecture',
               target: '_blank',
               rel: null,
