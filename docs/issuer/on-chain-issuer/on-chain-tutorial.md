@@ -20,12 +20,6 @@ There are three main components in this application:
 2. Server for user authorization
 3. Front-end component for communication with Metamask
 
-:::warning
-
-Currently, the state contract on the mainnet does not support onchain issuers. Please, use the Mumbai network instead.
-
-:::
-
 ## Requirements:
 1. Node js => 18.x
 2. Go => 1.20.x
