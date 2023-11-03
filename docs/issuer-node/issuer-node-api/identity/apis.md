@@ -72,7 +72,7 @@ A few variations of the metadata can be:
 :::info Identity Types
 
 As you can see above, there are two options for Identity types: Baby Jubjub and Ethereum DID.
-Baby Jubjub keys are used to create regular identities, but that method can't create an identity out of an Ethereum address. Instead, users can choose the "ETH" type to use Ethereum accounts to authenticate, prove statements and control identity. 
+Baby Jubjub keys are used to create regular identities, but that method can't create an identity out of an Ethereum address. Instead, users can choose the "ETH" type to use Ethereum accounts to authenticate, prove statements and control identity. It is important to note that the Ethereum address must have funds to publish its state onchain.
 
 Read more about Identity types on <ins>[Iden3 Docs](https://docs.iden3.io/getting-started/identity/identity-types/)</ins>.
 
