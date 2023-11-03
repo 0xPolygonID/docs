@@ -151,7 +151,7 @@ module.exports = {
               rel: null,
             },
             {
-              href: 'https://www.youtube.com/watch?v=gd9rxlq1GxM&list=PLslsfan1R_z2PW_cRkBumQiUJs4tPc455',
+              href: 'https://www.youtube.com/playlist?list=PLRD3rkREa7mIgx_RHZdin74vEb2A1Evek',
               label: 'Inside Polygon ID',
               target: '_blank'
             },
