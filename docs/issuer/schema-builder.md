@@ -81,7 +81,7 @@ If you already have access to a file containing a JSON schema or a URL where tha
 Learn more about the Schema Builder in the video below: 
 
 <div align="center">
-<iframe src="https://www.youtube.com/embed/lW2atrdpFaU?si=MLdPaSHcBVgm9Mvr" width="800" length="800" height="450" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/IHFzM0F-KAI?si=42ob9hz4gG6tpEHQ" width="800" length="800" height="450" allowfullscreen></iframe>
 </div>
 
 ### Schema definition
