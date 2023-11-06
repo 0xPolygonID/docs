@@ -39,7 +39,7 @@ Issuers can apply to register their organizations within the marketplace. Upon s
 Verifiers have a carefully selected range of issuers and their credentials at their disposal, which might serve as an enforcement for the trust between the Issuer and the Verifier. They can contact those issuers to sign contracts.
 
 <div align="center">
-<img src= {useBaseUrl("img/credential-marketplace/homepage.png")} align="center" length="100" width="500" />
+<img src= {useBaseUrl("img/credential-marketplace/homepage.png")} align="center" length="100" width="600" />
 </div>
 
 ## Credentials
@@ -47,7 +47,7 @@ Verifiers have a carefully selected range of issuers and their credentials at th
 Searching for credentials on the Credential Marketplace by using a comprehensive filter, where users can consider the major categories, pricing, data storage options, credential proof type, compliance and many other features.
 
 <div align="center">
-<img src= {useBaseUrl("img/credential-marketplace/credentials.png")} align="center" length="100" width="600" />
+<img src= {useBaseUrl("img/credential-marketplace/credentials.png")} align="center" length="100" width="700" />
 </div>
 
 ## Ecosystem
@@ -55,7 +55,7 @@ Searching for credentials on the Credential Marketplace by using a comprehensive
 The Ecosystem page shows all the projects involved in the Polygon ID environment, be they verifiers, issuer, integrators and wallet providers. Those are organizations that really stand out with their solutions for the Digital Identity challenge by leveraging at least one of Polygon ID’s tools and products.
 
 <div align="center">
-<img src= {useBaseUrl("img/credential-marketplace/ecosystem.png")} align="center" length="100" width="600" />
+<img src= {useBaseUrl("img/credential-marketplace/ecosystem.png")} align="center" length="100" width="700" />
 </div>
 
 ## Issuer Portal
@@ -79,6 +79,11 @@ Adding credentials involves setting all of its characteristics, such as general 
 <div align="center">
 <img src= {useBaseUrl("img/credential-marketplace/add-credential-form.png")} align="center" length="100" width="700" />
 </div>
+<br></br>
+
+:::info 
+As one of its first settings, you can decide whether the new credential should be visible or not in the marketplace.  
+:::
 
 ### Setting up contact information
 
