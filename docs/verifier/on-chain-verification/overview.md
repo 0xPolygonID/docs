@@ -376,20 +376,9 @@ Scanning the QR with their Polygon ID Wallet, users will be able to generate pro
 
 The same proof generation request can also be delivered to users via Deep Linking. In order to do so, it is necessary to [encode](https://www.base64encode.org/) the JSON file to Base64 Format. The related deep link would be `iden3comm://?i_m={{base64EncodedJsonHere}}`. For example, in this specific case the deep link would be: `iden3comm://?i_m=ewogICAgImlkIjogIjdmMzhhMTkzLTA5MTgtNGE0OC05ZmFjLTM2YWRmZGI4YjU0MiIsCiAgICAidHlwIjogImFwcGxpY2F0aW9uL2lkZW4zY29tbS1wbGFpbi1qc29uIiwKICAgICJ0eXBlIjogImh0dHBzOi8vaWRlbjMtY29tbXVuaWNhdGlvbi5pby9wcm9vZnMvMS4wL2NvbnRyYWN0LWludm9rZS1yZXF1ZXN0IiwKICAgICJ0aGlkIjogIjdmMzhhMTkzLTA5MTgtNGE0OC05ZmFjLTM2YWRmZGI4YjU0MiIsCiAgICAiYm9keSI6IHsKICAgICAgICAicmVhc29uIjogImFpcmRyb3AgcGFydGljaXBhdGlvbiIsCiAgICAgICAgInRyYW5zYWN0aW9uX2RhdGEiOiB7CiAgICAgICAgICAgICJjb250cmFjdF9hZGRyZXNzIjogIjxFUkMyMFZlcmlmaWVyQWRkcmVzcz4iLAogICAgICAgICAgICAibWV0aG9kX2lkIjogImI2ODk2N2UyIiwKICAgICAgICAgICAgImNoYWluX2lkIjogODAwMDEsCiAgICAgICAgICAgICJuZXR3b3JrIjogInBvbHlnb24tbXVtYmFpIgogICAgICAgIH0sCiAgICAgICAgInNjb3BlIjogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiaWQiOiAxLAogICAgICAgICAgICAgICAgImNpcmN1aXRJZCI6ICJjcmVkZW50aWFsQXRvbWljUXVlcnlTaWdWMk9uQ2hhaW4iLAogICAgICAgICAgICAgICAgInF1ZXJ5IjogewogICAgICAgICAgICAgICAgICAgICJhbGxvd2VkSXNzdWVycyI6IFsKICAgICAgICAgICAgICAgICAgICAgICAgIioiCiAgICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgICAgICAiY29udGV4dCI6ICJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vaWRlbjMvY2xhaW0tc2NoZW1hLXZvY2FiL21haW4vc2NoZW1hcy9qc29uLWxkL2t5Yy12My5qc29uLWxkIiwKICAgICAgICAgICAgICAgICAgICAiY3JlZGVudGlhbFN1YmplY3QiOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICJiaXJ0aGRheSI6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICIkbHQiOiAyMDAyMDEwMQogICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAidHlwZSI6ICJLWUNBZ2VDcmVkZW50aWFsIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgXQogICAgfQp9`
 
-## User Demo: Claim the Airdrop!
+## Claim the Airdrop
 
-This video shows how a user can use their PolygonID wallet app to claim a ERC-20 token airdrop. To join the airdrop users are required to have a Credential of type `KYCAgeCredential` attesting that they have been born before 01/01/2002.
-
-<div align="center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NvPfh3nqeEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
-<div class="video-wrapper">
- 
-</div>
-
-
-Or you can directly test it by scanning the QR Code below using your Polygon ID App: 
+You can directly test it by scanning the QR Code below using your Polygon ID App: 
 
 <div align="center">
 <img src= "/img/qr-code-on-chain-verification.png" align="center" width="400"/>
