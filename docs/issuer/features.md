@@ -51,3 +51,10 @@ On-chain Revocation status leverages the blockchain decentralized storage to mak
 <img src= {useBaseUrl("img/blockchain.png")} align="center" />
 </div>
 
+## Non-merklized credentials
+
+Non-merklized credentials are specially important for on-chain issuers, because smart contracts built on Solidity can't fetch JSON-LD schemas directly via HTTP or IPFS. 
+
+Here is an example of [a non-merklized schema](https://github.com/iden3/claim-schema-vocab/blob/main/schemas/json-ld/player-nonmerklized.jsonld). Compare it to [this merklized one](https://github.com/iden3/claim-schema-vocab/blob/main/schemas/json-ld/kyc-v4.jsonld). Notice that the schema is defined by utilizing an `iden3_serialization` attribute.
+
+Read more about non-merklized credentials on the [Iden3 documentation](https://docs.iden3.io/protocol/non-merklized/).
