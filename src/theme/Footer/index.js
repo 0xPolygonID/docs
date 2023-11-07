@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import classnames from 'classnames';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { CookieConsent } from '../../components';
+
+const COOKIES_ACCEPTED_KEY = "areCookiesAccepted";
 
 function FooterLink({to, href, label, ...props}) {
   const toUrl = useBaseUrl(to);
@@ -29,12 +32,29 @@ function Footer() {
   const { siteConfig = {} } = context;
   const { themeConfig = {} } = siteConfig;
   const { footer } = themeConfig;
+  const [isCookieConsentOpen , setIsCookieConsentOpen ] = useState(false);
 
   const { copyright, links = [] } = footer || {};
 
   if (!footer) {
     return null;
   }
+
+  const onCookieConsentAccept = () => {
+    setIsCookieConsentOpen(false);
+    localStorage.setItem(COOKIES_ACCEPTED_KEY, "true");
+  };
+
+  const onCookieConsentDecline = () => {
+    setIsCookieConsentOpen(false);
+    localStorage.setItem(COOKIES_ACCEPTED_KEY, "false");
+  };
+
+  useEffect(() => {
+    if (localStorage.getItem(COOKIES_ACCEPTED_KEY) === null) {
+      setIsCookieConsentOpen(true);
+    }
+  }, []);
 
   return (
     <footer
@@ -124,6 +144,12 @@ function Footer() {
             Copyright © {new Date().getFullYear()} | ZKID Labs AG.
           </div>
       </div>
+      {isCookieConsentOpen && (
+        <CookieConsent
+          onAccept={onCookieConsentAccept}
+          onDecline={onCookieConsentDecline}
+        />
+      )}
     </footer>
   );
 }

@@ -230,11 +230,14 @@ module.exports = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
-        gtag: {
-          // Need to create new tags for zkEVM docs
-           trackingID: 'GTM-5TKTB44',
-           anonymizeIP: true,
-        },
+        ...(localStorage.getItem("areCookiesAccepted") === "true"
+          ? {
+              gtag: {
+                trackingID: "GTM-5TKTB44",
+                anonymizeIP: true,
+              },
+            }
+          : {}),
       },
     ],
   ],

@@ -7,3 +7,4 @@ export * from './FAQSection';
 export * from './FAQAccordion';
 export * from './LearnSection';
 export * from './Overlay';
+export * from './CookieConsent';

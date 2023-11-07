@@ -67,9 +67,9 @@ export function CookieConsent({ onAccept, onDecline }) {
               <path
                 d="M1 11L11 1M11 1V11M11 1H1"
                 stroke="white"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </a>
