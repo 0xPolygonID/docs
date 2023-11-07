@@ -23,6 +23,7 @@ module.exports = {
       collapsed: true,
       items: [
         "issuer/issuer-overview",
+        "issuer/features",
         {
           type: "category",
           label: "Issuer Node Core API",
