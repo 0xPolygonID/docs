@@ -230,14 +230,6 @@ module.exports = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
-        ...(localStorage.getItem("areCookiesAccepted") === "true"
-          ? {
-              gtag: {
-                trackingID: "GTM-5TKTB44",
-                anonymizeIP: true,
-              },
-            }
-          : {}),
       },
     ],
   ],

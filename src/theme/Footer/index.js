@@ -4,8 +4,13 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { CookieConsent } from '../../components';
+import TagManager from "react-gtm-module";
 
 const COOKIES_ACCEPTED_KEY = "areCookiesAccepted";
+const GTAG_ID = null;
+
+const areCookiesAccepted =
+  localStorage.getItem(COOKIES_ACCEPTED_KEY) === "true";
 
 function FooterLink({to, href, label, ...props}) {
   const toUrl = useBaseUrl(to);
@@ -53,6 +58,14 @@ function Footer() {
   useEffect(() => {
     if (localStorage.getItem(COOKIES_ACCEPTED_KEY) === null) {
       setIsCookieConsentOpen(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (areCookiesAccepted && GTAG_ID) {
+      TagManager.initialize({
+        gtmId: GTAG_ID,
+      });
     }
   }, []);
 
