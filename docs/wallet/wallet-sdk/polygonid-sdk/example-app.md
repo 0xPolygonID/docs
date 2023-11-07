@@ -17,7 +17,7 @@ The following steps illustrate how to get things started and then use this plugi
 
 ## Initial Setup
 
-1. **Install Flutter**: Install Flutter SDK. To know the steps in detail, read the tutorial [here](/docs/wallet/wallet-sdk/flutter-sdk/install-flutter-sdk.md).
+1. **Install Flutter**: Install Flutter SDK. To know the steps in detail, read the tutorial [here](https://docs.flutter.dev/get-started/install).
 
 2. **Clone Repository**: Clone the [polygonid-sdk-repository](https://github.com/iden3/polygonid-flutter-sdk.git).
  
@@ -168,7 +168,7 @@ If no previously created Identifier is found, the SDK first needs to create an i
 Future<void> createIdentity() async {
   // we get the sdk instance previously initialized
   final sdk = PolygonIdSdk.I;
-  PrivateIdentityEntity identity = await sdk.identity.createIdentity(secret: secretKey);
+  PrivateIdentityEntity identity = await sdk.identity.addIdentity(secret: secretKey);
 }
 ```
 
