@@ -39,7 +39,7 @@ function Footer() {
   const { footer } = themeConfig;
   const [isCookieConsentOpen , setIsCookieConsentOpen ] = useState(false);
 
-  const { copyright, links = [] } = footer || {};
+  const { links = [] } = footer || {};
 
   if (!footer) {
     return null;
@@ -67,7 +67,7 @@ function Footer() {
         gtmId: GTAG_ID,
       });
     }
-  }, []);
+  }, [areCookiesAccepted]);
 
   return (
     <footer
