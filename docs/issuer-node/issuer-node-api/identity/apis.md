@@ -43,12 +43,11 @@ An example of a `didMetaData` passed in the request body of the `Create Identity
     "didMetadata":{
         "method": "polygonid",
         "blockchain":"polygon",
-        "network": "mumbai"
+        "network": "mumbai",
+        "type": "BJJ"
     }
 }
 ```
-
-:::info
 
 A few variations of the metadata can be:
 
@@ -66,6 +65,17 @@ A few variations of the metadata can be:
     - "goerli"
     - "unknown"
 
+- type:
+    - "BJJ"
+    - "ETH"   
+
+:::info Identity Types
+
+As you can see above, there are two options for Identity types: Baby Jubjub and Ethereum DID.
+Baby Jubjub keys are used to create regular identities, but that method can't create an identity out of an Ethereum address. Instead, users can choose the "ETH" type to use Ethereum accounts to authenticate, prove statements and control identity. It is important to note that the Ethereum address must have funds to publish its state onchain.
+
+Read more about Identity types on <ins>[Iden3 Docs](https://docs.iden3.io/getting-started/identity/identity-types/)</ins>.
+
 :::
 
 
@@ -78,6 +88,7 @@ The Issuer Node responds by sending a response message that contains:
 For each call to the `Create Identity`, a random Identifier is created. 
 
 <a href="https://self-hosted-platform.polygonid.me/#post-/v1/identities" target="_blank">API Reference</a>
+
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/dark-star-200015/workspace/public/request/23322631-ccf43950-f7a6-4155-a54b-4755d92f0b48)
 
 
