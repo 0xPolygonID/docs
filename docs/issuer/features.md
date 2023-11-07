@@ -29,7 +29,7 @@ Due to its public nature, the Ethereum Polygon DID doesn't support private profi
 :::
 
 ## Revocation Status
-Mobile applications can get the Revocation Status of a particular credential by requesting that information straight from the Issuer Node. However, if the Issuer Node is offline for some reason, that communication would not work. The Revocation Hash Service and The On-chain Revocation Status are two solutions for this issue. 
+Mobile applications can get the Revocation Status of a particular credential by requesting that information straight from the Issuer Node. However, if the Issuer Node is offline for some reason, that communication would not work. The Revocation Hash Service and the On-chain Revocation Status are two solutions for this issue. 
 
 <div align="center">
 <img src= {useBaseUrl("img/without-rhs.png")} align="center" />
