@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import classnames from 'classnames';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { CookieConsent } from '../../components';
+import TagManager from "react-gtm-module";
+
+const COOKIES_ACCEPTED_KEY = "areCookiesAccepted";
+const GTAG_ID = null;
+
+const areCookiesAccepted =
+  localStorage.getItem(COOKIES_ACCEPTED_KEY) === "true";
 
 function FooterLink({to, href, label, ...props}) {
   const toUrl = useBaseUrl(to);
@@ -29,12 +37,37 @@ function Footer() {
   const { siteConfig = {} } = context;
   const { themeConfig = {} } = siteConfig;
   const { footer } = themeConfig;
+  const [isCookieConsentOpen , setIsCookieConsentOpen ] = useState(false);
 
-  const { copyright, links = [] } = footer || {};
+  const { links = [] } = footer || {};
 
   if (!footer) {
     return null;
   }
+
+  const onCookieConsentAccept = () => {
+    setIsCookieConsentOpen(false);
+    localStorage.setItem(COOKIES_ACCEPTED_KEY, "true");
+  };
+
+  const onCookieConsentDecline = () => {
+    setIsCookieConsentOpen(false);
+    localStorage.setItem(COOKIES_ACCEPTED_KEY, "false");
+  };
+
+  useEffect(() => {
+    if (localStorage.getItem(COOKIES_ACCEPTED_KEY) === null) {
+      setIsCookieConsentOpen(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (areCookiesAccepted && GTAG_ID) {
+      TagManager.initialize({
+        gtmId: GTAG_ID,
+      });
+    }
+  }, [areCookiesAccepted]);
 
   return (
     <footer
@@ -124,6 +157,12 @@ function Footer() {
             Copyright © {new Date().getFullYear()} | ZKID Labs AG.
           </div>
       </div>
+      {isCookieConsentOpen && (
+        <CookieConsent
+          onAccept={onCookieConsentAccept}
+          onDecline={onCookieConsentDecline}
+        />
+      )}
     </footer>
   );
 }
