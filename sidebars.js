@@ -96,6 +96,7 @@ module.exports = {
             "issuer/schema-exs",
           ]
         },
+        "issuer/credential-marketplace",
         "contracts/credential-linkage",
         "issuer/cred-issue-methods",
         "issuer-node/issue-credential-cli",
