@@ -250,7 +250,7 @@ npx hardhat run polygon-mumbai scripts/deploy.js
 The actual ZKP request "to be born before 01/01/2002" hasn't been added to the Smart Contract yet. To do so it is necessary to call <a href="https://github.com/iden3/contracts/blob/master/contracts/verifiers/ZKPVerifier.sol#L58" target="_blank">setZKPRequest</a> function inherited inside the ERC20Verifier which takes 6 inputs:
 
 1. `requestId`: the ID associated with the request.
-2. `validator`: the address of the <a href="https://github.com/0xPolygonID/contracts/tree/main/contracts/validators" target="_blank">Validators Smart Contract</a> already deployed on Mumbai. This is the contract that executes the verification on the ZK proof submitted by the user. It can be of type [CredentialAtomicQuerySigValidator](/docs/contracts/overview.md#credentialatomicquerysigvalidator) or [CredentialAtomicQueryMTPValidator](/docs/contracts/overview.md#credentialatomicquerymtpvalidator).
+2. `validator`: the address of the <a href="https://github.com/0xPolygonID/contracts/tree/main/contracts/validators" target="_blank">Validators Smart Contract</a> already deployed on Mumbai. This is the contract that executes the verification on the ZK proof submitted by the user. It can be of type [CredentialAtomicQuerySigValidator](/docs/smart-contracts.md#credentialatomicquerysigvalidator) or [CredentialAtomicQueryMTPValidator](/docs/smart-contracts.md#credentialatomicquerymtpvalidator).
 3. `schema` namely the bigInt representation of the schema of the requested credential. This can be obtained by passing your schema to this [Go Sandbox](https://go.dev/play/p/rnrRbxXTRY6). In order to use the sandbox, the constants `jsonLDContext`, `typ`, `fieldName` and `schemaJSONLD` need to be modified according to your request.
 4. `claimPathKey` represents the path to the queries key inside the merklized credential. In this case, it is the path to the `birthday` key. This can be obtained by passing your schema to this [Go Sandbox](https://go.dev/play/p/rnrRbxXTRY6). In order to use the sandbox, the constants `jsonLDContext`, `typ`, `fieldName` and `schemaJSONLD` need to be modified according to your request.
 5. `operator` is either 1,2,3,4,5,6. To understand more about the operator you can check the [zk query language](/docs/verifier/verification-library/zk-query-language.md)
@@ -258,7 +258,7 @@ The actual ZKP request "to be born before 01/01/2002" hasn't been added to the S
 
 :::info
 
-Check out our [<ins>Smart Contract section</ins>](/docs/contracts/overview.md) to learn more about the set of verifications executed on the zk proof.
+Check out our [<ins>Smart Contract section</ins>](/docs/smart-contracts.md) to learn more about the set of verifications executed on the zk proof.
 
 :::
 
