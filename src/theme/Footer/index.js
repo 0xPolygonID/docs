@@ -5,6 +5,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { CookieConsent } from '../../components';
 import TagManager from "react-gtm-module";
+import BrowserOnly from '@docusaurus/BrowserOnly';
+
 
 const COOKIES_ACCEPTED_KEY = "areCookiesAccepted";
 const GTAG_ID = null;
@@ -70,6 +72,8 @@ function Footer() {
   }, [areCookiesAccepted]);
 
   return (
+    <BrowserOnly >
+    {() => 
     <footer
       className={classnames('footer', {
         'footer--dark': footer.style === 'dark',
@@ -163,7 +167,8 @@ function Footer() {
           onDecline={onCookieConsentDecline}
         />
       )}
-    </footer>
+    </footer>}
+    </ BrowserOnly>
   );
 }
 
