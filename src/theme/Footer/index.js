@@ -11,9 +11,6 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 const COOKIES_ACCEPTED_KEY = "areCookiesAccepted";
 const GTAG_ID = null;
 
-const areCookiesAccepted =
-  localStorage.getItem(COOKIES_ACCEPTED_KEY) === "true";
-
 function FooterLink({to, href, label, ...props}) {
   const toUrl = useBaseUrl(to);
   return (
@@ -39,6 +36,7 @@ function Footer() {
   const { siteConfig = {} } = context;
   const { themeConfig = {} } = siteConfig;
   const { footer } = themeConfig;
+  const [areCookiesAccepted, setArecookiesAccepted] = useState(true);
   const [isCookieConsentOpen , setIsCookieConsentOpen ] = useState(false);
 
   const { links = [] } = footer || {};
@@ -58,7 +56,10 @@ function Footer() {
   };
 
   useEffect(() => {
-    if (localStorage.getItem(COOKIES_ACCEPTED_KEY) === null) {
+    const cookiesAcceptedStorage = localStorage.getItem(COOKIES_ACCEPTED_KEY);
+
+    setArecookiesAccepted(cookiesAcceptedStorage === "true")
+    if (cookiesAcceptedStorage === null) {
       setIsCookieConsentOpen(true);
     }
   }, []);
