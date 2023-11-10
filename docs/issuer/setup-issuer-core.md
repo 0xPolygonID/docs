@@ -174,24 +174,30 @@ make clean-vault;
 In the same environment variable file from the previous section, `.env-issuer`, we also need to configure the Reverse Hash service the application will use. See below how to update each of the variables:
 
 ```bash
+# Options for the RHS, respectively: On-chain, Off-chain or Centralized revocation. 
+ISSUER_CREDENTIAL_STATUS_RHS_MODE=< OnChain | OffChain | None>
 # This one is the contract you to be provide in case you want to use on chain revocation status. 
 ISSUER_CREDENTIAL_STATUS_ONCHAIN_TREE_STORE_SUPPORTED_CONTRACT=<supported-onchain-revocation-contract>
-# The URL where the Reverse Hash Service is hosted.
+# The URL where the Reverse Hash Service is hosted. Mandatory if RHS_MODE is Off-chain.
 ISSUER_CREDENTIAL_STATUS_RHS_URL=http://localhost:3001
 # This line should not be changed.
 ISSUER_CREDENTIAL_STATUS_PUBLISHING_KEY_PATH=pbkey
-# Options for the RHS, respectively: no RHS, Off-chain revocation or On-chain revocation. 
-ISSUER_CREDENTIAL_STATUS_RHS_MODE=<None | OffChain | OnChain>
 # Chain ID, respectively: Mumbai or Polygon Mainnet.
 ISSUER_CREDENTIAL_STATUS_RHS_CHAIN_ID=<80001 | 137>
 
 ```
 
-:::tip   
+::::note   
 
-[<ins>Here</ins>](https://github.com/iden3/reverse-hash-service#readme) you can find instructions on how to run your own Reverse Hash Service
+[<ins>Here</ins>](https://github.com/iden3/reverse-hash-service#readme) you can find instructions on how to run your own Reverse Hash Service.
+
+:::tip
+
+You can also learn more about the Reverse Hash Service modes <ins>[Features section](/docs/issuer/features.md#revocation-status)</ins>. 
 
 :::
+
+::::
 
 ### Start Redis, Postgres & Vault
 
