@@ -14,7 +14,7 @@ keywords:
 ---
 
 ## Polygon ID latest releases
-- Release 5 (November 2023): [Notes](/docs/release-notes/r5) | Blog
+- Release 5 (November 2023): [Notes](/docs/release-notes/r5) | [Blog](https://polygon.technology/blog/polygon-id-release-5-boosting-credential-liquidity?utm_source=twitter&utm_medium=social&utm_content=id-r5-blog)
 - Release 4 (July 2023): [https://polygon.technology/blog/polygon-id-release-4-new-tools-seamless-integration](https://polygon.technology/blog/polygon-id-release-4-new-tools-seamless-integration)
 - Release 3 (March 2023): [https://polygon.technology/blog/introducing-polygon-id-zero-knowledge-own-your-identity-for-web3](https://polygon.technology/blog/introducing-polygon-id-zero-knowledge-own-your-identity-for-web3)
 
