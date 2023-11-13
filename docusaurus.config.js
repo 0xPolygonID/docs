@@ -33,7 +33,7 @@ module.exports = {
     announcementBar: {
       id: 'learn_more',
       content:
-          'New Release: Credentials Marketplace, On-chain Issuer and Issuer Node Improvements <a class="announcement-link" target="_blank" rel="noopener noreferrer" href="/docs/release-notes/r5"> Learn more</a>',
+          'New Release: Credentials Marketplace, On-chain Issuer and Issuer Node Improvements <a class="announcement-link" target="_blank" rel="noopener noreferrer" href="/docs/release-notes/r5"> Learn more</a>  <a class="announcement-link" target="_blank" rel="noopener noreferrer" href="https://polygon.technology/blog/polygon-id-release-5-boosting-credential-liquidity?utm_source=twitter&utm_medium=social&utm_content=id-r5-blog"> Check our blog</a>',
       backgroundColor: '#20232a',
       textColor: '#fff',
       isCloseable: false,
