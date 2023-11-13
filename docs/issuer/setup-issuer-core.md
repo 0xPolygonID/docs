@@ -176,7 +176,7 @@ In the same environment variable file from the previous section, `.env-issuer`, 
 ```bash
 # Options for the RHS, respectively: On-chain, Off-chain or Centralized revocation. 
 ISSUER_CREDENTIAL_STATUS_RHS_MODE=< OnChain | OffChain | None>
-# This one is the contract you to be provide in case you want to use on chain revocation status. 
+# This one is the contract you need to provide in case you want to use on chain revocation status. 
 ISSUER_CREDENTIAL_STATUS_ONCHAIN_TREE_STORE_SUPPORTED_CONTRACT=<supported-onchain-revocation-contract>
 # The URL where the Reverse Hash Service is hosted. Mandatory if RHS_MODE is Off-chain.
 ISSUER_CREDENTIAL_STATUS_RHS_URL=http://localhost:3001
