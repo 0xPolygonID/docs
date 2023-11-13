@@ -2043,51 +2043,6 @@ strong {
   --docusaurus-highlighted-code-line-bg: #0f1722;
 }
 
-/* admonitions */
-
-  .theme-admonition {
-    background: radial-gradient(62.22% 67.63% at 27.89% 64.11%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%) , #141318;
-    border: 1px solid #2B2932;
-    border-radius: 12px;
-  }
-
-  .theme-admonition > div:first-child {
-    font-weight: 600;
-  }
-
-  .theme-admonition > div:first-child > span:first-child{
-    display: none;
-  }
-
-  .alert {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 16px;
-    gap: 8px;
-    font-weight: 400;
-  }
-
-  .alert--secondary > div:first-child {
-    color: rgba(255, 255, 255, 0.89);
-  }
-
-  .alert--info > div:first-child {
-    color: #0084FF;
-  }
-
-  .alert--warning > div:first-child {
-    color: #ffc029;
-  }
-
-  .alert--danger > div:first-child {
-    color: #e80658;
-  }
-
-  .alert--success > div:first-child {
-    color: #0BAA60
-  }
-
 /* sidebar-title */
 
   .sidebar-title {
