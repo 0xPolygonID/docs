@@ -43,11 +43,11 @@ You can follow the instructions below or watch this video showing the same steps
 :::
 
 
-### Docker Setup Guide
+## Docker Setup Guide
 
 Running the app with Docker allows for minimal installation and a quick setup, as we have already set the infrastructure configuration (database, cache and vault storage). This is recommended **for evaluation use-cases only**, such as local development builds.
 
-#### Docker Guide Requirements
+### Docker Guide Requirements
 
 - Unix-based operating system (e.g. Debian, Arch, Mac OS)
 - [Docker Engine](https://docs.docker.com/engine/) `1.27+`
@@ -61,7 +61,7 @@ There is no compatibility with Windows environments at this time.
 
 To help expedite a lot of the Docker commands, many have been abstracted using `make` commands. Included in thefollowing sections are the equivalent Docker commands that show what is being run.
 
-#### Create Docker Configuration Files
+### Create Docker Configuration Files
 
 Make sure you are in the root folder and then make a copy of the `.env-api.sample`, `.env-issuer.sample`, `.env-ui.sample` environment variables files:
 
@@ -80,13 +80,13 @@ cp .env-ui.sample .env-ui;
 
 `.env-ui` is used to configure the UI with the user/password UI protection and the block explorer that will be used, among other variables.
 
-#### Node Issuer Configuration
+### Node Issuer Configuration
 
 The `.env-issuer` will be loaded into the [Docker compose initializer](https://github.com/0xPolygonID/issuer-node/blobdevelop/infrastructure/local/docker-compose.yml).
 
 This configuration involves 2 procedures: acquiring a blockchain URL by an RPC provider and setting up a public URL.
 
-##### Acquiring a blockchain URL by an RPC provider  
+#### Acquiring a blockchain URL by an RPC provider  
     
 Any of the following RPC providers can be used:
 
@@ -102,7 +102,7 @@ Using Mainnet or Testnet will depend on the RPC URL you are going to use in this
 
 :::
 
-##### Setting up a public URL
+#### Setting up a public URL
 
 It is desired to run a public forwarding URL, pointing to a host, as it is going to be stored inside the credential. Localhost can't be used in this situation because the mobile app can't access it. 
 
@@ -177,7 +177,36 @@ make clean-vault;
 #   rm -R infrastructure/local/.vault/file/sys/
 ```
 
-#### Start Redis, Postgres & Vault
+### Configure Reverse Hash
+In the same environment variable file from the previous section, `.env-issuer`, we also need to configure the Reverse Hash service the application will use. See below how to update each of the variables:
+
+```bash
+# Options for the RHS, respectively: On-chain, Off-chain or Centralized revocation. 
+ISSUER_CREDENTIAL_STATUS_RHS_MODE=< OnChain | OffChain | None>
+# This one is the contract you need to provide in case you want to use on chain revocation status. 
+ISSUER_CREDENTIAL_STATUS_ONCHAIN_TREE_STORE_SUPPORTED_CONTRACT=<supported-onchain-revocation-contract>
+# The URL where the Reverse Hash Service is hosted. Mandatory if RHS_MODE is Off-chain.
+ISSUER_CREDENTIAL_STATUS_RHS_URL=http://localhost:3001
+# This line should not be changed.
+ISSUER_CREDENTIAL_STATUS_PUBLISHING_KEY_PATH=pbkey
+# Chain ID, respectively: Mumbai or Polygon Mainnet.
+ISSUER_CREDENTIAL_STATUS_RHS_CHAIN_ID=<80001 | 137>
+
+```
+
+::::note   
+
+[<ins>Here</ins>](https://github.com/iden3/reverse-hash-service#readme) you can find instructions on how to run your own Reverse Hash Service.
+
+:::tip
+
+You can also learn more about the Reverse Hash Service modes <ins>[Features section](/docs/issuer/features.md#revocation-status)</ins>. 
+
+:::
+
+::::
+
+### Start Redis, Postgres & Vault
 
 This will start the necessary local services needed to store the wallet private key to the Hashicorp vault and allowstoring data associated to the issuer. Don't forget to initialize Docker before running this command.
 
@@ -220,7 +249,7 @@ make down;
 #   WARN[0000] The "DOCKER_FILE" variable is not set. Defaulting to a blank string.
 ```
 
-#### Import Wallet Private Key To Vault
+### Import Wallet Private Key To Vault
 
 In order to secure the wallet private key so that the issuer can use it to issue credentials, it must be stored in the Hashicorp Vault.
 
@@ -244,7 +273,7 @@ make private_key=<YOUR_WALLET_PRIVATE_KEY> add-private-key;
 #   Success! Data written to: iden3/import/pbkey
 ```
 
-#### Add Vault Token to Configuration File
+### Add Vault Token to Configuration File
 
 This will get the vault token from the Hashicorp vault docker instance and add it to our `./env-issuer` file.
 
@@ -261,7 +290,7 @@ make add-vault-token;
 #   mv .env-issuer.tmp .env-issuer
 ```
 
-#### Create Issuer DID
+### Create Issuer DID
 
 :::note
 
@@ -327,7 +356,7 @@ make generate-issuer-did-arm;
 </Tabs>
       
 
-#### Configure UI
+### Configure UI
 
 This step is required to run the separate UI application, which allows intuitive and convenient management of schemas, credentials, connections and issuer state.
 
@@ -351,7 +380,7 @@ ISSUER_UI_AUTH_USERNAME=user-ui
 ISSUER_UI_AUTH_PASSWORD=password-ui
 ```
 
-#### Start API UI, UI, Notifications server & Publisher
+### Start API UI, UI, Notifications server & Publisher
 
 This will start the UI API that exposes endpoints to manage schemas, credentials, connections and issuer state, as wellas the UI that relies on it.
 
@@ -402,7 +431,7 @@ Now navigate to <http://localhost:3002> to see the UI API's frontend:
 
 ![Issuer UI API frontend](/img/3002.png)
 
-#### Using the UI API
+### Using the UI API
 
 Make sure to set the HTTP authentication credentials in `.env-api` to the following:
 
@@ -421,7 +450,7 @@ This allows you to make a request via any of the endpoints using this frontend.
 
 ![Issuer UI API Get Credentials](/img/3002-credentials.png)
 
-#### (Optional) Using the UI
+### (Optional) Using the UI
 
 This service is running on <http://localhost:8088>.
 
@@ -449,13 +478,13 @@ If you want to run the UI app in development mode, i.e. with HMR enabled, please
 
 ---
 
-### Standalone Mode Guide
+## Standalone Mode Guide
 
 Running the app in standalone mode means you will need to install the binaries for the server to run natively. This is essential for production deployments.
 
 Make sure you have Postgres, Redis and Vault properly installed & configured. Do _not_ use `make up` since those will start the containers for non-production builds, see [Docker Setup Guide](#docker-setup-guide).
 
-#### Standalone Mode Guide Requirements
+### Standalone Mode Guide Requirements
 
 - [Docker Engine](https://docs.docker.com/engine/) 1.27
 - Makefile toolchain
@@ -465,7 +494,7 @@ Make sure you have Postgres, Redis and Vault properly installed & configured. Do
 - [Redis](https://redis.io/)
 - [Hashicorp Vault](https://github.com/hashicorp/vault)
 
-#### Standalone Mode Setup
+### Standalone Mode Setup
 
 1. Copy `.env-api.sample` as `.env-api` and `.env-issuer.sample` as `.env-issuer`. Please see the [configuration](#configuration) section for more details.
 2. Run `make build-local`. This will generate a binary for each of the following commands:
