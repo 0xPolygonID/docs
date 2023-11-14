@@ -9,7 +9,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 
 
 const COOKIES_ACCEPTED_KEY = "areCookiesAccepted";
-const GTAG_ID = "GTM-5TKTB44";
+const GTAG_ID = "GTM-PLTCF7LL";
 
 function FooterLink({to, href, label, ...props}) {
   const toUrl = useBaseUrl(to);
