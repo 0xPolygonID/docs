@@ -37,7 +37,7 @@ Current addresses on Polygon Main  (V1.0.0)
 
 
 Legacy mumbai/main contracts that should not be used no more, but support is provided:
-<a href=" https://github.com/0xPolygonID/contracts/releases/tag/v1.1.1" target="_blank">v.1.1.1</a>
+<a href="https://github.com/0xPolygonID/contracts/releases/tag/v1.1.1" target="_blank">v.1.1.1</a>
 
 
 Legacy addresses on Polygon Mumbai testnet.
