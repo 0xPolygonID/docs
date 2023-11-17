@@ -20,7 +20,27 @@ For situations where one needs to publish data on the blockchain, such as creati
 - Mainnet -> `0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D`
 
 ## Validator addresses
-Current addresses on Polygon Mumbai testnet.
+|                   |                             Sig                             |                             MTP                              |
+|:-----------------:|:-----------------------------------------------------------:|:------------------------------------------------------------:|
+|   **Verifier**    |         0x8024014f73BcCAEe048784d835A36c49e96F2806          |          0xF71d97Fc0262bB2e5B20912a6861da0B617a07Aa          |
+|  **Validators**   |         0x1E4a22540E293C0e5E8c33DAfd6f523889cFd878          |          0x0682fbaA2E4C478aD5d24d992069dba409766121          |
+| **ERC20 example** | 0xD75638D319B1aE2a9491DC61f87a800AD362D168 (request id = 1) | 0xD75638D319B1aE2a9491DC61f87a800AD362D168  (request id = 2) |
+
+
+
+Current addresses on Polygon Main  (V1.0.0)
+|                    |                    Sig                   |                    MTP                    |
+|:------------------:|:------------------------------------------:|:-----------------------------------------:|
+|   **Verifier**     |  | |
+|  **Validators**    |  | |
+| **ERC20 example**  |  | |
+
+
+Legacy mumbai/main contracts that should not be used no more, but support is provided:
+<a href=" https://github.com/0xPolygonID/contracts/releases/tag/v1.1.1" target="_blank">v.1.1.1</a>
+
+
+Legacy addresses on Polygon Mumbai testnet.
 
 |                    |                    Sig                     |                    MTP                    |
 |:------------------:|:------------------------------------------:|:-----------------------------------------:|
@@ -28,7 +48,7 @@ Current addresses on Polygon Mumbai testnet.
 | ERC20 examples |0x9017a99afb69CB7B21C7DD29827b4762DECD53FD  |0x3Bf7f4774DC3f92431fA690fa000f636562dCC18 |
 
 
-Current addresses on Polygon Mainnet (ERC20 example with airdrop use case, restricted to 1 request).
+Legacy addresses on Polygon Mainnet (ERC20 example with airdrop use case, restricted to 1 request).
 
 |                    |                    Sig                     |                  MTP                      |
 |:------------------:|:------------------------------------------:|:-----------------------------------------:|
@@ -37,7 +57,7 @@ Current addresses on Polygon Mainnet (ERC20 example with airdrop use case, restr
 | ERC20 examples |0x8732e29eE329fD19Ff868a3Df3D5F6A3116027A2  |0x5c31BB88AA57C69FF537C5d86102246D61712C90 |
 
 
-ERC20 examples with airdrop use case, not restricted.
+Legacy ERC20 examples with airdrop use case, not restricted.
 
 |                    |                    Sig                     |                    MTP                    |
 |:------------------:|:------------------------------------------:|:-----------------------------------------:|
