@@ -25,35 +25,6 @@ Let us see how to execute this verification.
 
 > The proof verification always follows the same flow independently of the Request type presented in the previous step by the Verifier, whether it is a basic auth or a query-based request.
 
-## Unpack the proof 
-
-<Tabs>
-<TabItem value="Golang">
-
-```go
-import (
-    "io"
-)
-
-tokenBytes, err := io.ReadAll(req.Body)
-```
-
-</TabItem>
-<TabItem value="Javascript">
-
-```js
-const getRawBody = require('raw-body')
-
-const raw = await getRawBody(req);
-const tokenStr = raw.toString().trim();
-```
-
-</TabItem>
-</Tabs>
-
-
-`req` is the post request sent by the wallet in response to the Auth Request posed by the Verifier. This unpacks the proof sent by the wallet.
-
 ## Initiate the verifier
 
 

@@ -24,7 +24,7 @@ Download the Polygon ID Wallet App and create an Identity.
 
 - For Android: <a href="https://play.google.com/store/apps/details?id=com.polygonid.wallet" target="_blank">Polygon ID on Google Play</a>
 - For iOS: <a href="https://apps.apple.com/us/app/polygon-id/id1629870183" target="_blank">Polygon ID on the App Store</a>
-- Have the queried credential inside your wallet. For the tutorial, we are using the `ProofOfDaoLongevity` that can be created via <a href="https://user-ui:password-ui@issuer-ui.polygonid.me">the Issuer Node UI testing environment</a>.
+- Have the queried credential inside your wallet. For the tutorial, we are using the `ProofOfDaoLongevity` schema type that can be created via <a href="https://user-ui:password-ui@issuer-ui.polygonid.me">the Issuer Node UI testing environment</a>.
 
 ## Quick Start 
 

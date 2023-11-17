@@ -27,7 +27,7 @@ By providing a standardized interface for query creation, a user interface can h
 
 The [Query Builder](https://schema-builder.polygonid.me/query-builder) contains the following fields:
 
-- Proof type: credential issuance methods. SIG for Credentials with Baby JubJub(BJJ) Key Signatures and MTP for credentials with Merkle Tree Proof.
+- Proof type: credential issuance methods. SIG for credentials with Baby JubJub(BJJ) Key Signatures and MTP for credentials with Merkle Tree Proof.
 - URL to JSON-LD Context: this should be the address where the JSON-LD Context is stored, containing schema data.
 - Schema Type: this is the field used to select the schema which the query is about, for credentials that have more than one schema type.
 - Issuer DID: refers to the identification of the issuer that generated the credential. Use `*` to consider any issuers. **We currently support only one value**, which means that you can either choose one particular Issuer DID or use `*` to accept any.
@@ -36,14 +36,6 @@ The [Query Builder](https://schema-builder.polygonid.me/query-builder) contains 
 - Operator: this is the relation between the attribute and the value.
 - Value: this is the value the operator refers to.
 - Skip Revocation Check: will skip the check to see if a credential was revoked or not.
-
-You can see here how these fields should be filled for a verifier who needs to **check whether the credential holder is older than 21 years old**:
-
-<div align="center">
-<img src={useBaseUrl("/img/query-builder-filled.png")} align="center" width="600"/>
-</div>
-<br></br>
-
 
 The [Query Builder](https://schema-builder.polygonid.me/query-builder) outcome should look like this: 
 
