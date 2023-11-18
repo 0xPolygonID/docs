@@ -20,6 +20,8 @@ For situations where one needs to publish data on the blockchain, such as creati
 - Mainnet -> `0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D`
 
 ## Validator addresses
+Current addresses on Polygon Mumbai testnet. (V1.0.0)
+
 |                   |                             Sig                             |                             MTP                              |
 |:-----------------:|:-----------------------------------------------------------:|:------------------------------------------------------------:|
 |   **Verifier**    |         0x8024014f73BcCAEe048784d835A36c49e96F2806          |          0xF71d97Fc0262bB2e5B20912a6861da0B617a07Aa          |
@@ -29,11 +31,13 @@ For situations where one needs to publish data on the blockchain, such as creati
 
 
 Current addresses on Polygon Main  (V1.0.0)
-|                    |                    Sig                   |                    MTP                    |
-|:------------------:|:------------------------------------------:|:-----------------------------------------:|
-|   **Verifier**     |  | |
-|  **Validators**    |  | |
-| **ERC20 example**  |  | |
+
+|                   |                                Sig                                |                                MTP                                |
+|:-----------------:|:-----------------------------------------------------------------:|:-----------------------------------------------------------------:|
+|   **Verifier**    |            0xaf48CC9C2Ef728b7c4A903c9f5472498f8AED5E1             |            0x1008De1794be8fAba4fc33db6dff59B1d1Ac3a64             |
+|  **Validators**   |            0x35178273C828E08298EcB0C6F1b97B3aFf14C4cb             |            0x8c99F13dc5083b1E4c16f269735EaD4cFbc4970d             |
+| **ERC20 example** | 0xa5f08979370AF7095cDeDb2B83425367316FAD0B (request id = 1 (sig)) | 0xa5f08979370AF7095cDeDb2B83425367316FAD0B  (request id = 2 (mtp) |
+
 
 
 Legacy mumbai/main contracts that should not be used no more, but support is provided:

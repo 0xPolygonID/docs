@@ -75,7 +75,7 @@ The ERC20Verifier contract must define at least a single `TRANSFER_REQUEST_ID`. 
 ```solidity
 pragma solidity ^0.8.16;
 
-mport {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import {PrimitiveTypeUtils} from "@iden3/contracts/lib/PrimitiveTypeUtils.sol";
 import {ICircuitValidator} from "@iden3/contracts/interfaces/ICircuitValidator.sol";
 import {ZKPVerifier} from "@iden3/contracts/verifiers/ZKPVerifier.sol";
@@ -248,23 +248,24 @@ The actual ZKP request "to be born before 01/01/2002" hasn't been added to the S
 
 1. `requestId`: the ID associated with the request.
 2. `request`: <a href="https://github.com/iden3/contracts/blob/master/contracts/interfaces/IZKPVerifier.sol#L8" target="_blank">ZKPRequest</a> struct. ZKPRequest struct contains 3 fields:
-    1. `metadata`: contract invoke request
+    1. `metadata`: contract invoke request.
     2. `validator` the address of the <a href="https://github.com/iden3/contracts/tree/master/contracts/validators" target="_blank">Validators Smart Contract</a> already deployed on Mumbai. This is the contract that executes the verification on the ZK proof submitted by the user. It can be of type [CredentialAtomicQuerySigValidator](/docs/smart-contracts.md#credentialatomicquerysigvalidator) or [CredentialAtomicQueryMTPValidator](/docs/smart-contracts.md#credentialatomicquerymtpvalidator).
     3. `data` encoded bytes of <a href="https://github.com/iden3/contracts/blob/master/contracts/validators/CredentialAtomicQueryValidator.sol#L12" target="_blank">CredentialAtomicQuery</a> struct.
 
 CredentialAtomicQuery struct contains 10 fields:
 1. `schema` namely the bigInt representation of the schema of the requested credential. This can be obtained by passing your schema to this [Go Sandbox](https://go.dev/play/p/rnrRbxXTRY6). In order to use the sandbox, the constants `jsonLDContext`, `typ`, `fieldName` and `schemaJSONLD` need to be modified according to your request.
 2. `claimPathKey`  represents the path to the queries key inside the merklized credential. In this case, it is the path to the `birthday` key. This can be obtained by passing your schema to this [Go Sandbox](https://go.dev/play/p/rnrRbxXTRY6). In order to use the sandbox, the constants `jsonLDContext`, `typ`, `fieldName` and `schemaJSONLD` need to be modified according to your request.
-3. `operator` is either 1,2,3,4,5,6. To understand more about the operator you can check the [zk query language](/docs/verifier/verification-library/zk-query-language.md)
-4. `slotIndex` represents specific position for <a href="https://docs.iden3.io/protocol/claims-structure/#index-vs-value" target="_blank">data in claim</a>
+3. `operator` is either 1,2,3,4,5,6. To understand more about the operator you can check the [zk query language](/docs/verifier/verification-library/zk-query-language.md).
+4. `slotIndex` represents specific position for <a href="https://docs.iden3.io/protocol/claims-structure/#index-vs-value" target="_blank">data in claim</a>.
 5. `value` represents the threshold value you are querying. In this case, it is the date 01/01/2002.
-6. `queryHash` poseidon hash of `schemaHash`, `slotIndex`, `operator`, `claimPathKey`, `claimPathNotExists`, `valueHash`. Used for gas consumption optimization.
-7. `allowedIssuers` allowed issuers of credential
-8. `circuitIds` array of circuit Ids (['credentialAtomicQuerySigV2OnChain'] or ['credentialAtomicQueryMTPV2OnChain']).
-9. `skipClaimRevocationCheck` if credential revocation will be checked during the proof generation
-10. `claimPathNotExists` 0 or 1, 0 for inclusion in merklized credentials, 1 for non-inclusion and for non-merklized credentials
+6. `queryHash` is the poseidon hash of `schemaHash`, `slotIndex`, `operator`, `claimPathKey`, `claimPathNotExists`, `valueHash`. Used for gas consumption optimization.
+7. `allowedIssuers` represents the  allowed issuers of the credential.
+8. `circuitIds` is an array of circuit IDs (['credentialAtomicQuerySigV2OnChain'] or ['credentialAtomicQueryMTPV2OnChain']).
+9. `skipClaimRevocationCheck` checks whether the credential revocation will be checked during the proof generation.
+10. `claimPathNotExists`: 0 or 1; 0 for inclusion in merklized credentials, 1 for non-inclusion and for non-merklized credentials.
 
-To encode these fields to structure use this function:
+To encode these fields to structure, use this function:
+
 ```js
 const { Web3 } = require('web3');
 
@@ -303,6 +304,7 @@ function packValidatorParams(query, allowedIssuers = []) {
 ```
 
 Calculate query hash:
+
 ```js
 const { poseidon } = require('@iden3/js-crypto');
 const { SchemaHash } = require('@iden3/js-iden3-core');
