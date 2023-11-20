@@ -28,8 +28,6 @@ Current addresses on Polygon Mumbai testnet. (V1.0.0)
 |  **Validators**   |         0x1E4a22540E293C0e5E8c33DAfd6f523889cFd878          |          0x0682fbaA2E4C478aD5d24d992069dba409766121          |
 | **ERC20 example** | 0xD75638D319B1aE2a9491DC61f87a800AD362D168 (request id = 1) | 0xD75638D319B1aE2a9491DC61f87a800AD362D168  (request id = 2) |
 
-
-
 Current addresses on Polygon Main  (V1.0.0)
 
 |                   |                                Sig                                |                                MTP                                |
@@ -38,35 +36,11 @@ Current addresses on Polygon Main  (V1.0.0)
 |  **Validators**   |            0x35178273C828E08298EcB0C6F1b97B3aFf14C4cb             |            0x8c99F13dc5083b1E4c16f269735EaD4cFbc4970d             |
 | **ERC20 example** | 0xa5f08979370AF7095cDeDb2B83425367316FAD0B (request id = 1 (sig)) | 0xa5f08979370AF7095cDeDb2B83425367316FAD0B  (request id = 2 (mtp) |
 
+:::note
 
+The Smart Contracts above are updated and the legacy mumbai/main contracts should not be used anymore. However, if needed, support is still provided: <ins><a href="https://github.com/0xPolygonID/contracts/releases/tag/v1.1.1" target="_blank">v.1.1.1</a></ins>.
 
-Legacy mumbai/main contracts that should not be used no more, but support is provided:
-<a href="https://github.com/0xPolygonID/contracts/releases/tag/v1.1.1" target="_blank">v.1.1.1</a>
-
-
-Legacy addresses on Polygon Mumbai testnet.
-
-|                    |                    Sig                     |                    MTP                    |
-|:------------------:|:------------------------------------------:|:-----------------------------------------:|
-|   Validators   |0xF2D4Eeb4d455fb673104902282Ce68B9ce4Ac450  |0x3DcAe4c8d94359D31e4C89D7F2b944859408C618 |
-| ERC20 examples |0x9017a99afb69CB7B21C7DD29827b4762DECD53FD  |0x3Bf7f4774DC3f92431fA690fa000f636562dCC18 |
-
-
-Legacy addresses on Polygon Mainnet (ERC20 example with airdrop use case, restricted to 1 request).
-
-|                    |                    Sig                     |                  MTP                      |
-|:------------------:|:------------------------------------------:|:-----------------------------------------:|
-|   Verifier     |0x6f6E19781600d6B06D64A6b86431FB7dB3E919e0  |0x9DB901F3AFdAAA73F5B2123B186F566fA3Ed1551 |
-|  Validators    |0x9ee6a2682Caa2E0AC99dA46afb88Ad7e6A58Cd1b  |0x5f24dD9FbEa358B9dD96daA281e82160fdefD3CD |
-| ERC20 examples |0x8732e29eE329fD19Ff868a3Df3D5F6A3116027A2  |0x5c31BB88AA57C69FF537C5d86102246D61712C90 |
-
-
-Legacy ERC20 examples with airdrop use case, not restricted.
-
-|                    |                    Sig                     |                    MTP                    |
-|:------------------:|:------------------------------------------:|:-----------------------------------------:|
-|   Validators   |0x9ee6a2682Caa2E0AC99dA46afb88Ad7e6A58Cd1b  |0x5f24dD9FbEa358B9dD96daA281e82160fdefD3CD |
-| ERC20 examples |0x7C14Aa764130852A8B64BA7058bf71E4292d677F  |0xa3Bc012FCf034bee8d16161730CE4eAb34C35100 |
+:::
 
 ## CredentialAtomicQuerySigValidator
 
@@ -83,18 +57,10 @@ The core of the contract is its <a href="https://github.com/0xPolygonID/contract
 
 > The CredentialAtomicQuerySigValidator executes the same set of verifications of the [Verification Library](/docs/verifier/verification-library/verification-api-guide.md#verification---under-the-hood). The former is required when performing on-chain verification while the latter is required for off-chain verification.
 
-CredentialAtomicQuerySigValidator address:
-
-- <a href="https://mumbai.polygonscan.com/address/0xF2D4Eeb4d455fb673104902282Ce68B9ce4Ac450" target="_blank">Mumbai: 0xF2D4Eeb4d455fb673104902282Ce68B9ce4Ac450</a>
-
 ## CredentialAtomicQueryMTPValidator
 
 <a href="https://github.com/0xPolygonID/contracts/blob/main/contracts/validators/CredentialAtomicQueryMTPValidator.sol" target="_blank">CredentialAtomicQueryMTPValidator.sol - Github</a>
 
-Performs the same set of verifications of the CredentialAtomicQuerySigValidator but for credential of type `MTP`
-
-CredentialAtomicQueryMTPValidator address:
-
-- <a href="https://mumbai.polygonscan.com/address/0x3DcAe4c8d94359D31e4C89D7F2b944859408C618" target="_blank">Mumbai: 0x3DcAe4c8d94359D31e4C89D7F2b944859408C618</a>
+Performs the same set of verifications of the CredentialAtomicQuerySigValidator but for credential of type `MTP`.
 
 > Further protocol related contracts can be found at <a href="https://docs.iden3.io/contracts/state/" target="_blank">Iden3 - Smart Contracts</a>
