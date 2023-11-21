@@ -96,6 +96,7 @@ module.exports = {
             "issuer/schema-exs",
           ]
         },
+        "issuer/vault-auth",
         "issuer/credential-marketplace",
         "contracts/credential-linkage",
         "issuer/cred-issue-methods",
