@@ -121,7 +121,7 @@ ISSUER_ETHEREUM_URL={Replace with a Polygon Main RPC}
 
 ## Issuer's DID
 
-Currently there are two options for creating an issuer's did.  
+Currently there are two options for creating an issuer's DID: 
 1. Using a **Makefile** command, generally used for the **UI** or **API-UI**.
 2. Create Identity **endpoint** of Core API, generally used for the **Core API**.
 
