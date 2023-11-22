@@ -20,13 +20,13 @@ This guide will show you how to confgure your Issuer Node.
 
 ## Revocation Status
 
-The revocation status is a core part of the credential, as it is the verifier's way of checking whether or not a credential has been revoked by the issuer. The Issuer Node offers three different ways to check the revocation status of a credential. 
+The revocation status is a core part of the credential, as it is the verifier's way of checking whether or not a credential has been revoked by the issuer. The Issuer Node offers three different ways to check the revocation status of a credential: 
 
-`Centralized:` The verifier or user will go to the Issuer Node to verify the credential revocation, which is why we consider it to be a centralized method, since if the node is not available, the verification will fail, resulting in possible errors when trying to generate ZK Proofs.
+- `Centralized`: The verifier or user will check the credential revocation status through the Issuer Node itself, which is why we consider it to be a centralized method. If the node is not available, the verification will fail, resulting in possible errors when trying to generate ZK Proofs.
 
-`RHS Off Chain:` In this case, the way to check the credential revocation will be done in a server independent from the Issuer Node (managed by the Issuer or an independent agent), so that we no longer depend on the Issuer Node as the only point of failure, being this one as fallback in case the RHS is not available.
+- `RHS Off Chain`: In this case, the credential revocation will be checked in a server independent from the Issuer Node (managed by the Issuer or an independent agent), so that we no longer depend on the Issuer Node as the only point of failure. This service will be a fallback in case the RHS is not available.
 
-`RHS On Chain:` This method can be considered as completely decentralized since the RHS is on chain, therefore the user or verifier when checking the status of a credential will go to this decentralized on chain service without depending on a centralized server. This is the **desirable option**.
+- `RHS On Chain`: This method can be considered as completely decentralized since the RHS is on chain, therefore the user or verifier will check the status of a credential via this decentralized on chain service without depending on a centralized server. This is the **desirable option**.
 
 ### Centralized (default)
 In this case we will have to make sure that the Issuer Node is publicly accessible.
