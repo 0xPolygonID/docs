@@ -95,7 +95,11 @@ The State Contract stores the Global Identity State Tree. The GIST State represe
 
 Every time that an identity is updated, for example when a credential is issued using SMT Proof or revoked, it needs to perform a State Transition. This process consists of generating a ZK-proof or a digitally-signed message that proves that the identity is authorized to perform the state transition. Then the State contract verifies the proof on-chain via its transitState (for ZK-proofs) or transitStateGeneric (generic, as the name suggests) function.
 
+:::info
+
 Learn more about state contract [here](https://docs.iden3.io/contracts/state/).
+
+:::
 
 <Tabs>
 <TabItem value="Polygon Mumbai">
@@ -129,9 +133,9 @@ Currently there are two options for creating an issuer's DID:
 
 :::note
 The DID configured for the UI or API-UI works under the following rules:
-1. if a did is provided in the .env-api file it will be checked for its existence in the vault, in case it is different from the one in the vault, the latter will be updated.
-2. If a did is not provided in the file, it will be searched in the vault.
-3. When a did is created with this method, it is saved both in the .env-api file and in the vault.
+1. if a DID is provided in the .env-api file, it will be checked for its existence in the vault. In case it is different from the one in the vault, the latter will be updated.
+2. If a DID is not provided in the file, it will be searched in the vault.
+3. When a DID is created with this method, it is saved both in the .env-api file and in the vault.
 :::
 
 .env-api
@@ -160,14 +164,14 @@ ISSUER_API_IDENTITY_METHOD={polygonid | custom method}
 
 Execute the following `make command` in order to generate a new DID with the .env-api provided `blockchain` ,`network` and `method`.
 The given command will perform the following actions:
-1. Replace **ISSUER_API_UI_ISSUER_DID** value with the new did (.env-api file).
-2. Write the new did in the vault.
+1. Replace **ISSUER_API_UI_ISSUER_DID** value with the new DID(.env-api file).
+2. Write the new DID in the vault.
 
 ```bash
 make generate-issuer-did
 ```
 
-In order to delete the did from the Vault:
+In order to delete the DID from the Vault:
 
 ```bash
 make delete-did
