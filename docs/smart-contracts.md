@@ -20,7 +20,7 @@ For situations where one needs to publish data on the blockchain, such as creati
 - Mainnet -> `0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D`
 
 ## Validator addresses
-Current addresses on Polygon Mumbai testnet. (V1.0.0)
+Current addresses on Polygon Mumbai testnet. (V1.0.1)
 
 |                   |                             Sig                             |                             MTP                              |
 |:-----------------:|:-----------------------------------------------------------:|:------------------------------------------------------------:|
@@ -28,7 +28,7 @@ Current addresses on Polygon Mumbai testnet. (V1.0.0)
 |  **Validators**   |         0x1E4a22540E293C0e5E8c33DAfd6f523889cFd878          |          0x0682fbaA2E4C478aD5d24d992069dba409766121          |
 | **ERC20 example** | 0xD75638D319B1aE2a9491DC61f87a800AD362D168 (request id = 1) | 0xD75638D319B1aE2a9491DC61f87a800AD362D168  (request id = 2) |
 
-Current addresses on Polygon Main  (V1.0.0)
+Current addresses on Polygon Main  (V1.0.1)
 
 |                   |                                Sig                                |                                MTP                                |
 |:-----------------:|:-----------------------------------------------------------------:|:-----------------------------------------------------------------:|
