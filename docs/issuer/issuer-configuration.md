@@ -93,7 +93,7 @@ ISSUER_CREDENTIAL_STATUS_RHS_CHAIN_ID=137
 ## State Contract
 The State Contract stores the Global Identity State Tree. The GIST State represents a snapshot of the states of all the identities operating in the system. The design of the State Contract allows identities to authenticate themselves using Identity Profiles.
 
-Every time that an identity is updated, for example when a credential is issued using SMT Proof or revoked, it needs to perform a State Transition. This process consists of generating a zk-proof or a digitally signed message that proves that the identity is authorized to perform the state transition. Then State contract verifies the proof on-chain via its transitState (for zk-proofs) or transitStateGeneric (generic as name suggests) function.
+Every time that an identity is updated, for example when a credential is issued using SMT Proof or revoked, it needs to perform a State Transition. This process consists of generating a ZK-proof or a digitally-signed message that proves that the identity is authorized to perform the state transition. Then the State contract verifies the proof on-chain via its transitState (for ZK-proofs) or transitStateGeneric (generic, as the name suggests) function.
 
 Learn more about state contract [here](https://docs.iden3.io/contracts/state/).
 
