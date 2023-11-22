@@ -128,7 +128,7 @@ Currently there are two options for creating an issuer's DID:
 ### Makefile Command
 
 :::note
-The did configured for the UI or API-UI works under the following rules:
+The DID configured for the UI or API-UI works under the following rules:
 1. if a did is provided in the .env-api file it will be checked for its existence in the vault, in case it is different from the one in the vault, the latter will be updated.
 2. If a did is not provided in the file, it will be searched in the vault.
 3. When a did is created with this method, it is saved both in the .env-api file and in the vault.
