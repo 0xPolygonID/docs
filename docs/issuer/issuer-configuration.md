@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 # Advanced Issuer Node configuration
 
-This guide will show you how to get the most out of your Issuer Node configuration.
+This guide will show you how to confgure your Issuer Node.
 
 ## Revocation Status
 
