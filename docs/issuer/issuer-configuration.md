@@ -50,7 +50,7 @@ ISSUER_API_UI_SERVER_URL={Set a publicly accessible URL for the same $ISSUER_API
 ```
 
 ### RHS Off Chain
-For the RHS Off Chain there are two options:
+For the RHS Off Chain, there are two options:
 1. Use an RHS from a reliable entity.
 2. Install your own RHS; you can do it with the following guide: https://github.com/iden3/reverse-hash-service
 
