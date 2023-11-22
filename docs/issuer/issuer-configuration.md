@@ -158,7 +158,7 @@ ISSUER_API_IDENTITY_METHOD={polygonid | custom method}
 </TabItem>
 </Tabs>
 
-Execute the following **make command** in order to generate a new did with the .env-api provided `blockchain` `network` and `method`.
+Execute the following `make command` in order to generate a new DID with the .env-api provided `blockchain` ,`network` and `method`.
 The given command will perform the following actions:
 1. Replace **ISSUER_API_UI_ISSUER_DID** value with the new did (.env-api file).
 2. Write the new did in the vault.
