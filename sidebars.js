@@ -33,6 +33,7 @@ module.exports = {
           collapsed: true,
           items: [
             "issuer/issuer-core",
+            "issuer/issuer-configuration",
             "issuer/setup-issuer-core",
             {
               type: "category",
