@@ -1,7 +1,7 @@
 ---
 id: issuer-node-guide
-title: Issuer Node Ui Guide
-sidebar_label: Issuer Node Ui Guide
+title: Issuer Node UI Guide
+sidebar_label: Issuer Node UI Guide
 description: Learn how to use the Issuer Node UI to import schemas, create credentials and manage connections.
 keywords: 
   - docs
