@@ -182,8 +182,8 @@ make delete-did
 The Core API provides the `/v1/identities` endpoint in order to create an identity.
 
 The property *type* can have two possible values:
-* `BJJ:` BJJ keys based identity.
-* `ETH:` Ethreum based identity.
+* `BJJ`: BJJ keys based identity.
+* `ETH`: Ethreum based identity.
 
 
 Create Identity Payload example:
