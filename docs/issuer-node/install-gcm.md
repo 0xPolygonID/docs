@@ -35,7 +35,7 @@ An Application resource is a collection of individual Kubernetes components, suc
 To set up your cluster to understand Application resources, run the following command:
 
 ```bash
-kubectl apply -f "[https://raw.githubusercontent.com/GoogleCloudPlatform/marketplace-k8s-app-tools/master/crd/app-crd.yaml](https://raw.githubusercontent.com/GoogleCloudPlatform/marketplace-k8s-app-tools/master/crd/app-crd.yaml)"
+kubectl apply -f "https://raw.githubusercontent.com/GoogleCloudPlatform/marketplace-k8s-app-tools/master/crd/app-crd.yaml"
 ```
 
 ## Install Issuer Node without domain names
