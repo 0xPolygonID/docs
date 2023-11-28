@@ -98,6 +98,9 @@ We encourage the use of **Standalone** for production environments.
 4. Run `./bin/platform` command to start the issuer.
 5. Run `./bin/pending_publisher`. This checks that publishing transactions to the blockchain works.
 6. _(Optional)_ Run `./bin/notifications`. This enables push notifications when issuing credentials to PID Wallet.
+
+> **Core API specification** - [http://localhost:3001/](http://localhost:3001/)
+
 ---
 
 ### Related guides: 

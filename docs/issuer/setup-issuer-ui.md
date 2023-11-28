@@ -87,6 +87,12 @@ We encourage the use of **Standalone** for production environments.
   
   4.7. The app will be running on <http://localhost:5173>.
 
+> **API UI specification** - [http://localhost:3002/](http://localhost:3002/)
+>
+> **UI** - [http://localhost:8088/](http://localhost:8088/)
+  
+
+
 ---
 
 ### Related guides: 
