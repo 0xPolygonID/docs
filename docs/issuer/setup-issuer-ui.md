@@ -29,13 +29,12 @@ The content of the QR code provided by the Issuer or Verifier has changed since 
 
 There are two options for installing and running the UI:
 
+1. [Docker Setup Guide](https://github.com/0xPolygonID/issuer-node)
+2. [Standalone Mode Guide](#standalone-mode-guide)
+
 :::note
 We encourage the use of **Standalone** for production environments.
 :::
-
-
-1. [Docker Setup Guide](#https://github.com/0xPolygonID/issuer-node)
-2. [Standalone Mode Guide](#standalone-mode-guide)
 
 **For either one, you first have to [clone the repository](https://github.com/0xPolygonID/issuer-node).**
 
@@ -63,7 +62,7 @@ We encourage the use of **Standalone** for production environments.
 3. Run `./bin/platform_ui` command to start the issuer-ui API.
 4. Configure and deploy the UI
   
-  Completing the [installation](#installation) process yields the UI as a minified Javascript app. Any changes to the UI source code would necessitate a full re-build to apply them. In most development scenarios this is undesirable, so the UI app can also be run in development mode like any [React](https://17.reactjs.org/) application to enable hot module replacement ([HMR](https://webpack.js.org/guides/hot-module-replacement/)).
+  Completing the [installation](#installation) process yields the UI as a minified Javascript app. Any changes to the UI source code would necessitate a full re-build to apply them. In most development scenarios this is undesirable, so the UI app can also be run in development mode like any [React](https://react.dev/) application to enable hot module replacement ([HMR](https://webpack.js.org/guides/hot-module-replacement/)).
 
   4.1. Make sure that the UI API is set up and running properly (default <http://localhost:3002>).
   
@@ -71,15 +70,24 @@ We encourage the use of **Standalone** for production environments.
   
   4.3. Copy the `.env.sample` file as `.env`
   
-  4.4. All variables are required to be set, with the exception of `VITE_ISSUER_LOGO`. The following 
-  are the corresponding variables present in the parent folder's `.env-api`, which need to be the same. Only `VITE_ISSUER_NAME` can differ for the UI to function in development mode.
+  4.4. The UI requires some of the configurations already present in the parent folder files `.env-api` and `.env-ui`. Here it's the list of variables required by the UI and the mapping between them and the variables present in the parent config files, grouped by file. Please make sure the values match.
+
+  Variables from `.env-api`:
+
       - `VITE_API_URL -> ISSUER_API_UI_SERVER_URL`
       - `VITE_API_USERNAME -> ISSUER_API_UI_AUTH_USER`
       - `VITE_API_PASSWORD -> ISSUER_API_UI_AUTH_PASSWORD`
-      - `VITE_BLOCK_EXPLORER_URL -> ISSUER_UI_BLOCK_EXPLORER_URL`
-      - `VITE_ISSUER_DID -> ISSUER_API_UI_ISSUER_DID`
       - `VITE_ISSUER_NAME -> ISSUER_API_UI_ISSUER_NAME`
       - `VITE_ISSUER_LOGO -> ISSUER_API_UI_ISSUER_LOGO`
+      - `VITE_ISSUER_DID -> ISSUER_API_UI_ISSUER_DID`
+
+  Variables from `.env-ui`:
+
+      - `VITE_BLOCK_EXPLORER_URL -> ISSUER_UI_BLOCK_EXPLORER_URL`
+      - `VITE_BUILD_TAG -> ISSUER_UI_BUILD_TAG`
+      - `VITE_WARNING_MESSAGE -> ISSUER_UI_WARNING_MESSAGE`
+      - `VITE_IPFS_GATEWAY_URL -> ISSUER_UI_IPFS_GATEWAY_URL`
+      - `VITE_SCHEMA_EXPLORER_AND_BUILDER_URL -> ISSUER_UI_SCHEMA_EXPLORER_AND_BUILDER_URL`
   
   4.5. Run `npm install`
   

@@ -30,12 +30,12 @@ For an advance configuration of the Issuer Node (RHS, Ethereum Identities and mo
 
 There are two options for installing and running the server alongside the UI:
 
+1. [Docker Setup Guide](https://github.com/0xPolygonID/issuer-node)
+2. [Standalone Mode Guide](#standalone-mode-guide)
+
 :::note
 We encourage the use of **Standalone** for production environments.
 :::
-
-1. [Docker Setup Guide](#https://github.com/0xPolygonID/issuer-node)
-2. [Standalone Mode Guide](#standalone-mode-guide)
 
 **For either one, you first have to [clone the repository](https://github.com/0xPolygonID/issuer-node).**
 
@@ -94,7 +94,7 @@ We encourage the use of **Standalone** for production environments.
     - `migrate`
     - `pending_publisher`
     - `notifications`
-3. Run `make db/migrate`. This checks the database structure and applies any changes to the database schema.
+3. Run `make db/migrate`. This command checks the database structure and applies the necessary changes to the database schema.
 4. Run `./bin/platform` command to start the issuer.
 5. Run `./bin/pending_publisher`. This checks that publishing transactions to the blockchain works.
 6. _(Optional)_ Run `./bin/notifications`. This enables push notifications when issuing credentials to PID Wallet.
