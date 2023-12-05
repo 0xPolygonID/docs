@@ -208,7 +208,7 @@ export const contentData = {
         head: {
             title: 'Success stories & Ecosystem',
             description: 'Watch the cases studies of successful Polygon ID integrations and explore its vast ecosystem.',
-            link: 'https://ecosystem.polygon.technology/PolygonID',
+            link: 'https://marketplace.polygonid.me/ecosystem',
             linkText: 'Explore ecosystem',
         },
         tabs: [

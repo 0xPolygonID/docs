@@ -38,7 +38,7 @@ There are some different ways one can perform issuer-related actions, that is, m
 
 - Adapting the [JS SDK](/docs/js-sdk/js-sdk-overview.md) to your application that issues credentials.
 
-- Using [SaaS vendors](https://ecosystem.polygon.technology/PolygonID/) that leverage Polygon ID solutions.
+- Using [SaaS vendors](https://marketplace.polygonid.me/ecosystem) that leverage Polygon ID solutions.
 
 - Making use of Polygon ID smart contracts for [on-chain issuance](/docs/issuer/on-chain-issuer/on-chain-overview.md/).
 
