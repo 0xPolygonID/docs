@@ -33,7 +33,7 @@ As an Identity Holder, the individual who wants to have a credential to prove hi
 
 :::note
 
-You can also use any Polygon ID compatible wallet. Please, check our [<ins>Ecosystem page</ins>](https://ecosystem.polygon.technology/PolygonID/) for other options.
+You can also use any Polygon ID compatible wallet. Please, check our [<ins>Ecosystem page</ins>](https://marketplace.polygonid.me/ecosystem) for other options.
 
 :::
 

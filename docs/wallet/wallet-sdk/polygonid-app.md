@@ -23,7 +23,7 @@ The Polygon ID Wallet app is a reference implementation built with the [Wallet S
 
 :::note
 
-In addition to this reference identity wallet you can see other Polygon ID compatible wallets on our [<ins>Polygon ID Ecosystem page</ins>](https://ecosystem.polygon.technology/PolygonID/).
+In addition to this reference identity wallet you can see other Polygon ID compatible wallets on our [<ins>Polygon ID Ecosystem page</ins>](https://marketplace.polygonid.me/ecosystem).
 
 :::
 
