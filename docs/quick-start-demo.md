@@ -159,7 +159,7 @@ Here comes the third role in this tutorial: the verifier. This could be represen
 
 Here are the steps to verify the credential:
 
-1. Visit the [Verifier website](https://verifier.polygonid.me//). As we are using a newly-created credential type, you need to choose **Custom** on the dropdown menu. Click on **Sign In**.
+1. Visit the [Verifier website](https://verifier.polygonid.me/). As we are using a newly-created credential type, you need to choose **Custom** on the dropdown menu. Click on **Sign In**.
 
     <div align="center">
         <img width="600" src={useBaseUrl("img/quick-start-demo/verifier-lp.png")}></img>
