@@ -35,7 +35,7 @@ The structure of a `Basic Auth` request can be seen below:
  "body": {
    "reason": "test flow",
    "message": "",
-   "callbackUrl": "https://verifier.polygonid.me/api/callback?sessionId=95209",
+   "callbackUrl": "https://verifier-demo.polygonid.me/api/callback?sessionId=95209",
    "scope":
  }
 } 
@@ -69,7 +69,7 @@ A Query-Based Request is used for generating two types of proofs: Signature-base
  "body": {
    "reason": "test flow",
    "message": "",
-   "callbackUrl": "https://verifier.polygonid.me/api/callback?sessionId=932469",
+   "callbackUrl": "https://verifier-demo.polygonid.me/api/callback?sessionId=932469",
    "scope": {
      "0": {
        "id": "1",
