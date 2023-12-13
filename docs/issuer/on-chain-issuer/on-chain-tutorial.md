@@ -131,7 +131,7 @@ Here is the credential on the mobile app:
 
 ## How to verify the balance claim
 
-1. Go to the [Verifier website](https://verifier-v2.polygonid.me/).
+1. Go to the [Verifier website](https://verifier.polygonid.me/).
 2. Choose `custom` from the dropdown menu.
 
     <div align="center">
