@@ -49,7 +49,7 @@ The `ProofOfHumanity` Schema encodes whether a user has been verified as a human
 
 You can create customized schemas, check out this [<ins>tutorial</ins>](/docs/issuer/schema)! 
 
-:::
+::: 
 
 **Query**
 
@@ -78,22 +78,9 @@ When presented with this query, the user must prove that he/she is a Person.
 </TabItem>
 <TabItem value="on-chain">
 
-```ts
-// you can run https://go.dev/play/p/rnrRbxXTRY6 to get schema hash and claimPathKey using YOUR schema
-const schemaBigInt = "324849518749029195374186444632030216125"
 
-// merklized path to field in the W3C credential according to JSONLD schema 
-const schemaClaimPathKey = "14815366841010849835350402710291849818496586666144492189460088557509920034090"
+Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
 
-const requestId = 1;
-
-const query = {
-    schema: schemaBigInt,
-    claimPathKey  : schemaClaimPathKey,
-    operator: 1,
-    value: [1, ...new Array(63).fill(0).map(i => 0)], // for operators 1,2,3,6 only first value matters
-    };
-```
 
 </TabItem>
 </Tabs>
@@ -171,22 +158,7 @@ When presented with this query, the user must prove that he/she has been born be
 </TabItem>
 <TabItem value="on-chain">
 
-```ts
-// you can run https://go.dev/play/p/rnrRbxXTRY6 to get schema hash and claimPathKey using YOUR schema
-const schemaBigInt = "267831521922558027206082390043321796944"
-
-// merklized path to field in the W3C credential according to JSONLD schema 
-const schemaClaimPathKey = "20376033832371109177683048456014525905119173674985843915445634726167450989630"
-
-const requestId = 1;
-
-const query = {
-    schema: schemaBigInt,
-    claimPathKey  : schemaClaimPathKey,
-    operator: 1,
-    value: [1, ...new Array(63).fill(0).map(i => 0)],  // for operators 1,2,3,6 only first value matters
-    };
-```
+Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
 
 </TabItem>
 </Tabs>
@@ -262,22 +234,7 @@ When presented with this query, the user must prove that his/her monthly salary 
 </TabItem>
 <TabItem value="on-chain">
 
-```ts
-// you can run https://go.dev/play/p/rnrRbxXTRY6 to get schema hash and claimPathKey using YOUR schema
-const schemaBigInt = "215529050624769177581695011121804343416"
-
-// merklized path to field in the W3C credential according to JSONLD schema 
-const schemaClaimPathKey = "18323209396655941018370955962714740724727867245625378697671016248362870463698"
-
-const requestId = 1;
-
-const query = {
-    schema: schemaBigInt,
-    claimPathKey  : schemaClaimPathKey,
-    operator: 3, // operator
-    value: [1000, ...new Array(63).fill(0).map(i => 0)],
-};
-```
+Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
 
 </TabItem>
 </Tabs>
@@ -355,22 +312,8 @@ When presented with this query, the user must prove that he/she is either an Adm
 </TabItem>
 <TabItem value="on-chain">
 
-```ts
-// you can run https://go.dev/play/p/rnrRbxXTRY6 to get schema hash and claimPathKey using YOUR schema
-const schemaBigInt = "80689572245316684375295691372009959153"
+Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
 
-// merklized path to field in the W3C credential according to JSONLD schema 
-const schemaClaimPathKey = "19483179179477598314891505360164348442915562939736565831310034495973163044179"
-
-const requestId = 1;
-
-const query = {
-    schema: schemaBigInt,
-    claimPathKey  : schemaClaimPathKey,
-    operator: 4, // operator
-    value: [4, 5, ...new Array(62).fill(0).map(i => 0)],
-};
-```
 
 </TabItem>
 </Tabs>
@@ -445,22 +388,7 @@ When presented with this query, the user must prove that he/she is not a residen
 </TabItem>
 <TabItem value="on-chain">
 
-```ts
-// you can run https://go.dev/play/p/rnrRbxXTRY6 to get schema hash and claimPathKey using YOUR schema
-const schemaBigInt = "201134713754279235117373236841506344285"
-
-// merklized path to field in the W3C credential according to JSONLD schema 
-const schemaClaimPathKey = "17002437119434618783545694633038537380726339994244684348913844923422470806844"
-
-const requestId = 1;
-
-const query = {
-    schema: schemaBigInt,
-    claimPathKey  : schemaClaimPathKey,
-    operator: 5, // operator
-    value: [840, 120, 340, 509, ...new Array(60).fill(0).map(i => 0)],
-};
-```
+Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
 
 </TabItem>
 </Tabs>
@@ -536,22 +464,8 @@ When presented with this query, the user must prove that he/she is not a residen
 </TabItem>
 <TabItem value="on-chain">
 
-```ts
-// you can run https://go.dev/play/p/rnrRbxXTRY6 to get schema hash and claimPathKey using YOUR schema
-const schemaBigInt = "201134713754279235117373236841506344285"
+Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
 
-// merklized path to field in the W3C credential according to JSONLD schema 
-const schemaClaimPathKey = "17002437119434618783545694633038537380726339994244684348913844923422470806844"
-
-const requestId = 1;
-
-const query = {
-    schema: schemaBigInt,
-    claimPathKey  : schemaClaimPathKey,
-    operator: 6,
-    value: [840, ...new Array(63).fill(0).map(i => 0)], // for operators 1,2,3,6 only first value matters
-    };
-```
 
 </TabItem>
 </Tabs>
