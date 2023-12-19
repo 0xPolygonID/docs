@@ -21,7 +21,7 @@ Once the Issuer Node installation is completed, the following will walk you thro
 
 :::note
 
-These steps can be done either via the API UI (<http://localhost:3001>) or directly in the UI (<http://localhost:8088>).
+These steps can be done either via the API UI (http://localhost:3001) or directly in the UI (http://localhost:8088).
 
 :::
 

@@ -24,7 +24,7 @@ This method gets a map of profile nonces as key and profile DIDs as value, assoc
 
 `privateKey` is the key used to access all the sensitive info from the identity and also to realize operations like generating proofs.
 
-It returns a map of <BigInt, String>. The returned profiles will come from the current env set with `PolygonIdSdk.setEnv`.
+It returns a map of \<BigInt, String\>. The returned profiles will come from the current env set with `PolygonIdSdk.setEnv`.
 
 
 
