@@ -29,8 +29,8 @@ a modern static website generator to build optimized websites quickly.
 
 Note that on macOS, you also need Xcode and Command Line Tools.
 
-* Install [Node.js](https://nodejs.org/en/download/) version >= 16.14.1
-* Install [Yarn](https://yarnpkg.com/getting-started/install) version >= 1.22  
+* Install [Node.js](https://nodejs.org/en/download/) version >= 20
+
 
 ### Run the docs locally
 
@@ -62,25 +62,19 @@ Note that on macOS, you also need Xcode and Command Line Tools.
     ```
     git checkout master
     git fetch upstream
-    git merge upstream/master
+    git merge upstream/main
     ```
 
 6. Install the dependencies.
    
     ```
-    yarn install
+    npm install
     ```
     
    The site is built using Docusaurus. You may need to install Docusaurus before running the docs locally.
 
    ```
-   yarn add docusaurus
-   ```
-   
-   Alternatively, you can upgrade Docusaurus.
-
-   ```
-   yarn upgrade @docusaurus/core@latest @docusaurus/preset-classic@latest
+   npm add docusaurus
    ```
 
 7. Run the docs locally. 
@@ -88,7 +82,7 @@ Note that on macOS, you also need Xcode and Command Line Tools.
    Most changes are reflected live without having to restart the server.
 
     ```
-    yarn start
+    npm run start
     ```
 
 ### Make changes using Git GUI and code editor
@@ -179,7 +173,7 @@ This command generates static content into the `build` directory and can be serv
 service:
 
 ```
-yarn build
+npm run build
 ```
 
 ## Deployment
@@ -188,7 +182,7 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 `gh-pages` branch.
 
 ```
-GIT_USER=[your_github_handle] USE_SSH=true yarn deploy
+GIT_USER=[your_github_handle] USE_SSH=true npm run deploy
 ```
 
 ### Caching
@@ -198,7 +192,7 @@ implemented:
 
 - `.docusaurus`: caches the site structure. The build process will update this as needed
 - `build`: caches the static assets to avoid regenerating any pages that have not changed
-- `node_modules`: caches node_modules based on the hash of `yarn.lock`. Any changes to package dependencies will invalidate and rebuild this cache
+- `node_modules`: caches node_modules based on the hash of `package-lock.json`. Any changes to package dependencies will invalidate and rebuild this cache
 
 Current cache config is defined in [master_deployment.yml](.github/workflows/master_deployment.yml#39). Caches can be viewed or invalidated in the 
 GitHub repo settings.

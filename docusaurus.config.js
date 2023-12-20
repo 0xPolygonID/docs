@@ -127,7 +127,7 @@ module.exports = {
               rel: null,
             },
             {
-              href: '/fakeurl',
+              href: '/',
               label: 'JWZ (coming soon)',
               target: '_blank',
               className: "disabled",
