@@ -1,5 +1,5 @@
 ---
-id: install-kubernets
+id: install-kubernetes
 title: Installing the Issuer Node in Kubernetes
 sidebar_label: Using Kubernetes
 description: Learn how to install the Issuer Node using Kubernetes.

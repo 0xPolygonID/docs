@@ -82,7 +82,7 @@ module.exports = {
           },
           items: [
             "issuer-node/install-gcm",
-            "issuer-node/install-kubernets"
+            "issuer-node/install-kubernetes"
           ]
         },
         {
