@@ -82,7 +82,7 @@ Note that on macOS, you also need Xcode and Command Line Tools.
    Most changes are reflected live without having to restart the server.
 
     ```
-    npm start
+    npm run start
     ```
 
 ### Make changes using Git GUI and code editor
@@ -173,7 +173,7 @@ This command generates static content into the `build` directory and can be serv
 service:
 
 ```
-npm build
+npm run build
 ```
 
 ## Deployment
@@ -182,7 +182,7 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 `gh-pages` branch.
 
 ```
-GIT_USER=[your_github_handle] USE_SSH=true npm deploy
+GIT_USER=[your_github_handle] USE_SSH=true npm run deploy
 ```
 
 ### Caching
