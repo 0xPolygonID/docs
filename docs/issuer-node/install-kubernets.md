@@ -1,15 +1,15 @@
 ---
 id: install-kubernets
 title: Installing the Issuer Node in Kubernetes
-sidebar_label: Using Kubernets
-description: Learn how to install the Issuer Node using Kubernets.
+sidebar_label: Using Kubernetes
+description: Learn how to install the Issuer Node using Kubernetes.
 keywords: 
   - docs
   - polygon id
   - ID holder
   - issuer
   - verifier
-  - kubernets
+  - kubernetes
 ---
 
 import Tabs from '@theme/Tabs';
