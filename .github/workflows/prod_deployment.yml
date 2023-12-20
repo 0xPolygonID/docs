@@ -44,11 +44,11 @@ jobs:
           mask-password: 'true'
 
       - name: INSTALL
-        run: rm -rf node_modules && yarn install --immutable --immutable-cache --check-cache
+        run: rm -rf node_modules && npm ci
 
       # Runs a single command using the runners shell
       - name: Build
-        run: yarn build
+        run: npm run build
 
       - name: Build, tag, and push image to Amazon ECR
         id: build-image

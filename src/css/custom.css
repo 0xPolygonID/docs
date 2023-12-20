@@ -1328,7 +1328,7 @@ a.disabled {
 div[role="banner"] {
   padding: 20px 0px;
   font-size: 14px;
-  background: 'linear-gradient(to right, #a626c1 0%, #9b2dc9 26%, #9332d1 51%, #8539db 76%, #7c3ee3 100%)',
+  background: linear-gradient(to right, #a626c1 0%, #9b2dc9 26%, #9332d1 51%, #8539db 76%, #7c3ee3 100%);
 }
 
 div[role="banner"] .close {
