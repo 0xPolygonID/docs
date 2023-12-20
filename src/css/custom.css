@@ -998,9 +998,6 @@ a.disabled {
   list-style: square;
   font-size: 18px;
 }
-.tutorial-links {
-
-}
 .tutorial-link {
   color: #FFFFFF;
   text-decoration: underline;
@@ -2033,10 +2030,6 @@ strong {
     letter-spacing: .5px;
     font-size: 1.125rem;
   }
-
-  [role=banner] {
-    /*height: var(--docusaurus-announcement-bar-height) + 1.25rem;*/
-    }
 }
 
 [data-theme='dark'] {
@@ -2204,10 +2197,6 @@ code:not(.language-text) {
 
 .tabs__item--active:hover {
   border-bottom: 4px solid var(--ifm-color-primary);
-}
-
-[role =  tabpanel] {
-  /*padding: 0 1rem 1rem 1rem;*/
 }
 
 .tabs {
@@ -2498,8 +2487,6 @@ p {
 }
 .faq-accordion-dropdown.open .faq-accordion-icon:before {
   transform: rotate(315deg);
-}
-.faq-accordion-dropdown:hover {
 }
 .faq-accordion-dropdown:not(.open) .faq-accordion-toggle:hover {
   background: #222;
