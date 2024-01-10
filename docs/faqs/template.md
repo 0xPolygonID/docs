@@ -16,5 +16,4 @@ keywords:
 
 ## Correct answer
 
-
 ## Wrong answer
