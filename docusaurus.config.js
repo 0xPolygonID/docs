@@ -139,6 +139,11 @@ module.exports = {
           label: 'Learn',
           items: [
             {
+              href: '/docs/faqs/',
+              label: 'FAQs',
+              rel: null,
+            },
+            {
               href: 'https://www.youtube.com/playlist?list=PLRD3rkREa7mLLJ6jfUTygXV1iK_AvsDdw',
               label: 'Fundamentals',
               target: '_blank',
