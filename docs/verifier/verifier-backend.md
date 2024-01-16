@@ -26,10 +26,10 @@ To run the verifier backend with Docker, after cloning the code from the reposit
 polygon:
   mumbai:
     contractAddress: 0x134B1BE34911E39A8397ec6289782989729807a4
-    networkURL: https://polygon-mumbai.g.alchemy.com/v2/xaP2_t9EUM2VYDgCgMI0k9KqDyJPvZ89
+    networkURL: https://polygon-mumbai.g.alchemy.com/v2/xa
   main:
     contractAddress: 0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D
-    networkURL: https://polygon-mainnet.g.alchemy.com/v2/X2HI8cErI_6RYdUVS0SvSfCZCYDCSrzt
+    networkURL: https://polygon-mainnet.g.alchemy.com/v2/X2
 ```
 
 2. Create a .env file (you can use the .env-sample file as a base).
