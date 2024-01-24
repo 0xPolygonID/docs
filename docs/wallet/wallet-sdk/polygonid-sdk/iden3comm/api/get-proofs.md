@@ -11,9 +11,9 @@ keywords:
   - verifier
   - wallet sdk
 ---
- 
+
 The `getProofs` function uses identity to generate the zero-knowledge proofs requested by the `Iden3Message Entity`.
- 
+
 ## Get Proof
 
 The `getProofs()` method uses `Iden3MessageEntity`, `did`, `profileNonce`, and `privateKey` as the input parameters and returns a list of `Iden3commProofEntity`.
@@ -29,16 +29,16 @@ Future<List<Iden3commProofEntity>> getProofs({
     String? stateContractAddr,
     String? ipfsNodeUrl,
     Map<int, Map<String, dynamic>>? nonRevocationProofs,
-  }); 
+  });
 ```
-   
-- `Iden3MessageEntity`: returned from `getIden3Message` method after a user scans the QR code on Issuer/Verifier website. 
+
+- `Iden3MessageEntity`: returned from `getIden3Message` method after a user scans the QR code on Issuer/Verifier website.
 
 - `profileNonce` is the nonce of the profile of an identity.
 
-- `privateKey` of the identity is a key that is used to access the sensitive information of the identity. This key is also used for generating proofs by using the credentials associated with the identity. 
+- `privateKey` of the identity is a key that is used to access the sensitive information of the identity. This key is also used for generating proofs by using the credentials associated with the identity.
 
-- `did` is the unique ID of the identity. 
+- `did` is the unique ID of the identity.
 
 - `Iden3commProofEntity` is the object containing the proof that the Integrator sends to the Issuer/Verifier after scanning the QR code. Read more about JWZ [here](/docs/wallet/wallet-sdk/polygonid-sdk/iden3comm/jwz.md).
 

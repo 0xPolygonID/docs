@@ -3,7 +3,7 @@ id: overview
 title: On-chain verification
 sidebar_label: On-chain verification
 description: On-chain verification tutorials.
-keywords: 
+keywords:
   - docs
   - polygon id
   - ID holder
@@ -19,19 +19,19 @@ The on-chain verification workflow allows dApps to verify users' credentials ins
 This flow is especially needed in cases where further on-chain logic needs to be implemented on successful verification such as:
 
 - Distributing a token airdrop only to human-verified accounts
-- Allowing voting only to account members of your DAO 
+- Allowing voting only to account members of your DAO
 - Blocking airdrops to users that belong to a specific country
 - Allowing trading only to accounts that passed the KYC verification
 
 ## On-chain verification flow
-At its core, every on-chain interaction between a Verifier and a user's Wallet follows this workflow:
 
+At its core, every on-chain interaction between a Verifier and a user's Wallet follows this workflow:
 
 <div align="center">
 <img src={useBaseUrl("/img/on-chain-verification-flow.png")} align="center" width="600"/>
 </div>
 
-1. After having deployed a [Verifier Smart Contract](#design-the-erc20-zk-airdrop-verifier-contract), the Verifier designs a [Request](#set-the-zkp-request) for the users. This has to be recorded on-chain inside the Verifier Smart Contract. 
+1. After having deployed a [Verifier Smart Contract](#design-the-erc20-zk-airdrop-verifier-contract), the Verifier designs a [Request](#set-the-zkp-request) for the users. This has to be recorded on-chain inside the Verifier Smart Contract.
 1. The Request is delivered to the user within a QR code (or via deep-linking, depending on the implementation).
 1. The user scans the QR code using his/her mobile ID wallet and parses the request
 1. The application fetches the revocation status of the requested credential from the Issuer of that credential.
@@ -45,7 +45,7 @@ Note that an active action from the Verifier is only required at step 1. All the
 
 ## Implement an ERC20 ZK Airdrop
 
-In this tutorial, we will create an ERC20 ZK Airdrop Contract. The chosen query criterium is to be born before `01/01/2002`. Users that can prove that they were born before that date will be able to get the airdrop. Otherwise, they will not. The proof submitted to the Smart Contract will not reveal any information about the specific date of birth of the user as we are using zero knowledge. 
+In this tutorial, we will create an ERC20 ZK Airdrop Contract. The chosen query criterium is to be born before `01/01/2002`. Users that can prove that they were born before that date will be able to get the airdrop. Otherwise, they will not. The proof submitted to the Smart Contract will not reveal any information about the specific date of birth of the user as we are using zero knowledge.
 
 :::note
 
@@ -55,19 +55,19 @@ To set up a different query check out the [<ins>ZK Query Language section</ins>]
 
 This tutorial is based on the verification of a Credential of Type `KYCAgeCredential` with an attribute `birthday` with a Schema URL `https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v3.json-ld`.
 
-The prerequisite is that users have the [Polygon ID Wallet app](/docs/wallet/wallet-overview.md) installed and self-issued a Credential of type `KYC Age Credential Merklized` using our [Demo Issuer](https://issuer-demo.polygonid.me/) 
+The prerequisite is that users have the [Polygon ID Wallet app](/docs/wallet/wallet-overview.md) installed and self-issued a Credential of type `KYC Age Credential Merklized` using our [Demo Issuer](https://issuer-demo.polygonid.me/)
 
 :::note
 
 The full executable code related to this tutorial can be cloned from <ins><a href="https://github.com/0xPolygonID/tutorial-examples/tree/main/on-chain-verification" target="_blank">this repository</a></ins>.
 
-::: 
+:::
 
-### Design the ERC20 zk Airdrop Verifier Contract 
+### Design the ERC20 zk Airdrop Verifier Contract
 
-Let us jump into the code by writing the ERC20Verifier contract. 
+Let us jump into the code by writing the ERC20Verifier contract.
 
-The ERC20Verifier is an ERC20 standard contract with a few other features. The extra functionality is given by the zero-knowledge proof verification. All the functions dedicated to the ZK verification are contained inside the 
+The ERC20Verifier is an ERC20 standard contract with a few other features. The extra functionality is given by the zero-knowledge proof verification. All the functions dedicated to the ZK verification are contained inside the
 <a href="https://github.com/iden3/contracts/blob/master/contracts/verifiers/ZKPVerifier.sol" target="_blank">ZKPVerifier Contract</a> and inherited within the ERC20Verifier. For example, users will submit their proof to claim the airdrop by calling <a href="https://github.com/iden3/contracts/blob/master/contracts/verifiers/ZKPVerifier.sol#L40" target="_blank">`submitZKPResponse`</a>.
 
 The ERC20Verifier contract must define at least a single `TRANSFER_REQUEST_ID`. This is the Identifier of the request that the contract is making to the user.
@@ -89,12 +89,12 @@ contract ERC20Verifier is ERC20, ZKPVerifier {
     constructor(
         string memory name_,
         string memory symbol_
-    ) ERC20(name_, symbol_) {}   
+    ) ERC20(name_, symbol_) {}
 
 }
 ```
 
-The ZKPVerifier Contract provides 2 hooks: 
+The ZKPVerifier Contract provides 2 hooks:
 
 <a href="https://github.com/iden3/contracts/blob/master/contracts/verifiers/ZKPVerifier.sol#L113" target="_blank">`_beforeProofSubmit`</a> and <a href="https://github.com/iden3/contracts/blob/master/contracts/verifiers/ZKPVerifier.sol#L122" target="_blank">`_afterProofSubmit`</a>. These hooks are called before and after any proof gets submitted and can be used to create personalized logic inside your Smart Contract.
 
@@ -156,8 +156,8 @@ contract ERC20Verifier is ERC20, ZKPVerifier {
 }
 ```
 
-Finally, we can add a further element of security inside the Smart Contract: prevent any type of token transfer (even after the airdrop) unless users passed the proof verification. This last condition is added by overriding the ERC20 `_beforeTokenTransfer` function and checking that the receiver address `to` of the transfer is included inside the 
-<a href="https://github.com/iden3/contracts/blob/master/contracts/verifiers/ZKPVerifier.sol#L28" target="_blank">`proofs`</a> mapping. 
+Finally, we can add a further element of security inside the Smart Contract: prevent any type of token transfer (even after the airdrop) unless users passed the proof verification. This last condition is added by overriding the ERC20 `_beforeTokenTransfer` function and checking that the receiver address `to` of the transfer is included inside the
+<a href="https://github.com/iden3/contracts/blob/master/contracts/verifiers/ZKPVerifier.sol#L28" target="_blank">`proofs`</a> mapping.
 
 ```solidity {29, 30, 31, 32, 33}
 contract ERC20Verifier is ERC20, ZKPVerifier {
@@ -209,7 +209,7 @@ The contract is now fully written!
 
 :::note "Hardhat"
 
-For this tutorial, we are using the Hardhat development environment to facilitate the contract deployment. You can learn how to get started with this tool by checking [<ins>their documentation</ins>](https://hardhat.org/hardhat-runner/docs/getting-started).  
+For this tutorial, we are using the Hardhat development environment to facilitate the contract deployment. You can learn how to get started with this tool by checking [<ins>their documentation</ins>](https://hardhat.org/hardhat-runner/docs/getting-started).
 
 :::
 
@@ -222,10 +222,7 @@ async function main() {
   const verifierSymbol = "zkERC20";
 
   const ERC20Verifier = await ethers.getContractFactory(verifierContract);
-  const erc20Verifier = await ERC20Verifier.deploy(
-    verifierName,
-    verifierSymbol
-  );
+  const erc20Verifier = await ERC20Verifier.deploy(verifierName, verifierSymbol);
 
   await erc20Verifier.deployed();
   console.log(verifierName, " contract address:", erc20Verifier.address);
@@ -248,18 +245,19 @@ The actual ZKP request "to be born before 01/01/2002" hasn't been added to the S
 
 1. `requestId`: the ID associated with the request.
 2. `request`: <a href="https://github.com/iden3/contracts/blob/master/contracts/interfaces/IZKPVerifier.sol#L8" target="_blank">ZKPRequest</a> struct. ZKPRequest struct contains 3 fields:
-    1. `metadata`: contract invoke request.
-    2. `validator` the address of the <a href="https://github.com/iden3/contracts/tree/master/contracts/validators" target="_blank">Validators Smart Contract</a> already deployed on Mumbai. This is the contract that executes the verification on the ZK proof submitted by the user. It can be of type [CredentialAtomicQuerySigValidator](/docs/smart-contracts.md#credentialatomicquerysigvalidator) or [CredentialAtomicQueryMTPValidator](/docs/smart-contracts.md#credentialatomicquerymtpvalidator).
-    3. `data` encoded bytes of <a href="https://github.com/iden3/contracts/blob/master/contracts/validators/CredentialAtomicQueryValidator.sol#L12" target="_blank">CredentialAtomicQuery</a> struct.
+   1. `metadata`: contract invoke request.
+   2. `validator` the address of the <a href="https://github.com/iden3/contracts/tree/master/contracts/validators" target="_blank">Validators Smart Contract</a> already deployed on Mumbai. This is the contract that executes the verification on the ZK proof submitted by the user. It can be of type [CredentialAtomicQuerySigValidator](/docs/smart-contracts.md#credentialatomicquerysigvalidator) or [CredentialAtomicQueryMTPValidator](/docs/smart-contracts.md#credentialatomicquerymtpvalidator).
+   3. `data` encoded bytes of <a href="https://github.com/iden3/contracts/blob/master/contracts/validators/CredentialAtomicQueryValidator.sol#L12" target="_blank">CredentialAtomicQuery</a> struct.
 
 CredentialAtomicQuery struct contains 10 fields:
+
 1. `schema` namely the bigInt representation of the schema of the requested credential. This can be obtained by passing your schema to this [Go Sandbox](https://go.dev/play/p/3id7HAhf-Wi). In order to use the sandbox, the constants `jsonLDContext`, `typ`, `fieldName` and `schemaJSONLD` need to be modified according to your request.
-2. `claimPathKey`  represents the path to the queries key inside the merklized credential. In this case, it is the path to the `birthday` key. This can be obtained by passing your schema to this [Go Sandbox](https://go.dev/play/p/3id7HAhf-Wi). In order to use the sandbox, the constants `jsonLDContext`, `typ`, `fieldName` and `schemaJSONLD` need to be modified according to your request.
+2. `claimPathKey` represents the path to the queries key inside the merklized credential. In this case, it is the path to the `birthday` key. This can be obtained by passing your schema to this [Go Sandbox](https://go.dev/play/p/3id7HAhf-Wi). In order to use the sandbox, the constants `jsonLDContext`, `typ`, `fieldName` and `schemaJSONLD` need to be modified according to your request.
 3. `operator` is either 1,2,3,4,5,6. To understand more about the operator you can check the [zk query language](/docs/verifier/verification-library/zk-query-language.md).
 4. `slotIndex` represents specific position for <a href="https://docs.iden3.io/protocol/claims-structure/#index-vs-value" target="_blank">data in claim</a>.
 5. `value` represents the threshold value you are querying. In this case, it is the date 01/01/2002.
 6. `queryHash` is the poseidon hash of `schemaHash`, `slotIndex`, `operator`, `claimPathKey`, `claimPathNotExists`, `valueHash`. Used for gas consumption optimization.
-7. `allowedIssuers` represents the  allowed issuers of the credential.
+7. `allowedIssuers` represents the allowed issuers of the credential.
 8. `circuitIds` is an array of circuit IDs (['credentialAtomicQuerySigV2OnChain'] or ['credentialAtomicQueryMTPV2OnChain']).
 9. `skipClaimRevocationCheck` checks whether the credential revocation will be checked during the proof generation.
 10. `claimPathNotExists`: 0 or 1; 0 for inclusion in merklized credentials, 1 for non-inclusion and for non-merklized credentials.
@@ -267,24 +265,24 @@ CredentialAtomicQuery struct contains 10 fields:
 To encode these fields to structure, use this function:
 
 ```js
-const { Web3 } = require('web3');
+const { Web3 } = require("web3");
 
 function packValidatorParams(query, allowedIssuers = []) {
-  let web3 = new Web3(Web3.givenProvider || 'ws://localhost:8545');
+  let web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
   return web3.eth.abi.encodeParameter(
     {
       CredentialAtomicQuery: {
-        schema: 'uint256',
-        claimPathKey: 'uint256',
-        operator: 'uint256',
-        slotIndex: 'uint256',
-        value: 'uint256[]',
-        queryHash: 'uint256',
-        allowedIssuers: 'uint256[]',
-        circuitIds: 'string[]',
-        skipClaimRevocationCheck: 'bool',
-        claimPathNotExists: 'uint256'
-      }
+        schema: "uint256",
+        claimPathKey: "uint256",
+        operator: "uint256",
+        slotIndex: "uint256",
+        value: "uint256[]",
+        queryHash: "uint256",
+        allowedIssuers: "uint256[]",
+        circuitIds: "string[]",
+        skipClaimRevocationCheck: "bool",
+        claimPathNotExists: "uint256",
+      },
     },
     {
       schema: query.schema,
@@ -296,28 +294,20 @@ function packValidatorParams(query, allowedIssuers = []) {
       allowedIssuers: allowedIssuers,
       circuitIds: query.circuitIds,
       skipClaimRevocationCheck: query.skipClaimRevocationCheck,
-      claimPathNotExists: query.claimPathNotExists
+      claimPathNotExists: query.claimPathNotExists,
     }
   );
 }
-
 ```
 
 Calculate query hash:
 
 ```js
-const { poseidon } = require('@iden3/js-crypto');
-const { SchemaHash } = require('@iden3/js-iden3-core');
-const { prepareCircuitArrayValues } = require('@0xpolygonid/js-sdk');
+const { poseidon } = require("@iden3/js-crypto");
+const { SchemaHash } = require("@iden3/js-iden3-core");
+const { prepareCircuitArrayValues } = require("@0xpolygonid/js-sdk");
 
-function calculateQueryHash(
-  values,
-  schema,
-  slotIndex,
-  operator,
-  claimPathKey,
-  claimPathNotExists
-) {
+function calculateQueryHash(values, schema, slotIndex, operator, claimPathKey, claimPathNotExists) {
   const expValue = prepareCircuitArrayValues(values, 64);
   const valueHash = poseidon.spongeHashX(expValue, 6);
   const schemaHash = coreSchemaFromStr(schema);
@@ -327,7 +317,7 @@ function calculateQueryHash(
     BigInt(operator),
     BigInt(claimPathKey),
     BigInt(claimPathNotExists),
-    valueHash
+    valueHash,
   ]);
   return quaryHash;
 }
@@ -335,8 +325,7 @@ function calculateQueryHash(
 function coreSchemaFromStr(schemaIntString) {
   const schemaInt = BigInt(schemaIntString);
   return SchemaHash.newSchemaHashFromInt(schemaInt);
-};
-
+}
 ```
 
 :::info
@@ -348,37 +337,37 @@ Check out our [<ins>Smart Contract section</ins>](/docs/smart-contracts.md) to l
 Execute this Hardhat script to set the ZK request to the Smart Contract:
 
 ```js
-const { Web3 } = require('web3');
-const { poseidon } = require('@iden3/js-crypto');
-const { SchemaHash } = require('@iden3/js-iden3-core');
-const { prepareCircuitArrayValues } = require('@0xpolygonid/js-sdk');
+const { Web3 } = require("web3");
+const { poseidon } = require("@iden3/js-crypto");
+const { SchemaHash } = require("@iden3/js-iden3-core");
+const { prepareCircuitArrayValues } = require("@0xpolygonid/js-sdk");
 
 const Operators = {
-  NOOP : 0, // No operation, skip query verification in circuit
-  EQ : 1, // equal
-  LT : 2, // less than
-  GT : 3, // greater than
-  IN : 4, // in
-  NIN : 5, // not in
-  NE : 6   // not equal
-}
+  NOOP: 0, // No operation, skip query verification in circuit
+  EQ: 1, // equal
+  LT: 2, // less than
+  GT: 3, // greater than
+  IN: 4, // in
+  NIN: 5, // not in
+  NE: 6, // not equal
+};
 
 function packValidatorParams(query, allowedIssuers = []) {
-  let web3 = new Web3(Web3.givenProvider || 'ws://localhost:8545');
+  let web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
   return web3.eth.abi.encodeParameter(
     {
       CredentialAtomicQuery: {
-        schema: 'uint256',
-        claimPathKey: 'uint256',
-        operator: 'uint256',
-        slotIndex: 'uint256',
-        value: 'uint256[]',
-        queryHash: 'uint256',
-        allowedIssuers: 'uint256[]',
-        circuitIds: 'string[]',
-        skipClaimRevocationCheck: 'bool',
-        claimPathNotExists: 'uint256'
-      }
+        schema: "uint256",
+        claimPathKey: "uint256",
+        operator: "uint256",
+        slotIndex: "uint256",
+        value: "uint256[]",
+        queryHash: "uint256",
+        allowedIssuers: "uint256[]",
+        circuitIds: "string[]",
+        skipClaimRevocationCheck: "bool",
+        claimPathNotExists: "uint256",
+      },
     },
     {
       schema: query.schema,
@@ -390,7 +379,7 @@ function packValidatorParams(query, allowedIssuers = []) {
       allowedIssuers: allowedIssuers,
       circuitIds: query.circuitIds,
       skipClaimRevocationCheck: query.skipClaimRevocationCheck,
-      claimPathNotExists: query.claimPathNotExists
+      claimPathNotExists: query.claimPathNotExists,
     }
   );
 }
@@ -398,16 +387,9 @@ function packValidatorParams(query, allowedIssuers = []) {
 function coreSchemaFromStr(schemaIntString) {
   const schemaInt = BigInt(schemaIntString);
   return SchemaHash.newSchemaHashFromInt(schemaInt);
-};
+}
 
-function calculateQueryHash(
-  values,
-  schema,
-  slotIndex,
-  operator,
-  claimPathKey,
-  claimPathNotExists
-) {
+function calculateQueryHash(values, schema, slotIndex, operator, claimPathKey, claimPathNotExists) {
   const expValue = prepareCircuitArrayValues(values, 64);
   const valueHash = poseidon.spongeHashX(expValue, 6);
   const schemaHash = coreSchemaFromStr(schema);
@@ -417,20 +399,21 @@ function calculateQueryHash(
     BigInt(operator),
     BigInt(claimPathKey),
     BigInt(claimPathNotExists),
-    valueHash
+    valueHash,
   ]);
   return quaryHash;
 }
 
 async function main() {
-
   // you can run https://go.dev/play/p/3id7HAhf-Wi to get schema hash and claimPathKey using YOUR schema
-  const schemaBigInt = "74977327600848231385663280181476307657"
+  const schemaBigInt = "74977327600848231385663280181476307657";
 
-  const type = 'KYCAgeCredential';
-  const schemaUrl = 'https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v3.json-ld';
-   // merklized path to field in the W3C credential according to JSONLD  schema e.g. birthday in the KYCAgeCredential under the url "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v3.json-ld"
-  const schemaClaimPathKey = "20376033832371109177683048456014525905119173674985843915445634726167450989630"
+  const type = "KYCAgeCredential";
+  const schemaUrl =
+    "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v3.json-ld";
+  // merklized path to field in the W3C credential according to JSONLD  schema e.g. birthday in the KYCAgeCredential under the url "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v3.json-ld"
+  const schemaClaimPathKey =
+    "20376033832371109177683048456014525905119173674985843915445634726167450989630";
 
   const requestId = 1;
 
@@ -441,115 +424,110 @@ async function main() {
     operator: Operators.LT,
     slotIndex: 0,
     value: [20020101, ...new Array(63).fill(0)], // for operators 1-3 only first value matters
-    circuitIds: ['credentialAtomicQuerySigV2OnChain'],
+    circuitIds: ["credentialAtomicQuerySigV2OnChain"],
     skipClaimRevocationCheck: false,
-    claimPathNotExists: 0
-    };
-  
+    claimPathNotExists: 0,
+  };
+
   query.queryHash = calculateQueryHash(
-        query.value,
-        query.schema,
-        query.slotIndex,
-        query.operator,
-        query.claimPathKey,
-        query.claimPathNotExists
-      ).toString();
+    query.value,
+    query.schema,
+    query.slotIndex,
+    query.operator,
+    query.claimPathKey,
+    query.claimPathNotExists
+  ).toString();
 
   // add the address of the contract just deployed
-  const ERC20VerifierAddress = "<ERC20VerifierAddress>"
+  const ERC20VerifierAddress = "<ERC20VerifierAddress>";
 
-  let erc20Verifier = await hre.ethers.getContractAt("ERC20Verifier", ERC20VerifierAddress)
-
+  let erc20Verifier = await hre.ethers.getContractAt("ERC20Verifier", ERC20VerifierAddress);
 
   const validatorAddress = "0x1E4a22540E293C0e5E8c33DAfd6f523889cFd878"; // sig validator
   // const validatorAddress = "0x0682fbaA2E4C478aD5d24d992069dba409766121"; // mtp validator
 
   const invokeRequestMetadata = {
-        id: '7f38a193-0918-4a48-9fac-36adfdb8b542',
-        typ: 'application/iden3comm-plain-json',
-        type: 'https://iden3-communication.io/proofs/1.0/contract-invoke-request',
-        thid: '7f38a193-0918-4a48-9fac-36adfdb8b542',
-        body: {
-          reason: 'airdrop participation',
-          transaction_data: {
-            contract_address: ERC20VerifierAddress,
-            method_id: 'b68967e2',
-            chain_id: 80001,
-            network: 'polygon-mumbai'
+    id: "7f38a193-0918-4a48-9fac-36adfdb8b542",
+    typ: "application/iden3comm-plain-json",
+    type: "https://iden3-communication.io/proofs/1.0/contract-invoke-request",
+    thid: "7f38a193-0918-4a48-9fac-36adfdb8b542",
+    body: {
+      reason: "airdrop participation",
+      transaction_data: {
+        contract_address: ERC20VerifierAddress,
+        method_id: "b68967e2",
+        chain_id: 80001,
+        network: "polygon-mumbai",
+      },
+      scope: [
+        {
+          id: query.requestId,
+          circuitId: query.circuitIds[0],
+          query: {
+            allowedIssuers: ["*"],
+            context: schemaUrl,
+            credentialSubject: {
+              birthday: {
+                $lt: query.value[0],
+              },
+            },
+            type,
           },
-          scope: [
-            {
-              id: query.requestId,
-              circuitId: query.circuitIds[0],
-              query: {
-                allowedIssuers: ['*'],
-                context: schemaUrl,
-                credentialSubject: {
-                  birthday: {
-                    $lt: query.value[0]
-                  }
-                },
-                type
-              }
-            }
-          ]
-        }
-      };
+        },
+      ],
+    },
+  };
 
   try {
-    const txId = await erc20Verifier.setZKPRequest(
-        requestId, {
-        metadata: JSON.stringify(invokeRequestMetadata),
-        validator: validatorAddress,
-        data: packValidatorParams(query)
-      });
+    const txId = await erc20Verifier.setZKPRequest(requestId, {
+      metadata: JSON.stringify(invokeRequestMetadata),
+      validator: validatorAddress,
+      data: packValidatorParams(query),
+    });
     console.log("Request set");
   } catch (e) {
     console.log("error: ", e);
   }
 }
-
 ```
 
-The contract is now correctly deployed on Mumbai Testnet and the query has been set up, congratulations! Now it is time to launch the airdrop! 
+The contract is now correctly deployed on Mumbai Testnet and the query has been set up, congratulations! Now it is time to launch the airdrop!
 
-### Add the Proof Request Inside a QR Code 
+### Add the Proof Request Inside a QR Code
 
 The last step is to design the proof request to be embedded inside a QR code. In this particular case this is how the request should look like (remember to modify it by adding the address of your ERC20Verifier Contract):
 
 ```json
 {
-    "id": "7f38a193-0918-4a48-9fac-36adfdb8b542",
-    "typ": "application/iden3comm-plain-json",
-    "type": "https://iden3-communication.io/proofs/1.0/contract-invoke-request",
-    "thid": "7f38a193-0918-4a48-9fac-36adfdb8b542",
-    "body": {
-        "reason": "airdrop participation",
-        "transaction_data": {
-            "contract_address": "<ERC20VerifierAddress>",
-            "method_id": "b68967e2",
-            "chain_id": 80001,
-            "network": "polygon-mumbai"
-        },
-        "scope": [
-            {
-                "id": 1,
-                "circuitId": "credentialAtomicQuerySigV2OnChain",
-                "query": {
-                    "allowedIssuers": [
-                        "*"
-                    ],
-                    "context": "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v3.json-ld",
-                    "credentialSubject": {
-                        "birthday": {
-                            "$lt": 20020101
-                        }
-                    },
-                    "type": "KYCAgeCredential"
-                }
+  "id": "7f38a193-0918-4a48-9fac-36adfdb8b542",
+  "typ": "application/iden3comm-plain-json",
+  "type": "https://iden3-communication.io/proofs/1.0/contract-invoke-request",
+  "thid": "7f38a193-0918-4a48-9fac-36adfdb8b542",
+  "body": {
+    "reason": "airdrop participation",
+    "transaction_data": {
+      "contract_address": "<ERC20VerifierAddress>",
+      "method_id": "b68967e2",
+      "chain_id": 80001,
+      "network": "polygon-mumbai"
+    },
+    "scope": [
+      {
+        "id": 1,
+        "circuitId": "credentialAtomicQuerySigV2OnChain",
+        "query": {
+          "allowedIssuers": ["*"],
+          "context": "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v3.json-ld",
+          "credentialSubject": {
+            "birthday": {
+              "$lt": 20020101
             }
-        ]
-    }
+          },
+          "type": "KYCAgeCredential"
+        }
+      }
+    ]
+  }
 }
 ```
 
@@ -570,7 +548,7 @@ The same proof generation request can also be delivered to users via Deep Linkin
 
 ## Claim the Airdrop
 
-You can directly test it by scanning the QR Code below using your Polygon ID App: 
+You can directly test it by scanning the QR Code below using your Polygon ID App:
 
 <div align="center">
 <img src= "/img/qr-code-on-chain-verification.png" align="center" width="400"/>

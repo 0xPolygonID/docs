@@ -17,7 +17,6 @@ keywords:
   - revocation
 ---
 
-
 Iden3comm is the implementation of the messages that exist in the Iden3 protocol. It deals with different protocol message types; a few messages supported by the protocol are related to authentication, credentials, proof, and revocation.
 
 ## Packers
@@ -60,33 +59,33 @@ The following steps show how the Authorization Handler works:
 
 1. Before the token generation, the handler can unpack the authorization message, so the user can choose the DID to log in with (it can be a private profile or public identity).
 
-    ```typescript
-    parseAuthorizationRequest(request: Uint8Array): Promise<AuthorizationRequestMessage>;
-    ```
+   ```typescript
+   parseAuthorizationRequest(request: Uint8Array): Promise<AuthorizationRequestMessage>;
+   ```
 
-    Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.authhandler.parseauthorizationrequest#authhandlerparseauthorizationrequest-method" target="_blank">API Reference</a>.
+   Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.authhandler.parseauthorizationrequest#authhandlerparseauthorizationrequest-method" target="_blank">API Reference</a>.
 
 1. Then, it handles authorization request protocol messages and generates a token.
 
-    ```typescript
-    handleAuthorizationRequest(
-        did: DID,
-        request: Uint8Array,
-        opts?: AuthHandlerOptions
-      ): Promise<{
-        token: string;
-        authRequest: AuthorizationRequestMessage;
-        authResponse: AuthorizationResponseMessage;
-      }
-    ```
+   ```typescript
+   handleAuthorizationRequest(
+       did: DID,
+       request: Uint8Array,
+       opts?: AuthHandlerOptions
+     ): Promise<{
+       token: string;
+       authRequest: AuthorizationRequestMessage;
+       authResponse: AuthorizationResponseMessage;
+     }
+   ```
 
-It gets the payload and an identity (that can handle that request) as the input parameters, and returns a token, authorization request, and authorization response.  
+It gets the payload and an identity (that can handle that request) as the input parameters, and returns a token, authorization request, and authorization response.
 
 Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.authhandler.handleauthorizationrequest" target="_blank">API Reference</a>.
 
 :::note
 
-When a user logs into a Verifier, it does not have to share its identity. Instead, it can share with it the profile as the user does not receive a credential on his/her identifier but on his/her profile. Sharing one's profile instead of his/her identity prevents the possible identity tracking by a Verifier. 
+When a user logs into a Verifier, it does not have to share its identity. Instead, it can share with it the profile as the user does not receive a credential on his/her identifier but on his/her profile. Sharing one's profile instead of his/her identity prevents the possible identity tracking by a Verifier.
 
 :::
 
@@ -101,7 +100,7 @@ handleCredentialOffer(
   ): Promise<W3CCredential[]>
 ```
 
-The offer should just be passed to the function. The DID that is supposed to fetch the credential will be determined from the offer message itself. 
+The offer should just be passed to the function. The DID that is supposed to fetch the credential will be determined from the offer message itself.
 
 `offer` is the offer message that the Fetch handler receives.
 
@@ -113,10 +112,11 @@ Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/
 
 If you want to work with JWS instead of JWZ technology during the authorization or credential fetching you need to pass parameters to these functions.
 
-```typescript 
+```typescript
 let params = {
   mediaType: MediaType;
   packerOptions?: JWSPackerParams;
 }
 ```
+
 where `mediaType` is the media type of iden3comm protocol and `packerOptions` are JWS required parameters.

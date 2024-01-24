@@ -24,7 +24,7 @@ Whenever an ID Holder creates a connection with an Issuer, the Holder can select
 </div>
 <br/>
 
-You can always switch profiles:  
+You can always switch profiles:
 
 <div align="center">
 <img src={useBaseUrl("/img/profiles-2.png")} width="300"/>

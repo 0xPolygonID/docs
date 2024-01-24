@@ -3,7 +3,7 @@ id: verifier-setup
 title: Run a Verifier
 sidebar_label: Run a Verifier
 description: Tutorial to run a verifier.
-keywords: 
+keywords:
   - docs
   - polygon id
   - ID holder
@@ -16,11 +16,11 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Any application that wants to authenticate users based on their Polygon ID Identity off-chain must set up a Verifier. A Verifier is made of a Server and a Client. 
+Any application that wants to authenticate users based on their Polygon ID Identity off-chain must set up a Verifier. A Verifier is made of a Server and a Client.
 
 The Server generates [the ZK Request](./request-api-guide.md) according to the requirements of the platform. There are two types of authentication:
 
-- [**Basic Auth**](./request-api-guide.md#basic-auth-request): for example, a platform that issues Credentials must authenticate users by their identifiers before sharing Credentials with them. 
+- [**Basic Auth**](./request-api-guide.md#basic-auth-request): for example, a platform that issues Credentials must authenticate users by their identifiers before sharing Credentials with them.
 - [**Query-based Auth**](./request-api-guide.md#query-based-request): for example, a platform that gives access only to those users that are over 18 years of age.
 
 The second role of the Server is to execute [Verification](./verification-api-guide.md) of the proof sent by the Identity Wallet.
@@ -37,16 +37,16 @@ In this example, the verifier will set up the query: "Prove that you were born b
 
 The executable code for this section can be found <ins><a href="https://github.com/0xPolygonID/tutorial-examples/tree/main/verifier-integration" target="_blank">here</a></ins>.
 
-::: 
+:::
 
 ## Verifier Server Setup
 
-1. **Add the authorization package to your project** 
+1. **Add the authorization package to your project**
 
 <Tabs>
 <TabItem value="Golang">
 
-```bash 
+```bash
 go get github.com/iden3/go-iden3-auth/v2
 ```
 
@@ -55,21 +55,20 @@ go get github.com/iden3/go-iden3-auth/v2
 
 ```js
 npm i @iden3/js-iden3-auth
-```  
+```
 
 </TabItem>
 </Tabs>
 
-2. **Set up a server** 
+2. **Set up a server**
 
-Initiate a server that contains two endpoints: 
+Initiate a server that contains two endpoints:
 
 - GET `/api/sign-in`: Returns auth request.
 - POST `/api/callback`: Receives the callback request from the identity wallet containing the proof and verifies it.
 
 <Tabs>
 <TabItem value="Golang">
-		
 
 ```go
 package main
@@ -105,36 +104,35 @@ var requestMap = make(map[string]interface{})
 <TabItem value="Javascript">
 
 ```js
-const express = require('express');
-const {auth, resolver, protocol} = require('@iden3/js-iden3-auth')
-const getRawBody = require('raw-body')
+const express = require("express");
+const { auth, resolver, protocol } = require("@iden3/js-iden3-auth");
+const getRawBody = require("raw-body");
 
 const app = express();
 const port = 8080;
 
 app.get("/api/sign-in", (req, res) => {
-	console.log('get Auth Request');
-	GetAuthRequest(req,res);
+  console.log("get Auth Request");
+  GetAuthRequest(req, res);
 });
 
 app.post("/api/callback", (req, res) => {
-	console.log('callback');
-	Callback(req,res);
+  console.log("callback");
+  Callback(req, res);
 });
 
 app.listen(port, () => {
-	console.log('server running on port 8080');
+  console.log("server running on port 8080");
 });
 
 // Create a map to store the auth requests and their session IDs
 const requestMap = new Map();
-
-```  
+```
 
 </TabItem>
 </Tabs>
 
-3. **Sign-in endpoint** 
+3. **Sign-in endpoint**
 
 This endpoint generates the auth request for the user. Using this endpoint, the developers set up the requirements that users must meet in order to authenticate.
 
@@ -143,7 +141,6 @@ This endpoint generates the auth request for the user. Using this endpoint, the 
 <Tabs>
 <TabItem value="Golang">
 
-	
 ```go {11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31}
 
 func GetAuthRequest(w http.ResponseWriter, r *http.Request) {
@@ -194,66 +191,62 @@ msgBytes, _ := json.Marshal(request)
 ```
 
 </TabItem>
-<TabItem value="Javascript">	
+<TabItem value="Javascript">
 
 ```js {11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37}
-async function GetAuthRequest(req,res) {
+async function GetAuthRequest(req, res) {
+  // Audience is verifier id
+  const hostUrl = "<NGROK_URL>";
+  const sessionId = 1;
+  const callbackURL = "/api/callback";
+  const audience = "did:polygonid:polygon:mumbai:2qDyy1kEo2AYcP3RT4XGea7BtxsY285szg6yP9SPrs";
 
-	// Audience is verifier id
-	const hostUrl = "<NGROK_URL>";
-	const sessionId = 1;
-	const callbackURL = "/api/callback"
-	const audience = "did:polygonid:polygon:mumbai:2qDyy1kEo2AYcP3RT4XGea7BtxsY285szg6yP9SPrs"
+  const uri = `${hostUrl}${callbackURL}?sessionId=${sessionId}`;
 
-	const uri = `${hostUrl}${callbackURL}?sessionId=${sessionId}`;
+  // Generate request for basic authentication
+  const request = auth.createAuthorizationRequest("test flow", audience, uri);
 
-	// Generate request for basic authentication
-	const request = auth.createAuthorizationRequest(
-		'test flow',
-		audience,
-		uri,
-	);
-			
-	request.id = '7f38a193-0918-4a48-9fac-36adfdb8b542';
-	request.thid = '7f38a193-0918-4a48-9fac-36adfdb8b542';
+  request.id = "7f38a193-0918-4a48-9fac-36adfdb8b542";
+  request.thid = "7f38a193-0918-4a48-9fac-36adfdb8b542";
 
-	// Add request for a specific proof
-	const proofRequest = {
-		id: 1,
-		circuitId: 'credentialAtomicQuerySigV2',
-		query: {
-		  allowedIssuers: ['*'],
-		  type: 'KYCAgeCredential',
-		  context: 'https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v3.json-ld',
-		  credentialSubject: {
-			birthday: {
-			  $lt: 20000101,
-			},
-		  },
-	  },
-	  };
-	const scope = request.body.scope ?? [];
-	request.body.scope = [...scope, proofRequest];
-			 
-	// Store auth request in map associated with session ID
-	requestMap.set(`${sessionId}`, request);
+  // Add request for a specific proof
+  const proofRequest = {
+    id: 1,
+    circuitId: "credentialAtomicQuerySigV2",
+    query: {
+      allowedIssuers: ["*"],
+      type: "KYCAgeCredential",
+      context:
+        "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v3.json-ld",
+      credentialSubject: {
+        birthday: {
+          $lt: 20000101,
+        },
+      },
+    },
+  };
+  const scope = request.body.scope ?? [];
+  request.body.scope = [...scope, proofRequest];
 
-		return res.status(200).set('Content-Type', 'application/json').send(request);
+  // Store auth request in map associated with session ID
+  requestMap.set(`${sessionId}`, request);
+
+  return res.status(200).set("Content-Type", "application/json").send(request);
 }
-```  
+```
 
 </TabItem>
 </Tabs>
 
 :::warning "Allowed Issuers"
-    
-When we use `*` in the "allowed issuers" segment (`allowedIssuers: ['*']`), we mean that we accept any entity that might have provided the credential. Even though this seems to be convenient for testing purposes, it may also be considered risky. Applying due diligence by **actually choosing trusted specific issuers** should be the best approach. Only in rare cases, a verifier would accept any issuer, so we advise not to use `*`.   
+
+When we use `*` in the "allowed issuers" segment (`allowedIssuers: ['*']`), we mean that we accept any entity that might have provided the credential. Even though this seems to be convenient for testing purposes, it may also be considered risky. Applying due diligence by **actually choosing trusted specific issuers** should be the best approach. Only in rare cases, a verifier would accept any issuer, so we advise not to use `*`.
 
 :::
 
 :::note
 
-The highlighted lines are to be added only if the authentication needs to design a [<ins>query</ins>](./zk-query-language.md) for a specific proof as in the case of [<ins>Query-based Auth</ins>](./request-api-guide.md#query-based-auth). When not included, it will perform a [<ins>Basic Auth</ins>](./request-api-guide.md#basic-auth). 
+The highlighted lines are to be added only if the authentication needs to design a [<ins>query</ins>](./zk-query-language.md) for a specific proof as in the case of [<ins>Query-based Auth</ins>](./request-api-guide.md#query-based-auth). When not included, it will perform a [<ins>Basic Auth</ins>](./request-api-guide.md#basic-auth).
 
 :::
 
@@ -262,8 +255,7 @@ The highlighted lines are to be added only if the authentication needs to design
 The request generated in the previous endpoint already contains the `CallBackURL` so that the response generated by the wallet will be automatically forwarded to the server callback function. The callback post endpoint receives the proof generated by the identity wallet. The role of the callback endpoint is to execute the [Verification](verification-api-guide.md) on the proof.
 
 :::info "Testnet / Mainnet"
-		
-The code samples on this page are using Polygon's Testnet Mumbai, including the smart contract address and the RPC endpoint in the `ethURL` variable. If you want to use the Mainnet, you need to add a resolver for it. 
+The code samples on this page are using Polygon's Testnet Mumbai, including the smart contract address and the RPC endpoint in the `ethURL` variable. If you want to use the Mainnet, you need to add a resolver for it.
 
 Mainnet contract address: `0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D`
 
@@ -290,7 +282,7 @@ A Verifier can work with multiple networks simultaneously. Even users and issuer
 
 :::note
 
-The public verification keys for Iden3 circuits generated after the trusted setup can be found <ins><a href="https://github.com/0xPolygonID/phase2ceremony" target="_blank">here</a></ins> and must be added to your project inside a folder called `keys`. 
+The public verification keys for Iden3 circuits generated after the trusted setup can be found <ins><a href="https://github.com/0xPolygonID/phase2ceremony" target="_blank">here</a></ins> and must be added to your project inside a folder called `keys`.
 
 :::
 
@@ -310,7 +302,7 @@ func Callback(w http.ResponseWriter, r *http.Request) {
 	// Add Polygon Mumbai RPC node endpoint - needed to read on-chain state
 	ethURL := "https://polygon-testnet-rpc.allthatnode.com:8545"
 
-	// Add IPFS url - needed to load schemas from IPFS 
+	// Add IPFS url - needed to load schemas from IPFS
 	ipfsURL := "https://ipfs.io"
 
 	// Add identity state contract address
@@ -372,71 +364,66 @@ func Callback(w http.ResponseWriter, r *http.Request) {
 <TabItem value="Javascript">
 
 ```js
-async function Callback(req,res) {
+async function Callback(req, res) {
+  // Get session ID from request
+  const sessionId = req.query.sessionId;
 
-	// Get session ID from request
-	const sessionId = req.query.sessionId;
+  // get JWZ token params from the post request
+  const raw = await getRawBody(req);
+  const tokenStr = raw.toString().trim();
 
-	// get JWZ token params from the post request
-	const raw = await getRawBody(req);
-	const tokenStr = raw.toString().trim();
+  const ethURL = "<MUMBAI_RPC_URL>";
+  const contractAddress = "0x134B1BE34911E39A8397ec6289782989729807a4";
+  const keyDIR = "../keys";
 
-	const ethURL = '<MUMBAI_RPC_URL>';
-	const contractAddress = "0x134B1BE34911E39A8397ec6289782989729807a4"
-	const keyDIR = "../keys"
+  const ethStateResolver = new resolver.EthStateResolver(ethURL, contractAddress);
 
-	const ethStateResolver = new resolver.EthStateResolver(
-		ethURL,
-		contractAddress,
-	  );
+  const resolvers = {
+    ["polygon:mumbai"]: ethStateResolver,
+  };
 
-	const resolvers = {
-		['polygon:mumbai']: ethStateResolver,
-	};				 
+  // fetch authRequest from sessionID
+  const authRequest = requestMap.get(`${sessionId}`);
 
-	// fetch authRequest from sessionID
-	const authRequest = requestMap.get(`${sessionId}`);
-				
+  // EXECUTE VERIFICATION
+  const verifier = await auth.Verifier.newVerifier({
+    stateResolver: resolvers,
+    circuitsDir: path.join(__dirname, "./circuits-dir"),
+    ipfsGatewayURL: "<gateway url>",
+  });
 
-	// EXECUTE VERIFICATION
-	const verifier = await auth.Verifier.newVerifier(
-			{
-			stateResolver: resolvers,
-			circuitsDir: path.join(__dirname, './circuits-dir'),
-			ipfsGatewayURL:"<gateway url>"
-			}
-	);
-
-	try {
-		const opts = {
-			AcceptedStateTransitionDelay: 5 * 60 * 1000, // 5 minute
-		  };		
-		authResponse = await verifier.fullVerify(tokenStr, authRequest, opts);
-	} catch (error) {
-	return res.status(500).send(error);
-	}
-	return res.status(200).set('Content-Type', 'application/json').send("user with ID: " + authResponse.from + "Succesfully authenticated");
-	}
-``` 
+  try {
+    const opts = {
+      AcceptedStateTransitionDelay: 5 * 60 * 1000, // 5 minute
+    };
+    authResponse = await verifier.fullVerify(tokenStr, authRequest, opts);
+  } catch (error) {
+    return res.status(500).send(error);
+  }
+  return res
+    .status(200)
+    .set("Content-Type", "application/json")
+    .send("user with ID: " + authResponse.from + "Succesfully authenticated");
+}
+```
 
 </TabItem>
-</Tabs> 
+</Tabs>
 
-> If you need to deploy an App or to build a Docker container, you'll need to bundle the [libwasmer.so](https://github.com/iden3/go-rapidsnark/tree/main/witness) library together with the app. 
+> If you need to deploy an App or to build a Docker container, you'll need to bundle the [libwasmer.so](https://github.com/iden3/go-rapidsnark/tree/main/witness) library together with the app.
 
 ## Verifier Client Setup
 
-The Verifier Client must fetch the Auth Request generated by the Server (`/api/sign-in` endpoint) and deliver it to the user via a QR Code. 
+The Verifier Client must fetch the Auth Request generated by the Server (`/api/sign-in` endpoint) and deliver it to the user via a QR Code.
 
 > To display the QR code inside your frontend, you can use this [Code Sandbox](https://codesandbox.io/s/yp1pmpjo4z?file=/index.js).
 
 A Verifier can show a QR code that contains one of the following data structures:
 
-* Raw JSON - message will be treated as one of the [IDEN3 Protocol messages](https://iden3-communication.io/credentials/overview/).
-* Link with base64 encoded message or shortened request URI (encoded URL) in case base64-encoded message is too large. Possible formats of links are: 
-    1. `iden3comm://?i_m={{base64EncodedRequestHere}}`
-    2. `iden3comm://?request_uri={{shortenedUrl}}`
-
+- Raw JSON - message will be treated as one of the [IDEN3 Protocol messages](https://iden3-communication.io/credentials/overview/).
+- Link with base64 encoded message or shortened request URI (encoded URL) in case base64-encoded message is too large. Possible formats of links are:
+  1. `iden3comm://?i_m={{base64EncodedRequestHere}}`
+  2. `iden3comm://?request_uri={{shortenedUrl}}`
 
 If both params are present `i_m` is prioritized and `request_uri` is ignored.
 
@@ -448,7 +435,7 @@ Polygon ID wallet will support handling of `request_uri` in the next release, wh
 
 :::
 
-***Shortened URL algorithm***
+**_Shortened URL algorithm_**
 
 While it's not strictly restricted how you can perform URL shortage algorithm, it is recommended to follow these instructions:
 
@@ -475,7 +462,7 @@ import (
 	"github.com/patrickmn/go-cache"
 )
 
-var cacheStorage = cache.New(60*time.Minute, 60*time.Minute)	
+var cacheStorage = cache.New(60*time.Minute, 60*time.Minute)
 
 func HandleQRData(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
@@ -512,9 +499,9 @@ func HandleQRData(w http.ResponseWriter, r *http.Request) {
 		hostURL := os.Getenv("HOST_URL") // e.g. https://verifier.com
 		// write key to response
 		fmt.Fprintf(w, "%s%s?id=%s", hostURL, "api/qr-store", uv.String())
-		return	
+		return
 
-	// get message by identifier	
+	// get message by identifier
 	case http.MethodGet:
 
 		// get path param
@@ -551,58 +538,56 @@ func HandleQRData(w http.ResponseWriter, r *http.Request) {
 <TabItem value= "Javascript">
 
 ```js
-const express = require('express');
-const { v4: uuidv4 } = require('uuid');
-const Cache = require('cache-manager');
-const HttpStatus = require('http-status-codes');
+const express = require("express");
+const { v4: uuidv4 } = require("uuid");
+const Cache = require("cache-manager");
+const HttpStatus = require("http-status-codes");
 
 const app = express();
 app.use(express.json());
 
-const cPromise = Cache.caching('memory', {
-	max: 100,
-	ttl: 10 * 1000 /*milliseconds*/,
+const cPromise = Cache.caching("memory", {
+  max: 100,
+  ttl: 10 * 1000 /*milliseconds*/,
 });
-app.get('/api/qr-store', async (req, res) => {
-const id = req.query.id;
-const cacheManager = await cPromise;
-const data = await cacheManager.get(id);
+app.get("/api/qr-store", async (req, res) => {
+  const id = req.query.id;
+  const cacheManager = await cPromise;
+  const data = await cacheManager.get(id);
 
-if (!data) {
-	return res.status(HttpStatus.NOT_FOUND).json({ error: `item not found ${id}` });
-}
+  if (!data) {
+    return res.status(HttpStatus.NOT_FOUND).json({ error: `item not found ${id}` });
+  }
 
-return res.status(HttpStatus.OK).json(data);
+  return res.status(HttpStatus.OK).json(data);
 });
 
-app.post('/api/qr-store', async (req, res) => {
-const body = req.body;
-const uuid = uuidv4();
-const cacheManager = await cPromise;
+app.post("/api/qr-store", async (req, res) => {
+  const body = req.body;
+  const uuid = uuidv4();
+  const cacheManager = await cPromise;
 
-console.log(cacheManager);
+  console.log(cacheManager);
 
-await cacheManager.set(uuid, body, { ttl: 3600 });
+  await cacheManager.set(uuid, body, { ttl: 3600 });
 
-const hostUrl = process.env.HOST_URL;
-const qrUrl = `${hostUrl}/api/qr-store?id=${uuid}`;
+  const hostUrl = process.env.HOST_URL;
+  const qrUrl = `${hostUrl}/api/qr-store?id=${uuid}`;
 
-return res.status(HttpStatus.OK).json({ qrUrl });
+  return res.status(HttpStatus.OK).json({ qrUrl });
 });
 
 app.listen(3000, () => {
-console.log('Express server is running on port 3000');
-
+  console.log("Express server is running on port 3000");
 });
-```  
+```
 
 </TabItem>
 </Tabs>
 
-	
 **Implement Further Logic**
 
-This tutorial showcased a minimalistic application that leverages Polygon ID libraries for authentication purposes. Developers can leverage the broad set of existing Credentials held by users to set up any customized Query using our [ZK Query Language](./zk-query-language.md) to unleash the full potential of the framework. 
+This tutorial showcased a minimalistic application that leverages Polygon ID libraries for authentication purposes. Developers can leverage the broad set of existing Credentials held by users to set up any customized Query using our [ZK Query Language](./zk-query-language.md) to unleash the full potential of the framework.
 
 For example, the concept can be extended to exchanges that require KYC Credentials, DAOs that require proof-of-personhood Credentials, or social media applications that intend to re-use users' aggregated reputation.
 
@@ -610,33 +595,32 @@ To do so, add the <a href="https://github.com/0xPolygonID/tutorial-examples/tree
 
 > To display the QR code inside your frontend, you can use the `express.static` built-in middleware function together with this <a href="https://github.com/0xPolygonID/tutorial-examples/tree/main/verifier-integration/js/static" target="_blank">Static Folder</a> or this [Code Sandbox](https://codesandbox.io/s/yp1pmpjo4z?file=/index.js).
 
-
 1. **Add routing to your Express Server**
 
 To serve static files, we use the <a href="https://expressjs.com/en/starter/static-files.html" target="_blank">express.static built-in middleware function</a>.
 
 ```js {8}
-const express = require('express');
-const {auth, resolver, protocol} = require('@iden3/js-iden3-auth')
-const getRawBody = require('raw-body')
+const express = require("express");
+const { auth, resolver, protocol } = require("@iden3/js-iden3-auth");
+const getRawBody = require("raw-body");
 
 const app = express();
 const port = 8080;
 
-app.use(express.static('static'));
+app.use(express.static("static"));
 
 app.get("/api/sign-in", (req, res) => {
-	console.log('get Auth Request');
-	GetAuthRequest(req,res);
+  console.log("get Auth Request");
+  GetAuthRequest(req, res);
 });
 
 app.post("/api/callback", (req, res) => {
-	console.log('callback');
-	Callback(req,res);
+  console.log("callback");
+  Callback(req, res);
 });
 
 app.listen(port, () => {
-	console.log('server running on port 8080');
+  console.log("server running on port 8080");
 });
 
 // Create a map to store the auth requests and their session IDs

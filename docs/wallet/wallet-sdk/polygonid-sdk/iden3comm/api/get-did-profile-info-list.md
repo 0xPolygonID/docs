@@ -16,7 +16,6 @@ keywords:
 
 Get information about a list of DIDs that connect with a service.
 
-
 ```dart
 Future<List<Map<String, dynamic>>> getDidProfileInfoList({
   required String did,

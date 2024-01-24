@@ -17,7 +17,7 @@ keywords:
 
 :::caution Encryption Key
 
-In order to use the Stack Trace, integrators need to provide a 32-char-long key in the .env file as  the Stack Trace is actually encrypted:
+In order to use the Stack Trace, integrators need to provide a 32-char-long key in the .env file as the Stack Trace is actually encrypted:
 
 ```
 "stacktraceEncryptionKey":"key32charlong"

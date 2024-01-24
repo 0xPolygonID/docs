@@ -14,7 +14,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-An Integrator, in order to use the services of an Issuer, needs to authenticate itself with that Issuer. For this to happen, the Integrator needs to call the `authenticate()` method. 
+An Integrator, in order to use the services of an Issuer, needs to authenticate itself with that Issuer. For this to happen, the Integrator needs to call the `authenticate()` method.
 
 The `authenticate()` method uses `Iden3MessageEntity`, `genesisDid`, `privateKey`, and optional `pushToken`, `profileNonce`, `nonRevocationProofs` and `challenge` as input parameters.
 
@@ -46,14 +46,14 @@ Future<void> authenticate({
 
 1. Retrieve `CircuitDataEntity` from the loadCircuitFiles. `CircuitDataEntity` are the circuits used for generating an authentication proof that we share with the Issuer with JWZ.
 
-2. Retrieve iden3message by scanning the QR code and transform it into a string message with `getiden3message()` method. 
+2. Retrieve iden3message by scanning the QR code and transform it into a string message with `getiden3message()` method.
 
 3. Get authToken from authenticate() and authenticate Identity with authToken.
 
 ### Wallet-Issuer Interaction using Authentication
- 
-An Integrator, to interact with an Issuer, needs to authenticate with it first. 
- 
+
+An Integrator, to interact with an Issuer, needs to authenticate with it first.
+
 1.  On the Polygon ID app (which is based on SDK), an Integrator clicks **Connect**.
 
 <div align="center">
@@ -69,9 +69,9 @@ An Integrator, to interact with an Issuer, needs to authenticate with it first.
 <br/>
 
 3.  With this, the `Authenticate()` function (with the identifier, private key and message as the inputs) is executed. The function authenticates the Identity and sends the authentication information (in the form of a big encoded message based on JWZ) to the Issuer.
- 
-      ![](/img/jwz.png)
- 
-      > Read more on JWZ [here](/docs/wallet/wallet-sdk/polygonid-sdk/iden3comm/jwz.md).
- 
-4. The Issuer receives the data sent by the Integrator and based on its correctness, authenticates or rejects the identity. The wallet analyzes this response from the Issuer.
+
+    ![](/img/jwz.png)
+
+    > Read more on JWZ [here](/docs/wallet/wallet-sdk/polygonid-sdk/iden3comm/jwz.md).
+
+4.  The Issuer receives the data sent by the Integrator and based on its correctness, authenticates or rejects the identity. The wallet analyzes this response from the Issuer.

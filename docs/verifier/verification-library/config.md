@@ -3,7 +3,7 @@ id: config
 title: Configuration
 sidebar_label: Configuration
 description: Learn how to configure the API
-keywords: 
+keywords:
   - docs
   - polygon id
   - ID holder
@@ -22,7 +22,7 @@ import TabItem from '@theme/TabItem';
 The set of APIs included in the verification library is comprised of two steps:
 
 - [Request APIs](./request-api-guide.md) allow designing the request to be presented to the user in order to authenticate.
-- [Verification APIs](./verification-api-guide.md) allow verifying the proof sent by the user. The proof is generated as a response to the request. 
+- [Verification APIs](./verification-api-guide.md) allow verifying the proof sent by the user. The proof is generated as a response to the request.
 
 :::note
 
@@ -58,7 +58,7 @@ npm i @iden3/js-iden3-auth --save
 ```
 
 ```js
-const {auth, resolver, protocol} = require('@iden3/js-iden3-auth')
+const { auth, resolver, protocol } = require("@iden3/js-iden3-auth");
 ```
 
 </TabItem>
