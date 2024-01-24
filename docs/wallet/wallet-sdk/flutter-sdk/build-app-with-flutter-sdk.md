@@ -19,7 +19,7 @@ Follow the instructions on the [<ins>Flutter docs</ins>](https://docs.flutter.de
 :::
 
 Once your Flutter and Dart plugins are installed, you can start creating your first Flutter app.
- 
+
 1. On the Terminal or Powershell, change your directory to where you want to install your app:
 
    ```bash
@@ -34,15 +34,15 @@ Once your Flutter and Dart plugins are installed, you can start creating your fi
    ```
 
    With these commands, the Flutter SDK creates a new project from scratch.
- 
+
 3. Flutter creates your app.
- 
+
 4. Change your directory to your app:
- 
+
    ```bash
    cd firstapp
    ```
- 
+
 :::note
 
 In your directory, inside your app, there is a `lib` folder, which contains a `main.dart` file. This file contains the Dart code and for your own app, you will need to replace its content with your own code.
@@ -50,19 +50,19 @@ In your directory, inside your app, there is a `lib` folder, which contains a `m
 :::
 
 ## Pubspec.yaml File
- 
+
 In your app folder, open the `pubspec.yaml` in your editor. The `pubspec.yaml` file contains the following information about your app:
- 
+
 - Name of your app
 - Description
 - Version and build number of your app
 - Environment
 - Dependencies
- 
+
 ### Add Dependencies of your app to Pubspec.yaml
- 
+
 Dependencies are any additional packages that your app requires to run smoothly. These dependencies can be automatically updated to the latest version by running the following command:
- 
+
 ```bash
 flutter pub upgrade --major-versions
 ```

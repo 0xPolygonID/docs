@@ -42,12 +42,10 @@ Defines the feature of the token.
 
 ```json
 {
-    "alg": "groth16",
-    "circuitId": "authV2",
-    "crit": [
-        "circuitId"
-    ],
-    "typ": "application/iden3-zkp-json"
+  "alg": "groth16",
+  "circuitId": "authV2",
+  "crit": ["circuitId"],
+  "typ": "application/iden3-zkp-json"
 }
 ```
 
@@ -55,161 +53,156 @@ Defines the feature of the token.
 
 `circuitId` - is a circuit that is used for proof generation. For authentication - auth circuit must be used.
 
-`crit` - describes the list of header keys that the verifier must support. 
+`crit` - describes the list of header keys that the verifier must support.
 
-`typ` - is the media type of the message. In our case, it is the type of the protocol of the packed message *application/iden3-zkp-json*.
+`typ` - is the media type of the message. In our case, it is the type of the protocol of the packed message _application/iden3-zkp-json_.
 
 ## Payload Message
 
 Contains the message that needs to be shared with another party.
 
-In this example, the message is the proof related to the query analysed previously. However, any type of message can be included in the payload. 
+In this example, the message is the proof related to the query analysed previously. However, any type of message can be included in the payload.
 
 ```json
 {
-    "id": "5e9ff0bb-9577-43b5-befe-d11ce04dc6e2",
-    "typ": "application/iden3comm-plain-json",
-    "type": "https://iden3-communication.io/authorization/1.0/response",
-    "thid": "7f38a193-0918-4a48-9fac-36adfdb8b542",
-    "from": "did:polygonid:polygon:mumbai:2qMY7xymaXWdFDt74xR1z8mYrzSYBC1VeSWw6ZhcSP",
-    "to": "did:polygonid:polygon:mumbai:2qDyy1kEo2AYcP3RT4XGea7BtxsY285szg6yP9SPrs",
-    "body": {
-        "did_doc": {
-            "@context": [
-                "https://www.w3.org/ns/did/v1"
-            ],
-            "id": "did:polygonid:polygon:mumbai:2qMY7xymaXWdFDt74xR1z8mYrzSYBC1VeSWw6ZhcSP",
-            "service": [
-                {
-                    "id": "did:polygonid:polygon:mumbai:2qMY7xymaXWdFDt74xR1z8mYrzSYBC1VeSWw6ZhcSP#push",
-                    "type": "push-notification",
-                    "serviceEndpoint": "https://push-staging.polygonid.com/api/v1",
-                    "metadata": {
-                        "devices": [
-                            {
-                                "ciphertext": "YeydgZpVEuEDS9Vuz8HF/IUX2EQ/ZvlVf6GaeIebUCM9Hg5nNfhvadJc/BLwnFz2D+Yt/oo2GDbzcf+mpJNp+xv/Yogqn9tCyIUObq7IaZIuESexh/Uat+SfvG87IJK53HJGRILu8W1wHwUyQYxdyaKBikfNtYj7YtWMKGWQ5R6ypZqAPo+f435KcgpxGQ2mTL4tM2jVElZf9UMXDx9uoD+uOlo2PohHjcgP3Kd5jaSlfevOFLsBFValyesmcc2Wjc58+5CMLZnnmJE4VIwCSpwSNofM3QoDA28p4yTuk/UhxTmCsISL7xr6DBks37srRjT6AtAOtBFJMycfNIPP/wTNIEfjzwUswVX6fjswkXnkRqd9Aee+U4cncHS/ul8SmC/8i4lvoO7+8GN15NRZNMhWkM/DMIS+ESVbxBMWIIbTZKEmQ+YtDDba0B8GONIOvf/wx8hSR1/SpL+E08WL58RiJY3nPXoKGY+TmBZe3e0vIUKjsqJUFhaPou1Iqka6AOOMun5lZ1D/5Pgof/91NY7Hc7yMp8Z7xkUIdHDkmzSukJNWN3oWeXUDld7ERExbn3glXHEKF1dg5IFn+z2/WLInqeHjYklk8O+vxzbViIEVZC4Mq+PmD0586OjvIPNVaZJZ2YTfiIFfIQHychhhHNT1SvJ7NtWhmQ0vEskIcrA=",
-                                "alg": "RSA-OAEP-512"
-                            }
-                        ]
-                    }
-                }
+  "id": "5e9ff0bb-9577-43b5-befe-d11ce04dc6e2",
+  "typ": "application/iden3comm-plain-json",
+  "type": "https://iden3-communication.io/authorization/1.0/response",
+  "thid": "7f38a193-0918-4a48-9fac-36adfdb8b542",
+  "from": "did:polygonid:polygon:mumbai:2qMY7xymaXWdFDt74xR1z8mYrzSYBC1VeSWw6ZhcSP",
+  "to": "did:polygonid:polygon:mumbai:2qDyy1kEo2AYcP3RT4XGea7BtxsY285szg6yP9SPrs",
+  "body": {
+    "did_doc": {
+      "@context": ["https://www.w3.org/ns/did/v1"],
+      "id": "did:polygonid:polygon:mumbai:2qMY7xymaXWdFDt74xR1z8mYrzSYBC1VeSWw6ZhcSP",
+      "service": [
+        {
+          "id": "did:polygonid:polygon:mumbai:2qMY7xymaXWdFDt74xR1z8mYrzSYBC1VeSWw6ZhcSP#push",
+          "type": "push-notification",
+          "serviceEndpoint": "https://push-staging.polygonid.com/api/v1",
+          "metadata": {
+            "devices": [
+              {
+                "ciphertext": "YeydgZpVEuEDS9Vuz8HF/IUX2EQ/ZvlVf6GaeIebUCM9Hg5nNfhvadJc/BLwnFz2D+Yt/oo2GDbzcf+mpJNp+xv/Yogqn9tCyIUObq7IaZIuESexh/Uat+SfvG87IJK53HJGRILu8W1wHwUyQYxdyaKBikfNtYj7YtWMKGWQ5R6ypZqAPo+f435KcgpxGQ2mTL4tM2jVElZf9UMXDx9uoD+uOlo2PohHjcgP3Kd5jaSlfevOFLsBFValyesmcc2Wjc58+5CMLZnnmJE4VIwCSpwSNofM3QoDA28p4yTuk/UhxTmCsISL7xr6DBks37srRjT6AtAOtBFJMycfNIPP/wTNIEfjzwUswVX6fjswkXnkRqd9Aee+U4cncHS/ul8SmC/8i4lvoO7+8GN15NRZNMhWkM/DMIS+ESVbxBMWIIbTZKEmQ+YtDDba0B8GONIOvf/wx8hSR1/SpL+E08WL58RiJY3nPXoKGY+TmBZe3e0vIUKjsqJUFhaPou1Iqka6AOOMun5lZ1D/5Pgof/91NY7Hc7yMp8Z7xkUIdHDkmzSukJNWN3oWeXUDld7ERExbn3glXHEKF1dg5IFn+z2/WLInqeHjYklk8O+vxzbViIEVZC4Mq+PmD0586OjvIPNVaZJZ2YTfiIFfIQHychhhHNT1SvJ7NtWhmQ0vEskIcrA=",
+                "alg": "RSA-OAEP-512"
+              }
             ]
+          }
+        }
+      ]
+    },
+    "message": null,
+    "scope": [
+      {
+        "id": 1,
+        "circuitId": "credentialAtomicQuerySigV2",
+        "proof": {
+          "pi_a": [
+            "15884143689186560770613277585394790339833216551334455259057104625330072534513",
+            "3279087612022712002346246449119382911626020106043414798538796983204625561627",
+            "1"
+          ],
+          "pi_b": [
+            [
+              "17483827893363008359677197756588725874847778739899370347418832100488894862592",
+              "18581990404961662375468895155063352252977404744116590234714326916785858835966"
+            ],
+            [
+              "15056466132163179056356748548103581238065878763694911861463812671755273984149",
+              "744845528981012816555395627507772604247897476473023156438967415940048012986"
+            ],
+            ["1", "0"]
+          ],
+          "pi_c": [
+            "2840462255990923561935575665246986703424217530442395136876868816299979292574",
+            "7934056605172658149212702316421589994882020251335991455917724890325297238238",
+            "1"
+          ],
+          "protocol": "groth16",
+          "curve": "bn128"
         },
-        "message": null,
-        "scope": [
-            {
-                "id": 1,
-                "circuitId": "credentialAtomicQuerySigV2",
-                "proof": {
-                    "pi_a": [
-                        "15884143689186560770613277585394790339833216551334455259057104625330072534513",
-                        "3279087612022712002346246449119382911626020106043414798538796983204625561627",
-                        "1"
-                    ],
-                    "pi_b": [
-                        [
-                            "17483827893363008359677197756588725874847778739899370347418832100488894862592",
-                            "18581990404961662375468895155063352252977404744116590234714326916785858835966"
-                        ],
-                        [
-                            "15056466132163179056356748548103581238065878763694911861463812671755273984149",
-                            "744845528981012816555395627507772604247897476473023156438967415940048012986"
-                        ],
-                        [
-                            "1",
-                            "0"
-                        ]
-                    ],
-                    "pi_c": [
-                        "2840462255990923561935575665246986703424217530442395136876868816299979292574",
-                        "7934056605172658149212702316421589994882020251335991455917724890325297238238",
-                        "1"
-                    ],
-                    "protocol": "groth16",
-                    "curve": "bn128"
-                },
-                "pub_signals": [
-                    "1",
-                    "21996317843068919425900284208892871233900696279980695602612686489012081154",
-                    "21205021542756777016860469191385900164135340408756465068158069547641071177494",
-                    "1",
-                    "24826845527182168466782670828428375151656643759174219686686819061399163394",
-                    "1",
-                    "7545856074703145894865213977052320883252426397656122059134742559875995925031",
-                    "1675330994",
-                    "74977327600848231385663280181476307657",
-                    "0",
-                    "20376033832371109177683048456014525905119173674985843915445634726167450989630",
-                    "0",
-                    "2",
-                    "20000101",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0",
-                    "0"
-                ]
-            }
+        "pub_signals": [
+          "1",
+          "21996317843068919425900284208892871233900696279980695602612686489012081154",
+          "21205021542756777016860469191385900164135340408756465068158069547641071177494",
+          "1",
+          "24826845527182168466782670828428375151656643759174219686686819061399163394",
+          "1",
+          "7545856074703145894865213977052320883252426397656122059134742559875995925031",
+          "1675330994",
+          "74977327600848231385663280181476307657",
+          "0",
+          "20376033832371109177683048456014525905119173674985843915445634726167450989630",
+          "0",
+          "2",
+          "20000101",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
         ]
-    }
+      }
+    ]
+  }
 }
 ```
 
@@ -219,39 +212,36 @@ It represents a ZK authentication proof based on the `auth circuit`.
 
 ```json
 {
-    "proof": {
-        "pi_a": [
-            "10294768349771900280672143290036094289982836955030040317209571046469183436650",
-            "8466152213074061314596191718036233826102020847385310674868818659226204414567",
-            "1"
-        ],
-        "pi_b": [
-            [
-                "11218982109467555401102983917999796297522522642881468719256019437845894695890",
-                "20340297219050824426959499484791097024921216283148588105176120583815364845311"
-            ],
-            [
-                "4394499781669188282763375768161367408443986695388571704814616286898805368638",
-                "119106145730370533918779331542443378719157790030903049617346037517135297684"
-            ],
-            [
-                "1",
-                "0"
-            ]
-        ],
-        "pi_c": [
-            "20729920912781740603954891156649006524331971068864174016266004905016061165303",
-            "12246313244412223174305436439260942831293071081935629532238271834140975181906",
-            "1"
-        ],
-        "protocol": "groth16",
-        "curve": "bn128"
-    },
-    "pub_signals": [
-        "21996317843068919425900284208892871233900696279980695602612686489012081154",
-        "8618368672680559956117828872736892846594662244867867002259063163919831935592",
-        "5153350412189630790499701107175475281465246467177369662117903565653076668023"
-    ]
+  "proof": {
+    "pi_a": [
+      "10294768349771900280672143290036094289982836955030040317209571046469183436650",
+      "8466152213074061314596191718036233826102020847385310674868818659226204414567",
+      "1"
+    ],
+    "pi_b": [
+      [
+        "11218982109467555401102983917999796297522522642881468719256019437845894695890",
+        "20340297219050824426959499484791097024921216283148588105176120583815364845311"
+      ],
+      [
+        "4394499781669188282763375768161367408443986695388571704814616286898805368638",
+        "119106145730370533918779331542443378719157790030903049617346037517135297684"
+      ],
+      ["1", "0"]
+    ],
+    "pi_c": [
+      "20729920912781740603954891156649006524331971068864174016266004905016061165303",
+      "12246313244412223174305436439260942831293071081935629532238271834140975181906",
+      "1"
+    ],
+    "protocol": "groth16",
+    "curve": "bn128"
+  },
+  "pub_signals": [
+    "21996317843068919425900284208892871233900696279980695602612686489012081154",
+    "8618368672680559956117828872736892846594662244867867002259063163919831935592",
+    "5153350412189630790499701107175475281465246467177369662117903565653076668023"
+  ]
 }
 ```
 
@@ -271,7 +261,7 @@ JWT relies on digital signatures for the secure transmission of information. In 
 
 ## Usage
 
-JWZ represents the main instrument to communicate securely between parties off-chain. This data primitive integrates seamlessly within web2 architectures for authentication purposes. 
+JWZ represents the main instrument to communicate securely between parties off-chain. This data primitive integrates seamlessly within web2 architectures for authentication purposes.
 
 > Here, we used the JWZ to manage the communication between the user and the Verifier. A JWZ can also be used in the communication between the user and the Issuer so that the user can prove his/her identity in order to fetch the claims associated with his/her identity.
 

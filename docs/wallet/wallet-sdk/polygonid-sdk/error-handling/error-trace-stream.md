@@ -13,7 +13,7 @@ keywords:
   - error handling
   - stacktrace
 ---
- 
+
 Listen to the current Error Stream.
 
 ```dart

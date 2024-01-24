@@ -2,7 +2,7 @@
 id: get-identity
 title: Get Identity
 sidebar_label: Get Identity
-description: We can get an identity stored on the SDK using getIdentity() function. 
+description: We can get an identity stored on the SDK using getIdentity() function.
 keywords:
   - docs
   - polygon id
@@ -11,23 +11,23 @@ keywords:
   - verifier
   - wallet sdk
 ---
- 
-We can get an identity stored on the SDK using the `getIdentity()` function. 
- 
+
+We can get an identity stored on the SDK using the `getIdentity()` function.
+
 ```dart
 Future<IdentityEntity> getIdentity({
-  required String genesisDid, 
+  required String genesisDid,
   String? privateKey
 });
 ```
 
-The `getIdentity()` function gets an `IdentityEntity` from an identifier. It returns an identity as a `PrivateIdentityEntity` or `IdentityEntity` (in case `privateKey` is omitted or invalid for that identifier). 
+The `getIdentity()` function gets an `IdentityEntity` from an identifier. It returns an identity as a `PrivateIdentityEntity` or `IdentityEntity` (in case `privateKey` is omitted or invalid for that identifier).
 
 `genesisDid` is the `did` of the first profile of the identity, it is the unique ID of the identity for which profile nonce is 0.
 
 :::note
 
-It is worth noting that `did` is a Decentralized Identifier associated with an identity and enables verifiable identities. A `did` could be a person, thing, organization, or even an abstract entity. The controller of the `did` can prove that it is the real owner of the identity without the need of seeking permissions/approvals from any centralized authority. 
+It is worth noting that `did` is a Decentralized Identifier associated with an identity and enables verifiable identities. A `did` could be a person, thing, organization, or even an abstract entity. The controller of the `did` can prove that it is the real owner of the identity without the need of seeking permissions/approvals from any centralized authority.
 
 A `did` is expressed in the following format (as per [<ins>w3.org</ins>](https://www.w3.org/) standards):
 
@@ -35,9 +35,4 @@ A `did` is expressed in the following format (as per [<ins>w3.org</ins>](https:/
 
 :::
 
-`privateKey` is the key that is used to access sensitive information related to an identity. This key is also used to generate proofs using the credentials associated with that identity. 
- 
-
-
-
-
+`privateKey` is the key that is used to access sensitive information related to an identity. This key is also used to generate proofs using the credentials associated with that identity.

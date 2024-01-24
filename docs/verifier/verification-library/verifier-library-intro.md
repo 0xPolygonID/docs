@@ -3,7 +3,7 @@ id: verifier-library-intro
 title: Introduction
 sidebar_label: Introduction
 description: Verifier workflow and libraries.
-keywords: 
+keywords:
   - docs
   - polygon id
   - ID holder
@@ -31,7 +31,7 @@ At its core, every off-chain interaction between a Verifier and a user's Wallet 
 </div>
 <br></br>
 
-Assume that the request is: "Are you over 18 years old?". The Verifier *never gets access to any of the user's credentials*. Instead, the Verifier receives a cryptographic proof which, on verification, provides an answer "yes" or "no" to the previous question. 
+Assume that the request is: "Are you over 18 years old?". The Verifier _never gets access to any of the user's credentials_. Instead, the Verifier receives a cryptographic proof which, on verification, provides an answer "yes" or "no" to the previous question.
 
 This section provides all the elements needed to integrate off-chain verification with Polygon ID.
 
@@ -42,5 +42,3 @@ The authentication flow can be implemented either in GoLang or Javascript
 - <a href="https://github.com/iden3/go-iden3-auth" target="_blank">Go Iden3 Verification Library</a>
 
 - <a href="https://github.com/iden3/js-iden3-auth" target="_blank">JS Iden3 Verification Library</a>
-
-

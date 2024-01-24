@@ -1,23 +1,24 @@
 ---
 id: schema
-title: Create Custom Schemas 
-sidebar_label: Create Custom Schemas 
+title: Create Custom Schemas
+sidebar_label: Create Custom Schemas
 description: Learn how to create custom schemas manually.
-keywords: 
+keywords:
   - docs
   - polygon id
   - issuer node
   - claim
   - verifiable credentials
-  - schema 
+  - schema
   - custom
   - manual
 ---
+
 # Create Custom Schemas
 
 :::info
 
-Polygon ID offers an intuitive, user-friendly interface to create schemas: the Schema Builder. [<ins>Here</ins>](schema-builder.md) you can find a tutorial for this tool. You can also access it on <ins>[https://schema-builder.polygonid.me/](https://schema-builder.polygonid.me/)</ins>. 
+Polygon ID offers an intuitive, user-friendly interface to create schemas: the Schema Builder. [<ins>Here</ins>](schema-builder.md) you can find a tutorial for this tool. You can also access it on <ins>[https://schema-builder.polygonid.me/](https://schema-builder.polygonid.me/)</ins>.
 
 :::
 
@@ -39,7 +40,7 @@ Without further ado, let's jump into building a new Schema Type!
 
 :::note
 
-The executable code and **further schemas examples** for this section can be found <ins><a href="https://github.com/0xPolygonID/tutorial-examples/tree/main/credential-schema" target="_blank">here</a></ins>. 
+The executable code and **further schemas examples** for this section can be found <ins><a href="https://github.com/0xPolygonID/tutorial-examples/tree/main/credential-schema" target="_blank">here</a></ins>.
 
 :::
 
@@ -67,196 +68,167 @@ The JSON-LD Context contains:
 
 - the name of the Type
 
-- its unique identifier `@id` which is a public URL where the context can be resolved. 
+- its unique identifier `@id` which is a public URL where the context can be resolved.
 
-    If you are working on Github, you can fetch the URL directly from your published repository based on the file path. In this case it is 
+  If you are working on Github, you can fetch the URL directly from your published repository based on the file path. In this case it is
 
-    `https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.jsonld#ProofOfDaoLongevity`
-        
+  `https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.jsonld#ProofOfDaoLongevity`
+
 - the definition of the vocabulary with its URL
 
-    In this case we create a field defined `vocab` and attach the URL that identifies the vocabulary. In this case it is 
-    
-    `https://github.com/0xPolygonID/tutorial-examples/blob/main/credential-schema/proof-of-dao-longevity-vocab.md#`
+  In this case we create a field defined `vocab` and attach the URL that identifies the vocabulary. In this case it is
 
+  `https://github.com/0xPolygonID/tutorial-examples/blob/main/credential-schema/proof-of-dao-longevity-vocab.md#`
 
 - The field that we want to include inside the credential, defined together with its identifier and its data type (all xsd data type are available)
 
-    ```json {8,9,15,17,18,19} 
-    {
-      "@context": [
-        {
-          "@version": 1.1,
-          "@protected": true,
-          "id": "@id",
-          "type": "@type",
-          "ProofOfDaoLongevity": {
-            "@id": "https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.jsonld#ProofOfDaoLongevity",
-            "@context": {
-              "@version": 1.1,
-              "@protected": true,
-              "id": "@id",
-              "type": "@type",
-              "vocab": "https://github.com/0xPolygonID/tutorial-examples/blob/main/credential-schema/proof-of-dao-longevity-vocab.md#",
-              "xsd": "http://www.w3.org/2001/XMLSchema#",
-              "entryDate": {
-                "@id": "vocab:entryDate",
-                "@type": "xsd:integer"
-              }
+  ```json {8,9,15,17,18,19}
+  {
+    "@context": [
+      {
+        "@version": 1.1,
+        "@protected": true,
+        "id": "@id",
+        "type": "@type",
+        "ProofOfDaoLongevity": {
+          "@id": "https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.jsonld#ProofOfDaoLongevity",
+          "@context": {
+            "@version": 1.1,
+            "@protected": true,
+            "id": "@id",
+            "type": "@type",
+            "vocab": "https://github.com/0xPolygonID/tutorial-examples/blob/main/credential-schema/proof-of-dao-longevity-vocab.md#",
+            "xsd": "http://www.w3.org/2001/XMLSchema#",
+            "entryDate": {
+              "@id": "vocab:entryDate",
+              "@type": "xsd:integer"
             }
           }
         }
-      ]
-    }
-    ```
+      }
+    ]
+  }
+  ```
 
 :::note
 
 The underlined lines are the only ones that need to be modified in order to create a new Schema Type.
 
-::: 
+:::
 
 **5. Create the JSON Schema**
 
-Finally, we have to create the JSON Schema Document.  We decide to name it `proof-of-dao-longevity.json`.
+Finally, we have to create the JSON Schema Document. We decide to name it `proof-of-dao-longevity.json`.
 This is a document that contains the serialization rule and the instruction for the Issuer to build Verifiable Credentials based on a specific schema type and spot any error in the process. Although it might seem complex and verbose, there are just a few values that need to be updated to adapt to your purpose:
 
 - Add the URIs to your specific `jsonLdContext` and `jsonSchema`:
-    
 - Inside `CredentialSubject` update the information related to your field:
 
-
-```json {6,7,109,117,118} 
+```json {6,7,109,117,118}
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "object",
-    "$metadata": {
-      "uris": {
-        "jsonLdContext": "https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.jsonld",
-        "jsonSchema": "https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.json"
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "$metadata": {
+    "uris": {
+      "jsonLdContext": "https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.jsonld",
+      "jsonSchema": "https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.json"
+    }
+  },
+  "required": [
+    "@context",
+    "id",
+    "type",
+    "issuanceDate",
+    "credentialSubject",
+    "credentialSchema",
+    "credentialStatus",
+    "issuer"
+  ],
+  "properties": {
+    "@context": {
+      "type": ["string", "array", "object"]
+    },
+    "id": {
+      "type": "string"
+    },
+    "type": {
+      "type": ["string", "array"],
+      "items": {
+        "type": "string"
       }
     },
-    "required": [
-      "@context",
-      "id",
-      "type",
-      "issuanceDate",
-      "credentialSubject",
-      "credentialSchema",
-      "credentialStatus",
-      "issuer"
-    ],
-    "properties": {
-      "@context": {
-        "type": [
-          "string",
-          "array",
-          "object"
-        ]
-      },
-      "id": {
-        "type": "string"
-      },
-      "type": {
-        "type": [
-          "string",
-          "array"
-        ],
-        "items": {
+    "issuer": {
+      "type": ["string", "object"],
+      "format": "uri",
+      "required": ["id"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "issuanceDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expirationDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "credentialSchema": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uri"
+        },
+        "type": {
           "type": "string"
         }
-      },
-      "issuer": {
-        "type": [
-          "string",
-          "object"
-        ],
-        "format": "uri",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uri"
-          }
-        }
-      },
-      "issuanceDate": {
-        "type": "string",
-        "format": "date-time"
-      },
-      "expirationDate": {
-        "type": "string",
-        "format": "date-time"
-      },
-      "credentialSchema": {
-        "type": "object",
-        "required": [
-          "id",
-          "type"
-        ],
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uri"
-          },
-          "type": {
-            "type": "string"
-          }
-        }
-      },
-      "subjectPosition": {
-        "type": "string",
-        "enum": [
-          "none",
-          "index",
-          "value"
-        ]
-      },
-      "merklizationRootPosition": {
-        "type": "string",
-        "enum": [
-          "none",
-          "index",
-          "value"
-        ]
-      },
-      "revNonce": {
-        "type": "integer"
-      },
-      "version": {
-        "type": "integer"
-      },
-      "updatable": {
-        "type": "boolean"
-      },
-      "credentialSubject": {
-        "type": "object",
-        "required": [
-          "id",
-          "entryDate"
-        ],
-        "properties": {
-          "id": {
-            "title": "Credential Subject ID",
-            "type": "string",
-            "format": "uri"
-          },
-          "entryDate": {
-            "type": "integer"
-          }
+      }
+    },
+    "subjectPosition": {
+      "type": "string",
+      "enum": ["none", "index", "value"]
+    },
+    "merklizationRootPosition": {
+      "type": "string",
+      "enum": ["none", "index", "value"]
+    },
+    "revNonce": {
+      "type": "integer"
+    },
+    "version": {
+      "type": "integer"
+    },
+    "updatable": {
+      "type": "boolean"
+    },
+    "credentialSubject": {
+      "type": "object",
+      "required": ["id", "entryDate"],
+      "properties": {
+        "id": {
+          "title": "Credential Subject ID",
+          "type": "string",
+          "format": "uri"
+        },
+        "entryDate": {
+          "type": "integer"
         }
       }
     }
   }
+}
 ```
-    
+
 **6. Publish it!**
 
 If you were working on a GITgit repository, push all the files, make sure that the repo is public and that's it!
 
-### Further Resources 
-    
+### Further Resources
+
 - [JSON-LD - W3C VC Standard](https://www.w3.org/TR/vc-data-model/#json-ld)
-- [JSON-LD Context - W3C VC Standard](https://www.w3.org/TR/vc-data-model/#contexts)    
+- [JSON-LD Context - W3C VC Standard](https://www.w3.org/TR/vc-data-model/#contexts)

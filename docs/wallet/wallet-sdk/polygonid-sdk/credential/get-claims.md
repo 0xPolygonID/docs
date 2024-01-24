@@ -30,14 +30,14 @@ Future<List<ClaimEntity>> getClaims({
 
 This function returns a list of `ClaimEntity` based on some pre-defined criteria or filters. The function uses `privateKey` and `genesisDid` as input parameters.
 
-`privateKey` of the identity is a key that is used to access the sensitive information of the identity. This key is also used for generating proofs by using the credentials associated with the identity. 
+`privateKey` of the identity is a key that is used to access the sensitive information of the identity. This key is also used for generating proofs by using the credentials associated with the identity.
 
-`genesisDid` is the unique ID of the identity. 
- 
+`genesisDid` is the unique ID of the identity.
+
 #### Get Credentials by Ids
- 
+
 The `getClaimsByIds()` function retrieves a list of credentials stored on the SDK using a list of credential IDs.
- 
+
 ```dart
 Future<List<ClaimEntity>> getClaimsByIds({
   required List<String> claimIds,
@@ -46,4 +46,4 @@ Future<List<ClaimEntity>> getClaimsByIds({
 });
 ```
 
-The method, based on the credential IDs, retrieves a list of `ClaimEntity` from the storage. 
+The method, based on the credential IDs, retrieves a list of `ClaimEntity` from the storage.

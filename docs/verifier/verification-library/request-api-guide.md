@@ -1,9 +1,9 @@
 ---
 id: request-api
-title: Request 
+title: Request
 sidebar_label: Request
 description: Learn how to use the Request API.
-keywords: 
+keywords:
   - docs
   - polygon id
   - ID holder
@@ -33,7 +33,6 @@ A Basic Auth Request can be implemented by any platform that is interested in pr
 
 Generate an Auth Request to the user that includes a **reason** for authenticating. The **audience** represents the DID of the requester, while the **url** is the callback URL where the user must send the response for verification.
 
-
 <Tabs>
 <TabItem value="Golang">
 
@@ -52,18 +51,15 @@ const request : protocol.AuthorizationRequestMessage = auth.createAuthorizationR
 </TabItem>
 </Tabs>
 
-
 :::info
 
 An example of the usage of this API can be found <ins>[here](https://github.com/0xPolygonID/tutorial-examples/blob/main/verifier-integration/go/index.go#L41)(GO)</ins> and <ins>[here](https://github.com/0xPolygonID/tutorial-examples/blob/main/verifier-integration/js/index.js#L39)(JS)</ins>.
 
 :::
 
-
-
 #### CreateAuthorizationRequestWithMessage
 
-The same functionality of CreateAuthorizationRequest but it also includes a *messageToSign*. This message will be shown to the users inside their wallets and will be signed as part of the response.
+The same functionality of CreateAuthorizationRequest but it also includes a _messageToSign_. This message will be shown to the users inside their wallets and will be signed as part of the response.
 
 <Tabs>
 <TabItem value="Golang">
@@ -71,7 +67,7 @@ The same functionality of CreateAuthorizationRequest but it also includes a *mes
 ```go
 var request protocol.AuthorizationRequestMessage
 request = auth.CreateAuthorizationRequestWithMessage(reason, messageToSign, audience, url)
-```  
+```
 
 </TabItem>
 <TabItem value="Javascript">
@@ -83,7 +79,7 @@ const request : protocol.AuthorizationRequestMessage = auth.createAuthorizationR
 </TabItem>
 </Tabs>
 
-## Query-based Request 
+## Query-based Request
 
 The Query-based Auth Request allows verifiers to interact with a wallet by setting up specific requirements for authentication. These requirements are the conditions that the user has to satisfy based on the credentials held in his/her wallet.
 
@@ -93,7 +89,7 @@ The Query has to be attached to the Basic Auth Request output of the previous AP
 
 :::
 
-Generate a request to prove that the user owns a credential that satisfies certain requirements. 
+Generate a request to prove that the user owns a credential that satisfies certain requirements.
 
 <Tabs>
 <TabItem value="Golang">
@@ -139,22 +135,22 @@ request.body.scope = [...scope, proofRequest];
 </TabItem>
 </Tabs>
 
-`ID` represents the request ID: ideally, in production, it should be a unique value for each request. 
+`ID` represents the request ID: ideally, in production, it should be a unique value for each request.
 
-`CircuitID` represents the identifier of the circuit that the user must use to generate the requested proof. [Here](https://github.com/iden3/go-circuits/blob/39e45740df5eba9c70acfb1d89cc72f3285aadf8/circuits.go#L13) you can find a reference to the available circuits. 
+`CircuitID` represents the identifier of the circuit that the user must use to generate the requested proof. [Here](https://github.com/iden3/go-circuits/blob/39e45740df5eba9c70acfb1d89cc72f3285aadf8/circuits.go#L13) you can find a reference to the available circuits.
 
 In this case, the user has to provide a proof that he/she owns a credential issued by the `allowedIssuer` of schema `type` **KYCAgeCredential** described in the URL provided in `context`. **This is the JSON-LD context of the credential**.
 By setting the `allowedIssuer` to `*`, the user can provide a proof of that credential issued by any issuer. Alternatively, if the verifier adds the DID of a specific issuer inside the `allowedIssuer` array, the user must provide a proof of a credential issued by that specific issuer.
 
 :::warning "Allowed Issuers"
 
-As stated above, when we use `*` in the "allowed issuers" segment (`allowedIssuers: ['*']`), we mean that we accept any entity that might have provided the credential. Even though this seems to be convenient for testing purposes, it may also be considered risky. Applying due diligence by **actually choosing trusted specific issuers** should be the best approach. Only in rare cases, a verifier would accept any issuer, so we advise not to use `*`.  
+As stated above, when we use `*` in the "allowed issuers" segment (`allowedIssuers: ['*']`), we mean that we accept any entity that might have provided the credential. Even though this seems to be convenient for testing purposes, it may also be considered risky. Applying due diligence by **actually choosing trusted specific issuers** should be the best approach. Only in rare cases, a verifier would accept any issuer, so we advise not to use `*`.
 
 :::
 
 This credential contains details of the birthday of the receiver in its `credentialSubject`. In this scenario, the user has to prove that the value contained in the attribute `birthday` is less than (`lt`) 20000101, meaning that the user was born before 01/01/2000.
 
-An additional optional field that can be included in the query is `skipClaimRevocationCheck`. By setting it to `true`, the user doesn't need to provide the proof of the revocation of the credential, which would otherwise be provided by default. 
+An additional optional field that can be included in the query is `skipClaimRevocationCheck`. By setting it to `true`, the user doesn't need to provide the proof of the revocation of the credential, which would otherwise be provided by default.
 This is useful for credentials that are still useful even if they have been revoked. For example, a credential that states that a user is an employee of Google, is still useful even if it has been revoked after the user left the company and the credential was revoked.
 
 ```go

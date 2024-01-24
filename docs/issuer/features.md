@@ -3,7 +3,7 @@ id: features
 title: Features
 sidebar_label: Features
 description: Issuer main features.
-keywords: 
+keywords:
   - docs
   - polygon id
   - issuer node
@@ -15,8 +15,9 @@ keywords:
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## DID with Ethereum address
-Currently available only on the [Issuer Node Core API](/docs/issuer/issuer-core.md), this feature enables the creation of Ethereum-controlled identities.  Ethereum accounts are used here to authenticate, prove statements and control identity.
-The representation of the DID for this case follows the same canonical form, where the identifier `2qCU58EJgrELSJT6EzT27Rw9DhvwamAdbMLpePztYq` actually originates from the Ethereum address: 
+
+Currently available only on the [Issuer Node Core API](/docs/issuer/issuer-core.md), this feature enables the creation of Ethereum-controlled identities. Ethereum accounts are used here to authenticate, prove statements and control identity.
+The representation of the DID for this case follows the same canonical form, where the identifier `2qCU58EJgrELSJT6EzT27Rw9DhvwamAdbMLpePztYq` actually originates from the Ethereum address:
 
 ```
 did:polygonid:polygon:mumbai:2qCU58EJgrELSJT6EzT27Rw9DhvwamAdbMLpePztYq
@@ -29,13 +30,15 @@ Due to its public nature, the Ethereum Polygon DID doesn't support private profi
 :::
 
 ## Revocation Status
-Mobile applications can get the Revocation Status of a particular credential by requesting that information straight from the Issuer Node. However, if the Issuer Node is offline for some reason, that communication would not work. The Revocation Hash Service and the On-chain Revocation Status are two solutions for this issue. 
+
+Mobile applications can get the Revocation Status of a particular credential by requesting that information straight from the Issuer Node. However, if the Issuer Node is offline for some reason, that communication would not work. The Revocation Hash Service and the On-chain Revocation Status are two solutions for this issue.
 
 <div align="center">
 <img src= {useBaseUrl("img/without-rhs.png")} align="center" />
 </div>
 
 ### Revocation Hash Service
+
 The Revocation Hash Service (RHS) stores all the revocation information online which can be accessed by mobile applications and verifiers. In this scenario, the communication between mobile and Revocation Hash service replaces the link between the application and the Issuer Node:
 
 <div align="center">
@@ -45,6 +48,7 @@ The Revocation Hash Service (RHS) stores all the revocation information online w
 As the diagram shows, the Issuer Node sends the revocation information to the RHS. The service, then, is able to return the credential status to the application.
 
 ### On-chain Revocation
+
 On-chain Revocation status leverages the blockchain decentralized storage to make the revocation information permanent on the network. That means that, even if the Issuer Node or the Revocation Hash Service is down, the data is still available on-chain.
 
 <div align="center">
@@ -53,7 +57,7 @@ On-chain Revocation status leverages the blockchain decentralized storage to mak
 
 ## Non-merklized credentials
 
-Non-merklized credentials are specially important for on-chain issuers, because smart contracts built on Solidity can't fetch JSON-LD schemas directly via HTTP or IPFS. 
+Non-merklized credentials are specially important for on-chain issuers, because smart contracts built on Solidity can't fetch JSON-LD schemas directly via HTTP or IPFS.
 
 Here is an example of [a non-merklized schema](https://github.com/iden3/claim-schema-vocab/blob/main/schemas/json-ld/player-nonmerklized.jsonld). Compare it to [this merklized one](https://github.com/iden3/claim-schema-vocab/blob/main/schemas/json-ld/kyc-v4.jsonld). Notice that the schema is defined by utilizing an `iden3_serialization` attribute.
 

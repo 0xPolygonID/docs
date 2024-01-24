@@ -14,7 +14,7 @@ keywords:
   - Interaction Base Entity
 ---
 
- Save an `InteractionBaseEntity` in the Polygon ID SDK.  
+Save an `InteractionBaseEntity` in the Polygon ID SDK.
 
 ```dart
 Future<InteractionBaseEntity> addInteraction({

@@ -3,7 +3,7 @@ id: install-android-sdk
 title: Implement Android SDK
 sidebar_label: Implement Android SDK
 description: Learn how to initialize and implement the Android SDK.
-keywords: 
+keywords:
   - docs
   - polygon id
   - holder
@@ -14,11 +14,13 @@ keywords:
 This native SDK enables Android developers to use the [PolygonID solution](https://polygon.technology/polygon-id) in Android projects.
 
 ## How to use the SDK
+
 ### Prerequisite
+
 Follow the steps from the up-to-date [README GitHub repository prerequisites](https://github.com/0xPolygonID/polygonid-android-sdk#prerequisite).
 
-
 ### Initialization
+
 The SDK needs to be initialized before being used:
 
 ```kotlin
