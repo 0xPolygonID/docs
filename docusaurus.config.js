@@ -127,10 +127,10 @@ module.exports = {
               rel: null,
             },
             {
-              href: '/',
-              label: 'JWZ (coming soon)',
+              href: 'https://jwz.polygonid.me',
+              label: 'JWZ',
               target: '_blank',
-              className: "disabled",
+              rel: null,
             },
           ]
         },
