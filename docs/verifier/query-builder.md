@@ -80,10 +80,12 @@ The Query Builder incorporates 6 [Circom](https://docs.circom.io/) circuits, eac
 
 #### Circuit Selection Based on Proof Type
 
-- **Signature-based (SIG) Proof Type:** V2 SIG circuits (1 and 2) are applicable, along with the V3 circuits, which support both SIG and MTP proof types.
-- **Merkle Tree Proof (MTP) Proof Type:** V2 MTP circuits (3 and 4) are available, along with the V3 circuits, which support both SIG and MTP proof types.
+The available circuits in the Query Builder are filtered based on the selected Proof Type:
 
-When creating a query, users should consider whether verification will occur off-chain or on-chain (via a smart contract) and the circuit version that aligns with their requirements.
+- **Signature-based (SIG) Proof Type:** For SIG, the list includes V2 SIG circuits (1 and 2) and the V3 circuits, as they support both SIG and MTP proof types.
+- **Merkle Tree Proof (MTP) Proof Type:** With MTP, the options presented are V2 MTP circuits (3 and 4) and also the V3 circuits, compatible with both SIG and MTP.
+
+It's important to consider the proof type as it directly influences the circuit options provided, ensuring alignment with the verification method (off-chain or on-chain via a smart contract) and the specific requirements of the query.
 
 :::caution
 V3 circuits are experimental as of this writing, so users should exercise caution and stay informed about their development and stability.
@@ -95,13 +97,13 @@ The Proof of Uniqueness enhances security and integrity in contexts requiring [s
 
 1. **Check Proof of Uniqueness:** This checkbox is initially unchecked. When selected, it enables the Proof of Uniqueness functionality.
 
-2. **Nullifier Session ID:** A numeric input field that remains disabled unless the Proof of Uniqueness checkbox is checked. It requires the user to provide a nullifier session ID, which is a bigint formatted as a string.
+2. **Nullifier Session ID:** A numeric input field that remains disabled unless the Proof of Uniqueness checkbox is checked. It requires the user to provide a nullifier session ID.
 
 The nullifier session ID field is a critical component for calculating the SybilID, which is essential for establishing Proof of Uniqueness in a query. This ID serves as a verifier-specific session identifier, which might represent, for example, a voting ID. It is used in the SybilID calculation formula:
 
 `SybilID = hash(genesisID, credProfileNonce, schemaHash, verifierID, nullifierSessionID)`
 
-This field becomes mandatory once the Proof of Uniqueness checkbox is selected. Providing the correct nullifier session ID ensures the query's integrity and uniqueness, conforming to the protocol's sybil resistant features:
+Providing the correct nullifier session ID ensures the query's integrity and uniqueness, conforming to the protocol's sybil resistant features:
 
 - **One Identity Per Session:** Each identity can obtain only one identifier per credential and verifier session ID (CRS), consistent across all Profiles and Genesis ID.
 - **Brute-force Resistance:** Prevents brute-forcing to reveal Genesis ID or other values.
@@ -111,7 +113,7 @@ This field becomes mandatory once the Proof of Uniqueness checkbox is selected. 
 
 ### Query Type
 
-In the Query Builder, there are two types of queries:
+The protocol allows selection between two query types:
 
 1. **Condition:** This type allows the prover to demonstrate that a specific condition is met without revealing the underlying data. It maintains data privacy by cryptographically verifying the condition. An example is proving legal age for entry into a venue without disclosing the actual age.
 
