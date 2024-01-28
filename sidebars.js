@@ -97,6 +97,7 @@ module.exports = {
             "issuer/schema-exs",
           ]
         },
+        "issuer/refresh-service",
         "issuer/reverse-hash-service",
         "issuer/vault-auth",
         "issuer/credential-marketplace",
