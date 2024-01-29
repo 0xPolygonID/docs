@@ -137,6 +137,7 @@ module.exports = {
                 "verifier/verification-library/config",
                 "verifier/verification-library/request-api",
                 "verifier/verification-library/verification-api",
+                "verifier/verifier-backend",
               ],
             },
             "verifier/verification-library/verifier-setup",
