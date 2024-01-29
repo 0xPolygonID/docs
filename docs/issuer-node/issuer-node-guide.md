@@ -153,7 +153,7 @@ If you clicked on the **Issue credential** button, you will later be prompted to
 <br/>
 
 :::info
-There are 3 QR code options available: Link, Raw JSON and Base64 encoded. The preferred option is link because it is the most compact and the easiest to scan. It contains a link to download the original raw QR code content. Raw and Base64 encoded formats are useful for wallets that do not support Link mode or prefer not to follow that indirection.  
+There are 3 QR code options available: Link, Raw JSON and Base64 encoded. The preferred option is link because it is the most compact and the easiest to scan. It contains a link to download the original raw content of the QR code. Raw and Base64 encoded formats are useful for cautious users who prefer not to follow that redirection or for wallets that do not yet support Link mode.  
 :::
 
 <br/>
