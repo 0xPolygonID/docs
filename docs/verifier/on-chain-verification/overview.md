@@ -578,3 +578,7 @@ interface IZKPVerifier {
 Now that you have been able to create your first on-chain ZK-based application, you can extend it to accommodate any type of imaginable logic. The target Smart Contract doesn't have to be an ERC20 but it can be an ERC721, a DeFi pool, a voting Smart Contract or whatever contract you can think of. Equally, the query can be extended to any type of existing Credential and based on the different operators available inside the <a href="https://0xpolygonid.github.io/tutorials/verifier/verification-library/zk-query-language/" target="_blank">ZK Query Language</a>.
 
 Another possibility to customize your Smart Contract involves setting different ZK requests. First of all, multiple `REQUEST_ID` must be defined inside the main Smart Contract. Therefore, the contract deployer can set a different query for each request ID and create different outcomes inside `_afterProofSubmit` according to the type of proof received. For example, an airdrop contract can verify the role of a user inside a DAO and distribute a different amount of tokens based on the role.
+
+## Estimated Gas Costs for On-Chain Verifier
+While it is clear that gas cost is highly dependent on the complexity of the logic that you add to the `_afterProofSubmit` and `_beforeProofSubmit` functions, the sample code for the on-chain verifier in this tutorial costs approximately 700k gas to execute on-chain. The zk proof verification function specifically costs approximately 520k gas. The above estimates are accurate as of January 2024.
+
