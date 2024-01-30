@@ -93,11 +93,11 @@ V3 circuits are experimental as of this writing, so users should exercise cautio
 
 ### Proof of Uniqueness
 
-The Proof of Uniqueness enhances security and integrity in contexts requiring [sybil resistance](https://en.wikipedia.org/wiki/Sybil_attack). Using this feature is optional when building a query and it's exclusively supported by v3 circuits. It's managed through two fields in the Query Builder form:
+The Proof of Uniqueness enhances security and integrity in contexts requiring [sybil resistance](https://en.wikipedia.org/wiki/Sybil_attack). This feature is optional and it's exclusively supported by v3 circuits. It's managed through two fields in the Query Builder form:
 
-1. **Check Proof of Uniqueness:** This checkbox is initially unchecked. When selected, it enables the Proof of Uniqueness functionality.
+1. **Enable Proof of Uniqueness:** This checkbox is initially unchecked. When selected, it enables the Proof of Uniqueness feature.
 
-2. **Nullifier Session ID:** A numeric input field that remains disabled unless the Proof of Uniqueness checkbox is checked. It requires the user to provide a nullifier session ID.
+2. **Nullifier Session ID:** A numeric input field that remains disabled unless the "Check proof of uniqueness" checkbox is selected. It requires the user to provide a nullifier session ID.
 
 The nullifier session ID field is a critical component for calculating the SybilID, which is essential for establishing Proof of Uniqueness in a query. This ID serves as a verifier-specific session identifier, which might represent, for example, a voting ID. It is used in the SybilID calculation formula:
 
