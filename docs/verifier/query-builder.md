@@ -38,7 +38,7 @@ With its standardized interface, the Query Builder ensures uniformity, consisten
 
 ### URL to JSON-LD Context
 
-To create a query, it is essential to reference the correct schema, specifically its JSON-LD Context's URL. Users have two options: they can either enter a custom URL directly or utilize the Schema Explorer. By beginning to type the name (or any other keyword) of the desired schema in the Schema Explorer, a list of available schemas will appear, allowing the user to select the appropriate one.
+To create a query, it is essential to reference the correct schema, specifically its JSON-LD Context's URL. Users have two options: they can either enter a URL pointing to a JSON-LD Context or utilize one from the [Schema Explorer](https://schema-builder.polygonid.me). By starting to type the name (or any other keyword) of the desired schema in the Schema Explorer, a list of available schemas will appear, allowing the user to select the appropriate one.
 
 <div align="center">
 <img src={useBaseUrl("/img/query-builder-url.png")} align="center" width="600"/>
