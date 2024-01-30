@@ -136,7 +136,7 @@ Choose the appropriate operator based on the condition you want to validate.
 
 ### Attribute value
 
-The "Attribute value" field allows users to input the specific value or range of values to be compared with the selected attribute in the prover's credential. This field adapts to the type of the chosen attribute, accommodating various data types such as strings, numbers, booleans, dates, and more. This ensures that the value provided is compatible with the selected operator and the nature of the attribute.
+The "Attribute value" field allows verifiers to input the specific value or range of values used to compare with the selected attribute in the prover's credential. This field adapts to the type of the chosen attribute, accommodating various data types such as strings, numbers, booleans, dates, and more. This ensures that the value provided is compatible with the selected operator and the nature of the attribute.
 
 ### Issuer DID
 
