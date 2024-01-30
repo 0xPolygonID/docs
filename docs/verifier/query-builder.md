@@ -62,10 +62,10 @@ Credentials consist of various primitive attributes such as strings, integers, b
 
 ### Proof type
 
-This field allows specifying the verification method used by the issuer at the time of issuing the credential, which is essential for successful query verification. While creating a query, users must carefully choose a Proof Type that aligns with the original method selected by the issuer when issuing the credential. The two options available are:
+This field allows specifying the verification method used by the issuer at the time of issuing the credential, which is essential for a successful query verification. While creating a query, users must carefully choose a Proof Type that aligns with the original method selected by the issuer when issuing the credential. The two options available are:
 
-- **Signature-based (SIG):** Validates claims based on Baby JubJub (BJJ) Key Signatures. This method is straightforward, relying on the issuer's signature for authentication. It's fast and doesn't involve on-chain transactions.
-- **Merkle Tree Proof (MTP):** Verifies claims through their inclusion in a Merkle Tree, part of the issuer’s on-chain identity. This approach not only bolsters security but also provides a timestamp, confirming the claim's existence at a specific historical moment.
+- **Signature-based (SIG):** Verifies claims based on Baby JubJub (BJJ) Key Signatures. This method is straightforward, relying on the issuer's signature for authentication. It's fast and doesn't involve on-chain transactions.
+- **Merkle Tree Proof (MTP):** Verifies claims through their inclusion in a Merkle Tree, which is part of the issuer’s on-chain identity. This approach not only bolsters security but also provides a timestamp, confirming the claim's existence at a specific historical moment.
 
 ### Circuit ID
 
