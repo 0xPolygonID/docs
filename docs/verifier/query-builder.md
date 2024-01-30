@@ -72,9 +72,9 @@ This field allows specifying the verification method used by the issuer at the t
 The Query Builder incorporates 6 [Circom](https://docs.circom.io/) circuits, each designed for specific verification scenarios. Selection of the appropriate Circuit ID depends on the verification context (off-chain or on-chain) and the proof type used when the claim was issued. Below is a guide to these circuits:
 
 1. **credentialAtomicQuerySigV2:** Verifies off-chain if a claim, signed by the Issuer, meets the verifier's criteria.
-2. **credentialAtomicQuerySigV2OnChain:** Similar to SigV2, but for on-chain verification (smart contract verifiers).
+2. **credentialAtomicQuerySigV2OnChain:** Similar to SIG V2, but for on-chain verification (smart contract verifiers).
 3. **credentialAtomicQueryMTPV2:** For off-chain verification of claims added to the issuer's claims Merkle Tree.
-4. **credentialAtomicQueryMTPV2OnChain:** Applies MTPV2 logic for on-chain scenarios (smart contract verifiers).
+4. **credentialAtomicQueryMTPV2OnChain:** Applies MTP V2 logic for on-chain scenarios (smart contract verifiers).
 5. **credentialAtomicQueryV3:** A versatile circuit for claims either signed by the Issuer or included in the Issuer's state, suitable for off-chain verification.
 6. **credentialAtomicQueryV3OnChain:** The on-chain counterpart of V3, also accommodating both SIG and MTP proof types.
 
