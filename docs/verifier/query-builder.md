@@ -160,7 +160,7 @@ This checkbox, when enabled, instructs the circuit to bypass the verification st
 
 :::caution
 
-Opting to skip the revocation check is generally not advised. This check is a crucial security feature, ensuring that the credential being used is still valid and has not been rescinded by the issuer. Skipping this step can lead to the acceptance of outdated or invalidated credentials, potentially compromising the integrity of the verification process and the trustworthiness of the results.
+Opting to skip the revocation check is generally not advised. This check is a crucial security feature, ensuring that the credential being used is still valid and has not been revoked by the issuer. Skipping this step can lead to the acceptance of outdated or invalidated credentials, potentially compromising the integrity of the verification process and the trustworthiness of the results.
 
 :::
 
