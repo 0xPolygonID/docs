@@ -27,7 +27,7 @@ The [Query Builder](https://schema-builder.polygonid.me/query-builder) is a dyna
 
 This tool enables verifiers to establish specific rules for identity verification, catering to a range of criteria from organizational membership to age requirements. Polygon ID enhances this process, offering a secure and streamlined way for users to authenticate their identity based on these criteria.
 
-With its standardized interface, the Query Builder ensures uniformity, consistency, and minimizes errors in query creation across various users and organizations. It also presents a more intuitive alternative to the [ZK Query Language](./verification-library/zk-query-language.md), making query creation accessible even for those without in-depth technical knowledge.
+With its standardized interface, the Query Builder ensures uniformity, consistency, and minimizes errors in query creation across various users and organizations. It also presents a more intuitive alternative to manually writing queries on the [ZK Query Language](./verification-library/zk-query-language.md), making query creation accessible even for those without in-depth technical knowledge.
 
 <div align="center">
 <img src={useBaseUrl("/img/query-builder.png")} align="center" width="600"/>
