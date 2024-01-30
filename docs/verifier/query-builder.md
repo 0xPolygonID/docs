@@ -117,7 +117,7 @@ The protocol allows selection between two query types:
 
 1. **Condition:** This type allows the prover to demonstrate that a specific condition is met without revealing the underlying data. It maintains data privacy by cryptographically verifying the condition. An example is proving legal age for entry into a venue without disclosing the actual age.
 
-2. **Selective disclosure:** Use this when the prover needs to reveal specific data stored in their credential. This option discloses the actual value of an attribute to the verifier. For instance, instead of just proving legal age, it would show the verifier the prover's actual age.
+2. **Selective disclosure:** Use this when you need the prover to reveal specific data stored in their credential. This option discloses the actual value of an attribute to the verifier. For instance, instead of just requesting proof proving legal age, it would disclose the prover's actual age to the verifier.
 
 Choose "Condition" for privacy-preserving verification, or "Selective disclosure" for cases where revealing specific information is necessary.
 
@@ -127,12 +127,12 @@ In conditional queries, the "Operator" input defines the logical operation to be
 
 - **Equal:** Checks if the value is equal to the specified value.
 - **Not Equal:** Verifies if the value is not equal to the specified value.
-- **Less Than:** Assesses if the value is less than the given value.
+- **Less Than:** Assesses that the value is less than the given value.
 - **Greater Than:** Evaluates if the value is greater than the specified value.
 - **Matches one of the values:** Determines if the value is within a given set of values.
 - **Matches none of the values:** Checks if the value is not within a specified set.
 
-Choose the appropriate operator based on the condition you need to validate.
+Choose the appropriate operator based on the condition you want to validate.
 
 ### Attribute value
 
