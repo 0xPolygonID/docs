@@ -47,7 +47,7 @@ To create a query, it is essential to reference the correct schema, specifically
 
 ### Schema type
 
-The JSON-LD Context derived from a schema in the Schema Explorer is limited to a single type. However, a custom JSON-LD Context may encompass multiple types. This particular field enables users to select the appropriate type for constructing their query. As a user-friendly feature, in cases where the JSON-LD Context is single-typed, the field is pre-populated automatically.
+The JSON-LD Context of a schema in the Schema Explorer is limited to a single type. However, a custom JSON-LD Context may encompass multiple types. This particular field enables users to select the appropriate type for constructing their query. As a user-friendly feature, in cases where the JSON-LD Context is single-typed, the field is pre-filled automatically.
 
 ### Attribute field
 
