@@ -116,3 +116,9 @@ const { core  } = require("@iden3/js-iden3-auth");
   </TabItem>
 
 </Tabs>
+
+:::warning
+    Custom Did methods / network registration is supported on core library level, js-sdk and verification libraries.
+
+    Not yet supported on issuer-node and mobile.
+:::
