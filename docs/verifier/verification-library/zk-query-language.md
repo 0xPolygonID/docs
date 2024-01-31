@@ -520,6 +520,55 @@ const proofRequest: protocol.ZKPRequest = {
 };
 ```
 
+## Multi query
+
+In the example below, the verifier requests two different proof queries in the single authorization request. Queries can be created for different credentials. 
+
+```json
+{
+  "id": "f8aee09d-f592-4fcc-8d2a-8938aa26676c",
+  "typ": "application/iden3comm-plain-json",
+  "type": "https://iden3-communication.io/authorization/1.0/request",
+  "thid": "f8aee09d-f592-4fcc-8d2a-8938aa26676c",
+  "from": "did:polygonid:polygon:mumbai:2qFroxB5kwgCxgVrNGUM6EW3khJgCdHHnKTr3VnTcp",
+  "body": {
+    "callbackUrl": "https://test.com/callback",
+    "reason": "age verification",
+    "message": "test message",
+    "scope": [
+      {
+        "id": 1,
+        "circuitId": "credentialAtomicQuerySigV2",
+        "query": {
+          "allowedIssuers": ["*"],
+          "context": "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v101.json-ld",
+          "type": "KYCEmployee",
+          "credentialSubject": {
+            "position": {
+              "$eq": "developer"
+            }
+          }
+        }
+      },
+      {
+        "id": 2,
+        "circuitId": "credentialAtomicQuerySigV2",
+        "query": {
+          "allowedIssuers": ["*"],
+          "context": "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v101.json-ld",
+          "type": "KYCCountryOfResidenceCredential",
+          "credentialSubject": {
+            "countryCode": {
+              "$in": [980, 340]
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+```
+
 :::warning "Allowed Issuers"
 
 When we use `*` in the "allowed issuers" segment (`allowedIssuers: ['*']`), we mean that we accept any entity that might have provided the credential. Even though this seems to be convenient for testing purposes, it may also be considered risky. Applying due diligence by **actually choosing trusted specific issuers** should be the best approach. Only in rare cases, a verifier would accept any issuer, so we advise not to use `*`.
