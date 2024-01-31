@@ -75,11 +75,33 @@ Repository details: https://github.com/0xPolygonID/contracts
 
 5. Possibility to use linked proofs. This means that verifier can be sure that user used the same credential to proof different queries. This is achievable by using `groupId` property in the proof request.
 
-5. Multiple performance and security optimization.
+```json 
+...
+"scope": [
+         {
+          "id": 1,
+          "circuitId": "credentialAtomicQueryV3",
+          "query": {
+            "groupId": 1
+            ...
+          },
+         {
+          "id": 2,
+          "circuitId": "credentialAtomicQueryV3",
+          "query": {
+            "groupId": 1
+            ...
+          }
+          ...
+]          
+...
+```
+
+6. Multiple performance and security optimization.
 
 
 
-Example of request to v3 circuit:
+Example of whole request to v3 circuit:
 
 :::
 
