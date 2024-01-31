@@ -97,7 +97,18 @@ module.exports = {
             "issuer/schema-exs",
           ]
         },
-        "issuer/refresh-service",
+        {
+          type: "category",
+          label: "Refresh service",
+          link: {
+            type: "generated-index"
+          },
+          items: [
+            "issuer/refresh-service/overview",
+            "issuer/refresh-service/customization",
+            "issuer/refresh-service/setup-guide"
+          ]
+        },
         "issuer/reverse-hash-service",
         "issuer/vault-auth",
         "issuer/credential-marketplace",
