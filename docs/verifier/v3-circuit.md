@@ -16,6 +16,12 @@ keywords:
 
 We want to introduce new circuits - СredentialAtomicQueryV3 and CredentialAtomicQueryV3Onchain
 
+:::warning
+    
+    Circuits are in the beta version. Trusted setup will be performed in the next release.
+    Current Circuit id is `СredentialAtomicQueryV3-beta.0`
+:::
+
 In general it's an improved version of V2 circuits with several important key features:
 
 1. SIG and MTP checks are united in single circuit. Now you can use only one circuit without sig/mtp suffixes. Proof will be taken from user wallet and authorization response will contain information about  verifiable credential proof type which has been used. It is possible to request the needed proof from user by using `proofType` property in the authorization request message. Possible values are `Iden3SparseMerkleTreeProof` and `BJJSignature2021`. If `proofType` is not provided -  available proof will be used. In case there are two proofs available - MTP will be used as more prior. 
@@ -25,7 +31,7 @@ In general it's an improved version of V2 circuits with several important key fe
 "scope": [
         {
           "id": 1,
-          "circuitId": "credentialAtomicQueryV3",
+          "circuitId": "credentialAtomicQueryV3-beta.0",
           "query": {
             ...
             "proofType": "BJJSignature2021 | Iden3SparseMerkleTreeProof"
@@ -44,7 +50,7 @@ In general it's an improved version of V2 circuits with several important key fe
 "scope": [
         {
           "id": 1,
-          "circuitId": "credentialAtomicQueryV3",
+          "circuitId": "credentialAtomicQueryV3-beta.0",
           "params": {
             "nullifierSessionId" : "123443290439234342342423423423423"
           },
@@ -69,9 +75,7 @@ In this scenario user id myst be derived from the sender address. Bellow is an e
     }
 ```
 
-Beta Validator is also deployed :
-
-Repository details: https://github.com/0xPolygonID/contracts
+Beta Validator is also deployed :<ins> [Repository](https://github.com/0xPolygonID/contracts)</ins>
 
 5. Possibility to use linked proofs. This means that verifier can be sure that user used the same credential to proof different queries. This is achievable by using `groupId` property in the proof request.
 
@@ -80,7 +84,7 @@ Repository details: https://github.com/0xPolygonID/contracts
 "scope": [
          {
           "id": 1,
-          "circuitId": "credentialAtomicQueryV3",
+          "circuitId": "credentialAtomicQueryV3-beta.0",
           "query": {
             "groupId": 1
             ...
@@ -100,12 +104,16 @@ Repository details: https://github.com/0xPolygonID/contracts
 6. Multiple performance and security optimization.
 
 
+:::info
 
-Example of whole request to v3 circuit:
+Check a circuit codebase and algorithm of work <ins>[here](https://docs.iden3.io/protocol/main-circuits/#credentialatomicqueryv3)</ins>.
 
 :::
 
-Execute this Hardhat script to set the ZK request to the Smart Contract:
+
+
+Example of complex request with v3 circuit proof request:
+
 
 ```json
 {
@@ -121,7 +129,7 @@ Execute this Hardhat script to set the ZK request to the Smart Contract:
       "scope": [
         {
           "id": 1,
-          "circuitId": "credentialAtomicQueryV3",
+          "circuitId": "credentialAtomicQueryV3-beta.0",
           "params": {
             "nullifierSessionId" : "123443290439234342342423423423423"
           },
@@ -140,7 +148,7 @@ Execute this Hardhat script to set the ZK request to the Smart Contract:
         },
         {
           "id": 2,
-          "circuitId": "credentialAtomicQueryV3",
+          "circuitId": "credentialAtomicQueryV3-beta.0",
           "query": {
             "allowedIssuers": ["*"],
             "groupId": 1,
@@ -158,10 +166,3 @@ Execute this Hardhat script to set the ZK request to the Smart Contract:
 }
 
 ```
-
-
-:::info
-
-Check a query sample <ins>[here](./verification-library/zk-query-language.md#selective-disclosure)</ins>.
-
-:::

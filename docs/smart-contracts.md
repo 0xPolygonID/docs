@@ -19,6 +19,11 @@ For situations where one needs to publish data on the blockchain, such as creati
 - Testnet(mumbai) -> `0x134B1BE34911E39A8397ec6289782989729807a4`
 - Mainnet -> `0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D`
 
+
+:::info
+Check a contract codebase and algorithms of work <ins>[docs](https://docs.iden3.io/contracts/state/)</ins>, <ins>[repository](https://github.com/iden3/contracts/tree/master/contracts/state)</ins>.
+:::
+
 ## Validator addresses
 
 Current addresses on Polygon Mumbai testnet. (V1.0.1)
@@ -65,3 +70,28 @@ The core of the contract is its <a href="https://github.com/0xPolygonID/contract
 Performs the same set of verifications of the CredentialAtomicQuerySigValidator but for credential of type `MTP`.
 
 > Further protocol related contracts can be found at <a href="https://docs.iden3.io/contracts/state/" target="_blank">Iden3 - Smart Contracts</a>
+
+## CredentialAtomicQueryV3 Validator
+
+Also now  there deployed v3 validator on mumbai network.
+It is base on CredentialAtomicQueryV3 circuit.
+
+Features of v3 validator:
+- both mtp and sig proof verification
+- ethereum controlled identities support
+- selective disclosure support
+
+Current addresses for V3 beta circuit on Polygon Mumbai testnet. (1.0.0-beta.0 V3 validator)
+
+|                      |                                                    V3 validator 1.0.0-beta.0                                                    |   
+|:--------------------:|:-------------------------------------------------------------------------------------------------------------------------------:|
+|     **Verifier**     |                                           0x3dE74ffCf9Fc0AA6c9fD73b511342a0E653B4129                                            | 
+|    **Validators**    |                                           0xCBde9B14fcF5d56B709234528C44798B4ea64761                                            |     
+| **ERC20 SD example** |                                   0xD0Fd3E9fDF448e5B86Cc0f73E5Ee7D2F284884c0 (request id = 3)                                   |
+|     **ERC20  **      | 0xD0Fd3E9fDF448e5B86Cc0f73E5Ee7D2F284884c0 (request id = 100 - 650 merklized (step 50) / 10000 - 65000 nonmerklized (step 5000)) |
+
+:::note
+More about <ins>[v3 circuit](./verifier/v3-circuits)</ins>.
+
+Check the examples of deployment for <ins>[ v3 validator](https://github.com/0xPolygonID/contracts/blob/main/scripts/deployV3Validator.ts)</ins>
+:::

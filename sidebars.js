@@ -145,6 +145,8 @@ module.exports = {
         "verifier/on-chain-verification/overview",
         "verifier/query-builder",
         "verifier/verification-library/zk-query-language",
+        "verifier/v3-circuit",
+
       ],
     },
     {
@@ -364,6 +366,7 @@ module.exports = {
         },
         "js-sdk/js-sdk-example",
         "js-sdk/js-sdk-browser-wallet-demo",
+        "js-sdk/js-sdk-dynamic-did"
       ],
     },
     "releases"
