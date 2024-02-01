@@ -24,6 +24,9 @@ Sometimes, it's useful to have a way to renew the credentials you've been given.
 Consider an example of balance credentials, where a user proves his balance to get some benefits. The balance can be changed a lot during a short period. In this case, the user needs to interact with the issuer every time they need to use the credential. This is where the refresh service comes in handy. The refresh service can handle necessary data updates on the background of the user client without additional interaction between the issuer and the user.
 
 ## Refresh service current implementation:
+
+Example of refresh service implementation can be found [here](https://github.com/0xPolygonID/refresh-service)
+
 <details>
   <summary>Schema</summary>
   <div align="center">
@@ -31,20 +34,21 @@ Consider an example of balance credentials, where a user proves his balance to g
   </div>
 </details>
 
+
 1. The user initiates a Zero-Knowledge Proof (ZKP) refresh process by sending a refresh message through the [iden3comm protocol](https://iden3-communication.io/credentials/1.0/refresh/) to the refresh service.
 2. This message contains essential information, including the ID of the credential requiring refresh.
-3. The refresh service performs an HTTP request to the `GET /v1/{issuerDID}/claims/{credentialID}` endpoint to retrieve comprehensive information about the specific credential that requires an update.
-4. The algorithm then validates whether the user is the legitimate owner of this credential.
-5. The refresh service seeks current information for the user and their credential from the data provider. (It is possible to have a single refresh service for different credential types or one per credential type.)
-6.  The refresh service must now assess whether refreshed data are suitable for refreshing the credential, considering the following scenarios:
+3. The refresh service performs an HTTP request to the `GET /v1/{issuerDID}/claims/{credentialID}` endpoint to retrieve information about the credential that requires an update.
+4. Issuer validates whether the user is the owner of this credential.
+5. The refresh service seeks current information for the user and their credential from the data provider.
+6.  The refresh service must now assess whether refreshed data is suitable for refreshing the credential, considering the following scenarios:
 
     ◦ If the credential was **merklized**, and its merkle tree root was stored in the index part, it is eligible for a refresh.
 
     ◦ If the credential was **NOT merklized**, a check is necessary to determine whether the data stored in the index were updated during the refreshing flow. If the data has not been updated, adding identical indexes to the issuer’s tree will result in an error. An example of how to perform this check can be found [here](https://github.com/0xPolygonID/refresh-service/blob/e9c310fc3808e1f58ce108523b4fd07dd67800ed/service/refresh.go#L175).
 
     ◦ In other cases, the refresh service should return an error.
-7. With the new data from the data provider, the refresh service generates a credential request and sends it to the issuer node via the `POST /v1/{issuerDID}/claims` endpoint. The issuer node is expected to respond with a new credential ID.
-8. Using this ID, the refresh service obtains a new credential through the `GET /v1/{issuerDID}/claims/{newCredentialID}` endpoint. 
+7. With the new data from the data provider, the refresh service generates a credential request and sends it to the issuer node via the `POST /v1/{issuerDID}/claims` endpoint. 
+8. Using this new credential identifier, the refresh service obtains a new credential through the `GET /v1/{issuerDID}/claims/{newCredentialID}` endpoint. 
 9. Pack the new refreshed credential into an iden3comm message and sent back to the user.
 
 ### Modules
@@ -53,6 +57,8 @@ Consider an example of balance credentials, where a user proves his balance to g
 2. **[Provider Module](https://github.com/0xPolygonID/refresh-service/tree/main/providers)**: this module receives information from external data providers. By itself, it is very flexible in settings, but you can always add your own implementation.
 3. **[Package Manager](https://github.com/0xPolygonID/refresh-service/blob/main/packagemanager/packagemanager.go)**: the package manager handles ZWZ token within the iden3comm protocol.
 4. **[Integration with the Issuer Node](https://github.com/0xPolygonID/refresh-service/blob/main/service/issuer.go)**: this module responsibles for communication with [issuer node](https://github.com/0xPolygonID/issuer-node/).
+
+
 
 ### Authentication module for setup iden3comm handler
 
@@ -72,7 +78,7 @@ The refresh service acts as a 'proxy' between the data provider and the issuer n
 1. `GET /v1/{{IssuerDID}}/claims/{{credentialID}}` - This endpoint is designed to return a credential based on the provided credentialID. Refer to the Issuer node example for implementation details.
 2. `POST /v1/{{IssuerDID}}/claims` - This endpoint accepts a JSON body from which a new credential will be created. The IssuerDID is a crucial parameter for this operation. See the Issuer node example for reference on how this endpoint can be implemented.
 
-## Algorithm of client interaction with refresh service
+## Example of client interaction with refresh service
 
 To implement credential refreshing in a client side, need to follow next algorithm to look up for the credentials when a proof request is received:
 
