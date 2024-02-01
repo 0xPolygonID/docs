@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Description
 
-In some cases, having mechanisms to refresh issued credentials can be helpful. A refresh service allows credentials to be updated by the user client. This approach ensures that users are consistently using the updated information provided by the issuer, such as a user balance, a game score, or other data that can be frequently updated.
+Sometimes, it's useful to have a way to renew the credentials you've been given. A refresh service lets you update your credentials yourself. This way, you always have the latest info from the issuer, like your account balance, game score, or other data that changes often.
 
 ## Example
 
@@ -49,12 +49,10 @@ Consider an example of balance credentials, where a user proves his balance to g
 
 ### Modules
 
-1. **[HTTP Server](https://github.com/0xPolygonID/refresh-service/tree/main/server)**: This server plays a pivotal role by supporting the iden3comm protocol. Specifically, it is equipped to process the [refresh iden3comm message](https://iden3-communication.io/credentials/1.0/refresh/), ensuring seamless communication within the ecosystem.
-2. **[Provider Module](https://github.com/0xPolygonID/refresh-service/tree/main/providers)**: is a crucial component within the refresh service architecture. This module is designed to fetch data from external data providers, offering users a high degree of flexibility to implement custom logic based on their specific requirements.
-3. **[Package Manager](https://github.com/0xPolygonID/refresh-service/blob/main/packagemanager/packagemanager.go)**: The package manager adds a critical layer of functionality to the refresh service by introducing the capability to manage JWZ tokens within the iden3comm protocol. This ensures efficient handling and governance of JWZ tokens, contributing to the overall robustness of the system.
-4. **[Integration with the Issuer Node](https://github.com/0xPolygonID/refresh-service/blob/main/service/issuer.go)**: This module responsibles for communication with [issuer node](https://github.com/0xPolygonID/issuer-node/).
-
-In summary, the refresh service is a comprehensive system, encompassing an HTTP Server for protocol support, a flexible Provider Module for custom logic, a Package Manager for JWZ token management, and a strict Integration with the Issuer Node for seamless credential handling and issuance.
+1. **[HTTP Server](https://github.com/0xPolygonID/refresh-service/tree/main/server)**: the http server is a base layer for [iden3comm protocol](https://iden3-communication.io/).
+2. **[Provider Module](https://github.com/0xPolygonID/refresh-service/tree/main/providers)**: this module receives information from external data providers. By itself, it is very flexible in settings, but you can always add your own implementation.
+3. **[Package Manager](https://github.com/0xPolygonID/refresh-service/blob/main/packagemanager/packagemanager.go)**: the package manager handles ZWZ token within the iden3comm protocol.
+4. **[Integration with the Issuer Node](https://github.com/0xPolygonID/refresh-service/blob/main/service/issuer.go)**: this module responsibles for communication with [issuer node](https://github.com/0xPolygonID/issuer-node/).
 
 ### Authentication module for setup iden3comm handler
 
