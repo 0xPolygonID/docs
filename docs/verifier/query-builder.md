@@ -103,7 +103,7 @@ The nullifier session ID field is a critical component for calculating the Nulli
 
 `NullifierID = hash(genesisID, credProfileNonce, schemaHash, verifierID, nullifierSessionID)`
 
-Providing the correct nullifier session ID ensures the query's integrity and uniqueness, conforming to the protocol's sybil resistant features:
+Providing a nullifier session ID ensures the query's integrity and uniqueness, conforming to the protocol's sybil resistant features:
 
 - **One Identity Per Session:** Each identity can obtain only one identifier per credential and verifier session ID (CRS), consistent across all Profiles and Genesis ID.
 - **Brute-force Resistance:** Prevents brute-forcing to reveal Genesis ID or other values.
