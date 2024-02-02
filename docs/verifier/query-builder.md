@@ -105,9 +105,9 @@ The nullifier session ID field is a critical component for calculating the Nulli
 
 Providing a nullifier session ID ensures the query's integrity and uniqueness, conforming to the protocol's sybil resistant features:
 
-- **One Credential Per Session:** Each identity can obtain only one Nullfier per specific credential, nullfier session id, consistent across all Profiles and Genesis ID that are used for the same verifier.
+- **One Credential Per Session:** Each identity can obtain only one Nullifier per specific credential, nullifier session id, consistent across all Profiles and Genesis ID that are used for the same verifier.
 - **Brute-force Resistance:** Prevents brute-forcing to reveal Genesis ID or other values.
-- **Tracking Resistance:** Ensures Profile IDs and Genesis ID cannot be linked based on the Nullifer ID.
+- **Tracking Resistance:** Ensures Profile IDs and Genesis ID cannot be linked based on the Nullifier ID.
 - **Flexible Session Duration:** Allows the verifier to keep the session active as needed, without time-specific constraints.
 - **Protection Against Collusion:** Prevents matching different identifiers as belonging to the same identity, even if the issuer and verifier collude.
 
@@ -150,7 +150,7 @@ Using `*` as a wildcard to accept credentials from any issuer is possible but no
 
 :::caution
 
-Currently, the system supports specifying only a single DID. This means users have the choice to either provide one specific issuer DID or use `*` to allow any issuer. However, the former is strongly advised for maintaining robust verification standards.
+Currently, the Query Builder supports specifying only a single DID. This means users have the choice to either provide one specific issuer DID or use `*` to allow any issuer. However, the former is strongly advised for maintaining robust verification standards.
 
 :::
 
