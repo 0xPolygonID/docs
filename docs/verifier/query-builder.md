@@ -105,7 +105,7 @@ The nullifier session ID field is a critical component for calculating the Nulli
 
 Providing a nullifier session ID ensures the query's integrity and uniqueness, conforming to the protocol's sybil resistant features:
 
-- **One Identity Per Session:** Each identity can obtain only one identifier per credential and verifier session ID (CRS), consistent across all Profiles and Genesis ID.
+- **One Credential Per Session:** Each identity can obtain only one Nullfier per specific credential, nullfier session id, consistent across all Profiles and Genesis ID that are used for the same verifier.
 - **Brute-force Resistance:** Prevents brute-forcing to reveal Genesis ID or other values.
 - **Tracking Resistance:** Ensures Profile IDs and Genesis ID cannot be linked based on the Sybil ID.
 - **Flexible Session Duration:** Allows the verifier to keep the session active as needed, without time-specific constraints.
