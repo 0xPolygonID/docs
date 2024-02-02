@@ -99,9 +99,9 @@ The Proof of Uniqueness enhances security and integrity in contexts requiring [s
 
 2. **Nullifier Session ID:** A numeric input field that remains disabled unless the "Check proof of uniqueness" checkbox is selected. It requires the user to provide a nullifier session ID.
 
-The nullifier session ID field is a critical component for calculating the SybilID, which is essential for establishing Proof of Uniqueness in a query. This ID serves as a verifier-specific session identifier, which might represent, for example, a voting ID. It is used in the SybilID calculation formula:
+The nullifier session ID field is a critical component for calculating the NullifierID, which is essential for establishing Proof of Uniqueness in a query. This ID serves as a verifier-specific session identifier, which might represent, for example, a voting ID. It is used in the NullifierID calculation formula:
 
-`SybilID = hash(genesisID, credProfileNonce, schemaHash, verifierID, nullifierSessionID)`
+`NullifierID = hash(genesisID, credProfileNonce, schemaHash, verifierID, nullifierSessionID)`
 
 Providing the correct nullifier session ID ensures the query's integrity and uniqueness, conforming to the protocol's sybil resistant features:
 
