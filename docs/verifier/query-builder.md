@@ -107,7 +107,7 @@ Providing a nullifier session ID ensures the query's integrity and uniqueness, c
 
 - **One Credential Per Session:** Each identity can obtain only one Nullfier per specific credential, nullfier session id, consistent across all Profiles and Genesis ID that are used for the same verifier.
 - **Brute-force Resistance:** Prevents brute-forcing to reveal Genesis ID or other values.
-- **Tracking Resistance:** Ensures Profile IDs and Genesis ID cannot be linked based on the Sybil ID.
+- **Tracking Resistance:** Ensures Profile IDs and Genesis ID cannot be linked based on the Nullifer ID.
 - **Flexible Session Duration:** Allows the verifier to keep the session active as needed, without time-specific constraints.
 - **Protection Against Collusion:** Prevents matching different identifiers as belonging to the same identity, even if the issuer and verifier collude.
 
