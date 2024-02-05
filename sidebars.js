@@ -110,6 +110,7 @@ module.exports = {
           ]
         },
         "issuer/reverse-hash-service",
+        "issuer/display-method",
         "issuer/vault-auth",
         "issuer/credential-marketplace",
         "contracts/credential-linkage",
