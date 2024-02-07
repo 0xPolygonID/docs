@@ -166,7 +166,7 @@ Opting to skip the revocation check is generally not advised. This check is a cr
 
 ## Verifying a query
 
-After setting up the query in the Query Builder, verification can be performed, which differs for off-chain and on-chain queries.
+After setting up the query in the Query Builder, verification can be performed, which differs according to the selected circuit (off-chain or on-chain).
 
 ### Off Chain verification process
 
