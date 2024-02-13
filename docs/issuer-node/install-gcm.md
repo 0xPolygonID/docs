@@ -37,7 +37,7 @@ To set up your cluster to understand Application resources, run the following co
 kubectl apply -f "https://raw.githubusercontent.com/GoogleCloudPlatform/marketplace-k8s-app-tools/master/crd/app-crd.yaml"
 ```
 
-## Reverse Hash Service (RHS) Configurarion.
+## Reverse Hash Service (RHS) Configuration.
 
 In the following examples of configuring the issuer node for deployment you will be able to see at the end of the form two fields related to the reverse hash service (credential revocation status).
 Here are some clarifications:
