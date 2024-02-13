@@ -27,6 +27,8 @@ make generate-issuer-did
 
 This command will generate a new DID and automatically configure it in your environment, effectively resolving the issue by ensuring that the DID specified in your .env-api file matches an entry in the database.
 
+Please refer to the FAQ [Generating an Issuer DID](../content/issuer-node-did-generation.md) for more detailed information about this command.
+
 <div className="hidden">
 Wrong answer:
 
