@@ -3,17 +3,15 @@ id: faq-xxxx
 title: FAQs
 sidebar_label: FAQs
 description: xxxx.
-keywords: 
-  - docs
-  - polygon id
-  - faqs
-  - questions
+keywords:
+  - faq
 ---
 
-## Title
+## Question
 
-## Description
+## Answer
 
-## Correct answer
+<div className="hidden">
+Wrong answer:
 
-## Wrong answer
+</div>
