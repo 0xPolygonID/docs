@@ -10,13 +10,19 @@ keywords:
 
 # FAQs
 
-## Issuer Node
+## Issuers
 
-### Error
+### Issuer Node
+
+#### Errors
 
 - [Cannot create identity due to error publishing state to RHS](./content/issuer-node-error-creating-identity-while-publishing-state-to-rhs.md)
 - [The Issuer DID doesn't exist in the database](./content/issuer-node-error-the-issuer-did-does-not-exist-in-the-database.md)
 
-### How to
+#### How to's
 
 - [How to use Issuer Node in mainnet](./content/issuer-node-how-to-use-issuer-node-on-mainnet.md)
+
+## Verifiers
+
+- [Cross-Environment and Cross-Chain Credential Verification](./content/verifier-credential-verification-cross-environment.md)
