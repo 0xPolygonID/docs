@@ -2669,3 +2669,12 @@ p {
 .hidden {
   display: none;
 }
+
+.faq-link {
+  color: white;
+  cursor: pointer;
+}
+
+.faq-link:after {
+  content: " \2197";
+}

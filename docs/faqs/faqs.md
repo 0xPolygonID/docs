@@ -16,17 +16,17 @@ keywords:
 
 #### Errors
 
-- [Cannot create identity due to error publishing state to RHS](./content/issuer-node-error-creating-identity-while-publishing-state-to-rhs.md)
-- [The Issuer DID doesn't exist in the database](./content/issuer-node-error-the-issuer-did-does-not-exist-in-the-database.md)
+- [<span className="faq-link">Cannot create identity due to error publishing state to RHS</span>](./content/issuer-node-error-creating-identity-while-publishing-state-to-rhs.md)
+- [<span className="faq-link">The Issuer DID doesn't exist in the database</span>](./content/issuer-node-error-the-issuer-did-does-not-exist-in-the-database.md)
 
 #### How to's
 
-- [How to use Issuer Node in mainnet](./content/issuer-node-how-to-use-issuer-node-on-mainnet.md)
+- [<span className="faq-link">How to use Issuer Node in mainnet</span>](./content/issuer-node-how-to-use-issuer-node-on-mainnet.md)
 
 ## Verifiers
 
-- [Cross-Environment and Cross-Chain Credential Verification](./content/verifier-credential-verification-cross-environment.md)
+- [<span className="faq-link">Cross-Environment and Cross-Chain Credential Verification</span>](./content/verifier-credential-verification-cross-environment.md)
 
 ### On-Chain Verification
 
-- [Understanding Gas Fees for On-Chain Verification](./content/on-chain-verification-gas-costs.md)
+- [<span className="faq-link">Understanding Gas Fees for On-Chain Verification</span>](./content/on-chain-verification-gas-costs.md)
