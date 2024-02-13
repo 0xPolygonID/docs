@@ -24,7 +24,8 @@ By default, the system is designed to prioritize efficiency and privacy; therefo
 Storing hashes rather than the full credentials ensures that the blockchain remains scalable and cost-effective, while still supporting the verification of credentials' authenticity and integrity. This method leverages the inherent security properties of blockchain technology, providing a robust framework for managing and verifying credentials in a decentralized manner.
 
 <div className="hidden">
-Incorrect assumption:
+Wrong answer:
 
 Full credential data is stored directly on the blockchain, leading to high costs and scalability issues.
+
 </div>

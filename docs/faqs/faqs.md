@@ -12,6 +12,8 @@ keywords:
 
 ## Issuers
 
+- [<span className="faq-link">Comparing Data Storage Mechanisms: On-Chain Issuer Demo vs. Production</span>](./content/issuer-data-storage-mechanisms-comparison.md)
+
 ### Issuer Node
 
 #### Errors
