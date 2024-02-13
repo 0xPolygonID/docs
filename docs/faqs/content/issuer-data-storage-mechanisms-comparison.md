@@ -1,5 +1,5 @@
 ---
-id: faq-data-storage-mechanisms-comparison
+id: issuer-data-storage-mechanisms-comparison
 title: "Comparing Data Storage Mechanisms: On-Chain Issuer Demo vs. Production"
 sidebar_label: Data Storage Mechanisms Comparison
 description: Explores the differences in data storage mechanisms between an on-chain issuer demo and a production on-chain issuer.

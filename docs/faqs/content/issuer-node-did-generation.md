@@ -1,5 +1,5 @@
 ---
-id: faq-issuer-node-did-generation
+id: issuer-node-did-generation
 title: "Generating an Issuer DID"
 sidebar_label: Generating Issuer DID
 description: Steps to generate an issuer DID for use with the issuer-node-ui and its backend.

@@ -1,5 +1,5 @@
 ---
-id: faq-flutter-sdk-network-integration
+id: wallet-flutter-sdk-network-integration
 title: "Integrating Unsupported Networks with Flutter SDK for On-Chain Verification"
 sidebar_label: Unsupported Network Integration
 description: Explains how to integrate on-chain verification for networks not directly supported by the Flutter SDK, including workarounds and development tips.

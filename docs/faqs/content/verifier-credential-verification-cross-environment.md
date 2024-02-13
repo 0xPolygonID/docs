@@ -1,5 +1,5 @@
 ---
-id: faq-verifier-credential-verification-cross-environment
+id: verifier-credential-verification-cross-environment
 title: Cross-Environment and Cross-Chain Credential Verification
 sidebar_label: Cross-Environment Verification
 description: Guidance on verifying credentials across on-chain, off-chain, and cross-chain environments, including SDK-level configurations for off-chain verification.

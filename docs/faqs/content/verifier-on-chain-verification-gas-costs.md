@@ -1,5 +1,5 @@
 ---
-id: faq-on-chain-verification-gas-costs
+id: verifier-on-chain-verification-gas-costs
 title: Understanding Gas Fees for On-Chain Verification
 sidebar_label: Gas Fees for On-Chain Verification
 description: Explains why gas fees are necessary for the on-chain verification of zero-knowledge proofs and details the computational costs involved.

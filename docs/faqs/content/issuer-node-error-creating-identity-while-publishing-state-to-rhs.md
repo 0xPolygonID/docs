@@ -1,5 +1,5 @@
 ---
-id: faq-issuer-node-error-creating-identity-while-publishing-state-to-rhs
+id: issuer-node-error-creating-identity-while-publishing-state-to-rhs
 title: Error Publishing State to RHS When Creating Identity
 sidebar_label: Error Publishing to RHS
 description: Resolving the error encountered when publishing state to the RHS during identity creation.

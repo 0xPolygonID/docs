@@ -1,5 +1,5 @@
 ---
-id: faq-the-issuer-did-does-not-exist-in-the-database
+id: issuer-node-error-the-issuer-did-does-not-exist-in-the-database
 title: Issuer DID Not Found in Database
 sidebar_label: Issuer DID Not Found
 description: Troubleshooting when the provided DID does not exist in the database.

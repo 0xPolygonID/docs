@@ -1,5 +1,5 @@
 ---
-id: faq-on-chain-verification-data-storage
+id: verifier-on-chain-verification-data-storage
 title: Data Management for On-Chain Credential Verification
 sidebar_label: On-Chain Data Management
 description: Explains how credential data is managed on-chain by issuers, including the use of non-merklized/merklized credentials and storage practices.

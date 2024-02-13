@@ -1,5 +1,5 @@
 ---
-id: faq-reverse-hash-service-impact
+id: issuer-node-reverse-hash-service-impact
 title: "Impact of Disabling RHS on On-Chain Verification with SIG Credentials"
 sidebar_label: RHS and On-Chain Verification
 description: Discusses the feasibility of on-chain verification when the issuer node's Reverse Hash Service (RHS) is disabled, especially after issuing a SIG credential.
