@@ -11,9 +11,9 @@ keywords:
   - verifier
   - wallet sdk
 ---
- 
-We can get a list of public information about all the identities stored on the SDK using the `getIdentities()` function. 
- 
+
+We can get a list of public information about all the identities stored on the SDK using the `getIdentities()` function.
+
 ```dart
 Future<List<IdentityEntity>> getIdentities();
 {

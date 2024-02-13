@@ -3,7 +3,7 @@ id: issuer-configuration
 title: Configuration
 sidebar_label: Configuration
 description: Issuer custom configuration.
-keywords: 
+keywords:
   - docs
   - polygon id
   - issuer node
@@ -20,7 +20,7 @@ This guide will show you how to confgure your Issuer Node.
 
 ## Revocation Status
 
-The revocation status is a core part of the credential, as it is the verifier's way of checking whether or not a credential has been revoked by the issuer. The Issuer Node offers three different ways to check the revocation status of a credential: 
+The revocation status is a core part of the credential, as it is the verifier's way of checking whether or not a credential has been revoked by the issuer. The Issuer Node offers three different ways to check the revocation status of a credential:
 
 - `Centralized`: The verifier or user will check the credential revocation status through the Issuer Node itself, which is why we consider it to be a centralized method. If the node is not available, the verification will fail, resulting in possible errors when trying to generate ZK Proofs.
 
@@ -29,6 +29,7 @@ The revocation status is a core part of the credential, as it is the verifier's 
 - `RHS On Chain`: This method can be considered as completely decentralized since the RHS is on chain, therefore the user or verifier will check the status of a credential via this decentralized on chain service without depending on a centralized server. This is the **desirable option**.
 
 ### Centralized (default)
+
 In this case we will have to make sure that the Issuer Node is publicly accessible.
 
 **Core API**:
@@ -44,30 +45,34 @@ ISSUER_SERVER_URL={Set a publicly accessible URL for the same $ISSUER_SERVER_POR
 **UI**:
 
 .env-api
+
 ```
 ISSUER_API_UI_SERVER_URL={Set a publicly accessible URL for the same $ISSUER_API_UI_SERVER_PORT}
 
 ```
 
 ### RHS Off Chain
+
 For the RHS Off Chain, there are two options:
+
 1. Use an RHS from a reliable entity.
-2. Install your own RHS; you can do it with the following guide: https://github.com/iden3/reverse-hash-service
+2. Install your own RHS; you can do it with the following guide: [Configure your own RHS](reverse-hash-service.md)
 
 Once you have your publicly accessible RHS URL:
 
 .env-issuer
+
 ```
 ISSUER_CREDENTIAL_STATUS_RHS_MODE=OffChain
 ISSUER_CREDENTIAL_STATUS_RHS_URL={RHS publicly accessible URL}
 ```
 
-
 ### RHS On Chain
 
 .env-issuer
+
 ```
-ISSUER_CREDENTIAL_STATUS_RHS_MODE=OnChain 
+ISSUER_CREDENTIAL_STATUS_RHS_MODE=OnChain
 ```
 
 <Tabs>
@@ -91,6 +96,7 @@ ISSUER_CREDENTIAL_STATUS_RHS_CHAIN_ID=137
 </Tabs>
 
 ## State Contract
+
 The State Contract stores the Global Identity State Tree. The GIST State represents a snapshot of the states of all the identities operating in the system. The design of the State Contract allows identities to authenticate themselves using Identity Profiles.
 
 Every time that an identity is updated, for example when a credential is issued using SMT Proof or revoked, it needs to perform a State Transition. This process consists of generating a ZK-proof or a digitally-signed message that proves that the identity is authorized to perform the state transition. Then the State contract verifies the proof on-chain via its transitState (for ZK-proofs) or transitStateGeneric (generic, as the name suggests) function.
@@ -125,7 +131,8 @@ ISSUER_ETHEREUM_URL={Replace with a Polygon Main RPC}
 
 ## Issuer's DID
 
-Currently there are two options for creating an issuer's DID: 
+Currently there are two options for creating an issuer's DID:
+
 1. Using a **Makefile** command, generally used for the **UI** or **API-UI**.
 2. Create Identity **endpoint** of Core API, generally used for the **Core API**.
 
@@ -133,10 +140,11 @@ Currently there are two options for creating an issuer's DID:
 
 :::note
 The DID configured for the UI or API-UI works under the following rules:
+
 1. if a DID is provided in the .env-api file, it will be checked for its existence in the vault. In case it is different from the one in the vault, the latter will be updated.
 2. If a DID is not provided in the file, it will be searched in the vault.
 3. When a DID is created with this method, it is saved both in the .env-api file and in the vault.
-:::
+   :::
 
 .env-api
 
@@ -164,6 +172,7 @@ ISSUER_API_IDENTITY_METHOD={polygonid | custom method}
 
 Execute the following `make command` in order to generate a new DID with the .env-api provided `blockchain` ,`network` and `method`.
 The given command will perform the following actions:
+
 1. Replace **ISSUER_API_UI_ISSUER_DID** value with the new DID(.env-api file).
 2. Write the new DID in the vault.
 
@@ -181,10 +190,10 @@ make delete-did
 
 The Core API provides the `/v1/identities` endpoint in order to create an identity.
 
-The property *type* can have two possible values:
-* `BJJ`: BJJ keys based identity.
-* `ETH`: Ethreum based identity.
+The property _type_ can have two possible values:
 
+- `BJJ`: BJJ keys based identity.
+- `ETH`: Ethreum based identity.
 
 Create Identity Payload example:
 <Tabs>
@@ -200,6 +209,7 @@ Create Identity Payload example:
   }
 }
 ```
+
 </TabItem>
 
 <TabItem value="Polygon Main">
@@ -214,7 +224,6 @@ Create Identity Payload example:
   }
 }
 ```
+
 </TabItem>
 </Tabs>
-
-

@@ -3,7 +3,7 @@ id: verification-api
 title: Verification
 sidebar_label: Verification
 description: Learn how to verify proofs using the API.
-keywords: 
+keywords:
   - docs
   - polygon id
   - ID holder
@@ -19,13 +19,13 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-After having presented a [Request](./request-api-guide.md) to the user's wallet, the wallet will process the request and generate a proof that is sent back to the Verifier. 
-The proof must be verified in order to authenticate the user. 
+After having presented a [Request](./request-api-guide.md) to the user's wallet, the wallet will process the request and generate a proof that is sent back to the Verifier.
+The proof must be verified in order to authenticate the user.
 Let us see how to execute this verification.
 
 > The proof verification always follows the same flow independently of the Request type presented in the previous step by the Verifier, whether it is a basic auth or a query-based request.
 
-## Unpack the proof 
+## Unpack the proof
 
 <Tabs>
 <TabItem value="Golang">
@@ -42,7 +42,7 @@ tokenBytes, err := io.ReadAll(req.Body)
 <TabItem value="Javascript">
 
 ```js
-const getRawBody = require('raw-body')
+const getRawBody = require("raw-body");
 
 const raw = await getRawBody(req);
 const tokenStr = raw.toString().trim();
@@ -51,11 +51,9 @@ const tokenStr = raw.toString().trim();
 </TabItem>
 </Tabs>
 
-
 `req` is the post request sent by the wallet in response to the Auth Request posed by the Verifier. This unpacks the proof sent by the wallet.
 
 ## Initiate the verifier
-
 
 <Tabs>
 <TabItem value="Golang">
@@ -74,7 +72,6 @@ resolvers := map[string]pubsignals.StateResolver{
 verifier, err := auth.NewVerifier(
 			verificationKeyloader, resolvers, auth.WithIPFSGateway("<gateway url>"))
 ```
-
 
 </TabItem>
 <TabItem value="Javascript">
@@ -101,11 +98,11 @@ const verifier = await Verifier.newVerifier(
 </TabItem>
 </Tabs>
 
-This creates a resolver which is used to fetch the identity state from the [State Smart Contract](https://docs.iden3.io/contracts/state/) and a verification key loader which is used to fetch the verification keys necessary to verify a zero-knowledge proof. 
+This creates a resolver which is used to fetch the identity state from the [State Smart Contract](https://docs.iden3.io/contracts/state/) and a verification key loader which is used to fetch the verification keys necessary to verify a zero-knowledge proof.
 Eventually, it returns an instance of a Verifier. To set up a verifier, different parameters need to be passed:
 
--  `circuitsDir` is the path where the public verification keys for Iden3 circuits are located (such as `"./circuits"`). If no folder is set, './circuits' folder is used. The verification key folder can be found <a href="https://github.com/0xPolygonID/phase2ceremony" target="_blank">here</a>.
-Path to the circuit file is constructed from `${circuitsDir}/${circuitId}/verification_key.json`,
+- `circuitsDir` is the path where the public verification keys for Iden3 circuits are located (such as `"./circuits"`). If no folder is set, './circuits' folder is used. The verification key folder can be found <a href="https://github.com/0xPolygonID/phase2ceremony" target="_blank">here</a>.
+  Path to the circuit file is constructed from `${circuitsDir}/${circuitId}/verification_key.json`,
 - hierarchical structure for files in circuits folder is mandatory, e.g. --circuits -----circuitId ---------file
 - `ethURL` is the URL of your RPC node provider such as `"https://polygon-testnet-rpc.allthatnode.com:8545"` for Polygon Mumbai.
 - `contractAddress` is the address of the identity state Smart Contract. On Polygon Mumbai, it is 0x134B1BE34911E39A8397ec6289782989729807a4.
@@ -134,7 +131,7 @@ let authResponse: protocol.AuthorizationResponseMessage;
 const opts: VerifyOpts = {
     AcceptedStateTransitionDelay: 5 * 60 * 1000, // 5 minute
   };
-     
+
 authResponse = await verifier.fullVerify(tokenStr, authRequest, opts);
 ```
 
@@ -157,11 +154,11 @@ An example of the usage of this API can be found <ins>[here](https://github.com/
 
 ## Verification - Under the Hood
 
-The auth library provides a simple handler to extract all the necessary metadata from the proof and execute all the verifications needed. The verification procedure that is happening behind the scenes involves the following steps: 
+The auth library provides a simple handler to extract all the necessary metadata from the proof and execute all the verifications needed. The verification procedure that is happening behind the scenes involves the following steps:
 
 ### Zero-Knowledge Proof Verification
 
-Starting from the circuit-specific public verification key, the proof, and the public inputs provided by the user, it is possible to verify the proof. In this case, the proof verification involves: 
+Starting from the circuit-specific public verification key, the proof, and the public inputs provided by the user, it is possible to verify the proof. In this case, the proof verification involves:
 
 - Verification of the proof contained based on the [AuthV2 Circuit](https://docs.iden3.io/protocol/main-circuits/#authV2")
 - Verification of the proof contained based on the [AtomicQuerySigV2 Circuit](https://docs.iden3.io/protocol/main-circuits/#credentialatomicquerysigv2) or [AtomicQueryMTPV2](https://docs.iden3.io/protocol/main-circuits/#credentialatomicquerymtpV2) based on the query.
@@ -177,12 +174,11 @@ In this part, it is also verified that the requested credential has not been rev
 This involves a verification based on the public inputs of the circuits used to generate the proof. These must match the rules requested by the Verifier inside the Auth Request. For example, the query and the credential schema used by the user to generate the proof must match the Auth Request:
 
 - The message signed by the user must match the one passed to the user inside the auth request.
-- The rules such as the `query` or the credential `schema` used to generate the proof must match the ones included inside the auth request. 
-  
+- The rules such as the `query` or the credential `schema` used to generate the proof must match the ones included inside the auth request.
+
 This "off-circuit" verification is important because a user can potentially modify the query and present a valid proof. A user born after 2000-12-31 shouldn't pass the check. However, if they generate a proof using a query input `"$lt": 20010101`, the Verifier would see it as a valid proof. By doing verification of the public inputs of the circuit, the Verifier is able to detect malicious actors.
 
 At the end of the workflow:
 
 - The web client is able to authenticate the user using its DID `ID` after having established that the user controls that identity and satisfies the query presented in the auth request.
 - The user is able to log into the platform without disclosing any personal information to the client except for its DID.
-

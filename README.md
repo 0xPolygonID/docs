@@ -15,7 +15,7 @@
    <a href="https://github.com/maticnetwork/id-docs/graphs/contributors"><img src="https://img.shields.io/github/contributors-anon/maticnetwork/id-docs"></a>
    <img src="https://img.shields.io/github/languages/code-size/maticnetwork/id-docs">
    <a href="https://discord.gg/zdwkdvMNY2"><img src="https://img.shields.io/discord/714888181740339261?color=1C1CE1&label=Polygon%20%7C%20Discord%20%F0%9F%91%8B%20&style=flat-square"></a>
-   <a href="https://twitter.com/0xPolygon"><img src="https://img.shields.io/twitter/follow/0xPolygon.svg?style=social"></a>
+   <a href="https://twitter.com/0xPolygonID"><img src="https://img.shields.io/twitter/follow/0xPolygon.svg?style=social"></a>
    
 </p>
 

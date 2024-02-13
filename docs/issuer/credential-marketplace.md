@@ -3,7 +3,7 @@ id: credential-marketplace
 title: Credential Marketplace
 sidebar_label: Credential Marketplace
 description: "Features of the Credential Marketplace"
-keywords: 
+keywords:
   - docs
   - polygon id
   - credential
@@ -14,11 +14,11 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Credential Marketplace is the go-to place for verifiers to find trusted sources for specific credentials related to their business cases. With an ever-growing set of options, verifiers can compare and choose from a variety of credential providers and select the most suitable ones for their needs. 
+The Credential Marketplace is the go-to place for verifiers to find trusted sources for specific credentials related to their business cases. With an ever-growing set of options, verifiers can compare and choose from a variety of credential providers and select the most suitable ones for their needs.
 
-It also offers an environment for issuers to display the credentials they are offering and demonstrate to the community how their credentials can solve business cases. 
+It also offers an environment for issuers to display the credentials they are offering and demonstrate to the community how their credentials can solve business cases.
 
-The marketplace is convenient for all the players in the self-sovereign identity environment: it is trustworthy for the verifier as it provides a curated set of trusted issuers and brings potential new customers for issuers. 
+The marketplace is convenient for all the players in the self-sovereign identity environment: it is trustworthy for the verifier as it provides a curated set of trusted issuers and brings potential new customers for issuers.
 
 The Credential Marketplace provides visibility for everyone involved in the decentralized identity business, be they an issuer, verifier, wallet provider, trust network, or system integrator, The ecosystem page, coming together with Marketplace, gathers all those participants and presents a comprehensive description of their businesses.
 
@@ -33,7 +33,7 @@ Aside from this article, you can always watch the video below where we present t
 ## What one can do in the Credential Marketplace
 
 | Verifier                                     | Issuer                                                  |
-|----------------------------------------------|---------------------------------------------------------|
+| -------------------------------------------- | ------------------------------------------------------- |
 | Find credentials for specific use cases.     | Register organizations in the credential marketplace.   |
 | Have a way of contacting trusted issuers.    | Add, edit and remove credentials from their storefront. |
 | Compare options for credentials and issuers. | Display contact information.                            |
@@ -76,27 +76,26 @@ This is the place where Issuers register their organization, by filling up a for
 <img src= {useBaseUrl("img/credential-marketplace/register-form.png")} align="center" length="100" width="700" />
 </div>
 
-It is important to note that this is an application process, which means that the Polygon ID  team reviews all applications and replies to them within 2-3 business days.
+It is important to note that this is an application process, which means that the Polygon ID team reviews all applications and replies to them within 2-3 business days.
 
 ### Managing Credentials
 
 With all set up, Issuers can add, edit and list new credentials and also display them on their credential store.
 
-Adding credentials involves setting all of its characteristics, such as general information,  pricing details and specific credential features.
+Adding credentials involves setting all of its characteristics, such as general information, pricing details and specific credential features.
 
 <div align="center">
 <img src= {useBaseUrl("img/credential-marketplace/add-credential-form.png")} align="center" length="100" width="700" />
 </div>
 <br></br>
 
-:::info 
+:::info
 As one of its first settings, you can decide whether the new credential should be visible or not in the marketplace.  
 :::
 
 ### Setting up contact information
 
 It is crucial for the credential provider to display relevant information for their prospective users. Having filled up the contact information form, the issuer will have a comprehensive public profile, which will be useful for verifiers and other actors to be in contact and request more information about their offering. It is important to note that there are a few mandatory fields, such as Organization logo, name, description, DIDs, email and website.
-
 
 <div align="center">
 <img src= {useBaseUrl("img/credential-marketplace/organization.png")} align="center" length="100" width="700" />

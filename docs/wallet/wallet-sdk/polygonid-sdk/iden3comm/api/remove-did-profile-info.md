@@ -14,7 +14,7 @@ keywords:
   - profile
 ---
 
-Remove information about a DID we interacted with. 
+Remove information about a DID we interacted with.
 
 ```dart
 Future<void> removeDidProfileInfo({

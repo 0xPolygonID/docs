@@ -1,16 +1,16 @@
 ---
 id: issue-credential-cli
-title:  Issue Credentials via CLI
+title: Issue Credentials via CLI
 sidebar_label: Issue Credentials via CLI
 description: Learn how to Issue Credentials via CLI.
-keywords: 
+keywords:
   - docs
   - polygon id
   - issuer node
   - claim
   - verifiable credentials
   - CLI
-  - schema 
+  - schema
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -144,7 +144,7 @@ curl --location --request GET 'http://localhost:3001/v1/did:polygonid:polygon:mu
 
 This will walk you through the steps of issuing a credential to the Polygon ID wallet app.
 
-:::note 
+:::note
 
 To learn how to issue credentials to a Polygon ID Wallet User, please refer to the [<ins>Issuer Node Guide</ins>](issuer-node-guide.md#schemas).
 
@@ -172,7 +172,7 @@ With the Polygon ID app, open it up and scan the QR code.
 
 ### Verifying Credential
 
-:::note 
+:::note
 
 The goal is to build your own type of credential and ways to verify it, but this is an example of how things could work.
 

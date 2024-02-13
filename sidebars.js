@@ -97,6 +97,20 @@ module.exports = {
             "issuer/schema-exs",
           ]
         },
+        {
+          type: "category",
+          label: "Refresh service",
+          link: {
+            type: "generated-index"
+          },
+          items: [
+            "issuer/refresh-service/overview",
+            "issuer/refresh-service/customization",
+            "issuer/refresh-service/setup-guide"
+          ]
+        },
+        "issuer/reverse-hash-service",
+        "issuer/display-method",
         "issuer/vault-auth",
         "issuer/credential-marketplace",
         "contracts/credential-linkage",
@@ -136,6 +150,7 @@ module.exports = {
                 "verifier/verification-library/config",
                 "verifier/verification-library/request-api",
                 "verifier/verification-library/verification-api",
+                "verifier/verifier-backend",
               ],
             },
             "verifier/verification-library/verifier-setup",
@@ -144,6 +159,8 @@ module.exports = {
         "verifier/on-chain-verification/overview",
         "verifier/query-builder",
         "verifier/verification-library/zk-query-language",
+        "verifier/v3-circuit",
+
       ],
     },
     {
@@ -363,6 +380,7 @@ module.exports = {
         },
         "js-sdk/js-sdk-example",
         "js-sdk/js-sdk-browser-wallet-demo",
+        "js-sdk/js-sdk-dynamic-did"
       ],
     },
     "releases"

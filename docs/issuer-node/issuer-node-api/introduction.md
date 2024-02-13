@@ -3,7 +3,7 @@ id: introduction
 title: Polygon ID Issuer Node APIs
 sidebar_label: Introduction
 description: Introduction to the Issuer Node APIs and its functionalities.
-keywords: 
+keywords:
   - docs
   - polygon id
   - issuer node
@@ -13,7 +13,7 @@ keywords:
   - API
 ---
 
-The Issuer Node APIs provide the following functionalities: 
+The Issuer Node APIs provide the following functionalities:
 
 - Create and retrieve Identities
 - Create a Verifiable Credential (VC)
@@ -22,8 +22,8 @@ The Issuer Node APIs provide the following functionalities:
 - Revoke a Verifiable Credential
 - Retrieve the Revocation Status of a Verifiable Credential
 - Call Agent Endpoint using the Wallet App
- 
-These APIs can be tested locally on a <a href="https://self-hosted-platform.polygonid.me/#overview" target="_blank">Self Hosted Platform</a> or with our <a href="https://www.postman.com/dark-star-200015/workspace/public/collection/23322631-727c2573-3d62-4d58-9d46-0f479144d75d?action=share&creator=23322631" target="_blank">Postman Collection</a>. 
+
+These APIs can be tested locally on a <a href="https://self-hosted-platform.polygonid.me/#overview" target="_blank">Self Hosted Platform</a> or with our <a href="https://www.postman.com/dark-star-200015/workspace/public/collection/23322631-727c2573-3d62-4d58-9d46-0f479144d75d?action=share&creator=23322631" target="_blank">Postman Collection</a>.
 
 :::note
 

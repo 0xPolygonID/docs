@@ -17,7 +17,7 @@ keywords:
 ---
 
 Get a list of revocation nonces of credentials stored in Polygon ID SDK that fulfill the request from the iden3comm message.
-  
+
 ```dart
 Future<List<int>> getClaimsRevNonceFromIden3Message({
   required Iden3MessageEntity message,

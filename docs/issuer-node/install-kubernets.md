@@ -3,7 +3,7 @@ id: install-kubernets
 title: Installing the Issuer Node in Kubernetes
 sidebar_label: Using Kubernets
 description: Learn how to install the Issuer Node using Kubernets.
-keywords: 
+keywords:
   - docs
   - polygon id
   - ID holder
@@ -53,17 +53,17 @@ That's it, now we're going to install the Issuer Node.
 In the `k8s/helm/` folder of the GitHub project, you will find all the necessary files for the deployment. The first step involves defining some environment variables:
 
 ```bash
-export APP_INSTANCE_NAME=polygon-id-issuer              
-export NAMESPACE=default                                
-export APP_DOMAIN=app.example.com                       
-export UI_DOMAIN=ui.example.com                         
-export API_DOMAIN=api.example.com                       
-export PRIVATE_KEY="YOUR PRIVATE KEY"                                   
-export MAINNET=false                                    
-export UIPASSWORD="my ui password"                      
-export ISSUERNAME="My Issuer"                           
-export ISSUER_ETHERUM_URL="https://polygon-mumbai.XXXX" 
-export INGRESS_ENABLED=true                             
+export APP_INSTANCE_NAME=polygon-id-issuer
+export NAMESPACE=default
+export APP_DOMAIN=app.example.com
+export UI_DOMAIN=ui.example.com
+export API_DOMAIN=api.example.com
+export PRIVATE_KEY="YOUR PRIVATE KEY"
+export MAINNET=false
+export UIPASSWORD="my ui password"
+export ISSUERNAME="My Issuer"
+export ISSUER_ETHERUM_URL="https://polygon-mumbai.XXXX"
+export INGRESS_ENABLED=true
 export VAULT_PWD=password
 ```
 
@@ -111,28 +111,28 @@ helm install "$APP_INSTANCE_NAME" . \
 --set vaultpwd="$VAULT_PWD"
 ```
 
-**After a few minutes, the ingress should be ready, and you can access the domains you specified.** 
+**After a few minutes, the ingress should be ready, and you can access the domains you specified.**
 
 ## How to install the Issuer Node using the Public IP (not recommended for production env)
 
 If you don't have domain names, you can install the Issuer Node by leveraging a public IP address. First, we need to create a cluster that allows access to the Issuer Node through the public IP and specific ports. We will create the cluster named `issuernode2`:
 
 ```bash
-k3d cluster create issuernode2 --api-port 6550 --agents 1 --volume "/tmp/data:/data@agent:*" --volume "/tmp/data:/data@server:*" -p "30000-30010:30000-30010@server:0" 
+k3d cluster create issuernode2 --api-port 6550 --agents 1 --volume "/tmp/data:/data@agent:*" --volume "/tmp/data:/data@server:*" -p "30000-30010:30000-30010@server:0"
 ```
 
 With the cluster created and running, we need to assign values to some environment variables:
 
 ```bash
-export APP_INSTANCE_NAME=polygon-id-issuer              
-export NAMESPACE=default                                
-export PUBLIC_IP="your public ip"                   
-export PRIVATE_KEY="YOUR PRIVATE KEY"                                   
-export MAINNET=false                                    
-export UIPASSWORD="my ui password"                      
-export ISSUERNAME="My Issuer"                           
-export ISSUER_ETHERUM_URL="https://polygon-mumbai.XXXX" 
-export INGRESS_ENABLED=false                             
+export APP_INSTANCE_NAME=polygon-id-issuer
+export NAMESPACE=default
+export PUBLIC_IP="your public ip"
+export PRIVATE_KEY="YOUR PRIVATE KEY"
+export MAINNET=false
+export UIPASSWORD="my ui password"
+export ISSUERNAME="My Issuer"
+export ISSUER_ETHERUM_URL="https://polygon-mumbai.XXXX"
+export INGRESS_ENABLED=false
 export VAULT_PWD=password
 ```
 

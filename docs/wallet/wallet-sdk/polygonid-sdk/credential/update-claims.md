@@ -11,11 +11,11 @@ keywords:
   - verifier
   - wallet sdk
 ---
- 
+
 The credentials stored on the SDK can be updated using the credential's ID.
 
-The `updateClaim()` method uses `claimId`, `issuer`, `genesisDid`, `state`, `expiration`, `type`, `data`, and `privateKey` as input parameters and updates the credential information. 
- 
+The `updateClaim()` method uses `claimId`, `issuer`, `genesisDid`, `state`, `expiration`, `type`, `data`, and `privateKey` as input parameters and updates the credential information.
+
 ```dart
 Future<ClaimEntity> updateClaim({
   required String claimId,
@@ -38,7 +38,7 @@ where:
 - `expiration` is the date and time of the expiration of the credential in string format.
 - `type` is the type of verifiable credential, for example: **KYCAgeCredential**.
 - `data` is the information related to a verifiable credential.
-- `privateKey` of the identity is a key that is used to access the sensitive information of the identity. This key is also used for generating proofs by using the credentials associated with the identity.  
+- `privateKey` of the identity is a key that is used to access the sensitive information of the identity. This key is also used for generating proofs by using the credentials associated with the identity.
 
 This function returns the updated `ClaimEntity`.
 

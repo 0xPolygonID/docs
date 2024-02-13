@@ -15,7 +15,7 @@ keywords:
 ---
 
 Add information of a connection between a DID and a service.
-   
+
 ```dart
 Future<void> addDidProfileInfo({
   required String did,

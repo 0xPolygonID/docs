@@ -12,7 +12,7 @@ keywords:
   - wallet sdk
 ---
 
-In the SDK, a message can be signed using the `sign()` function. 
+In the SDK, a message can be signed using the `sign()` function.
 
 ```dart
 Future<String> sign({
@@ -22,11 +22,11 @@ Future<String> sign({
 
 The `sign()` function signs a message using the identity's private key.
 
-The `privateKey` and the `message` are passed as the input parameters to the function and a signature string is returned. 
+The `privateKey` and the `message` are passed as the input parameters to the function and a signature string is returned.
 
-`privateKey` of the identity is a key that is used to access the sensitive information of the identity. This key is also used for generating proofs by using the credentials associated with the identity. 
+`privateKey` of the identity is a key that is used to access the sensitive information of the identity. This key is also used for generating proofs by using the credentials associated with the identity.
 
-`message` is the actual message sent by the Integrator and it needs to be signed. 
+`message` is the actual message sent by the Integrator and it needs to be signed.
 
 Thus the role of `sign()` is to sign a message string for an Integrator using the identity's `privateKey`.
 
@@ -38,5 +38,4 @@ When an Integrator scans a QR code, an Iden3 message is created. This message ha
 
 :::
 
->The Baby Jubjub private key is used to sign the message mentioned above. Read more about Baby Jubjub Elliptic Curve [here](https://eips.ethereum.org/EIPS/eip-2494).
-
+> The Baby Jubjub private key is used to sign the message mentioned above. Read more about Baby Jubjub Elliptic Curve [here](https://eips.ethereum.org/EIPS/eip-2494).
