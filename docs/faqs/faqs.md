@@ -17,6 +17,7 @@ keywords:
 ### Issuer Node
 
 - [<span className="faq-link">Generating an Issuer DID</span>](./content/issuer-node-did-generation.md)
+- [<span className="faq-link">Reusing a Previously Used Issuer DID</span>](./content/issuer-node-reusing-issuer-did.md)
 - [<span className="faq-link">Impact of Disabling RHS on On-Chain Verification with SIG Credentials</span>](./content/issuer-node-reverse-hash-service-impact.md)
 - [<span className="faq-link">How to use Issuer Node in mainnet</span>](./content/issuer-node-how-to-use-issuer-node-on-mainnet.md)
 
