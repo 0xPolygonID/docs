@@ -26,3 +26,7 @@ keywords:
 ## Verifiers
 
 - [Cross-Environment and Cross-Chain Credential Verification](./content/verifier-credential-verification-cross-environment.md)
+
+### On-Chain Verification
+
+- [Understanding Gas Fees for On-Chain Verification](./content/on-chain-verification-gas-costs.md)
