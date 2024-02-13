@@ -12,7 +12,7 @@ keywords:
 
 ## Question
 
-How can I configure and use the Issuer Node on the mainnet?
+How can I configure and use the Issuer Node on the Polygon mainnet?
 
 ## Answer
 

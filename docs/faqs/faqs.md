@@ -19,12 +19,12 @@ keywords:
 - [<span className="faq-link">Generating an Issuer DID</span>](./content/issuer-node-did-generation.md)
 - [<span className="faq-link">Reusing a Previously Used Issuer DID</span>](./content/issuer-node-reusing-issuer-did.md)
 - [<span className="faq-link">Impact of Disabling RHS on On-Chain Verification with SIG Credentials</span>](./content/issuer-node-reverse-hash-service-impact.md)
-- [<span className="faq-link">How to use Issuer Node in mainnet</span>](./content/issuer-node-how-to-use-issuer-node-on-mainnet.md)
+- [<span className="faq-link">Using Issuer Node on Mainnet</span>](./content/issuer-node-how-to-use-issuer-node-on-mainnet.md)
 
 #### Errors
 
-- [<span className="faq-link">Cannot create identity due to error publishing state to RHS</span>](./content/issuer-node-error-creating-identity-while-publishing-state-to-rhs.md)
-- [<span className="faq-link">The Issuer DID doesn't exist in the database</span>](./content/issuer-node-error-the-issuer-did-does-not-exist-in-the-database.md)
+- [<span className="faq-link">Error Publishing State to RHS When Creating Identity</span>](./content/issuer-node-error-creating-identity-while-publishing-state-to-rhs.md)
+- [<span className="faq-link">Issuer DID Not Found in Database</span>](./content/issuer-node-error-the-issuer-did-does-not-exist-in-the-database.md)
 
 ## Verifiers
 

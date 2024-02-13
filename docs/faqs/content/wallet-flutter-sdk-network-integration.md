@@ -17,7 +17,7 @@ If the Flutter SDK doesn't directly support a network, how can I integrate on-ch
 
 ## Answer
 
-The Flutter SDK is designed to be flexible and can accommodate any network with the appropriate environmental parameters set. For instance, successful tests have been conducted using the zkevm network within the PolygonID app by configuring the necessary environment settings. It's important to note, however, that the on-chain verification process is handled on the app side, not directly within the SDK.
+The Flutter SDK is designed to be flexible and can accommodate any network with the appropriate environment parameters set. For instance, successful tests have been conducted using the [zkEVM](https://polygon.technology/polygon-zkevm) network within the PolygonID app by configuring the necessary environment settings. It's important to note, however, that the on-chain verification process is handled on the app side, not directly within the SDK.
 
 Currently, the ability to register custom networks in the Flutter SDK is under development. In contrast, the JavaScript SDK (js-sdk) already supports this functionality. This means that for now, integration with networks not directly supported by the Flutter SDK requires a more manual approach, focusing on the app's handling of on-chain interactions.
 
