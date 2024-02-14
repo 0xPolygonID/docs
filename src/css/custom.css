@@ -2665,3 +2665,7 @@ p {
   width: 48px;
   height: 48px;
 }
+
+.hidden {
+  display: none;
+}
