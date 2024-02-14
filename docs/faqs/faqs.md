@@ -26,7 +26,8 @@ keywords:
 #### Errors
 
 - [<span className="faq-link">Error Publishing State to RHS When Creating Identity</span>](./content/issuer-node-error-creating-identity-while-publishing-state-to-rhs.md)
-- [<span className="faq-link">Issuer DID Not Found in Database</span>](./content/issuer-node-error-the-issuer-did-does-not-exist-in-the-database.md)
+- [<span className="faq-link">Error: Issuer DID Does Not Exist in the Database</span>](./content/issuer-node-error-the-issuer-did-does-not-exist-in-the-database.md)
+- [<span className="faq-link">Error: Cannot Get Issuer DID from Vault</span>](./content/issuer-node-error-cannot-get-did-from-vault.md)
 
 ## Verifiers
 

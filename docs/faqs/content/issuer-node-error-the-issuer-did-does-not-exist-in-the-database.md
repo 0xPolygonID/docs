@@ -1,7 +1,7 @@
 ---
 id: issuer-node-error-the-issuer-did-does-not-exist-in-the-database
-title: Issuer DID Not Found in Database
-sidebar_label: Issuer DID Not Found
+title: "Error: Issuer DID Does Not Exist in the Database"
+sidebar_label: Issuer DID Does Not Exist
 description: Troubleshooting when the provided DID does not exist in the database.
 keywords:
   - faq
@@ -14,6 +14,10 @@ keywords:
 ## Question
 
 What should I do if I encounter an error indicating that the Issuer DID does not exist in the database?
+
+```bash
+time=2024-02-12T10:16:12.737Z level=INFO msg="the issuer DID doesn't exist in the database. Please check ISSUER_API_UI_ISSUER_DID environment variable.\n "
+```
 
 ## Answer
 
