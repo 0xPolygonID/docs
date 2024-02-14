@@ -20,6 +20,7 @@ keywords:
 - [<span className="faq-link">Generating an Issuer DID for the Main Network</span>](./content/issuer-node-generating-mainnet-did.md)
 - [<span className="faq-link">Reusing a Previously Used Issuer DID</span>](./content/issuer-node-reusing-issuer-did.md)
 - [<span className="faq-link">Manually Adding an Existing DID to a New Issuer Node</span>](./content/issuer-node-manually-adding-existing-did.md)
+- [<span className="faq-link">Configuring QR Code Callback URL for Issuer Node</span>](./content/issuer-node-qr-code-callback-url-configuration.md)
 - [<span className="faq-link">Impact of Disabling RHS on On-Chain Verification with SIG Credentials</span>](./content/issuer-node-reverse-hash-service-impact.md)
 - [<span className="faq-link">Using Issuer Node on Mainnet</span>](./content/issuer-node-how-to-use-issuer-node-on-mainnet.md)
 - [<span className="faq-link">Reducing Infrastructure Costs for Credential APIs</span>](./content/issuer-node-reducing-infrastructure-costs.md)
