@@ -18,25 +18,24 @@ The `getDiDIdentifier` function returns an identifier (identity's `publicKey`) f
 
 ```
 Future<String> getDidIdentifier({
-  required String privateKey, 
-  required String blockchain, 
-  required String network, 
+  required String privateKey,
+  required String blockchain,
+  required String network,
   BigInt? profileNonce
-}); 
+});
 ```
 
-`privateKey` of the identity is a key that is used to access the sensitive information of the identity. This key is also used for generating proofs by using the credentials associated with the identity. 
+`privateKey` of the identity is a key that is used to access the sensitive information of the identity. This key is also used for generating proofs by using the credentials associated with the identity.
 
-`blockchain` is the name of the blockchain associated with the identity. In our case, it is **Polygon**. 
+`blockchain` is the name of the blockchain associated with the identity. In our case, it is **Polygon**.
 
-`network` is the type of network (Mainnet or Testnet) associated with the identity. 
+`network` is the type of network (Mainnet or Testnet) associated with the identity.
 
-`profileNonce` is the nonce of the profile of an identity. 
-
+`profileNonce` is the nonce of the profile of an identity.
 
 :::note
 
-It is worth noting that `did` is a Decentralized Identifier associated with an identity and enables verifiable identities. A `did` could be a person, thing, organization, or even an abstract entity. The controller of the `did` can prove that it is the real owner of the identity without the need of seeking permissions/approvals from any centralized authority. 
+It is worth noting that `did` is a Decentralized Identifier associated with an identity and enables verifiable identities. A `did` could be a person, thing, organization, or even an abstract entity. The controller of the `did` can prove that it is the real owner of the identity without the need of seeking permissions/approvals from any centralized authority.
 
 A `did` is expressed in the following format (as per [<ins>w3.org</ins>](https://www.w3.org/) standards):
 

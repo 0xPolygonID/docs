@@ -2,7 +2,7 @@
 id: vault-auth
 title: Issuer Node and Vault Authentication
 description: Learn the two options for authenticating with Vault in the Issuer Node.
-keywords: 
+keywords:
   - docs
   - polygon id
   - issuer node
@@ -25,15 +25,14 @@ This option, an older method utilized by the issuer node, relies on using the ro
 To employ this method, follow these steps:
 
 1. Set the following environment variable in the `.env-issuer` file:
-    
-    `ISSUER_VAULT_USERPASS_AUTH_ENABLED=false`
-    
-    Another option is to remove the `ISSUER_VAULT_USERPASS_AUTH_ENABLED` entry from the file to get the default value (false)
-    
+
+   `ISSUER_VAULT_USERPASS_AUTH_ENABLED=false`
+
+   Another option is to remove the `ISSUER_VAULT_USERPASS_AUTH_ENABLED` entry from the file to get the default value (false)
+
 2. Run the command below to add the Vault token to the `.env-issuer` configuration file:
-    
-    `make add-vault-token`
-    
+
+   `make add-vault-token`
 
 After step 2, the `.env-issuer` configuration file should contain an entry similar to this:
 
@@ -57,11 +56,11 @@ This command will print the Vault token in the terminal, and it should match the
 Upon Vault startup, an initialization script is executed. Among its tasks, it creates the user `issuernode` with the password `issuernodepwd` for the issuer node. To use this authentication alternative in Vault, follow these steps:
 
 1. Set the following environment variables in the `.env-issuer` file:
-    
-    `ISSUER_VAULT_USERPASS_AUTH_ENABLED=true`
-    
-    `ISSUER_VAULT_USERPASS_AUTH_PASSWORD=issuernodepwd`
-    
+
+   `ISSUER_VAULT_USERPASS_AUTH_ENABLED=true`
+
+   `ISSUER_VAULT_USERPASS_AUTH_PASSWORD=issuernodepwd`
+
 2. Restart the issuer node if necessary.
 
 You might want to change the password for the `issuernode` user. To do this, follow these steps:

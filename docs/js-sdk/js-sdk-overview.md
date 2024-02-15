@@ -22,6 +22,7 @@ The Polygon ID JS SDK allows developers to create applications like mobile or we
 With JS SDK, you can build custom applications/modules by providing your own implementation of our core interfaces. The functionalities that we provide in these tutorials can be extended as per your requirements. For example, JS SDK does not provide a codebase for database storage but you can implement that by extending the SDK's functionalities.
 
 :::
+
 ## Why JS SDK?
 
 The Polygon ID JS SDK has been developed to provide the following functionalities for a user's browser-based wallet:
@@ -71,7 +72,7 @@ npm install @0xpolygonid/js-sdk
 ```html
 <script src="./dist/umd/index.js"></script>
 <script>
-    const {
+  const {
     LocalStoragePrivateKeyStore,
     IdentityStorage,
     MerkleTreeLocalStorage,
@@ -84,8 +85,8 @@ npm install @0xpolygonid/js-sdk
     CredentialWallet,
     KMS,
     core,
-    CredentialStatusType
-} = PolygonIdSdk;
+    CredentialStatusType,
+  } = PolygonIdSdk;
 </script>
 ```
 
@@ -111,6 +112,7 @@ Follow the links below to learn more about W3C standards for DID (Decentralised 
 - <ins><a href="https://www.w3.org/TR/vc-data-model/" target="_blank">Verifiable Credentials</a></ins>
 
 :::
+
 ## What Can Be Built Upon JS SDK?
 
 On the Polygon ID JS SDK, you can build the following functionalities:

@@ -42,8 +42,7 @@ export function CookieConsent({ onAccept, onDecline }) {
         </svg>
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           <span style={{ color: "#969696" }}>
-            We use tasty cookies to personalize your site experience and analyze
-            site traffic
+            We use tasty cookies to personalize your site experience and analyze site traffic
           </span>
           <a
             href="/cookie-policy.pdf"
@@ -82,8 +81,7 @@ export function CookieConsent({ onAccept, onDecline }) {
         >
           <button
             style={{
-              background:
-                "radial-gradient(50% 50% at 50% 50%, #9A60FF 0%, #6A23E7 100%)",
+              background: "radial-gradient(50% 50% at 50% 50%, #9A60FF 0%, #6A23E7 100%)",
               border: "none",
               borderRadius: "24px",
               cursor: "pointer",

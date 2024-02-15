@@ -23,7 +23,7 @@ Future<Map<String, dynamic>> getClaimRevocationStatus({
   required String privateKey});
 ```
 
-`claimId` is the ID of the credential. 
+`claimId` is the ID of the credential.
 
 The `genesisDid` is the unique ID of the identity.
 

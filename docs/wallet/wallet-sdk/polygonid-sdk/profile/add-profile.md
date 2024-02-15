@@ -22,7 +22,7 @@ This method adds a profile if there isn't already one associated with the identi
       required BigInt profileNonce});
 ```
 
-``genesisDid`` is the unique ID of the identity whose `profileNonce` is 0.
+`genesisDid` is the unique ID of the identity whose `profileNonce` is 0.
 
 The `privateKey` is the key used to access all the sensitive info from the identity and also to realize operations like generating proofs
 

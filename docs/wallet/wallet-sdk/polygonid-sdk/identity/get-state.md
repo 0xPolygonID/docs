@@ -18,4 +18,4 @@ The `getState()` function returns the present state of an identity.
 Future<String> getState(String did)
 ```
 
-`getState()` returns the identity state from the `did`, which is the unique ID of the identity. 
+`getState()` returns the identity state from the `did`, which is the unique ID of the identity.

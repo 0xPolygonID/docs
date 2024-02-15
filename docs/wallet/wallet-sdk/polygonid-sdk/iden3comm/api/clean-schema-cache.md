@@ -15,9 +15,8 @@ keywords:
   - cache
 ---
 
-  Clean the schema cache.
+Clean the schema cache.
 
-  ```dart
-  Future<void> cleanSchemaCache();
-  ```
-  
+```dart
+Future<void> cleanSchemaCache();
+```
