@@ -16,10 +16,11 @@ Currently, we have two approaches to issuing onhcain credentials. Using an oncha
 
 :::note
 Currently, the non-merklized issuer is in a new iteration of development. You can find the old contacts and the old demo for non-merklized issuer here:
-1. [**_Demo_**](https://github.com/0xPolygonID/onchain-nonmerklized-issuer-demo)
-2. [**_Contract_**](https://github.com/0xPolygonID/contracts/blob/main/contracts/examples/BalanceCredentialIssuer.sol)
 
-The new version of the [**_non-merklized contract_**](https://github.com/0xPolygonID/contracts/blob/feature/retrun-vc-instead-of-core-claim/contracts/examples/BalanceCredentialIssuer.sol) exists in WIP.
+1. <ins><a href="https://github.com/0xPolygonID/onchain-nonmerklized-issuer-demo" target="_blank">Demo</a></ins>
+1. <ins><a href="https://github.com/0xPolygonID/contracts/blob/main/contracts/examples/BalanceCredentialIssuer.sol" target="_blank">Contract</a></ins>
+
+The new version of the <ins><a href="https://github.com/0xPolygonID/contracts/blob/feature/retrun-vc-instead-of-core-claim/contracts/examples/BalanceCredentialIssuer.sol" target="_blank">non-merklized contract</a></ins> exists in WIP.
 :::
 
 
