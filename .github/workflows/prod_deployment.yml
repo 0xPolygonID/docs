@@ -1,15 +1,17 @@
 name: Polygon ID Docs Prod Deployment
+
 on:
   push:
-    branches: ['main']
-  workflow_dispatch:
-    inputs:
-      stage:
-        description: 'Stage to deploy (production)'
-        required: true
-      run_production:
-        description: 'Staging deployment completed (yes, no)'
-        required: true
+    branches:
+      - main
+
+env:
+  AWS_REGION: eu-west-1
+  ECR_REPOSITORY: devs-ecr
+  ECS_SERVICE: devs-ecs-service
+  ECS_CLUSTER: frontend-prod-ecs-cluster
+  ECS_TASK_DEFINITION: prod-taskdef.json
+  CONTAINER_NAME: devs
 
 jobs:
   deploy_prod:
@@ -19,17 +21,10 @@ jobs:
       contents: write
     environment: prod
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' && github.event.inputs.stage == 'production' && github.event.inputs.run_production == 'yes'
-    env:
-      AWS_REGION: eu-west-1
-      ECR_REPOSITORY: devs-ecr
-      ECS_SERVICE: devs-ecs-service
-      ECS_CLUSTER: frontend-prod-ecs-cluster
-      ECS_TASK_DEFINITION: prod-taskdef.json
-      CONTAINER_NAME: devs
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1-node16
         with:
