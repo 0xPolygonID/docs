@@ -7,8 +7,8 @@ module.exports = {
   url: "https://devs.polygonid.com",
   baseUrl: "/",
   favicon: "/img/logo-round-purple.png",
-  organizationName: "maticnetwork",
-  projectName: "id-docs",
+  organizationName: "0xPolygonID",
+  projectName: "docs",
   trailingSlash: true,
   customFields: {
     description: "Build your next blockchain dApp using Polygon ID.",
@@ -206,7 +206,7 @@ module.exports = {
         docs: {
           routeBasePath: "/docs",
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/0xPolygonID/id-docs/tree/main",
+          editUrl: "https://github.com/0xPolygonID/docs/tree/main",
           path: "docs",
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
