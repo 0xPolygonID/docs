@@ -1002,8 +1002,6 @@ a.disabled {
   list-style: square;
   font-size: 18px;
 }
-.tutorial-links {
-}
 .tutorial-link {
   color: #ffffff;
   text-decoration: underline;
@@ -2065,10 +2063,6 @@ strong {
     letter-spacing: 0.5px;
     font-size: 1.125rem;
   }
-
-  [role="banner"] {
-    /*height: var(--docusaurus-announcement-bar-height) + 1.25rem;*/
-  }
 }
 
 [data-theme="dark"] {
@@ -2242,13 +2236,7 @@ code:not(.language-text) {
   border-bottom: 4px solid var(--ifm-color-primary);
 }
 
-[role="tabpanel"] {
-  /*padding: 0 1rem 1rem 1rem;*/
-}
-
 .tabs {
-  /*margin: 24px auto 0;*/
-  /*justify-content: center;*/
   position: inherit;
   flex-wrap: wrap;
 }
@@ -2536,8 +2524,6 @@ p {
 }
 .faq-accordion-dropdown.open .faq-accordion-icon:before {
   transform: rotate(315deg);
-}
-.faq-accordion-dropdown:hover {
 }
 .faq-accordion-dropdown:not(.open) .faq-accordion-toggle:hover {
   background: #222;
