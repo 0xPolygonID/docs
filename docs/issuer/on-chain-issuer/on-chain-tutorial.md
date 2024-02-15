@@ -12,17 +12,11 @@ keywords:
   - smart contract
 ---
 
-Currently, we have two approaches to issuing onhcain credentials. Using an onchain merklized issuer and using an onchain non-merklized issuer. 
+Currently, we have two approaches to issuing onchain credentials. Using an **onchain merklized issuer** and using an **onchain non-merklized issuer**.
+The difference between these two approaches:
+1. The **onchain merklized issuer** calculates the Merkle root for a credential on the backend and stores the core claim of the credential on-chain using a smart contract. We can think of it as a centralized issuer with the ability to store trees on the blockchain. ([demo](https://github.com/0xPolygonID/onchain-merklized-issuer-demo)|[contract](https://github.com/0xPolygonID/contracts/blob/main/contracts/examples/IdentityExample.sol))
 
-:::note
-Currently, the non-merklized issuer is in a new iteration of development. You can find the old contacts and the old demo for non-merklized issuer here:
-
-1. <ins><a href="https://github.com/0xPolygonID/onchain-nonmerklized-issuer-demo" target="_blank">Demo</a></ins>
-1. <ins><a href="https://github.com/0xPolygonID/contracts/blob/main/contracts/examples/BalanceCredentialIssuer.sol" target="_blank">Contract</a></ins>
-
-The new version of the <ins><a href="https://github.com/0xPolygonID/contracts/blob/feature/retrun-vc-instead-of-core-claim/contracts/examples/BalanceCredentialIssuer.sol" target="_blank">non-merklized contract</a></ins> exists in WIP.
-:::
-
+1. The **onchain non-merkelized issuer** can use information from the blockchain (such as balance, token ownership, etc.) to issue a credential directly on the blockchain. This approach is more decentralized, but must use only public data and has a limit on the number of fields in the credential. ([demo](https://github.com/0xPolygonID/onchain-nonmerklized-issuer-demo)|[contract](https://github.com/0xPolygonID/contracts/blob/main/contracts/examples/BalanceCredentialIssuer.sol))
 
 This guide presents an example of how to use the **on-chain merklized issuer**. We created a small application, where we communicate with Metamask to retrieve the user's balance and a claim about this balance is generated via the on-chain issuer. In this case, the credential will be created locally and stored to **on-chain issuer**.
 
