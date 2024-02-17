@@ -14,11 +14,11 @@ keywords:
 
 Currently, we have two approaches to issuing on-chain credentials: **on-chain merklized issuer** and **on-chain non-merklized issuer**.
 The difference between these two approaches:
-1. The **on-chain merklized issuer** calculates the Merkle root for a credential on the backend and stores the core claim of the credential on-chain using a smart contract. We can think of it as a centralized issuer with the ability to store trees on the blockchain.
+1. The **on-chain merklized issuer** calculates the Merkle root for a credential on the backend and stores the core claim of the credential on-chain using a smart contract, because merklization process is too expensive to do in a smart contract by the user. Credential data and metadata can stay private on issuer side and only hash of the credential will be published on chain. We can think of it as a centralized issuer with the ability to store trees on the blockchain.
     - [demo](https://github.com/0xPolygonID/onchain-merklized-issuer-demo)
     - [contract](https://github.com/0xPolygonID/contracts/blob/main/contracts/examples/IdentityExample.sol)
 
-1. The **on-chain non-merklized issuer** can use information from the blockchain (such as balance, token ownership, etc.) to issue a credential directly on the blockchain. This approach is more decentralized, but must use only public data and has a limit on the number of fields in the credential. More about [**non-merklized credentials**](https://docs.iden3.io/protocol/non-merklized/).
+1. The **on-chain non-merklized issuer** can use information from the blockchain (such as balance, token ownership, etc.) to issue a credential directly on the blockchain. This approach is decentralized and trustless - no need to trust an issuer to act honestly, because it's enforced by the smart contract and auditable on chain. But it comes with a few limitations: max 4 data fields in the credential and data is public. More about [**non-merklized credentials**](https://docs.iden3.io/protocol/non-merklized/).
     - [demo](https://github.com/0xPolygonID/onchain-nonmerklized-issuer-demo)
     - [contract](https://github.com/0xPolygonID/contracts/blob/main/contracts/examples/BalanceCredentialIssuer.sol)
 
