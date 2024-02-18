@@ -9,7 +9,7 @@ module.exports = {
   favicon: "/img/logo-round-purple.png",
   organizationName: "maticnetwork",
   projectName: "id-docs",
-  trailingSlash: true,
+  trailingSlash: false,
   customFields: {
     description: "Build your next blockchain dApp using Polygon ID.",
   },
