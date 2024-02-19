@@ -34,21 +34,21 @@ Example of refresh service implementation can be found [here](https://github.com
   </div>
 </details>
 
-
 1. The user initiates a Zero-Knowledge Proof (ZKP) refresh process by sending a refresh message through the [iden3comm protocol](https://iden3-communication.io/credentials/1.0/refresh/) to the refresh service.
 2. This message contains essential information, including the ID of the credential requiring refresh.
 3. The refresh service performs an HTTP request to the `GET /v1/{issuerDID}/claims/{credentialID}` endpoint to retrieve information about the credential that requires an update.
 4. Issuer validates whether the user is the owner of this credential.
 5. The refresh service seeks current information for the user and their credential from the data provider.
-6.  The refresh service must now assess whether refreshed data is suitable for refreshing the credential, considering the following scenarios:
+6. The refresh service must now assess whether refreshed data is suitable for refreshing the credential, considering the following scenarios:
 
-    ◦ If the credential was **merklized**, and its merkle tree root was stored in the index part, it is eligible for a refresh.
+   ◦ If the credential was **merklized**, and its merkle tree root was stored in the index part, it is eligible for a refresh.
 
-    ◦ If the credential was **NOT merklized**, a check is necessary to determine whether the data stored in the index were updated during the refreshing flow. If the data has not been updated, adding identical indexes to the issuer’s tree will result in an error. An example of how to perform this check can be found [here](https://github.com/0xPolygonID/refresh-service/blob/e9c310fc3808e1f58ce108523b4fd07dd67800ed/service/refresh.go#L175).
+   ◦ If the credential was **NOT merklized**, a check is necessary to determine whether the data stored in the index were updated during the refreshing flow. If the data has not been updated, adding identical indexes to the issuer’s tree will result in an error. An example of how to perform this check can be found [here](https://github.com/0xPolygonID/refresh-service/blob/e9c310fc3808e1f58ce108523b4fd07dd67800ed/service/refresh.go#L175).
 
-    ◦ In other cases, the refresh service should return an error.
-7. With the new data from the data provider, the refresh service generates a credential request and sends it to the issuer node via the `POST /v1/{issuerDID}/claims` endpoint. 
-8. Using this new credential identifier, the refresh service obtains a new credential through the `GET /v1/{issuerDID}/claims/{newCredentialID}` endpoint. 
+   ◦ In other cases, the refresh service should return an error.
+
+7. With the new data from the data provider, the refresh service generates a credential request and sends it to the issuer node via the `POST /v1/{issuerDID}/claims` endpoint.
+8. Using this new credential identifier, the refresh service obtains a new credential through the `GET /v1/{issuerDID}/claims/{newCredentialID}` endpoint.
 9. Pack the new refreshed credential into an iden3comm message and sent back to the user.
 
 ### Modules
@@ -57,8 +57,6 @@ Example of refresh service implementation can be found [here](https://github.com
 2. **[Provider Module](https://github.com/0xPolygonID/refresh-service/tree/main/providers)**: this module receives information from external data providers. By itself, it is very flexible in settings, but you can always add your own implementation.
 3. **[Package Manager](https://github.com/0xPolygonID/refresh-service/blob/main/packagemanager/packagemanager.go)**: the package manager handles ZWZ token within the iden3comm protocol.
 4. **[Integration with the Issuer Node](https://github.com/0xPolygonID/refresh-service/blob/main/service/issuer.go)**: this module responsibles for communication with [issuer node](https://github.com/0xPolygonID/issuer-node/).
-
-
 
 ### Authentication module for setup iden3comm handler
 
@@ -69,7 +67,6 @@ In the context of a refresh service where JWZ tokens are verified, you will requ
 To authorise the user’s JWZ token, it is necessary to define a function that verifies proof and the issuer’s state. Once the authorization is complete, the refresh service will be aware of the user’s DID from the JWZ token. Now you can ensure that the credential being refreshed contains the same DID in the credential subject.
 
 > **NOTE:** It is crucial to verify whether a user is the owner of the credential that potentially will be refreshed. Without this verification, an attacker could refresh and obtain a third-party credential.
-> 
 
 ### Integration with issuer node
 
@@ -117,8 +114,7 @@ To implement credential refreshing in a client side, need to follow next algorit
 
 - After refreshing the credential, checks if the updated credential satisfies the proof request. If it does, generate a proof. If the credential still doesn't meet the proof request, the process repeats, selecting another credential with a refresh service and refreshing it.
 
->💡 **NOTE:** If expired credentials are revoked, the current recommended algorithm will not process or update such credentials.
->
+> 💡 **NOTE:** If expired credentials are revoked, the current recommended algorithm will not process or update such credentials.
 
 ### Client behavior depending on the type of proof in a proof request
 
@@ -131,7 +127,6 @@ To implement credential refreshing in a client side, need to follow next algorit
 **Merkle tree proof (MTP):**
 
 > **NOTE:** The workflow for MTP is in development. However, you still can receive notifications about MTP proof on the mobile application after refreshing credential(-s) that have MTP proof are performed.
->
 
 1. The holder should decline the proof request. This is because generating an MTP proof might require a significant amount of time to become ready
 1. The `refreshService` informs the holder about the `pending` status.
@@ -141,5 +136,5 @@ To implement credential refreshing in a client side, need to follow next algorit
 
 ## Links:
 
-- [Iden3comm refresh protocol](https://iden3-communication.io/credentials/1.0/refresh/)
-- [W3C Refresh service](https://iden3-communication.io/refresh-service/overview/)
+- [Iden3comm refresh protocol](https://iden3-communication.io/credentials/1.0/refresh)
+- [W3C Refresh service](https://iden3-communication.io/w3c/refresh-service/overview)

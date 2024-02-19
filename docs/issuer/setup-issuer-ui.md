@@ -64,7 +64,7 @@ ISSUER_API_UI_SERVER_URL=<PUBLICLY_ACCESSIBLE_URL_POINTING_TO_ISSUER_API_UI_SERV
 
 Completing the [installation](#installation) process yields the UI as a minified Javascript app. Any changes to the UI source code would necessitate a full re-build to apply them. In most development scenarios this is undesirable, so the UI app can also be run in development mode like any [React](https://react.dev/) application to enable hot module replacement ([HMR](https://webpack.js.org/guides/hot-module-replacement/)).
 
-4.1. Make sure that the UI API is set up and running properly (default <http://localhost:3002>).
+4.1. Make sure that the UI API is set up and running properly (default http://localhost:3002).
 
 4.2. Go to the `ui/` folder.
 
@@ -93,11 +93,11 @@ Variables from `.env-ui`:
 
 4.6. Run `npm start`
 
-4.7. The app will be running on <http://localhost:5173>.
+4.7. The app will be running on http://localhost:5173.
 
-> **API UI specification** - [http://localhost:3002/](http://localhost:3002/)
+> **API UI specification** - http://localhost:3002
 >
-> **UI** - [http://localhost:8088/](http://localhost:8088/)
+> **UI** - http://localhost:8088
 
 ---
 
