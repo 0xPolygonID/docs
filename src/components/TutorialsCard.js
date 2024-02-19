@@ -4,7 +4,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 export const TutorialsCard = (props) => {
   const { iconSrc, cardLink, title, blockInfo, tutorialsInfo } = props;
   const onCardClick = () => {
-    window.open(cardLink, "_blank").focus();
+    window.open(cardLink, "_self").focus();
   };
   const onLinkClick = (e) => {
     e.stopPropagation();
