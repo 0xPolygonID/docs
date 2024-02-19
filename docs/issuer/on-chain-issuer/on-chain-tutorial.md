@@ -47,7 +47,7 @@ There are two main components in this application:
    git clone https://github.com/0xPolygonID/onchain-merklized-issuer-demo
    ```
 
-1. Deploy an on-chain marklized issuer contract. You can use [this sample](https://github.com/0xPolygonID/contracts/blob/main/contracts/examples/IdentityExample.sol) or create your own smart contract with custom logic.
+1. Deploy an on-chain merklized issuer contract. You can use [this sample](https://github.com/0xPolygonID/contracts/blob/main/contracts/examples/IdentityExample.sol) or create your own smart contract with custom logic.
 
    Use the following State Contract addresses:
 
