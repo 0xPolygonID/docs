@@ -1,6 +1,8 @@
 const math = require("remark-math");
 const katex = require("rehype-katex");
 
+require("dotenv").config();
+
 module.exports = {
   title: "Polygon ID Documentation",
   tagline: "The official developer documentation hub for Polygon ID.",
@@ -66,7 +68,7 @@ module.exports = {
       // need to update this
       indexName: "devs-polygonid",
       appId: "VHJ21ILMOQ",
-      apiKey: "2281aa8fc382facc33ebfbb1e745e442",
+      apiKey: process.env.ALGOLIA_API_KEY,
       contextualSearch: true,
       algoliaOptions: {
         attributesToSnippet: ["content:20"],
