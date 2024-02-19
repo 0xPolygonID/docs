@@ -14,13 +14,15 @@ keywords:
 
 Currently, we have two approaches to issuing on-chain credentials: **on-chain merklized issuer** and **on-chain non-merklized issuer**.
 The difference between these two approaches:
+
 1. The **on-chain merklized issuer** calculates the Merkle root for a credential on the backend and stores the core claim of the credential on-chain using a smart contract, because merklization process is too expensive to do in a smart contract by the user. Credential data and metadata can stay private on issuer side and only hash of the credential will be published on chain. We can think of it as a centralized issuer with the ability to store trees on the blockchain.
-    - [demo](https://github.com/0xPolygonID/onchain-merklized-issuer-demo)
-    - [contract](https://github.com/0xPolygonID/contracts/blob/main/contracts/examples/IdentityExample.sol)
+
+   - [demo](https://github.com/0xPolygonID/onchain-merklized-issuer-demo)
+   - [contract](https://github.com/0xPolygonID/contracts/blob/main/contracts/examples/IdentityExample.sol)
 
 1. The **on-chain non-merklized issuer** can use information from the blockchain (such as balance, token ownership, etc.) to issue a credential directly on the blockchain. This approach is decentralized and trustless - no need to trust an issuer to act honestly, because it's enforced by the smart contract and auditable on chain. But it comes with a few limitations: max 4 data fields in the credential and data is public. More about [**non-merklized credentials**](https://docs.iden3.io/protocol/non-merklized/).
-    - [demo](https://github.com/0xPolygonID/onchain-nonmerklized-issuer-demo)
-    - [contract](https://github.com/0xPolygonID/contracts/blob/main/contracts/examples/BalanceCredentialIssuer.sol)
+   - [demo](https://github.com/0xPolygonID/onchain-nonmerklized-issuer-demo)
+   - [contract](https://github.com/0xPolygonID/contracts/blob/main/contracts/examples/BalanceCredentialIssuer.sol)
 
 This guide presents an example of how to use the **on-chain merklized issuer**. We created a small application, where we communicate with Metamask to retrieve the user's balance and a claim about this balance is generated via the on-chain issuer. In this case, the credential will be created locally and stored to **on-chain issuer**.
 
@@ -61,30 +63,33 @@ There are two main components in this application:
    :::
 
 1. Run ngrok on 8080 port.
-    ```bash
-    ngrok http 8080
-    ```
+
+   ```bash
+   ngrok http 8080
+   ```
 
 1. Use the utility to calculate the issuerDID from the smart contract address:
-    ```bash
-    go run utils/convertor.go --contract_address=<ADDRESS_OF_ONCHAIN_ISSUER_CONTRACT>
-    ```
+
+   ```bash
+   go run utils/convertor.go --contract_address=<ADDRESS_OF_ONCHAIN_ISSUER_CONTRACT>
+   ```
 
 1. Fill the .env config file with the proper variables:
-    ```bash
-    SUPPORTED_RPC="80001=<RPC_POLYGON_MUMBAI>"
-    ISSUERS_PRIVATE_KEY="<ISSUER_DID>=<PRIVATE_KEY_OF_THE_CONTRACT_DEPLOYER>"
-    EXTERNAL_HOST="<NGROK_URL>"
-    ```
+
+   ```bash
+   SUPPORTED_RPC="80001=<RPC_POLYGON_MUMBAI>"
+   ISSUERS_PRIVATE_KEY="<ISSUER_DID>=<PRIVATE_KEY_OF_THE_CONTRACT_DEPLOYER>"
+   EXTERNAL_HOST="<NGROK_URL>"
+   ```
 
 1. Run docker-compose:
-    ```bash
-    docker-compose build
-    docker-compose up -d
-    ```
 
-1. Go to: [http://localhost:3000](http://localhost:3000)
+   ```bash
+   docker-compose build
+   docker-compose up -d
+   ```
 
+1. Go to: http://localhost:3000
 
 Don't forget to download and install the Polygon ID wallet app before you go the next steps.
 
