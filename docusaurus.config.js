@@ -1,6 +1,8 @@
 const math = require("remark-math");
 const katex = require("rehype-katex");
 
+require("dotenv").config();
+
 module.exports = {
   title: "Polygon ID Documentation",
   tagline: "The official developer documentation hub for Polygon ID.",
@@ -9,7 +11,7 @@ module.exports = {
   favicon: "/img/logo-round-purple.png",
   organizationName: "maticnetwork",
   projectName: "id-docs",
-  trailingSlash: true,
+  trailingSlash: false,
   customFields: {
     description: "Build your next blockchain dApp using Polygon ID.",
   },
@@ -66,7 +68,7 @@ module.exports = {
       // need to update this
       indexName: "devs-polygonid",
       appId: "VHJ21ILMOQ",
-      apiKey: "2281aa8fc382facc33ebfbb1e745e442",
+      apiKey: process.env.ALGOLIA_API_KEY,
       contextualSearch: true,
       algoliaOptions: {
         attributesToSnippet: ["content:20"],
@@ -206,7 +208,7 @@ module.exports = {
         docs: {
           routeBasePath: "/docs",
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/0xPolygonID/id-docs/tree/main",
+          editUrl: "https://github.com/0xPolygonID/id-docs/blob/main",
           path: "docs",
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
