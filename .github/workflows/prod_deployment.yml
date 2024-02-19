@@ -38,8 +38,11 @@ jobs:
         with:
           mask-password: 'true'
 
-      - name: INSTALL
+      - name: Install dependencies
         run: rm -rf node_modules && npm ci
+
+      - name: Create .env file
+        run: echo 'ALGOLIA_API_KEY=${{ secrets.ALGOLIA_API_KEY }}' >> .env
 
       # Runs a single command using the runners shell
       - name: Build
