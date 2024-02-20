@@ -31,15 +31,15 @@ Due to its public nature, the Ethereum Polygon DID doesn't support private profi
 
 ## Revocation Status
 
-Mobile applications can get the Revocation Status of a particular credential by requesting that information straight from the Issuer Node. However, if the Issuer Node is offline for some reason, that communication would not work. The Revocation Hash Service and the On-chain Revocation Status are two solutions for this issue.
+Mobile applications can get the Revocation Status of a particular credential by requesting that information straight from the Issuer Node. However, if the Issuer Node is offline for some reason, that communication would not work. The Reverse Hash Service and the On-chain Revocation Status are two solutions for this issue.
 
 <div align="center">
 <img src= {useBaseUrl("img/without-rhs.png")} align="center" />
 </div>
 
-### Revocation Hash Service
+### Reverse Hash Service
 
-The Revocation Hash Service (RHS) stores all the revocation information online which can be accessed by mobile applications and verifiers. In this scenario, the communication between mobile and Revocation Hash service replaces the link between the application and the Issuer Node:
+The Reverse Hash Service (RHS) stores all the revocation information online which can be accessed by mobile applications and verifiers. In this scenario, the communication between mobile and Reverse Hash Service replaces the link between the application and the Issuer Node:
 
 <div align="center">
 <img src= {useBaseUrl("img/rhs.png")} align="center" />
@@ -49,7 +49,7 @@ As the diagram shows, the Issuer Node sends the revocation information to the RH
 
 ### On-chain Revocation
 
-On-chain Revocation status leverages the blockchain decentralized storage to make the revocation information permanent on the network. That means that, even if the Issuer Node or the Revocation Hash Service is down, the data is still available on-chain.
+On-chain Revocation status leverages the blockchain decentralized storage to make the revocation information permanent on the network. That means that, even if the Issuer Node or the Reverse Hash Service is down, the data is still available on-chain.
 
 <div align="center">
 <img src= {useBaseUrl("img/blockchain.png")} align="center" />
