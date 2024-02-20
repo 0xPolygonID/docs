@@ -176,6 +176,26 @@ service:
 npm run build
 ```
 
+### Image Maintenance
+
+To enhance the flexibility of centering and sizing images within our markdown files, we often utilize HTML. However, this approach complicates image maintenance. We provide two scripts to facilitate the management of images in our projects.
+
+#### Finding Unused Images
+
+This utility script assists in identifying static images that are no longer referenced within our documentation. To leverage this script, execute the following command from the project's root directory:
+
+```bash
+node scripts/find-unused-images.js
+```
+
+#### Identifying Broken Image Links
+
+This script is designed to locate references to images within our documentation that lack corresponding files in the static folder. To use this script, run the following command from the project's root directory:
+
+```bash
+node scripts/find-broken-image-links.js
+```
+
 ## Deployment
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the 
