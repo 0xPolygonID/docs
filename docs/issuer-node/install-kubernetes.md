@@ -1,15 +1,15 @@
 ---
-id: install-kubernets
+id: install-kubernetes
 title: Installing the Issuer Node in Kubernetes
-sidebar_label: Using Kubernets
-description: Learn how to install the Issuer Node using Kubernets.
+sidebar_label: Using Kubernetes
+description: Learn how to install the Issuer Node using Kubernetes.
 keywords:
   - docs
   - polygon id
   - ID holder
   - issuer
   - verifier
-  - kubernets
+  - kubernetes
 ---
 
 import Tabs from '@theme/Tabs';
@@ -65,6 +65,8 @@ export ISSUERNAME="My Issuer"
 export ISSUER_ETHERUM_URL="https://polygon-mumbai.XXXX"
 export INGRESS_ENABLED=true
 export VAULT_PWD=password
+export RHS_MODE=None                                    
+export RHS_URL="https://reverse-hash-service.com"
 ```
 
 where…
@@ -93,6 +95,10 @@ where…
 
 `VAULT_PWD` is the vault password.
 
+`RHS_MODE` Reverse Hash Service mode. Options: None, OnChain, OffChain.
+
+`RHS_URL` Reverse Hash Service URL. Required if `RHS_MODE` is OffChain.
+
 After assigning values to the environment variables, you should run the following command using Helm:
 
 ```bash
@@ -108,7 +114,9 @@ helm install "$APP_INSTANCE_NAME" . \
 --set issuerEthereumUrl="$ISSUER_ETHERUM_URL" \
 --set ingressEnabled="$INGRESS_ENABLED" \
 --set privateKey="$PRIVATE_KEY" \
---set vaultpwd="$VAULT_PWD"
+--set vaultpwd="$VAULT_PWD" \
+--set rhsMode="$RHS_MODE" \
+--set rhsUrl="$RHS_URL"
 ```
 
 **After a few minutes, the ingress should be ready, and you can access the domains you specified.**
@@ -134,6 +142,8 @@ export ISSUERNAME="My Issuer"
 export ISSUER_ETHERUM_URL="https://polygon-mumbai.XXXX"
 export INGRESS_ENABLED=false
 export VAULT_PWD=password
+export RHS_MODE=None                                    
+export RHS_URL="https://reverse-hash-service.com"
 ```
 
 where…
@@ -158,6 +168,10 @@ where…
 
 `VAULT_PWD` is the vault password.
 
+`RHS_MODE` Reverse Hash Service mode. Options: None, OnChain, OffChain.
+
+`RHS_URL` Reverse Hash Service URL. Required if `RHS_MODE` is OffChain.
+
 After assigning values to the environment variables, you should run the following command using Helm:
 
 ```bash
@@ -171,7 +185,9 @@ helm install "$APP_INSTANCE_NAME" . \
 --set issuerEthereumUrl="$ISSUER_ETHERUM_URL" \
 --set ingressEnabled="$INGRESS_ENABLED" \
 --set privateKey="$PRIVATE_KEY" \
---set vaultpwd="$VAULT_PWD"
+--set vaultpwd="$VAULT_PWD" \
+--set rhsMode="$RHS_MODE" \
+--set rhsUrl="$RHS_URL"
 ```
 
 After a few minutes, you can access the app by visiting:

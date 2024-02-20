@@ -1,8 +1,17 @@
 name: Polygon ID Docs Staging Deployment
+
 on:
   push:
-    branches: ['main']
-  workflow_dispatch:
+    branches:
+      - develop
+
+env:
+  AWS_REGION: eu-west-1
+  ECR_REPOSITORY: devs-staging-ecr
+  ECS_SERVICE: devs-staging-ecs-service
+  ECS_CLUSTER: frontend-staging-ecs-cluster
+  ECS_TASK_DEFINITION: staging-taskdef.json
+  CONTAINER_NAME: devs-staging
 
 jobs:
   deploy_staging:
@@ -12,18 +21,12 @@ jobs:
       contents: write
     environment: staging
     runs-on: ubuntu-latest
-    env:
-      AWS_REGION: eu-west-1
-      ECR_REPOSITORY: devs-staging-ecr
-      ECS_SERVICE: devs-staging-ecs-service
-      ECS_CLUSTER: frontend-staging-ecs-cluster
-      ECS_TASK_DEFINITION: staging-taskdef.json
-      CONTAINER_NAME: devs-staging
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1-node16
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ${{ env.AWS_REGION }}
           role-to-assume: arn:aws:iam::021594655844:role/devs-staging-GithubActionsRole
@@ -35,8 +38,11 @@ jobs:
         with:
           mask-password: 'true'
 
-      - name: INSTALL
+      - name: Install dependencies
         run: rm -rf node_modules && npm ci
+
+      - name: Create .env file
+        run: echo 'ALGOLIA_API_KEY=${{ secrets.ALGOLIA_API_KEY }}' >> .env
 
       # Runs a single command using the runners shell
       - name: Build

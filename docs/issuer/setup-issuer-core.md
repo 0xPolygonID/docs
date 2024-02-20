@@ -102,7 +102,7 @@ make private_key=<YOUR_WALLET_PRIVATE_KEY> add-private-key
 5. Run `./bin/pending_publisher`. This checks that publishing transactions to the blockchain works.
 6. _(Optional)_ Run `./bin/notifications`. This enables push notifications when issuing credentials to PID Wallet.
 
-> **Core API specification** - [http://localhost:3001/](http://localhost:3001/)
+> **Core API specification** - http://localhost:3001
 
 ---
 
