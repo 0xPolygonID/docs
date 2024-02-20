@@ -33,10 +33,11 @@ module.exports = {
   onBrokenLinks: "log",
   themeConfig: {
     announcementBar: {
-      id: 'learn_more',
-      content: 'New Release: First-ever implementation of Dynamic Credentials! <a class="announcement-link" target="_blank" rel="noopener noreferrer" href="LINK TO BLOG POST"> Learn more</a>',
-      backgroundColor: '#20232a',
-      textColor: '#fff',
+      id: "learn_more",
+      content:
+        'New Release: First-ever implementation of Dynamic Credentials! <a class="announcement-link" target="_blank" rel="noopener noreferrer" href="https://polygon.technology/blog/polygon-id-release-6-introducing-the-first-ever-implementation-of-dynamic-credentials"> Learn more</a>',
+      backgroundColor: "#20232a",
+      textColor: "#fff",
       isCloseable: false,
     },
     metadata: [
