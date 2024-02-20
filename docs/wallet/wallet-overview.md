@@ -52,6 +52,6 @@ The app is available for Android and IOS:
 - For iOS: <a href="https://apps.apple.com/us/app/polygon-id/id1629870183" target="_blank">Polygon ID on the App Store</a>
 
 <div align="center">
-<img src={useBaseUrl("/img/wallet/wallet-main-page.jpeg")} alt="Polygon ID app as a reference implementation" width="250" align="center" />
+<img src={useBaseUrl("img/wallet/wallet-main-page.jpeg")} alt="Polygon ID app as a reference implementation" width="250" align="center" />
 </div>
 <br></br>

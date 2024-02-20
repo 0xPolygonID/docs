@@ -57,14 +57,14 @@ An Integrator, to interact with an Issuer, needs to authenticate with it first.
 1.  On the Polygon ID app (which is based on SDK), an Integrator clicks **Connect**.
 
 <div align="center">
-<img src={useBaseUrl("/img/polygonid-wallet-connect.png")} width ="300" />
+<img src={useBaseUrl("img/polygonid-wallet-connect.png")} width ="300" />
 </div>
 <br/>
  
 2.  The Issuer displays a QR code. The Integrator, using the app, scans this code.
 
 <div align="center">
-<img src={useBaseUrl("/img/qr-code-scan.png")} width ="300" />
+<img src={useBaseUrl("img/qr-code-scan.png")} width ="300" />
 </div>
 <br/>
 

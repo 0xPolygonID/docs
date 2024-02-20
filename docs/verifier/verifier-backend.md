@@ -56,7 +56,7 @@ If everything went well, you will be able to see the API documentation at: `http
 The following image shows the simplest flow to generate a QR code to request a ZK Proof as a verifier:
 
 <div align="center">
-<img src={useBaseUrl("/img/verifier-backend-f1.svg")} align="center" width="600"/>
+<img src={useBaseUrl("img/verifier-backend-f1.svg")} align="center" width="600"/>
 </div>
 
 
@@ -132,7 +132,7 @@ Flow 2 allows the generation of QR codes that are sometimes more comfortable to 
 
 
 <div align="center">
-<img src={useBaseUrl("/img/verifier-backend-f2.svg")} align="center" width="600"/>
+<img src={useBaseUrl("img/verifier-backend-f2.svg")} align="center" width="600"/>
 </div>
 
 

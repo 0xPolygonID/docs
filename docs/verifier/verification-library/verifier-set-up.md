@@ -632,5 +632,5 @@ const requestMap = new Map();
 When visiting the URL, the users will need to scan the QR code with their ID wallets.
 
 <div align="center">
-<img src={useBaseUrl("/img/verifier-static-2.png")} width="600"/>
+<img src={useBaseUrl("img/verifier-static-2.png")} width="600"/>
 </div>

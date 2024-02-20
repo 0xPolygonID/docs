@@ -91,8 +91,6 @@ For each call to the `Create Identity`, a random Identifier is created.
 
 <a href="https://self-hosted-platform.polygonid.me/#post-/v1/identities" target="_blank">API Reference</a>
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/dark-star-200015/workspace/public/request/23322631-ccf43950-f7a6-4155-a54b-4755d92f0b48)
-
 ## Get Identities
 
 **Function**: Endpoint to retrieve all the identities (identifiers) of a user.
@@ -106,8 +104,6 @@ The Issuer Node responds by sending a response message that contains:
 `did:polygonid:polygon:mumbai:2qNBWSAsyvaGBpqQVHk3E4cgChaN6ogaZnYCQUyoRQ`
 
 <a href="https://self-hosted-platform.polygonid.me/#get-/v1/identities" target="_blank">API Reference</a>
-
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/dark-star-200015/workspace/public/request/23322631-793c9e52-cdfa-423a-8b42-62b6b05d8e8c)
 
 ## Publish State On-Chain
 
@@ -128,5 +124,3 @@ The Issuer Node responds by sending a response message that indicates the publis
 - `txID`: transaction ID of the Published state on-chain. For example, 0xaed59e4195e73ee6c4278be1a5e01ecbdf2ff9565511916200dedda9bb20ff38
 
 <a href="https://self-hosted-platform.polygonid.me/#post-/v1/-identifier-/state/publish" target="_blank">API Reference</a>
-
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/dark-star-200015/workspace/public/request/23322631-e193e1e1-a740-4c3c-b74c-4696496e0e1e)
