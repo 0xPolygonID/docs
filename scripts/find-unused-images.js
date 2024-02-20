@@ -22,7 +22,17 @@ function isImageUsedInFile(imagePath, fileContent) {
     return fileContent.includes(path.basename(imagePath));
 }
 
-function findUnusedImages() {
+function removeFile(filePath) {
+    fs.unlink(filePath, (err) => {
+        if (err) {
+            console.error(`Error removing file: ${filePath}`, err);
+            return;
+        }
+        console.log(`Removed: ${filePath}`);
+    });
+}
+
+function findUnusedImages(remove = false) {
     const allImages = readFilesRecursively(staticDir).filter(file => file.match(/\.(jpg|jpeg|png|gif|svg)$/));
     const allDocs = readFilesRecursively(docsDir).filter(file => file.match(/\.(md|mdx)$/));
     const allSrc = readFilesRecursively(srcDir).filter(file => file.match(/\.(js|css|scss)$/));
@@ -39,6 +49,12 @@ function findUnusedImages() {
     });
 
     console.dir(unusedImages, {'maxArrayLength': null} );
+
+    if (remove) {
+        unusedImages.forEach(imagePath => {
+            removeFile(imagePath);
+        });
+    }
 }
 
-findUnusedImages();
+findUnusedImages(false);
