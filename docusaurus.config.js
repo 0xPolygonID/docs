@@ -78,8 +78,8 @@ module.exports = {
       hideOnScroll: true,
       logo: {
         alt: "Polygon logo",
-        src: "img/polygon-id.svg",
-        srcDark: "img/polygon-id.svg",
+        src: "img/polygon-id-logo-white.svg",
+        srcDark: "img/polygon-id-logo-white.svg",
         href: "/",
         target: "_self",
       },
