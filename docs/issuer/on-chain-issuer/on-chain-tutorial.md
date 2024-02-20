@@ -93,8 +93,8 @@ There are two main components in this application:
 
 Don't forget to download and install the Polygon ID wallet app before you go the next steps.
 
-- For Android: <ins><a href="https://play.google.com/store/apps/details?id=com.polygonid.wallet" target="_blank">Polygon ID on Google Play</a></ins>
-- For iOS: <ins><a href="https://apps.apple.com/us/app/polygon-id/id1629870183" target="_blank">Polygon ID on the App Store</a></ins>
+- For Android: <a href="https://play.google.com/store/apps/details?id=com.polygonid.wallet" target="_blank">Polygon ID on Google Play</a>
+- For iOS: <a href="https://apps.apple.com/us/app/polygon-id/id1629870183" target="_blank">Polygon ID on the App Store</a>
 
 ## Issue and fetch credential
 

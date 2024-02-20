@@ -79,7 +79,7 @@ const proofRequest: protocol.ZKPRequest = {
 </TabItem>
 <TabItem value="on-chain">
 
-Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
+Please, check out our [Onchain verification tutorial to build a query](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
 
 </TabItem>
 </Tabs>
@@ -154,7 +154,7 @@ const proofRequest: protocol.ZKPRequest = {
 </TabItem>
 <TabItem value="on-chain">
 
-Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
+Please, check out our [Onchain verification tutorial to build a query](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
 
 </TabItem>
 </Tabs>
@@ -229,7 +229,7 @@ const proofRequest: protocol.ZKPRequest = {
 </TabItem>
 <TabItem value="on-chain">
 
-Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
+Please, check out our [Onchain verification tutorial to build a query](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
 
 </TabItem>
 </Tabs>
@@ -306,7 +306,7 @@ const proofRequest: protocol.ZKPRequest = {
 </TabItem>
 <TabItem value="on-chain">
 
-Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
+Please, check out our [Onchain verification tutorial to build a query](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
 
 </TabItem>
 </Tabs>
@@ -380,7 +380,7 @@ const proofRequest: protocol.ZKPRequest = {
 </TabItem>
 <TabItem value="on-chain">
 
-Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
+Please, check out our [Onchain verification tutorial to build a query](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
 
 </TabItem>
 </Tabs>
@@ -455,7 +455,7 @@ const proofRequest: protocol.ZKPRequest = {
 </TabItem>
 <TabItem value="on-chain">
 
-Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
+Please, check out our [Onchain verification tutorial to build a query](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
 
 </TabItem>
 </Tabs>
