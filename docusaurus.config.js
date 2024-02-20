@@ -9,8 +9,8 @@ module.exports = {
   url: "https://devs.polygonid.com",
   baseUrl: "/",
   favicon: "/img/logo-round-purple.png",
-  organizationName: "maticnetwork",
-  projectName: "id-docs",
+  organizationName: "0xPolygonID",
+  projectName: "docs",
   trailingSlash: false,
   customFields: {
     description: "Build your next blockchain dApp using Polygon ID.",
@@ -78,8 +78,8 @@ module.exports = {
       hideOnScroll: true,
       logo: {
         alt: "Polygon logo",
-        src: "img/polygon-id.svg",
-        srcDark: "img/polygon-id.svg",
+        src: "img/polygon-id-logo-white.svg",
+        srcDark: "img/polygon-id-logo-white.svg",
         href: "/",
         target: "_self",
       },
@@ -208,7 +208,7 @@ module.exports = {
         docs: {
           routeBasePath: "/docs",
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/0xPolygonID/id-docs/blob/main",
+          editUrl: "https://github.com/0xPolygonID/docs/blob/main",
           path: "docs",
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
