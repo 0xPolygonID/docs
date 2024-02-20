@@ -1,22 +1,21 @@
 <br>
 
 <p align="center">
-<img align="center" src="/static/img/polygon-id.svg" width="300">
+<img align="center" src="/static/img/polygon-id-logo.svg">
 </p>
 
 <br>
 
 <p align="center">
-   <a href="https://github.com/maticnetwork/id-docs/network/members"><img src="https://img.shields.io/github/forks/maticnetwork/id-docs?style=social"></a>
-   <img src="https://img.shields.io/github/stars/maticnetwork/id-docs?style=social">
-   <img src="https://img.shields.io/github/languages/count/maticnetwork/id-docs">
-   <a href="https://github.com/maticnetwork/id-docs/issues"><img src="https://img.shields.io/github/issues/maticnetwork/id-docs"></a>
-   <a href="https://github.com/maticnetwork/id-docs/pulls"><img src="https://img.shields.io/github/issues-pr-raw/maticnetwork/id-docs"></a>
-   <a href="https://github.com/maticnetwork/id-docs/graphs/contributors"><img src="https://img.shields.io/github/contributors-anon/maticnetwork/id-docs"></a>
-   <img src="https://img.shields.io/github/languages/code-size/maticnetwork/id-docs">
-   <a href="https://discord.gg/zdwkdvMNY2"><img src="https://img.shields.io/discord/714888181740339261?color=1C1CE1&label=Polygon%20%7C%20Discord%20%F0%9F%91%8B%20&style=flat-square"></a>
-   <a href="https://twitter.com/0xPolygonID"><img src="https://img.shields.io/twitter/follow/0xPolygon.svg?style=social"></a>
-   
+   <a href="https://github.com/0xPolygonID/docs/network/members"><img src="https://img.shields.io/github/forks/0xPolygonID/docs?style=social"></a>
+   <img src="https://img.shields.io/github/stars/0xPolygonID/docs?style=social">
+   <a href="https://twitter.com/0xPolygonID"><img src="https://img.shields.io/twitter/follow/0xPolygonID.svg?style=social"></a>
+   <br>
+   <img src="https://img.shields.io/github/languages/count/0xPolygonID/docs">
+   <a href="https://github.com/0xPolygonID/docs/issues"><img src="https://img.shields.io/github/issues/0xPolygonID/docs"></a>
+   <a href="https://github.com/0xPolygonID/docs/pulls"><img src="https://img.shields.io/github/issues-pr-raw/0xPolygonID/docs"></a>
+   <a href="https://github.com/0xPolygonID/docs/graphs/contributors"><img src="https://img.shields.io/github/contributors-anon/0xPolygonID/docs"></a>
+   <img src="https://img.shields.io/github/languages/code-size/0xPolygonID/docs">
 </p>
 
 Polygon ID Documentation is the documentation hub providing extensive documentation, community resources, and guides for enthusiasts and developers interested in learning about or building solutions using Polygon ID.
@@ -40,20 +39,20 @@ Note that on macOS, you also need Xcode and Command Line Tools.
 2. Clone your forked repo.
    
     ```
-    git clone git@github.com:[your_github_handle]/id-docs
+    git clone git@github.com:[your_github_handle]/docs
     ```
 
 3. Navigate into the cloned folder.
    
     ```
-    cd id-docs
+    cd docs
     ```
 
 4. Link your cloned repo to the upstream repo.
    > For help, see [GitHub Docs: Configuring a remote for a fork](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork).
    
     ```
-    git remote add upstream https://github.com/0xPolygonID/id-docs
+    git remote add upstream https://github.com/0xPolygonID/docs
     ```
 
 5. If you have already cloned the repository, be sure to sync your fork with the latest changes. 
@@ -110,7 +109,7 @@ your PR. Note that you must have a GitHub account and an understanding of Markdo
     git push
     ```
 
-4. Submit a PR against the `main` branch of the `maticnetwork/id-docs` repo.
+4. Submit a PR against the `main` branch of the `0xPolygonID/docs` repo.
    
 5. Add a title to your PR with appropriate labels.
    > For example, if you want to suggest edits to the "Develop" page, name your PR: *update: develop.md*.
@@ -158,7 +157,7 @@ Acceptable PRs will be approved & merged into the `main` branch.
 
 ## Submit an Issue
 
-- Create a [new issue](https://github.com/0xPolygonID/id-docs/issues) to report a bug, request a feature, 
+- Create a [new issue](https://github.com/0xPolygonID/docs/issues) to report a bug, request a feature, 
   or suggest changes.
 
 - Comment on the issue if you want to be assigned to it so [our team can assign the issue to you](https://github.blog/2019-06-25-assign-issues-to-issue-commenters/).

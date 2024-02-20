@@ -9,8 +9,8 @@ module.exports = {
   url: "https://devs.polygonid.com",
   baseUrl: "/",
   favicon: "/img/logo-round-purple.png",
-  organizationName: "maticnetwork",
-  projectName: "id-docs",
+  organizationName: "0xPolygonID",
+  projectName: "docs",
   trailingSlash: false,
   customFields: {
     description: "Build your next blockchain dApp using Polygon ID.",
@@ -35,7 +35,7 @@ module.exports = {
     announcementBar: {
       id: "learn_more",
       content:
-        'New Release: Credentials Marketplace, On-chain Issuer and Issuer Node Improvements <a class="announcement-link" target="_blank" rel="noopener noreferrer" href="/docs/release-notes/r5"> Learn more</a>  <a class="announcement-link" target="_blank" rel="noopener noreferrer" href="https://polygon.technology/blog/polygon-id-release-5-boosting-credential-liquidity?utm_source=twitter&utm_medium=social&utm_content=id-r5-blog"> Check our blog</a>',
+        'New Release: First-ever implementation of Dynamic Credentials! <a class="announcement-link" target="_blank" rel="noopener noreferrer" href="https://polygon.technology/blog/polygon-id-release-6-introducing-the-first-ever-implementation-of-dynamic-credentials"> Learn more</a>',
       backgroundColor: "#20232a",
       textColor: "#fff",
       isCloseable: false,
@@ -78,8 +78,8 @@ module.exports = {
       hideOnScroll: true,
       logo: {
         alt: "Polygon logo",
-        src: "img/polygon-id.svg",
-        srcDark: "img/polygon-id.svg",
+        src: "img/polygon-id-logo-white.svg",
+        srcDark: "img/polygon-id-logo-white.svg",
         href: "/",
         target: "_self",
       },
@@ -208,7 +208,7 @@ module.exports = {
         docs: {
           routeBasePath: "/docs",
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/0xPolygonID/id-docs/blob/main",
+          editUrl: "https://github.com/0xPolygonID/docs/blob/main",
           path: "docs",
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
