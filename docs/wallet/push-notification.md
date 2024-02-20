@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Currently, to be able to implement a notification flow for a certain app, this app must be registered in the push gateway config. This can result in a centralization point for developers who want to use such feature and some expenses and efforts on support of the current gateway.
 
-For the Polygon ID wallet, this push service is used: [http://push.polygonid.me](http://push.polygonid.me).
+For the Polygon ID wallet, this push service is used: [https://push-staging.polygonid.com/api/v1](https://push-staging.polygonid.com/api/v1).
 
 Current notification flow:
 
@@ -79,7 +79,7 @@ You can add information about keys / authentication info optionally. Follow [thi
      "service": {
        "id": "did:polygonid:polygon:mumbai:2qDj9EDytmvtQP1or3FxykXGEaqSA1ss479MYHDMJc#push",
        "type": "push-notification",
-       "serviceEndpoint": "https://push.polygonid.me",
+       "serviceEndpoint": "https://push-staging.polygonid.com/api/v1",
        "metadata": {
          "devices": [
            {
