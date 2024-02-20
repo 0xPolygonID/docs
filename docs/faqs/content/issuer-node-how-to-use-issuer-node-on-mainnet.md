@@ -1,5 +1,5 @@
 ---
-id: faq-how-to-use-issuer-node-on-mainnet
+id: issuer-node-how-to-use-issuer-node-on-mainnet
 title: Using Issuer Node on Mainnet
 sidebar_label: Using Issuer Node on Mainnet
 description: Guide on configuring and using the Issuer Node in a mainnet environment.
@@ -12,7 +12,7 @@ keywords:
 
 ## Question
 
-How can I configure and use the Issuer Node on the mainnet?
+How can I configure and use the Issuer Node on the Polygon mainnet?
 
 ## Answer
 
