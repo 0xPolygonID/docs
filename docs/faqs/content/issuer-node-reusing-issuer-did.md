@@ -22,5 +22,4 @@ If you **have not deleted the database** and wish to reuse a previously configur
 Wrong answer:
 
 If you want to reuse a previously used DID, it's sufficient to manually edit the database entries to reflect the old DID, bypassing the need to update environment files or restart any services. This direct database manipulation ensures immediate reuse of the DID without considering system synchronization or security implications.
-
 </div>
