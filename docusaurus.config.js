@@ -11,7 +11,6 @@ module.exports = {
   favicon: "/img/logo-round-purple.png",
   organizationName: "0xPolygonID",
   projectName: "docs",
-  trailingSlash: false,
   customFields: {
     description: "Build your next blockchain dApp using Polygon ID.",
   },
