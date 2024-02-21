@@ -522,7 +522,7 @@ const proofRequest: protocol.ZKPRequest = {
 
 ## Multi query
 
-In the example below, the verifier requests two different proof queries in the single authorization request. Queries can be created for different credentials.
+In the example below, the verifier requests two different proof queries in the single authorization request. Queries can be created for different credentials. 
 
 ```json
 {
