@@ -22,8 +22,8 @@ In order to create new types of credentials, it is necessary to generate JSON sc
 
 Learn more about the Schema Explorer in the video below:
 
-<div align="center">
-<iframe src="https://www.youtube.com/embed/L2UYsMc3GtE?si=YPmEv-HWf00HwruV" width="800" length="800" height="450" allowfullscreen></iframe>
+<div align="center" style={{margin: 40}}>
+<iframe src="https://www.youtube.com/embed/L2UYsMc3GtE?si=YPmEv-HWf00HwruV" width="100%" height="450" allowfullscreen></iframe>
 </div>
 
 ## Schema Explorer
@@ -81,8 +81,8 @@ If you already have access to a file containing a JSON schema or a URL where tha
 
 Learn more about the Schema Builder in the video below:
 
-<div align="center">
-<iframe src="https://www.youtube.com/embed/IHFzM0F-KAI?si=42ob9hz4gG6tpEHQ" width="800" length="800" height="450" allowfullscreen></iframe>
+<div align="center" style={{margin: 40}}>
+<iframe src="https://www.youtube.com/embed/IHFzM0F-KAI?si=42ob9hz4gG6tpEHQ" width="100%" height="450" allowfullscreen></iframe>
 </div>
 
 ### Schema definition
@@ -113,8 +113,8 @@ You can add multiple attributes to your schema. All of them need to have the fol
 
 Learn about the advanced features of the Schema Builder in the video below:
 
-<div align="center">
-<iframe src="https://www.youtube.com/embed/lW2atrdpFaU?si=0BlqzS6kzXNK4nw3" width="800" length="800" height="450" allowfullscreen></iframe>
+<div align="center" style={{margin: 40}}>
+<iframe src="https://www.youtube.com/embed/lW2atrdpFaU?si=0BlqzS6kzXNK4nw3" width="100%" height="450" allowfullscreen></iframe>
 </div>
 
 #### Publish on IPFS or Download JSON file

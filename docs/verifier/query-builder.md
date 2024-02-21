@@ -23,11 +23,26 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The [Query Builder](https://schema-builder.polygonid.me/query-builder) is a dynamic, user-friendly tool designed for crafting verification queries. It simplifies the process by providing a comprehensive form, encompassing all necessary fields for creating detailed queries.
+The Query Builder, available [here](https://schema-builder.polygonid.me/query-builder), is an intuitive, web-based tool designed to simplify the creation of verification queries. It's particularly useful for verifiers looking to establish specific criteria for identity verification, such as organizational membership or age requirements. By leveraging Polygon ID, the Query Builder offers a secure and efficient method for users to authenticate identities based on these criteria.
 
-This tool enables verifiers to establish specific rules for identity verification, catering to a range of criteria from organizational membership to age requirements. Polygon ID enhances this process, offering a secure and streamlined way for users to authenticate their identity based on these criteria.
+## Features
 
-With its standardized interface, the Query Builder ensures uniformity, consistency, and minimizes errors in query creation across various users and organizations. It also presents a more intuitive alternative to manually writing queries on the [ZK Query Language](./verification-library/zk-query-language.md), making query creation accessible even for those without in-depth technical knowledge.
+- **User-Friendly Interface**: The Query Builder provides a comprehensive form that includes all necessary fields for crafting detailed verification queries, ensuring a user-friendly experience.
+- **Simplified Query Creation**: It eliminates the complexity of manually writing queries in the [ZK Query Language](./verification-library/zk-query-language.md), making it accessible to users without extensive technical knowledge.
+- **On-Chain and Off-Chain Query Verification**: Supports both on-chain and off-chain query verification.
+- **Consistency and Accuracy**: With its standardized interface, the tool promotes uniformity and consistency, minimizing errors across different users and organizations.
+
+## Getting Started
+
+To learn more about how to use the Query Builder effectively, watch the detailed walkthrough in the demo video below:
+
+<div align="center" style={{margin: 40}}>
+<iframe src="https://www.youtube.com/embed/JsCSrYo4DBk?si=9VVs8iXZ1O8ojPSM" width="100%" height="450" allowfullscreen></iframe>
+</div>
+
+## Main User Interface
+
+Here's a glimpse of the main user interface of the Query Builder:
 
 <div align="center">
 <img src={useBaseUrl("/img/query-builder.png")} align="center" width="600"/>
