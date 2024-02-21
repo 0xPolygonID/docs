@@ -22,13 +22,13 @@ The marketplace is convenient for all the players in the self-sovereign identity
 
 The Credential Marketplace provides visibility for everyone involved in the decentralized identity business, be they an issuer, verifier, wallet provider, trust network, or system integrator, The ecosystem page, coming together with Marketplace, gathers all those participants and presents a comprehensive description of their businesses.
 
-:::tip Credential Marketplace Walkthrough
+## Credential Marketplace Walkthrough
 
 Aside from this article, you can always watch the video below where we present the Credential Marketplace's main features in practice.
 
-<iframe src="https://www.youtube.com/embed/vlv88YBECak?si=VFtU0N5JWmShbZzJ" width="100%" length="100%" height="500" allowfullscreen></iframe>
-
-:::
+<div align="center" style={{margin: 40}}>
+<iframe src="https://www.youtube.com/embed/vlv88YBECak?si=VFtU0N5JWmShbZzJ" width="100%" height="450" allowfullscreen></iframe>
+</div>
 
 ## What one can do in the Credential Marketplace
 
