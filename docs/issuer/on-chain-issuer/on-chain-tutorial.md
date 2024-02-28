@@ -12,6 +12,9 @@ keywords:
   - smart contract
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Currently, we have two approaches to issuing on-chain credentials: **on-chain merklized issuer** and **on-chain non-merklized issuer**.
 The difference between these two approaches:
 
@@ -51,16 +54,36 @@ There are two main components in this application:
 
 1. Deploy an on-chain merklized issuer contract. You can use [this sample](https://github.com/0xPolygonID/contracts/blob/main/contracts/examples/IdentityExample.sol) or create your own smart contract with custom logic.
 
-   Use the following State Contract addresses:
+   Clone smart contracts repository:
+   ```bash
+   git clone https://github.com/0xPolygonID/contracts.git
+   ```
 
-   - For mumbai network: `0x134B1BE34911E39A8397ec6289782989729807a4`
-   - For mainnet network: `0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D`
+   Deploy Identity Example contract:
+   ```bash
+   export MUMBAI_PRIVATE_KEY={private_key} && \
+   export MUMBAI_RPC_URL={rpc_url} && \
+   npx hardhat run scripts/deployIdentityExample.ts --network mumbai
+   ```
+   
+   
+:::note
 
-   :::note
+You can find more information on how to deploy a smart contract using Hardhat [<ins>in this readme</ins>](https://github.com/iden3/contracts#readme).
 
-   You can find more information on how to deploy a smart contract using Hardhat [<ins>in this readme</ins>](https://github.com/iden3/contracts#readme).
+:::
 
-   :::
+
+
+
+   
+   
+
+1. Use the utility to calculate the issuerDID from the smart contract address:
+
+   ```bash
+   go run utils/convertor.go --contract_address=<ADDRESS_OF_IDENTITY_DEPLOYED_CONTRACT>
+   ```
 
 1. Run ngrok on 8080 port.
 
@@ -68,19 +91,31 @@ There are two main components in this application:
    ngrok http 8080
    ```
 
-1. Use the utility to calculate the issuerDID from the smart contract address:
-
-   ```bash
-   go run utils/convertor.go --contract_address=<ADDRESS_OF_ONCHAIN_ISSUER_CONTRACT>
-   ```
-
 1. Fill the .env config file with the proper variables:
+
+<Tabs>
+<TabItem value="Polygon Mumbai">
 
    ```bash
    SUPPORTED_RPC="80001=<RPC_POLYGON_MUMBAI>"
    ISSUERS_PRIVATE_KEY="<ISSUER_DID>=<PRIVATE_KEY_OF_THE_CONTRACT_DEPLOYER>"
    EXTERNAL_HOST="<NGROK_URL>"
+   SUPPORTED_STATE_CONTRACTS="80001=0x134B1BE34911E39A8397ec6289782989729807a4"
    ```
+
+</TabItem>
+
+<TabItem value="Polygon Main">
+
+   ```bash
+   SUPPORTED_RPC="137=<RPC_POLYGON_MAIN>"
+   ISSUERS_PRIVATE_KEY="<ISSUER_DID>=<PRIVATE_KEY_OF_THE_CONTRACT_DEPLOYER>"
+   EXTERNAL_HOST="<NGROK_URL>"
+   SUPPORTED_STATE_CONTRACTS="137=0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D"
+   ```
+
+</TabItem>
+</Tabs>
 
 1. Run docker-compose:
 
