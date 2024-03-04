@@ -19,10 +19,7 @@ import TabItem from '@theme/TabItem';
 
 1. Deploy contracts on custom chain.
 
-   `StateV2.sol` - mandatory contract to transit identities states and getting global identity state root (GIST) during the authentication.
-
-   <ins> [repository](https://github.com/iden3/contracts/tree/master/contracts/state)</ins>
-   <ins> [docs](https://github.com/iden3/contracts/blob/master/contracts/identitytreestore/IdentityTreeStore.sol)</ins>
+   `StateV2.sol` - mandatory contract to transit identities states and getting global identity state root (GIST) during the authentication. <ins>[repository](https://github.com/iden3/contracts/tree/master/contracts/state) </ins>, <ins> [docs](https://github.com/iden3/contracts/blob/master/contracts/identitytreestore/IdentityTreeStore.sol)</ins>
 
    `IdentityTreeStore.sol` - optional, this contract is responsible for storing revocation tree nodes and tree roots of Identity. Only needed in case onchain RHS (<ins> [Iden3OnchainSparseMerkleTreeProof2023](https://iden3-communication.io/w3c/status/overview)</ins> credential status) will be used for issuing credentials. <ins> [repository](https://github.com/iden3/contracts/blob/master/contracts/identitytreestore/IdentityTreeStore.sol)</ins>, <ins> [docs](https://docs.iden3.io/services/rhs/)</ins>
 
