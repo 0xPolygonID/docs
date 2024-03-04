@@ -389,7 +389,7 @@ function coreSchemaFromStr(schemaIntString) {
   return SchemaHash.newSchemaHashFromInt(schemaInt);
 }
 
-function calculateQueryHash(values, schema, slotIndex, operator, claimPathKey, claimPathNotExists) {
+function calculateQueryHashV2(values, schema, slotIndex, operator, claimPathKey, claimPathNotExists) {
   const expValue = prepareCircuitArrayValues(values, 64);
   const valueHash = poseidon.spongeHashX(expValue, 6);
   const schemaHash = coreSchemaFromStr(schema);
@@ -429,7 +429,7 @@ async function main() {
     claimPathNotExists: 0,
   };
 
-  query.queryHash = calculateQueryHash(
+  query.queryHash = calculateQueryHashV2(
     query.value,
     query.schema,
     query.slotIndex,
