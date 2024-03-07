@@ -21,12 +21,15 @@ import TabItem from '@theme/TabItem';
 
    `StateV2.sol` - mandatory contract to transit identities states and getting global identity state root (GIST) during the authentication.
 
-   <ins> [repository](https://github.com/iden3/contracts/tree/master/contracts/state)</ins>
-   <ins> [docs](https://github.com/iden3/contracts/blob/master/contracts/identitytreestore/IdentityTreeStore.sol)</ins>
+   - [repository](https://github.com/iden3/contracts/tree/master/contracts/state)
+   - [docs](https://github.com/iden3/contracts/blob/master/contracts/identitytreestore/IdentityTreeStore.sol)
 
-   `IdentityTreeStore.sol` - optional, this contract is responsible for storing revocation tree nodes and tree roots of Identity. Only needed in case onchain RHS (<ins> [Iden3OnchainSparseMerkleTreeProof2023](https://iden3-communication.io/w3c/status/overview)</ins> credential status) will be used for issuing credentials. <ins> [repository](https://github.com/iden3/contracts/blob/master/contracts/identitytreestore/IdentityTreeStore.sol)</ins>, <ins> [docs](https://docs.iden3.io/services/rhs/)</ins>
+   `IdentityTreeStore.sol` - optional, this contract is responsible for storing revocation tree nodes and tree roots of Identity. Only needed in case onchain RHS ( [Iden3OnchainSparseMerkleTreeProof2023](https://iden3-communication.io/w3c/status/overview) credential status) will be used for issuing credentials.
 
-   Onchain Validators - optional, only in case you work on use cases with onchain verification. <ins> [repository](https://github.com/0xPolygonID/contracts)</ins>
+   - [repository](https://github.com/iden3/contracts/blob/master/contracts/identitytreestore/IdentityTreeStore.sol)
+   - [docs](https://docs.iden3.io/services/rhs/)
+
+   Onchain Validators - optional, only in case you work on use cases with onchain verification. [repository](https://github.com/0xPolygonID/contracts)
 
 2. Register you network for PolygonID did method in the following way:
 

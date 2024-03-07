@@ -3,5 +3,6 @@
 
 # Except these files
 !docs
+!scripts
 !src
 !docusaurus.config.js
