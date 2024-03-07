@@ -1435,7 +1435,7 @@ header > h1 {
 }
 
 strong {
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .btn {
@@ -2143,15 +2143,11 @@ details[open] summary::before {
 }
 
 code {
-  background-color: #9a60ff;
+  background-color: #2c2c2c;
   color: #f8f8f8;
-  padding: 2px 4px;
+  padding: 2px 8px;
   border-radius: 6px;
   font-weight: normal;
-}
-
-code:not(.language-text) {
-  font-weight: bold;
 }
 
 /* SIDEBAR */
@@ -2654,4 +2650,13 @@ p {
 
 .hidden {
   display: none;
+}
+
+.faq-link {
+  color: white;
+  cursor: pointer;
+}
+
+.faq-link:after {
+  content: " \2197";
 }

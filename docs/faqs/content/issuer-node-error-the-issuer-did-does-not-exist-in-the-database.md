@@ -1,7 +1,7 @@
 ---
-id: faq-the-issuer-did-does-not-exist-in-the-database
-title: Issuer DID Not Found in Database
-sidebar_label: Issuer DID Not Found
+id: issuer-node-error-the-issuer-did-does-not-exist-in-the-database
+title: "Error: Issuer DID Does Not Exist in the Database"
+sidebar_label: Issuer DID Does Not Exist
 description: Troubleshooting when the provided DID does not exist in the database.
 keywords:
   - faq
@@ -15,6 +15,10 @@ keywords:
 
 What should I do if I encounter an error indicating that the Issuer DID does not exist in the database?
 
+```bash
+time=2024-02-12T10:16:12.737Z level=INFO msg="the issuer DID doesn't exist in the database. Please check ISSUER_API_UI_ISSUER_DID environment variable.\n "
+```
+
 ## Answer
 
 This error occurs when the `ISSUER_API_UI_ISSUER_DID` value specified in your `.env-api` file cannot be located in the database, which is a common issue when the database storage is inadvertently removed or cleared. This situation often arises in Docker environments, particularly after executing the `make down` command, which removes Docker containers along with their associated storage.
@@ -26,6 +30,8 @@ make generate-issuer-did
 ```
 
 This command will generate a new DID and automatically configure it in your environment, effectively resolving the issue by ensuring that the DID specified in your .env-api file matches an entry in the database.
+
+Please refer to the FAQ [Generating an Issuer DID](../content/issuer-node-did-generation.md) for more detailed information about this command.
 
 <div className="hidden">
 Wrong answer:
