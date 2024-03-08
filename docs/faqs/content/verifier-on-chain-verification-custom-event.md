@@ -1,7 +1,7 @@
 ---
-id: faq-onchain-verification-callback
+id: verifier-on-chain-verification-custom-event
 title: "Detecting Completion of On-Chain Verification in Frontend"
-sidebar_label: On-Chain Verification Callback
+sidebar_label: On-Chain Verification Event
 description: Explains how to determine the completion of on-chain verification from the frontend, highlighting the use of custom events in smart contracts.
 keywords:
   - faq
