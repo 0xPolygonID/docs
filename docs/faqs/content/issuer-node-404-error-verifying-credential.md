@@ -121,6 +121,30 @@ docker run -p 8080:80 --network=issuer-network -e "PGADMIN_DEFAULT_EMAIL=mail@ma
 
 By following these steps, new credentials issued will utilize the updated issuer node URL. Note that previously issued credentials will need their URLs updated individually to resolve any verification issues.
 
+### Updating the Issuer URL in Database Records
+
+For those comfortable with direct database manipulation, the issuer node URL within existing credentials can be updated using a SQL command. This method is particularly useful if you have a large number of credentials that need updating to a new issuer node URL. Here is the SQL command to perform this update:
+
+```sql
+UPDATE claims
+SET credential_status = jsonb_set(credential_status, '{id}', ('"' || regexp_replace(credential_status ->> 'id', '^https://123456', 'https://0.0.0.0') || '"')::jsonb)
+WHERE jsonb_extract_path_text(credential_status, 'id') LIKE 'https://123456/%' AND identifier = 'myDID';
+```
+
+In this command:
+
+- `https://123456` represents the old URL to be replaced.
+- `https://0.0.0.0` is the new URL you're updating to.
+- `myDID` should be replaced with the actual DID of the issuer whose credentials you're updating.
+
+This SQL command specifically targets the `credential_status` JSONB column within the `claims` table, replacing the old URL with the new one only in records where the `id` field of the `credential_status` matches the specified pattern and belongs to the specified issuer DID.
+
+:::warning
+
+Direct manipulation of database records can lead to data integrity issues if not performed carefully. Ensure you have backups or other recovery methods available before executing direct database updates.
+
+:::
+
 ### Recommendations
 
 - **Stable URL**: Secure a stable URL for your issuer node to prevent similar issues in the future.
