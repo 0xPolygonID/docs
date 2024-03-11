@@ -32,6 +32,7 @@ keywords:
 - [<span className="faq-link">Error: Issuer DID Does Not Exist in the Database</span>](./content/issuer-node-error-the-issuer-did-does-not-exist-in-the-database.md)
 - [<span className="faq-link">Error: Cannot Get Issuer DID from Vault</span>](./content/issuer-node-error-cannot-get-did-from-vault.md)
 - [<span className="faq-link">Error: Getting Identity by DID, No Rows in Result Set</span>](./content/issuer-node-error-no-identity-by-did-no-rows-in-result-set.md)
+- [<span className="faq-link">Resolving Mobile App Credential Verification 404 Error</span>](./content/issuer-node-404-error-verifying-credential.md)
 
 ## Verifiers
 
