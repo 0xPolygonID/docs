@@ -27,7 +27,7 @@ At its core, every off-chain interaction between a Verifier and a user's Wallet 
 - If the verification is successful, the Verifier grants access to the user (or activates any customized logic).
 
 <div align="center">
-<img src={useBaseUrl("/img/off-chain-flow.png")} align="center" width="600"/>
+<img src={useBaseUrl("img/off-chain-flow.png")} align="center" width="600"/>
 </div>
 <br></br>
 

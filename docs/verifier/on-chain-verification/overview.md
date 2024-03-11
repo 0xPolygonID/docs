@@ -28,7 +28,7 @@ This flow is especially needed in cases where further on-chain logic needs to be
 At its core, every on-chain interaction between a Verifier and a user's Wallet follows this workflow:
 
 <div align="center">
-<img src={useBaseUrl("/img/on-chain-verification-flow.png")} align="center" width="600"/>
+<img src={useBaseUrl("img/on-chain-verification-flow.png")} align="center" width="600"/>
 </div>
 
 1. After having deployed a [Verifier Smart Contract](#design-the-erc20-zk-airdrop-verifier-contract), the Verifier designs a [Request](#set-the-zkp-request) for the users. This has to be recorded on-chain inside the Verifier Smart Contract.

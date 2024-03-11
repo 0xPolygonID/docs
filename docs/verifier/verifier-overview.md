@@ -27,7 +27,7 @@ The verification process doesn’t involve any interaction between the Verifier 
 At the end of the process, the verifier gets a cryptographic proof that the user satisfies the query, while the user shares just the minimum possible amount of data required for the interaction.
 
 <div align="center">
-<img src={useBaseUrl("/img/verifier-intro.png")} align="center" />
+<img src={useBaseUrl("img/verifier-intro.png")} align="center" />
 </div>
 
 ## Verifier SDK
