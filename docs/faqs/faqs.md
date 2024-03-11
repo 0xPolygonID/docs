@@ -41,6 +41,7 @@ keywords:
 
 - [<span className="faq-link">Understanding Gas Fees for On-Chain Verification</span>](./content/verifier-on-chain-verification-gas-costs.md)
 - [<span className="faq-link">Data Management for On-Chain Credential Verification</span>](./content/verifier-on-chain-verification-data-storage.md)
+- [<span className="faq-link">Detecting Completion of On-Chain Verification in Frontend</span>](./content/verifier-on-chain-verification-custom-event.md)
 
 ## Wallets
 
