@@ -26,8 +26,9 @@ We want to introduce new circuits - СredentialAtomicQueryV3 and CredentialAtomi
     1. ValueArrSize input is introduced, which fixes behavoiur for IN / NIN operations. 
     2. Exists operator support.
     3. Noop operator support.
-    4. Query hash calculation algorithm changes.
-    5. Constraints and security optimizations.
+    4. Not between operator support.
+    5. Query hash calculation algorithm changes.
+    6. Constraints and security optimizations.
     
   </details>
 
