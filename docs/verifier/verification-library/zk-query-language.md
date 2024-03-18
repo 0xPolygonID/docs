@@ -29,7 +29,7 @@ The Query Language sits on top of these circuits to provide a simple way for dev
 - Must not be a resident of a country in the list of blacklisted countries to operate on an exchange - `not-in` (operator 5).
 - Must not be a resident of a specific country - `not-equal` (operator 6).
 
-The <a href="https://docs.iden3.io/protocol/main-circuits/#credentialatomicquerysigv2onchain:~:text=verify%20the%20proof.-,credentialAtomicQueryV3,-Github" target="_blank">Atomic Query Signature V3 Circuit</a> circuit is designed to support more operators:
+The <a href="https://docs.iden3.io/protocol/main-circuits/#credentialatomicqueryv3" target="_blank">Atomic Query Signature V3 Circuit</a> circuit is designed to support more operators:
 
 - Must have been born before or exactly at 2000-01-01 to access a specific website - `less-than-equal` (operator 7).
 - Must have a monthly salary greater than or equal $1000 to get a loan - `greater-than-equal` (operator 8).
@@ -899,13 +899,13 @@ Corresponding QR Code
 
 
 
-## Proof of credential issuance
+## Proof of credential issuance ($noop)
 
-Feature that enables requests to prove that credential exits in the ID Holder wallet without revealing any info.
+By not including the credentialSubject in the query, a verifier requests proof of the presence of a credential in the user's wallet without requiring any condition to be met or revealing any specific detail about the credential.
 
 **Query**
 
-In the example below, the verifier requests the Holder's country code.
+In the example below, the verifier doesn't include credential subject.
 
 ```ts "Off-chain"
 const proofRequest: protocol.ZKPRequest = {

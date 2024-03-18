@@ -23,17 +23,17 @@ We want to introduce new circuits - СredentialAtomicQueryV3 and CredentialAtomi
   <details><summary>Changelog from beta.0 to beta.1</summary>
  
 
-    1. ValueArrSize input is introduced, which fixes behavoiur for IN / NIN operations. 
-    2. Exists operator support.
-    3. Noop operator support.
-    4. Not between operator support.
-    5. Query hash calculation algorithm changes.
-    6. Constraints and security optimizations.
+    1. ValueArrSize input is introduced, which fixes behaviour for IN / NIN operations. 
+    2. Exists / Noop / Less Than Or Equal / Greater Than or Equal /  Not between / Between operators support.
+    3. Query hash calculation algorithm changes.
+    4. Constraints and security optimizations.
     
   </details>
 
 
 :::
+
+More about new supported operators [here](./verification-library/zk-query-language.md#exists---operator-11).
 
 Link to latest sdk circuit wrappers: [js](https://github.com/0xPolygonID/js-sdk/pull/181) / [go](https://github.com/iden3/go-circuits/releases/tag/v2.1.0)
 
