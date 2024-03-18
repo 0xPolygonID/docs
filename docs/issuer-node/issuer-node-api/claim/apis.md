@@ -50,8 +50,6 @@ The Issuer Node responds by sending a response message that contains the string 
 
 <a href="https://self-hosted-platform.polygonid.me/#post-/v1/-identifier-/claims" target="_blank">API Reference</a>
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/dark-star-200015/workspace/public/request/23322631-f7c15972-bb5c-4614-974a-c18e367839a6)
-
 ## Get Claim
 
 **Function**: endpoint to retrieve a Verifiable Credential based on its Claim ID (CID). This way, you can retrieve a credential issued by an Issuer based on this credential's ID.
@@ -90,8 +88,6 @@ The server responds by sending the following data about the Verifiable Credentia
   - `coreclaim`: Value of coreclaim along with `signature` (Issuer's signature which verifies that the credential is issued by a valid Issuer).
 
 <a href="https://self-hosted-platform.polygonid.me/#get-/v1/-identifier-/claims/-id-" target="_blank">API Reference</a>
-
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/dark-star-200015/workspace/public/request/23322631-dbfc361b-fc11-4a2f-ad0f-420c64bbfb58)
 
 ## Get Claims
 
@@ -148,8 +144,6 @@ The Issuer Node responds by sending a response message that contains the Verifia
 
 <a href="https://self-hosted-platform.polygonid.me/#get-/v1/-identifier-/claims" target="_blank">API Reference</a>
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/dark-star-200015/workspace/public/request/23322631-cd69b428-9659-4e82-87c7-c2012f04327b)
-
 ## Get Claim QR Code
 
 :::note
@@ -178,8 +172,6 @@ This JSON can then be pasted on a third-party app's interface that supports gene
 
 <a href="https://self-hosted-platform.polygonid.me/#get-/v1/-identifier-/claims/-id-/qrcode" target="_blank">API Reference</a>
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/dark-star-200015/workspace/public/request/23322631-258a68a6-6301-454b-84c2-62219748def3)
-
 ## Revoke Claim
 
 **Function**: endpoint to revoke a Verifiable Credential
@@ -189,8 +181,6 @@ This JSON can then be pasted on a third-party app's interface that supports gene
 The server responds by showing the Revocation Status of the credential.
 
 <a href="https://self-hosted-platform.polygonid.me/#post-/v1/-identifier-/claims/revoke/-nonce-" target="_blank">API Reference</a>
-
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/dark-star-200015/workspace/public/request/23322631-a038c968-9e13-4e41-8364-a91e747cc871)
 
 ## Get Revocation Status
 
@@ -207,5 +197,3 @@ The server responds by sending the following details:
   - `existence`: Existence or Non-existence of the Revocation Nonce on the Revocation Merkle Tree. For retrieving the revocation status from this endpoint, we need to first send a transaction and after that, the state is published on-chain. Once that is done, the existence of the revocation nonce on Merkle Tree changes to "true".
 
 <a href="https://self-hosted-platform.polygonid.me/#get-/v1/-identifier-/claims/revocation/status/-nonce-" target="_blank">API Reference</a>
-
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.postman.com/dark-star-200015/workspace/public/request/23322631-474c51a2-b026-4750-9bc7-488bc52c02ce)

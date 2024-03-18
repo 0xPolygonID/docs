@@ -28,8 +28,6 @@ module.exports = {
       },
     },
   },
-
-  onBrokenLinks: "log",
   themeConfig: {
     announcementBar: {
       id: "learn_more",

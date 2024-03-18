@@ -16,7 +16,7 @@ keywords:
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <div align="center">
-<img src={useBaseUrl('/img/logo.svg')} align="center" width="128px"/>
+<img src={useBaseUrl("img/logo.svg")} align="center" width="128px"/>
 <br /><br />
 </div>
 

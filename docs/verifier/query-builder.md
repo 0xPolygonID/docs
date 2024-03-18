@@ -45,7 +45,7 @@ To learn more about how to use the Query Builder effectively, watch the detailed
 Here's a glimpse of the main user interface of the Query Builder:
 
 <div align="center">
-<img src={useBaseUrl("/img/query-builder.png")} align="center" width="600"/>
+<img src={useBaseUrl("img/query-builder.png")} align="center" width="600"/>
 </div>
 <br/>
 
@@ -56,7 +56,7 @@ Here's a glimpse of the main user interface of the Query Builder:
 To create a query, it is essential to reference the correct schema, specifically its JSON-LD Context's URL. Users have two options: they can either enter a URL pointing to a JSON-LD Context or utilize one from the [Schema Explorer](https://schema-builder.polygonid.me). By starting to type the name (or any other keyword) of the desired schema in the Schema Explorer, a list of available schemas will appear, allowing the user to select the appropriate one.
 
 <div align="center">
-<img src={useBaseUrl("/img/query-builder-url.png")} align="center" width="600"/>
+<img src={useBaseUrl("img/query-builder-url.png")} align="center" width="600"/>
 </div>
 <br/>
 
@@ -71,7 +71,7 @@ Upon specifying the URL and type, the interface displays a hierarchical tree str
 Credentials consist of various primitive attributes such as strings, integers, booleans, etc. These primitive attributes may be structured in a nested format using object attributes (represented as folders in the tree). Since queries are only executable against primitive attributes, object attributes (folders), are not selectable within the tree.
 
 <div align="center">
-<img src={useBaseUrl("/img/query-builder-attribute-field.png")} align="center" width="600"/>
+<img src={useBaseUrl("img/query-builder-attribute-field.png")} align="center" width="600"/>
 </div>
 <br/>
 
@@ -197,7 +197,7 @@ For a detailed walkthrough, refer to the provided video illustrating the complet
 
 <div align="center">
 <video controls align="center" width="100%" height="auto">
-  <source src={useBaseUrl("/img/query-builder-off-chain-verification.mp4")} />
+  <source src={useBaseUrl("img/query-builder-off-chain-verification.mp4")} />
 </video>
 </div>
 <br/>
@@ -219,7 +219,7 @@ For a comprehensive guide, refer to the video detailing the process of creating 
 
 <div align="center">
 <video controls align="center" width="100%" height="auto">
-  <source src={useBaseUrl("/img/query-builder-on-chain-verification.mp4")} />
+  <source src={useBaseUrl("img/query-builder-on-chain-verification.mp4")} />
 </video>
 </div>
 <br/>

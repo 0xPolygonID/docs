@@ -31,7 +31,7 @@ Download the Polygon ID Wallet App and create an Identity.
 1. On the Demo Verifier website click on the drop-down menu and then **Custom**
 
    <div align="center">
-   <img src={useBaseUrl("/img/verifier-demo-1.png")} align="center" width="500"/>
+   <img src={useBaseUrl("img/verifier-demo-1.png")} align="center" width="500"/>
    </div>
    <br></br>
 
@@ -45,7 +45,7 @@ Download the Polygon ID Wallet App and create an Identity.
    This query is based on the `ProofOfDaoLongevity` credential type described by this [JSON-LD Context](https://github.com/0xPolygonID/tutorial-examples/blob/main/credential-schema/proof-of-dao-longevity.jsonld).
 
    <div align="center">
-   <img src={useBaseUrl("/img/verifier-demo-2.png")} align="center" width="500"/>
+   <img src={useBaseUrl("img/verifier-demo-2.png")} align="center" width="500"/>
    </div>
    <br></br>
 
@@ -54,7 +54,7 @@ Download the Polygon ID Wallet App and create an Identity.
 3. The query is then converted into a QR code that can be scanned by the user.
 
    <div align="center">
-   <img src={useBaseUrl("/img/verifier-demo-3.png")} align="center" width="250"/>
+   <img src={useBaseUrl("img/verifier-demo-3.png")} align="center" width="250"/>
    </div>
    <br></br>
 

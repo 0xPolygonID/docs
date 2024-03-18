@@ -143,7 +143,7 @@ Connect to the issuer:
 This will instantly trigger a notification on the mobile which will look like this:
 
 <div align="center">
-    <img width="300" src={useBaseUrl("/img/quick-start-demo/quick-notification.jpeg")}></img>
+    <img width="300" src={useBaseUrl("img/quick-start-demo/quick-notification.jpeg")}></img>
 </div>
 
 Accept the credential:

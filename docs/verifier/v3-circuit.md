@@ -92,9 +92,9 @@ In general it's an improved version of V2 circuits with several important key fe
     }
 ```
 
-Beta Validator is also deployed :<ins> [Repository](https://github.com/0xPolygonID/contracts)</ins>
+Beta Validator is also deployed: [Repository](https://github.com/0xPolygonID/contracts)
 
-5. Possibility to use linked proofs. This means that verifier can be sure that user used the same credential to proof different queries. This is achievable by using `groupId` property in the proof request.
+1. Possibility to use linked proofs. This means that verifier can be sure that user used the same credential to proof different queries. This is achievable by using `groupId` property in the proof request.
 
 ```json
 ...

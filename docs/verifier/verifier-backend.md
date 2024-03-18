@@ -12,7 +12,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The [Verifier Backend](https://github.com/0xPolygonID/verifier-backend) project is a JSON API that enables [<ins>Off Chain Verifications</ins>](verification-library/verification-api-guide.md) of zero knowledge proofs for verifiable credentials. Within the trust triangle, it serves as the verifier.
+The [Verifier Backend](https://github.com/0xPolygonID/verifier-backend) project is a JSON API that enables [Off Chain Verifications](verification-library/verification-api-guide.md) of zero knowledge proofs for verifiable credentials. Within the trust triangle, it serves as the verifier.
 
 It is built using libraries developed by the iden3 protocol team. Below, we'll explain how to install it using Docker and how it can be used to perform zero knowledge proofs.
 
@@ -56,7 +56,7 @@ If everything went well, you will be able to see the API documentation at: `http
 The following image shows the simplest flow to generate a QR code to request a ZK Proof as a verifier:
 
 <div align="center">
-<img src={useBaseUrl("/img/verifier-backend-f1.svg")} align="center" width="600"/>
+<img src={useBaseUrl("img/verifier-backend-f1.svg")} align="center" width="600"/>
 </div>
 
 
@@ -132,7 +132,7 @@ Flow 2 allows the generation of QR codes that are sometimes more comfortable to 
 
 
 <div align="center">
-<img src={useBaseUrl("/img/verifier-backend-f2.svg")} align="center" width="600"/>
+<img src={useBaseUrl("img/verifier-backend-f2.svg")} align="center" width="600"/>
 </div>
 
 
