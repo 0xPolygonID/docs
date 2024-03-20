@@ -128,13 +128,15 @@ Providing a nullifier session ID ensures the query's integrity and uniqueness, c
 
 ### Query Type
 
-The protocol allows selection between two query types:
+The protocol allows selection between three query types:
 
 1. **Condition:** This type allows the prover to demonstrate that a specific condition is met without revealing the underlying data. It maintains data privacy by cryptographically verifying the condition. An example is proving legal age for entry into a venue without disclosing the actual age.
 
 2. **Selective disclosure:** Use this when you need the prover to reveal specific data stored in their credential. This option discloses the actual value of an attribute to the verifier. For instance, instead of just requesting proof proving legal age, it would disclose the prover's actual age to the verifier.
 
-Choose "Condition" for privacy-preserving verification, or "Selective disclosure" for cases where revealing specific information is necessary.
+3. **Credential issued:** Use this when you need the prove that credential with a specific type has been issued, but not to reveal any information.
+
+Choose "Condition" for privacy-preserving verification, "Selective disclosure" for cases where revealing specific information is necessary, "Credential issued" when you need to ensure the fact of credential issuance.
 
 ### Operator
 
@@ -146,6 +148,11 @@ In conditional queries, the "Operator" input defines the logical operation to be
 - **Greater Than:** Evaluates if the value is greater than the specified value.
 - **Matches one of the values:** Determines if the value is within a given set of values.
 - **Matches none of the values:** Checks if the value is not within a specified set.
+- **Exists:** Checks if the specific field is included or not in the Verifiable Credential.
+- **Between:** Checks if the value is in the specified range, including corner values.
+- **Non Between:** Checks if the value is not in the specified range, including corner values.
+- **Less Than or Equal:** Assesses that the value is less than the given value  or equal it
+- **Greater Than or Equal:** Assesses that the value is greater than the given value or equal to it.
 
 Choose the appropriate operator based on the condition you want to validate.
 
