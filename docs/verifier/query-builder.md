@@ -142,17 +142,17 @@ Choose "Condition" for privacy-preserving verification, "Selective disclosure" f
 
 In conditional queries, the "Operator" input defines the logical operation to be applied. The supported operators are:
 
-- **Equal:** Checks if the value is equal to the specified value.
-- **Not Equal:** Verifies if the value is not equal to the specified value.
-- **Less Than:** Assesses that the value is less than the given value.
-- **Greater Than:** Evaluates if the value is greater than the specified value.
+- **Is equal to:** Checks if the value is equal to the specified value.
+- **Is not equal to:** Verifies if the value is not equal to the specified value.
 - **Matches one of the values:** Determines if the value is within a given set of values.
 - **Matches none of the values:** Checks if the value is not within a specified set.
-- **Exists:** Checks if the specific field is included or not in the Verifiable Credential.
-- **Between:** Checks if the value is in the specified range, including corner values.
-- **Non Between:** Checks if the value is not in the specified range, including corner values.
-- **Less Than or Equal:** Assesses that the value is less than the given value  or equal it
-- **Greater Than or Equal:** Assesses that the value is greater than the given value or equal to it.
+- **Is less than:** Assesses that the value is less than the given value.
+- **Is greater than:** Evaluates if the value is greater than the specified value.
+- **Is less than or equal to:** Assesses that the value is less than the given value or equal to it.
+- **Is greater than or equal to:** Assesses that the value is greater than the given value or equal to it.
+- **Falls within the range:** Checks if the value is in the specified range, including corner values.
+- **Falls outside the range:** Checks if the value is not in the specified range, including corner values.
+- **Exists:** Checks if the specific field is included or not in the Verifiable Credential (for optional attributes).
 
 Choose the appropriate operator based on the condition you want to validate.
 

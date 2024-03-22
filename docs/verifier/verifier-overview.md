@@ -43,7 +43,7 @@ The process of verifying user information based on their credentials can happen 
 You can quickly try out the Verification experience by following the steps below:
 
 - Download the Polygon ID Wallet App and create an Identity.
-  > - For Android: <a href="https://play.google.com/store/apps/details?id=com.polygonid.wallet" target="_blank">Polygon ID on Google Play</a>
-  > - For iOS: <a href="https://apps.apple.com/us/app/polygon-id/id1629870183" target="_blank">Polygon ID on the App Store</a>
+  - For Android: <a href="https://play.google.com/store/apps/details?id=com.polygonid.wallet" target="_blank">Polygon ID on Google Play</a>
+  - For iOS: <a href="https://apps.apple.com/us/app/polygon-id/id1629870183" target="_blank">Polygon ID on the App Store</a>
 - Fetch a credential from <a href="https://user-ui:password-ui@issuer-ui.polygonid.me">the Issuer Node UI testing environment</a>.
 - Verify it on the [Demo Verifier](https://verifier-demo.polygonid.me/).
