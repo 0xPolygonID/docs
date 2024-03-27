@@ -23,7 +23,7 @@ The error you're experiencing is typically due to an incorrect configuration of 
 To resolve this issue, check your `.env-issuer` file for the `ISSUER_CREDENTIAL_STATUS_RHS_MODE` value. If it is set to `OffChain`, you must specify a valid Reverse Hash Service Endpoint in `ISSUER_CREDENTIAL_STATUS_RHS_URL`. For example, you could use our staging RHS: `https://rhs-staging.polygonid.me/`.
 
 If your `ISSUER_CREDENTIAL_STATUS_RHS_MODE` is configured for on-chain operation, ensure you have the correct smart contract information for your network, such as Mumbai:
-- `ISSUER_CREDENTIAL_STATUS_ONCHAIN_TREE_STORE_SUPPORTED_CONTRACT`=0x76EB7216F2400aC18C842D8C76739F3B8E619DB9
+- `ISSUER_CREDENTIAL_STATUS_ONCHAIN_TREE_STORE_SUPPORTED_CONTRACT`=0x16A1ae4c460C0a42f0a87e69c526c61599B28BC9
 - `ISSUER_CREDENTIAL_STATUS_RHS_CHAIN_ID`=8001
 
 Choosing `ISSUER_CREDENTIAL_STATUS_RHS_URL=None` indicates that the issuer node will handle revocation credential status resolution internally, and no further RHS setup is required.
