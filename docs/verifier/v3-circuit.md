@@ -18,9 +18,26 @@ We want to introduce new circuits - СredentialAtomicQueryV3 and CredentialAtomi
 :::warning
 
     Circuits are in the beta version. Trusted setup will be performed in the next release.
-    Current Circuit id is `СredentialAtomicQueryV3-beta.0`
+    Newest version is СredentialAtomicQueryV3-beta.1
+
+  <details><summary>Changelog from beta.0 to beta.1</summary>
+ 
+
+    1. ValueArrSize input is introduced, which fixes behaviour for IN / NIN operations. 
+    2. Exists / Noop / Less Than Or Equal / Greater Than or Equal /  Not between / Between operators support.
+    3. Query hash calculation algorithm changes.
+    4. Constraints and security optimizations.
+    
+  </details>
+
 
 :::
+
+More about new supported operators [here](./verification-library/zk-query-language.md#exists---operator-11).
+
+Link to latest sdk circuit wrappers: [js](https://github.com/0xPolygonID/js-sdk/pull/181) / [go](https://github.com/iden3/go-circuits/releases/tag/v2.1.0)
+
+
 
 In general it's an improved version of V2 circuits with several important key features:
 
@@ -31,7 +48,7 @@ In general it's an improved version of V2 circuits with several important key fe
 "scope": [
         {
           "id": 1,
-          "circuitId": "credentialAtomicQueryV3-beta.0",
+          "circuitId": "credentialAtomicQueryV3-beta.1",
           "query": {
             ...
             "proofType": "BJJSignature2021 | Iden3SparseMerkleTreeProof"
@@ -50,7 +67,7 @@ In general it's an improved version of V2 circuits with several important key fe
 "scope": [
         {
           "id": 1,
-          "circuitId": "credentialAtomicQueryV3-beta.0",
+          "circuitId": "credentialAtomicQueryV3-beta.1",
           "params": {
             "nullifierSessionId" : "123443290439234342342423423423423"
           },
@@ -84,7 +101,7 @@ Beta Validator is also deployed: [Repository](https://github.com/0xPolygonID/con
 "scope": [
          {
           "id": 1,
-          "circuitId": "credentialAtomicQueryV3-beta.0",
+          "circuitId": "credentialAtomicQueryV3-beta.1",
           "query": {
             "groupId": 1
             ...
@@ -125,7 +142,7 @@ Example of complex request with v3 circuit proof request:
     "scope": [
       {
         "id": 1,
-        "circuitId": "credentialAtomicQueryV3-beta.0",
+        "circuitId": "credentialAtomicQueryV3-beta.1",
         "params": {
           "nullifierSessionId": "123443290439234342342423423423423"
         },
@@ -144,7 +161,7 @@ Example of complex request with v3 circuit proof request:
       },
       {
         "id": 2,
-        "circuitId": "credentialAtomicQueryV3-beta.0",
+        "circuitId": "credentialAtomicQueryV3-beta.1",
         "query": {
           "allowedIssuers": ["*"],
           "groupId": 1,
