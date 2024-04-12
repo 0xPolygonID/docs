@@ -127,16 +127,6 @@ ISSUER_ETHEREUM_URL={Replace with a Polygon Amoy RPC}
 
 </TabItem>
 
-<TabItem value="Polygon Amoy">
-
-```bash
-ISSUER_ETHEREUM_CONTRACT_ADDRESS=0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124
-ISSUER_ETHEREUM_RESOLVER_PREFIX=polygon:amoy
-ISSUER_ETHEREUM_URL={Replace with a Polygon Amoy RPC}
-```
-
-</TabItem>
-
 <TabItem value="Polygon Main">
 
 ```bash
