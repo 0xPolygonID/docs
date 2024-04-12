@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 # Advanced Issuer Node configuration
 
-This guide will show you how to confgure your Issuer Node.
+This guide will show you how to configure your Issuer Node.
 
 ## Revocation Status
 
@@ -127,12 +127,12 @@ ISSUER_ETHEREUM_URL={Replace with a Polygon Amoy RPC}
 
 </TabItem>
 
-<TabItem value="Polygon Mumbai">
+<TabItem value="Polygon Amoy">
 
 ```bash
-ISSUER_ETHEREUM_CONTRACT_ADDRESS=0x134B1BE34911E39A8397ec6289782989729807a4
-ISSUER_ETHEREUM_RESOLVER_PREFIX=polygon:mumbai
-ISSUER_ETHEREUM_URL={Replace with a Polygon Mumbai RPC}
+ISSUER_ETHEREUM_CONTRACT_ADDRESS=0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124
+ISSUER_ETHEREUM_RESOLVER_PREFIX=polygon:amoy
+ISSUER_ETHEREUM_URL={Replace with a Polygon Amoy RPC}
 ```
 
 </TabItem>
@@ -222,7 +222,7 @@ The Core API provides the `/v1/identities` endpoint in order to create an identi
 The property _type_ can have two possible values:
 
 - `BJJ`: BJJ keys based identity.
-- `ETH`: Ethreum based identity.
+- `ETH`: Ethereum based identity.
 
 Create Identity Payload example:
 <Tabs>

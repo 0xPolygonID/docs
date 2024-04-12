@@ -16,7 +16,7 @@ How can I configure and use the Issuer Node on the Polygon mainnet?
 
 ## Answer
 
-The Issuer Node is designed to operate on EVM-compatible networks, supporting both testnets and mainnet environments. It comes pre-configured for use on the Polygon/Mumbai networks, with contracts readily available for those networks. For deployment on other blockchains, you will need to manually deploy the necessary contracts.
+The Issuer Node is designed to operate on EVM-compatible networks, supporting both testnets and mainnet environments. It comes pre-configured for use on the Polygon/Amoy networks, with contracts readily available for those networks. For deployment on other blockchains, you will need to manually deploy the necessary contracts.
 
 To configure the Issuer Node for mainnet operation, adjust the following environment variables within your `.env-issuer` file:
 

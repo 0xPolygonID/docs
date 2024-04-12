@@ -27,6 +27,9 @@ polygon:
   mumbai:
     contractAddress: 0x134B1BE34911E39A8397ec6289782989729807a4
     networkURL: https://polygon-mumbai.g.alchemy.com/v2/xa
+  mumbai:
+    contractAddress: 0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124
+    networkURL: https://polygon-mumbai.g.alchemy.com/v2/<your-project-secret>    
   main:
     contractAddress: 0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D
     networkURL: https://polygon-mainnet.g.alchemy.com/v2/X2

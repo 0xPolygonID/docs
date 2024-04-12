@@ -289,7 +289,7 @@ export const contentData = {
       {
         title: "How to get Test MATIC to test Polygon ID?",
         content:
-          "Go to https://faucet.polygon.technology/, select 'Mumbai', add your wallet address, and press 'Submit'.",
+          "Go to https://faucet.polygon.technology/, select 'AMOY', add your wallet address, and press 'Submit'.",
       },
     ],
   },

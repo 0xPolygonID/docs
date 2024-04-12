@@ -61,9 +61,9 @@ There are two main components in this application:
 
    Deploy Identity Example contract:
    ```bash
-   export MUMBAI_PRIVATE_KEY={private_key} && \
-   export MUMBAI_RPC_URL={rpc_url} && \
-   npx hardhat run scripts/deployIdentityExample.ts --network mumbai
+   export AMOY_PRIVATE_KEY={private_key} && \
+   export AMOY_RPC_URL={rpc_url} && \
+   npx hardhat run scripts/deployIdentityExample.ts --network amoy
    ```
    
    
@@ -101,6 +101,17 @@ You can find more information on how to deploy a smart contract using Hardhat [<
    ISSUERS_PRIVATE_KEY="<ISSUER_DID>=<PRIVATE_KEY_OF_THE_CONTRACT_DEPLOYER>"
    EXTERNAL_HOST="<NGROK_URL>"
    SUPPORTED_STATE_CONTRACTS="80001=0x134B1BE34911E39A8397ec6289782989729807a4"
+   ```
+
+</TabItem>
+
+<TabItem value="Polygon Amoy">
+
+   ```bash
+   SUPPORTED_RPC="80002=<RPC_POLYGON_AMOY>"
+   ISSUERS_PRIVATE_KEY="<ISSUER_DID>=<PRIVATE_KEY_OF_THE_CONTRACT_DEPLOYER>"
+   EXTERNAL_HOST="<NGROK_URL>"
+   SUPPORTED_STATE_CONTRACTS="80002=0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124"
    ```
 
 </TabItem>
