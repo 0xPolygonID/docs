@@ -272,6 +272,7 @@ const mainStateResolver = new resolver.EthStateResolver(
 
 const resolvers = {
 	['polygon:mumbai']: ethStateResolver,
+	['polygon:amoy']: amoyStateResolver,
 	['polygon:main']: mainStateResolver,
 };
 ```
@@ -299,16 +300,16 @@ func Callback(w http.ResponseWriter, r *http.Request) {
 	// get JWZ token params from the post request
 	tokenBytes, _ := io.ReadAll(r.Body)
 
-	// Add Polygon Mumbai RPC node endpoint - needed to read on-chain state
-	ethURL := "https://polygon-testnet-rpc.allthatnode.com:8545"
+	// Add Polygon AMOY RPC node endpoint - needed to read on-chain state
+	ethURL := "https://polygon-amoy.infura.io/v3/<API-KEY>"
 
 	// Add IPFS url - needed to load schemas from IPFS
 	ipfsURL := "https://ipfs.io"
 
 	// Add identity state contract address
-	contractAddress := "0x134B1BE34911E39A8397ec6289782989729807a4"
+	contractAddress := "0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124"
 
-	resolverPrefix := "polygon:mumbai"
+	resolverPrefix := "polygon:amoy"
 
 	// Locate the directory that contains circuit's verification keys
 	keyDIR := "../keys"
@@ -372,14 +373,14 @@ async function Callback(req, res) {
   const raw = await getRawBody(req);
   const tokenStr = raw.toString().trim();
 
-  const ethURL = "<MUMBAI_RPC_URL>";
-  const contractAddress = "0x134B1BE34911E39A8397ec6289782989729807a4";
+  const ethURL = "<AMOY_RPC_URL>";
+  const contractAddress = "0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124";
   const keyDIR = "../keys";
 
   const ethStateResolver = new resolver.EthStateResolver(ethURL, contractAddress);
 
   const resolvers = {
-    ["polygon:mumbai"]: ethStateResolver,
+    ["polygon:amoy"]: ethStateResolver,
   };
 
   // fetch authRequest from sessionID
@@ -403,7 +404,7 @@ async function Callback(req, res) {
   return res
     .status(200)
     .set("Content-Type", "application/json")
-    .send("user with ID: " + authResponse.from + "Succesfully authenticated");
+    .send("user with ID: " + authResponse.from + "Successfully authenticated");
 }
 ```
 
