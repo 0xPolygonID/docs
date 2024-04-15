@@ -86,21 +86,25 @@ module.exports = {
           label: "Build",
           items: [
             {
-              href: "/docs/issuer/issuer-node-ui",
-              label: "Issuer API+UI",
+              href: "/docs/issuer/issuer-overview/",
+              label: "Issuer",
             },
             {
               href: "/docs/verifier/verifier-overview/",
-              label: "Verifier SDK",
+              label: "Verifier",
             },
             {
               href: "/docs/wallet/wallet-overview/",
-              label: "Wallet SDK",
+              label: "Wallet",
             },
             {
               href: "/docs/js-sdk/js-sdk-overview/",
               label: "JS-SDK",
             },
+            {
+              href: "/docs/smart-contracts/",
+              label: "Smart Contracts",
+            }
           ],
         },
         {
