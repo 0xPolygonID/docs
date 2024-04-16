@@ -12,13 +12,18 @@ keywords:
 
 <a href="https://github.com/0xPolygonID/contracts" target="_blank">Polygon ID Smart Contracts - Github</a>
 
+:::caution
+*Polygon Mumbai testnet has been depricated 
+:::
+
 ## State Contract addresses
 
 For situations where one needs to publish data on the blockchain, such as creating an MTP-type credential, generating on-chain proofs and making credential revocations effective, it is important to have the following Smart Contracts addresses:
 
 - Testnet(amoy) -> `0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124`
-- Testnet(mumbai) -> `0x134B1BE34911E39A8397ec6289782989729807a4`
 - Mainnet -> `0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D`
+- Testnet(mumbai)***** -> `0x134B1BE34911E39A8397ec6289782989729807a4`
+
 
 :::info
 Check a contract codebase and algorithms of work <ins>[docs](https://docs.iden3.io/contracts/state/)</ins>, <ins>[repository](https://github.com/iden3/contracts/tree/master/contracts/state)</ins>.
@@ -30,7 +35,7 @@ Check a contract codebase and algorithms of work <ins>[docs](https://docs.iden3.
 |:--------------------------:|:------------------------------------------:|
 | **Polygon Mainnet**        | 0xbEeB6bB53504E8C872023451fd0D23BeF01d320B |
 | **Polygon Amoy testnet**   | 0x3d3763eC0a50CE1AdF83d0b5D99FBE0e3fEB43fb |
-| Polygon Mumbai testnet     | 0x16A1ae4c460C0a42f0a87e69c526c61599B28BC9 |
+| Polygon Mumbai testnet*     | 0x16A1ae4c460C0a42f0a87e69c526c61599B28BC9 |
 
 
 ## Validator addresses
@@ -57,7 +62,7 @@ Current addresses on **Polygon Amoy** testnet. (V2.0.1 V2 validators)
 
 
 
-Current addresses on **Polygon Mumbai** testnet. (V2.0.1 V2 validators):
+Current addresses on **Polygon Mumbai** testnet*****. (V2.0.1 V2 validators):
 
 |                   |                             Sig                             |                             MTP                              |
 |:-----------------:|:-----------------------------------------------------------:|:------------------------------------------------------------:|
@@ -77,7 +82,7 @@ Current addresses for V3 beta circuit on **Polygon Amoy** testnet. (2.0.1-beta.1
 
 
 
-Current addresses for V3 beta circuit on **Polygon Mumbai** testnet. (2.0.1-beta.1 V3 validator):
+Current addresses for V3 beta circuit on **Polygon Mumbai** testnet*****. (2.0.1-beta.1 V3 validator):
 
 |                      |                                          V3 validator 2.0.1-beta.1                                          |   
 |:--------------------:|:-----------------------------------------------------------------------------------------------------------:|
@@ -114,7 +119,7 @@ Performs the same set of verifications of the CredentialAtomicQuerySigValidator 
 
 ## CredentialAtomicQueryV3 Validator
 
-Also now there deployed v3 validator on mumbai network.
+Also now there deployed v3 validator on mumbai network*****.
 It is base on CredentialAtomicQueryV3 circuit.
 
 Features of v3 validator:
@@ -123,7 +128,7 @@ Features of v3 validator:
 - ethereum controlled identities support
 - selective disclosure support
 
-Current addresses for V3 beta circuit on Polygon Mumbai testnet. (2.0.0-beta.1 V3 validator)
+Current addresses for V3 beta circuit on Polygon Mumbai testnet*. (2.0.0-beta.1 V3 validator)
 
 |                      |                                          V3 validator 2.0.0-beta.1                                          |   
 |:--------------------:|:-----------------------------------------------------------------------------------------------------------:|
