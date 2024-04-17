@@ -91,7 +91,11 @@ Current addresses for V3 beta circuit on **Polygon Mumbai** testnet*****. (2.0.1
 | **ERC20 SD example** |                         0x36eB0E70a456c310D8d8d15ae01F6D5A7C15309A (request id = 3)                         |
 |     **ERC20 example**      | 0x36eB0E70a456c310D8d8d15ae01F6D5A7C15309A (request id = 100 - 1100 merklized  / 10000 - 65000 nonmerklized |
 
+:::note
+More about <ins>[v3 circuit](./verifier/v3-circuit)</ins>.
 
+Check the examples of deployment for <ins>[ v3 validator](https://github.com/0xPolygonID/contracts/blob/main/scripts/deployV3Validator.ts)</ins>
+:::
 
 
 ## CredentialAtomicQuerySigValidator
@@ -117,29 +121,5 @@ Performs the same set of verifications of the CredentialAtomicQuerySigValidator 
 
 > Further protocol related contracts can be found at <a href="https://docs.iden3.io/contracts/state" target="_blank">Iden3 - Smart Contracts</a>
 
-## CredentialAtomicQueryV3 Validator
-
-Also now there deployed v3 validator on mumbai network*****.
-It is base on CredentialAtomicQueryV3 circuit.
-
-Features of v3 validator:
-
-- both mtp and sig proof verification
-- ethereum controlled identities support
-- selective disclosure support
-
-Current addresses for V3 beta circuit on Polygon Mumbai testnet*. (2.0.0-beta.1 V3 validator)
-
-|                      |                                          V3 validator 2.0.0-beta.1                                          |   
-|:--------------------:|:-----------------------------------------------------------------------------------------------------------:|
-|     **Verifier**     |                                 0xDE27fc243Bf4eDAaB72E1008c9828C480582f672                                  | 
-|    **Validators**    |                                 0x3412AB64acFf5d94Da4914F176A43aCbDdC7Fc4a                                  |     
-| **ERC20 SD example** |                         0x36eB0E70a456c310D8d8d15ae01F6D5A7C15309A (request id = 3)                         |
-|     **ERC20  **      | 0x36eB0E70a456c310D8d8d15ae01F6D5A7C15309A (request id = 100 - 1100 merklized  / 10000 - 65000 nonmerklized |
 
 
-:::note
-More about <ins>[v3 circuit](./verifier/v3-circuit)</ins>.
-
-Check the examples of deployment for <ins>[ v3 validator](https://github.com/0xPolygonID/contracts/blob/main/scripts/deployV3Validator.ts)</ins>
-:::
