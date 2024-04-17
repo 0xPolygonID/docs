@@ -94,16 +94,6 @@ You can find more information on how to deploy a smart contract using Hardhat [<
 1. Fill the .env config file with the proper variables:
 
 <Tabs>
-<TabItem value="Polygon Mumbai">
-
-   ```bash
-   SUPPORTED_RPC="80001=<RPC_POLYGON_MUMBAI>"
-   ISSUERS_PRIVATE_KEY="<ISSUER_DID>=<PRIVATE_KEY_OF_THE_CONTRACT_DEPLOYER>"
-   EXTERNAL_HOST="<NGROK_URL>"
-   SUPPORTED_STATE_CONTRACTS="80001=0x134B1BE34911E39A8397ec6289782989729807a4"
-   ```
-
-</TabItem>
 
 <TabItem value="Polygon Amoy">
 
@@ -173,13 +163,19 @@ Don't forget to download and install the Polygon ID wallet app before you go the
 6. The account balance will be shown in gwei together with some other information about the claim.
 
 <div align="center">
-    <img width="700" src="/img/onchain-issuer-5.png"></img>
+    <img width="600" src="/img/onchain-issuer-5.png"></img>
 </div>
 
-7. Clicking on **Get Claim** will finally lead to the QR Code used to fetch the credential with MTP proof. Here we are making a request to the on-chain issuer node. This node then saves this claim in a contract address. Scan it with the Polygon ID wallet and the credential should be added to the mobile app.
+7. Clicking on **Get Claim** will finally lead to the QR Code used to fetch the credential with MTP proof. Here we are making a request to the on-chain issuer node. This node then saves this claim in a contract address. Scan it with the Polygon ID wallet.
 
 <div align="center">
     <img width="500" src="/img/onchain-issuer-6.png"></img>
+</div>
+
+8. Clicking on **Accept** should add the credential to the mobile app.
+
+<div align="center">
+    <img width="300" src="/img/onchain-issuer-11.jpg"></img>
 </div>
 
 Here is the credential on the mobile app:
@@ -194,32 +190,35 @@ You can use already deployed demo: https://onchain-merklized-issuer-demo.polygon
 
 ## How to verify the balance claim
 
-1. Go to the [Verifier website](https://verifier-demo.polygonid.me/).
-1. Choose `custom` from the dropdown menu.
+1. Visit the [Query builder website](https://schema-builder.polygonid.me/query-builder/).
 
-<div align="center">
-    <img width="400" src="/img/onchain-issuer-8.png"></img>
-</div>
+2. You now need to define the query. 
 
-1. Fill up the form.
-
-   - **Circuit Id**: Credential Atomic Query MTP;
    - **URL**: https://gist.githubusercontent.com/ilya-korotya/b06baa37453ed9aedfcb79100b84d51f/raw/balance-v1.jsonld
-   - **Type**: BalanceCredential
-   - **Field**: balance
-   - **Operator**: all the operators work for the claim. [More information here](https://0xpolygonid.github.io/tutorials/verifier/verification-library/zk-query-language/)
-   - **Value**: set the value that you want to verify.
+   - **Schema type**: BalanceCredential
+   - **Attribute field**: balance
 
    Here is an example:
 
    <div align="center">
-       <img width="600" src="/img/onchain-issuer-9.png"></img>
+       <img width="600" src="/img/onchain-issuer-8.png"></img>
+       <img width="600" src="/img/onchain-issuer-9.png"></img> 
    </div>
 
-1. Press submit.
-
-1. Use the mobile application to scan the QR code and complete the verification process. The verifier will check the revocation status and additional information and the proof will be sent to the verifier. The Verifier website will present then the proof information.
+3. Click **Create Query**. Now select the Network as Polygon Amoy (testnet) and click **Test query** which should result with a QR code. Scan and follow the instructions on the mobile app.
 
 <div align="center">
-    <img width="600" src="/img/onchain-issuer-10.png"></img>
+       <img width="300" src="/img/onchain-issuer-12.jpg"></img>
+   </div>
+
+
+4. Click on Approve. After which, the process of generating the proof is starts:
+
+<div align="center">
+    <img width="300" src="/img/onchain-issuer-13.jpg"></img>
+</div>
+
+5.Finally, the proof is generated. The verifier will check the revocation status and some additional information. The proof is then sent and validated by the verifier. You will receive the following response on the Query builder website
+<div align="center">
+    <img width="600" src="/img/onchain-issuer-14.png"></img>
 </div>

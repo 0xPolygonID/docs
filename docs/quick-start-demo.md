@@ -189,13 +189,13 @@ Here are the steps to verify the credential:
     <img width="300" src={useBaseUrl("img/quick-start-demo/verifier-request.jpg")}></img>
 </div>
 
-5. Click on Approve. After which, the process of generating the proof is started:
+5. Click on Approve. After which, the process of generating the proof starts:
 
 <div align="center">
     <img width="300" src={useBaseUrl("img/quick-start-demo/verifier-proof.jpg")}></img>
 </div>
 
-6. And finally, the proof is generated which then will be validated by the Verifier. you will receive the following response on the Query builder website:
+6. And finally, the proof is generated. The verifier will check the revocation status and some additional information. The proof is then sent and validated by the verifier. You will receive the following response on the Query builder website:
 <div align="center">
     <img width="600" src={useBaseUrl("img/quick-start-demo/verifier-validation.png")}></img>
 </div>

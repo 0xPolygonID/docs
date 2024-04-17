@@ -18,6 +18,10 @@ import TabItem from '@theme/TabItem';
 
 This guide will show you how to configure your Issuer Node.
 
+:::caution
+*Polygon Mumbai testnet has been depricated 
+:::
+
 ## Revocation Status
 
 The revocation status is a core part of the credential, as it is the verifier's way of checking whether or not a credential has been revoked by the issuer. The Issuer Node offers three different ways to check the revocation status of a credential:
@@ -85,20 +89,21 @@ ISSUER_CREDENTIAL_STATUS_RHS_CHAIN_ID=80002
 
 </TabItem>
 
-<TabItem value="Polygon Mumbai">
-
-```bash
-ISSUER_CREDENTIAL_STATUS_ONCHAIN_TREE_STORE_SUPPORTED_CONTRACT=0x16A1ae4c460C0a42f0a87e69c526c61599B28BC9
-ISSUER_CREDENTIAL_STATUS_RHS_CHAIN_ID=80001
-```
-
-</TabItem>
 
 <TabItem value="Polygon Main">
 
 ```bash
 ISSUER_CREDENTIAL_STATUS_ONCHAIN_TREE_STORE_SUPPORTED_CONTRACT=0xbEeB6bB53504E8C872023451fd0D23BeF01d320B
 ISSUER_CREDENTIAL_STATUS_RHS_CHAIN_ID=137
+```
+
+</TabItem>
+
+<TabItem value="Polygon Mumbai*">
+
+```bash
+ISSUER_CREDENTIAL_STATUS_ONCHAIN_TREE_STORE_SUPPORTED_CONTRACT=0x16A1ae4c460C0a42f0a87e69c526c61599B28BC9
+ISSUER_CREDENTIAL_STATUS_RHS_CHAIN_ID=80001
 ```
 
 </TabItem>
@@ -168,21 +173,22 @@ ISSUER_API_IDENTITY_METHOD={polygonid | custom method}
 
 </TabItem>
 
-<TabItem value="Polygon Mumbai">
-
-```bash
-ISSUER_API_IDENTITY_BLOCKCHAIN=polygon
-ISSUER_API_IDENTITY_NETWORK=mumbai
-ISSUER_API_IDENTITY_METHOD={polygonid | custom method}
-```
-
-</TabItem>
 
 <TabItem value="Polygon Main">
 
 ```bash
 ISSUER_API_IDENTITY_BLOCKCHAIN=polygon
 ISSUER_API_IDENTITY_NETWORK=main
+ISSUER_API_IDENTITY_METHOD={polygonid | custom method}
+```
+
+</TabItem>
+
+<TabItem value="Polygon Mumbai*">
+
+```bash
+ISSUER_API_IDENTITY_BLOCKCHAIN=polygon
+ISSUER_API_IDENTITY_NETWORK=mumbai
 ISSUER_API_IDENTITY_METHOD={polygonid | custom method}
 ```
 
@@ -231,20 +237,6 @@ Create Identity Payload example:
 
 </TabItem>
 
-<TabItem value="Polygon Mumbai">
-
-```json
-{
-  "didMetadata": {
-    "method": "polygonid",
-    "blockchain": "polygon",
-    "network": "mumbai",
-    "type": "BJJ"
-  }
-}
-```
-
-</TabItem>
 
 <TabItem value="Polygon Main">
 
@@ -254,6 +246,22 @@ Create Identity Payload example:
     "method": "polygonid",
     "blockchain": "polygon",
     "network": "main",
+    "type": "BJJ"
+  }
+}
+```
+
+</TabItem>
+
+
+<TabItem value="Polygon Mumbai*">
+
+```json
+{
+  "didMetadata": {
+    "method": "polygonid",
+    "blockchain": "polygon",
+    "network": "mumbai",
     "type": "BJJ"
   }
 }
