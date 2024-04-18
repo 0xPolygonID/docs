@@ -13,7 +13,7 @@ keywords:
 <a href="https://github.com/0xPolygonID/contracts" target="_blank">Polygon ID Smart Contracts - Github</a>
 
 :::caution
-*Polygon Mumbai testnet has been depricated 
+*Polygon Mumbai testnet has been deprecated 
 :::
 
 ## State Contract addresses

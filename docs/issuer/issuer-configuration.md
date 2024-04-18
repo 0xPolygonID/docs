@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 This guide will show you how to configure your Issuer Node.
 
 :::caution
-*Polygon Mumbai testnet has been depricated 
+*Polygon Mumbai testnet has been deprecated 
 :::
 
 ## Revocation Status
