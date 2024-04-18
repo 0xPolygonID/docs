@@ -23,7 +23,7 @@ To install the issuer node through the [Google Cloud Marketplace](https://consol
 
 :::note
 
-In the following examples, you will see a checkbox labeled "Issuer Network Main Net". If this checkbox is selected, the issuer node will be configured for the **Polygon Main network**, and in the Ethereum URL field, you should enter the RPC URL for that network. If you do not select this checkbox, the issuer node will be deployed on the Mumbai network, and the Ethereum URL field should contain the RPC URL for the **Polygon Mumbai network**.
+In the following examples, you will see a checkbox labeled "Issuer Network Main Net". If this checkbox is selected, the issuer node will be configured for the **Polygon Main network**, and in the Ethereum URL field, you should enter the RPC URL for that network. If you do not select this checkbox, the issuer node will be deployed on the Amoy network, and the Ethereum URL field should contain the RPC URL for the **Polygon Amoy network**.
 
 :::
 
