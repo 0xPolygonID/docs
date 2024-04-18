@@ -184,7 +184,7 @@ mtpProofRequest.Query = map[string]interface{}{
 			"$lt": 20000101,
 		},
 	},
-	"context": "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v4.json-ld",
+	"context": "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v3.json-ld",
 	"type":    "KYCAgeCredential",
 }
 request.Body.Scope = append(request.Body.Scope, mtpProofRequest)
@@ -231,7 +231,7 @@ async function GetAuthRequest(req, res) {
       allowedIssuers: ["*"],
       type: "KYCAgeCredential",
       context:
-        "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v4.json-ld",
+        "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v3.json-ld",
       credentialSubject: {
         birthday: {
           $lt: 20000101,
