@@ -103,8 +103,8 @@ Corresponding QR Code
     "transaction_data": {
       "contract address": "<add your contract address here>", // replace with your contract address
       "method_id": "b68967e2",
-      "chain_id": 80001,
-      "network": "polygon-mumbai"
+      "chain_id": 80002,
+      "network": "polygon-amoy"
     },
     "scope": [
       {
@@ -178,8 +178,8 @@ Corresponding QR Code
     "transaction_data": {
       "contract address": "<add your contract address here>",
       "method_id": "b68967e2",
-      "chain_id": 80001,
-      "network": "polygon-mumbai"
+      "chain_id": 80002,
+      "network": "polygon-amoy"
     },
     "scope": [
       {
@@ -253,8 +253,8 @@ Corresponding QR Code\*\*
     "transaction_data": {
       "contract address": "<add your contract address here>",
       "method_id": "b68967e2",
-      "chain_id": 80001,
-      "network": "polygon-mumbai"
+      "chain_id": 80002,
+      "network": "polygon-amoy"
     },
     "scope": [
       {
@@ -330,8 +330,8 @@ Corresponding QR Code
     "transaction_data": {
       "contract address": "<add your contract address here>",
       "method_id": "b68967e2",
-      "chain_id": 80001,
-      "network": "polygon-mumbai"
+      "chain_id": 80002,
+      "network": "polygon-amoy"
     },
     "scope": [
       {
@@ -404,8 +404,8 @@ Corresponding QR Code
     "transaction_data": {
       "contract address": "<add your contract address here>",
       "method_id": "b68967e2",
-      "chain_id": 80001,
-      "network": "polygon-mumbai"
+      "chain_id": 80002,
+      "network": "polygon-amoy"
     },
     "scope": [
       {
@@ -480,8 +480,8 @@ Corresponding QR Code
     "transaction_data": {
       "contract address": "<add your contract address here>",
       "method_id": "b68967e2",
-      "chain_id": 80001,
-      "network": "polygon-mumbai"
+      "chain_id": 80002,
+      "network": "polygon-amoy"
     },
     "scope": [
       {
@@ -563,8 +563,8 @@ Corresponding QR Code
     "transaction_data": {
       "contract address": "<add your contract address here>",
       "method_id": "b68967e2",
-      "chain_id": 80001,
-      "network": "polygon-mumbai"
+      "chain_id": 80002,
+      "network": "polygon-amoy"
     },
     "scope": [
       {
@@ -640,8 +640,8 @@ Corresponding QR Code
     "transaction_data": {
       "contract address": "<add your contract address here>",
       "method_id": "b68967e2",
-      "chain_id": 80001,
-      "network": "polygon-mumbai"
+      "chain_id": 80002,
+      "network": "polygon-amoy"
     },
     "scope": [
       {
@@ -717,8 +717,8 @@ Corresponding QR Code
     "transaction_data": {
       "contract address": "<add your contract address here>",
       "method_id": "b68967e2",
-      "chain_id": 80001,
-      "network": "polygon-mumbai"
+      "chain_id": 80002,
+      "network": "polygon-amoy"
     },
     "scope": [
       {
@@ -794,8 +794,8 @@ Corresponding QR Code
     "transaction_data": {
       "contract address": "<add your contract address here>",
       "method_id": "b68967e2",
-      "chain_id": 80001,
-      "network": "polygon-mumbai"
+      "chain_id": 80002,
+      "network": "polygon-amoy"
     },
     "scope": [
       {
@@ -872,8 +872,8 @@ Corresponding QR Code
     "transaction_data": {
       "contract address": "<add your contract address here>",
       "method_id": "b68967e2",
-      "chain_id": 80001,
-      "network": "polygon-mumbai"
+      "chain_id": 80002,
+      "network": "polygon-amoy"
     },
     "scope": [
       {
@@ -955,7 +955,7 @@ In the example below, the verifier requests two different proof queries in the s
   "typ": "application/iden3comm-plain-json",
   "type": "https://iden3-communication.io/authorization/1.0/request",
   "thid": "f8aee09d-f592-4fcc-8d2a-8938aa26676c",
-  "from": "did:polygonid:polygon:mumbai:2qFroxB5kwgCxgVrNGUM6EW3khJgCdHHnKTr3VnTcp",
+  "from": "did:polygonid:polygon:amoy:2qFroxB5kwgCxgVrNGUM6EW3khJgCdHHnKTr3VnTcp",
   "body": {
     "callbackUrl": "https://test.com/callback",
     "reason": "age verification",

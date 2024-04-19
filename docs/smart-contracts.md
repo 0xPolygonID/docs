@@ -12,13 +12,18 @@ keywords:
 
 <a href="https://github.com/0xPolygonID/contracts" target="_blank">Polygon ID Smart Contracts - Github</a>
 
+:::caution
+*Polygon Mumbai testnet has been deprecated 
+:::
+
 ## State Contract addresses
 
 For situations where one needs to publish data on the blockchain, such as creating an MTP-type credential, generating on-chain proofs and making credential revocations effective, it is important to have the following Smart Contracts addresses:
 
 - Testnet(amoy) -> `0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124`
-- Testnet(mumbai) -> `0x134B1BE34911E39A8397ec6289782989729807a4`
 - Mainnet -> `0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D`
+- Testnet(mumbai)***** -> `0x134B1BE34911E39A8397ec6289782989729807a4`
+
 
 :::info
 Check a contract codebase and algorithms of work <ins>[docs](https://docs.iden3.io/contracts/state/)</ins>, <ins>[repository](https://github.com/iden3/contracts/tree/master/contracts/state)</ins>.
@@ -30,7 +35,7 @@ Check a contract codebase and algorithms of work <ins>[docs](https://docs.iden3.
 |:--------------------------:|:------------------------------------------:|
 | **Polygon Mainnet**        | 0xbEeB6bB53504E8C872023451fd0D23BeF01d320B |
 | **Polygon Amoy testnet**   | 0x3d3763eC0a50CE1AdF83d0b5D99FBE0e3fEB43fb |
-| Polygon Mumbai testnet     | 0x16A1ae4c460C0a42f0a87e69c526c61599B28BC9 |
+| Polygon Mumbai testnet*     | 0x16A1ae4c460C0a42f0a87e69c526c61599B28BC9 |
 
 
 ## Validator addresses
@@ -57,7 +62,7 @@ Current addresses on **Polygon Amoy** testnet. (V2.0.1 V2 validators)
 
 
 
-Current addresses on **Polygon Mumbai** testnet. (V2.0.1 V2 validators):
+Current addresses on **Polygon Mumbai** testnet*****. (V2.0.1 V2 validators):
 
 |                   |                             Sig                             |                             MTP                              |
 |:-----------------:|:-----------------------------------------------------------:|:------------------------------------------------------------:|
@@ -77,7 +82,7 @@ Current addresses for V3 beta circuit on **Polygon Amoy** testnet. (2.0.1-beta.1
 
 
 
-Current addresses for V3 beta circuit on **Polygon Mumbai** testnet. (2.0.1-beta.1 V3 validator):
+Current addresses for V3 beta circuit on **Polygon Mumbai** testnet*****. (2.0.1-beta.1 V3 validator):
 
 |                      |                                          V3 validator 2.0.1-beta.1                                          |   
 |:--------------------:|:-----------------------------------------------------------------------------------------------------------:|
@@ -86,7 +91,11 @@ Current addresses for V3 beta circuit on **Polygon Mumbai** testnet. (2.0.1-beta
 | **ERC20 SD example** |                         0x36eB0E70a456c310D8d8d15ae01F6D5A7C15309A (request id = 3)                         |
 |     **ERC20 example**      | 0x36eB0E70a456c310D8d8d15ae01F6D5A7C15309A (request id = 100 - 1100 merklized  / 10000 - 65000 nonmerklized |
 
+:::note
+More about <ins>[v3 circuit](./verifier/v3-circuit)</ins>.
 
+Check the examples of deployment for <ins>[ v3 validator](https://github.com/0xPolygonID/contracts/blob/main/scripts/deployV3Validator.ts)</ins>
+:::
 
 
 ## CredentialAtomicQuerySigValidator
@@ -112,29 +121,5 @@ Performs the same set of verifications of the CredentialAtomicQuerySigValidator 
 
 > Further protocol related contracts can be found at <a href="https://docs.iden3.io/contracts/state" target="_blank">Iden3 - Smart Contracts</a>
 
-## CredentialAtomicQueryV3 Validator
-
-Also now there deployed v3 validator on mumbai network.
-It is base on CredentialAtomicQueryV3 circuit.
-
-Features of v3 validator:
-
-- both mtp and sig proof verification
-- ethereum controlled identities support
-- selective disclosure support
-
-Current addresses for V3 beta circuit on Polygon Mumbai testnet. (2.0.0-beta.1 V3 validator)
-
-|                      |                                          V3 validator 2.0.0-beta.1                                          |   
-|:--------------------:|:-----------------------------------------------------------------------------------------------------------:|
-|     **Verifier**     |                                 0xDE27fc243Bf4eDAaB72E1008c9828C480582f672                                  | 
-|    **Validators**    |                                 0x3412AB64acFf5d94Da4914F176A43aCbDdC7Fc4a                                  |     
-| **ERC20 SD example** |                         0x36eB0E70a456c310D8d8d15ae01F6D5A7C15309A (request id = 3)                         |
-|     **ERC20  **      | 0x36eB0E70a456c310D8d8d15ae01F6D5A7C15309A (request id = 100 - 1100 merklized  / 10000 - 65000 nonmerklized |
 
 
-:::note
-More about <ins>[v3 circuit](./verifier/v3-circuit)</ins>.
-
-Check the examples of deployment for <ins>[ v3 validator](https://github.com/0xPolygonID/contracts/blob/main/scripts/deployV3Validator.ts)</ins>
-:::
