@@ -29,7 +29,7 @@
 			}
 		},
 		{
-			"name": "tooling-dev-devs-app",
+			"name": "tooling-prod-devs-app",
 			"image": "654654630007.dkr.ecr.eu-west-1.amazonaws.com/devs-ecr",
 			"cpu": 0,
 			"portMappings": [
