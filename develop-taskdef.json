@@ -40,9 +40,7 @@
 				}
 			],
 			"essential": true,
-			"command": [
-				"./main"
-			],
+			"command": null,
 			"environment": [
 				{
 					"name": "ENVIRONMENT",
