@@ -14,7 +14,7 @@ env:
 
 jobs:
   deploy_prod:
-    name: Prod Deployment
+    name: AWS Deployment
     permissions:
       id-token: write
       contents: write
@@ -60,11 +60,15 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
+      - name: Print etask definition
+        run: |
+          echo "test: ${{ vars.ECS_TASK_DEFINITION }}"
+
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
-          task-definition: ${{ env.ECS_TASK_DEFINITION }}
+          task-definition: ${{ vars.ECS_TASK_DEFINITION }}
           container-name: ${{ env.CONTAINER_NAME }}
           image: ${{ steps.build-image.outputs.image }}
 
