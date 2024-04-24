@@ -10,6 +10,7 @@ env:
   AWS_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
   ECR_REPOSITORY: devs-ecr
   ECS_SERVICE: devs-ecs-service
+  ECS_CLUSTER: 
 
 jobs:
   deploy_prod:
@@ -72,5 +73,5 @@ jobs:
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
           service: ${{ env.ECS_SERVICE }}
-          cluster: ${{ env.ECS_CLUSTER }}
+          cluster: ${{ vars.ECS_CLUSTER }}
           wait-for-service-stability: true
