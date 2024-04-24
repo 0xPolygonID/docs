@@ -14,7 +14,7 @@ env:
 
 jobs:
   deploy_prod:
-    name: Prod Deployment
+    name: AWS Deployment
     permissions:
       id-token: write
       contents: write
@@ -64,7 +64,7 @@ jobs:
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
-          task-definition: ${{ env.ECS_TASK_DEFINITION }}
+          task-definition: ${{ vars.ECS_TASK_DEFINITION }}
           container-name: ${{ env.CONTAINER_NAME }}
           image: ${{ steps.build-image.outputs.image }}
 
