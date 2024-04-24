@@ -50,7 +50,7 @@ Current notification flow:
 ```json
 {
   "@context": ["https://www.w3.org/ns/did/v1"],
-  "id": "did:polygonid:polygon:mumbai:2qDj9EDytmvtQP1or3FxykXGEaqSA1ss479MYHDMJc"
+  "id": "did:polygonid:polygon:amoy:2qDj9EDytmvtQP1or3FxykXGEaqSA1ss479MYHDMJc"
 }
 ```
 
@@ -75,9 +75,9 @@ You can add information about keys / authentication info optionally. Follow [thi
        "https://www.w3.org/ns/did/v1",
        "https://schema.iden3.io/core/jsonld/auth.jsonld"
      ],
-     "id": "did:polygonid:polygon:mumbai:2qDj9EDytmvtQP1or3FxykXGEaqSA1ss479MYHDMJc",
+     "id": "did:polygonid:polygon:amoy:2qDj9EDytmvtQP1or3FxykXGEaqSA1ss479MYHDMJc",
      "service": {
-       "id": "did:polygonid:polygon:mumbai:2qDj9EDytmvtQP1or3FxykXGEaqSA1ss479MYHDMJc#push",
+       "id": "did:polygonid:polygon:amoy:2qDj9EDytmvtQP1or3FxykXGEaqSA1ss479MYHDMJc#push",
        "type": "push-notification",
        "serviceEndpoint": "https://push-staging.polygonid.com/api/v1",
        "metadata": {

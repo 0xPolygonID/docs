@@ -69,15 +69,15 @@ In this example, the message is the proof related to the query analysed previous
   "typ": "application/iden3comm-plain-json",
   "type": "https://iden3-communication.io/authorization/1.0/response",
   "thid": "7f38a193-0918-4a48-9fac-36adfdb8b542",
-  "from": "did:polygonid:polygon:mumbai:2qMY7xymaXWdFDt74xR1z8mYrzSYBC1VeSWw6ZhcSP",
-  "to": "did:polygonid:polygon:mumbai:2qDyy1kEo2AYcP3RT4XGea7BtxsY285szg6yP9SPrs",
+  "from": "did:polygonid:polygon:amoy:2qMY7xymaXWdFDt74xR1z8mYrzSYBC1VeSWw6ZhcSP",
+  "to": "did:polygonid:polygon:amoy:2qDyy1kEo2AYcP3RT4XGea7BtxsY285szg6yP9SPrs",
   "body": {
     "did_doc": {
       "@context": ["https://www.w3.org/ns/did/v1"],
-      "id": "did:polygonid:polygon:mumbai:2qMY7xymaXWdFDt74xR1z8mYrzSYBC1VeSWw6ZhcSP",
+      "id": "did:polygonid:polygon:amoy:2qMY7xymaXWdFDt74xR1z8mYrzSYBC1VeSWw6ZhcSP",
       "service": [
         {
-          "id": "did:polygonid:polygon:mumbai:2qMY7xymaXWdFDt74xR1z8mYrzSYBC1VeSWw6ZhcSP#push",
+          "id": "did:polygonid:polygon:amoy:2qMY7xymaXWdFDt74xR1z8mYrzSYBC1VeSWw6ZhcSP#push",
           "type": "push-notification",
           "serviceEndpoint": "https://push-staging.polygonid.com/api/v1",
           "metadata": {

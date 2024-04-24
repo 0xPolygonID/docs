@@ -73,24 +73,38 @@ The ERC20Verifier is an ERC20 standard contract with a few other features. The e
 The ERC20Verifier contract must define at least a single `TRANSFER_REQUEST_ID`. This is the Identifier of the request that the contract is making to the user.
 
 ```solidity
-pragma solidity ^0.8.16;
+pragma solidity 0.8.20;
 
-import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import {ERC20Upgradeable} from '@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol';
 import {PrimitiveTypeUtils} from "@iden3/contracts/lib/PrimitiveTypeUtils.sol";
 import {ICircuitValidator} from "@iden3/contracts/interfaces/ICircuitValidator.sol";
 import {ZKPVerifier} from "@iden3/contracts/verifiers/ZKPVerifier.sol";
 
-contract ERC20Verifier is ERC20, ZKPVerifier {
+contract ERC20Verifier is ERC20Upgradeable, ZKPVerifier {
     uint64 public constant TRANSFER_REQUEST_ID = 1;
 
-    // define the amount of token to be airdropped per user
-    uint256 public TOKEN_AMOUNT_FOR_AIRDROP_PER_ID = 5 * 10**uint(decimals());
+    mapping(uint256 => address) public idToAddress;
+    mapping(address => uint256) public addressToId;
 
-    constructor(
-        string memory name_,
-        string memory symbol_
-    ) ERC20(name_, symbol_) {}
+    uint256 public TOKEN_AMOUNT_FOR_AIRDROP_PER_ID;
 
+    modifier beforeTransfer(address to) {
+        MainStorage storage s = _getMainStorage();
+        require(
+            s.proofs[to][TRANSFER_REQUEST_ID] == true,
+            "only identities who provided proof are allowed to receive tokens"
+        );
+        _;
+    }
+
+    function initialize(
+        string memory name,
+        string memory symbol
+    ) public initializer {
+        super.__ERC20_init(name, symbol);
+        super.__ZKPVerifier_init(_msgSender());
+        TOKEN_AMOUNT_FOR_AIRDROP_PER_ID = 5 * 10 ** uint256(decimals());
+    }
 }
 ```
 
@@ -103,19 +117,31 @@ In this specific case, it must be checked that the sender of the proof matches t
 The airdrop logic must be added inside `_afterProofSubmit`. The contract must execute the airdrop once the proof is correctly verified.
 
 ```solidity {4, 5, 13, 14, 15, 16, 17, 28, 29, 30, 31, 32}
-contract ERC20Verifier is ERC20, ZKPVerifier {
+contract ERC20Verifier is ERC20Upgradeable, ZKPVerifier {
     uint64 public constant TRANSFER_REQUEST_ID = 1;
 
     mapping(uint256 => address) public idToAddress;
     mapping(address => uint256) public addressToId;
 
-    uint256 public TOKEN_AMOUNT_FOR_AIRDROP_PER_ID =
-        5 * 10 ** uint256(decimals());
+    uint256 public TOKEN_AMOUNT_FOR_AIRDROP_PER_ID;
 
-    constructor(
-        string memory name_,
-        string memory symbol_
-    ) ERC20(name_, symbol_) {}
+    modifier beforeTransfer(address to) {
+        MainStorage storage s = _getMainStorage();
+        require(
+            s.proofs[to][TRANSFER_REQUEST_ID] == true,
+            "only identities who provided proof are allowed to receive tokens"
+        );
+        _;
+    }
+
+    function initialize(
+        string memory name,
+        string memory symbol
+    ) public initializer {
+        super.__ERC20_init(name, symbol);
+        super.__ZKPVerifier_init(_msgSender());
+        TOKEN_AMOUNT_FOR_AIRDROP_PER_ID = 5 * 10 ** uint256(decimals());
+    }
 
     function _beforeProofSubmit(
         uint64 /* requestId */,
@@ -123,7 +149,7 @@ contract ERC20Verifier is ERC20, ZKPVerifier {
         ICircuitValidator validator
     ) internal view override {
         // check that  challenge input is address of sender
-        address addr = PrimitiveTypeUtils.int256ToAddress(
+        address addr = PrimitiveTypeUtils.uint256LEToAddress(
             inputs[validator.inputIndexOf("challenge")]
         );
         // this is linking between msg.sender and
@@ -156,30 +182,50 @@ contract ERC20Verifier is ERC20, ZKPVerifier {
 }
 ```
 
-Finally, we can add a further element of security inside the Smart Contract: prevent any type of token transfer (even after the airdrop) unless users passed the proof verification. This last condition is added by overriding the ERC20 `_beforeTokenTransfer` function and checking that the receiver address `to` of the transfer is included inside the
+Finally, we can add a further element of security inside the Smart Contract: prevent any type of token transfer (even after the airdrop) unless users passed the proof verification. This last condition is added by overriding the ERC20 `_update` function and checking that the receiver address `to` of the transfer is included inside the
 <a href="https://github.com/iden3/contracts/blob/master/contracts/verifiers/ZKPVerifier.sol#L28" target="_blank">`proofs`</a> mapping.
 
 ```solidity {29, 30, 31, 32, 33}
-contract ERC20Verifier is ERC20, ZKPVerifier {
+contract ERC20Verifier is ERC20Upgradeable, ZKPVerifier {
     uint64 public constant TRANSFER_REQUEST_ID = 1;
 
     mapping(uint256 => address) public idToAddress;
     mapping(address => uint256) public addressToId;
 
-    uint256 public TOKEN_AMOUNT_FOR_AIRDROP_PER_ID =
-        5 * 10 ** uint256(decimals());
+    uint256 public TOKEN_AMOUNT_FOR_AIRDROP_PER_ID;
 
-    constructor(
-        string memory name_,
-        string memory symbol_
-    ) ERC20(name_, symbol_) {}
+    modifier beforeTransfer(address to) {
+        MainStorage storage s = _getMainStorage();
+        require(
+            s.proofs[to][TRANSFER_REQUEST_ID] == true,
+            "only identities who provided proof are allowed to receive tokens"
+        );
+        _;
+    }
+
+    function initialize(
+        string memory name,
+        string memory symbol
+    ) public initializer {
+        super.__ERC20_init(name, symbol);
+        super.__ZKPVerifier_init(_msgSender());
+        TOKEN_AMOUNT_FOR_AIRDROP_PER_ID = 5 * 10 ** uint256(decimals());
+    }
 
     function _beforeProofSubmit(
         uint64 /* requestId */,
         uint256[] memory inputs,
         ICircuitValidator validator
     ) internal view override {
-        ...
+        // check that  challenge input is address of sender
+        address addr = PrimitiveTypeUtils.uint256LEToAddress(
+            inputs[validator.inputIndexOf("challenge")]
+        );
+        // this is linking between msg.sender and
+        require(
+            _msgSender() == addr,
+            "address in proof is not a sender address"
+        );
     }
 
     function _afterProofSubmit(
@@ -187,19 +233,29 @@ contract ERC20Verifier is ERC20, ZKPVerifier {
         uint256[] memory inputs,
         ICircuitValidator validator
     ) internal override {
-       ...
+        require(
+            requestId == TRANSFER_REQUEST_ID && addressToId[_msgSender()] == 0,
+            "proof can not be submitted more than once"
+        );
+
+        // get user id
+        uint256 id = inputs[1];
+        // additional check didn't get airdrop tokens before
+        if (idToAddress[id] == address(0) && addressToId[_msgSender()] == 0) {
+            super._mint(_msgSender(), TOKEN_AMOUNT_FOR_AIRDROP_PER_ID);
+            addressToId[_msgSender()] = id;
+            idToAddress[id] = _msgSender();
+        }
     }
 
-    function _beforeTokenTransfer(
-        address /* from */,
+    function _update(
+        address from /* from */,
         address to,
-        uint256 /* amount */
-    ) internal view override {
-        require(
-            proofs[to][TRANSFER_REQUEST_ID] == true,
-            "only identities who provided proof are allowed to receive tokens"
-        );
+        uint256 amount /* amount */
+    ) internal override beforeTransfer(to) {
+        super._update(from, to, amount);
     }
+
 }
 ```
 
@@ -222,7 +278,10 @@ async function main() {
   const verifierSymbol = "zkERC20";
 
   const ERC20Verifier = await ethers.getContractFactory(verifierContract);
-  const erc20Verifier = await ERC20Verifier.deploy(verifierName, verifierSymbol);
+  const erc20Verifier = await upgrades.deployProxy(
+    ERC20Verifier,
+    [verifierName, verifierSymbol]
+  );
 
   await erc20Verifier.deployed();
   console.log(verifierName, " contract address:", erc20Verifier.address);
@@ -389,7 +448,7 @@ function coreSchemaFromStr(schemaIntString) {
   return SchemaHash.newSchemaHashFromInt(schemaInt);
 }
 
-function calculateQueryHash(values, schema, slotIndex, operator, claimPathKey, claimPathNotExists) {
+function calculateQueryHashV2(values, schema, slotIndex, operator, claimPathKey, claimPathNotExists) {
   const expValue = prepareCircuitArrayValues(values, 64);
   const valueHash = poseidon.spongeHashX(expValue, 6);
   const schemaHash = coreSchemaFromStr(schema);
@@ -429,7 +488,7 @@ async function main() {
     claimPathNotExists: 0,
   };
 
-  query.queryHash = calculateQueryHash(
+  query.queryHash = calculateQueryHashV2(
     query.value,
     query.schema,
     query.slotIndex,
@@ -580,5 +639,5 @@ Now that you have been able to create your first on-chain ZK-based application, 
 Another possibility to customize your Smart Contract involves setting different ZK requests. First of all, multiple `REQUEST_ID` must be defined inside the main Smart Contract. Therefore, the contract deployer can set a different query for each request ID and create different outcomes inside `_afterProofSubmit` according to the type of proof received. For example, an airdrop contract can verify the role of a user inside a DAO and distribute a different amount of tokens based on the role.
 
 ## Estimated Gas Costs for On-Chain Verifier
-
 While it is clear that gas cost is highly dependent on the complexity of the logic that you add to the `_afterProofSubmit` and `_beforeProofSubmit` functions, the sample code for the on-chain verifier in this tutorial costs approximately 700k gas to execute on-chain. The zk proof verification function specifically costs approximately 520k gas. The above estimates are accurate as of January 2024.
+

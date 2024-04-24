@@ -16,7 +16,11 @@ import TabItem from '@theme/TabItem';
 
 # Advanced Issuer Node configuration
 
-This guide will show you how to confgure your Issuer Node.
+This guide will show you how to configure your Issuer Node.
+
+:::caution
+*Polygon Mumbai testnet has been deprecated 
+:::
 
 ## Revocation Status
 
@@ -85,20 +89,21 @@ ISSUER_CREDENTIAL_STATUS_RHS_CHAIN_ID=80002
 
 </TabItem>
 
-<TabItem value="Polygon Mumbai">
-
-```bash
-ISSUER_CREDENTIAL_STATUS_ONCHAIN_TREE_STORE_SUPPORTED_CONTRACT=0x76EB7216F2400aC18C842D8C76739F3B8E619DB9
-ISSUER_CREDENTIAL_STATUS_RHS_CHAIN_ID=80001
-```
-
-</TabItem>
 
 <TabItem value="Polygon Main">
 
 ```bash
-ISSUER_CREDENTIAL_STATUS_ONCHAIN_TREE_STORE_SUPPORTED_CONTRACT=0x80667fdB4CC6bBa3EDaE419f6BFBc129e78d2fC9
+ISSUER_CREDENTIAL_STATUS_ONCHAIN_TREE_STORE_SUPPORTED_CONTRACT=0xbEeB6bB53504E8C872023451fd0D23BeF01d320B
 ISSUER_CREDENTIAL_STATUS_RHS_CHAIN_ID=137
+```
+
+</TabItem>
+
+<TabItem value="Polygon Mumbai*">
+
+```bash
+ISSUER_CREDENTIAL_STATUS_ONCHAIN_TREE_STORE_SUPPORTED_CONTRACT=0x16A1ae4c460C0a42f0a87e69c526c61599B28BC9
+ISSUER_CREDENTIAL_STATUS_RHS_CHAIN_ID=80001
 ```
 
 </TabItem>
@@ -123,16 +128,6 @@ Learn more about state contract [here](https://docs.iden3.io/contracts/state/).
 ISSUER_ETHEREUM_CONTRACT_ADDRESS=0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124
 ISSUER_ETHEREUM_RESOLVER_PREFIX=polygon:amoy
 ISSUER_ETHEREUM_URL={Replace with a Polygon Amoy RPC}
-```
-
-</TabItem>
-
-<TabItem value="Polygon Mumbai">
-
-```bash
-ISSUER_ETHEREUM_CONTRACT_ADDRESS=0x134B1BE34911E39A8397ec6289782989729807a4
-ISSUER_ETHEREUM_RESOLVER_PREFIX=polygon:mumbai
-ISSUER_ETHEREUM_URL={Replace with a Polygon Mumbai RPC}
 ```
 
 </TabItem>
@@ -178,21 +173,22 @@ ISSUER_API_IDENTITY_METHOD={polygonid | custom method}
 
 </TabItem>
 
-<TabItem value="Polygon Mumbai">
-
-```bash
-ISSUER_API_IDENTITY_BLOCKCHAIN=polygon
-ISSUER_API_IDENTITY_NETWORK=mumbai
-ISSUER_API_IDENTITY_METHOD={polygonid | custom method}
-```
-
-</TabItem>
 
 <TabItem value="Polygon Main">
 
 ```bash
 ISSUER_API_IDENTITY_BLOCKCHAIN=polygon
 ISSUER_API_IDENTITY_NETWORK=main
+ISSUER_API_IDENTITY_METHOD={polygonid | custom method}
+```
+
+</TabItem>
+
+<TabItem value="Polygon Mumbai*">
+
+```bash
+ISSUER_API_IDENTITY_BLOCKCHAIN=polygon
+ISSUER_API_IDENTITY_NETWORK=mumbai
 ISSUER_API_IDENTITY_METHOD={polygonid | custom method}
 ```
 
@@ -222,7 +218,7 @@ The Core API provides the `/v1/identities` endpoint in order to create an identi
 The property _type_ can have two possible values:
 
 - `BJJ`: BJJ keys based identity.
-- `ETH`: Ethreum based identity.
+- `ETH`: Ethereum based identity.
 
 Create Identity Payload example:
 <Tabs>
@@ -241,20 +237,6 @@ Create Identity Payload example:
 
 </TabItem>
 
-<TabItem value="Polygon Mumbai">
-
-```json
-{
-  "didMetadata": {
-    "method": "polygonid",
-    "blockchain": "polygon",
-    "network": "mumbai",
-    "type": "BJJ"
-  }
-}
-```
-
-</TabItem>
 
 <TabItem value="Polygon Main">
 
@@ -264,6 +246,22 @@ Create Identity Payload example:
     "method": "polygonid",
     "blockchain": "polygon",
     "network": "main",
+    "type": "BJJ"
+  }
+}
+```
+
+</TabItem>
+
+
+<TabItem value="Polygon Mumbai*">
+
+```json
+{
+  "didMetadata": {
+    "method": "polygonid",
+    "blockchain": "polygon",
+    "network": "mumbai",
     "type": "BJJ"
   }
 }

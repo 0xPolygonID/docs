@@ -30,7 +30,7 @@ Here are some schemas with different data types.
   "credentialSchema": "https://raw.githubusercontent.com/0xPolygonID/sh-id-platform/adding-schema-examples/docs/examples/schemas/json/exampleBoolean.json",
   "type": "CodingExperienceCredential",
   "credentialSubject": {
-    "id": "did:polygonid:polygon:mumbai:2qLPX9XnujT2xhuiPMHrqXTUD96UCV87CtThRUZFQm",
+    "id": "did:polygonid:polygon:amoy:2qLPX9XnujT2xhuiPMHrqXTUD96UCV87CtThRUZFQm",
     "codingExperience": true
   },
   "expiration": "2025-04-05T08:34:07.117Z",
@@ -52,7 +52,7 @@ Here are some schemas with different data types.
   "credentialSchema": "https://raw.githubusercontent.com/0xPolygonID/sh-id-platform/adding-schema-examples/docs/examples/schemas/json/exampleDate.json",
   "type": "HireDateCredential",
   "credentialSubject": {
-    "id": "did:polygonid:polygon:mumbai:2qLPX9XnujT2xhuiPMHrqXTUD96UCV87CtThRUZFQm",
+    "id": "did:polygonid:polygon:amoy:2qLPX9XnujT2xhuiPMHrqXTUD96UCV87CtThRUZFQm",
     "hireDate": "2020-12-12"
   },
   "expiration": "2025-04-05T08:34:07.117Z",
@@ -74,7 +74,7 @@ Here are some schemas with different data types.
   "credentialSchema": "https://raw.githubusercontent.com/0xPolygonID/sh-id-platform/adding-schema-examples/docs/examples/schemas/json/exampleInteger.json",
   "type": "BirthdayCredential",
   "credentialSubject": {
-    "id": "did:polygonid:polygon:mumbai:2qLPX9XnujT2xhuiPMHrqXTUD96UCV87CtThRUZFQm",
+    "id": "did:polygonid:polygon:amoy:2qLPX9XnujT2xhuiPMHrqXTUD96UCV87CtThRUZFQm",
     "birthday": 20201012
   },
   "expiration": "2025-04-05T08:34:07.117Z",
@@ -96,7 +96,7 @@ Here are some schemas with different data types.
   "credentialSchema": "https://raw.githubusercontent.com/0xPolygonID/sh-id-platform/adding-schema-examples/docs/examples/schemas/json/exampleNumber.json",
   "type": "SalaryCredential",
   "credentialSubject": {
-    "id": "did:polygonid:polygon:mumbai:2qLPX9XnujT2xhuiPMHrqXTUD96UCV87CtThRUZFQm",
+    "id": "did:polygonid:polygon:amoy:2qLPX9XnujT2xhuiPMHrqXTUD96UCV87CtThRUZFQm",
     "salary": 1000.0
   },
   "expiration": "2025-04-05T08:34:07.117Z",
@@ -118,7 +118,7 @@ Here are some schemas with different data types.
   "credentialSchema": "https://raw.githubusercontent.com/0xPolygonID/sh-id-platform/adding-schema-examples/docs/examples/schemas/json/exampleString.json",
   "type": "RoleCredential",
   "credentialSubject": {
-    "id": "did:polygonid:polygon:mumbai:2qLPX9XnujT2xhuiPMHrqXTUD96UCV87CtThRUZFQm",
+    "id": "did:polygonid:polygon:amoy:2qLPX9XnujT2xhuiPMHrqXTUD96UCV87CtThRUZFQm",
     "role": "developer"
   },
   "expiration": "2025-04-05T08:34:07.117Z",
@@ -140,7 +140,7 @@ Here are some schemas with different data types.
   "credentialSchema": "https://raw.githubusercontent.com/0xPolygonID/sh-id-platform/adding-schema-examples/docs/examples/schemas/json/exampleEmployee.json",
   "type": "EmployeeCredential",
   "credentialSubject": {
-    "id": "did:polygonid:polygon:mumbai:2qLPX9XnujT2xhuiPMHrqXTUD96UCV87CtThRUZFQm",
+    "id": "did:polygonid:polygon:amoy:2qLPX9XnujT2xhuiPMHrqXTUD96UCV87CtThRUZFQm",
     "role": "developer",
     "hireDate": "2022-10-10",
     "birthday": 19901204,

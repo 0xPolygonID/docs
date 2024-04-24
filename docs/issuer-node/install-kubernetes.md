@@ -65,7 +65,7 @@ export ISSUERNAME="My Issuer"
 export ISSUER_ETHERUM_URL="https://polygon-network.XXXX"
 export INGRESS_ENABLED=true
 export VAULT_PWD=password
-export RHS_MODE=None
+export RHS_MODE=None                                    
 export RHS_URL="https://reverse-hash-service.com"
 ```
 
@@ -142,7 +142,7 @@ export ISSUERNAME="My Issuer"
 export ISSUER_ETHERUM_URL="https://polygon-network.XXXX"
 export INGRESS_ENABLED=false
 export VAULT_PWD=password
-export RHS_MODE=None
+export RHS_MODE=None                                    
 export RHS_URL="https://reverse-hash-service.com"
 ```
 

@@ -20,7 +20,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Extend customization by incorporating custom providers and integrating them into the refresh flow.
 This is the easiest way to add custom business logic to retrieve data from a data provider. Go to [setup guide](/docs/issuer/refresh-service/setup-guide/#setup-with-custom-data-provider) for more information
-
 ## 2. Flexible HTTP package
 
 Utilize the [flexible HTTP package](https://github.com/0xPolygonID/refresh-service/blob/main/providers/flexiblehttp/http.go) to configure HTTP requests to a data provider. Refer to the [configuration guide](https://github.com/0xPolygonID/refresh-service/blob/main/README.md) for instructions on how to set this up.
