@@ -10,7 +10,7 @@ env:
   AWS_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
   ECR_REPOSITORY: devs-ecr
   ECS_SERVICE: devs-ecs-service
-  CONTAINER_NAME: devs
+  CONTAINER_NAME: tooling-dev-devs-app
 
 jobs:
   deploy_prod:
