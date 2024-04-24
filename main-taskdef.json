@@ -57,7 +57,7 @@
 					"LineFormat": "key_value",
 					"Name": "grafana-loki",
 					"RemoveKeys": "container_id,ecs_task_arn",
-					"TenantID": "dev",
+					"TenantID": "prod",
 					"Url": "http://52.31.211.156:3100/loki/api/v1/push"
 				}
 			},
