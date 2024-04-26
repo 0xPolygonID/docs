@@ -32,7 +32,7 @@ module.exports = {
     announcementBar: {
       id: "learn_more",
       content:
-        'New Release: First-ever implementation of Dynamic Credentials! <a class="announcement-link" target="_blank" rel="noopener noreferrer" href="https://polygon.technology/blog/polygon-id-release-6-introducing-the-first-ever-implementation-of-dynamic-credentials"> Learn more</a>',
+        'Polygon Mumbai support ended! Please, migrate to Amoy <a class="announcement-link" rel="noopener noreferrer" href="/docs/mumbai-to-amoy-migration"> Learn more</a>',
       backgroundColor: "#20232a",
       textColor: "#fff",
       isCloseable: false,
@@ -86,21 +86,25 @@ module.exports = {
           label: "Build",
           items: [
             {
-              href: "/docs/issuer/issuer-node-ui",
-              label: "Issuer API+UI",
+              href: "/docs/issuer/issuer-overview/",
+              label: "Issuer",
             },
             {
               href: "/docs/verifier/verifier-overview/",
-              label: "Verifier SDK",
+              label: "Verifier",
             },
             {
               href: "/docs/wallet/wallet-overview/",
-              label: "Wallet SDK",
+              label: "Wallet",
             },
             {
               href: "/docs/js-sdk/js-sdk-overview/",
               label: "JS-SDK",
             },
+            {
+              href: "/docs/smart-contracts/",
+              label: "Smart Contracts",
+            }
           ],
         },
         {

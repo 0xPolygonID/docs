@@ -23,7 +23,7 @@ Yes, credentials issued in any environment—on-chain or off-chain—can be veri
 
 Regarding cross-chain verification, while a universal, out-of-the-box solution for state validation across chains does not yet exist, leveraging existing bridging technologies offers a viable pathway. These technologies facilitate the transfer of issuer identity states and GIST roots between networks, enabling credentials issued on one blockchain to be verified on another. This approach significantly enhances the interoperability and flexibility of the credential verification process, making it possible to verify credentials across different blockchain ecosystems.
 
-Additionally, off-chain cross verification is also supported. At the SDK level, it is possible to configure connections to any EVM-based blockchain RPC and implement a custom wallet. Within the Polygon ID app, both Polygon mainnet and Mumbai testnet networks are directly supported, allowing for versatile off-chain verification configurations that accommodate various blockchain environments.
+Additionally, off-chain cross verification is also supported. At the SDK level, it is possible to configure connections to any EVM-based blockchain RPC and implement a custom wallet. Within the Polygon ID app, both Polygon mainnet and Amoy testnet networks are directly supported, allowing for versatile off-chain verification configurations that accommodate various blockchain environments.
 
 The capability for cross-environment and cross-chain verification greatly expands the utility of digital credentials. It encourages a more interconnected and adaptable framework for the issuance and verification of credentials, supporting a wide range of use cases and applications in a decentralized digital world.
 

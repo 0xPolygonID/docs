@@ -128,7 +128,6 @@ module.exports = {
       collapsed: true,
       items: [
         "verifier/verifier-overview",
-        "verifier/demo-verifier",
         "verifier/features",
         {
           type: "category",

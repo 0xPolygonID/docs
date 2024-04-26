@@ -213,7 +213,7 @@ For a detailed walkthrough, refer to the provided video illustrating the complet
 
 On-chain verification enables smart contracts to execute logic based on query results. To set this up:
 
-1. **Select the Network:** Choose either Polygon Mainnet or Polygon Mumbai.
+1. **Select the Network:** Choose either Polygon Mainnet or Polygon Amoy.
 2. **Set a Request Id:** This unique ID acts as a key in the contract's state map. It's essential to choose a distinct ID for each request.
 3. **Smart Contract Address:** Input the address of the contract responsible for proof validation and logic execution on the selected network.
 4. **Click the Set Request Button:** This action sends a `Set ZKP Request` transaction.

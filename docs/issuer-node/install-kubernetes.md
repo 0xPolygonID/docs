@@ -62,7 +62,7 @@ export PRIVATE_KEY="YOUR PRIVATE KEY"
 export MAINNET=false
 export UIPASSWORD="my ui password"
 export ISSUERNAME="My Issuer"
-export ISSUER_ETHERUM_URL="https://polygon-mumbai.XXXX"
+export ISSUER_ETHERUM_URL="https://polygon-network.XXXX"
 export INGRESS_ENABLED=true
 export VAULT_PWD=password
 export RHS_MODE=None                                    
@@ -83,7 +83,7 @@ where…
 
 `PRIVATE_KEY` is the private key of the wallet (Metamask private key wallet).
 
-`MAINNET` Specify if the network is main; if this value is false, the issuer node will use Mumbai.
+`MAINNET` Specify if the network is main; if this value is false, the issuer node will use Amoy.
 
 `UIPASSWORD` is the password for the user: ui-user. This password is used when the user visits the UI.
 
@@ -139,7 +139,7 @@ export PRIVATE_KEY="YOUR PRIVATE KEY"
 export MAINNET=false
 export UIPASSWORD="my ui password"
 export ISSUERNAME="My Issuer"
-export ISSUER_ETHERUM_URL="https://polygon-mumbai.XXXX"
+export ISSUER_ETHERUM_URL="https://polygon-network.XXXX"
 export INGRESS_ENABLED=false
 export VAULT_PWD=password
 export RHS_MODE=None                                    
@@ -156,7 +156,7 @@ where…
 
 `PRIVATE_KEY` is the private key of the wallet (Metamask private key wallet).
 
-`MAINNET` Specify if the network is main; if this value is false,, the issuer node will use mumbai.
+`MAINNET` Specify if the network is main; if this value is false, the issuer node will use amoy.
 
 `UIPASSWORD` is the password for user: ui-user. This password is used when the user visits the UI.
 
