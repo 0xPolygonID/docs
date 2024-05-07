@@ -31,17 +31,18 @@ At its core, every on-chain interaction between a Verifier and a user's Wallet f
 <img src={useBaseUrl("img/on-chain-verification-flow.png")} align="center" width="600"/>
 </div>
 
-1. After having deployed a [Verifier Smart Contract](#design-the-erc20-zk-airdrop-verifier-contract), the Verifier designs a [Request](#set-the-zkp-request) for the users. This has to be recorded on-chain inside the Verifier Smart Contract.
+1. After having deployed a [Verifier Smart Contract](#design-the-erc20-zk-airdrop-contract-with-zk-proof-verification), the Verifier designs a [Request](#set-the-zkp-request) for the users. It has to be recorded on-chain either inside the Verifier Smart Contract or in special linked `UniversalVerifier` contract as you may read below.
 1. The Request is delivered to the user within a QR code (or via deep-linking, depending on the implementation).
 1. The user scans the QR code using his/her mobile ID wallet and parses the request
 1. The application fetches the revocation status of the requested credential from the Issuer of that credential.
 1. A ZK proof is generated on mobile according to the request of the website and based on the credentials held in his/her wallet. This also contains the ZK proof that the credential is not revoked.
 1. The user sends the ZK proof to the Verifier Smart Contract.
-1. The Verifier Smart Contract verifies the zk Proof.
+1. The Verifier Smart Contract verifies the ZK Proof.
 1. The Verifier Smart Contract checks that the State of the Issuer of the credential and the State of the user are still valid and have not been revoked.
-1. If the verification is successful, the Verifier executes the logic defined in the Smart Contract.
+1. If the verification is successful, the proof status is recorded on-chain. 
+1. Now the Verifier Contract may execute a custom business logic, which utilizes the proof status.
 
-Note that an active action from the Verifier is only required at step 1. All the rest of the interaction is between the user and the Smart Contract. All the verification logic is executed programmatically inside the Smart Contract.
+Note that the Verifier only sets the Request at step 1. All the rest of the interaction is between a User and the Smart Contract. All the verification logic is executed programmatically inside the Smart Contract.
 
 ## Implement an ERC20 ZK Airdrop
 
@@ -59,33 +60,37 @@ The prerequisite is that users have the [Polygon ID Wallet app](/docs/wallet/wal
 
 :::note
 
-The full executable code related to this tutorial can be cloned from <ins><a href="https://github.com/0xPolygonID/tutorial-examples/tree/main/on-chain-verification" target="_blank">this repository</a></ins>.
+Some executable code related to this tutorial is in <ins><a href="https://github.com/0xPolygonID/contracts" target="_blank">this repository</a></ins>.
 
 :::
 
-## Two ways of verification
 
-There are two ways proposed to verify a ZK proof on-chain: inherit ZKPVerifier abstract smart contract or link to pre-deployed Universal Verifier.
+## Design the ERC20 zk Airdrop Contract with ZK-proof verification
+### Two ways of verification
 
-### ZKPVerifier Smart Contract
-This is an abstract smart contract, which implements the logic of verifying ZK proofs and saving the verification result. It is designed to be inherited by another smart contract with own business logic, which may use the facts of specific proofs verification done before.
+There are two ways to add a ZK-proof verification logic to your contracts.
+You can inherit `EmbeddedZKPVerifier` smart contract or link to pre-deployed `UniversalVerifier` contract.
+Both of the contracts share the same parent class and implement the same `IZKPVerifier` interface, which defines methods to set, get, and submit responses for Proof Requests.
 
-The contract is designed work with different ZK validator contracts and different proof requests, both or which are set by the contract owner.
+### Embedded ZKPVerifier Smart Contract
+This is an abstract smart contract, which implements the logic of verifying ZK Proofs and saving the verification result. It is designed to be inherited by another smart contract with own business logic, which may consume proof verification functionality.
+
+The contract is designed to work with different ZK Validator contracts and different proof requests, both or which are set by the contract owner.
 
 ### Universal Verifier Smart Contract
-This smart contract has mostly the same functionality as ZKPVerifier Smart Contract. The difference is that Universal Verifier is not an abstract contract to be inherited by another contract. It is a standalone contract, which the same way as ZKPVerifier Smart Contract works as a proof verification registry.
+This smart contract implements the same functionality as `EmbeddedZKPVerifier` Smart Contract, however it is not an abstract but a standalone contract.
 
-However, the Universal Verifier is designed to be used by multiple contracts, which need to verify ZK proofs. Therefore, not only a Universal Verifier owner but actually any address can set a ZKPRequest in Universal Verifier. The only restriction for the proof request at the moment is that it should use a ZK validator, which is whitelisted. The validators whitelisting is managed by the contract owner. 
+The `UniversalVerifier` is designed to be used by multiple external contracts. Not only a `UniversalVerifier` owner but actually any address can set a `ZKPRequest` in `UniversalVerifier`. The only restriction for the proof request at the moment is that it should use a ZK Validator, which is whitelisted. The whitelisting is managed by the contract owner. 
 
 ### Let us jump into the code by writing the ERC20Verifier contract in each of the two ways.
 
-#### Inheriting ZKPVerifier abstract smart contract
+#### Inheriting EmbeddedZKPVerifier abstract smart contract
 
-The ERC20Verifier is an ERC20 standard contract with a few other features. The extra functionality is given by the zero-knowledge proof verification. All the functions dedicated to the ZK verification are contained inside the <a href="https://github.com/iden3/contracts/blob/master/contracts/verifiers/ZKPVerifier.sol" target="_blank">ZKPVerifier Contract</a> and inherited within the ERC20Verifier. For example, users will submit their proof to claim the airdrop by calling `submitZKPResponse`.
+We'll create a `ERC20Verifier`, which is an ERC20 standard contract. The extra functionality is given by the zero-knowledge proof verification. All the functions dedicated to the ZK verification are contained inside the `EmbeddedZKPVerifier` Contract and inherited within the `ERC20Verifier`. For example, users will submit their proof to claim the airdrop by calling `submitZKPResponse`.
 
-The ERC20Verifier contract must define at least a single `TRANSFER_REQUEST_ID`. This is the Identifier of the request that the contract is making to the user.
+The `ERC20Verifier` contract must define at least a single `TRANSFER_REQUEST_ID`. This is the Identifier of the request that the contract is making to the user.
 
-The ZKPVerifier Contract provides 2 hooks: `_beforeProofSubmit` and `_afterProofSubmit`.
+The `EmbeddedZKPVerifier` Contract provides 2 hooks: `_beforeProofSubmit` and `_afterProofSubmit`.
 
 These hooks are called before and after any proof gets submitted and can be used to create personalized logic inside your Smart Contract. In this specific case, it must be checked that the sender of the proof matches the address contained in the proof challenge. This requirement is necessary to prevent proof front-running. This condition is added inside `_beforeProofSubmit`.
 
@@ -100,10 +105,11 @@ pragma solidity 0.8.20;
 import {ERC20Upgradeable} from '@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol';
 import {PrimitiveTypeUtils} from '@iden3/contracts/lib/PrimitiveTypeUtils.sol';
 import {ICircuitValidator} from '@iden3/contracts/interfaces/ICircuitValidator.sol';
-import {ZKPVerifier} from '@iden3/contracts/verifiers/ZKPVerifier.sol';
+import {EmbeddedZKPVerifier} from '@iden3/contracts/verifiers/EmbeddedZKPVerifier.sol';
 
-contract ERC20Verifier is ERC20Upgradeable, ZKPVerifier {
-   uint64 public constant TRANSFER_REQUEST_ID = 1;
+contract ERC20Verifier is ERC20Upgradeable, EmbeddedZKPVerifier {
+   uint64 public constant TRANSFER_REQUEST_ID_SIG_VALIDATOR = 1;
+   uint64 public constant TRANSFER_REQUEST_ID_MTP_VALIDATOR = 2;
 
    /// @custom:storage-location erc7201:polygonid.storage.ERC20Verifier
    struct ERC20VerifierStorage {
@@ -123,9 +129,9 @@ contract ERC20Verifier is ERC20Upgradeable, ZKPVerifier {
    }
 
    modifier beforeTransfer(address to) {
-      ZKPVerifier.ZKPVerifierStorage storage $ = _getZKPVerifierStorage();
       require(
-         $.proofs[to][TRANSFER_REQUEST_ID],
+         isProofSubmitted(to, TRANSFER_REQUEST_ID_SIG_VALIDATOR) ||
+         isProofSubmitted(to, TRANSFER_REQUEST_ID_MTP_VALIDATOR),
          'only identities who provided sig or mtp proof for transfer requests are allowed to receive tokens'
       );
       _;
@@ -138,6 +144,19 @@ contract ERC20Verifier is ERC20Upgradeable, ZKPVerifier {
       $.TOKEN_AMOUNT_FOR_AIRDROP_PER_ID = 5 * 10 ** uint256(decimals());
    }
 
+   function _beforeProofSubmit(
+      uint64 /* requestId */,
+      uint256[] memory inputs,
+      ICircuitValidator validator
+   ) internal view override {
+      // check that challenge input is address of sender
+      address addr = PrimitiveTypeUtils.uint256LEToAddress(
+         inputs[validator.inputIndexOf('challenge')]
+      );
+      // this is linking between msg.sender and
+      require(_msgSender() == addr, 'address in proof is not a sender address');
+   }
+
    function _afterProofSubmit(
       uint64 requestId,
       uint256[] memory inputs,
@@ -145,7 +164,8 @@ contract ERC20Verifier is ERC20Upgradeable, ZKPVerifier {
    ) internal override {
       ERC20VerifierStorage storage $ = _getERC20VerifierStorage();
       if (
-         requestId == TRANSFER_REQUEST_ID
+         requestId == TRANSFER_REQUEST_ID_SIG_VALIDATOR ||
+         requestId == TRANSFER_REQUEST_ID_MTP_VALIDATOR
       ) {
          // if proof is given for transfer request id ( mtp or sig ) and it's a first time we mint tokens to sender
          uint256 id = inputs[1];
@@ -181,15 +201,15 @@ contract ERC20Verifier is ERC20Upgradeable, ZKPVerifier {
 
 #### Using Universal Verifier Smart Contract
 
-Unlike, the previous example, the ERC20LinkedUniversalVerifier contract does not inherit the ZKPVerifier contract. Instead, it uses the Universal Verifier contract to check the proof result.
+Unlike, the previous example, the `ERC20LinkedUniversalVerifier` contract does not inherit the `EmbeddedZKPVerifier` contract. Instead, it uses the `UniversalVerifier` contract to check the proof result.
 
-Unlike ERC20Verifier the ERC20LinkedUniversalVerifier does not need to implement the `_beforeProofSubmit` and `_afterProofSubmit` hooks as the proof verification is done inside the Universal Verifier contract and there is no way currently to execute additional custom logic in scope of proof verification transaction.
+Unlike `ERC20Verifier` the `ERC20LinkedUniversalVerifier` does not need to implement the `_beforeProofSubmit` and `_afterProofSubmit` hooks as proof verification is assumed to be done directly to the `UniversalVerifier` contract by some other transaction.
 
-In the same way the ERC20LinkedUniversalVerifier contract must define at least a single `TRANSFER_REQUEST_ID` to get proof statuses for this request id from the Universal Verifier.
+In the same way the `ERC20LinkedUniversalVerifier` contract must define at least one `TRANSFER_REQUEST_ID` to get proof statuses for this request id from the `UniversalVerifier`.
 
-In this example, it is supposed that address verification was done before in the Universal Verifier contract. So now you may mint tokens to a user via the `mint` function call.
+In this example, you may mint tokens to a user via the `mint` function call.
 
-Any token transfers are prevented inside `beforeTokenTransfer` modifier unless there is a proof verification from a destination address.
+Any token transfers are prevented inside `beforeTokenTransfer` modifier (which is invoked via `mint -> _mint -> update` call chain) unless there is already verification proof in UniversalVerifier, which corresponds to `msg.sender` address.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -198,21 +218,21 @@ pragma solidity 0.8.20;
 import {ERC20} from '@openzeppelin/contracts/token/ERC20/ERC20.sol';
 import {PrimitiveTypeUtils} from '@iden3/contracts/lib/PrimitiveTypeUtils.sol';
 import {ICircuitValidator} from '@iden3/contracts/interfaces/ICircuitValidator.sol';
-import {ZKPVerifier} from '@iden3/contracts/verifiers/ZKPVerifier.sol';
+import {EmbeddedZKPVerifier} from '@iden3/contracts/verifiers/EmbeddedZKPVerifier.sol';
 import {UniversalVerifier} from '@iden3/contracts/verifiers/UniversalVerifier.sol';
 
 contract ERC20LinkedUniversalVerifier is ERC20 {
-   uint64 public constant TRANSFER_REQUEST_ID = 0;
+   uint64 public constant TRANSFER_REQUEST_ID_SIG_VALIDATOR = 0;
+   uint64 public constant TRANSFER_REQUEST_ID_MTP_VALIDATOR = 1;
 
    UniversalVerifier public verifier;
-   mapping(uint256 => address) public idToAddress;
-   mapping(address => uint256) public addressToId;
 
    uint256 public TOKEN_AMOUNT_FOR_AIRDROP_PER_ID = 5 * 10 ** uint256(decimals());
 
    modifier beforeTokenTransfer(address to) {
       require(
-         verifier.getProofStatus(to, TRANSFER_REQUEST_ID).isProved,
+         verifier.getProofStatus(to, TRANSFER_REQUEST_ID_SIG_VALIDATOR).isProved ||
+         verifier.getProofStatus(to, TRANSFER_REQUEST_ID_MTP_VALIDATOR).isProved,
          'only identities who provided sig or mtp proof for transfer requests are allowed to receive tokens'
       );
       _;
@@ -227,13 +247,7 @@ contract ERC20LinkedUniversalVerifier is ERC20 {
    }
 
    function mint(address to) public {
-      uint256 id = verifier.getProofStorageField(to, TRANSFER_REQUEST_ID, "userID");
-
-      if (idToAddress[id] == address(0) && addressToId[to] == 0) {
-         idToAddress[id] = to;
-         addressToId[to] = id;
-         _mint(to, TOKEN_AMOUNT_FOR_AIRDROP_PER_ID);
-      }
+      _mint(to, TOKEN_AMOUNT_FOR_AIRDROP_PER_ID);
    }
 
    function _update(
@@ -277,11 +291,7 @@ async function main() {
 
 :::note
 
-The contract ERC20Verifier must be deployed on the Mumbai test network as there is a set of supporting contracts that are already deployed on Mumbai.
-
-```bash
-npx hardhat run polygon-mumbai scripts/deploy.js
-```
+The contract ERC20Verifier must be deployed on the Amoi test network as there is a set of supporting contracts that are already deployed on Amoi.
 
 :::
 
@@ -297,8 +307,6 @@ The request takes the following parameters:
    1. `metadata`: contract invoke request.
    2. `validator` the address of the Validators Smart Contract already deployed. This is the contract that executes the verification on the ZK proof submitted by the user. It can be of type [CredentialAtomicQuerySigValidator](/docs/smart-contracts.md#credentialatomicquerysigvalidator) or [CredentialAtomicQueryMTPValidator](/docs/smart-contracts.md#credentialatomicquerymtpvalidator).
    3. `data` encoded bytes of CredentialAtomicQuery struct.
-   4. `controller` (for Universal Verifier only) the address of the controller of the request.
-   5. `isDisabled` (for Universal Verifier only) a boolean to disable the request.
 
 CredentialAtomicQuery struct contains 10 fields:
 
@@ -507,8 +515,8 @@ async function main() {
          transaction_data: {
             contract_address: ERC20_VERIFIER_ADDRESS,
             method_id: "b68967e2",
-            chain_id: 80001,
-            network: "polygon-mumbai",
+            chain_id: 80002,
+            network: "polygon-amoy",
          },
          scope: [
             {
@@ -531,7 +539,7 @@ async function main() {
 
    try {
 
-      // Use this code to set request in ERC20Verifier
+      // ############ Use this code to set request in ERC20Verifier ############
 
       await erc20Verifier.setZKPRequest(requestId, {
          metadata: JSON.stringify(invokeRequestMetadata),
@@ -539,23 +547,18 @@ async function main() {
          data: packValidatorParams(query),
       });
 
-      // Use this code to set request in Universal Verifier
+      // ############### Use this code to set request in Universal Verifier ############
 
-      // const [signer] = await hre.ethers.getSigners();
-      //
       // const universalVerifier = await hre.ethers.getContractAt('UniversalVerifier', UNIVERSAL_VERIFIER_ADDRESS);
       //
       // await universalVerifier.addWhitelistedValidator(VALIDATOR_ADDRESS);
-      // await universalVerifier.setZKPRequest(
-      //   requestId,
-      //   {
-      //     metadata: 'metadata',
-      //     validator: VALIDATOR_ADDRESS,
-      //     data: packValidatorParams(query),
-      //     controller: signer.address,
-      //     isDisabled: false
-      //   }
-      // );
+      //
+      //// You can call this method on behalf of any signer which is supposed to be request controller
+      // await universalVerifier.setZKPRequest(requestId, {
+      //   metadata: JSON.stringify(invokeRequestMetadata),
+      //   validator: VALIDATOR_ADDRESS,
+      //   data: packValidatorParams(query),
+      // });
 
       console.log("Request set");
    } catch (e) {
@@ -571,7 +574,7 @@ main()
         });
 ```
 
-The contract is now correctly deployed on Mumbai Testnet and the query has been set up, congratulations! Now it is time to launch the airdrop!
+The contract is now correctly deployed on Amoi Polygon Testnet and the query has been set up, congratulations! Now it is time to launch the airdrop!
 
 ### Add the Proof Request Inside a QR Code
 
@@ -588,8 +591,8 @@ The last step is to design the proof request to be embedded inside a QR code. In
     "transaction_data": {
       "contract_address": "<ERC20VerifierAddress>",
       "method_id": "b68967e2",
-      "chain_id": 80001,
-      "network": "polygon-mumbai"
+      "chain_id": 80002,
+      "network": "polygon-amoy"
     },
     "scope": [
       {
@@ -637,9 +640,8 @@ You can directly test it by scanning the QR Code below using your Polygon ID App
 
 ### How is the proof submission executed?
 
-A wallet needs to call the `submitZKPResponse()` function before it can submit the proof for the requirements set in the Airdrop Participation process.
-
-This function is implemented in both ZKPVerifier and UniversalVerifier contracts. 
+A wallet needs to call the `submitZKPResponse` function before it can submit the proof for the requirements set in the Airdrop Participation process.
+This function is defined by `IZKPVerifier` interface and therefore implemented in both `EmbeddedZKPVerifier` and `UniversalVerifier` contracts. 
 
 
 ```solidity
