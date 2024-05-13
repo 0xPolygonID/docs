@@ -13,7 +13,6 @@ export const contentData = {
       target: "",
       type: "secondary",
     },
-
   ],
   headVideoLink:
     "https://www.youtube.com/embed/i3exuUa65sE?autoplay=1&controls=0&cc_load_policy=0&showinfo=0&rel=0&modestbranding=1",

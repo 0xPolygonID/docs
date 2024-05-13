@@ -104,7 +104,7 @@ module.exports = {
             {
               href: "/docs/smart-contracts/",
               label: "Smart Contracts",
-            }
+            },
           ],
         },
         {

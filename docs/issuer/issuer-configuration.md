@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 This guide will show you how to configure your Issuer Node.
 
 :::caution
-*Polygon Mumbai testnet has been deprecated 
+\*Polygon Mumbai testnet has been deprecated
 :::
 
 ## Revocation Status
@@ -88,7 +88,6 @@ ISSUER_CREDENTIAL_STATUS_RHS_CHAIN_ID=80002
 ```
 
 </TabItem>
-
 
 <TabItem value="Polygon Main">
 
@@ -173,7 +172,6 @@ ISSUER_API_IDENTITY_METHOD={polygonid | custom method}
 
 </TabItem>
 
-
 <TabItem value="Polygon Main">
 
 ```bash
@@ -237,7 +235,6 @@ Create Identity Payload example:
 
 </TabItem>
 
-
 <TabItem value="Polygon Main">
 
 ```json
@@ -252,7 +249,6 @@ Create Identity Payload example:
 ```
 
 </TabItem>
-
 
 <TabItem value="Polygon Mumbai*">
 
