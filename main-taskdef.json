@@ -29,8 +29,8 @@
 			}
 		},
 		{
-			"name": "tooling-dev-devs-app",
-			"image": "654654630007.dkr.ecr.eu-west-1.amazonaws.com/devs-ecr",
+			"name": "tooling-prod-devs-app",
+			"image": "905418075675.dkr.ecr.eu-west-1.amazonaws.com/devs-ecr",
 			"cpu": 0,
 			"portMappings": [
 				{
@@ -44,7 +44,7 @@
 			"environment": [
 				{
 					"name": "ENVIRONMENT",
-					"value": "dev"
+					"value": "prod"
 				}
 			],
 			"mountPoints": [],
@@ -57,7 +57,7 @@
 					"LineFormat": "key_value",
 					"Name": "grafana-loki",
 					"RemoveKeys": "container_id,ecs_task_arn",
-					"TenantID": "dev",
+					"TenantID": "prod",
 					"Url": "http://52.31.211.156:3100/loki/api/v1/push"
 				}
 			},
@@ -76,14 +76,14 @@
 	"networkMode": "awsvpc",
 	"memory": "2048",
 	"cpu": "1024",
-	"executionRoleArn": "arn:aws:iam::654654630007:role/tooling-dev-task-execution-role",
+	"executionRoleArn": "arn:aws:iam::905418075675:role/tooling-prod-task-execution-role",
 	"family": "devs",
-	"taskRoleArn": "arn:aws:iam::654654630007:role/tooling-dev-task-execution-role",
+	"taskRoleArn": "arn:aws:iam::905418075675:role/tooling-prod-task-execution-role",
 	"runtimePlatform": {
 		"operatingSystemFamily": "LINUX"
 	},
 	"tags": [{
 		"key": "Environment",
-		"value": "dev"
+		"value": "prod"
 	}]
 }

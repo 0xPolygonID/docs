@@ -101,7 +101,7 @@ Consider an example of integrating [polygon scan](https://polygonscan.com/) as a
       ```
 1. Populate the .env variables:
     ```
-    export IPFS_URL="https://infure..."
+    export IPFS_GATEWAY_URL="https://infura..."
     export SUPPORTED_RPC="137=https://infura..."
     export SUPPORTED_STATE_CONTRACTS="137=0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D"
     export SUPPORTED_ISSUERS="*=https://my-issuer-node.com"
@@ -144,7 +144,7 @@ To integrate [polygon scan](https://polygonscan.com/) data provider with the def
   ```
 2. Populate the .env variables:
   ```
-  export IPFS_URL="https://infura..."
+  export IPFS_GATEWAY_URL="https://infura..."
   export SUPPORTED_RPC="137=https://infura..."
   export SUPPORTED_STATE_CONTRACTS="137=0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D"
   export SUPPORTED_ISSUERS="*=https://my-issuer-node.com"
