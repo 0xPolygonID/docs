@@ -48,12 +48,7 @@ The tool still supports the verification of other credentials, which can be issu
 - **Consistency and Accuracy**: With a standardized interface, the tool promotes uniformity across users and organizations, minimizing errors.
 
 ## Getting Started
-
-Learn more about the Web Wallet in the video below:
-
-<div align="center" style={{margin: 40}}>
-<iframe src="https://www.youtube.com/embed/" width="100%" height="450" allowfullscreen></iframe>
-</div>
+//add yt video
 
 You can experience a demo of the Web Wallet by visiting this [link](https://web-wallet-demo.internal-polygonid-prod.com/)
 
@@ -90,7 +85,7 @@ Standardized schemas, such as KYC, are available. Alternatively, you can create 
 
 ### Step 2 - Creating the Query
 
-Define what information you need from your users and build a query using the Query Builder [https://schema-builder.polygonid.me/query-builder ].
+Define what information you need from your users and build a query using the [Query Builder](https://schema-builder.polygonid.me/query-builder).
 Once you create the query, you can select the network and test your query.
 Copy the generated code snippet of the query for later integration into your verifier setup.
 
