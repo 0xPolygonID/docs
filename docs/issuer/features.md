@@ -20,7 +20,7 @@ Currently available only on the [Issuer Node Core API](/docs/issuer/issuer-core.
 The representation of the DID for this case follows the same canonical form, where the identifier `2qCU58EJgrELSJT6EzT27Rw9DhvwamAdbMLpePztYq` actually originates from the Ethereum address:
 
 ```
-did:polygonid:polygon:mumbai:2qCU58EJgrELSJT6EzT27Rw9DhvwamAdbMLpePztYq
+did:polygonid:polygon:amoy:2qCU58EJgrELSJT6EzT27Rw9DhvwamAdbMLpePztYq
 ```
 
 :::note

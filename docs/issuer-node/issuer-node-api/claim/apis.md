@@ -101,7 +101,7 @@ You can retrieve a set of credentials based on different filters or criteria. Th
 
 - `schemaHash` _String_: hash of the schema. For example, c9b2370371b7fa8b3dab2a5ba81b6838.
 
-- `subject` _String_: identifier of the Subject for which credentials are to be retrieved. For example, did:polygonid:polygon:mumbai:2qE1BZ7gcmEoP2KppvFPCZqyzyb5tK9T6Gec5HFANQ.
+- `subject` _String_: identifier of the Subject for which credentials are to be retrieved. For example, did:polygonid:polygon:amoy:2qE1BZ7gcmEoP2KppvFPCZqyzyb5tK9T6Gec5HFANQ.
 
 - `revoked` _Boolean_: if the credential is revoked or not. It can be "true" or "false".
 
