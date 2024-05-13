@@ -83,7 +83,7 @@ const ethStateResolver = new resolver.EthStateResolver(
 );
 
 const resolvers: resolver.Resolvers = {
-    ['polygon:mumbai']: ethStateResolver,
+    ['polygon:amoy']: ethStateResolver,
 };
 
 const verifier = await Verifier.newVerifier(
@@ -104,9 +104,9 @@ Eventually, it returns an instance of a Verifier. To set up a verifier, differen
 - `circuitsDir` is the path where the public verification keys for Iden3 circuits are located (such as `"./circuits"`). If no folder is set, './circuits' folder is used. The verification key folder can be found <a href="https://github.com/0xPolygonID/phase2ceremony" target="_blank">here</a>.
   Path to the circuit file is constructed from `${circuitsDir}/${circuitId}/verification_key.json`,
 - hierarchical structure for files in circuits folder is mandatory, e.g. --circuits -----circuitId ---------file
-- `ethURL` is the URL of your RPC node provider such as `"https://polygon-testnet-rpc.allthatnode.com:8545"` for Polygon Mumbai.
-- `contractAddress` is the address of the identity state Smart Contract. On Polygon Mumbai, it is 0x134B1BE34911E39A8397ec6289782989729807a4.
-- `resolverPrefix` is the prefix of the resolver. For Polygon Mumbai it is `"polygon:mumbai"`.
+- `ethURL` is the URL of your RPC node provider.
+- `contractAddress` is the address of the identity state Smart Contract. On Polygon Amoy, it is 0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124.
+- `resolverPrefix` is the prefix of the resolver. For Polygon Amoy it is `"polygon:amoy"`.
 - `ipfsGatewayURL` can be your IPFS gateway or public one. You can path your loader or IPFS node also.
 
 ## Execute the verification

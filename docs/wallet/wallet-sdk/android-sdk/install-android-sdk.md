@@ -28,11 +28,11 @@ PolygonIdSdk.init(
     context = context,
     env = EnvEntity(
         blockchain = "polygon",
-        network = "mumbai",
-        web3Url = "https://polygon-mumbai.infura.io/v3/",
-        web3RdpUrl = "wss://polygon-mumbai.infura.io/v3/",
+        network = "amoy",
+        web3Url = "https://polygon-amoy.infura.io/v3/",
+        web3RdpUrl = "wss://polygon-amoy.infura.io/v3/",
         web3ApiKey = "theApiKey",
-        idStateContract = "0x134B1BE34911E39A8397ec6289782989729807a4",
+        idStateContract = "0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124",
         pushUrl = "https://push-staging.polygonid.com/api/v1"
     )
 )
