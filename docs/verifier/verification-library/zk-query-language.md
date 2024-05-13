@@ -77,10 +77,10 @@ const proofRequest: protocol.ZKPRequest = {
       "https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/schemas-examples/proof-of-humanity/proof-of-humanity.jsonld",
     credentialSubject: {
       isHuman: {
-        $eq: 1
-      }
-    }
-  }
+        $eq: 1,
+      },
+    },
+  },
 };
 ```
 
@@ -153,10 +153,10 @@ const proofRequest: protocol.ZKPRequest = {
       "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v4.jsonld",
     credentialSubject: {
       birthday: {
-        $lt: 20010101
-      }
-    }
-  }
+        $lt: 20010101,
+      },
+    },
+  },
 };
 ```
 
@@ -228,10 +228,10 @@ const proofRequest: protocol.ZKPRequest = {
       "https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/schemas-examples/employee-data/employee-data.jsonld",
     credentialSubject: {
       monthlySalary: {
-        $gt: 1000
-      }
-    }
-  }
+        $gt: 1000,
+      },
+    },
+  },
 };
 ```
 
@@ -305,10 +305,10 @@ const proofRequest: protocol.ZKPRequest = {
       "https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/schemas-examples/proof-of-dao-role/proof-of-dao-role.jsonld",
     credentialSubject: {
       role: {
-        $in: [4, 5]
-      }
-    }
-  }
+        $in: [4, 5],
+      },
+    },
+  },
 };
 ```
 
@@ -380,9 +380,9 @@ const proofRequest: protocol.ZKPRequest = {
     credentialSubject: {
       countryCode: {
         $nin: [840, 120, 340, 509],
-      }
-    }
-  }
+      },
+    },
+  },
 };
 ```
 
@@ -426,10 +426,9 @@ Corresponding QR Code
   }
 }
 ```
+
 </TabItem>
 </Tabs>
-
-
 
 ## Not-equal - Operator 6
 
@@ -455,10 +454,10 @@ const proofRequest: protocol.ZKPRequest = {
       "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v4.jsonld",
     credentialSubject: {
       countryCode: {
-        $ne: 840
-      }
-    }
-  }
+        $ne: 840,
+      },
+    },
+  },
 };
 ```
 
@@ -502,16 +501,14 @@ Corresponding QR Code
   }
 }
 ```
+
 </TabItem>
 </Tabs>
-
-
 
 :::info
 
 Operators 7-11 are supported only by [V3 circuit](../v3-circuit.md)
 :::
-
 
 ## Less-than-equal - Operator 7
 
@@ -537,10 +534,10 @@ const proofRequest: protocol.ZKPRequest = {
       "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v4.jsonld",
     credentialSubject: {
       birthday: {
-        $lte: 20010101
-      }
-    }
-  }
+        $lte: 20010101,
+      },
+    },
+  },
 };
 ```
 
@@ -548,7 +545,6 @@ const proofRequest: protocol.ZKPRequest = {
 <TabItem value="on-chain">
 
 Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
-
 
 Corresponding QR Code
 
@@ -589,7 +585,6 @@ Corresponding QR Code
 </TabItem>
 </Tabs>
 
-
 ## Greater-than-equal - Operator 8
 
 **Credential Schema**
@@ -614,10 +609,10 @@ const proofRequest: protocol.ZKPRequest = {
       "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v4.jsonld",
     credentialSubject: {
       birthday: {
-        $gte: 20010101
-      }
-    }
-  }
+        $gte: 20010101,
+      },
+    },
+  },
 };
 ```
 
@@ -625,7 +620,6 @@ const proofRequest: protocol.ZKPRequest = {
 <TabItem value="on-chain">
 
 Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
-
 
 Corresponding QR Code
 
@@ -666,7 +660,6 @@ Corresponding QR Code
 </TabItem>
 </Tabs>
 
-
 ## Between - Operator 9
 
 **Credential Schema**
@@ -691,10 +684,10 @@ const proofRequest: protocol.ZKPRequest = {
       "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v4.jsonld",
     credentialSubject: {
       birthday: {
-        $between: [19960101, 20010101]
-      }
-    }
-  }
+        $between: [19960101, 20010101],
+      },
+    },
+  },
 };
 ```
 
@@ -702,7 +695,6 @@ const proofRequest: protocol.ZKPRequest = {
 <TabItem value="on-chain">
 
 Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
-
 
 Corresponding QR Code
 
@@ -743,7 +735,6 @@ Corresponding QR Code
 </TabItem>
 </Tabs>
 
-
 ## Non-between - Operator 10
 
 **Credential Schema**
@@ -768,10 +759,10 @@ const proofRequest: protocol.ZKPRequest = {
       "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v4.jsonld",
     credentialSubject: {
       birthday: {
-        $nonbetween: [19960101, 20010101]
-      }
-    }
-  }
+        $nonbetween: [19960101, 20010101],
+      },
+    },
+  },
 };
 ```
 
@@ -779,7 +770,6 @@ const proofRequest: protocol.ZKPRequest = {
 <TabItem value="on-chain">
 
 Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
-
 
 Corresponding QR Code
 
@@ -820,7 +810,6 @@ Corresponding QR Code
 </TabItem>
 </Tabs>
 
-
 ## Exists - Operator 11
 
 **Credential Schema**
@@ -846,10 +835,10 @@ const proofRequest: protocol.ZKPRequest = {
       "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v4.jsonld",
     credentialSubject: {
       countryCode: {
-        $exists: true
-      }
-    }
-  }
+        $exists: true,
+      },
+    },
+  },
 };
 ```
 
@@ -857,7 +846,6 @@ const proofRequest: protocol.ZKPRequest = {
 <TabItem value="on-chain">
 
 Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
-
 
 Corresponding QR Code
 
@@ -894,10 +882,9 @@ Corresponding QR Code
   }
 }
 ```
+
 </TabItem>
 </Tabs>
-
-
 
 ## Proof of credential issuance ($noop)
 
@@ -915,11 +902,10 @@ const proofRequest: protocol.ZKPRequest = {
     allowedIssuers: ["*"],
     type: "KYCCountryOfResidenceCredential",
     context:
-      "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v4.jsonld"
-  }
+      "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v4.jsonld",
+  },
 };
 ```
-
 
 ## Selective Disclosure
 
@@ -939,11 +925,11 @@ const proofRequest: protocol.ZKPRequest = {
     context:
       "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v4.jsonld",
     credentialSubject: {
-      countryCode: {}
-    }
-  }
+      countryCode: {},
+    },
+  },
 };
-````
+```
 
 ## Multi query
 

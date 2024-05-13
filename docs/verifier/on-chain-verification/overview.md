@@ -278,10 +278,7 @@ async function main() {
   const verifierSymbol = "zkERC20";
 
   const ERC20Verifier = await ethers.getContractFactory(verifierContract);
-  const erc20Verifier = await upgrades.deployProxy(
-    ERC20Verifier,
-    [verifierName, verifierSymbol]
-  );
+  const erc20Verifier = await upgrades.deployProxy(ERC20Verifier, [verifierName, verifierSymbol]);
 
   await erc20Verifier.deployed();
   console.log(verifierName, " contract address:", erc20Verifier.address);
@@ -448,7 +445,14 @@ function coreSchemaFromStr(schemaIntString) {
   return SchemaHash.newSchemaHashFromInt(schemaInt);
 }
 
-function calculateQueryHashV2(values, schema, slotIndex, operator, claimPathKey, claimPathNotExists) {
+function calculateQueryHashV2(
+  values,
+  schema,
+  slotIndex,
+  operator,
+  claimPathKey,
+  claimPathNotExists
+) {
   const expValue = prepareCircuitArrayValues(values, 64);
   const valueHash = poseidon.spongeHashX(expValue, 6);
   const schemaHash = coreSchemaFromStr(schema);
@@ -639,5 +643,5 @@ Now that you have been able to create your first on-chain ZK-based application, 
 Another possibility to customize your Smart Contract involves setting different ZK requests. First of all, multiple `REQUEST_ID` must be defined inside the main Smart Contract. Therefore, the contract deployer can set a different query for each request ID and create different outcomes inside `_afterProofSubmit` according to the type of proof received. For example, an airdrop contract can verify the role of a user inside a DAO and distribute a different amount of tokens based on the role.
 
 ## Estimated Gas Costs for On-Chain Verifier
-While it is clear that gas cost is highly dependent on the complexity of the logic that you add to the `_afterProofSubmit` and `_beforeProofSubmit` functions, the sample code for the on-chain verifier in this tutorial costs approximately 700k gas to execute on-chain. The zk proof verification function specifically costs approximately 520k gas. The above estimates are accurate as of January 2024.
 
+While it is clear that gas cost is highly dependent on the complexity of the logic that you add to the `_afterProofSubmit` and `_beforeProofSubmit` functions, the sample code for the on-chain verifier in this tutorial costs approximately 700k gas to execute on-chain. The zk proof verification function specifically costs approximately 520k gas. The above estimates are accurate as of January 2024.

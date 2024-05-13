@@ -422,10 +422,7 @@ async function callback(req, res) {
   } catch (error) {
     return res.status(500).send(error);
   }
-  return res
-    .status(200)
-    .set("Content-Type", "application/json")
-    .send(authResponse);
+  return res.status(200).set("Content-Type", "application/json").send(authResponse);
 }
 ```
 

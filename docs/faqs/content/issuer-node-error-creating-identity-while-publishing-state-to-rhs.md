@@ -23,6 +23,7 @@ The error you're experiencing is typically due to an incorrect configuration of 
 To resolve this issue, check your `.env-issuer` file for the `ISSUER_CREDENTIAL_STATUS_RHS_MODE` value. If it is set to `OffChain`, you must specify a valid Reverse Hash Service Endpoint in `ISSUER_CREDENTIAL_STATUS_RHS_URL`. For example, you could use our staging RHS: `https://rhs-staging.polygonid.me/`.
 
 If your `ISSUER_CREDENTIAL_STATUS_RHS_MODE` is configured for on-chain operation, ensure you have the correct smart contract information for your network, such as Amoy:
+
 - `ISSUER_CREDENTIAL_STATUS_ONCHAIN_TREE_STORE_SUPPORTED_CONTRACT`=0x3d3763eC0a50CE1AdF83d0b5D99FBE0e3fEB43fb
 - `ISSUER_CREDENTIAL_STATUS_RHS_CHAIN_ID`=80002
 
@@ -34,4 +35,5 @@ For a comprehensive understanding and configuration guidance, please review the 
 Wrong answer:
 
 Simply replace the RHS URL with the Issuer Node URL or remove the `ISSUER_CREDENTIAL_STATUS_RHS_URL` from your .env-issuer file without adjusting the `ISSUER_CREDENTIAL_STATUS_RHS_MODE` setting or ensuring the RHS endpoint's validity.
+
 </div>
