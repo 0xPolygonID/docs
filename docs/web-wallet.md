@@ -48,7 +48,8 @@ The tool still supports the verification of other credentials, which can be issu
 - **Consistency and Accuracy**: With a standardized interface, the tool promotes uniformity across users and organizations, minimizing errors.
 
 ## Getting Started
-//add yt video
+
+<!-- add yt video -->
 
 You can experience a demo of the Web Wallet by visiting this [link](https://web-wallet-demo.internal-polygonid-prod.com/)
 
@@ -62,19 +63,15 @@ Let's walk through an example scenario: Suppose a user needs to validate their h
 2. **Connecting the Wallet**: Upon arrival, the user selects 'Connect Wallet' and connects their Ethereum wallet with the tool.
 3. **Creating Identity and Accessing Credentials**: Next, the user selects 'Sign Message' to create a derived identity wallet and retrieve the encrypted credentials associated with their Ethereum wallet via the cloud storage.
 4. **Claiming the Credential**: If the user hasn't previously claimed the credential required by the verifier’s request, they proceed by clicking 'Claim Credential' and complete the issuance process (a face scan in this scenario) to claim the credential via the embedded issuance.
-5. **Proof generation**: Once the user owns the credential, can select 'Verify', triggering the generation of the zk-proof which is then shared to the verifier application in case of off-chain verification and to the smart contract in case of on-chain verification
-6. **Verification Completion**: The user finally clicks the ‘Continue’ button, upon which they are redirected to the application where the verification can be completed and the application flow can continue.
+5. **Proof Generation**: Once the user owns the credential, they can select 'Verify,' triggering the generation of the zk-proof. This proof is then shared with the verifier application for off-chain verification or submitted to the smart contract for on-chain verification.
+6. **Requesting Mobile Verification**: Alternatively, the user can click the “Verify from Mobile” button to start the verification from a mobile device. A QR code will be presented, which the user scans using the Polygon ID App (where they have already claimed the credential). This initiates proof generation and begins the verification process.
+7. **Verification Completion**: The user finally clicks the ‘Continue’ button, upon which they are redirected to the application where the verification can be completed and the application flow can continue.
 
-### End-User Journey of Verification of other credentials
+:::note
 
-When proving custom authentication on an application:
+For credentials that do not support embedded issuance directly through the Web Wallet, applications can still facilitate a seamless verification process. Users who have previously issued credentials stored on their mobile devices can continue the verification from their mobile device. To do this, users can simply click the “Verify from Mobile” button in the Web Wallet interface. This action seamlessly integrates with the existing credentials on their device, allowing them to continue with the verification flow without interruption.
 
-1. **Initiating the Process**: The user clicks a designated button, initiating redirection to the Web Wallet.
-2. **Connecting the Wallet**: Upon arrival, the user selects 'Connect Wallet' to connect their ethereum wallet with the tool.
-3. **Creating Identity and Accessing Credentials**: Next, the user selects 'Sign Message' to create a derived identity wallet and retrieve the encrypted credentials associated with their Ethereum wallet via the cloud storage.
-4. **Requesting mobile verification**: The user clicks the “Verify from mobile” button and a QR code is presented to start the verification from a mobile device.
-5. **Generating Proof via the Polygon ID App**: The user then utilizes the Polygon ID App (where they already have claimed the credential) to scan the displayed QR code, initiating proof generation and commencing the verification process.
-6. **Verification Completion**: The user finally clicks the ‘Continue’ button , upon which they are redirected to the application where the verification can be completed and the application flow can continue.
+:::
 
 ## Integration Process for the Verifiers
 
