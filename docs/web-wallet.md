@@ -102,7 +102,7 @@ The server setup for Off-Chain Verification and the Smart Contract setup for On-
 
 :::note
 
-In Case of Off-Chain Verification, once the user goes through the flow of verification in the Web Wallet, the zero-knowledge proof is returned as a JWZ token in a callback to your verifier backend. You need to handle this callback coming from the Web Wallet and verify the proof.
+In Case of Off-Chain Verification, once the user goes through the flow of verification in the Web Wallet, the zero-knowledge proof is returned as a <ins>[JWZ](./wallet/wallet-sdk/polygonid-sdk/iden3comm/jwz)</ins> token in a callback to your verifier backend. You need to handle this callback coming from the Web Wallet and verify the proof.
 
 :::
 
@@ -170,7 +170,7 @@ const verificationRequest = {
 const base64EncodedVerificationRequest = btoa(JSON.stringify(verificationRequest));
 
 // Open the Polygon ID Verification Web Wallet with the encoded verification request
-window.open(`https://web-wallet.polygonid.me${base64EncodedVerificationRequest}`);
+window.open(`https://web-wallet-test.polygonid.me/#${base64EncodedVerificationRequest}`);
 ```
 
 </TabItem>
@@ -212,27 +212,33 @@ const verificationRequest = {
 const base64EncodedVerificationRequest = btoa(JSON.stringify(verificationRequest));
 
 // Open the Polygon ID Verification Web Wallet with the encoded verification request
-window.open(`https://web-wallet.polygonid.me${base64EncodedVerificationRequest}`);
+window.open(`https://web-wallet-test.polygonid.me/#${base64EncodedVerificationRequest}`);
 ```
 
 </TabItem>
 </Tabs>
 
-`backUrl` represents the URL endpoint of your application where the user will be redirected when they click the ‘Back’ button
+:::warning "Allowed Issuers"
 
-`finishUrl` represents the URL endpoint of your application where the user will be redirected once the proof has been successfully generated and, they click the ‘Continue’ button
+When we use `*` in the "allowed issuers" segment (`allowedIssuers: ['*']`), we mean that we accept any entity that might have provided the credential. Even though this seems to be convenient for testing purposes, it may also be considered risky. Applying due diligence by **actually choosing trusted specific issuers** should be the best approach. Only in rare cases, a verifier would accept any issuer, so we advise not to use `*`.
+
+:::
+
+`backUrl` represents the URL of your application where the user will be redirected when they click the ‘Back’ button
+
+`finishUrl` represents the URL of your application where the user will be redirected once the proof has been successfully generated and, they click the ‘Continue’ button
 
 `name` represents the name of your Application.
 
-`zkQueries` represents the query for what you need to authenticate. Input the generated code snippet of the query in Step 2.
-
-`verifierDiD` represents the DiD of the verifier.
+`zkQueries` represents the query you request your users to verify. Input the generated code snippet of the query in Step 2.
 
 :::note
 
-Currently, only one zk-query can be verified in an authentication request. However, in the future, the capability to verify multiple zk-queries in a single authentication request will be introduced.
+Currently, only one zk-query can be verified in a verification request. However, in the future, the capability to verify multiple zk-queries in a single verification request will be introduced.
 
 :::
+
+`verifierDiD` represents the DiD of the verifier (your DID).
 
 **For off-chain verifications only**:
 
