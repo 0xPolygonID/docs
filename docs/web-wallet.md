@@ -37,8 +37,8 @@ The Web Wallet is a web tool meticulously developed to streamline the verificati
 
 Currently, the tool supports embedded issuance for only two types of credentials:
 
-- Proof of Identity (refer to the schema [here](https://github.com/anima-protocol/claims-polygonid/blob/main/schemas/json-ld/poi-v1.json-ld))
-- Proof of Life (refer to the schema [here](https://github.com/anima-protocol/claims-polygonid/blob/main/schemas/json-ld/pol-v1.json-ld))
+- Proof of Identity (refer to the schema <ins>[here](https://github.com/anima-protocol/claims-polygonid/blob/main/schemas/json-ld/poi-v1.json-ld)</ins>)
+- Proof of Life (refer to the schema <ins>[here](https://github.com/anima-protocol/claims-polygonid/blob/main/schemas/json-ld/pol-v1.json-ld)</ins>)
 
 The tool still supports the verification of other credentials, which can be issued on the Polygon ID Wallet App.
 :::
