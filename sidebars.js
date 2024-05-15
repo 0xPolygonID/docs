@@ -162,6 +162,7 @@ module.exports = {
 
       ],
     },
+    "web-wallet",
     {
       type: "category",
       label: "Wallet",
@@ -220,7 +221,7 @@ module.exports = {
               label: "Identity",
               link: {
                 type: "generated-index",
-                description:"An Identity Wallet creates and stores identities for a user. A user can have more than one identity and can have several credentials linked to each identity. An Identity is represented with an Identifier which allows the user's wallet to interact with an Issuer by authenticating itself first (before the credential can be issued)."
+                description: "An Identity Wallet creates and stores identities for a user. A user can have more than one identity and can have several credentials linked to each identity. An Identity is represented with an Identifier which allows the user's wallet to interact with an Issuer by authenticating itself first (before the credential can be issued)."
               },
               collapsed: true,
               items: [
@@ -243,7 +244,7 @@ module.exports = {
               label: "Credential",
               link: {
                 type: "generated-index",
-                description:"The Credential Wallet lets a user fetch credentials from the Issuer and save these credentials in their wallet. These credentials are later used to prove thier identification to a Verifier. Once the credentials have been fetched and stored, a user can then retrieve them from the database, and update or delete them altogether. The credentials have unique IDs that let a user access them seamlessly."
+                description: "The Credential Wallet lets a user fetch credentials from the Issuer and save these credentials in their wallet. These credentials are later used to prove thier identification to a Verifier. Once the credentials have been fetched and stored, a user can then retrieve them from the database, and update or delete them altogether. The credentials have unique IDs that let a user access them seamlessly."
               },
               collapsed: true,
               items: [
@@ -271,7 +272,7 @@ module.exports = {
                   link: {
                     type: "generated-index"
                   },
-                  items:[
+                  items: [
                     "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/authenticate",
                     "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/fetch-and-save",
                     "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-proofs",
@@ -353,7 +354,6 @@ module.exports = {
         "wallet/push-notification"
       ],
     },
-    "smart-contracts",
     {
       type: "category",
       label: "JS-SDK",
@@ -382,6 +382,7 @@ module.exports = {
         "js-sdk/js-sdk-dynamic-did"
       ],
     },
+    "smart-contracts",
     "releases"
   ],
 }

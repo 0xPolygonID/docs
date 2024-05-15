@@ -94,6 +94,10 @@ module.exports = {
               label: "Verifier",
             },
             {
+              href: "/docs/web-wallet",
+              label: "Web Wallet",
+            },
+            {
               href: "/docs/wallet/wallet-overview/",
               label: "Wallet",
             },
@@ -126,6 +130,10 @@ module.exports = {
             {
               href: "https://jwz.polygonid.me",
               label: "JWZ Validator",
+            },
+            {
+              href: "https://web-wallet-demo.internal-polygonid-prod.com/",
+              label: "Web Wallet",
             },
           ],
         },

@@ -22,7 +22,6 @@ We want to introduce new circuits - СredentialAtomicQueryV3 and CredentialAtomi
 
   <details><summary>Changelog from beta.0 to beta.1</summary>
 
-
     1. ValueArrSize input is introduced, which fixes behaviour for IN / NIN operations.
     2. Exists / Noop / Less Than Or Equal / Greater Than or Equal /  Not between / Between operators support.
     3. Query hash calculation algorithm changes.
