@@ -201,6 +201,7 @@ const verificationRequest = {
       },
     },
   ],
+  verifierDid: "did:polygonid:polygon:amoy:2qV9QXdhXXmN5sKjN1YueMjxgRbnJcEGK2kGpvk3cq",
   transactionData: {
     contractAddress: "0x62811c9e1C8b2397767779BC8ff5Ca48869a61Fc",
     functionName: "submitZKPResponse",
