@@ -186,8 +186,8 @@ const verificationRequest = {
   name: "My app",
   zkQueries: [
     {
-      circuitId: "credentialAtomicQuerySigV2",
-      id: 1711399135,
+      circuitId: "credentialAtomicQuerySigV2OnChain",
+      id: 1713976575,
       query: {
         allowedIssuers: ["*"],
         context:
@@ -205,6 +205,7 @@ const verificationRequest = {
   transactionData: {
     contractAddress: "0x62811c9e1C8b2397767779BC8ff5Ca48869a61Fc",
     functionName: "submitZKPResponse",
+    methodId: "0xb68967e2",
     chainId: 80002,
     network: "polygon-amoy",
   },
