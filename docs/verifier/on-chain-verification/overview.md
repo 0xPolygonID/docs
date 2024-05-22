@@ -140,7 +140,7 @@ contract ERC20Verifier is ERC20Upgradeable, EmbeddedZKPVerifier {
    function initialize(string memory name, string memory symbol) public initializer {
       ERC20VerifierStorage storage $ = _getERC20VerifierStorage();
       super.__ERC20_init(name, symbol);
-      super.__ZKPVerifier_init(_msgSender());
+      super.__EmbeddedZKPVerifier_init(_msgSender());
       $.TOKEN_AMOUNT_FOR_AIRDROP_PER_ID = 5 * 10 ** uint256(decimals());
    }
 
@@ -231,8 +231,8 @@ contract ERC20LinkedUniversalVerifier is ERC20 {
 
    modifier beforeTokenTransfer(address to) {
       require(
-         verifier.getProofStatus(to, TRANSFER_REQUEST_ID_SIG_VALIDATOR).isProved ||
-         verifier.getProofStatus(to, TRANSFER_REQUEST_ID_MTP_VALIDATOR).isProved,
+         verifier.getProofStatus(to, TRANSFER_REQUEST_ID_SIG_VALIDATOR).isVerified ||
+         verifier.getProofStatus(to, TRANSFER_REQUEST_ID_MTP_VALIDATOR).isVerified,
          'only identities who provided sig or mtp proof for transfer requests are allowed to receive tokens'
       );
       _;
@@ -268,30 +268,68 @@ For this tutorial, we are using the Hardhat development environment to facilitat
 
 :::
 
-Execute this Hardhat script to deploy either `ERC20Verifier` or `ERC20LinkedUniversalVerifier`. Change the `verifierContract` variable to the desired contract name.
+#### Deploy your custom contract inherited from EmbeddedZKPVerifier
+
+Execute this Hardhat script to deploy either `ERC20Verifier`. Change the `verifierContract` variable to the desired contract name.
 
 
 ```js
+import { ethers } from "hardhat";
+import { upgrades } from "hardhat";
+
+
 async function main() {
-  const verifierContract = "ERC20Verifier";
-  // const verifierContract = "ERC20LinkedUniversalVerifier";
-  const verifierName = "ERC20zkAirdrop";
-  const verifierSymbol = "zkERC20";
+   const verifierContract = "ERC20Verifier";
+   const verifierName = "ERC20zkAirdrop";
+   const verifierSymbol = "zkERC20";
 
-  const ERC20Verifier = await ethers.getContractFactory(verifierContract);
-  const erc20Verifier = await upgrades.deployProxy(
-    ERC20Verifier,
-    [verifierName, verifierSymbol]
-  );
+   const ERC20Verifier = await ethers.getContractFactory(verifierContract);
+   const erc20Verifier = await upgrades.deployProxy(
+           ERC20Verifier,
+           [verifierName, verifierSymbol]
+   );
 
-  await erc20Verifier.deployed();
-  console.log(verifierName, " contract address:", erc20Verifier.address);
+   await erc20Verifier.waitForDeployment();
+   console.log(verifierName, " contract address:", await erc20Verifier.getAddress());
 }
+
+main()
+        .then(() => process.exit(0))
+        .catch((error) => {
+           console.error(error);
+           process.exit(1);
+        });
+```
+
+#### Deploy your custom contract linked to Universal Verifier smart contract
+
+```js
+import { ethers } from 'hardhat';
+
+async function main() {
+   const universalVerifierAddress = '<universal verifier address here>';
+   const verifierName = 'ERC20LinkedUniversalVerifier';
+   const verifierSymbol = 'zkERC20';
+
+   const verifier = await ethers.deployContract(
+           verifierName,
+           [ universalVerifierAddress, verifierName, verifierSymbol ]
+   );
+   await verifier.waitForDeployment();
+   console.log(verifierName, ' contract address:', await verifier.getAddress());
+}
+
+main()
+        .then(() => process.exit(0))
+        .catch((error) => {
+           console.error(error);
+           process.exit(1);
+        });
 ```
 
 :::note
 
-The contract ERC20Verifier must be deployed on the Amoi test network as there is a set of supporting contracts that are already deployed on Amoi.
+The contract ERC20Verifier preferably to be deployed on the Amoi test network as there is a set of supporting validator contracts.
 
 :::
 
