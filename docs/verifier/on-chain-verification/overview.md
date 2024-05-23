@@ -589,7 +589,7 @@ async function main() {
 
       // const universalVerifier = await hre.ethers.getContractAt('UniversalVerifier', UNIVERSAL_VERIFIER_ADDRESS);
       //
-      // await universalVerifier.addWhitelistedValidator(VALIDATOR_ADDRESS);
+      // await universalVerifier.addValidatorToWhitelist(VALIDATOR_ADDRESS);
       //
       //// You can call this method on behalf of any signer which is supposed to be request controller
       // await universalVerifier.setZKPRequest(requestId, {
