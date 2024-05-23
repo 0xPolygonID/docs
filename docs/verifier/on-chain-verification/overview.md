@@ -700,4 +700,3 @@ Another possibility to customize your Smart Contract involves setting different 
 
 ## Estimated Gas Costs for On-Chain Verifier
 The general gas cost depends on the code you put into `_beforeProofSubmit` and `_afterProofSubmit` hooks. The value we observed with our tests for `submitZKPResponce` functions calls was aroung 700K gas and zk proof verification function specifically costs approximately 520k gas as of January 2024.
-
