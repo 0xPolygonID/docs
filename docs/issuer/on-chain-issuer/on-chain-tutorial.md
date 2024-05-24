@@ -55,29 +55,24 @@ There are two main components in this application:
 1. Deploy an on-chain merklized issuer contract. You can use [this sample](https://github.com/0xPolygonID/contracts/blob/main/contracts/examples/IdentityExample.sol) or create your own smart contract with custom logic.
 
    Clone smart contracts repository:
+
    ```bash
    git clone https://github.com/0xPolygonID/contracts.git
    ```
 
    Deploy Identity Example contract:
+
    ```bash
    export AMOY_PRIVATE_KEY={private_key} && \
    export AMOY_RPC_URL={rpc_url} && \
    npx hardhat run scripts/deployIdentityExample.ts --network amoy
    ```
-   
-   
+
 :::note
 
 You can find more information on how to deploy a smart contract using Hardhat [<ins>in this readme</ins>](https://github.com/iden3/contracts#readme).
 
 :::
-
-
-
-
-   
-   
 
 1. Use the utility to calculate the issuerDID from the smart contract address:
 
@@ -97,23 +92,23 @@ You can find more information on how to deploy a smart contract using Hardhat [<
 
 <TabItem value="Polygon Amoy">
 
-   ```bash
-   SUPPORTED_RPC="80002=<RPC_POLYGON_AMOY>"
-   ISSUERS_PRIVATE_KEY="<ISSUER_DID>=<PRIVATE_KEY_OF_THE_CONTRACT_DEPLOYER>"
-   EXTERNAL_HOST="<NGROK_URL>"
-   SUPPORTED_STATE_CONTRACTS="80002=0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124"
-   ```
+```bash
+SUPPORTED_RPC="80002=<RPC_POLYGON_AMOY>"
+ISSUERS_PRIVATE_KEY="<ISSUER_DID>=<PRIVATE_KEY_OF_THE_CONTRACT_DEPLOYER>"
+EXTERNAL_HOST="<NGROK_URL>"
+SUPPORTED_STATE_CONTRACTS="80002=0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124"
+```
 
 </TabItem>
 
 <TabItem value="Polygon Main">
 
-   ```bash
-   SUPPORTED_RPC="137=<RPC_POLYGON_MAIN>"
-   ISSUERS_PRIVATE_KEY="<ISSUER_DID>=<PRIVATE_KEY_OF_THE_CONTRACT_DEPLOYER>"
-   EXTERNAL_HOST="<NGROK_URL>"
-   SUPPORTED_STATE_CONTRACTS="137=0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D"
-   ```
+```bash
+SUPPORTED_RPC="137=<RPC_POLYGON_MAIN>"
+ISSUERS_PRIVATE_KEY="<ISSUER_DID>=<PRIVATE_KEY_OF_THE_CONTRACT_DEPLOYER>"
+EXTERNAL_HOST="<NGROK_URL>"
+SUPPORTED_STATE_CONTRACTS="137=0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D"
+```
 
 </TabItem>
 </Tabs>
@@ -192,7 +187,7 @@ You can use already deployed demo: https://onchain-merklized-issuer-demo.polygon
 
 1. Visit the [Query builder website](https://schema-builder.polygonid.me/query-builder/).
 
-2. You now need to define the query. 
+2. You now need to define the query.
 
    - **URL**: https://gist.githubusercontent.com/ilya-korotya/b06baa37453ed9aedfcb79100b84d51f/raw/balance-v1.jsonld
    - **Schema type**: BalanceCredential
@@ -211,7 +206,6 @@ You can use already deployed demo: https://onchain-merklized-issuer-demo.polygon
        <img width="300" src="/img/onchain-issuer-12.jpg"></img>
    </div>
 
-
 4. Click on Approve. After which, the process of generating the proof is starts:
 
 <div align="center">
@@ -219,6 +213,7 @@ You can use already deployed demo: https://onchain-merklized-issuer-demo.polygon
 </div>
 
 5.Finally, the proof is generated. The verifier will check the revocation status and some additional information. The proof is then sent and validated by the verifier. You will receive the following response on the Query builder website
+
 <div align="center">
     <img width="600" src="/img/onchain-issuer-14.png"></img>
 </div>

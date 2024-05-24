@@ -51,7 +51,6 @@ Polygon ID wallet is an implementation of the Wallet SDK, as a way of showcasing
 
 The process from downloading to creating an identity on the Polygon ID Wallet is just as it is shown below. You need to download the app, create a wallet, set up a PIN number and the wallet is ready to be used.
 
-
 <div align="center">
     <img src={useBaseUrl("img/quick-start-demo/quick-start-demo-wallet.png")}></img>
 </div>
@@ -180,8 +179,7 @@ Here are the steps to verify the credential:
 
 <div align="center">
     <img width="600" src={useBaseUrl("img/quick-start-demo/verifier-query-3.png")}></img>
-</div> 
-
+</div>
 
 4. After clicking on **Test query**, you should scan the resulting QR code and follow the instructions on the mobile app.
 
