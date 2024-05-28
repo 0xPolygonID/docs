@@ -189,7 +189,7 @@ You can use already deployed demo: https://onchain-merklized-issuer-demo.polygon
 
 2. You now need to define the query.
 
-   - **URL**: https://gist.githubusercontent.com/ilya-korotya/b06baa37453ed9aedfcb79100b84d51f/raw/balance-v1.jsonld
+   - **URL**: ipfs://QmbbTKPTJy5zpS2aWBRps1duU8V3zC84jthpWDXE9mLHBX
    - **Schema type**: BalanceCredential
    - **Attribute field**: balance
 
