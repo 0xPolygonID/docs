@@ -36,6 +36,13 @@ Check a contract codebase and algorithms of work <ins>[docs](https://docs.iden3.
 | **Polygon Amoy testnet** | 0x3d3763eC0a50CE1AdF83d0b5D99FBE0e3fEB43fb |
 | Polygon Mumbai testnet\* | 0x16A1ae4c460C0a42f0a87e69c526c61599B28BC9 |
 
+## UniversalVerifier contract
+
+|         Network          |                  Address                   |
+| :----------------------: | :----------------------------------------: |
+|   **Polygon Mainnet**    | 0x394d1dad46907bd54d15926A1ab4535EF2BF47b1 |
+| **Polygon Amoy testnet** | 0x1B20320042b29AE5c1a3ADc1674cb6bF8760530f |
+
 ## Validator addresses
 
 Current addresses on **Polygon Mainnet** (V2.0.1 V2 validators):
