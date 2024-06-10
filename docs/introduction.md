@@ -15,10 +15,6 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<div align="center">
-<img src={useBaseUrl("img/logo.svg")} align="center" width="128px"/>
-<br /><br />
-</div>
 
 Polygon ID’s identity infrastructure facilitates trusted and secure relationships between apps and users, following the principles of self-sovereign identity and privacy by default. Polygon ID enables organizations on one side to issue verifiable credentials about users, and organizations, on the other side, to verify those claims via a suite of tools created for each member of the SSI ecosystem.
 
