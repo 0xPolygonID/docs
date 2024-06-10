@@ -1,7 +1,7 @@
 <br>
 
 <p align="center">
-<img align="center" src="/static/img/polygon-id-logo.svg">
+<img align="center" src="/static/img/privado_logo.svg">
 </p>
 
 <br>

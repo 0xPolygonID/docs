@@ -87,7 +87,7 @@ function Footer() {
                 aria-current="page"
                 className="nav_logo-link is-footer w-nav-brand w--current"
               >
-                <img src="/img/polygon-labs.svg" loading="lazy" width="113" height="36" alt="" />
+                <img src="/img/privado_logo.svg" loading="lazy" width="113" height="36" alt="" />
               </a>
 
               <div className="footer_sm-link-wrapper">

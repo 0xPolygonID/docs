@@ -4,15 +4,15 @@ const katex = require("rehype-katex");
 require("dotenv").config();
 
 module.exports = {
-  title: "Polygon ID Documentation",
-  tagline: "The official developer documentation hub for Polygon ID.",
+  title: "Privado ID Documentation",
+  tagline: "The official developer documentation hub for Privado ID.",
   url: "https://devs.polygonid.com",
   baseUrl: "/",
-  favicon: "/img/logo-round-purple.png",
+  favicon: "/img/privado_favicon.png",
   organizationName: "0xPolygonID",
   projectName: "docs",
   customFields: {
-    description: "Build your next blockchain dApp using Polygon ID.",
+    description: "Build your next blockchain dApp using Privado ID.",
   },
   i18n: {
     defaultLocale: "en",
@@ -34,7 +34,7 @@ module.exports = {
       content:
         'Polygon Mumbai support ended! Please, migrate to Amoy <a class="announcement-link" rel="noopener noreferrer" href="/docs/mumbai-to-amoy-migration"> Learn more</a>',
       backgroundColor: "#20232a",
-      textColor: "#fff",
+      textColor: "#131313",
       isCloseable: false,
     },
     metadata: [
@@ -74,9 +74,9 @@ module.exports = {
     navbar: {
       hideOnScroll: true,
       logo: {
-        alt: "Polygon logo",
-        src: "img/polygon-id-logo-white.svg",
-        srcDark: "img/polygon-id-logo-white.svg",
+        alt: "Privado logo",
+        src: "img/privado_logo.svg",
+        srcDark: "img/privado_logo.svg",
         href: "/",
         target: "_self",
       },

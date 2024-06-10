@@ -1,6 +1,6 @@
 export const contentData = {
   headText:
-    '<span class="white-text">Integrate</span> Self-Sovereign Identity Solution <span class="white-text">with Zero Knowledge Proofs!</span>',
+    '<span class="white-text">Integrate Self-Sovereign Identity Solution with Zero Knowledge Proofs!',
   headButtons: [
     {
       title: "Build",
