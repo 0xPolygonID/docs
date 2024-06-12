@@ -40,7 +40,7 @@ module.exports = {
     metadata: [
       {
         name: "description",
-        content: "Welcome to Polygon ID Documentation, the official documentation for Polygon ID.",
+        content: "Welcome to Privado ID Documentation, the official documentation for Polygon ID.",
       },
     ],
     colorMode: {
@@ -127,10 +127,6 @@ module.exports = {
               href: "https://jwz.polygonid.me",
               label: "JWZ Validator",
             },
-            {
-              href: "https://web-wallet-demo.internal-polygonid-prod.com/",
-              label: "Web Wallet",
-            },
           ],
         },
         {
@@ -151,7 +147,7 @@ module.exports = {
             },
             {
               href: "https://www.youtube.com/playlist?list=PLRD3rkREa7mIgx_RHZdin74vEb2A1Evek",
-              label: "Inside Polygon ID",
+              label: "Inside Privado ID",
             },
           ],
         },
@@ -189,11 +185,6 @@ module.exports = {
           href: "https://twitter.com/0xPolygonID",
           position: "right",
           className: "header-twitter-link",
-        },
-        {
-          href: "https://discord.com/channels/635865020172861441/1052090291743637504",
-          position: "right",
-          className: "header-discord-link",
         },
       ],
     },

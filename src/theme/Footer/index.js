@@ -83,7 +83,7 @@ function Footer() {
           <div className="container">
             <div className="footer_logo-row">
               <a
-                href="https://polygon.technology"
+                href="https://privado.id/"
                 aria-current="page"
                 className="nav_logo-link is-footer w-nav-brand w--current"
               >
