@@ -1,6 +1,6 @@
 ---
 id: introduction
-title: Introduction to Privado ID
+title: Introduction to Privado ID (prev. Polygon ID)
 sidebar_label: Introduction
 description: Privado ID main concepts.
 keywords:

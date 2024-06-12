@@ -200,6 +200,6 @@ Here are the steps to verify the credential:
 
 :::info
 
-This was a quick demonstration of Privado ID's basic functionalities. However, Polygon ID is far more complex than this. It offers a range of SSI-focused tools that allow for decentralized identity and verifiable credentials management.
+This was a quick demonstration of Privado ID's basic functionalities. However, Privado ID is far more complex than this. It offers a range of SSI-focused tools that allow for decentralized identity and verifiable credentials management.
 
 :::
