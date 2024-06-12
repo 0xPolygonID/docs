@@ -4,15 +4,15 @@ const katex = require("rehype-katex");
 require("dotenv").config();
 
 module.exports = {
-  title: "Privado ID Documentation",
-  tagline: "The official developer documentation hub for Privado ID.",
+  title: "Privado iD Documentation",
+  tagline: "The official developer documentation hub for Privado iD.",
   url: "https://devs.polygonid.com",
   baseUrl: "/",
   favicon: "/img/privado_favicon.png",
   organizationName: "0xPolygonID",
   projectName: "docs",
   customFields: {
-    description: "Build your next blockchain dApp using Privado ID.",
+    description: "Build your next blockchain dApp using Privado iD.",
   },
   i18n: {
     defaultLocale: "en",
@@ -40,7 +40,7 @@ module.exports = {
     metadata: [
       {
         name: "description",
-        content: "Welcome to Privado ID Documentation, the official documentation for Polygon ID.",
+        content: "Welcome to Privado iD Documentation, the official documentation for Privado iD.",
       },
     ],
     colorMode: {
@@ -147,7 +147,7 @@ module.exports = {
             },
             {
               href: "https://www.youtube.com/playlist?list=PLRD3rkREa7mIgx_RHZdin74vEb2A1Evek",
-              label: "Inside Privado ID",
+              label: "Inside Privado iD",
             },
           ],
         },
