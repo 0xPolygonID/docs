@@ -54,7 +54,7 @@ module.exports = {
       links: [],
     },
 
-    image: "img/thumbnail.jpg",
+    // image: "img/thumbnail.jpg",
     prism: {
       theme: require("prism-react-renderer/themes/github"),
       darkTheme: require("prism-react-renderer/themes/dracula"),
