@@ -81,11 +81,12 @@ export function CookieConsent({ onAccept, onDecline }) {
         >
           <button
             style={{
-              background: "radial-gradient(50% 50% at 50% 50%, #9A60FF 0%, #6A23E7 100%)",
+              backgroundColor:"#9AFE5B",
               border: "none",
               borderRadius: "24px",
               cursor: "pointer",
               fontSize: "medium",
+              color:"#131313",
               fontWeight: "600",
               padding: "12px 20px",
             }}
