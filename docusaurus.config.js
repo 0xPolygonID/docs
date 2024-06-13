@@ -32,7 +32,7 @@ module.exports = {
     announcementBar: {
       id: "learn_more",
       content:
-        'Polygon Mumbai support ended! Please, migrate to Amoy <a class="announcement-link" rel="noopener noreferrer" href="/docs/mumbai-to-amoy-migration"> Learn more</a>',
+        'Polygon ID spins out as Privado iD.<a class="announcement-link" rel="noopener noreferrer" href="https://www.privado.id/blog/introducing-privado-id-moving-beyond-polygon-to-deliver-independent-privacy-preserving-identity-solutions">Official Announcement</a>',
       backgroundColor: "#20232a",
       textColor: "#131313",
       isCloseable: false,
@@ -92,6 +92,10 @@ module.exports = {
             {
               href: "/docs/verifier/verifier-overview/",
               label: "Verifier",
+            },
+            {
+              href: "/docs/web-wallet",
+              label: "Web Wallet",
             },
             {
               href: "/docs/wallet/wallet-overview/",
@@ -182,7 +186,7 @@ module.exports = {
           "aria-label": "GitHub repository",
         },
         {
-          href: "https://twitter.com/0xPolygonID",
+          href: "https://x.com/Privado_ID",
           position: "right",
           className: "header-twitter-link",
         },
