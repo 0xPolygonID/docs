@@ -84,7 +84,7 @@ function Home() {
           </section>
           <section>
             <div className="legal-docs">
-              By using our services you agree to Polygon ID's{" "}
+              By using our services you agree to Privado ID's{" "}
               <a href="privacy-policy.pdf" target="_blank">
                 Privacy Policy
               </a>
