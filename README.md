@@ -18,12 +18,12 @@
    <img src="https://img.shields.io/github/languages/code-size/0xPolygonID/docs">
 </p>
 
-Privado iD Documentation is the documentation hub providing extensive documentation, community resources, and guides for enthusiasts and developers interested in learning about or building solutions using Privado iD.
+Privado ID Documentation is the documentation hub providing extensive documentation, community resources, and guides for enthusiasts and developers interested in learning about or building solutions using Privado ID.
 
-The [Privado iD Documentation](https://devs.polygonid.com) website is built using [Docusaurus](https://docusaurus.io/), 
+The [Privado ID Documentation](https://devs.polygonid.com) website is built using [Docusaurus](https://docusaurus.io/), 
 a modern static website generator to build optimized websites quickly.
 
-## Contribute to Privado iD Documentation
+## Contribute to Privado ID Documentation
 ### Requirements
 
 Note that on macOS, you also need Xcode and Command Line Tools.
@@ -125,11 +125,11 @@ You can apply UI changes, sidebar, and configuration design through the followin
 - To modify the website page layout, edit **docusaurus.config.js**
 - To modify the blocks structure and the footer links, edit **src/pages/index.js**
 
-### Making changes using the Privado id docs website
+### Making changes using the Privado ID docs website
 
 You can easily submit an edit suggestion. Note that you must have a GitHub account and good knowledge of Markdown syntax.
 
-1. Navigate to the [Privado iD Documentation page](https://devs.polygonid.com) that you want to edit.
+1. Navigate to the [Privado ID Documentation page](https://devs.polygonid.com) that you want to edit.
 
 2. Scroll down until the end of that page.
 
