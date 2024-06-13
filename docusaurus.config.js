@@ -4,15 +4,15 @@ const katex = require("rehype-katex");
 require("dotenv").config();
 
 module.exports = {
-  title: "Privado iD Documentation",
-  tagline: "The official developer documentation hub for Privado iD.",
+  title: "Privado ID Documentation",
+  tagline: "The official developer documentation hub for Privado ID.",
   url: "https://devs.polygonid.com",
   baseUrl: "/",
   favicon: "/img/privado_favicon.png",
   organizationName: "0xPolygonID",
   projectName: "docs",
   customFields: {
-    description: "Build your next blockchain dApp using Privado iD.",
+    description: "Build your next blockchain dApp using Privado ID.",
   },
   i18n: {
     defaultLocale: "en",
@@ -32,7 +32,7 @@ module.exports = {
     announcementBar: {
       id: "learn_more",
       content:
-        'Polygon Mumbai support ended! Please, migrate to Amoy <a class="announcement-link" rel="noopener noreferrer" href="/docs/mumbai-to-amoy-migration"> Learn more</a>',
+        'Polygon ID spins out as Privado ID.<a class="announcement-link" rel="noopener noreferrer" href="https://www.privado.id/blog/introducing-privado-id-moving-beyond-polygon-to-deliver-independent-privacy-preserving-identity-solutions">Official Announcement</a>',
       backgroundColor: "#20232a",
       textColor: "#131313",
       isCloseable: false,
@@ -40,7 +40,7 @@ module.exports = {
     metadata: [
       {
         name: "description",
-        content: "Welcome to Privado iD Documentation, the official documentation for Privado iD.",
+        content: "Welcome to Privado ID Documentation, the official documentation for Privado ID.",
       },
     ],
     colorMode: {
@@ -92,6 +92,10 @@ module.exports = {
             {
               href: "/docs/verifier/verifier-overview/",
               label: "Verifier",
+            },
+            {
+              href: "/docs/web-wallet",
+              label: "Web Wallet",
             },
             {
               href: "/docs/wallet/wallet-overview/",
@@ -147,7 +151,7 @@ module.exports = {
             },
             {
               href: "https://www.youtube.com/playlist?list=PLRD3rkREa7mIgx_RHZdin74vEb2A1Evek",
-              label: "Inside Privado iD",
+              label: "Inside Privado ID",
             },
           ],
         },
@@ -182,7 +186,7 @@ module.exports = {
           "aria-label": "GitHub repository",
         },
         {
-          href: "https://twitter.com/0xPolygonID",
+          href: "https://x.com/Privado_ID",
           position: "right",
           className: "header-twitter-link",
         },

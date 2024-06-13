@@ -157,6 +157,7 @@ module.exports = {
 
       ],
     },
+    "web-wallet",
     {
       type: "category",
       label: "Wallet",
