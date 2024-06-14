@@ -2,10 +2,10 @@
 id: quick-start-demo
 title: Quick Start Demo
 sidebar_label: Quick Start Demo
-description: A quick demonstration of Polygon ID's main features.
+description: A quick demonstration of Privado ID's main features.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - ID holder
   - issuer
   - verifier
@@ -16,10 +16,10 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This tutorial is a quick demonstration of some of Polygon ID's main functionalities. To illustrate how Polygon ID works, we will walk you through some of its products and tools by following along a simple POAP use case.
+This tutorial is a quick demonstration of some of Privado ID's main functionalities. To illustrate how Privado ID works, we will walk you through some of its products and tools by following along a simple POAP use case.
 POAP stands for Proof of Attendance Protocol, which is used to prove that someone has taken part in a given event.
 
-This guide will briefly touch on the 3 roles of the [Triangle of Trust](introduction.md#core-concepts-of-polygon-id-verifiable-credentials-identity-holder-issuer-and-verifier), namely the Identity Holder, the Issuer and the Verifier. For that, we will take the case of an individual who needs to prove that they were able to participate in a particular event.
+This guide will briefly touch on the 3 roles of the [Triangle of Trust](introduction.md#core-concepts-of-privado-id-verifiable-credentials-identity-holder-issuer-and-verifier), namely the Identity Holder, the Issuer and the Verifier. For that, we will take the case of an individual who needs to prove that they were able to participate in a particular event.
 
 These are the steps we will cover in this article:
 
@@ -45,7 +45,7 @@ To get started with the Polygon ID Wallet, download the Polygon ID Wallet App an
 
 :::note
 
-Polygon ID wallet is an implementation of the Wallet SDK, as a way of showcasing its possibilities. Head to [<ins>the Polygon ID SDK documentation</ins>](./wallet/wallet-sdk/polygonid-sdk/polygonid-sdk-overview.md) to know more about how it works.
+Polygon ID wallet is an implementation of the Wallet SDK, as a way of showcasing its possibilities. Head to [<ins>the Wallet SDK documentation</ins>](./wallet/wallet-sdk/polygonid-sdk/polygonid-sdk-overview.md) to know more about how it works.
 
 :::
 
@@ -88,7 +88,7 @@ To learn how to set up your own issuer environment by deploying an issuer node, 
 
 :::info
 
-The schema used in this demo was built using the Polygon ID Schema Builder and is available on [<ins>the Polygon ID Schema Explorer</ins>](https://schema-builder.polygonid.me/schemas/1fa99457-b2ae-4884-ae12-d658bd6abf69). Learn more about creating new schemas on [<ins>the Schema Builder UI guide</ins>](https://devs.polygonid.com/docs/issuer/schema-builder/).
+The schema used in this demo was built using the Privado ID Schema Builder and is available on [<ins>the Privado ID Schema Explorer</ins>](https://schema-builder.polygonid.me/schemas/1fa99457-b2ae-4884-ae12-d658bd6abf69). Learn more about creating new schemas on [<ins>the Schema Builder UI guide</ins>](https://devs.polygonid.com/docs/issuer/schema-builder/).
 
 :::
 
@@ -200,6 +200,6 @@ Here are the steps to verify the credential:
 
 :::info
 
-This was a quick demonstration of Polygon ID's basic functionalities. However, Polygon ID is far more complex than this. It offers a range of SSI-focused tools that allow for decentralized identity and verifiable credentials management.
+This was a quick demonstration of Privado ID's basic functionalities. However, Privado ID is far more complex than this. It offers a range of SSI-focused tools that allow for decentralized identity and verifiable credentials management.
 
 :::

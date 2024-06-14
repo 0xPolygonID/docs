@@ -83,16 +83,16 @@ function Footer() {
           <div className="container">
             <div className="footer_logo-row">
               <a
-                href="https://polygon.technology"
+                href="https://privado.id/"
                 aria-current="page"
                 className="nav_logo-link is-footer w-nav-brand w--current"
               >
-                <img src="/img/polygon-labs.svg" loading="lazy" width="113" height="36" alt="" />
+                <img src="/img/privado_logo.svg" loading="lazy" width="113" height="36" alt="" />
               </a>
 
               <div className="footer_sm-link-wrapper">
                 <a
-                  href="https://twitter.com/0xPolygonID"
+                  href="https://x.com/Privado_ID"
                   target="_blank"
                   className="w-inline-block"
                 >

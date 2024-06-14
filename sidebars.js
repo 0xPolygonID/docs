@@ -7,11 +7,6 @@
 
 module.exports = {
   polygonid: [
-    {
-      type: 'html',
-      value: 'Polygon ID',
-      className: 'sidebar-title',
-    },
     "introduction",
     "quick-start-demo",
     {
@@ -162,6 +157,7 @@ module.exports = {
 
       ],
     },
+    "web-wallet",
     {
       type: "category",
       label: "Wallet",

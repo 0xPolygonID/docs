@@ -23,26 +23,46 @@ This flow is especially needed in cases where further on-chain logic needs to be
 - Blocking airdrops to users that belong to a specific country
 - Allowing trading only to accounts that passed the KYC verification
 
+## Two ways of verification
+
+Before describing on-chain verification details, it's important to emphasize that there are two ways to add a ZK-proof verification logic to your contracts.
+
+You can inherit `EmbeddedZKPVerifier` smart contract or link to pre-deployed `UniversalVerifier` contract. Both of the contracts share the same parent class and implement the same `IZKPVerifier` interface, which defines methods to set, get, and submit responses for Proof Requests.
+
+However, as `EmbeddedZKPVerifier` is added to client custom contract that means that all verification result are stored in the state of a client contract. Whenever you need to use on-chain verification for a new contract, you need to re-submit all the proof responses to it.
+
+On the other hand, `UniversalVerifier` is deployed as a standalone contract and acts as a central register of proof verifications. Once a proof is submitted for specific proof request, is can be used in many different client contracts.
+
+
 ## On-chain verification flow
 
-At its core, every on-chain interaction between a Verifier and a user's Wallet follows this workflow:
+### Embedded ZKP Verifier
 
 <div align="center">
-<img src={useBaseUrl("img/on-chain-verification-flow.png")} align="center" width="600"/>
+<img src={useBaseUrl("img/embedded-zkp-verifier-flow.png")} align="center" width="600"/>
 </div>
 
-1. After having deployed a [Verifier Smart Contract](#design-the-erc20-zk-airdrop-contract-with-zk-proof-verification), the Verifier designs a [Request](#set-the-zkp-request) for the users. It has to be recorded on-chain either inside the Verifier Smart Contract or in special linked `UniversalVerifier` contract as you may read below.
-1. The Request is delivered to the user within a QR code (or via deep-linking, depending on the implementation).
-1. The user scans the QR code using his/her mobile ID wallet and parses the request
-1. The application fetches the revocation status of the requested credential from the Issuer of that credential.
-1. A ZK proof is generated on mobile according to the request of the website and based on the credentials held in his/her wallet. This also contains the ZK proof that the credential is not revoked.
-1. The user sends the ZK proof to the Verifier Smart Contract.
+1. After having deployed a client custom contract with inherited `Embedded ZKP Verifier`, the Verifier designs and sets a [Proof Request](#set-the-zkp-request) with `setRequest` contract method.
+1. The Request is generated at verifier backend and delivered to a user within a QR code (or via deep-linking, depending on the implementation).
+1. The user scans the QR code using his/her mobile ID wallet and parses the request.
+1. A ZK proof is generated on mobile or web wallet according to the request of the website and based on the credentials held in his/her wallet.
+1. The user sends the ZK proof to the Verifier Smart Contract via `submitZKPResponse` method.
 1. The Verifier Smart Contract verifies the ZK Proof.
 1. The Verifier Smart Contract checks that the State of the Issuer of the credential and the State of the user are still valid and have not been revoked.
 1. If the verification is successful, the proof status is recorded on-chain. 
-1. Now the Verifier Contract may execute a custom business logic, which utilizes the proof status.
+1. Now the Verifier Contract may execute a custom business logic (e.g. minting tokens), which may check the proof status and occurs in the same transaction.
 
 Note that the Verifier only sets the Request at step 1. All the rest of the interaction is between a User and the Smart Contract. All the verification logic is executed programmatically inside the Smart Contract.
+
+### Universal ZKP Verifier
+
+The beginning of the flow up to submitting Proof Response is similar to that of Embedded ZKP Verifier. The difference is that you should call `setZKPRequest` and `submitZKPResponse` in `UniversalVerifier` but not in client custom contract.
+
+Once proof response is submitted, any client custom logic should be executed via a separate transaction invoked on client contract directly. The custom logic may refer to `UniversalVerifier` contract to check for user verification.
+
+<div align="center">
+<img src={useBaseUrl("img/universal-zkp-verifier-flow.png")} align="center" width="800"/>
+</div>
 
 ## Implement an ERC20 ZK Airdrop
 
@@ -66,11 +86,6 @@ Some executable code related to this tutorial is in <ins><a href="https://github
 
 
 ## Design the ERC20 zk Airdrop Contract with ZK-proof verification
-### Two ways of verification
-
-There are two ways to add a ZK-proof verification logic to your contracts.
-You can inherit `EmbeddedZKPVerifier` smart contract or link to pre-deployed `UniversalVerifier` contract.
-Both of the contracts share the same parent class and implement the same `IZKPVerifier` interface, which defines methods to set, get, and submit responses for Proof Requests.
 
 ### Embedded ZKPVerifier Smart Contract
 This is an abstract smart contract, which implements the logic of verifying ZK Proofs and saving the verification result. It is designed to be inherited by another smart contract with own business logic, which may consume proof verification functionality.
