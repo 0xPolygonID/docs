@@ -92,7 +92,7 @@ function Footer() {
 
               <div className="footer_sm-link-wrapper">
                 <a
-                  href="https://x.com/Privado_ID"
+                  href="https://x.com/PrivadoID"
                   target="_blank"
                   className="w-inline-block"
                 >

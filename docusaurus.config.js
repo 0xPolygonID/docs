@@ -186,7 +186,7 @@ module.exports = {
           "aria-label": "GitHub repository",
         },
         {
-          href: "https://x.com/Privado_ID",
+          href: "https://x.com/PrivadoID",
           position: "right",
           className: "header-twitter-link",
         },
