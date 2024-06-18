@@ -124,8 +124,4 @@ On the Polygon ID JS SDK, you can build the following functionalities:
 
 <br/>
 
-:::note
 
-As our JS SDK is still in the public beta stage, you might find a few functionalities missing or not fully updated.
-
-:::
