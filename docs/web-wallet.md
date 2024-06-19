@@ -150,7 +150,7 @@ const verificationRequest = {
       circuitId: "credentialAtomicQuerySigV2",
       id: 1711399135,
       query: {
-        allowedIssuers: ["*"],
+        allowedIssuers: ["did:polygonid:polygon:amoy:2qV9QXdhXXmN5sKjN1YueMjxgRbnJcEGK2kGpvk3cq"],
         context:
           "https://raw.githubusercontent.com/anima-protocol/claims-polygonid/main/schemas/json-ld/pol-v1.json-ld",
         type: "AnimaProofOfLife",
@@ -189,7 +189,7 @@ const verificationRequest = {
       circuitId: "credentialAtomicQuerySigV2OnChain",
       id: 1713976575,
       query: {
-        allowedIssuers: ["*"],
+        allowedIssuers: ["did:polygonid:polygon:amoy:2qV9QXdhXXmN5sKjN1YueMjxgRbnJcEGK2kGpvk3cq"],
         context:
           "https://raw.githubusercontent.com/anima-protocol/claims-polygonid/main/schemas/json-ld/pol-v1.json-ld",
         type: "AnimaProofOfLife",
