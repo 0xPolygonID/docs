@@ -363,7 +363,7 @@ The request takes the following parameters:
 
 CredentialAtomicQuery struct contains 10 fields:
 
-1. `schema` namely the bigInt representation of the schema of the requested credential. This can be obtained by passing your schema to this [Go Sandbox](https://go.dev/play/p/3id7HAhf-Wi). In order to use the sandbox, the constants `jsonLDContext`, `typ`, `fieldName` and `schemaJSONLD` need to be modified according to your request.
+1. `schema` namely the bigInt representation of the schema of the requested credential. This can be obtained by passing your schema to this [Go Sandbox](https://go.dev/play/p/oB_oOW7kBEw). In order to use the sandbox, the constants `jsonLDContext`, `typ`, `fieldName` and `schemaJSONLD` need to be modified according to your request.
 2. `claimPathKey` represents the path to the queries key inside the merklized credential. In this case, it is the path to the `birthday` key. This can be obtained by passing your schema to this [Go Sandbox](https://go.dev/play/p/3id7HAhf-Wi). In order to use the sandbox, the constants `jsonLDContext`, `typ`, `fieldName` and `schemaJSONLD` need to be modified according to your request.
 3. `operator` is either 1,2,3,4,5,6. To understand more about the operator you can check the [zk query language](/docs/verifier/verification-library/zk-query-language.md).
 4. `slotIndex` represents specific position for <a href="https://docs.iden3.io/protocol/claims-structure/#index-vs-value" target="_blank">data in claim</a>.
