@@ -237,8 +237,8 @@ import {EmbeddedZKPVerifier} from '@iden3/contracts/verifiers/EmbeddedZKPVerifie
 import {UniversalVerifier} from '@iden3/contracts/verifiers/UniversalVerifier.sol';
 
 contract ERC20LinkedUniversalVerifier is ERC20 {
-   uint64 public constant TRANSFER_REQUEST_ID_SIG_VALIDATOR = 0;
-   uint64 public constant TRANSFER_REQUEST_ID_MTP_VALIDATOR = 1;
+   uint64 public constant REQUEST_ID = 1; // Should match requestId used for setZKPRequest in UniversalVerifier
+                                          
 
    UniversalVerifier public verifier;
 
@@ -246,8 +246,7 @@ contract ERC20LinkedUniversalVerifier is ERC20 {
 
    modifier beforeTokenTransfer(address to) {
       require(
-         verifier.getProofStatus(to, TRANSFER_REQUEST_ID_SIG_VALIDATOR).isVerified ||
-         verifier.getProofStatus(to, TRANSFER_REQUEST_ID_MTP_VALIDATOR).isVerified,
+         verifier.getProofStatus(to, REQUEST_ID).isVerified,
          'only identities who provided sig or mtp proof for transfer requests are allowed to receive tokens'
       );
       _;
@@ -355,7 +354,7 @@ The actual ZKP request "to be born before 01/01/2002" hasn't been added to the S
 
 The request takes the following parameters:
 
-1. `requestId`: the ID associated with the request.
+1. `requestId`: the ID associated with the request. This has to be unique for each request.
 2. `request`: A struct with the following fields:
    1. `metadata`: contract invoke request.
    2. `validator` the address of the Validators Smart Contract already deployed. This is the contract that executes the verification on the ZK proof submitted by the user. It can be of type [CredentialAtomicQuerySigValidator](/docs/smart-contracts.md#credentialatomicquerysigvalidator) or [CredentialAtomicQueryMTPValidator](/docs/smart-contracts.md#credentialatomicquerymtpvalidator).
