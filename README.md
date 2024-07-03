@@ -9,7 +9,7 @@
 <p align="center">
    <a href="https://github.com/0xPolygonID/docs/network/members"><img src="https://img.shields.io/github/forks/0xPolygonID/docs?style=social"></a>
    <img src="https://img.shields.io/github/stars/0xPolygonID/docs?style=social">
-   <a href="https://x.com/Privado_ID"><img src="https://img.shields.io/twitter/follow/0xPolygonID.svg?style=social"></a>
+   <a href="https://x.com/PrivadoID"><img src="https://img.shields.io/twitter/follow/0xPolygonID.svg?style=social"></a>
    <br>
    <img src="https://img.shields.io/github/languages/count/0xPolygonID/docs">
    <a href="https://github.com/0xPolygonID/docs/issues"><img src="https://img.shields.io/github/issues/0xPolygonID/docs"></a>
