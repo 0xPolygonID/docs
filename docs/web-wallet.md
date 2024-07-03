@@ -150,7 +150,7 @@ const verificationRequest = {
       circuitId: "credentialAtomicQuerySigV2",
       id: 1711399135,
       query: {
-        allowedIssuers: ["did:polygonid:polygon:amoy:2qV9QXdhXXmN5sKjN1YueMjxgRbnJcEGK2kGpvk3cq"],
+        allowedIssuers: ["did:iden3:privado:main:2ScrbEuw9jLXMapW3DELXBbDco5EURzJZRN1tYj7L7"],
         context:
           "https://raw.githubusercontent.com/anima-protocol/claims-polygonid/main/schemas/json-ld/pol-v1.json-ld",
         type: "AnimaProofOfLife",
@@ -163,7 +163,7 @@ const verificationRequest = {
     },
   ],
   callbackUrl: "https://my-app.org/api/callback",
-  verifierDid: "did:polygonid:polygon:amoy:2qV9QXdhXXmN5sKjN1YueMjxgRbnJcEGK2kGpvk3cq",
+  verifierDid: "did:iden3:linea:sepolia:28itzVLBHnMJV8sdjyffcAtWCx8HZ7btdKXxs7fJ6v",
 };
 
 // Encode the verification request to base64
