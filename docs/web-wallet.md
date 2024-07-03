@@ -163,7 +163,7 @@ const verificationRequest = {
     },
   ],
   callbackUrl: "https://my-app.org/api/callback",
-  verifierDid: "did:iden3:linea:sepolia:28itzVLBHnMJV8sdjyffcAtWCx8HZ7btdKXxs7fJ6v",
+  verifierDid: "did:iden3:privado:main:28itzVLBHnMJV8sdjyffcAtWCx8HZ7btdKXxs7fJ6v",
 };
 
 // Encode the verification request to base64
