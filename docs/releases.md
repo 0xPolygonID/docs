@@ -14,7 +14,7 @@ keywords:
 ---
 
 ## Polygon ID latest releases
-
+- Release 7 (July 2024): [Technical Release Notes](/docs/release-notes/r7) | [Blog Post](https://www.privado.id/blog/privado-id-launches-identity-verification-for-apps-in-app-zero-install-human-verification-50-faster)
 - Release 6 (February 2024): [Technical Release Notes](/docs/release-notes/r6) | [Blog Post](https://polygon.technology/blog/polygon-id-release-6-introducing-the-first-ever-implementation-of-dynamic-credentials)
 - Release 5 (November 2023): [Technical Release Notes](/docs/release-notes/r5) | [Blog Post](https://polygon.technology/blog/polygon-id-release-5-boosting-credential-liquidity)
 - Release 4 (July 2023): [https://polygon.technology/blog/polygon-id-release-4-new-tools-seamless-integration](https://polygon.technology/blog/polygon-id-release-4-new-tools-seamless-integration)
