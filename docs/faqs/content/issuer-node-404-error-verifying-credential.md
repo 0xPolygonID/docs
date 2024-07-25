@@ -22,7 +22,7 @@ Error creating proof: [AuthenticateUseCase] error: status is not OK with code 0:
 
 ## Answer
 
-The "unexpected status code: 404" error during credential verification typically stems from the credential status of issuer key or credential status of this credential is being unavailable. This situation arises when the URL of the issuer node used during the creation of the issuer's identity is no longer accessible, thus hindering the revocation status check required for generating the proof.
+The "unexpected status code: 404" error during credential verification typically stems from the credential status of issuer key or credential status of this credential being unavailable. This situation arises when the URL of the issuer node used during the creation of the issuer's identity is no longer accessible, thus hindering the revocation status check required for generating the proof.
 
 To determine if this is the root cause of the error you are encountering, perform the following check:
 
