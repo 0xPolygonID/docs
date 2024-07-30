@@ -416,7 +416,7 @@ async function callback(req, res) {
 
   try {
     const opts = {
-      AcceptedStateTransitionDelay: 5 * 60 * 1000, // 5 minute
+      acceptedStateTransitionDelay: 5 * 60 * 1000, // 5 minute
     };
     authResponse = await verifier.fullVerify(tokenStr, authRequest, opts);
   } catch (error) {
