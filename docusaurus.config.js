@@ -163,7 +163,7 @@ module.exports = {
         {
           position: "left",
           label: "Support",
-          href: "https://support.polygon.technology/support/solutions/82000473421",
+          href: "https://t.me/PrivadoID_Official/",
         },
         {
           position: "left",
