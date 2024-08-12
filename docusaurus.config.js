@@ -163,7 +163,7 @@ module.exports = {
         {
           position: "left",
           label: "Support",
-          href: "https://t.me/PrivadoID_Official/",
+          href: "https://t.me/PrivadoID_Official/2",
         },
         {
           position: "left",
