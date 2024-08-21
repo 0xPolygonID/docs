@@ -170,7 +170,7 @@ function Footer() {
                   </div>
                 </a>
                 <a
-                  href="https://www.youtube.com/@polygonid"
+                  href="https://www.youtube.com/@PrivadoID/"
                   target="_blank"
                   className="w-inline-block"
                 >
