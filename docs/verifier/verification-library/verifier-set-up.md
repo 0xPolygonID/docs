@@ -448,11 +448,6 @@ If both params are present `i_m` is prioritized and `request_uri` is ignored.
 
 The same request can also be delivered to users via Deep Linking. The same format for links must be used.
 
-:::note "Polygon ID wallet"
-
-Polygon ID wallet will support handling of `request_uri` in the next release, while your client can already implement this specification.
-
-:::
 
 **_Shortened URL algorithm_**
 
