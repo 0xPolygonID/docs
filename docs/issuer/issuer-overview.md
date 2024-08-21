@@ -106,12 +106,14 @@ did:iden3:privado:test:
 </Tabs>
 For example, a DID would look like this:
 
-did:iden3:privado:main:2ScrbEuw9jLXMapW3DELXBbDco5EURzJZRN1tYj7L7
+did:iden3:privado:main:2Se4SGXrGrsfrCY8KPRT8R4ZbP91f6sAuBTt8xgA1W
 
 :::note
 State transitions and MTP issuance are not currently supported.
 :::
 
 :::caution
-Currently, a few issuers, such as Synaps, are deployed on the Privado Identity Chain. During the beta phase, where the chain has limited functionality, issuers can continue to use other supported chains, such as Polygon POS, until the full version of the Privado Identity Chain is released. 
+Currently, a few issuers, such as Synaps, are deployed on the Privado Identity Chain. During the beta phase, where the chain has limited functionality, issuers can continue to use other supported chains, such as Polygon POS.
+
+Once the full version of the Privado Identity Chain is released, issuers on both the Privado chain and other supported chains will remain supported, ensuring seamless operation and interoperability across multiple chains.
 :::
