@@ -29,80 +29,60 @@ The content of the QR code provided by the Issuer or Verifier has changed since 
 
 For an advance configuration of the Issuer Node (RHS, Ethereum Identities and more), visit the [Advanced Issuer Node configuration](issuer-configuration.md#Advanced-Issuer-Node-configuration) guide.
 
-There are two options for installing and running the server alongside the UI:
+**You first have to [clone the repository](https://github.com/0xPolygonID/issuer-node).**
 
-1. [Docker Setup Guide](https://github.com/0xPolygonID/issuer-node)
-2. [Standalone Mode Guide](#standalone-mode-guide)
+## Docker Mode Guide
 
-:::note
-We encourage the use of **Standalone** for production environments.
-:::
-
-**For either one, you first have to [clone the repository](https://github.com/0xPolygonID/issuer-node).**
-
-## Standalone Mode Guide
-
-### Standalone Mode Guide Requirements
+### Requirements
 
 - [Docker Engine](https://docs.docker.com/engine/) 1.27
 - Makefile toolchain
 - Unix-based operating system (e.g. Debian, Arch, Mac OS X)
 - [Go](https://go.dev/) version 1.19 or higher
-- [Postgres](https://www.postgresql.org/)
-- [Redis](https://redis.io/)
-- [Hashicorp Vault](https://github.com/hashicorp/vault)
 
-### Standalone Mode Setup
+### Issuer Node API Setup (Basic Configuration)
 
-1. Env files configuration:
+First, make sure you have `resolvers_setting_sample.yaml` in the root directory. Take a look at [Advanced Issuer Node configuration](issuer-configuration.md#Advanced-Issuer-Node-configuration)
 
-   1.1. Copy the config sample files
+1. Env files configuration. Copy the config sample file:
 
 ```bash
 cp .env-issuer.sample .env-issuer
-cp .env-api.sample .env-api
 ```
 
-1.2. Fill the .env-issuer config file with the proper variables
-
-:::info
-For **advanced** Issuer Node **configurations**, visit the [**Advanced Issuer Node configuration**](issuer-configuration.md#Advanced-Issuer-Node-configuration) guide.
-:::
+2. Fill the .env-issuer config file with the proper variables
 
 _.env-issuer_
 
 ```bash
-ISSUER_ETHEREUM_URL=<YOUR_RPC_PROVIDER_URI_ENDPOINT>
-ISSUER_DATABASE_URL=<YOUR_POSTGRESQL_DB_INSTANCE>
-ISSUER_REDIS_URL=<YOUR_REDIS_INSTANCE>
-ISSUER_KEY_STORE_ADDRESS=<YOUR_VAULT_INSTANCE>
-ISSUER_SERVER_URL=<PUBLICLY_ACCESSIBLE_URL_POINTING_TO_ISSUER_SERVER_PORT>
+ISSUER_SERVER_URL=<PUBLIC_SERVER_API_URL>
 ```
 
-1.3. Enable vault authentication
+3. Write the private key in the localstorage. This step is needed in order to be able to transit the issuer's state. To perform that action the given account has to be funded. For Amoy network you can request some testing Matic [here](https://www.alchemy.com/faucets/polygon-amoy).
 
 ```bash
-make add-vault-token
+make private_key=<YOUR_WALLET_PRIVATE_KEY> import-private-key-to-kms
 ```
 
-1.4. Write the private key in the vault. This step is needed in order to be able to transit the issuer's state. To perform that action the given account has to be funded. For Amoy network you can request some testing Matic [here](https://www.alchemy.com/faucets/polygon-amoy).
+4. Run the Issuer Node API:
 
 ```bash
-make private_key=<YOUR_WALLET_PRIVATE_KEY> add-private-key
+make build && make run
 ```
 
-2. Run `make build-local`. This will generate a binary for each of the following commands:
-   - `platform`
-   - `platform_ui`
-   - `migrate`
-   - `pending_publisher`
-   - `notifications`
-3. Run `make db/migrate`. This command checks the database structure and applies the necessary changes to the database schema.
-4. Run `./bin/platform` command to start the issuer.
-5. Run `./bin/pending_publisher`. This checks that publishing transactions to the blockchain works.
-6. _(Optional)_ Run `./bin/notifications`. This enables push notifications when issuing credentials to PID Wallet.
+> **Issuer Node API specification** - http://localhost:3001 or http://<PUBLIC_SERVER_API_URL>:3001
 
-> **Core API specification** - http://localhost:3001
+
+### Issuer Node API Setup (Vault Configuration)
+Instead of using localstorage as a key repository (which is not recommended for production environments) you can configure 
+the issuer node to use [Vault](https://www.vaultproject.io/). To do this you need to change only two variables in 
+the `.env-issuer` configuration file:
+
+```shell
+ISSUER_KMS_BJJ_PROVIDER=vault
+ISSUER_KMS_ETH_PROVIDER=vault
+```
+if you were running the node issuer make sure to run it first `make stop` and then follow the steps 3 and 4.
 
 ---
 

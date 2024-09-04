@@ -53,16 +53,16 @@ To operate, an Issuer must run an Issuer Node, which is a self-hosted Node that 
 
 There are basically two ways the Issuer Node can be implemented:
 
-- Issuer Node Core API
+- Issuer Node API
 - Issuer Node UI
 
 <div align="center">
 <img src= {useBaseUrl("img/whole-infra.png")} align="center" />
 </div>
 
-### Issuer Node Core API
+### Issuer Node API
 
-The [Issuer Node Core API](issuer-core.md) is ideal for users who need multiple identities and for **integrator profiles, who want to create solutions based on Polygon ID functionalities and might be interested in having access to low-level information** such as Merkle Trees.
+The [Issuer Node API](issuer-core.md) is ideal for users who need multiple identities and for **integrator profiles, who want to create solutions based on Polygon ID functionalities and might be interested in having access to low-level information** such as Merkle Trees.
 
 <div align="center">
 <img src= {useBaseUrl("img/3001.png")} align="center" />

@@ -45,7 +45,8 @@ An example of a `didMetaData` passed in the request body of the `Create Identity
         "blockchain":"polygon",
         "network": "amoy",
         "type": "BJJ"
-    }
+    },
+    "credentialStatusType": "Iden3commRevocationStatusv1.0",
 }
 ```
 
