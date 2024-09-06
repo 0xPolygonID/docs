@@ -1,11 +1,11 @@
 ---
 id: setup-issuer-core
-title: Set up Issuer Node Core API
+title: Set up Issuer Node API
 sidebar_label: Setup Guide
 description: Learn how to set up an Issuer Core API.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer node
   - claim
   - verifiable credentials
@@ -29,7 +29,7 @@ The content of the QR code provided by the Issuer or Verifier has changed since 
 
 For an advance configuration of the Issuer Node (RHS, Ethereum Identities and more), visit the [Advanced Issuer Node configuration](issuer-configuration.md#Advanced-Issuer-Node-configuration) guide.
 
-**You first have to [clone the repository](https://github.com/0xPolygonID/issuer-node).**
+**You have to first [clone the repository](https://github.com/0xPolygonID/issuer-node).**
 
 ## Docker Mode Guide
 
@@ -70,7 +70,8 @@ make private_key=<YOUR_WALLET_PRIVATE_KEY> import-private-key-to-kms
 make build && make run
 ```
 
-> **Issuer Node API specification** - http://localhost:3001 or http://<PUBLIC_SERVER_API_URL>:3001
+ **Issuer Node API specification :**
+ >http://localhost:3001 or http://<PUBLIC_SERVER_API_URL>:3001
 
 
 ### Issuer Node API Setup (Vault Configuration)

@@ -21,7 +21,7 @@ module.exports = {
         "issuer/features",
         {
           type: "category",
-          label: "Issuer Node Core API",
+          label: "Issuer Node API",
           link: {
             type: "generated-index",
           },
@@ -53,7 +53,6 @@ module.exports = {
             type: "generated-index",
           },
           items: [
-            "issuer/issuer-node-ui",
             "issuer/setup-issuer-ui",
             "issuer-node/issuer-node-guide",
           ]

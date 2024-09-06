@@ -5,7 +5,7 @@ sidebar_label: Configuration
 description: Issuer custom configuration.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer node
   - configuration
   - verifiable credentials
@@ -17,10 +17,6 @@ import TabItem from '@theme/TabItem';
 # Advanced Issuer Node configuration
 
 This guide will show you how to configure your Issuer Node.
-
-:::caution
-\*Polygon Mumbai testnet has been deprecated
-:::
 
 ## Understanding Revocation Status
 
@@ -42,7 +38,7 @@ Let's see an example of how to configure the issuer node for the Polygon amoy ne
 polygon:
   amoy:
     contractAddress: 0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124 # State contract address
-    networkURL: https://polygon-mumbai.g.alchemy.com/v2/x # Polygon amoy RPC
+    networkURL: https://polygon-amoy.g.alchemy.com/v2/x # Polygon amoy RPC
     defaultGasLimit: 600000
     confirmationTimeout: 10s
     confirmationBlockCount: 5
@@ -74,11 +70,6 @@ then:
 * All - All the statuses.
 
 
-
-
-
-
-**UI**:
 
 
 

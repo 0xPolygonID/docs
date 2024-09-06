@@ -21,6 +21,8 @@ The Issuer Node APIs provide the following functionalities:
 - Generate JSON to create a QR Code and use that to accept credentials in a wallet
 - Revoke a Verifiable Credential
 - Retrieve the Revocation Status of a Verifiable Credential
+- Import and retrieve JSON Schemas
+- Manage Authentication Connections 
 - Call Agent Endpoint using the Wallet App
 
 These API can be tested locally on a <a href="https://issuer-node-core-api-demo.privado.id" target="_blank">Issuer Node</a>.
