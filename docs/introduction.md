@@ -69,8 +69,7 @@ A [Wallet](./wallet/wallet-overview.md) plays a crucial role in the seamless exc
 
 ## Further Resources On Privado ID (prev. Polygon ID)
 
-- [Polygon University - Courses on Polygon ID](https://university.polygon.technology/polygonid/)
-- [Polygon ID Youtube Playlists](https://www.youtube.com/@0xPolygonTV/playlists?view=50&sort=dd&shelf_id=5)
+- [Privado ID Youtube Playlists](https://www.youtube.com/@PrivadoID/playlists?view=50&sort=dd&shelf_id=5)
 - [Polygon ID DID Method Overview at SSI Meetup (April 2023)](https://ssimeetup.org/polygonid-zero-knowledge-identity-web2-web3-otto-mora-webinar-62/)
 - [Adding Verifiable Credentials to your crypto wallet - Eth CC July 2023](https://www.youtube.com/watch?v=5fv8e-k8t98)
 - [The Future of Identity is Self-Sovereign: Build a dapp with Polygon ID - ETH Global - November 2022](https://youtu.be/utpazrLrSbY)

@@ -10,7 +10,8 @@ keywords:
   - claim
   - verifiable credentials
 ---
-
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 An Issuer is any subject that issues Verifiable Credentials. You can think of a credential as a statement: something an Issuer says about another subject. For example, when a university (Issuer) claims that a student (subject) has a degree, this is a credential.
@@ -83,3 +84,36 @@ Issuer Node API UI with Managing Schemas, Credentials and other functionalities:
 <div align="center">
 <img src= {useBaseUrl("img/3002.png")} align="center" />
 </div>
+
+### Privado Identity Chain
+
+The Privado Identity Chain, currently in beta with limited functionality, is a blockchain network designed to serve as the primary chain for user identities. It will act as the authoritative source of truth, enabling other chains to synchronize their state with it. This chain is essential for preventing the fragmentation of identities and credentials across the various chains we will be working with, ensuring that identities and credentials remain consistent and reusable across all chains.
+
+DIDs associated with the Privado Identity Chain will follow a prefix format:
+<Tabs>
+<TabItem value="Mainnet">
+
+```main
+did:iden3:privado:main:
+```
+</TabItem>
+<TabItem value="Testnet">
+
+```test
+did:iden3:privado:test:
+```
+</TabItem>
+</Tabs>
+For example, a DID would look like this:
+
+did:iden3:privado:main:2Se4SGXrGrsfrCY8KPRT8R4ZbP91f6sAuBTt8xgA1W
+
+:::note
+State transitions and MTP issuance are not currently supported.
+:::
+
+:::caution
+Currently, a few issuers, such as Synaps, are deployed on the Privado Identity Chain. During the beta phase, where the chain has limited functionality, issuers can continue to use other supported chains, such as Polygon POS.
+
+Once the full version of the Privado Identity Chain is released, issuers on both the Privado chain and other supported chains will remain supported, ensuring seamless operation and interoperability across multiple chains.
+:::
