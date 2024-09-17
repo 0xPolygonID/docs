@@ -18,7 +18,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A Verifier is any web2 or web3 platform that wants to authenticate users based on their Credentials.
 
-Verifiers can set up queries based on **users’ existing Credentials** collected from a broad set of [Issuers](/docs/issuer/issuer-overview.md). A [Query](/docs/verifier/verification-library/zk-query-language.md) encapsulates the criteria that a user must match to authenticate, such as “must be a member of XYZ DAO” or “must be over 18 years old”. Polygon ID provides a seamless, customized and privacy-based authentication experience to users.
+Verifiers can set up queries based on **users’ existing Credentials** collected from a broad set of [Issuers](/docs/issuer/issuer-overview.md). A [Query](/docs/verifier/verification-library/zk-query-language.md) encapsulates the criteria that a user must match to authenticate, such as “must be a member of XYZ DAO” or “must be over 18 years old”. Privado ID provides a seamless, customized and privacy-based authentication experience to users.
 
 The request of the Verifier is designed using our fully expressive [zk Query Language](/docs/verifier/verification-library/zk-query-language.md) and encapsulated into a [Universal Link](../wallet/universal-links.md) or a QR code to be shown to the user. The clicks the Universal link or user scans the QR code with its mobile wallet app to prompt the proof generation.
 
@@ -35,6 +35,6 @@ At the end of the process, the verifier gets a cryptographic proof that the user
 The Verifier SDK is a set of tools that allow any application to verify user information based on their credentials. The SDK provides a fully customizable and privacy-based authentication experience to users.
 The process of verifying user information based on their credentials can happen on-chain via a smart contract or off-chain. Both processes involve the same level of user privacy and the same degree of query customization. The proof generated on mobile is the same for both cases; the only difference is in the verification process. The on-chain verification happens programmatically inside a smart contract. The off-chain verification happens inside a script that needs to be set up by the Verifier application (either on a server or on the client side):
 
-- [Verifier SDK - Off-chain Verification](./verification-library/verifier-library-intro.md) provides all the elements to create a customized Query, set up a verifier and generate a Universal link or a QR code (or deeplink) on the client side to request proof from the user.
+- [Verifier SDK - Off-chain Verification](./verification-library/verifier-library-intro.md) provides all the elements to create a customized Query, set up a verifier and generate a Universal link or a QR code (or deep link) on the client side to request proof from the user.
 - [Verifier SDK - On-chain Verification](./on-chain-verification/overview.md) allows Dapps to verify users' credentials inside a Smart Contract using zero-knowledge proof cryptography.
 

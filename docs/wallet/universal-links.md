@@ -37,14 +37,18 @@ https://wallet.privado.id/
 
 ## Configuration
 
-The fragment of the URL (specs after `#`) should consists of a protocol message (i_m or request_uri) and in case of Web Wallet some optional parameters like back_url and finish_url.
-The i_m request must be Base64 encoded while request_uri, back_url and finish_url must be URI encoded before adding them to the fragment of the URL.
+The fragment of the URL (specs after `#`) should consist of a protocol message (i_m or request_uri) and in case of Web Wallet some optional parameters like back_url and finish_url.
+
+:::note
+The `i_m` request must be Base64 encoded while `request_uri`, `back_url` and `finish_url` must be URI encoded before adding them to the fragment of the URL. 
+URI encoding the params will translate characters like ?, =, /, and & into their encoded equivalents so that they don’t interfere with the outer URL's query parameters.
+:::
 
 Standard query string delimiters (=, &, )should be used for the params.
 
-`i_m`: Base64-encoded protocol message (used in case of **short messages**)
+`i_m`: Base64-encoded protocol message (used for **short messages**)
 
-`request_uri`: A URI-encoded shortened URL to the message. (used in case of **long messages**)
+`request_uri`: A URI-encoded shortened URL to the message. (used for **long messages**)
 
 :::note
 If both params are present `i_m` is prioritized and `request_uri` is ignored.
@@ -203,9 +207,9 @@ app.listen(3000, () => {
 
 #### Optional  parameters for Web Wallet:
 
-`backUrl` represents the URL of your application where the user will be redirected when they click the ‘Back’ button
+`back_url` represents the URL of your application where the user will be redirected when they click the ‘Back’ button
 
-`finishUrl` represents the URL of your application where the user will be redirected once the proof has been successfully generated and, they click the ‘Continue’ button
+`finish_url` represents the URL of your application where the user will be redirected once the proof has been successfully generated and, they click the ‘Continue’ button
 
 #### Valid Links Formats:
 ```
@@ -217,7 +221,7 @@ https://wallet.privado.id#request_uri={shortenedUrl to message}=&back_url={url}&
 
 :::caution
 
-For privacy reasons, all the parameters must be placed on the fragment part of the URL, i.e after the initial #. This ensures that all parameters stay on the client and are not sent to the server.
+For privacy reasons, all the parameters must be placed in the fragment part of the URL, i.e after the initial #. This ensures that all parameters stay on the client and are not sent to the server.
 
 For security reasons, integration of this tool via IFrame is not supported. Redirecting users is the recommended method for accessing our Web Wallet to ensure secure interaction.
 
