@@ -270,6 +270,14 @@ const encodedRequestWithParams =(`i_m=${base64EncodedRequest}&back_url=${backUrl
 
 // Open the Web Wallet URL with the encoded request
 window.open(`https://wallet-dev.privado.id/#${encodedRequestWithParams}`);
+
+//Note:
+
+// You can also use the `request_uri` param instead of `i_m`, For that first define the Url containing the request.
+const requestUrl = encodeURIComponent("https://raw.githubusercontent.com/0xpulkit/Examples_Privado-ID/main/KYCV3.json");
+
+// Configure the Web Wallet URL
+walletUrlWithRequestUri = `https://wallet-dev.privado.id/#request_uri=${requestUrl}&back_url=${backUrl}&finish_url=${finishUrl}`);
 ```
 
 
