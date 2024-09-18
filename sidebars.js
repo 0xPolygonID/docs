@@ -157,7 +157,6 @@ module.exports = {
 
       ],
     },
-    "web-wallet",
     {
       type: "category",
       label: "Wallet",
@@ -168,6 +167,7 @@ module.exports = {
       items: [
         "wallet/wallet-overview",
         "wallet/universal-links",
+        "wallet/web-wallet",
         {
           type: "category",
           label: "Wallet SDK",
