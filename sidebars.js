@@ -167,7 +167,6 @@ module.exports = {
       collapsed: true,
       items: [
         "wallet/wallet-overview",
-        "wallet/universal-links",
         {
           type: "category",
           label: "Wallet SDK",
