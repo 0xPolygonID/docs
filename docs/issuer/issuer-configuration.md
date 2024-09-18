@@ -105,3 +105,13 @@ polygon:
 </TabItem>
 </Tabs>
 
+### Changing the API Authentication Configuration
+To change the API authentication configuration, you need to modify the `.env-issuer` file. 
+This file is located in the root directory of the issuer node repository.
+
+```shell
+ISSUER_API_AUTH_USER=<issuer-node-api-user>
+ISSUER_API_AUTH_PASSWORD=<issuer-node-api-password>
+```
+
+

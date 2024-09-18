@@ -70,17 +70,6 @@ module.exports = {
         },
         {
           type: "category",
-          label: "Install the Issuer Node",
-          link: {
-            type: "generated-index",
-          },
-          items: [
-            "issuer-node/install-gcm",
-            "issuer-node/install-kubernetes"
-          ]
-        },
-        {
-          type: "category",
           label: "Schemas",
           link: {
             type: "generated-index",

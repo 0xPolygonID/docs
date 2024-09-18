@@ -40,7 +40,7 @@ For an advance configuration of the Issuer Node (RHS, Ethereum Identities and mo
 - Unix-based operating system (e.g. Debian, Arch, Mac OS X)
 - [Go](https://go.dev/) version 1.19 or higher
 
-### Issuer Node API Setup (Basic Configuration)
+### Issuer Node API Setup (basic configuration building docker images)
 
 First, make sure you have `resolvers_setting_sample.yaml` in the root directory. Take a look at [Advanced Issuer Node configuration](issuer-configuration.md#Advanced-Issuer-Node-configuration)
 
@@ -58,7 +58,7 @@ _.env-issuer_
 ISSUER_SERVER_URL=<PUBLIC_SERVER_API_URL>
 ```
 
-3. Write the private key in the localstorage. This step is needed in order to be able to transit the issuer's state. To perform that action the given account has to be funded. For Amoy network you can request some testing Matic [here](https://www.alchemy.com/faucets/polygon-amoy).
+3.Import the Ethereum private key in the kms provider (default is localstorage). This step is needed in order to be able to transit the issuer's state. To perform that action the given account has to be funded. For Amoy network you can request some testing Matic [here](https://www.alchemy.com/faucets/polygon-amoy).
 
 ```bash
 make private_key=<YOUR_WALLET_PRIVATE_KEY> import-private-key-to-kms
@@ -67,7 +67,7 @@ make private_key=<YOUR_WALLET_PRIVATE_KEY> import-private-key-to-kms
 4. Run the Issuer Node API:
 
 ```bash
-make build && make run
+make up && make build && make run
 ```
 
  **Issuer Node API specification :**
@@ -83,7 +83,7 @@ the `.env-issuer` configuration file:
 ISSUER_KMS_BJJ_PROVIDER=vault
 ISSUER_KMS_ETH_PROVIDER=vault
 ```
-if you were running the node issuer make sure to run it first `make stop` and then follow the steps 3 and 4.
+if you were running the node issuer make sure to run it first `make stop-all` and then follow the steps 3 and 4.
 
 ---
 
