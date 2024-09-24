@@ -28,8 +28,8 @@ module.exports = {
           collapsed: true,
           items: [
             "issuer/issuer-core",
-            "issuer/issuer-configuration",
             "issuer/setup-issuer-core",
+            "issuer/issuer-configuration",
             {
               type: "category",
               label: "API Reference",
@@ -98,7 +98,6 @@ module.exports = {
         "issuer/credential-marketplace",
         "contracts/credential-linkage",
         "issuer/cred-issue-methods",
-        "issuer-node/issue-credential-cli",
         "issuer/source-code",
       ],
     },
