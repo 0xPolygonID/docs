@@ -7,7 +7,7 @@ keywords:
   - docs
   - privado id
   - issuer node
-  - credentails
+  - credentials
   - verifiable credentials
   - core
   - API
