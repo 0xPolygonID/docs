@@ -5,7 +5,7 @@ sidebar_label: RHS Setup
 description: Reverse Hash Service Setup.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - issuer node
   - rhs
   - reverse hash service

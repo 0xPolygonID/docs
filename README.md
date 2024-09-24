@@ -7,20 +7,20 @@
 <br>
 
 <p align="center">
-   <a href="https://github.com/0xPolygonID/docs/network/members"><img src="https://img.shields.io/github/forks/0xPolygonID/docs?style=social"></a>
-   <img src="https://img.shields.io/github/stars/0xPolygonID/docs?style=social">
-   <a href="https://x.com/PrivadoID"><img src="https://img.shields.io/twitter/follow/0xPolygonID.svg?style=social"></a>
+   <a href="https://github.com/0xoptimismID/docs/network/members"><img src="https://img.shields.io/github/forks/0xoptimismID/docs?style=social"></a>
+   <img src="https://img.shields.io/github/stars/0xoptimismID/docs?style=social">
+   <a href="https://x.com/PrivadoID"><img src="https://img.shields.io/twitter/follow/0xoptimismID.svg?style=social"></a>
    <br>
-   <img src="https://img.shields.io/github/languages/count/0xPolygonID/docs">
-   <a href="https://github.com/0xPolygonID/docs/issues"><img src="https://img.shields.io/github/issues/0xPolygonID/docs"></a>
-   <a href="https://github.com/0xPolygonID/docs/pulls"><img src="https://img.shields.io/github/issues-pr-raw/0xPolygonID/docs"></a>
-   <a href="https://github.com/0xPolygonID/docs/graphs/contributors"><img src="https://img.shields.io/github/contributors-anon/0xPolygonID/docs"></a>
-   <img src="https://img.shields.io/github/languages/code-size/0xPolygonID/docs">
+   <img src="https://img.shields.io/github/languages/count/0xoptimismID/docs">
+   <a href="https://github.com/0xoptimismID/docs/issues"><img src="https://img.shields.io/github/issues/0xoptimismID/docs"></a>
+   <a href="https://github.com/0xoptimismID/docs/pulls"><img src="https://img.shields.io/github/issues-pr-raw/0xoptimismID/docs"></a>
+   <a href="https://github.com/0xoptimismID/docs/graphs/contributors"><img src="https://img.shields.io/github/contributors-anon/0xoptimismID/docs"></a>
+   <img src="https://img.shields.io/github/languages/code-size/0xoptimismID/docs">
 </p>
 
 Privado ID Documentation is the documentation hub providing extensive documentation, community resources, and guides for enthusiasts and developers interested in learning about or building solutions using Privado ID.
 
-The [Privado ID Documentation](https://devs.polygonid.com) website is built using [Docusaurus](https://docusaurus.io/), 
+The [Privado ID Documentation](https://devs.optimismid.com) website is built using [Docusaurus](https://docusaurus.io/), 
 a modern static website generator to build optimized websites quickly.
 
 ## Contribute to Privado ID Documentation
@@ -52,7 +52,7 @@ Note that on macOS, you also need Xcode and Command Line Tools.
    > For help, see [GitHub Docs: Configuring a remote for a fork](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork).
    
     ```
-    git remote add upstream https://github.com/0xPolygonID/docs
+    git remote add upstream https://github.com/0xoptimismID/docs
     ```
 
 5. If you have already cloned the repository, be sure to sync your fork with the latest changes. 
@@ -109,7 +109,7 @@ your PR. Note that you must have a GitHub account and an understanding of Markdo
     git push
     ```
 
-4. Submit a PR against the `main` branch of the `0xPolygonID/docs` repo.
+4. Submit a PR against the `main` branch of the `0xoptimismID/docs` repo.
    
 5. Add a title to your PR with appropriate labels.
    > For example, if you want to suggest edits to the "Develop" page, name your PR: *update: develop.md*.
@@ -129,7 +129,7 @@ You can apply UI changes, sidebar, and configuration design through the followin
 
 You can easily submit an edit suggestion. Note that you must have a GitHub account and good knowledge of Markdown syntax.
 
-1. Navigate to the [Privado ID Documentation page](https://devs.polygonid.com) that you want to edit.
+1. Navigate to the [Privado ID Documentation page](https://devs.optimismid.com) that you want to edit.
 
 2. Scroll down until the end of that page.
 
@@ -157,7 +157,7 @@ Acceptable PRs will be approved & merged into the `main` branch.
 
 ## Submit an Issue
 
-- Create a [new issue](https://github.com/0xPolygonID/docs/issues) to report a bug, request a feature, 
+- Create a [new issue](https://github.com/0xoptimismID/docs/issues) to report a bug, request a feature, 
   or suggest changes.
 
 - Comment on the issue if you want to be assigned to it so [our team can assign the issue to you](https://github.blog/2019-06-25-assign-issues-to-issue-commenters/).

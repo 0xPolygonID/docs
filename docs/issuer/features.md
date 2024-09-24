@@ -5,7 +5,7 @@ sidebar_label: Features
 description: Issuer main features.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - issuer node
   - claim
   - verifiable credentials
@@ -20,12 +20,12 @@ This feature enables the creation of Ethereum-controlled identities. Ethereum ac
 The representation of the DID for this case follows the same canonical form, where the identifier `2qCU58EJgrELSJT6EzT27Rw9DhvwamAdbMLpePztYq` actually originates from the Ethereum address:
 
 ```
-did:polygonid:polygon:amoy:2qCU58EJgrELSJT6EzT27Rw9DhvwamAdbMLpePztYq
+did:optimismid:optimism:amoy:2qCU58EJgrELSJT6EzT27Rw9DhvwamAdbMLpePztYq
 ```
 
 :::note
 
-Due to its public nature, the Ethereum Polygon DID doesn't support private profiles.
+Due to its public nature, the Ethereum optimism DID doesn't support private profiles.
 
 :::
 

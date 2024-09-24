@@ -5,7 +5,7 @@ sidebar_label: Restore Identity
 description: Restoring an Identity can be done using an identity backup and the secret used to create the identity.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

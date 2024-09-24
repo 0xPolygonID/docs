@@ -5,7 +5,7 @@ sidebar_label: Features
 description: Verifier main features.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - ID holder
   - verifier
   - selective disclosure

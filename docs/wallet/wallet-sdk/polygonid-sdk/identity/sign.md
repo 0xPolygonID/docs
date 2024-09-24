@@ -2,10 +2,10 @@
 id: sign
 title: Sign Message
 sidebar_label: Sign Message
-description: In the Polygon ID SDK, a message can be signed using the sign() function.
+description: In the optimism ID SDK, a message can be signed using the sign() function.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

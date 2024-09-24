@@ -5,7 +5,7 @@ sidebar_label: Overview
 description: Iden3comm is the protocol that defines the set of rules and syntax of the data that needs to be communicated while interacting with an Issuer and a Verifier.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

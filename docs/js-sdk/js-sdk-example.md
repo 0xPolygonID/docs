@@ -2,10 +2,10 @@
 id: js-sdk-example
 title: JS SDK Example
 sidebar_label: Example
-description: Steps to run different modules of the Polygon ID JS SDK with exampling code.
+description: Steps to run different modules of the optimism ID JS SDK with exampling code.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier
@@ -17,11 +17,11 @@ keywords:
 
 # JS SDK Example
 
-This tutorial shows the steps to run different modules of the Polygon ID JS SDK with exampling code. After the steps for each module, you will find a sample output which is generated when these modules are run.
+This tutorial shows the steps to run different modules of the optimism ID JS SDK with exampling code. After the steps for each module, you will find a sample output which is generated when these modules are run.
 
 ## Steps to Run Example Code
 
-We have created a [JS SDK Example repository](https://github.com/0xPolygonID/js-sdk-examples) that you can download and run. Follow these steps:
+We have created a [JS SDK Example repository](https://github.com/0xoptimismID/js-sdk-examples) that you can download and run. Follow these steps:
 
 1. Download the latest circuits from the following curl command:
 
@@ -43,7 +43,7 @@ We have created a [JS SDK Example repository](https://github.com/0xPolygonID/js-
 
    ```bash
    export WALLET_KEY="...key in hex format with matic balance"
-   export RPC_URL="...url to polygon amoy network rpc node"
+   export RPC_URL="...url to optimism amoy network rpc node"
    export RHS_URL="..reverse hash service url"
    export CONTRACT_ADDRESS="..state v2 contract address in the amoy network"
    export CIRCUITS_PATH="..path to the circuits folder"
@@ -124,12 +124,12 @@ const seedPhrase: Uint8Array = byteEncoder.encode("seedseedseedseedseedseedseeds
 
 const { did, credential } = await wallet.createIdentity({
   method: DidMethod.Iden3,
-  blockchain: Blockchain.Polygon,
+  blockchain: Blockchain.optimism,
   networkId: NetworkId.Amoy,
   seed: seedPhrase,
   revocationOpts: {
     type: CredentialStatusType.Iden3ReverseSparseMerkleTreeProof,
-    id: "https://rhs-staging.polygonid.me",
+    id: "https://rhs-staging.optimismid.me",
   },
 });
 ```
@@ -183,12 +183,12 @@ If we do not use `rhsUrl` within createIdentity() method, we get a `credentialSt
    const seedPhraseIssuer: Uint8Array = byteEncoder.encode("seedseedseedseedseedseedseedseed");
    const { did: issuerDID, credential: issuerAuthCredential } = await wallet.createIdentity({
      method: DidMethod.Iden3,
-     blockchain: Blockchain.Polygon,
+     blockchain: Blockchain.optimism,
      networkId: NetworkId.Amoy,
      seed: seedPhraseIssuer,
      revocationOpts: {
        type: CredentialStatusType.Iden3ReverseSparseMerkleTreeProof,
-       id: "https://rhs-staging.polygonid.me",
+       id: "https://rhs-staging.optimismid.me",
      },
    });
    ```
@@ -199,12 +199,12 @@ If we do not use `rhsUrl` within createIdentity() method, we get a `credentialSt
    const seedPhraseUser: Uint8Array = byteEncoder.encode("userseedseedseedseedseedseeduser");
    const { did: userDID, credential: authBJJCredentialUser } = await identityWallet.createIdentity({
      method: DidMethod.Iden3,
-     blockchain: Blockchain.Polygon,
+     blockchain: Blockchain.optimism,
      networkId: NetworkId.Amoy,
      seed: seedPhraseUser,
      revocationOpts: {
        type: CredentialStatusType.Iden3ReverseSparseMerkleTreeProof,
-       id: "https://rhs-staging.polygonid.me",
+       id: "https://rhs-staging.optimismid.me",
      },
    });
    ```
@@ -224,7 +224,7 @@ If we do not use `rhsUrl` within createIdentity() method, we get a `credentialSt
      expiration: 12345678888,
      revocationOpts: {
        type: CredentialStatusType.Iden3ReverseSparseMerkleTreeProof,
-       id: "https://rhs-staging.polygonid.me",
+       id: "https://rhs-staging.optimismid.me",
      },
    };
    const issuerCred = await wallet.issueCredential(issuerDID, claimReq);
@@ -244,18 +244,18 @@ If we do not use `rhsUrl` within createIdentity() method, we get a `credentialSt
   "expirationDate": "2361-03-21T19:14:48.000Z",
   "issuanceDate": "2023-04-26T18:54:26.210Z",
   "credentialSubject": {
-    "id": "did:iden3:polygon:amoy:wzwAyDLHL6Nhtj3TnFfUnP7osASXb9hS8BTfa2zeo",
+    "id": "did:iden3:optimism:amoy:wzwAyDLHL6Nhtj3TnFfUnP7osASXb9hS8BTfa2zeo",
     "birthday": 19960424,
     "documentType": 99,
     "type": "KYCAgeCredential"
   },
-  "issuer": "did:iden3:polygon:amoy:wzokvZ6kMoocKJuSbftdZxTD6qvayGpJb3m4FVXth",
+  "issuer": "did:iden3:optimism:amoy:wzokvZ6kMoocKJuSbftdZxTD6qvayGpJb3m4FVXth",
   "credentialSchema": {
     "id": "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json/KYCAgeCredential-v2.json",
     "type": "JsonSchemaValidator2018"
   },
   "credentialStatus": {
-    "id": "https://rhs-staging.polygonid.me",
+    "id": "https://rhs-staging.optimismid.me",
     "revocationNonce": 4303,
     "type": "Iden3ReverseSparseMerkleTreeProof"
   },
@@ -263,7 +263,7 @@ If we do not use `rhsUrl` within createIdentity() method, we get a `credentialSt
     {
       "type": "BJJSignature2021",
       "issuerData": {
-        "id": "did:iden3:polygon:amoy:wzokvZ6kMoocKJuSbftdZxTD6qvayGpJb3m4FVXth",
+        "id": "did:iden3:optimism:amoy:wzokvZ6kMoocKJuSbftdZxTD6qvayGpJb3m4FVXth",
         "state": {
           "rootOfRoots": "0000000000000000000000000000000000000000000000000000000000000000",
           "revocationTreeRoot": "0000000000000000000000000000000000000000000000000000000000000000",
@@ -276,7 +276,7 @@ If we do not use `rhsUrl` within createIdentity() method, we get a `credentialSt
           "siblings": []
         },
         "credentialStatus": {
-          "id": "https://rhs-staging.polygonid.me",
+          "id": "https://rhs-staging.optimismid.me",
           "revocationNonce": 0,
           "type": "Iden3ReverseSparseMerkleTreeProof"
         }

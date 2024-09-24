@@ -5,7 +5,7 @@ sidebar_label: Check if Circuits are Already Downloaded from Server
 description: The method to check if the circuits are already downloaded from the server.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - proof
   - sdk
   - circuits

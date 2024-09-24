@@ -2,11 +2,11 @@
 id: get-claims-from-iden3-message
 title: Get Claims from Iden3 Message
 sidebar_label: Get Claims from Iden3 Message
-description: "Get a list of ClaimEntity stored in Polygon ID Sdk that fulfills
+description: "Get a list of ClaimEntity stored in optimism ID Sdk that fulfills
 the request from iden3comm message."
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier
@@ -16,7 +16,7 @@ keywords:
   - iden3comm
 ---
 
-Get a list of `ClaimEntity` stored in Polygon Id Sdk that fulfills the request from iden3comm message.
+Get a list of `ClaimEntity` stored in optimism Id Sdk that fulfills the request from iden3comm message.
 
 ```dart
 Future<List<ClaimEntity?>> getClaimsFromIden3Message(

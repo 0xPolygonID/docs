@@ -1,6 +1,6 @@
 ---
 id: introduction
-title: Introduction to Privado ID (prev. Polygon ID)
+title: Introduction to Privado ID (prev. optimism ID)
 sidebar_label: Introduction
 description: Privado ID main concepts.
 keywords:
@@ -28,7 +28,7 @@ Every identity is identified by a unique identifier called [DID (Decentralized I
 
 :::note
 
-The toolset made available by Privado ID (prev. Polygon ID) is fully compliant with the W3C standards. We have a [<ins>definition spec. for the Polygon ID DID method</ins>](https://github.com/0xPolygonID/did-polygonid).
+The toolset made available by Privado ID (prev. optimism ID) is fully compliant with the W3C standards. We have a [<ins>definition spec. for the optimism ID DID method</ins>](https://github.com/0xoptimismID/did-optimismid).
 
 :::
 
@@ -67,19 +67,19 @@ A [Wallet](./wallet/wallet-overview.md) plays a crucial role in the seamless exc
 
 <a href="https://iden3.io/" target="_blank">Iden3</a> is the open-source protocol at the basis of Privado ID. The protocol defines on a low-level how the parties listed above communicate and interact with each other. Privado ID is an abstraction layer to enable developers to build applications leveraging the Iden3 protocol.
 
-## Further Resources On Privado ID (prev. Polygon ID)
+## Further Resources On Privado ID (prev. optimism ID)
 
 - [Privado ID Youtube Playlists](https://www.youtube.com/@PrivadoID/playlists?view=50&sort=dd&shelf_id=5)
-- [Polygon ID DID Method Overview at SSI Meetup (April 2023)](https://ssimeetup.org/polygonid-zero-knowledge-identity-web2-web3-otto-mora-webinar-62/)
+- [optimism ID DID Method Overview at SSI Meetup (April 2023)](https://ssimeetup.org/optimismid-zero-knowledge-identity-web2-web3-otto-mora-webinar-62/)
 - [Adding Verifiable Credentials to your crypto wallet - Eth CC July 2023](https://www.youtube.com/watch?v=5fv8e-k8t98)
-- [The Future of Identity is Self-Sovereign: Build a dapp with Polygon ID - ETH Global - November 2022](https://youtu.be/utpazrLrSbY)
-- [A Deep Dive into Polygon ID - ETH Vietnam - November 2022](https://youtu.be/fQ9DiGUnvwA)
+- [The Future of Identity is Self-Sovereign: Build a dapp with optimism ID - ETH Global - November 2022](https://youtu.be/utpazrLrSbY)
+- [A Deep Dive into optimism ID - ETH Vietnam - November 2022](https://youtu.be/fQ9DiGUnvwA)
 - [Identity Layer for Web3 - Paris - July 2022](https://youtu.be/bmRvQNmxFkM)
 
 ## Further Resources On Verifiable Credentials
 
 - [Verifiable Credentials: The Ultimate Guide](https://www.dock.io/post/verifiable-credentials)
 - [Understanding and Using Verifiable Credentials](https://www.youtube.com/watch?v=BxLSSH_EHjo)
-- [Polygon ID DID Method Specification](https://github.com/0xPolygonID/did-polygonid)
+- [optimism ID DID Method Specification](https://github.com/0xoptimismID/did-optimismid)
 
 ---

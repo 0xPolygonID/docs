@@ -23,33 +23,33 @@ This guide will briefly touch on the 3 roles of the [Triangle of Trust](introduc
 
 These are the steps we will cover in this article:
 
-1. [Set up a Polygon ID wallet](#set-up-a-polygon-id-wallet)
+1. [Set up a optimism ID wallet](#set-up-a-optimism-id-wallet)
 2. [Issue a new credential to attest to the ID Holder's attendance to the event](#issue-a-new-credential-to-attest-to-the-id-holders-event-attendance)
 3. [Fetch the newly created credential](#fetch-the-newly-created-credential)
 4. [Verify the credential validity](#verify-the-id-holder-credential)
 
-## Set up a Polygon ID wallet
+## Set up a optimism ID wallet
 
-As an Identity Holder, the individual who wants to have a credential to prove his age, for example, will need an application that can hold their credentials. In our case, we will be using the Polygon ID Wallet.
-
-:::note
-
-You can also use any Polygon ID compatible wallet. Please, check our [<ins>Ecosystem page</ins>](https://marketplace.polygonid.me/ecosystem) for other options.
-
-:::
-
-To get started with the Polygon ID Wallet, download the Polygon ID Wallet App and create an Identity:
-
-- For Android: <a href="https://play.google.com/store/apps/details?id=com.polygonid.wallet" target="_blank">Polygon ID on Google Play</a>
-- For iOS: <a href="https://apps.apple.com/us/app/polygon-id/id1629870183" target="_blank">Polygon ID on the App Store</a>
+As an Identity Holder, the individual who wants to have a credential to prove his age, for example, will need an application that can hold their credentials. In our case, we will be using the optimism ID Wallet.
 
 :::note
 
-Polygon ID wallet is an implementation of the Wallet SDK, as a way of showcasing its possibilities. Head to [<ins>the Wallet SDK documentation</ins>](./wallet/wallet-sdk/polygonid-sdk/polygonid-sdk-overview.md) to know more about how it works.
+You can also use any optimism ID compatible wallet. Please, check our [<ins>Ecosystem page</ins>](https://marketplace.optimismid.me/ecosystem) for other options.
 
 :::
 
-The process from downloading to creating an identity on the Polygon ID Wallet is just as it is shown below. You need to download the app, create a wallet, set up a PIN number and the wallet is ready to be used.
+To get started with the optimism ID Wallet, download the optimism ID Wallet App and create an Identity:
+
+- For Android: <a href="https://play.google.com/store/apps/details?id=com.optimismid.wallet" target="_blank">optimism ID on Google Play</a>
+- For iOS: <a href="https://apps.apple.com/us/app/optimism-id/id1629870183" target="_blank">optimism ID on the App Store</a>
+
+:::note
+
+optimism ID wallet is an implementation of the Wallet SDK, as a way of showcasing its possibilities. Head to [<ins>the Wallet SDK documentation</ins>](./wallet/wallet-sdk/optimismid-sdk/optimismid-sdk-overview.md) to know more about how it works.
+
+:::
+
+The process from downloading to creating an identity on the optimism ID Wallet is just as it is shown below. You need to download the app, create a wallet, set up a PIN number and the wallet is ready to be used.
 
 <div align="center">
     <img src={useBaseUrl("img/quick-start-demo/quick-start-demo-wallet.png")}></img>
@@ -57,7 +57,7 @@ The process from downloading to creating an identity on the Polygon ID Wallet is
 
 :::caution
 
-This demo is using Polygon Amoy testnet. Go to the gear icon at the top right and ensure "Polygon Amoy network" is selected instead of "Polygon Main network".
+This demo is using optimism Amoy testnet. Go to the gear icon at the top right and ensure "optimism Amoy network" is selected instead of "optimism Main network".
 
 <div align="center">
     <img width="300" src={useBaseUrl("img/quick-start-demo/settings-amoy.jpg")}></img>
@@ -69,7 +69,7 @@ This demo is using Polygon Amoy testnet. Go to the gear icon at the top right an
 
 A trusted entity, for instance, a private institution will now play the role of an issuer. It will be responsible for creating the credential and sending it to the ID Holder.
 
-We are using <a href="https://user-ui:password-ui@issuer-ui.polygonid.me">the Issuer Node UI testing environment</a> to manage credentials. This is the place where the trusted entity can create credentials, manage schemas and generate connections.
+We are using <a href="https://user-ui:password-ui@issuer-ui.optimismid.me">the Issuer Node UI testing environment</a> to manage credentials. This is the place where the trusted entity can create credentials, manage schemas and generate connections.
 
 However, if you are using a new credential type, you actually need to create a schema for that credential, which basically is the set of JSON files that gather all the attributes of that specific credential.
 
@@ -88,7 +88,7 @@ To learn how to set up your own issuer environment by deploying an issuer node, 
 
 :::info
 
-The schema used in this demo was built using the Privado ID Schema Builder and is available on [<ins>the Privado ID Schema Explorer</ins>](https://schema-builder.polygonid.me/schemas/1fa99457-b2ae-4884-ae12-d658bd6abf69). Learn more about creating new schemas on [<ins>the Schema Builder UI guide</ins>](https://devs.polygonid.com/docs/issuer/schema-builder/).
+The schema used in this demo was built using the Privado ID Schema Builder and is available on [<ins>the Privado ID Schema Explorer</ins>](https://schema-builder.optimismid.me/schemas/1fa99457-b2ae-4884-ae12-d658bd6abf69). Learn more about creating new schemas on [<ins>the Schema Builder UI guide</ins>](https://devs.optimismid.com/docs/issuer/schema-builder/).
 
 :::
 
@@ -96,7 +96,7 @@ The schema used in this demo was built using the Privado ID Schema Builder and i
 
 With the new schema in hand, the issuer should now be able to generate a credential.
 
-1. First, go to the <a href="https://user-ui:password-ui@issuer-ui.polygonid.me">the Issuer Node UI testing environment</a>.
+1. First, go to the <a href="https://user-ui:password-ui@issuer-ui.optimismid.me">the Issuer Node UI testing environment</a>.
 
    :::warning
 
@@ -162,7 +162,7 @@ Here comes the third role in this tutorial: the verifier. This could be represen
 
 Here are the steps to verify the credential:
 
-1. Visit the [Query builder website](https://schema-builder.polygonid.me/query-builder/). The [Query Builder](/docs/verifier/query-builder/) is an awesome tool designed to simplify the creation of verification queries.
+1. Visit the [Query builder website](https://schema-builder.optimismid.me/query-builder/). The [Query Builder](/docs/verifier/query-builder/) is an awesome tool designed to simplify the creation of verification queries.
 
 <div align="center">
     <img width="600" src={useBaseUrl("img/quick-start-demo/verifier-home.png")}></img>
@@ -175,7 +175,7 @@ Here are the steps to verify the credential:
     <img width="600" src={useBaseUrl("img/quick-start-demo/verifier-query-2.png")}></img>
 </div>
 
-3. Click **Create Query**. Now select the Network as Polygon Amoy (testnet)
+3. Click **Create Query**. Now select the Network as optimism Amoy (testnet)
 
 <div align="center">
     <img width="600" src={useBaseUrl("img/quick-start-demo/verifier-query-3.png")}></img>

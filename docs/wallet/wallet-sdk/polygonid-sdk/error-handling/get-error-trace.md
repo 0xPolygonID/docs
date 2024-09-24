@@ -5,7 +5,7 @@ sidebar_label: Get Error Trace
 description: "Get the error of the latest flow execution."
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

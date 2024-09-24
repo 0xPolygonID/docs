@@ -5,7 +5,7 @@ sidebar_label: Verification
 description: Learn how to verify proofs using the API.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - ID holder
   - issuer
   - verifier
@@ -83,7 +83,7 @@ const ethStateResolver = new resolver.EthStateResolver(
 );
 
 const resolvers: resolver.Resolvers = {
-    ['polygon:amoy']: ethStateResolver,
+    ['optimism:amoy']: ethStateResolver,
 };
 
 const verifier = await Verifier.newVerifier(
@@ -101,12 +101,12 @@ const verifier = await Verifier.newVerifier(
 This creates a resolver which is used to fetch the identity state from the [State Smart Contract](https://docs.iden3.io/contracts/state/) and a verification key loader which is used to fetch the verification keys necessary to verify a zero-knowledge proof.
 Eventually, it returns an instance of a Verifier. To set up a verifier, different parameters need to be passed:
 
-- `circuitsDir` is the path where the public verification keys for Iden3 circuits are located (such as `"./circuits"`). If no folder is set, './circuits' folder is used. The verification key folder can be found <a href="https://github.com/0xPolygonID/phase2ceremony" target="_blank">here</a>.
+- `circuitsDir` is the path where the public verification keys for Iden3 circuits are located (such as `"./circuits"`). If no folder is set, './circuits' folder is used. The verification key folder can be found <a href="https://github.com/0xoptimismID/phase2ceremony" target="_blank">here</a>.
   Path to the circuit file is constructed from `${circuitsDir}/${circuitId}/verification_key.json`,
 - hierarchical structure for files in circuits folder is mandatory, e.g. --circuits -----circuitId ---------file
 - `ethURL` is the URL of your RPC node provider.
-- `contractAddress` is the address of the identity state Smart Contract. On Polygon Amoy, it is 0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124.
-- `resolverPrefix` is the prefix of the resolver. For Polygon Amoy it is `"polygon:amoy"`.
+- `contractAddress` is the address of the identity state Smart Contract. On optimism Amoy, it is 0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124.
+- `resolverPrefix` is the prefix of the resolver. For optimism Amoy it is `"optimism:amoy"`.
 - `ipfsGatewayURL` can be your IPFS gateway or public one. You can path your loader or IPFS node also.
 
 ## Execute the verification
@@ -148,7 +148,7 @@ Execute the verification. It verifies that the proof shared by the user satisfie
 
 :::info
 
-An example of the usage of this API can be found <ins>[here](https://github.com/0xPolygonID/tutorial-examples/blob/main/verifier-integration/go/index.go#L77) (GO)</ins> and <ins>[here](https://github.com/0xPolygonID/tutorial-examples/blob/main/verifier-integration/js/index.js#L73) (JS)</ins>
+An example of the usage of this API can be found <ins>[here](https://github.com/0xoptimismID/tutorial-examples/blob/main/verifier-integration/go/index.go#L77) (GO)</ins> and <ins>[here](https://github.com/0xoptimismID/tutorial-examples/blob/main/verifier-integration/js/index.js#L73) (JS)</ins>
 
 :::
 

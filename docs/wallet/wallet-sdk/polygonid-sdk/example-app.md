@@ -5,13 +5,13 @@ sidebar_label: Example App
 description: Learn how to build an example app with the Flutter SDK.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - flutter sdk
   - wallet sdk
 ---
 
-To use Polygon ID SDK, we have created a [Polygon ID SDK Plugin](./polygonid-sdk-plugin.md). This plugin helps you communicate with our Polygon ID Platform.
+To use optimism ID SDK, we have created a [optimism ID SDK Plugin](./optimismid-sdk-plugin.md). This plugin helps you communicate with our optimism ID Platform.
 
 The following steps illustrate how to get things started and then use this plugin to create an identity, authenticate this identity, fetch a credential from an Issuer using identity, and generate a proof to get this credential verified.
 
@@ -19,15 +19,15 @@ The following steps illustrate how to get things started and then use this plugi
 
 1. **Install Flutter**: Install Flutter SDK. To know the steps in detail, read the tutorial [here](https://docs.flutter.dev/get-started/install).
 
-2. **Clone Repository**: Clone the [polygonid-sdk-repository](https://github.com/iden3/polygonid-flutter-sdk.git).
+2. **Clone Repository**: Clone the [optimismid-sdk-repository](https://github.com/iden3/optimismid-flutter-sdk.git).
 
-3. **Set Directory**: On your Terminal, change the directory to `example`, which is a folder in the `polygonid-sdk-repository`.
+3. **Set Directory**: On your Terminal, change the directory to `example`, which is a folder in the `optimismid-sdk-repository`.
 
    ```bash
    cd example
    ```
 
-4. **Set Dependencies**: To use the Polygon ID SDK plugin, add the following dependencies to your `pubspec.yaml` file:
+4. **Set Dependencies**: To use the optimism ID SDK plugin, add the following dependencies to your `pubspec.yaml` file:
 
    **environment**:
 
@@ -41,13 +41,13 @@ The following steps illustrate how to get things started and then use this plugi
    flutter:
      sdk: flutter
 
-   polygonid_flutter-sdk: ^x.y.z
+   optimismid_flutter-sdk: ^x.y.z
    ```
 
    where "^x.y.z" stands for the version constraints (range of versions that are backward compatwith the x.y
    version). For more details on version constraints, click [here](https://dart.dev/tools/pub/dependencies#version-constraints).
 
-   Read more [here](/docs/wallet/wallet-sdk/polygonid-sdk/polygonid-sdk-plugin).
+   Read more [here](/docs/wallet/wallet-sdk/optimismid-sdk/optimismid-sdk-plugin).
 
 5. **Get Dart packages**: While in the `example` directory, run the following command:
 
@@ -112,11 +112,11 @@ which, in our case shows:
 
 ### Overview
 
-In the upcoming sections, we shall see the general flow of how to use the Polygon ID SDK plugin. The steps are summarised as:
+In the upcoming sections, we shall see the general flow of how to use the optimism ID SDK plugin. The steps are summarised as:
 
 A. [**Identity**](#a-identity)
 
-1. Initialize Polygon ID SDK.
+1. Initialize optimism ID SDK.
 2. Create an Identity for the wallet.
 3. Retrieve Identifier from the Identity created in the previous step.
 4. Remove Identity (only if required).
@@ -137,28 +137,28 @@ C. **Proof**
 
 ### **A. Identity**
 
-This part of the flow consists of initializing Polygon ID SDK, creating an identifier for an identity and retrieving it, and using the identifier to authenticate the Identity.
+This part of the flow consists of initializing optimism ID SDK, creating an identifier for an identity and retrieving it, and using the identifier to authenticate the Identity.
 
-#### **_1. Initiate Polygon ID SDK_**
+#### **_1. Initiate optimism ID SDK_**
 
-To start using Polygon ID SDK, an integrator needs to initialize it first. This is done inside the dependency injection initializer using `await PolygonIdSDK.init()`.
+To start using optimism ID SDK, an integrator needs to initialize it first. This is done inside the dependency injection initializer using `await optimismIdSDK.init()`.
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:polygonid_flutter_sdk/sdk/polygon_id_sdk.dart';
+import 'package:optimismid_flutter_sdk/sdk/optimism_id_sdk.dart';
 
 Future<void> main() async {
-  await PolygonIdSdk.init();
+  await optimismIdSdk.init();
   runApp(const App());
 }
 ```
 
-If the SDK has not been initialized, the system throws an exception: `PolygonIsSdkNotInitializedException` indicating that the Polygon ID SDK has not been initialized and must be initialized first with `await PolygonIdSDK.init()`.
+If the SDK has not been initialized, the system throws an exception: `optimismIsSdkNotInitializedException` indicating that the optimism ID SDK has not been initialized and must be initialized first with `await optimismIdSDK.init()`.
 
-After the SDK initialization, the Integrator will need to use the instance of PolygonIdSDK:
+After the SDK initialization, the Integrator will need to use the instance of optimismIdSDK:
 
 ```
-getIt.registerLazySingleton<PolygonIdSdk>(() => PolygonIdSdk.I)
+getIt.registerLazySingleton<optimismIdSdk>(() => optimismIdSdk.I)
 ```
 
 #### **_2. Create Identity_**
@@ -169,7 +169,7 @@ If no previously created Identifier is found, the SDK first needs to create an i
 ```dart
 Future<void> createIdentity() async {
   // we get the sdk instance previously initialized
-  final sdk = PolygonIdSdk.I;
+  final sdk = optimismIdSdk.I;
   PrivateIdentityEntity identity = await sdk.identity.addIdentity(secret: secretKey);
 }
 ```
@@ -386,7 +386,7 @@ Future<void> updateClaim({
   String? type,
   Map<String, dynamic>? data,
 }) async {
-  PolygonIdSdk sdk = PolygonIdSdk.I;
+  optimismIdSdk sdk = optimismIdSdk.I;
   await sdk.credential.updateClaim(
     id: claimId,
     identifier: identifier,

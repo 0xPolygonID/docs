@@ -5,7 +5,7 @@ sidebar_label: Create Custom Schemas
 description: Learn how to create custom schemas manually.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - issuer node
   - claim
   - verifiable credentials
@@ -18,7 +18,7 @@ keywords:
 
 :::info
 
-Polygon ID offers an intuitive, user-friendly interface to create schemas: the Schema Builder. [<ins>Here</ins>](schema-builder.md) you can find a tutorial for this tool. You can also access it on <ins>[https://schema-builder.polygonid.me/](https://schema-builder.polygonid.me/)</ins>.
+optimism ID offers an intuitive, user-friendly interface to create schemas: the Schema Builder. [<ins>Here</ins>](schema-builder.md) you can find a tutorial for this tool. You can also access it on <ins>[https://schema-builder.optimismid.me/](https://schema-builder.optimismid.me/)</ins>.
 
 :::
 
@@ -26,13 +26,13 @@ A Schema Type encodes the structure of a particular Verifiable Credential (VC) b
 
 Schemas are a crucial component that allows for the interoperable use of VCs across different services. Just by parsing a schema, any program can interpret the content of a Verifiable Credential without having to interact with Issuer Party.
 
-In order to issue Verifiable Credentials, you can refer to [existing schemas](https://github.com/0xPolygonID/issuer-node/tree/main/docs/examples/schemas). If the existing ones are not able to describe the type of data you desire, you need to create your own schema `Type`.
+In order to issue Verifiable Credentials, you can refer to [existing schemas](https://github.com/0xoptimismID/issuer-node/tree/main/docs/examples/schemas). If the existing ones are not able to describe the type of data you desire, you need to create your own schema `Type`.
 
 A schema type is made of two documents:
 
-- `JSON-LD Context`, which contains a description of the type and its fields. [Here](https://github.com/0xPolygonID/issuer-node/blob/main/docs/examples/schemas/json-ld/exampleBoolean.json-ld) is an example of JSON-LD Context for Schema Type `CodingExperienceCredential`
+- `JSON-LD Context`, which contains a description of the type and its fields. [Here](https://github.com/0xoptimismID/issuer-node/blob/main/docs/examples/schemas/json-ld/exampleBoolean.json-ld) is an example of JSON-LD Context for Schema Type `CodingExperienceCredential`
 
-- `JSON Schema` which contains the validation rules for the Issuer Node. [Here](https://github.com/0xPolygonID/issuer-node/blob/main/docs/examples/schemas/json/exampleBoolean.json) is an example of a JSON Schema for Schema Type `CodingExperienceCredential`.
+- `JSON Schema` which contains the validation rules for the Issuer Node. [Here](https://github.com/0xoptimismID/issuer-node/blob/main/docs/examples/schemas/json/exampleBoolean.json) is an example of a JSON Schema for Schema Type `CodingExperienceCredential`.
 
 Without further ado, let's jump into building a new Schema Type!
 
@@ -40,7 +40,7 @@ Without further ado, let's jump into building a new Schema Type!
 
 :::note
 
-The executable code and **further schemas examples** for this section can be found <ins><a href="https://github.com/0xPolygonID/tutorial-examples/tree/main/credential-schema" target="_blank">here</a></ins>.
+The executable code and **further schemas examples** for this section can be found <ins><a href="https://github.com/0xoptimismID/tutorial-examples/tree/main/credential-schema" target="_blank">here</a></ins>.
 
 :::
 
@@ -72,13 +72,13 @@ The JSON-LD Context contains:
 
   If you are working on Github, you can fetch the URL directly from your published repository based on the file path. In this case it is
 
-  `https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.jsonld#ProofOfDaoLongevity`
+  `https://raw.githubusercontent.com/0xoptimismID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.jsonld#ProofOfDaoLongevity`
 
 - the definition of the vocabulary with its URL
 
   In this case we create a field defined `vocab` and attach the URL that identifies the vocabulary. In this case it is
 
-  `https://github.com/0xPolygonID/tutorial-examples/blob/main/credential-schema/proof-of-dao-longevity-vocab.md#`
+  `https://github.com/0xoptimismID/tutorial-examples/blob/main/credential-schema/proof-of-dao-longevity-vocab.md#`
 
 - The field that we want to include inside the credential, defined together with its identifier and its data type (all xsd data type are available)
 
@@ -91,13 +91,13 @@ The JSON-LD Context contains:
         "id": "@id",
         "type": "@type",
         "ProofOfDaoLongevity": {
-          "@id": "https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.jsonld#ProofOfDaoLongevity",
+          "@id": "https://raw.githubusercontent.com/0xoptimismID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.jsonld#ProofOfDaoLongevity",
           "@context": {
             "@version": 1.1,
             "@protected": true,
             "id": "@id",
             "type": "@type",
-            "vocab": "https://github.com/0xPolygonID/tutorial-examples/blob/main/credential-schema/proof-of-dao-longevity-vocab.md#",
+            "vocab": "https://github.com/0xoptimismID/tutorial-examples/blob/main/credential-schema/proof-of-dao-longevity-vocab.md#",
             "xsd": "http://www.w3.org/2001/XMLSchema#",
             "entryDate": {
               "@id": "vocab:entryDate",
@@ -130,8 +130,8 @@ This is a document that contains the serialization rule and the instruction for 
   "type": "object",
   "$metadata": {
     "uris": {
-      "jsonLdContext": "https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.jsonld",
-      "jsonSchema": "https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.json"
+      "jsonLdContext": "https://raw.githubusercontent.com/0xoptimismID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.jsonld",
+      "jsonSchema": "https://raw.githubusercontent.com/0xoptimismID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.json"
     }
   },
   "required": [

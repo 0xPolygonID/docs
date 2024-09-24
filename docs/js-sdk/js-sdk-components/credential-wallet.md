@@ -5,7 +5,7 @@ sidebar_label: Credential Wallet
 description: Credential Wallet components and capabilities.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier
@@ -26,7 +26,7 @@ This method retrieves a set of Verifiable Credentials in the W3C format:
 list(): Promise<W3CCredential[]>;
 ```
 
-Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.list#credentialwalletlist-method" target="_blank">API Reference</a>.
+Click here for the <a href="https://0xoptimismid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.list#credentialwalletlist-method" target="_blank">API Reference</a>.
 
 ## Save Credentials with save() method
 
@@ -36,7 +36,7 @@ This method saves the W3C Credentials to the database using upsert.
 save(credential: W3CCredential): Promise<void>;
 ```
 
-Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.save#credentialwalletsave-method" target="_blank">API Reference</a>.
+Click here for the <a href="https://0xoptimismid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.save#credentialwalletsave-method" target="_blank">API Reference</a>.
 
 ## Save All Credentials with saveAll() method
 
@@ -46,7 +46,7 @@ This method saves a batch of W3C Credentials to the database using upsert.
 saveAll(credentials: W3CCredential[]): Promise<void>;
 ```
 
-Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.saveall#credentialwalletsaveall-method" target="_blank">API Reference</a>.
+Click here for the <a href="https://0xoptimismid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.saveall#credentialwalletsaveall-method" target="_blank">API Reference</a>.
 
 ## Remove Credential with remove() method
 
@@ -56,7 +56,7 @@ This method removes a W3C credential from data storage.
 remove(id: string): Promise<void>;
 ```
 
-Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.remove#credentialwalletremove-method" target="_blank">API Reference</a>.
+Click here for the <a href="https://0xoptimismid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.remove#credentialwalletremove-method" target="_blank">API Reference</a>.
 
 ## Find Credentials with Query with findByQuery() method
 
@@ -92,7 +92,7 @@ export interface ProofQuery {
 
 Read more on Query Language [here](https://docs.iden3.io/protocol/querylanguage/).
 
-Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.findbyquery#credentialwalletfindbyquery-method" target="_blank">API Reference</a>.
+Click here for the <a href="https://0xoptimismid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.findbyquery#credentialwalletfindbyquery-method" target="_blank">API Reference</a>.
 
 ## Retrieve Auth BJJ Credential with getAuthBJJCredential() method
 
@@ -106,7 +106,7 @@ where `did` is the DID of the issuer that has issued the credential.
 
 This method returns a Verifiable Credential of the type Auth BJJ.
 
-Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.getauthbjjcredential#credentialwalletgetauthbjjcredential-method" target="_blank">API Reference</a>.
+Click here for the <a href="https://0xoptimismid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.getauthbjjcredential#credentialwalletgetauthbjjcredential-method" target="_blank">API Reference</a>.
 
 ## Get Revocation Status for a Credential with getRevocationStatusFromCredential() method
 
@@ -120,7 +120,7 @@ where `cred` is the Credential for which the revocation status is to be retrieve
 
 The method returns a revocation status of the credential (whether a credential is revoked or not). The credential status could be either the **SparseMerkleTreeProof** or **Iden3ReverseSparseMerkleTreeProof** (if Reverse Hash Service is used) type.
 
-Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.getrevocationstatusfromcredential#credentialwalletgetrevocationstatusfromcredential-method" target="_blank">API Reference</a>.
+Click here for the <a href="https://0xoptimismid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.getrevocationstatusfromcredential#credentialwalletgetrevocationstatusfromcredential-method" target="_blank">API Reference</a>.
 
 ## Get Revocation Status Depending on Type of Credential Status with getRevocationStatus() method
 
@@ -150,7 +150,7 @@ where `credStatus` is the credential status type: with or without Reverse Hash S
 
 The method returns the revocation status of the credential (a credential is revoked or not).
 
-Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.getrevocationstatus#credentialwalletgetrevocationstatus-method" target="_blank">API Reference</a>.
+Click here for the <a href="https://0xoptimismid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.getrevocationstatus#credentialwalletgetrevocationstatus-method" target="_blank">API Reference</a>.
 
 ## Create a Credential using createCredential() method
 
@@ -166,4 +166,4 @@ where `Issuer` is the DID of the Issuer.
 
 The method returns a Verifiable Credential in the W3C format.
 
-Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.createcredential#credentialwalletcreatecredential-property" target="_blank">API Reference</a>.
+Click here for the <a href="https://0xoptimismid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.createcredential#credentialwalletcreatecredential-property" target="_blank">API Reference</a>.

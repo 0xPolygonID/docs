@@ -5,7 +5,7 @@ sidebar_label: Remove Claims
 description: The removeClaims() method removes credentials from the storage based on a list of claimIds.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

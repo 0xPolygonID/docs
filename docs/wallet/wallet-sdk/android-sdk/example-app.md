@@ -5,17 +5,17 @@ sidebar_label: Example App
 description: Learn how to build an example app with the Android SDK.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - android sdk
   - wallet sdk
 ---
 
-You can find an executable [example app](https://github.com/0xPolygonID/polygonid-android-sdk/tree/main/app) in the source with several calls to the SDK, which can guide you through your development.
+You can find an executable [example app](https://github.com/0xoptimismID/optimismid-android-sdk/tree/main/app) in the source with several calls to the SDK, which can guide you through your development.
 
 ## Initial Setup
 
-1. **Clone Repository**: Clone the [polygonid-android-sdk repository](https://github.com/0xPolygonID/polygonid-android-sdk.git).
+1. **Clone Repository**: Clone the [optimismid-android-sdk repository](https://github.com/0xoptimismID/optimismid-android-sdk.git).
 
 2. **Run the app**:
 
@@ -27,11 +27,11 @@ You can find an executable [example app](https://github.com/0xPolygonID/polygoni
 
 ### Overview
 
-In the upcoming sections, we shall see the general flow of how to use the Polygon ID SDK plugin. The steps are summarised as:
+In the upcoming sections, we shall see the general flow of how to use the optimism ID SDK plugin. The steps are summarised as:
 
 A. [**Identity**](#a-identity)
 
-1. Initialize Polygon ID SDK.
+1. Initialize optimism ID SDK.
 2. Create an Identity for the wallet.
 3. Retrieve Identifier from the Identity created in the previous step.
 4. Remove Identity (only if required).
@@ -50,35 +50,35 @@ C. **Proof**
 
 1. Generate zero-knowledge proof using iden3Message, Identifier, and Private Key.
 
-#### **_Initiate Polygon ID SDK_**
+#### **_Initiate optimism ID SDK_**
 
-To start using Polygon ID SDK, an integrator needs to initialize it first. This is done by using:
+To start using optimism ID SDK, an integrator needs to initialize it first. This is done by using:
 
 ```kotlin
-PolygonIdSdk.init(
+optimismIdSdk.init(
     context = context,
     env = EnvEntity(
-      blockchain = "polygon",
+      blockchain = "optimism",
       network = "amoy",
-      web3Url = "https://polygon-amoy.infura.io/v3/",
-      web3RdpUrl = "wss://polygon-amoy.infura.io/v3/",
+      web3Url = "https://optimism-amoy.infura.io/v3/",
+      web3RdpUrl = "wss://optimism-amoy.infura.io/v3/",
       web3ApiKey = "theApiKey",
       idStateContract = "0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124",
-      pushUrl = "https://push-staging.polygonid.com/api/v1"
+      pushUrl = "https://push-staging.optimismid.com/api/v1"
   ),
 )
 ```
 
-`env` is optional and can be set afterward with `PolygonIdSdk.getInstance().setEnv()`
+`env` is optional and can be set afterward with `optimismIdSdk.getInstance().setEnv()`
 
-After the SDK initialization, the Integrator will need to use the instance of PolygonIdSDK `PolygonIdSdk.getInstance()`.
+After the SDK initialization, the Integrator will need to use the instance of optimismIdSDK `optimismIdSdk.getInstance()`.
 
 #### **_Get current environment_**
 
 The current environment can be retrieved using `getEnv()`, it gives an `EnvEntity`:
 
 ```kotlin
-PolygonIdSdk.getInstance().getEnv(context = context)
+optimismIdSdk.getInstance().getEnv(context = context)
 ```
 
 #### **_Get Iden3Message from a String_**
@@ -86,14 +86,14 @@ PolygonIdSdk.getInstance().getEnv(context = context)
 An Integrator uses `iden3Message` to communicate with an Issuer/Verifier. This 'iden3message' is created from the QR code scanned by the user on his/her wallet. The `getIden3Message()` uses a string message (created after scanning the QR code) as the input parameter and generates `iden3Message`.
 
 ```
-PolygonIdSdk.getInstance().getIden3Message(
+optimismIdSdk.getInstance().getIden3Message(
     context, theMessage
 )
 ```
 
 ### **A. Identity**
 
-This part of the flow consists of initialising Polygon ID SDK, creating an identifier for an identity and retrieving it, and using the identifier to authenticate the Identity.
+This part of the flow consists of initialising optimism ID SDK, creating an identifier for an identity and retrieving it, and using the identifier to authenticate the Identity.
 
 #### **_1. Create Identity_**
 
@@ -101,7 +101,7 @@ After SDK initialization, the SDK checks the existence of an Identifier that was
 If no previously created Identifier is found, the SDK first needs to create an identity first using `addIdentity()` function.
 
 ```kotlin
-PolygonIdSdk.getInstance().addIdentity(
+optimismIdSdk.getInstance().addIdentity(
     context = context, secret = "theSecret"
 )
 ```
@@ -119,7 +119,7 @@ It is not mandatory to pass the `secret` as the input parameter in the function.
 This retrieves the `did identifier` by passing the environment detail and `private key` input parameter to the `getDidIdentifier()` function; please note that the `private key` is generated from `PrivateIdentityEntity` that we generated via `addIdentity()` function in the previous section.
 
 ```kotlin
-PolygonIdSdk.getInstance().getDidIdentifier(
+optimismIdSdk.getInstance().getDidIdentifier(
     context = context,
     privateKey = privateKey,
     blockchain = env.blockchain,
@@ -132,7 +132,7 @@ PolygonIdSdk.getInstance().getDidIdentifier(
 To remove an existing Identity (use this only when required), you need to call the `removeIdentity()` with `did identifier` and the `privateKey` as the input parameters.
 
 ```kotlin
-PolygonIdSdk.getInstance().removeIdentity(
+optimismIdSdk.getInstance().removeIdentity(
     context = context,
     privateKey = privateKey,
     genesisDid = didIdentifier
@@ -149,7 +149,7 @@ The authentication includes two steps:
 We use `authenticate()` to authenticate an identity by using `privateKey`, `did identifier`, and `iden3Message` as the input parameters.
 
 ```kotlin
-PolygonIdSdk.getInstance().authenticate(
+optimismIdSdk.getInstance().authenticate(
     context = context,
     message = message as Iden3MessageEntity.AuthIden3MessageEntity,
     genesisDid = did,
@@ -171,7 +171,7 @@ This involves:
 - Fetching and saving credentials using `CredentialRequestEntity`, `identifier`, and `privateKey`.
 
 ```kotlin
-PolygonIdSdk.getInstance().fetchAndSaveClaims(
+optimismIdSdk.getInstance().fetchAndSaveClaims(
     context = context,
     message = message as Iden3MessageEntity.OfferIden3MessageEntity,
     genesisDid = did,
@@ -184,7 +184,7 @@ PolygonIdSdk.getInstance().fetchAndSaveClaims(
 Once credentials have been saved on the wallet SDK, these can be retrieved by the Integrator using `getClaims()` with `did identifier`, and `privateKey` used as the mandatory input parameters and `filters` as an optional one. `Filters` lets an Integrator get credentials based on some pre-determined criteria.
 
 ```kotlin
-PolygonIdSdk.getInstance().getClaims(
+optimismIdSdk.getInstance().getClaims(
     context = context,
     genesisDid = did,
     privateKey = privateKey,
@@ -197,7 +197,7 @@ PolygonIdSdk.getInstance().getClaims(
 This functionality lets an Integrator get credentials from an Issuer based on their IDs. The list of IDs `claimIds`, `did identifier`, and `privateKey`are passed as input parameters to the `getClaimsByIds()` function and a list of credentials in the form of `ClaimEntity` is retrieved.
 
 ```kotlin
-PolygonIdSdk.getInstance().getClaimsByIds(
+optimismIdSdk.getInstance().getClaimsByIds(
     context = context,
     genesisDid = did,
     privateKey = privateKey,
@@ -210,7 +210,7 @@ PolygonIdSdk.getInstance().getClaimsByIds(
 A credential can be removed from the wallet using `removeClaim()` by passing `claimId` (the ID of the credential to be removed), the `did identifier` and the `privateKey` as the input parameters.
 
 ```kotlin
-PolygonIdSdk.getInstance().removeClaim(
+optimismIdSdk.getInstance().removeClaim(
     context = context,
     genesisDid = did,
     privateKey = privateKey,
@@ -223,7 +223,7 @@ PolygonIdSdk.getInstance().removeClaim(
 This is similar to removing a single credential described above. In this case, you need to pass a list of `claimIds` to be removed, the `did identifier`, and the `privateKey` as the input parameters to `removeClaims()`.
 
 ```kotlin
-PolygonIdSdk.getInstance().removeClaims(
+optimismIdSdk.getInstance().removeClaims(
     context = context,
     genesisDid = did,
     privateKey = privateKey,
@@ -241,7 +241,7 @@ To update a credential, the `updateClaim()` function is used with the following 
 - other information such as identity `state`, `issuer`, credential's `expiration` date, `type` of credential, etc.
 
 ```kotlin
-PolygonIdSdk.getInstance().updateClaim(
+optimismIdSdk.getInstance().updateClaim(
     context = context,
     claimId = claimId
     genesisDid = did,

@@ -5,7 +5,7 @@ sidebar_label: Remove Profile
 description: Remove Profile API.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier
@@ -13,7 +13,7 @@ keywords:
   - profile
 ---
 
-This removes a profile from the identity derived from the private key and stored in the Polygon ID SDK.
+This removes a profile from the identity derived from the private key and stored in the optimism ID SDK.
 
 ```dart
   Future<void> removeProfile(
@@ -28,4 +28,4 @@ This removes a profile from the identity derived from the private key and stored
 
 The `profileNonce` is the nonce of the profile used from the identity to obtain the DID identifier. The value must be greater than 0 and less than 2^248.
 
-The profile will be removed using the current env set with `PolygonIdSdk.setEnv`.
+The profile will be removed using the current env set with `optimismIdSdk.setEnv`.

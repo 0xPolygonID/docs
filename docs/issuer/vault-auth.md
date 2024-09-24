@@ -4,7 +4,7 @@ title: Issuer Node and Vault Authentication
 description: Learn the two options for authenticating with Vault in the Issuer Node.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - issuer node
   - vault
   - authentication

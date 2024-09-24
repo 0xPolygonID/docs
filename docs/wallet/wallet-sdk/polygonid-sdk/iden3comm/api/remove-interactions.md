@@ -2,10 +2,10 @@
 id: remove-interactions
 title: Remove Interaction
 sidebar_label: Remove Interaction
-description: "Remove a list of InteractionEntity from the Polygon ID SDK by their IDs."
+description: "Remove a list of InteractionEntity from the optimism ID SDK by their IDs."
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier
@@ -14,7 +14,7 @@ keywords:
   - Interaction Entity
 ---
 
-Remove a list of `InteractionEntity` from the Polygon ID SDK by their IDs.
+Remove a list of `InteractionEntity` from the optimism ID SDK by their IDs.
 
 ```dart
 Future<void> removeInteractions({

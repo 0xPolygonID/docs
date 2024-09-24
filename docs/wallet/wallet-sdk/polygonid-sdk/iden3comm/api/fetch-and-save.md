@@ -5,7 +5,7 @@ sidebar_label: Fetch and Save
 description: An Integrator can fetch credentials stored on an Issuer and then save them in his/her wallet.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier
@@ -27,7 +27,7 @@ Future<List<ClaimEntity>> fetchAndSaveClaims({
 
 The `fetchAndSaveClaims()` function uses `Iden3MessageEntity`, `privateKey`, `genesisDid` and `profileNonce` as the input parameters. and returns a list of `ClaimEntity`.
 
-`OfferIden3MessageEntity` is a type of `Iden3MessageEntity` and is needed as `message` input, otherwise an exception of type InvalidIden3MsgTypeException will be thrown. As you can see in the [iden3 Message API](/docs/wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-iden3-msg.md) tutorial, we get `Iden3MessageEntity` when we call the `getIden3Message()`method.
+`OfferIden3MessageEntity` is a type of `Iden3MessageEntity` and is needed as `message` input, otherwise an exception of type InvalidIden3MsgTypeException will be thrown. As you can see in the [iden3 Message API](/docs/wallet/wallet-sdk/optimismid-sdk/iden3comm/api/get-iden3-msg.md) tutorial, we get `Iden3MessageEntity` when we call the `getIden3Message()`method.
 
 `privateKey` of the identity is a key that is used to access the sensitive information of the identity. This key is also used for generating proofs by using the credentials associated with the identity.
 

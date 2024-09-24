@@ -5,7 +5,7 @@ sidebar_label: Schema Builder UI
 description: Create schemas intuitively by using the Schema Builder UI.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - issuer node
   - claim
   - verifiable credentials
@@ -18,7 +18,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In order to create new types of credentials, it is necessary to generate JSON schemas. These are the underlying files that define the credential attributes.
 
-[The Schema Builder](https://schema-builder.polygonid.me/) is a tool created to simplify the process of creating schemas by using an intuitive user interface and enabling everyone to check previously made schemas.
+[The Schema Builder](https://schema-builder.optimismid.me/) is a tool created to simplify the process of creating schemas by using an intuitive user interface and enabling everyone to check previously made schemas.
 
 Learn more about the Schema Explorer in the video below:
 
@@ -28,7 +28,7 @@ Learn more about the Schema Explorer in the video below:
 
 ## Schema Explorer
 
-[The Schema Builder landing page](https://schema-builder.polygonid.me/) presents a Schema Explorer, where you can find all previously created schemas and drill down your search for specific kinds of schemas. Not all schemas need to be created from scratch.
+[The Schema Builder landing page](https://schema-builder.optimismid.me/) presents a Schema Explorer, where you can find all previously created schemas and drill down your search for specific kinds of schemas. Not all schemas need to be created from scratch.
 
 <div align="center">
 <img src= {useBaseUrl("img/schema-explorer.png")} align="center" />
@@ -60,7 +60,7 @@ The forked schema also shows its number of forks:
 
 ## Schema Builder
 
-As previously stated, [the Schema Builder](https://schema-builder.polygonid.me/builder) is the easiest way to generate new types of credentials as it allows users to define the attributes, data types, and constraints for their schemas. The tool will then generate the necessary JSON-LD files and other artifacts required to implement the schema.
+As previously stated, [the Schema Builder](https://schema-builder.optimismid.me/builder) is the easiest way to generate new types of credentials as it allows users to define the attributes, data types, and constraints for their schemas. The tool will then generate the necessary JSON-LD files and other artifacts required to implement the schema.
 
 <div align="center">
 <img src= {useBaseUrl("img/schema-builder.png")} align="center" />

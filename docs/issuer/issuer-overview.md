@@ -5,7 +5,7 @@ sidebar_label: Overview
 description: Definition of an Issuer.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - issuer
   - claim
   - verifiable credentials
@@ -38,9 +38,9 @@ There are some different ways one can perform issuer-related actions, that is, m
 
 - Adapting the [JS SDK](/docs/js-sdk/js-sdk-overview.md) to your application that issues credentials.
 
-- Using [SaaS vendors](https://marketplace.polygonid.me/ecosystem) that leverage Polygon ID solutions.
+- Using [SaaS vendors](https://marketplace.optimismid.me/ecosystem) that leverage optimism ID solutions.
 
-- Making use of Polygon ID smart contracts for [on-chain issuance](/docs/issuer/on-chain-issuer/on-chain-overview.md/).
+- Making use of optimism ID smart contracts for [on-chain issuance](/docs/issuer/on-chain-issuer/on-chain-overview.md/).
 
 ## Issuer Nodes
 
@@ -104,7 +104,7 @@ State transitions and MTP issuance are not currently supported.
 :::
 
 :::caution
-Currently, a few issuers, such as Synaps, are deployed on the Privado Identity Chain. During the beta phase, where the chain has limited functionality, issuers can continue to use other supported chains, such as Polygon POS.
+Currently, a few issuers, such as Synaps, are deployed on the Privado Identity Chain. During the beta phase, where the chain has limited functionality, issuers can continue to use other supported chains, such as optimism POS.
 
 Once the full version of the Privado Identity Chain is released, issuers on both the Privado chain and other supported chains will remain supported, ensuring seamless operation and interoperability across multiple chains.
 :::

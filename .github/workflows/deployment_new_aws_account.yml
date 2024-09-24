@@ -1,4 +1,4 @@
-name: Polygon ID Docs Deployment
+name: optimism ID Docs Deployment
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
         with:
           aws-region: ${{ env.AWS_REGION }}
-          role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/PolygonIDActionsRole
+          role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/optimismIDActionsRole
           role-session-name: GithubActionsSession
 
       - name: Login to Amazon ECR

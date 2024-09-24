@@ -11,12 +11,12 @@ keywords:
   - ngrok
   - local tunnel
   - mobile app
-  - Polygon ID
+  - optimism ID
 ---
 
 ## Question
 
-How can I solve the error occurring when the Polygon ID mobile app scans a QR code with a callback URL that is not properly configured (typically using "localhost")?
+How can I solve the error occurring when the optimism ID mobile app scans a QR code with a callback URL that is not properly configured (typically using "localhost")?
 
 ## Answer
 
@@ -74,13 +74,13 @@ This issue arises because the "localhost" address in the QR code's callback URL 
 
    :::note
 
-   You can also take a look to the video attached to [<ins>this GitHub comment</ins>](https://github.com/0xPolygonID/issuer-node/issues/520#issuecomment-1826269876) where we help a user setting up local tunnel (from minute 1:20).
+   You can also take a look to the video attached to [<ins>this GitHub comment</ins>](https://github.com/0xoptimismID/issuer-node/issues/520#issuecomment-1826269876) where we help a user setting up local tunnel (from minute 1:20).
 
    :::
 
 ### Final Steps
 
-After setting up ngrok or local tunnel and obtaining a public URL, ensure this URL is correctly integrated into the QR code generation process for the callback URL. This configuration allows the Polygon ID mobile app to successfully communicate with your issuer node API over the internet.
+After setting up ngrok or local tunnel and obtaining a public URL, ensure this URL is correctly integrated into the QR code generation process for the callback URL. This configuration allows the optimism ID mobile app to successfully communicate with your issuer node API over the internet.
 
 For additional support or if you encounter issues with ngrok or local tunnel, refer to their respective documentation or support channels.
 

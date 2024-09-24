@@ -5,7 +5,7 @@ sidebar_label: Proof Generation API
 description: Proof Generation API.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

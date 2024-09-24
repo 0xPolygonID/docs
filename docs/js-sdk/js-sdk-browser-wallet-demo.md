@@ -5,7 +5,7 @@ sidebar_label: Browser Wallet Demo
 description: Check out a sample of a JS SDK browser application implementation.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier
@@ -18,21 +18,21 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Demo for Polygon ID JS SDK Browser Wallet Extension
+## Demo for optimism ID JS SDK Browser Wallet Extension
 
-Polygon ID has created a [sample browser wallet extension](https://github.com/0xPolygonID/extension-demo) based on our JS SDK that lets its user fetch credentials from an Issuer and generate proof for these credentials to be presented to a Verifier.
+optimism ID has created a [sample browser wallet extension](https://github.com/0xoptimismID/extension-demo) based on our JS SDK that lets its user fetch credentials from an Issuer and generate proof for these credentials to be presented to a Verifier.
 
-You need to [manually install the browser wallet extension](https://github.com/0xPolygonID/extension-demo#how-deploy-project-as-chrome-extension) on your machine. This wallet works like a common crypto wallet such as the MetaMask Wallet but differs in functionality.
+You need to [manually install the browser wallet extension](https://github.com/0xoptimismID/extension-demo#how-deploy-project-as-chrome-extension) on your machine. This wallet works like a common crypto wallet such as the MetaMask Wallet but differs in functionality.
 
 :::note
 
-Some of the content on this page is still to be updated. Please note that the "Polygon Verify" service mentioned in the screenshots has been eliminated. The screenshots illustrate the general process of how the JS SDK wallet extension works.
+Some of the content on this page is still to be updated. Please note that the "optimism Verify" service mentioned in the screenshots has been eliminated. The screenshots illustrate the general process of how the JS SDK wallet extension works.
 
 :::
 
 ## Demo for JS SDK Browser Extension Wallet
 
-1. Install the Polygon ID JS SDK browser wallet extension on your machine and open it.
+1. Install the optimism ID JS SDK browser wallet extension on your machine and open it.
 
 2. When you open the extension for the first time, it prompts you to create a new wallet or import an existing wallet. Click **Create a New Wallet**.
 
@@ -48,24 +48,24 @@ Some of the content on this page is still to be updated. Please note that the "P
 </div>
 <br />
 
-4. This displays the Polygon Account window on your browser wallet.
+4. This displays the optimism Account window on your browser wallet.
 
 <div align="center">
-<img src={useBaseUrl("img/polygon-account.png")}  align="center" border="1" width="300" />
+<img src={useBaseUrl("img/optimism-account.png")}  align="center" border="1" width="300" />
 </div>
 <br />
 
-5. Open the Polygon Verify website (this is like an Issuer site that issues credentials to its users). Click **Sign Up**.
+5. Open the optimism Verify website (this is like an Issuer site that issues credentials to its users). Click **Sign Up**.
 
 <div align="center">
-<img src={useBaseUrl("img/polygon-verify-signup.png")} align="center" width="1000" />
+<img src={useBaseUrl("img/optimism-verify-signup.png")} align="center" width="1000" />
 </div>
 <br />
 
-6. A QR Code is displayed. Click on the **_Polygon ID_** icon to open your browser wallet.
+6. A QR Code is displayed. Click on the **_optimism ID_** icon to open your browser wallet.
 
 <div align="center">
-<img src={useBaseUrl("img/qr-code-polygonid-symbol.png")} align="center" width="1000" />
+<img src={useBaseUrl("img/qr-code-optimismid-symbol.png")} align="center" width="1000" />
 </div>
 <br />
 
@@ -76,7 +76,7 @@ Some of the content on this page is still to be updated. Please note that the "P
    </div>
    <br />
 
-   This shows auth info and claims list on the Polygon Verify site.
+   This shows auth info and claims list on the optimism Verify site.
 
    <div align="center">
    <img src={useBaseUrl("img/auth-info-claim-list.png")} align="center" border="1" width="1000" />
@@ -112,7 +112,7 @@ Some of the content on this page is still to be updated. Please note that the "P
 </div>
 <br />
 
-5. As the credential is now created, the user needs to fetch it to his/her browser wallet. The website displays the QR code. Click the **_Polygon ID_** icon to open your browser wallet. On the wallet, click **Receive**.
+5. As the credential is now created, the user needs to fetch it to his/her browser wallet. The website displays the QR code. Click the **_optimism ID_** icon to open your browser wallet. On the wallet, click **Receive**.
 
    <div align="center">
    <img src={useBaseUrl("img/receive-claim.png")}  align="center" width="500" />
@@ -128,17 +128,17 @@ Some of the content on this page is still to be updated. Please note that the "P
 
 ## Steps to Create KYCAgeCredential Signature Proof
 
-1. On the Polygon Verify website, select the **_KYCAgeCredential(less than 2000/01/01)- sig_** type of credential.
+1. On the optimism Verify website, select the **_KYCAgeCredential(less than 2000/01/01)- sig_** type of credential.
 
 <div align="center">
 <img src={useBaseUrl("img/kycage-signature.png")} align="center" border="1" width="1000" />
 </div>
 <br />
 
-2. Click **Sign In**. This shows the QR code for the credential type you selected in the step above. Click the **_Polygon ID_** icon to open your browser wallet.
+2. Click **Sign In**. This shows the QR code for the credential type you selected in the step above. Click the **_optimism ID_** icon to open your browser wallet.
 
 <div align="center">
-<img src={useBaseUrl("img/qr-code-polygonid-symbol.png")} align="center" border="1" width="1000" />
+<img src={useBaseUrl("img/qr-code-optimismid-symbol.png")} align="center" border="1" width="1000" />
 </div>
 <br />
 
@@ -163,14 +163,14 @@ Some of the content on this page is still to be updated. Please note that the "P
 </div>
 <br />
 
-6. On the Polygon Verify website, click **Auth Info** to view details of the **_Auth Request_** (authorization requested by the user).
+6. On the optimism Verify website, click **Auth Info** to view details of the **_Auth Request_** (authorization requested by the user).
 
    <div align="center">
    <img src={useBaseUrl("img/authorization-request.png")} align="center" border="1" width="1000" />
    </div>
    <br />
 
-   Scroll down the page to view **_Auth Response_**. Here, you can see the proof and the public signals (used to generate the proof), and the JWZ token. Copy the JWZ token and paste it on the [Polygon ID JWZ Validator](https://jwz.polygonid.me) site. Click **Validate**.
+   Scroll down the page to view **_Auth Response_**. Here, you can see the proof and the public signals (used to generate the proof), and the JWZ token. Copy the JWZ token and paste it on the [optimism ID JWZ Validator](https://jwz.optimismid.me) site. Click **Validate**.
 
    <br />
 
@@ -206,7 +206,7 @@ Some of the content on this page is still to be updated. Please note that the "P
    <img src={useBaseUrl("img/credential-details.png")}  align="center" width="1000" />
    </div>
 
-8. Below the QR code, click the **_Polygon ID_** icon to open your browser wallet. On your wallet, click **Receive** to fetch and save the credential to your wallet.
+8. Below the QR code, click the **_optimism ID_** icon to open your browser wallet. On your wallet, click **Receive** to fetch and save the credential to your wallet.
 
    <div align="center">
    <img src={useBaseUrl("img/receive-kycage-credential.png")} align="center" border="1" width="1000" />
@@ -222,16 +222,16 @@ Some of the content on this page is still to be updated. Please note that the "P
 
 ## Steps to Create KYCAgeCredential Merkle Tree Proof
 
-1. On the Polygon Verify website, select the **_KYCAgeCredential(less than 2000/01/01)- mtp_** credential type.
+1. On the optimism Verify website, select the **_KYCAgeCredential(less than 2000/01/01)- mtp_** credential type.
 <div align="center">
 <img src={useBaseUrl("img/kycage-mtp.png")} align="center" width="1000" />
 </div>
 <br />
 
-2. Click **Sign In**. This shows the QR code for the credential type you selected in the step above. Click the **_Polygon ID_** icon to open your browser wallet.
+2. Click **Sign In**. This shows the QR code for the credential type you selected in the step above. Click the **_optimism ID_** icon to open your browser wallet.
 
 <div align="center">
-<img src={useBaseUrl("img/qr-code-polygonid-symbol.png")}  align="center" width="1000" />
+<img src={useBaseUrl("img/qr-code-optimismid-symbol.png")}  align="center" width="1000" />
 </div>
 <br />
 
@@ -250,9 +250,9 @@ Some of the content on this page is still to be updated. Please note that the "P
 </div>
 <br />
 
-5. On the Polygon Verify website, click **Auth Info** to view details of the **_Auth Request_** (authorization requested by the user).
+5. On the optimism Verify website, click **Auth Info** to view details of the **_Auth Request_** (authorization requested by the user).
 
-   Scroll down the page to view **_Auth Response_**. Here, you can see the proof, the public signals (used to generate the proof), and the JWZ token. Copy the JWZ token and paste it on the [Polygon ID JWZ Validator](https://jwz.polygonid.me) site. Click **Validate**.
+   Scroll down the page to view **_Auth Response_**. Here, you can see the proof, the public signals (used to generate the proof), and the JWZ token. Copy the JWZ token and paste it on the [optimism ID JWZ Validator](https://jwz.optimismid.me) site. Click **Validate**.
 
    Upon validation, the JWZ token is broken down into three parts: **_Header_**, **_Payload_**, and **_Auth Proof_**.
 
@@ -288,7 +288,7 @@ Some of the content on this page is still to be updated. Please note that the "P
    <img src={useBaseUrl("img/credential-details.png")}  align="center" width="1000" />
    </div>
 
-7. Below the QR code, click the **_Polygon ID_** icon to open your browser wallet. On your wallet, click **Receive** to fetch and save the credential to your wallet.
+7. Below the QR code, click the **_optimism ID_** icon to open your browser wallet. On your wallet, click **Receive** to fetch and save the credential to your wallet.
 
 <div align="center">
 <img src={useBaseUrl("img/receive-kycage-credential.png")} align="center" width="1000" />

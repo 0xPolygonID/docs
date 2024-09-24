@@ -2,10 +2,10 @@
 id: add-interaction
 title: Add Interaction
 sidebar_label: Add Interaction
-description: "Save an InteractionBaseEntity in the Polygon ID Sdk."
+description: "Save an InteractionBaseEntity in the optimism ID Sdk."
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier
@@ -14,7 +14,7 @@ keywords:
   - Interaction Base Entity
 ---
 
-Save an `InteractionBaseEntity` in the Polygon ID SDK.
+Save an `InteractionBaseEntity` in the optimism ID SDK.
 
 ```dart
 Future<InteractionBaseEntity> addInteraction({

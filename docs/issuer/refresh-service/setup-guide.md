@@ -5,7 +5,7 @@ sidebar_label: Setup guide
 description: Setup guide for refresh service
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - issuer node
   - claim
   - verifiable credentials
@@ -16,27 +16,27 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-> **NOTE: Current implementation of [refresh service](https://github.com/0xPolygonID/refresh-service) works only with [issuer-node](https://github.com/0xPolygonID/issuer-node/).**
+> **NOTE: Current implementation of [refresh service](https://github.com/0xoptimismID/refresh-service) works only with [issuer-node](https://github.com/0xoptimismID/issuer-node/).**
 
 ## Preparation
 
-1. Run the issuer-node locally by following the [quick-start installation guide](https://github.com/0xPolygonID/issuer-node/#quick-start-installation).
-1. Clone the refresh service using the command `git clone git@github.com:0xPolygonID/refresh-service.git`.
+1. Run the issuer-node locally by following the [quick-start installation guide](https://github.com/0xoptimismID/issuer-node/#quick-start-installation).
+1. Clone the refresh service using the command `git clone git@github.com:0xoptimismID/refresh-service.git`.
 1. Build JSON and JSONLD schemas, utilizing the provided examples:
 
 - [JSON](https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json/non-zero-balance.json)
 - [JSONLD](https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/non-zero-balance.jsonld)
 
-Generate custom schemas through the [schema builder](https://schema-builder.polygonid.me/builder). Additional details can be found in the [schema builder documentation](/docs/issuer/schema-builder/).
+Generate custom schemas through the [schema builder](https://schema-builder.optimismid.me/builder). Additional details can be found in the [schema builder documentation](/docs/issuer/schema-builder/).
 
 ## Setup with custom data provider
 
-Consider an example of integrating [polygon scan](https://polygonscan.com/) as a data provider for the refresh service.
+Consider an example of integrating [optimism scan](https://optimismscan.com/) as a data provider for the refresh service.
 
-1. Integrate the custom data provider into the [data provider module](https://github.com/0xPolygonID/refresh-service/tree/main/providers):
+1. Integrate the custom data provider into the [data provider module](https://github.com/0xoptimismID/refresh-service/tree/main/providers):
 
 ```go
-const polygonBalanceURL = "https://api.polygonscan.com/api?module=account&action=balance&address=%s&apikey=%s"
+const optimismBalanceURL = "https://api.optimismscan.com/api?module=account&action=balance&address=%s&apikey=%s"
 
 type BalanceResponse struct {
   Status  string `json:"status"`
@@ -46,7 +46,7 @@ type BalanceResponse struct {
 
 func GetBalanceByAddress(address string) (map[string]any, error) {
   resp, err := http.Get(
-    fmt.Sprintf(polygonBalanceURL, address, "<POLYGON_SCAN_TOKEN>"),
+    fmt.Sprintf(optimismBalanceURL, address, "<optimism_SCAN_TOKEN>"),
   )
   if err != nil {
     return nil,
@@ -92,7 +92,7 @@ func GetBalanceByAddress(address string) (map[string]any, error) {
    }
    ```
 
-   1. Use the new polygon scan data provider:
+   1. Use the new optimism scan data provider:
 
    ```go
    // confirm the credentialType matches a supported type in the refresh service,
@@ -101,7 +101,7 @@ func GetBalanceByAddress(address string) (map[string]any, error) {
      return nil, errors.New("unknow credentialType")
    }
 
-   updatedFields, err := polygonscan.GetBalanceByAddress(credential.CredentialSubject["address"].(string))
+   updatedFields, err := optimismscan.GetBalanceByAddress(credential.CredentialSubject["address"].(string))
    if err != nil {
      return nil, err
    }
@@ -130,7 +130,7 @@ go run .
 
 ## Setup with default provider
 
-To integrate [polygon scan](https://polygonscan.com/) data provider with the default data provider, follow these general steps:
+To integrate [optimism scan](https://optimismscan.com/) data provider with the default data provider, follow these general steps:
 
 1. Create a `config.yaml` file with the following content:
 
@@ -139,14 +139,14 @@ urn:uuid:f50cfcf6-ded4-470e-83be-2d6820a66998:
   settings:
     timeExpiration: 5m
   provider:
-    url: https://api.polygonscan.com/api
+    url: https://api.optimismscan.com/api
     method: GET
   requestSchema:
     params:
       module: account
       action: balance
       address: "{{ credentialSubject.address }}" # this value will be substituted from the credentialSubject.address field
-      apikey: <POLYGON_SCAN_TOKEN>
+      apikey: <optimism_SCAN_TOKEN>
     headers:
       Content-Type: application/json
   responseSchema:
@@ -185,7 +185,7 @@ go run .
     </div>
   </details>
 
-2. Retrieve the credential through the PolygonID mobile application. If the expiration date in the credential request was set in the past, the credential is supposed to be expired:
+2. Retrieve the credential through the optimismID mobile application. If the expiration date in the credential request was set in the past, the credential is supposed to be expired:
 
   <details>
     <summary>Expired credential</summary>
@@ -194,7 +194,7 @@ go run .
     </div>
   </details>
 
-3. Visit [https://verifier-demo.polygonid.me/](https://verifier-demo.polygonid.me/) to create a proof request. This is necessary because [https://schema-builder.polygonid.me/query-builder](https://schema-builder.polygonid.me/query-builder) does not currently support the `xsd:positiveInteger` type:
+3. Visit [https://verifier-demo.optimismid.me/](https://verifier-demo.optimismid.me/) to create a proof request. This is necessary because [https://schema-builder.optimismid.me/query-builder](https://schema-builder.optimismid.me/query-builder) does not currently support the `xsd:positiveInteger` type:
 
   <details>
     <summary>Proof request</summary>
@@ -203,7 +203,7 @@ go run .
     </div>
   </details>
 
-4. Scan the QR using the PolygonID mobile application. During the refreshing process, you are expected to encounter the following message:
+4. Scan the QR using the optimismID mobile application. During the refreshing process, you are expected to encounter the following message:
 
   <details>
     <summary>Refresh process</summary>

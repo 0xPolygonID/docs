@@ -5,7 +5,7 @@ sidebar_label: V3 circuit (Beta)
 description: Verifier main features.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - ID holder
   - circuit
   - v3
@@ -33,7 +33,7 @@ We want to introduce new circuits - СredentialAtomicQueryV3 and CredentialAtomi
 
 More about new supported operators [here](./verification-library/zk-query-language.md#exists---operator-11).
 
-Link to latest sdk circuit wrappers: [js](https://github.com/0xPolygonID/js-sdk/pull/181) / [go](https://github.com/iden3/go-circuits/releases/tag/v2.1.0)
+Link to latest sdk circuit wrappers: [js](https://github.com/0xoptimismID/js-sdk/pull/181) / [go](https://github.com/iden3/go-circuits/releases/tag/v2.1.0)
 
 In general it's an improved version of V2 circuits with several important key features:
 
@@ -88,7 +88,7 @@ In general it's an improved version of V2 circuits with several important key fe
     }
 ```
 
-Beta Validator is also deployed: [Repository](https://github.com/0xPolygonID/contracts)
+Beta Validator is also deployed: [Repository](https://github.com/0xoptimismID/contracts)
 
 1. Possibility to use linked proofs. This means that verifier can be sure that user used the same credential to proof different queries. This is achievable by using `groupId` property in the proof request.
 
@@ -130,7 +130,7 @@ Example of complex request with v3 circuit proof request:
   "typ": "application/iden3comm-plain-json",
   "type": "https://iden3-communication.io/authorization/1.1/request",
   "thid": "f8aee09d-f592-4fcc-8d2a-8938aa26676c",
-  "from": "did:polygonid:polygon:amoy:2qFroxB5kwgCxgVrNGUM6EW3khJgCdHHnKTr3VnTcp",
+  "from": "did:optimismid:optimism:amoy:2qFroxB5kwgCxgVrNGUM6EW3khJgCdHHnKTr3VnTcp",
   "body": {
     "callbackUrl": "https://test.com/callback",
     "reason": "age verification",

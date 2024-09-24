@@ -5,7 +5,7 @@ sidebar_label: Remove DID Profile Info
 description: Remove info about a did we interacted with.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

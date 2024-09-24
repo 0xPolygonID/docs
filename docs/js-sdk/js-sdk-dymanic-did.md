@@ -5,7 +5,7 @@ sidebar_label: Support of custom networks and dids
 description: Ecosystem extension.
 keywords:
   - did
-  - polygon id
+  - optimism id
   - ID holder
   - network
   - custom
@@ -29,15 +29,15 @@ import TabItem from '@theme/TabItem';
    - [repository](https://github.com/iden3/contracts/blob/master/contracts/identitytreestore/IdentityTreeStore.sol)
    - [docs](https://docs.iden3.io/services/rhs/)
 
-   Onchain Validators - optional, only in case you work on use cases with onchain verification. [repository](https://github.com/0xPolygonID/contracts)
+   Onchain Validators - optional, only in case you work on use cases with onchain verification. [repository](https://github.com/0xoptimismID/contracts)
 
-2. Register you network for PolygonID did method in the following way:
+2. Register you network for optimismID did method in the following way:
 
 ```javascript
-import { core } from "@0xpolygonid/js-sdk";
+import { core } from "@0xoptimismid/js-sdk";
 
 core.registerDidMethodNetwork({
-  method: core.DidMethod.PolygonId,
+  method: core.DidMethod.optimismId,
   blockchain: "linea",
   chainId: 59140,
   network: "testnet",
@@ -58,8 +58,8 @@ ChainId is identifier of network in ethereum ecosystem
 
 :::info
 
-Check an <ins>[extension demo](https://github.com/0xPolygonID/extension-demo/blob/e6f85b4c6671de52b515e265b22c3a300c95e193/src/pages/index.js#L7)</ins>.
-or <ins> [sdk examples](https://github.com/0xPolygonID/js-sdk-examples/blob/cd586330c7079a26d9bdad6cfdf9025283eb1981/index.ts#L211)</ins>.
+Check an <ins>[extension demo](https://github.com/0xoptimismID/extension-demo/blob/e6f85b4c6671de52b515e265b22c3a300c95e193/src/pages/index.js#L7)</ins>.
+or <ins> [sdk examples](https://github.com/0xoptimismID/js-sdk-examples/blob/cd586330c7079a26d9bdad6cfdf9025283eb1981/index.ts#L211)</ins>.
 
 :::
 
@@ -76,7 +76,7 @@ npm i @iden3/js-iden3-auth --save
 const { core } = require("@iden3/js-iden3-auth");
 
 core.registerDidMethodNetwork({
-  method: core.DidMethod.PolygonId,
+  method: core.DidMethod.optimismId,
   blockchain: "linea",
   chainId: 59140,
   network: "testnet",
@@ -101,7 +101,7 @@ core.registerDidMethodNetwork({
         var err error
 
         params := core.DIDMethodNetworkParams{
-            Method:      core.DIDMethodPolygonID,
+            Method:      core.DIDMethodoptimismID,
             Blockchain:  "linea",
             Network:     "testnet",
             NetworkFlag: 0b0100_0000 | 0b0000_0001,

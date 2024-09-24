@@ -5,7 +5,7 @@ sidebar_label: Get Identities
 description: We can get a list of public information about all the identities stored on the SDK using getIdentities() function.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

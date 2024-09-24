@@ -2,10 +2,10 @@
 id: web-wallet
 title: Web Wallet
 sidebar_label: Web Wallet
-description: Links to Polygon ID product releases.
+description: Links to optimism ID product releases.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - ID holder
   - web wallet
   - verifier
@@ -37,10 +37,10 @@ The Web Wallet is a web tool meticulously developed to streamline the verificati
 
 Currently, the tool supports embedded issuance for only two types of credentials:
 
-- Proof of Identity (refer to the schema <ins>[here](https://github.com/anima-protocol/claims-polygonid/blob/main/schemas/json-ld/poi-v1.json-ld)</ins>)
-- Proof of Life (refer to the schema <ins>[here](https://github.com/anima-protocol/claims-polygonid/blob/main/schemas/json-ld/pol-v1.json-ld)</ins>)
+- Proof of Identity (refer to the schema <ins>[here](https://github.com/anima-protocol/claims-optimismid/blob/main/schemas/json-ld/poi-v1.json-ld)</ins>)
+- Proof of Life (refer to the schema <ins>[here](https://github.com/anima-protocol/claims-optimismid/blob/main/schemas/json-ld/pol-v1.json-ld)</ins>)
 
-The tool still supports the verification of other credentials, which can be issued on the Polygon ID Wallet App.
+The tool still supports the verification of other credentials, which can be issued on the optimism ID Wallet App.
 :::
 
 - **Simplified Integration**: Integration into your application is effortless, reducing the development workload and ensuring swift implementation.
@@ -68,7 +68,7 @@ Let's walk through an example scenario: Suppose a user needs to validate their h
 3. **Creating Identity and Accessing Credentials**: Next, the user selects 'Sign Message' to create a derived identity wallet and retrieve the encrypted credentials associated with their Ethereum wallet via the cloud storage.
 4. **Claiming the Credential**: If the user hasn't previously claimed the credential required by the verifier’s request, they proceed by clicking 'Claim Credential' and complete the issuance process (a face scan in this scenario) to claim the credential via the embedded issuance.
 5. **Proof Generation**: Once the user owns the credential, they can select 'Verify,' triggering the generation of the zk-proof. This proof is then shared with the verifier application for off-chain verification or submitted to the smart contract for on-chain verification.
-6. **Requesting Mobile Verification**: Alternatively, the user can click the “Verify from Mobile” button to start the verification from a mobile device. A QR code will be presented, which the user scans using the Polygon ID App (where they have already claimed the credential). This initiates proof generation and begins the verification process.
+6. **Requesting Mobile Verification**: Alternatively, the user can click the “Verify from Mobile” button to start the verification from a mobile device. A QR code will be presented, which the user scans using the optimism ID App (where they have already claimed the credential). This initiates proof generation and begins the verification process.
 7. **Verification Completion**: The user finally clicks the ‘Continue’ button, upon which they are redirected to the application where the verification can be completed and the application flow can continue.
 
 :::note
@@ -81,12 +81,12 @@ For credentials that do not support embedded issuance directly through the Web W
 
 ### Step 1 - Choosing Your Credential Schema
 
-Select the credential schema that aligns with your requirements from our [Schema Explorer](https://schema-builder.polygonid.me/) or any other source.
-Standardized schemas, such as KYC, are available. Alternatively, you can create a custom schema using our [Schema Builder](https://schema-builder.polygonid.me/builder).
+Select the credential schema that aligns with your requirements from our [Schema Explorer](https://schema-builder.optimismid.me/) or any other source.
+Standardized schemas, such as KYC, are available. Alternatively, you can create a custom schema using our [Schema Builder](https://schema-builder.optimismid.me/builder).
 
 ### Step 2 - Creating the Query
 
-Define what information you need from your users and build a query using the [Query Builder](https://schema-builder.polygonid.me/query-builder).
+Define what information you need from your users and build a query using the [Query Builder](https://schema-builder.optimismid.me/query-builder).
 Once you create the query, you can select the network and test your query.
 Copy the generated code snippet of the query for later integration into your verifier setup.
 
@@ -110,7 +110,7 @@ The server setup for Off-Chain Verification and the Smart Contract setup for On-
 
 :::note
 
-In Case of Off-Chain Verification, once the user goes through the flow of verification in the Web Wallet, the zero-knowledge proof is returned as a <ins>[JWZ](./wallet/wallet-sdk/polygonid-sdk/iden3comm/jwz)</ins> token in a callback to your verifier backend. You need to handle this callback coming from the Web Wallet and verify the proof.
+In Case of Off-Chain Verification, once the user goes through the flow of verification in the Web Wallet, the zero-knowledge proof is returned as a <ins>[JWZ](./wallet/wallet-sdk/optimismid-sdk/iden3comm/jwz)</ins> token in a callback to your verifier backend. You need to handle this callback coming from the Web Wallet and verify the proof.
 
 :::
 
@@ -152,7 +152,7 @@ const verificationRequest = {
       query: {
         allowedIssuers: ["did:iden3:privado:main:2ScrbEuw9jLXMapW3DELXBbDco5EURzJZRN1tYj7L7"],
         context:
-          "https://raw.githubusercontent.com/anima-protocol/claims-polygonid/main/schemas/json-ld/pol-v1.json-ld",
+          "https://raw.githubusercontent.com/anima-protocol/claims-optimismid/main/schemas/json-ld/pol-v1.json-ld",
         type: "AnimaProofOfLife",
         credentialSubject: {
           human: {
@@ -169,7 +169,7 @@ const verificationRequest = {
 // Encode the verification request to base64
 const base64EncodedVerificationRequest = btoa(JSON.stringify(verificationRequest));
 
-// Open the Polygon ID Verification Web Wallet with the encoded verification request
+// Open the optimism ID Verification Web Wallet with the encoded verification request
 window.open(`https://wallet.privado.id/#${base64EncodedVerificationRequest}`);
 ```
 

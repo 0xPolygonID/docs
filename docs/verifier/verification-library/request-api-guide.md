@@ -5,7 +5,7 @@ sidebar_label: Request
 description: Learn how to use the Request API.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - ID holder
   - issuer
   - verifier
@@ -53,7 +53,7 @@ const request : protocol.AuthorizationRequestMessage = auth.createAuthorizationR
 
 :::info
 
-An example of the usage of this API can be found <ins>[here](https://github.com/0xPolygonID/tutorial-examples/blob/main/verifier-integration/go/index.go#L41)(GO)</ins> and <ins>[here](https://github.com/0xPolygonID/tutorial-examples/blob/main/verifier-integration/js/index.js#L39)(JS)</ins>.
+An example of the usage of this API can be found <ins>[here](https://github.com/0xoptimismID/tutorial-examples/blob/main/verifier-integration/go/index.go#L41)(GO)</ins> and <ins>[here](https://github.com/0xoptimismID/tutorial-examples/blob/main/verifier-integration/js/index.js#L39)(JS)</ins>.
 
 :::
 
@@ -85,7 +85,7 @@ The Query-based Auth Request allows verifiers to interact with a wallet by setti
 
 :::info
 
-The Query has to be attached to the Basic Auth Request output of the previous API. An example of its usage can be found <ins>[here](https://github.com/0xPolygonID/tutorial-examples/blob/main/verifier-integration/go/index.go#L47)</ins>.
+The Query has to be attached to the Basic Auth Request output of the previous API. An example of its usage can be found <ins>[here](https://github.com/0xoptimismID/tutorial-examples/blob/main/verifier-integration/go/index.go#L47)</ins>.
 
 :::
 
@@ -163,7 +163,7 @@ mtpProofRequest.Query = map[string]interface{}{
 
 :::info
 
-An example of the usage of this API can be found <ins>[here](https://github.com/0xPolygonID/tutorial-examples/blob/main/verifier-integration/go/index.go#L47) (GO)</ins> and <ins>[here](https://github.com/0xPolygonID/tutorial-examples/blob/main/verifier-integration/js/index.js#L49) (JS)</ins>.
+An example of the usage of this API can be found <ins>[here](https://github.com/0xoptimismID/tutorial-examples/blob/main/verifier-integration/go/index.go#L47) (GO)</ins> and <ins>[here](https://github.com/0xoptimismID/tutorial-examples/blob/main/verifier-integration/js/index.js#L49) (JS)</ins>.
 
 :::
 
@@ -175,6 +175,6 @@ Check out our [<ins>Query Language guide</ins>](./zk-query-language.md) to desig
 
 :::info
 
-Check out the [<ins>Iden3Comm</ins>](/docs/wallet/wallet-sdk/polygonid-sdk/iden3comm/overview.md) section inside the Wallet SDK to learn more about how these requests are interpreted by the wallet in order to generate a zk proof.
+Check out the [<ins>Iden3Comm</ins>](/docs/wallet/wallet-sdk/optimismid-sdk/iden3comm/overview.md) section inside the Wallet SDK to learn more about how these requests are interpreted by the wallet in order to generate a zk proof.
 
 :::

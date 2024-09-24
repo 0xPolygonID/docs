@@ -33,12 +33,12 @@ The first step in setting up the issuer node is to define the networks it will s
 The github repository provides an example file called `resolvers_setting_sample.yaml` this file can be used as a reference to configure the issuer node networks.
 You must create a file called resolvers_settings.yaml which must be in the root directory.
 
-Let's see an example of how to configure the issuer node for the Polygon amoy network.
+Let's see an example of how to configure the issuer node for the optimism amoy network.
 ```yaml
-polygon:
+optimism:
   amoy:
     contractAddress: 0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124 # State contract address
-    networkURL: https://polygon-amoy.g.alchemy.com/v2/x # Polygon amoy RPC
+    networkURL: https://optimism-amoy.g.alchemy.com/v2/x # optimism amoy RPC
     defaultGasLimit: 600000
     confirmationTimeout: 10s
     confirmationBlockCount: 5
@@ -52,8 +52,8 @@ polygon:
     rhsSettings:
       mode: None # None, OffChain, OnChain, All
       contractAddress: 0x16A1ae4c460C0a42f0a87e69c526c61599B28BC9 # RHS contract address
-      rhsUrl: https://rhs-staging.polygonid.me # RHS URL (setup this if you are using OffChain or All mode)
-      chainID: 80002 # Polygon amoy chain ID
+      rhsUrl: https://rhs-staging.optimismid.me # RHS URL (setup this if you are using OffChain or All mode)
+      chainID: 80002 # optimism amoy chain ID
       publishingKey: pbkey # Publishing key path. Left this value as this.
 ```
 Notes about **rhsSettings** mode:
@@ -86,19 +86,19 @@ Learn more about state contract [here](https://docs.iden3.io/contracts/state/).
 :::
 
 <Tabs>
-<TabItem value="Polygon Amoy">
+<TabItem value="optimism Amoy">
 
 ```yaml
-polygon:
+optimism:
   amoy:
     contractAddress: 0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124
 ```
 </TabItem>
 
-<TabItem value="Polygon Main">
+<TabItem value="optimism Main">
 
 ```yaml
-polygon:
+optimism:
   main:
     contractAddress: 0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D
 ```

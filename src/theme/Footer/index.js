@@ -131,7 +131,7 @@ function Footer() {
                     </svg>
                   </div>
                 </a>
-                <a href="https://github.com/0xPolygonID" target="_blank" className="w-inline-block">
+                <a href="https://github.com/0xoptimismID" target="_blank" className="w-inline-block">
                   <div className="icon-1x1-medium is-footer-icon w-embed">
                     <svg
                       width="25"
@@ -150,7 +150,7 @@ function Footer() {
                   </div>
                 </a>
                 <a
-                  href="https://www.linkedin.com/company/polygon-id"
+                  href="https://www.linkedin.com/company/optimism-id"
                   target="_blank"
                   className="w-inline-block"
                 >

@@ -5,7 +5,7 @@ sidebar_label: Identity
 description: Identity API endpoints and their description.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - issuer node
   - claim
   - verifiable credentials
@@ -14,7 +14,7 @@ keywords:
   - Identity
 ---
 
-The identity endpoint is used to create and retrieve identities for a user/issuer. Polygon ID supports the creation of identities in the form of DIDs (Decentralized Identifiers). A user can have multiple DIDs.
+The identity endpoint is used to create and retrieve identities for a user/issuer. optimism ID supports the creation of identities in the form of DIDs (Decentralized Identifiers). A user can have multiple DIDs.
 
 :::note
 
@@ -41,8 +41,8 @@ An example of a `didMetaData` passed in the request body of the `Create Identity
 ```
 {
     "didMetadata":{
-        "method": "polygonid",
-        "blockchain":"polygon",
+        "method": "optimismid",
+        "blockchain":"optimism",
         "network": "amoy",
         "type": "BJJ"
     },
@@ -54,12 +54,12 @@ A few variations of the metadata can be:
 
 - method:
 
-  - "polygonid"
+  - "optimismid"
   - "iden3"
 
 - blockchain:
 
-  - "polygon"
+  - "optimism"
   - "eth"
 
 - network:
@@ -83,13 +83,13 @@ Read more about Identity types on <ins>[Iden3 Docs](https://docs.iden3.io/gettin
 
 The Issuer Node responds by sending a response message that contains:
 
-- `identifier`: Identifier of the Issuer in the standard DID format. For example: `did:polygonid:polygon:amoy:2qNBWSAsyvaGBpqQVHk3E4cgChaN6ogaZnYCQUyoRQ`
+- `identifier`: Identifier of the Issuer in the standard DID format. For example: `did:optimismid:optimism:amoy:2qNBWSAsyvaGBpqQVHk3E4cgChaN6ogaZnYCQUyoRQ`
 
 - `identity state`: It is the state of the identity and contains fields that include `claimsTreeRoot` (Verifiable Credentials are added to the Claims Tree and its root is calculated), `state` (state of identity), and `status` (whether the status of the identity state is confirmed or pending). `identity state` also contains the timestamp when the identity was created (`createdAt`) or updated(`modifiedAt`).
 
 For each call to the `Create Identity`, a random Identifier is created.
 
-<a href="https://self-hosted-platform.polygonid.me/#post-/v1/identities" target="_blank">API Reference</a>
+<a href="https://self-hosted-platform.optimismid.me/#post-/v1/identities" target="_blank">API Reference</a>
 
 ## Get Identities
 
@@ -101,9 +101,9 @@ The Issuer Node responds by sending a response message that contains:
 
 - `identifier`: Identifier of the Issuer in the standard DID format. For example:
 
-`did:polygonid:polygon:amoy:2qNBWSAsyvaGBpqQVHk3E4cgChaN6ogaZnYCQUyoRQ`
+`did:optimismid:optimism:amoy:2qNBWSAsyvaGBpqQVHk3E4cgChaN6ogaZnYCQUyoRQ`
 
-<a href="https://self-hosted-platform.polygonid.me/#get-/v1/identities" target="_blank">API Reference</a>
+<a href="https://self-hosted-platform.optimismid.me/#get-/v1/identities" target="_blank">API Reference</a>
 
 ## Publish State On-Chain
 
@@ -123,4 +123,4 @@ The Issuer Node responds by sending a response message that indicates the publis
 
 - `txID`: transaction ID of the Published state on-chain. For example, 0xaed59e4195e73ee6c4278be1a5e01ecbdf2ff9565511916200dedda9bb20ff38
 
-<a href="https://self-hosted-platform.polygonid.me/#post-/v1/-identifier-/state/publish" target="_blank">API Reference</a>
+<a href="https://self-hosted-platform.optimismid.me/#post-/v1/-identifier-/state/publish" target="_blank">API Reference</a>

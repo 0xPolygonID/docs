@@ -5,7 +5,7 @@ sidebar_label: Get Iden3 Message
 description: All communication between SDK and Issuer/Verifier is done through an Iden3MessageEntity.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

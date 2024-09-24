@@ -5,7 +5,7 @@ sidebar_label: Authenticate
 description: Iden3comm is the protocol that defines the set of rules and syntax of the data that needs to be communicated while interacting with an Issuer and a Verifier.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier
@@ -54,10 +54,10 @@ Future<void> authenticate({
 
 An Integrator, to interact with an Issuer, needs to authenticate with it first.
 
-1.  On the Polygon ID app (which is based on SDK), an Integrator clicks **Connect**.
+1.  On the optimism ID app (which is based on SDK), an Integrator clicks **Connect**.
 
 <div align="center">
-<img src={useBaseUrl("img/polygonid-wallet-connect.png")} width ="300" />
+<img src={useBaseUrl("img/optimismid-wallet-connect.png")} width ="300" />
 </div>
 <br/>
  
@@ -72,6 +72,6 @@ An Integrator, to interact with an Issuer, needs to authenticate with it first.
 
     ![](/img/jwz.png)
 
-    > Read more on JWZ [here](/docs/wallet/wallet-sdk/polygonid-sdk/iden3comm/jwz.md).
+    > Read more on JWZ [here](/docs/wallet/wallet-sdk/optimismid-sdk/iden3comm/jwz.md).
 
 4.  The Issuer receives the data sent by the Integrator and based on its correctness, authenticates or rejects the identity. The wallet analyzes this response from the Issuer.

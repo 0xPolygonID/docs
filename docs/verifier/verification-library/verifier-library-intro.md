@@ -5,7 +5,7 @@ sidebar_label: Introduction
 description: Verifier workflow and libraries.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - ID holder
   - issuer
   - verifier

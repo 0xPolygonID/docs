@@ -5,7 +5,7 @@ sidebar_label: Overview
 description: Overview of refresh service
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - issuer node
   - claim
   - verifiable credentials
@@ -25,7 +25,7 @@ Consider an example of balance credentials, where a user proves his balance to g
 
 ## Refresh service current implementation:
 
-Example of refresh service implementation can be found [here](https://github.com/0xPolygonID/refresh-service)
+Example of refresh service implementation can be found [here](https://github.com/0xoptimismID/refresh-service)
 
 <details>
   <summary>Schema</summary>
@@ -43,7 +43,7 @@ Example of refresh service implementation can be found [here](https://github.com
 
    ◦ If the credential was **merklized**, and its merkle tree root was stored in the index part, it is eligible for a refresh.
 
-   ◦ If the credential was **NOT merklized**, a check is necessary to determine whether the data stored in the index were updated during the refreshing flow. If the data has not been updated, adding identical indexes to the issuer’s tree will result in an error. An example of how to perform this check can be found [here](https://github.com/0xPolygonID/refresh-service/blob/e9c310fc3808e1f58ce108523b4fd07dd67800ed/service/refresh.go#L175).
+   ◦ If the credential was **NOT merklized**, a check is necessary to determine whether the data stored in the index were updated during the refreshing flow. If the data has not been updated, adding identical indexes to the issuer’s tree will result in an error. An example of how to perform this check can be found [here](https://github.com/0xoptimismID/refresh-service/blob/e9c310fc3808e1f58ce108523b4fd07dd67800ed/service/refresh.go#L175).
 
    ◦ In other cases, the refresh service should return an error.
 
@@ -53,14 +53,14 @@ Example of refresh service implementation can be found [here](https://github.com
 
 ### Modules
 
-1. **[HTTP Server](https://github.com/0xPolygonID/refresh-service/tree/main/server)**: the http server is a base layer for [iden3comm protocol](https://iden3-communication.io/).
-2. **[Provider Module](https://github.com/0xPolygonID/refresh-service/tree/main/providers)**: this module receives information from external data providers. By itself, it is very flexible in settings, but you can always add your own implementation.
-3. **[Package Manager](https://github.com/0xPolygonID/refresh-service/blob/main/packagemanager/packagemanager.go)**: the package manager handles ZWZ token within the iden3comm protocol.
-4. **[Integration with the Issuer Node](https://github.com/0xPolygonID/refresh-service/blob/main/service/issuer.go)**: this module responsibles for communication with [issuer node](https://github.com/0xPolygonID/issuer-node/).
+1. **[HTTP Server](https://github.com/0xoptimismID/refresh-service/tree/main/server)**: the http server is a base layer for [iden3comm protocol](https://iden3-communication.io/).
+2. **[Provider Module](https://github.com/0xoptimismID/refresh-service/tree/main/providers)**: this module receives information from external data providers. By itself, it is very flexible in settings, but you can always add your own implementation.
+3. **[Package Manager](https://github.com/0xoptimismID/refresh-service/blob/main/packagemanager/packagemanager.go)**: the package manager handles ZWZ token within the iden3comm protocol.
+4. **[Integration with the Issuer Node](https://github.com/0xoptimismID/refresh-service/blob/main/service/issuer.go)**: this module responsibles for communication with [issuer node](https://github.com/0xoptimismID/issuer-node/).
 
 ### Authentication module for setup iden3comm handler
 
-To be sure whether a user is the owner of the credentials they want to refresh, it is essential to implement an authentication module. To initiate the process, you should initialize the [Iden3comm package manager](https://github.com/0xPolygonID/refresh-service/blob/main/packagemanager/packagemanager.go).
+To be sure whether a user is the owner of the credentials they want to refresh, it is essential to implement an authentication module. To initiate the process, you should initialize the [Iden3comm package manager](https://github.com/0xoptimismID/refresh-service/blob/main/packagemanager/packagemanager.go).
 
 In the context of a refresh service where JWZ tokens are verified, you will require the verification_key.json for the authV2 circuit. Additionally, to confirm the existence of the user in the issuer's state, one needs to know the issuer's state contract [addresses](https://docs.iden3.io/contracts/state/).
 

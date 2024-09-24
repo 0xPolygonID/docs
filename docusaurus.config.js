@@ -6,10 +6,10 @@ require("dotenv").config();
 module.exports = {
   title: "Privado ID Documentation",
   tagline: "The official developer documentation hub for Privado ID.",
-  url: "https://devs.polygonid.com",
+  url: "https://devs.optimismid.com",
   baseUrl: "/",
   favicon: "/img/privado_favicon.png",
-  organizationName: "0xPolygonID",
+  organizationName: "0xoptimismID",
   projectName: "docs",
   customFields: {
     description: "Build your next blockchain dApp using Privado ID.",
@@ -32,7 +32,7 @@ module.exports = {
     announcementBar: {
       id: "learn_more",
       content:
-        'Polygon ID spins out as Privado ID.<a class="announcement-link" rel="noopener noreferrer" href="https://www.privado.id/blog/introducing-privado-id-moving-beyond-polygon-to-deliver-independent-privacy-preserving-identity-solutions">Official Announcement</a>',
+        'optimism ID spins out as Privado ID.<a class="announcement-link" rel="noopener noreferrer" href="https://www.privado.id/blog/introducing-privado-id-moving-beyond-optimism-to-deliver-independent-privacy-preserving-identity-solutions">Official Announcement</a>',
       backgroundColor: "#20232a",
       textColor: "#131313",
       isCloseable: false,
@@ -63,7 +63,7 @@ module.exports = {
     },
     algolia: {
       // need to update this
-      indexName: "devs-polygonid",
+      indexName: "devs-optimismid",
       appId: "VHJ21ILMOQ",
       apiKey: process.env.ALGOLIA_API_KEY,
       contextualSearch: true,
@@ -116,19 +116,19 @@ module.exports = {
           label: "Tools",
           items: [
             {
-              href: "https://schema-builder.polygonid.me/",
+              href: "https://schema-builder.optimismid.me/",
               label: "Schema Explorer",
             },
             {
-              href: "https://schema-builder.polygonid.me/builder",
+              href: "https://schema-builder.optimismid.me/builder",
               label: "Schema Builder",
             },
             {
-              href: "https://schema-builder.polygonid.me/query-builder",
+              href: "https://schema-builder.optimismid.me/query-builder",
               label: "Query Builder",
             },
             {
-              href: "https://jwz.polygonid.me",
+              href: "https://jwz.optimismid.me",
               label: "JWZ Validator",
             },
           ],
@@ -180,7 +180,7 @@ module.exports = {
           ],
         },
         {
-          href: "https://github.com/0xPolygonID",
+          href: "https://github.com/0xoptimismID",
           position: "right",
           className: "header-github-link",
           "aria-label": "GitHub repository",
@@ -208,7 +208,7 @@ module.exports = {
         docs: {
           routeBasePath: "/docs",
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/0xPolygonID/docs/blob/main",
+          editUrl: "https://github.com/0xoptimismID/docs/blob/main",
           path: "docs",
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,

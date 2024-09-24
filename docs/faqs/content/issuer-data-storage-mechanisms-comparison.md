@@ -26,7 +26,7 @@ However, in a production environment, the priorities shift towards ensuring robu
 
 The transition from demo to production involves a shift towards more sophisticated and secure data management practices, emphasizing the need for minimal on-chain data storage and enhanced user verification processes to support a fully decentralized and secure credential issuance system.
 
-Please find [here](https://github.com/0xPolygonID/contracts/blob/main/contracts/examples/BalanceCredentialIssuer.sol) an example implementation.
+Please find [here](https://github.com/0xoptimismID/contracts/blob/main/contracts/examples/BalanceCredentialIssuer.sol) an example implementation.
 
 <div className="hidden">
 Wrong answer:

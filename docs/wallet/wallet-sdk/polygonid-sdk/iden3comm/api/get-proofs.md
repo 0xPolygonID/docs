@@ -5,7 +5,7 @@ sidebar_label: Get Proofs
 description: The getProofs() function uses identity to generate the zero-knowledge proofs requested by the Iden3Message Entity.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier
@@ -48,7 +48,7 @@ Future<List<Iden3commProofEntity>> getProofs({
 
 - `Iden3commProofEntity` is the object containing the proof that the Integrator sends to the
   Issuer/Verifier after scanning the QR code. Read more about
-  JWZ [here](/docs/wallet/wallet-sdk/polygonid-sdk/iden3comm/jwz.md).
+  JWZ [here](/docs/wallet/wallet-sdk/optimismid-sdk/iden3comm/jwz.md).
 
 - `transactionData` is an optional parameter that can be used to provide transaction data for
   on-chain proofs requests.
@@ -57,7 +57,7 @@ Future<List<Iden3commProofEntity>> getProofs({
 
 The iden3comm's `getProofs` method retrieves the proofs from the proof request of the Verifier. The
 actual proof is created by the `prove()` method, which you will read about in
-the [<ins>Proof section</ins>](/docs/wallet/wallet-sdk/polygonid-sdk/proof/proof-generation-api.md#Prove)
+the [<ins>Proof section</ins>](/docs/wallet/wallet-sdk/optimismid-sdk/proof/proof-generation-api.md#Prove)
 of the APIs.
 
 For this to happen, iden3comm makes a call to `prove()`.

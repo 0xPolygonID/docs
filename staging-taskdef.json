@@ -73,7 +73,7 @@
 		},
 		{
 			"key": "Service",
-			"value": "devs-staging.polygonid.com"
+			"value": "devs-staging.optimismid.com"
 		},
 		{
 			"key": "Host",
@@ -81,7 +81,7 @@
 		},
 		{
 			"key": "IAC",
-			"value": "terraform-workspace-aws-polygonid-testnet-eu-west-1-apps-devs-staging-polygonid-com"
+			"value": "terraform-workspace-aws-optimismid-testnet-eu-west-1-apps-devs-staging-optimismid-com"
 		},
 		{
 			"key": "Team",

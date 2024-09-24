@@ -5,33 +5,33 @@ sidebar_label: Verifier Backend API
 description: Verifier Backend API.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - ID holder
   - verifier
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The [Verifier Backend](https://github.com/0xPolygonID/verifier-backend) project is a JSON API that enables [Off Chain Verifications](verification-library/verification-api-guide.md) of zero knowledge proofs for verifiable credentials. Within the trust triangle, it serves as the verifier.
+The [Verifier Backend](https://github.com/0xoptimismID/verifier-backend) project is a JSON API that enables [Off Chain Verifications](verification-library/verification-api-guide.md) of zero knowledge proofs for verifiable credentials. Within the trust triangle, it serves as the verifier.
 
 It is built using libraries developed by the iden3 protocol team. Below, we'll explain how to install it using Docker and how it can be used to perform zero knowledge proofs.
 
-You can try our [Verifier Backend API](https://verifier-backend.polygonid.me/) running.
+You can try our [Verifier Backend API](https://verifier-backend.optimismid.me/) running.
 
 ## Local Installation
 
 To run the verifier backend with Docker, after cloning the code from the repository, simply follow these steps:
 
-1. Create a file named `resolvers_settings.yaml`, using the `resolvers_settings_samples.yaml` file as a base. In this file, configure only your RPC for the Polygon Amoy and Main networks, i.e., the two variables named `networkURL`.
+1. Create a file named `resolvers_settings.yaml`, using the `resolvers_settings_samples.yaml` file as a base. In this file, configure only your RPC for the optimism Amoy and Main networks, i.e., the two variables named `networkURL`.
 
 ```yaml
-polygon:
+optimism:
   amoy:
     contractAddress: 0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124
-    networkURL: https://polygon-amoy.g.alchemy.com/v2/<your-project-secret>
+    networkURL: https://optimism-amoy.g.alchemy.com/v2/<your-project-secret>
   main:
     contractAddress: 0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D
-    networkURL: https://polygon-mainnet.g.alchemy.com/v2/X2
+    networkURL: https://optimism-mainnet.g.alchemy.com/v2/X2
 ```
 
 2. Create a .env file (you can use the .env-sample file as a base).
@@ -41,8 +41,8 @@ VERIFIER_BACKEND_HOST=https://your-public-ip
 VERIFIER_BACKEND_PORT=3010
 VERIFIER_BACKEND_KEY_DIR=./keys
 VERIFIER_IPFS_URL=https://gateway.pinata.cloud
-VERIFIER_BACKEN_AMOY_SENDER_DID=did:polygonid:polygon:amoy:2qH7TstpRRJHXNN4o49Fu9H2Qismku8hQeUxDVrjqT
-VERIFIER_BACKEND_MAIN_SENDER_DID=did:polygonid:polygon:main:2q4Q7F7tM1xpwUTgWivb6TgKX3vWirsE3mqymuYjVv
+VERIFIER_BACKEN_AMOY_SENDER_DID=did:optimismid:optimism:amoy:2qH7TstpRRJHXNN4o49Fu9H2Qismku8hQeUxDVrjqT
+VERIFIER_BACKEND_MAIN_SENDER_DID=did:optimismid:optimism:main:2q4Q7F7tM1xpwUTgWivb6TgKX3vWirsE3mqymuYjVv
 VERIFIER_BACKEND_RESOLVER_SETTINGS_PATH=./resolvers_settings.yaml
 ```
 
@@ -115,7 +115,7 @@ This endpoint will respond with a similar response to the following:
         }
       ]
     },
-    "from": "did:polygonid:polygon:amoy:2qH7TstpRRJHXNN4o49Fu9H2Qismku8hQeUxDVrjqT",
+    "from": "did:optimismid:optimism:amoy:2qH7TstpRRJHXNN4o49Fu9H2Qismku8hQeUxDVrjqT",
     "id": "7f38a193-0918-4a48-9fac-36adfdb8b542",
     "thid": "7f38a193-0918-4a48-9fac-36adfdb8b542",
     "typ": "application/iden3comm-plain-json",
@@ -125,7 +125,7 @@ This endpoint will respond with a similar response to the following:
 }
 ```
 
-The value of the `qrCode` field is the one that should be displayed as a QR code to be scanned by the Polygon ID wallet.
+The value of the `qrCode` field is the one that should be displayed as a QR code to be scanned by the optimism ID wallet.
 
 The `sessionID` should be used to check the status of the proof. To query the status of the proof, i.e., whether it was valid or not, you should call the endpoint `/status?sessionID=975903`.
 
@@ -163,7 +163,7 @@ For example,
       }
     ]
   },
-  "from": "did:polygonid:polygon:amoy:2qH7TstpRRJHXNN4o49Fu9H2Qismku8hQeUxDVrjqT",
+  "from": "did:optimismid:optimism:amoy:2qH7TstpRRJHXNN4o49Fu9H2Qismku8hQeUxDVrjqT",
   "id": "7f38a193-0918-4a48-9fac-36adfdb8b542",
   "thid": "7f38a193-0918-4a48-9fac-36adfdb8b542",
   "typ": "application/iden3comm-plain-json",

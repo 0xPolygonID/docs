@@ -5,7 +5,7 @@ sidebar_label: Source Code
 description: Important library links.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - issuer node
   - claim
   - verifiable credentials
@@ -17,7 +17,7 @@ keywords:
 
 ## Core Library
 
-- [Issuer Node](https://github.com/0xPolygonID/issuer-node)
+- [Issuer Node](https://github.com/0xoptimismID/issuer-node)
 
 ## Support Libraries
 

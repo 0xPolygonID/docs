@@ -5,7 +5,7 @@ sidebar_label: Universal Links
 description: Tutorial on how to configure universal links.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - ID holder
   - issuer
   - verifier
@@ -249,7 +249,7 @@ const request = {
                 "id": 1,
                 "query": {
                     "allowedIssuers": ["did:iden3:privado:main:2SdUfDwHK3koyaH5WzhvPhpcjFfdem2xD625aymTNc"],
-                    "context": "https://raw.githubusercontent.com/anima-protocol/claims-polygonid/main/schemas/json-ld/pol-v1.json-ld",
+                    "context": "https://raw.githubusercontent.com/anima-protocol/claims-optimismid/main/schemas/json-ld/pol-v1.json-ld",
                     "type": "AnimaProofOfLife",
                     "credentialSubject": {
                         "human": {

@@ -20,7 +20,7 @@ Why do I encounter an error stating "unexpected status code: 404" when trying to
 
 The error you're experiencing is typically due to an incorrect configuration of `ISSUER_CREDENTIAL_STATUS_RHS_MODE` and an invalid `ISSUER_CREDENTIAL_STATUS_RHS_URL`. This occurs when `ISSUER_CREDENTIAL_STATUS_RHS_MODE` is set to `OffChain`, but the provided RHS URL is not a valid endpoint.
 
-To resolve this issue, check your `.env-issuer` file for the `ISSUER_CREDENTIAL_STATUS_RHS_MODE` value. If it is set to `OffChain`, you must specify a valid Reverse Hash Service Endpoint in `ISSUER_CREDENTIAL_STATUS_RHS_URL`. For example, you could use our staging RHS: `https://rhs-staging.polygonid.me/`.
+To resolve this issue, check your `.env-issuer` file for the `ISSUER_CREDENTIAL_STATUS_RHS_MODE` value. If it is set to `OffChain`, you must specify a valid Reverse Hash Service Endpoint in `ISSUER_CREDENTIAL_STATUS_RHS_URL`. For example, you could use our staging RHS: `https://rhs-staging.optimismid.me/`.
 
 If your `ISSUER_CREDENTIAL_STATUS_RHS_MODE` is configured for on-chain operation, ensure you have the correct smart contract information for your network, such as Amoy:
 

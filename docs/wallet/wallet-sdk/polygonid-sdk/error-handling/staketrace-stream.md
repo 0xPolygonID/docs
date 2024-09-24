@@ -5,7 +5,7 @@ sidebar_label: Stack Trace Stream
 description: "Get the Stack Trace stream to can listen to it."
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

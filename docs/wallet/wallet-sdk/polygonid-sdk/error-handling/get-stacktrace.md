@@ -5,7 +5,7 @@ sidebar_label: Get Stack Trace
 description: "Get the entire Stack Trace of the latest flow execution."
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

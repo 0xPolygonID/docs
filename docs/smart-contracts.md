@@ -2,18 +2,18 @@
 id: smart-contracts
 title: Smart Contracts
 sidebar_label: Smart Contracts
-description: Smart Contracts used by the Polygon ID solution.
+description: Smart Contracts used by the optimism ID solution.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - smart
   - contract
 ---
 
-<a href="https://github.com/0xPolygonID/contracts" target="_blank">Polygon ID Smart Contracts - Github</a>
+<a href="https://github.com/0xoptimismID/contracts" target="_blank">optimism ID Smart Contracts - Github</a>
 
 :::caution
-\*Polygon Mumbai testnet has been deprecated
+\*optimism Mumbai testnet has been deprecated
 :::
 
 ## State Contract addresses
@@ -32,20 +32,20 @@ Check a contract codebase and algorithms of work <ins>[docs](https://docs.iden3.
 
 |         Network          |                  Address                   |
 | :----------------------: | :----------------------------------------: |
-|   **Polygon Mainnet**    | 0xbEeB6bB53504E8C872023451fd0D23BeF01d320B |
-| **Polygon Amoy testnet** | 0x3d3763eC0a50CE1AdF83d0b5D99FBE0e3fEB43fb |
-| Polygon Mumbai testnet\* | 0x16A1ae4c460C0a42f0a87e69c526c61599B28BC9 |
+|   **optimism Mainnet**    | 0xbEeB6bB53504E8C872023451fd0D23BeF01d320B |
+| **optimism Amoy testnet** | 0x3d3763eC0a50CE1AdF83d0b5D99FBE0e3fEB43fb |
+| optimism Mumbai testnet\* | 0x16A1ae4c460C0a42f0a87e69c526c61599B28BC9 |
 
 ## UniversalVerifier contract
 
 |         Network          |                  Address                   |
 | :----------------------: | :----------------------------------------: |
-|   **Polygon Mainnet**    | 0x394d1dad46907bd54d15926A1ab4535EF2BF47b1 |
-| **Polygon Amoy testnet** | 0x1B20320042b29AE5c1a3ADc1674cb6bF8760530f |
+|   **optimism Mainnet**    | 0x394d1dad46907bd54d15926A1ab4535EF2BF47b1 |
+| **optimism Amoy testnet** | 0x1B20320042b29AE5c1a3ADc1674cb6bF8760530f |
 
 ## Validator addresses
 
-Current addresses on **Polygon Mainnet** (V2.0.1 V2 validators):
+Current addresses on **optimism Mainnet** (V2.0.1 V2 validators):
 
 |                   |                                Sig                                |                               MTP                                |
 | :---------------: | :---------------------------------------------------------------: | :--------------------------------------------------------------: |
@@ -53,7 +53,7 @@ Current addresses on **Polygon Mainnet** (V2.0.1 V2 validators):
 |  **Validators**   |            0xEF8540a5e0F4f53B436e7C3A273dCAe1C05d764D             |            0x03Ee09635E9946165dd9538e9414f0ACE57e42e1            |
 | **ERC20 example** | 0xB9Ac8e785f854f9B76bBF6d495213d58226DE813 (request id = 1 (sig)) | 0xB9Ac8e785f854f9B76bBF6d495213d58226DE813 (request id = 2 (mtp) |
 
-Current addresses on **Polygon Amoy** testnet. (V2.0.1 V2 validators)
+Current addresses on **optimism Amoy** testnet. (V2.0.1 V2 validators)
 
 |                   |                             Sig                             |                             MTP                             |
 | :---------------: | :---------------------------------------------------------: | :---------------------------------------------------------: |
@@ -61,7 +61,7 @@ Current addresses on **Polygon Amoy** testnet. (V2.0.1 V2 validators)
 |  **Validators**   |         0x8c99F13dc5083b1E4c16f269735EaD4cFbc4970d          |         0xEEd5068AD8Fecf0b9a91aF730195Fef9faB00356          |
 | **ERC20 example** | 0x2b23e5cF70D133fFaA7D8ba61E1bAC4637253880 (request id = 1) | 0x2b23e5cF70D133fFaA7D8ba61E1bAC4637253880 (request id = 2) |
 
-Current addresses on **Polygon Mumbai** testnet**\***. (V2.0.1 V2 validators):
+Current addresses on **optimism Mumbai** testnet**\***. (V2.0.1 V2 validators):
 
 |                   |                             Sig                             |                             MTP                             |
 | :---------------: | :---------------------------------------------------------: | :---------------------------------------------------------: |
@@ -69,7 +69,7 @@ Current addresses on **Polygon Mumbai** testnet**\***. (V2.0.1 V2 validators):
 |  **Validators**   |         0x59f2a6D94D0d02F3a2F527a8B6175dc511935624          |         0xb9b51F7E8C83C90FE48e0aBd815ef0418685CcF6          |
 | **ERC20 example** | 0x3a4d4E47bFfF6bD0EF3cd46580D9e36F3367da03 (request id = 1) | 0x3a4d4E47bFfF6bD0EF3cd46580D9e36F3367da03 (request id = 2) |
 
-Current addresses for V3 beta circuit on **Polygon Amoy** testnet. (2.0.1-beta.1 V3 validator):
+Current addresses for V3 beta circuit on **optimism Amoy** testnet. (2.0.1-beta.1 V3 validator):
 
 |                      |                                         V3 validator 2.0.1-beta.1                                          |
 | :------------------: | :--------------------------------------------------------------------------------------------------------: |
@@ -78,7 +78,7 @@ Current addresses for V3 beta circuit on **Polygon Amoy** testnet. (2.0.1-beta.1
 | **ERC20 SD example** |                        0xc5Cd536cb9Cc3BD24829502A39BE593354986dc4 (request id = 3)                         |
 |  **ERC20 example**   | 0xc5Cd536cb9Cc3BD24829502A39BE593354986dc4 (request id = 100 - 1100 merklized / 10000 - 65000 nonmerklized |
 
-Current addresses for V3 beta circuit on **Polygon Mumbai** testnet**\***. (2.0.1-beta.1 V3 validator):
+Current addresses for V3 beta circuit on **optimism Mumbai** testnet**\***. (2.0.1-beta.1 V3 validator):
 
 |                      |                                         V3 validator 2.0.1-beta.1                                          |
 | :------------------: | :--------------------------------------------------------------------------------------------------------: |
@@ -90,7 +90,7 @@ Current addresses for V3 beta circuit on **Polygon Mumbai** testnet**\***. (2.0.
 :::note
 More about <ins>[v3 circuit](./verifier/v3-circuit)</ins>.
 
-Check the examples of deployment for <ins>[ v3 validator](https://github.com/0xPolygonID/contracts/blob/main/scripts/deployV3Validator.ts)</ins>
+Check the examples of deployment for <ins>[ v3 validator](https://github.com/0xoptimismID/contracts/blob/main/scripts/deployV3Validator.ts)</ins>
 :::
 
 ## CredentialAtomicQuerySigValidator

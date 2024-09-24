@@ -5,7 +5,7 @@ sidebar_label: Backup Identity
 description: Backup Identity method backs up the identity stored on SDK.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

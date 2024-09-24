@@ -5,7 +5,7 @@ sidebar_label: Agent
 description: Agent API endpoints and their description.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - issuer node
   - claim
   - verifiable credentials
@@ -22,7 +22,7 @@ The core feature of message-based communication initiation in messaging specific
 
 2. The public key that a specific identity agent is using for communication with another identity.
 
-The [JWZ](/docs/wallet/wallet-sdk/polygonid-sdk/iden3comm/jwz.md) is generated within the user's identity wallet in response to the authentication requested by an Issuer.
+The [JWZ](/docs/wallet/wallet-sdk/optimismid-sdk/iden3comm/jwz.md) is generated within the user's identity wallet in response to the authentication requested by an Issuer.
 
 ## Agent Endpoint
 
@@ -45,7 +45,7 @@ A typical response looks like this:
 {
   "body": {
     "credential": {
-      "id": "https://ce98-2a0c-5a84-3403-bb00-e0d9-c19e-2ab1-2a2b.eu.ngrok.io/issuer/v1/did:polygonid:polygon:amoy:2qDTZaJRKmLk9AiGkqwJePy2SWm1PtffGRF5CjTeZA/claims/ec81d686-a6e4-11ed-a1f4-debe37e1cbd5",
+      "id": "https://ce98-2a0c-5a84-3403-bb00-e0d9-c19e-2ab1-2a2b.eu.ngrok.io/issuer/v1/did:optimismid:optimism:amoy:2qDTZaJRKmLk9AiGkqwJePy2SWm1PtffGRF5CjTeZA/claims/ec81d686-a6e4-11ed-a1f4-debe37e1cbd5",
       "@context": [
         "https://www.w3.org/2018/credentials/v1",
         "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/iden3credential-v2.json-ld",
@@ -57,15 +57,15 @@ A typical response looks like this:
       "credentialSubject": {
         "birthday": 19960424,
         "documentType": 782222,
-        "id": "did:polygonid:polygon:amoy:2qG9d1nUyeTVU63vU1gH3jcD6Y8z4ANPSdFdQHPY4t",
+        "id": "did:optimismid:optimism:amoy:2qG9d1nUyeTVU63vU1gH3jcD6Y8z4ANPSdFdQHPY4t",
         "type": "KYCAgeCredential"
       },
       "credentialStatus": {
-        "id": "https://ce98-2a0c-5a84-3403-bb00-e0d9-c19e-2ab1-2a2b.eu.ngrok.io/issuer/v1/did%3Apolygonid%3Apolygon%3Aamoy%3A2qDTZaJRKmLk9AiGkqwJePy2SWm1PtffGRF5CjTeZA/claims/revocation/status/4144415042",
+        "id": "https://ce98-2a0c-5a84-3403-bb00-e0d9-c19e-2ab1-2a2b.eu.ngrok.io/issuer/v1/did%3Aoptimismid%3Aoptimism%3Aamoy%3A2qDTZaJRKmLk9AiGkqwJePy2SWm1PtffGRF5CjTeZA/claims/revocation/status/4144415042",
         "revocationNonce": 4144415042,
         "type": "SparseMerkleTreeProof"
       },
-      "issuer": "did:polygonid:polygon:amoy:2qDTZaJRKmLk9AiGkqwJePy2SWm1PtffGRF5CjTeZA",
+      "issuer": "did:optimismid:optimism:amoy:2qDTZaJRKmLk9AiGkqwJePy2SWm1PtffGRF5CjTeZA",
       "credentialSchema": {
         "id": "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json/KYCAgeCredential-v3.json",
         "type": "JsonSchemaValidator2018"
@@ -74,7 +74,7 @@ A typical response looks like this:
         {
           "type": "BJJSignature2021",
           "issuerData": {
-            "id": "did:polygonid:polygon:amoy:2qDTZaJRKmLk9AiGkqwJePy2SWm1PtffGRF5CjTeZA",
+            "id": "did:optimismid:optimism:amoy:2qDTZaJRKmLk9AiGkqwJePy2SWm1PtffGRF5CjTeZA",
             "state": {
               "claimsTreeRoot": "c244e9c4a42a1fb6aace041c08ecdc9532170194dd03ae99ffd5a035a4423f04",
               "value": "f92376a5ec15d599f877504d55a3c703d8e40aebb9e9e60802fc217a86693a02"
@@ -85,7 +85,7 @@ A typical response looks like this:
               "siblings": []
             },
             "credentialStatus": {
-              "id": "https://ce98-2a0c-5a84-3403-bb00-e0d9-c19e-2ab1-2a2b.eu.ngrok.io/issuer/v1/did%3Apolygonid%3Apolygon%3Aamoy%3A2qDTZaJRKmLk9AiGkqwJePy2SWm1PtffGRF5CjTeZA/claims/revocation/status/0",
+              "id": "https://ce98-2a0c-5a84-3403-bb00-e0d9-c19e-2ab1-2a2b.eu.ngrok.io/issuer/v1/did%3Aoptimismid%3Aoptimism%3Aamoy%3A2qDTZaJRKmLk9AiGkqwJePy2SWm1PtffGRF5CjTeZA/claims/revocation/status/0",
               "revocationNonce": 0,
               "type": "SparseMerkleTreeProof"
             }
@@ -96,13 +96,13 @@ A typical response looks like this:
       ]
     }
   },
-  "from": "did:polygonid:polygon:amoy:2qDTZaJRKmLk9AiGkqwJePy2SWm1PtffGRF5CjTeZA",
+  "from": "did:optimismid:optimism:amoy:2qDTZaJRKmLk9AiGkqwJePy2SWm1PtffGRF5CjTeZA",
   "id": "558984b4-b074-42a7-b60f-c2b5290d1a32",
   "threadID": "4ccb5b86-bf30-47a4-b7e1-e0e2e4edec8b",
-  "to": "did:polygonid:polygon:amoy:2qG9d1nUyeTVU63vU1gH3jcD6Y8z4ANPSdFdQHPY4t",
+  "to": "did:optimismid:optimism:amoy:2qG9d1nUyeTVU63vU1gH3jcD6Y8z4ANPSdFdQHPY4t",
   "typ": "application/iden3comm-plain-json",
   "type": "https://iden3-communication.io/credentials/1.0/issuance-response"
 }
 ```
 
-<a href="https://self-hosted-platform.polygonid.me/#post-/v1/agent" target="_blank">API Reference</a>
+<a href="https://self-hosted-platform.optimismid.me/#post-/v1/agent" target="_blank">API Reference</a>

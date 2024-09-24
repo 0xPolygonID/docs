@@ -5,7 +5,7 @@ sidebar_label: Refresh Credential
 description: This method allows the refreshing of a specific credential within the SDK.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

@@ -5,7 +5,7 @@ sidebar_label: Update Credentials
 description: The credentials stored on the SDK can be updated using the credential ID.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

@@ -5,7 +5,7 @@ sidebar_label: Get Identity
 description: We can get an identity stored on the SDK using getIdentity() function.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

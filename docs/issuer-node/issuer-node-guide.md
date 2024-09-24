@@ -5,7 +5,7 @@ sidebar_label: Issuer Node UI Guide
 description: Learn how to use the Issuer Node UI to import schemas, create credentials and manage connections.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - issuer node
   - claim
   - verifiable credentials
@@ -16,7 +16,7 @@ keywords:
 
 :::info
 
-Before you actually act as an Issuer and provide credentials, you need to set up a Polygon ID Issuer Node. You can find instructions to get your Issuer Node up and running [<ins>here</ins>](/docs/issuer/setup-issuer-ui.md).
+Before you actually act as an Issuer and provide credentials, you need to set up a optimism ID Issuer Node. You can find instructions to get your Issuer Node up and running [<ins>here</ins>](/docs/issuer/setup-issuer-ui.md).
 
 :::
 
@@ -160,7 +160,7 @@ There are 3 QR code options available: Link, Raw JSON and Base64 encoded. The pr
 
 :::info "What happens on the Holder's side?"
 
-The holder will just have to log into his Polygon ID wallet, tap Connect, scan the QR code and choose **Connect Wallet**. After authentication, the holder finally receives their credential.
+The holder will just have to log into his optimism ID wallet, tap Connect, scan the QR code and choose **Connect Wallet**. After authentication, the holder finally receives their credential.
 
 <div align="center">
 <img src= "/img/issuer-holder.png" align="center" width="1000" height="1000"/>

@@ -5,7 +5,7 @@ sidebar_label: Add Profile
 description: Add Profile API.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier
@@ -13,7 +13,7 @@ keywords:
   - profile
 ---
 
-This method adds a profile if there isn't already one associated with the identity derived from the private key and stored in the Polygon ID SDK.
+This method adds a profile if there isn't already one associated with the identity derived from the private key and stored in the optimism ID SDK.
 
 ```dart
   Future<void> addProfile(
@@ -28,4 +28,4 @@ The `privateKey` is the key used to access all the sensitive info from the ident
 
 The `profileNonce` is the nonce of the profile used from the identity to obtain the DID identifier. The value must be greater than 0 and less than 2^248.
 
-The profile will be added using the current env set with `PolygonIdSdk.setEnv`.
+The profile will be added using the current env set with `optimismIdSdk.setEnv`.

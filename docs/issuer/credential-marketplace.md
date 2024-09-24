@@ -5,7 +5,7 @@ sidebar_label: Credential Marketplace
 description: "Features of the Credential Marketplace"
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - credential
   - marketplace
   - issuer
@@ -60,7 +60,7 @@ Searching for credentials on the Credential Marketplace by using a comprehensive
 
 ## Ecosystem
 
-The Ecosystem page shows all the projects involved in the Polygon ID environment, be they verifiers, credential providers, or other organizations from the SSI industry. Those are organizations that really stand out with their solutions for the Digital Identity challenge by leveraging at least one of Polygon ID’s tools and products.
+The Ecosystem page shows all the projects involved in the optimism ID environment, be they verifiers, credential providers, or other organizations from the SSI industry. Those are organizations that really stand out with their solutions for the Digital Identity challenge by leveraging at least one of optimism ID’s tools and products.
 
 <div align="center">
 <img src= {useBaseUrl("img/credential-marketplace/ecosystem.png")} align="center" length="100" width="700" />
@@ -68,7 +68,7 @@ The Ecosystem page shows all the projects involved in the Polygon ID environment
 
 ## Issuer Portal
 
-The Issuer Portal is the go-to place for every credential provider who wants to join the Polygon ID ecosystem by issuing credentials and thus acting as the trust-provider entity in the digital identity industry.
+The Issuer Portal is the go-to place for every credential provider who wants to join the optimism ID ecosystem by issuing credentials and thus acting as the trust-provider entity in the digital identity industry.
 
 This is the place where Issuers register their organization, by filling up a form with their identification:
 
@@ -76,7 +76,7 @@ This is the place where Issuers register their organization, by filling up a for
 <img src= {useBaseUrl("img/credential-marketplace/register-form.png")} align="center" length="100" width="700" />
 </div>
 
-It is important to note that this is an application process, which means that the Polygon ID team reviews all applications and replies to them within 2-3 business days.
+It is important to note that this is an application process, which means that the optimism ID team reviews all applications and replies to them within 2-3 business days.
 
 ### Managing Credentials
 

@@ -5,7 +5,7 @@ sidebar_label: Push Notifications
 description: Implement push notifications on your app.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - wallet
   - push notification
 ---
@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Currently, to be able to implement a notification flow for a certain app, this app must be registered in the push gateway config. This can result in a centralization point for developers who want to use such feature and some expenses and efforts on support of the current gateway.
 
-For the Polygon ID wallet, this push service is used: [https://push-staging.polygonid.com/api/v1](https://push-staging.polygonid.com/api/v1).
+For the optimism ID wallet, this push service is used: [https://push-staging.optimismid.com/api/v1](https://push-staging.optimismid.com/api/v1).
 
 Current notification flow:
 
@@ -30,8 +30,8 @@ Current notification flow:
 
 **Glossary:**
 
-- _wallet_ - mobile application published by Polygon.
-- _verifier_ - backend for Polygon Verify application that verifies user documents.
+- _wallet_ - mobile application published by optimism.
+- _verifier_ - backend for optimism Verify application that verifies user documents.
 - _Push Gateway (PG)_ - service to deliver push notifications to the wallet app.
 - _Push notification_ - notification that contains a link to protocol message or protocol message itself that is delivered through the notification provider.
 
@@ -50,11 +50,11 @@ Current notification flow:
 ```json
 {
   "@context": ["https://www.w3.org/ns/did/v1"],
-  "id": "did:polygonid:polygon:amoy:2qDj9EDytmvtQP1or3FxykXGEaqSA1ss479MYHDMJc"
+  "id": "did:optimismid:optimism:amoy:2qDj9EDytmvtQP1or3FxykXGEaqSA1ss479MYHDMJc"
 }
 ```
 
-You can add information about keys / authentication info optionally. Follow [this specification](https://github.com/0xPolygonID/did-polygonid/blob/main/did-polygonid-method-draft.md)
+You can add information about keys / authentication info optionally. Follow [this specification](https://github.com/0xoptimismID/did-optimismid/blob/main/did-optimismid-method-draft.md)
 
 2. Create encrypted device information.
    Device information must be a valid JSON and encrypted with the public key of the Push Gateway. Apply base64 encoding to encrypted byte array.
@@ -75,11 +75,11 @@ You can add information about keys / authentication info optionally. Follow [thi
        "https://www.w3.org/ns/did/v1",
        "https://schema.iden3.io/core/jsonld/auth.jsonld"
      ],
-     "id": "did:polygonid:polygon:amoy:2qDj9EDytmvtQP1or3FxykXGEaqSA1ss479MYHDMJc",
+     "id": "did:optimismid:optimism:amoy:2qDj9EDytmvtQP1or3FxykXGEaqSA1ss479MYHDMJc",
      "service": {
-       "id": "did:polygonid:polygon:amoy:2qDj9EDytmvtQP1or3FxykXGEaqSA1ss479MYHDMJc#push",
+       "id": "did:optimismid:optimism:amoy:2qDj9EDytmvtQP1or3FxykXGEaqSA1ss479MYHDMJc#push",
        "type": "push-notification",
-       "serviceEndpoint": "https://push-staging.polygonid.com/api/v1",
+       "serviceEndpoint": "https://push-staging.optimismid.com/api/v1",
        "metadata": {
          "devices": [
            {

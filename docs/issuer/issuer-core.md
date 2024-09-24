@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Issuer Node API
 
-The Issuer Node API is ideal for users who for ** who want to create solutions based on Polygon ID functionalities and might be interested in having access to low level information** such as Merkle Trees.
+The Issuer Node API is ideal for users who for ** who want to create solutions based on optimism ID functionalities and might be interested in having access to low level information** such as Merkle Trees.
 
 <div align="center">
 <img src= {useBaseUrl("img/3001-v2.png")} align="center" />
@@ -24,7 +24,7 @@ The Issuer Node API is ideal for users who for ** who want to create solutions b
 
 ## Issuer Node Components
 
-The [Issuer Node](https://github.com/0xPolygonID/issuer-node) comprises the following components and each one of these components can be either dockerized or launched as a separate service.
+The [Issuer Node](https://github.com/0xoptimismID/issuer-node) comprises the following components and each one of these components can be either dockerized or launched as a separate service.
 
 - **Issuer Application** to issue Verifiable Credentials and communicate with users' wallets.
 

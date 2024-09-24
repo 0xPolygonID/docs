@@ -5,7 +5,7 @@ sidebar_label: Build an app with the SDK
 description: Get started with creating an app with the Flutter SDK.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - wallet
   - flutter
   - app

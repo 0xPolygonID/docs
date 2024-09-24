@@ -5,7 +5,7 @@ sidebar_label: Get Profiles
 description: Get Profiles API.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier
@@ -13,7 +13,7 @@ keywords:
   - profile
 ---
 
-This method gets a map of profile nonces as key and profile DIDs as value, associated with the identity derived from the private key and stored in the Polygon ID SDK.
+This method gets a map of profile nonces as key and profile DIDs as value, associated with the identity derived from the private key and stored in the optimism ID SDK.
 
 ```dart
   Future<Map<BigInt, String>> getProfiles(
@@ -24,4 +24,4 @@ This method gets a map of profile nonces as key and profile DIDs as value, assoc
 
 `privateKey` is the key used to access all the sensitive info from the identity and also to realize operations like generating proofs.
 
-It returns a map of <BigInt, String>. The returned profiles will come from the current env set with `PolygonIdSdk.setEnv`.
+It returns a map of <BigInt, String>. The returned profiles will come from the current env set with `optimismIdSdk.setEnv`.

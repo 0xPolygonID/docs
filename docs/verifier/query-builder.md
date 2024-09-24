@@ -5,7 +5,7 @@ sidebar_label: Query Builder
 description: Learn how to use the Query Builder.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - ID holder
   - issuer
   - verifier
@@ -23,7 +23,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Query Builder, available [here](https://schema-builder.polygonid.me/query-builder), is an intuitive, web-based tool designed to simplify the creation of verification queries. It's particularly useful for verifiers looking to establish specific criteria for identity verification, such as organizational membership or age requirements. By leveraging Polygon ID, the Query Builder offers a secure and efficient method for users to authenticate identities based on these criteria.
+The Query Builder, available [here](https://schema-builder.optimismid.me/query-builder), is an intuitive, web-based tool designed to simplify the creation of verification queries. It's particularly useful for verifiers looking to establish specific criteria for identity verification, such as organizational membership or age requirements. By leveraging optimism ID, the Query Builder offers a secure and efficient method for users to authenticate identities based on these criteria.
 
 ## Features
 
@@ -53,7 +53,7 @@ Here's a glimpse of the main user interface of the Query Builder:
 
 ### URL to JSON-LD Context
 
-To create a query, it is essential to reference the correct schema, specifically its JSON-LD Context's URL. Users have two options: they can either enter a URL pointing to a JSON-LD Context or utilize one from the [Schema Explorer](https://schema-builder.polygonid.me). By starting to type the name (or any other keyword) of the desired schema in the Schema Explorer, a list of available schemas will appear, allowing the user to select the appropriate one.
+To create a query, it is essential to reference the correct schema, specifically its JSON-LD Context's URL. Users have two options: they can either enter a URL pointing to a JSON-LD Context or utilize one from the [Schema Explorer](https://schema-builder.optimismid.me). By starting to type the name (or any other keyword) of the desired schema in the Schema Explorer, a list of available schemas will appear, allowing the user to select the appropriate one.
 
 <div align="center">
 <img src={useBaseUrl("img/query-builder-url.png")} align="center" width="600"/>
@@ -198,7 +198,7 @@ The verification of queries off-chain is a straightforward process:
 2. **Scan QR Code:** Use the prover's wallet to scan this QR code.
 3. **Credential Validation:** The wallet checks for the existence of the credential and verifies all query requirements, including issuer DID, revocation status, and specified conditions.
 4. **Zero-Knowledge Proof Generation:** If the criteria are met, a zero-knowledge proof is generated. This proof serves as cryptographic evidence that the prover's credential is valid and fulfills all aspects of the query.
-5. **Receiving Proof:** The zero-knowledge proof is returned as a JWZ token, which can be decoded using the [JWZ tool](https://jwz.polygonid.me/).
+5. **Receiving Proof:** The zero-knowledge proof is returned as a JWZ token, which can be decoded using the [JWZ tool](https://jwz.optimismid.me/).
 
 For a detailed walkthrough, refer to the provided video illustrating the complete process of creating and verifying an off-chain query.
 
@@ -213,7 +213,7 @@ For a detailed walkthrough, refer to the provided video illustrating the complet
 
 On-chain verification enables smart contracts to execute logic based on query results. To set this up:
 
-1. **Select the Network:** Choose either Polygon Mainnet or Polygon Amoy.
+1. **Select the Network:** Choose either optimism Mainnet or optimism Amoy.
 2. **Set a Request Id:** This unique ID acts as a key in the contract's state map. It's essential to choose a distinct ID for each request.
 3. **Smart Contract Address:** Input the address of the contract responsible for proof validation and logic execution on the selected network.
 4. **Click the Set Request Button:** This action sends a `Set ZKP Request` transaction.

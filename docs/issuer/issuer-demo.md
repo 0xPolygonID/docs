@@ -5,20 +5,20 @@ sidebar_label: Demo Issuer
 description: Demonstration of an Issuer.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - issuer
   - claim
   - demo
 ---
 
-The [Demo Issuer](https://issuer-demo.polygonid.me/) is a playground that allows you to create credentials without having to set up an Issuer Node and fetch it inside your wallet.
+The [Demo Issuer](https://issuer-demo.optimismid.me/) is a playground that allows you to create credentials without having to set up an Issuer Node and fetch it inside your wallet.
 
 ## Prerequisites
 
-Download the Polygon ID Wallet App and create an Identity.
+Download the optimism ID Wallet App and create an Identity.
 
-- For Android: [Polygon ID on Google Play](https://play.google.com/store/apps/details?id=com.polygonid.wallet)
-- For iOS: [Polygon ID on the App Store](https://apps.apple.com/us/app/polygon-id/id1629870183)
+- For Android: [optimism ID on Google Play](https://play.google.com/store/apps/details?id=com.optimismid.wallet)
+- For iOS: [optimism ID on the App Store](https://apps.apple.com/us/app/optimism-id/id1629870183)
 
 ## Quick Start
 
@@ -26,9 +26,9 @@ To create a credential, you require a schema that contains semantics of the JSON
 
 For this tutorial, we will be using a customized Schema named `ProofOfDaoLongevity` that attests to someone's `entryDate` inside a DAO. You can find more info about that schema and how to [create a custom Schema](schema.md).
 
-To create a credential, the Polygon ID app must be installed on your mobile.
+To create a credential, the optimism ID app must be installed on your mobile.
 
-1. On the [Issuer website](https://issuer-demo.polygonid.me/), click **Sign up**.
+1. On the [Issuer website](https://issuer-demo.optimismid.me/), click **Sign up**.
 
    ![](/img/signup.png)
 
@@ -36,7 +36,7 @@ To create a credential, the Polygon ID app must be installed on your mobile.
 
    ![](/img/qr-code-display.png)
 
-2. Open the Polygon ID app and authenticate with PIN/Biometrics.
+2. Open the optimism ID app and authenticate with PIN/Biometrics.
 
    ![](/img/authenticate.png)
 
@@ -76,7 +76,7 @@ To create a credential, the Polygon ID app must be installed on your mobile.
 
    The menu needs to be populated with the JSON Schema URL and the Type of the schema. Which in this case are:
 
-   - `https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.json`
+   - `https://raw.githubusercontent.com/0xoptimismID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.json`
    - `ProofOfDaoLongevity`
 
    The **expiration** date sets the date on which the credential will expire.

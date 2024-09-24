@@ -5,7 +5,7 @@ sidebar_label: Check Identity Validity
 description: Checks the identity validity from a secret.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

@@ -5,7 +5,7 @@ sidebar_label: Get DID Profile Info
 description: Get info about a DID we interacted with.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

@@ -5,7 +5,7 @@ sidebar_label: Configuration
 description: Learn how to configure the API
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - ID holder
   - issuer
   - verifier

@@ -3,10 +3,10 @@ id: get-interactions
 title: Get Interactions
 sidebar_label: Get Interactions
 description: "Get a list of `InteractionEntity` associated to the identity previously stored
-  in the the Polygon ID Sdk."
+  in the the optimism ID Sdk."
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier
@@ -15,7 +15,7 @@ keywords:
   - Interaction Entity
 ---
 
-Get a list of `InteractionEntity` associated to the identity previously stored in the the Polygon ID SDK.
+Get a list of `InteractionEntity` associated to the identity previously stored in the the optimism ID SDK.
 
 ```dart
 Future<List<InteractionBaseEntity>> getInteractions({

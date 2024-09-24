@@ -5,7 +5,7 @@ sidebar_label: Get Credentials
 description: After a credential is fetched from an Issuer and stored on the wallet SDK, an Integrator can retrieve this credential from the storage using getClaims() function.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

@@ -5,7 +5,7 @@ sidebar_label: Overview
 description: Verifier definition and SDK types.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - ID holder
   - issuer
   - verifier

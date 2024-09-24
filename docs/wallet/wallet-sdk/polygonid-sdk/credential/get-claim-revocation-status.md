@@ -5,7 +5,7 @@ sidebar_label: Get Credential Revocation Status
 description: Get Credential Revocation Status.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

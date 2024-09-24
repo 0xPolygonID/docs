@@ -5,7 +5,7 @@ sidebar_label: Iden3comm
 description: Iden3comm components and capabilities.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier
@@ -63,7 +63,7 @@ The following steps show how the Authorization Handler works:
    parseAuthorizationRequest(request: Uint8Array): Promise<AuthorizationRequestMessage>;
    ```
 
-   Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.authhandler.parseauthorizationrequest#authhandlerparseauthorizationrequest-method" target="_blank">API Reference</a>.
+   Click here for the <a href="https://0xoptimismid.github.io/js-sdk-tutorials/docs/api/js-sdk.authhandler.parseauthorizationrequest#authhandlerparseauthorizationrequest-method" target="_blank">API Reference</a>.
 
 1. Then, it handles authorization request protocol messages and generates a token.
 
@@ -81,7 +81,7 @@ The following steps show how the Authorization Handler works:
 
 It gets the payload and an identity (that can handle that request) as the input parameters, and returns a token, authorization request, and authorization response.
 
-Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.authhandler.handleauthorizationrequest" target="_blank">API Reference</a>.
+Click here for the <a href="https://0xoptimismid.github.io/js-sdk-tutorials/docs/api/js-sdk.authhandler.handleauthorizationrequest" target="_blank">API Reference</a>.
 
 :::note
 
@@ -108,7 +108,7 @@ The handler returns a Verifiable Credential in the W3C format.
 
 Read more about iden3comm [here](https://github.com/iden3/iden3comm/tree/main/protocol).
 
-Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.fetchhandler.handlecredentialoffer#fetchhandlerhandlecredentialoffer-method" target="_blank">API Reference</a>.
+Click here for the <a href="https://0xoptimismid.github.io/js-sdk-tutorials/docs/api/js-sdk.fetchhandler.handlecredentialoffer#fetchhandlerhandlecredentialoffer-method" target="_blank">API Reference</a>.
 
 If you want to work with JWS instead of JWZ technology during the authorization or credential fetching you need to pass parameters to these functions.
 

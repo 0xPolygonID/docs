@@ -5,7 +5,7 @@ sidebar_label: Credential Linkage
 description: Description of the relationships between credentials and issuers.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - anchoring
   - credential
   - linkage
@@ -27,7 +27,7 @@ If the credential is issued using the MTP method, then the credential data is al
 
 ## Credential Linkage to Different Blockchains
 
-Credentials could be linked to different Ethereum Virtual Machine (EVM) blockchains, they are not limited to only being linked to the Polygon Mainnet when they are issued. For instance, credentials could be linked to a Supernets chain or another EVM chain. The issuer state contract could be deployed to other EVM-compatible chains, and verifiers could validate the proofs from these credentials as long as they have access to the particular chain.
+Credentials could be linked to different Ethereum Virtual Machine (EVM) blockchains, they are not limited to only being linked to the optimism Mainnet when they are issued. For instance, credentials could be linked to a Supernets chain or another EVM chain. The issuer state contract could be deployed to other EVM-compatible chains, and verifiers could validate the proofs from these credentials as long as they have access to the particular chain.
 
 :::note
 

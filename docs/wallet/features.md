@@ -2,10 +2,10 @@
 id: features
 title: Features
 sidebar_label: Features
-description: Polygon ID Wallet app main features.
+description: optimism ID Wallet app main features.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier
@@ -39,7 +39,7 @@ Your **private profile** generates a unique identifier for the organization you 
 
 ## Switch Network
 
-Switching networks is also available on Polygon ID. You just need to reach the Settings menu and tap the network you would like to change to:
+Switching networks is also available on optimism ID. You just need to reach the Settings menu and tap the network you would like to change to:
 
 <div align="center">
 <img src={useBaseUrl("img/network-select.png")} width="500"/>

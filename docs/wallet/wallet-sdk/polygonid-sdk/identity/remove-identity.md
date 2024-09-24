@@ -2,10 +2,10 @@
 id: remove-identity
 title: Remove Identity
 sidebar_label: Remove Identity
-description: In the Polygon ID SDK, an identity is removed using removeIdentity() method.
+description: In the optimism ID SDK, an identity is removed using removeIdentity() method.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

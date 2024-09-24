@@ -2,11 +2,11 @@
 id: get-claims-rev-nonce-from-iden3-message
 title: Get Claims Revocation Nonce from Iden3 Message
 sidebar_label: Get Claims Revocation Nonce from Iden3 Message
-description: " Get a list of revocation nonces of claims stored in Polygon ID Sdk that fulfill
+description: " Get a list of revocation nonces of claims stored in optimism ID Sdk that fulfill
 the request from iden3comm message."
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier
@@ -16,7 +16,7 @@ keywords:
   - iden3comm
 ---
 
-Get a list of revocation nonces of credentials stored in Polygon ID SDK that fulfill the request from the iden3comm message.
+Get a list of revocation nonces of credentials stored in optimism ID SDK that fulfill the request from the iden3comm message.
 
 ```dart
 Future<List<int>> getClaimsRevNonceFromIden3Message({

@@ -2,10 +2,10 @@
 id: on-chain-overview
 title: Overview
 sidebar_label: Overview
-description: Learn how on-chain issuance works on Polygon ID.
+description: Learn how on-chain issuance works on optimism ID.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - on-chain issuer
   - claim
   - verifiable credentials

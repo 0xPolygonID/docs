@@ -5,7 +5,7 @@ sidebar_label: On-chain verification
 description: On-chain verification tutorials.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - ID holder
   - issuer
   - verifier
@@ -76,11 +76,11 @@ To set up a different query check out the [<ins>ZK Query Language section</ins>]
 
 This tutorial is based on the verification of a Credential of Type `KYCAgeCredential` with an attribute `birthday` with a Schema URL `https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v3.json-ld`.
 
-The prerequisite is that users have the [Polygon ID Wallet app](/docs/wallet/wallet-overview.md) installed and self-issued a Credential of type `KYC Age Credential Merklized` using our [Demo Issuer](https://issuer-demo.polygonid.me/)
+The prerequisite is that users have the [optimism ID Wallet app](/docs/wallet/wallet-overview.md) installed and self-issued a Credential of type `KYC Age Credential Merklized` using our [Demo Issuer](https://issuer-demo.optimismid.me/)
 
 :::note
 
-Some executable code related to this tutorial is in <ins><a href="https://github.com/0xPolygonID/contracts" target="_blank">this repository</a></ins>.
+Some executable code related to this tutorial is in <ins><a href="https://github.com/0xoptimismID/contracts" target="_blank">this repository</a></ins>.
 
 :::
 
@@ -126,14 +126,14 @@ contract ERC20Verifier is ERC20Upgradeable, EmbeddedZKPVerifier {
    uint64 public constant TRANSFER_REQUEST_ID_SIG_VALIDATOR = 1;
    uint64 public constant TRANSFER_REQUEST_ID_MTP_VALIDATOR = 2;
 
-   /// @custom:storage-location erc7201:polygonid.storage.ERC20Verifier
+   /// @custom:storage-location erc7201:optimismid.storage.ERC20Verifier
    struct ERC20VerifierStorage {
       mapping(uint256 => address) idToAddress;
       mapping(address => uint256) addressToId;
       uint256 TOKEN_AMOUNT_FOR_AIRDROP_PER_ID;
    }
 
-   // keccak256(abi.encode(uint256(keccak256("polygonid.storage.ERC20Verifier")) - 1)) & ~bytes32(uint256(0xff))
+   // keccak256(abi.encode(uint256(keccak256("optimismid.storage.ERC20Verifier")) - 1)) & ~bytes32(uint256(0xff))
    bytes32 private constant ERC20VerifierStorageLocation =
    0x3b1c3bd751d9cd42a3739426a271cdc235017946663d56eeaf827d70f8b77000;
 
@@ -417,7 +417,7 @@ Calculate query hash:
 ```js
 const { poseidon } = require("@iden3/js-crypto");
 const { SchemaHash } = require("@iden3/js-iden3-core");
-const { prepareCircuitArrayValues } = require("@0xpolygonid/js-sdk");
+const { prepareCircuitArrayValues } = require("@0xoptimismid/js-sdk");
 
 function calculateQueryHash(values, schema, slotIndex, operator, claimPathKey, claimPathNotExists) {
   const expValue = prepareCircuitArrayValues(values, 64);
@@ -453,7 +453,7 @@ import hre from "hardhat";
 import Web3 from "web3";
 import { poseidon } from "@iden3/js-crypto";
 import { SchemaHash } from "@iden3/js-iden3-core";
-import { prepareCircuitArrayValues } from "@0xpolygonid/js-sdk";
+import { prepareCircuitArrayValues } from "@0xoptimismid/js-sdk";
 
 // Put your values here
 const ERC20_VERIFIER_ADDRESS = "0x610178dA211FEF7D417bC0e6FeD39F05609AD788";
@@ -569,7 +569,7 @@ async function main() {
             contract_address: ERC20_VERIFIER_ADDRESS,
             method_id: "b68967e2",
             chain_id: 80002,
-            network: "polygon-amoy",
+            network: "optimism-amoy",
          },
          scope: [
             {
@@ -627,7 +627,7 @@ main()
         });
 ```
 
-The contract is now correctly deployed on Amoi Polygon Testnet and the query has been set up, congratulations! Now it is time to launch the airdrop!
+The contract is now correctly deployed on Amoi optimism Testnet and the query has been set up, congratulations! Now it is time to launch the airdrop!
 
 ### Add the Proof Request Inside a QR Code
 
@@ -645,7 +645,7 @@ The last step is to design the proof request to be embedded inside a QR code. In
       "contract_address": "<ERC20VerifierAddress>",
       "method_id": "b68967e2",
       "chain_id": 80002,
-      "network": "polygon-amoy"
+      "network": "optimism-amoy"
     },
     "scope": [
       {
@@ -676,15 +676,15 @@ Note that the request resembles, in most of its parts, the one designed for [off
 - `chain_id`, the ID of the chain where the Smart Contract has been deployed.
 - `network`, the name of the network where the Smart contract has been deployed.
 
-> To display the QR code inside your frontend, you can use the `express.static` built-in middleware function together with this <a href="https://github.com/0xPolygonID/tutorial-examples/tree/main/verifier-integration/js/static" target="_blank">Static Folder</a> or this [Code Sandbox](https://codesandbox.io/s/yp1pmpjo4z?file=/index.js).
+> To display the QR code inside your frontend, you can use the `express.static` built-in middleware function together with this <a href="https://github.com/0xoptimismID/tutorial-examples/tree/main/verifier-integration/js/static" target="_blank">Static Folder</a> or this [Code Sandbox](https://codesandbox.io/s/yp1pmpjo4z?file=/index.js).
 
-Scanning the QR with their Polygon ID Wallet, users will be able to generate proofs and send transactions to the Smart Contract in order to request credentials for their airdrops.
+Scanning the QR with their optimism ID Wallet, users will be able to generate proofs and send transactions to the Smart Contract in order to request credentials for their airdrops.
 
 The same proof generation request can also be delivered to users via Deep Linking. In order to do so, it is necessary to [encode](https://www.base64encode.org/) the JSON file to Base64 Format. The related deep link would be `iden3comm://?i_m={{base64EncodedJsonHere}}`. For example, in this specific case the deep link would be: `iden3comm://?i_m=ewogICAgImlkIjogIjdmMzhhMTkzLTA5MTgtNGE0OC05ZmFjLTM2YWRmZGI4YjU0MiIsCiAgICAidHlwIjogImFwcGxpY2F0aW9uL2lkZW4zY29tbS1wbGFpbi1qc29uIiwKICAgICJ0eXBlIjogImh0dHBzOi8vaWRlbjMtY29tbXVuaWNhdGlvbi5pby9wcm9vZnMvMS4wL2NvbnRyYWN0LWludm9rZS1yZXF1ZXN0IiwKICAgICJ0aGlkIjogIjdmMzhhMTkzLTA5MTgtNGE0OC05ZmFjLTM2YWRmZGI4YjU0MiIsCiAgICAiYm9keSI6IHsKICAgICAgICAicmVhc29uIjogImFpcmRyb3AgcGFydGljaXBhdGlvbiIsCiAgICAgICAgInRyYW5zYWN0aW9uX2RhdGEiOiB7CiAgICAgICAgICAgICJjb250cmFjdF9hZGRyZXNzIjogIjxFUkMyMFZlcmlmaWVyQWRkcmVzcz4iLAogICAgICAgICAgICAibWV0aG9kX2lkIjogImI2ODk2N2UyIiwKICAgICAgICAgICAgImNoYWluX2lkIjogODAwMDEsCiAgICAgICAgICAgICJuZXR3b3JrIjogInBvbHlnb24tbXVtYmFpIgogICAgICAgIH0sCiAgICAgICAgInNjb3BlIjogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiaWQiOiAxLAogICAgICAgICAgICAgICAgImNpcmN1aXRJZCI6ICJjcmVkZW50aWFsQXRvbWljUXVlcnlTaWdWMk9uQ2hhaW4iLAogICAgICAgICAgICAgICAgInF1ZXJ5IjogewogICAgICAgICAgICAgICAgICAgICJhbGxvd2VkSXNzdWVycyI6IFsKICAgICAgICAgICAgICAgICAgICAgICAgIioiCiAgICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgICAgICAiY29udGV4dCI6ICJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vaWRlbjMvY2xhaW0tc2NoZW1hLXZvY2FiL21haW4vc2NoZW1hcy9qc29uLWxkL2t5Yy12My5qc29uLWxkIiwKICAgICAgICAgICAgICAgICAgICAiY3JlZGVudGlhbFN1YmplY3QiOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICJiaXJ0aGRheSI6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICIkbHQiOiAyMDAyMDEwMQogICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAidHlwZSI6ICJLWUNBZ2VDcmVkZW50aWFsIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgXQogICAgfQp9`
 
 ## Claim the Airdrop
 
-You can directly test it by scanning the QR Code below using your Polygon ID App:
+You can directly test it by scanning the QR Code below using your optimism ID App:
 
 <div align="center">
 <img src= "/img/qr-code-on-chain-verification.png" align="center" width="400"/>
@@ -709,7 +709,7 @@ This function is defined by `IZKPVerifier` interface and therefore implemented i
 
 ## Extend it to Your Own Logic
 
-Now that you have been able to create your first on-chain ZK-based application, you can extend it to accommodate any type of imaginable logic. The target Smart Contract doesn't have to be an ERC20 but it can be an ERC721, a DeFi pool, a voting Smart Contract or whatever contract you can think of. Equally, the query can be extended to any type of existing Credential and based on the different operators available inside the <a href="https://0xpolygonid.github.io/tutorials/verifier/verification-library/zk-query-language/" target="_blank">ZK Query Language</a>.
+Now that you have been able to create your first on-chain ZK-based application, you can extend it to accommodate any type of imaginable logic. The target Smart Contract doesn't have to be an ERC20 but it can be an ERC721, a DeFi pool, a voting Smart Contract or whatever contract you can think of. Equally, the query can be extended to any type of existing Credential and based on the different operators available inside the <a href="https://0xoptimismid.github.io/tutorials/verifier/verification-library/zk-query-language/" target="_blank">ZK Query Language</a>.
 
 Another possibility to customize your Smart Contract involves setting different ZK requests. First of all, multiple `REQUEST_ID` must be defined inside the main Smart Contract. Therefore, the contract deployer can set a different query for each request ID and create different outcomes inside `_afterProofSubmit` according to the type of proof received. For example, an airdrop contract can verify the role of a user inside a DAO and distribute a different amount of tokens based on the role.
 

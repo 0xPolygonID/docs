@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-  polygonid: [
+  optimismid: [
     "introduction",
     "quick-start-demo",
     {
@@ -171,10 +171,10 @@ module.exports = {
               },
               collapsed: true,
               items: [
-                "wallet/wallet-sdk/polygonid-sdk/polygonid-sdk-overview",
+                "wallet/wallet-sdk/optimismid-sdk/optimismid-sdk-overview",
                 "wallet/wallet-sdk/flutter-sdk/build-app-with-flutter-sdk",
-                "wallet/wallet-sdk/polygonid-sdk/polygonid-sdk-plugin",
-                "wallet/wallet-sdk/polygonid-sdk/example-app"
+                "wallet/wallet-sdk/optimismid-sdk/optimismid-sdk-plugin",
+                "wallet/wallet-sdk/optimismid-sdk/example-app"
               ]
             },
             {
@@ -208,18 +208,18 @@ module.exports = {
               },
               collapsed: true,
               items: [
-                "wallet/wallet-sdk/polygonid-sdk/identity/create-identity",
-                "wallet/wallet-sdk/polygonid-sdk/identity/check-identity-validity",
-                "wallet/wallet-sdk/polygonid-sdk/identity/get-private-key",
-                "wallet/wallet-sdk/polygonid-sdk/identity/get-identity",
-                "wallet/wallet-sdk/polygonid-sdk/identity/get-identities",
-                "wallet/wallet-sdk/polygonid-sdk/identity/backup-identity",
-                "wallet/wallet-sdk/polygonid-sdk/identity/get-did-identifier",
-                "wallet/wallet-sdk/polygonid-sdk/identity/get-did-entity",
-                "wallet/wallet-sdk/polygonid-sdk/identity/get-state",
-                "wallet/wallet-sdk/polygonid-sdk/identity/sign",
-                "wallet/wallet-sdk/polygonid-sdk/identity/remove-identity",
-                "wallet/wallet-sdk/polygonid-sdk/identity/restore-identity"
+                "wallet/wallet-sdk/optimismid-sdk/identity/create-identity",
+                "wallet/wallet-sdk/optimismid-sdk/identity/check-identity-validity",
+                "wallet/wallet-sdk/optimismid-sdk/identity/get-private-key",
+                "wallet/wallet-sdk/optimismid-sdk/identity/get-identity",
+                "wallet/wallet-sdk/optimismid-sdk/identity/get-identities",
+                "wallet/wallet-sdk/optimismid-sdk/identity/backup-identity",
+                "wallet/wallet-sdk/optimismid-sdk/identity/get-did-identifier",
+                "wallet/wallet-sdk/optimismid-sdk/identity/get-did-entity",
+                "wallet/wallet-sdk/optimismid-sdk/identity/get-state",
+                "wallet/wallet-sdk/optimismid-sdk/identity/sign",
+                "wallet/wallet-sdk/optimismid-sdk/identity/remove-identity",
+                "wallet/wallet-sdk/optimismid-sdk/identity/restore-identity"
               ]
             },
             {
@@ -231,11 +231,11 @@ module.exports = {
               },
               collapsed: true,
               items: [
-                "wallet/wallet-sdk/polygonid-sdk/credential/save-claims",
-                "wallet/wallet-sdk/polygonid-sdk/credential/get-claims",
-                "wallet/wallet-sdk/polygonid-sdk/credential/get-claim-revocation-status",
-                "wallet/wallet-sdk/polygonid-sdk/credential/remove-claims",
-                "wallet/wallet-sdk/polygonid-sdk/credential/update-claims"
+                "wallet/wallet-sdk/optimismid-sdk/credential/save-claims",
+                "wallet/wallet-sdk/optimismid-sdk/credential/get-claims",
+                "wallet/wallet-sdk/optimismid-sdk/credential/get-claim-revocation-status",
+                "wallet/wallet-sdk/optimismid-sdk/credential/remove-claims",
+                "wallet/wallet-sdk/optimismid-sdk/credential/update-claims"
               ]
             },
             {
@@ -246,9 +246,9 @@ module.exports = {
               },
               collapsed: true,
               items: [
-                "wallet/wallet-sdk/polygonid-sdk/iden3comm/overview",
-                "wallet/wallet-sdk/polygonid-sdk/iden3comm/auth-requests",
-                "wallet/wallet-sdk/polygonid-sdk/iden3comm/jwz",
+                "wallet/wallet-sdk/optimismid-sdk/iden3comm/overview",
+                "wallet/wallet-sdk/optimismid-sdk/iden3comm/auth-requests",
+                "wallet/wallet-sdk/optimismid-sdk/iden3comm/jwz",
                 {
                   type: "category",
                   label: "APIs",
@@ -256,22 +256,22 @@ module.exports = {
                     type: "generated-index"
                   },
                   items: [
-                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/authenticate",
-                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/fetch-and-save",
-                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-proofs",
-                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-iden3-msg",
-                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-schemas",
-                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-filters",
-                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-claims-from-iden3-message",
-                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-claims-rev-nonce-from-iden3-message",
-                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-interactions",
-                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/add-interaction",
-                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/remove-interactions",
-                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/update-interaction",
-                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/clean-schema-cache",
-                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/add-did-profile-info",
-                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-did-profile-info",
-                    "wallet/wallet-sdk/polygonid-sdk/iden3comm/api/get-did-profile-info-list",
+                    "wallet/wallet-sdk/optimismid-sdk/iden3comm/api/authenticate",
+                    "wallet/wallet-sdk/optimismid-sdk/iden3comm/api/fetch-and-save",
+                    "wallet/wallet-sdk/optimismid-sdk/iden3comm/api/get-proofs",
+                    "wallet/wallet-sdk/optimismid-sdk/iden3comm/api/get-iden3-msg",
+                    "wallet/wallet-sdk/optimismid-sdk/iden3comm/api/get-schemas",
+                    "wallet/wallet-sdk/optimismid-sdk/iden3comm/api/get-filters",
+                    "wallet/wallet-sdk/optimismid-sdk/iden3comm/api/get-claims-from-iden3-message",
+                    "wallet/wallet-sdk/optimismid-sdk/iden3comm/api/get-claims-rev-nonce-from-iden3-message",
+                    "wallet/wallet-sdk/optimismid-sdk/iden3comm/api/get-interactions",
+                    "wallet/wallet-sdk/optimismid-sdk/iden3comm/api/add-interaction",
+                    "wallet/wallet-sdk/optimismid-sdk/iden3comm/api/remove-interactions",
+                    "wallet/wallet-sdk/optimismid-sdk/iden3comm/api/update-interaction",
+                    "wallet/wallet-sdk/optimismid-sdk/iden3comm/api/clean-schema-cache",
+                    "wallet/wallet-sdk/optimismid-sdk/iden3comm/api/add-did-profile-info",
+                    "wallet/wallet-sdk/optimismid-sdk/iden3comm/api/get-did-profile-info",
+                    "wallet/wallet-sdk/optimismid-sdk/iden3comm/api/get-did-profile-info-list",
 
 
                   ]
@@ -286,8 +286,8 @@ module.exports = {
               },
               collapsed: true,
               items: [
-                "wallet/wallet-sdk/polygonid-sdk/proof/overview",
-                "wallet/wallet-sdk/polygonid-sdk/proof/proof-generation-api"
+                "wallet/wallet-sdk/optimismid-sdk/proof/overview",
+                "wallet/wallet-sdk/optimismid-sdk/proof/proof-generation-api"
               ]
             },
             {
@@ -299,9 +299,9 @@ module.exports = {
               },
               collapsed: true,
               items: [
-                "wallet/wallet-sdk/polygonid-sdk/profile/get-profiles",
-                "wallet/wallet-sdk/polygonid-sdk/profile/add-profile",
-                "wallet/wallet-sdk/polygonid-sdk/profile/remove-profile"
+                "wallet/wallet-sdk/optimismid-sdk/profile/get-profiles",
+                "wallet/wallet-sdk/optimismid-sdk/profile/add-profile",
+                "wallet/wallet-sdk/optimismid-sdk/profile/remove-profile"
               ]
             },
             {
@@ -312,11 +312,11 @@ module.exports = {
                 description: "This session presents a set of methods used to clarify error comunnication and facilitate debugging."
               },
               items: [
-                "wallet/wallet-sdk/polygonid-sdk/error-handling/switch-stacktrace",
-                "wallet/wallet-sdk/polygonid-sdk/error-handling/stacktrace-stream",
-                "wallet/wallet-sdk/polygonid-sdk/error-handling/get-stacktrace",
-                "wallet/wallet-sdk/polygonid-sdk/error-handling/error-trace-stream",
-                "wallet/wallet-sdk/polygonid-sdk/error-handling/get-error-trace",
+                "wallet/wallet-sdk/optimismid-sdk/error-handling/switch-stacktrace",
+                "wallet/wallet-sdk/optimismid-sdk/error-handling/stacktrace-stream",
+                "wallet/wallet-sdk/optimismid-sdk/error-handling/get-stacktrace",
+                "wallet/wallet-sdk/optimismid-sdk/error-handling/error-trace-stream",
+                "wallet/wallet-sdk/optimismid-sdk/error-handling/get-error-trace",
 
               ]
             }
@@ -324,13 +324,13 @@ module.exports = {
         },
         {
           type: "category",
-          label: "Polygon ID App",
+          label: "optimism ID App",
           link: {
             type: "generated-index",
           },
           collapsed: true,
           items: [
-            "wallet/wallet-sdk/polygonid-app",
+            "wallet/wallet-sdk/optimismid-app",
             "wallet/features"
           ]
         },

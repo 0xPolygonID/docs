@@ -5,7 +5,7 @@ sidebar_label: Get Credential by ID
 description: Retrieve a specific credential from the SDK using its ID.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier

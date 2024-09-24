@@ -28,7 +28,7 @@ For operations involving credential-related APIs and schemas, certain components
 
 To manage costs effectively, consider leveraging Docker Compose for local development or testing environments, which can significantly reduce expenses. For cloud deployments, the costs will largely depend on the chosen infrastructure services, such as EC2 instances. Careful selection and configuration of these services can help in controlling expenses without compromising the system's capabilities.
 
-Additionally, for a streamlined deployment process, consider deploying the Issuer Node directly from the Google Marketplace. This option can provide a more integrated and potentially cost-effective cloud solution. Visit the following link for more details and deployment instructions: [Polygon ID Issuer Node on Google Marketplace](https://console.cloud.google.com/marketplace/product/polygon-public/polygon-id-issuer-node).
+Additionally, for a streamlined deployment process, consider deploying the Issuer Node directly from the Google Marketplace. This option can provide a more integrated and potentially cost-effective cloud solution. Visit the following link for more details and deployment instructions: [optimism ID Issuer Node on Google Marketplace](https://console.cloud.google.com/marketplace/product/optimism-public/optimism-id-issuer-node).
 
 For additional insights or specific inquiries about minimizing infrastructure costs while maintaining operational efficiency, please feel free to reach out.
 

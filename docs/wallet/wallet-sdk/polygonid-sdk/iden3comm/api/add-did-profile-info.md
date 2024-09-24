@@ -5,7 +5,7 @@ sidebar_label: Add DID Profile Info
 description: Add info about a DID we interacted with.
 keywords:
   - docs
-  - polygon id
+  - optimism id
   - holder
   - issuer
   - verifier
