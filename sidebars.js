@@ -21,15 +21,15 @@ module.exports = {
         "issuer/features",
         {
           type: "category",
-          label: "Issuer Node Core API",
+          label: "Issuer Node API",
           link: {
             type: "generated-index",
           },
           collapsed: true,
           items: [
             "issuer/issuer-core",
-            "issuer/issuer-configuration",
             "issuer/setup-issuer-core",
+            "issuer/issuer-configuration",
             {
               type: "category",
               label: "API Reference",
@@ -53,7 +53,6 @@ module.exports = {
             type: "generated-index",
           },
           items: [
-            "issuer/issuer-node-ui",
             "issuer/setup-issuer-ui",
             "issuer-node/issuer-node-guide",
           ]
@@ -67,17 +66,6 @@ module.exports = {
           items: [
             "issuer/on-chain-issuer/on-chain-overview",
             "issuer/on-chain-issuer/on-chain-tutorial"
-          ]
-        },
-        {
-          type: "category",
-          label: "Install the Issuer Node",
-          link: {
-            type: "generated-index",
-          },
-          items: [
-            "issuer-node/install-gcm",
-            "issuer-node/install-kubernetes"
           ]
         },
         {
@@ -110,7 +98,6 @@ module.exports = {
         "issuer/credential-marketplace",
         "contracts/credential-linkage",
         "issuer/cred-issue-methods",
-        "issuer-node/issue-credential-cli",
         "issuer/source-code",
       ],
     },
