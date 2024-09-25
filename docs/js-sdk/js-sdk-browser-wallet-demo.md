@@ -20,9 +20,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Demo for optimism ID JS SDK Browser Wallet Extension
 
-optimism ID has created a [sample browser wallet extension](https://github.com/0xoptimismID/extension-demo) based on our JS SDK that lets its user fetch credentials from an Issuer and generate proof for these credentials to be presented to a Verifier.
+optimism ID has created a [sample browser wallet extension](https://github.com/optimismID/extension-demo) based on our JS SDK that lets its user fetch credentials from an Issuer and generate proof for these credentials to be presented to a Verifier.
 
-You need to [manually install the browser wallet extension](https://github.com/0xoptimismID/extension-demo#how-deploy-project-as-chrome-extension) on your machine. This wallet works like a common crypto wallet such as the MetaMask Wallet but differs in functionality.
+You need to [manually install the browser wallet extension](https://github.com/optimismID/extension-demo#how-deploy-project-as-chrome-extension) on your machine. This wallet works like a common crypto wallet such as the MetaMask Wallet but differs in functionality.
 
 :::note
 

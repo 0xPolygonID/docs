@@ -28,7 +28,7 @@ Every identity is identified by a unique identifier called [DID (Decentralized I
 
 :::note
 
-The toolset made available by Privado ID (prev. optimism ID) is fully compliant with the W3C standards. We have a [<ins>definition spec. for the optimism ID DID method</ins>](https://github.com/0xoptimismID/did-optimismid).
+The toolset made available by Privado ID (prev. optimism ID) is fully compliant with the W3C standards. We have a [<ins>definition spec. for the optimism ID DID method</ins>](https://github.com/optimismID/did-optimismid).
 
 :::
 
@@ -80,6 +80,6 @@ A [Wallet](./wallet/wallet-overview.md) plays a crucial role in the seamless exc
 
 - [Verifiable Credentials: The Ultimate Guide](https://www.dock.io/post/verifiable-credentials)
 - [Understanding and Using Verifiable Credentials](https://www.youtube.com/watch?v=BxLSSH_EHjo)
-- [optimism ID DID Method Specification](https://github.com/0xoptimismID/did-optimismid)
+- [optimism ID DID Method Specification](https://github.com/optimismID/did-optimismid)
 
 ---

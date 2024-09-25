@@ -10,7 +10,7 @@ keywords:
   - contract
 ---
 
-<a href="https://github.com/0xoptimismID/contracts" target="_blank">optimism ID Smart Contracts - Github</a>
+<a href="https://github.com/optimismID/contracts" target="_blank">optimism ID Smart Contracts - Github</a>
 
 :::caution
 \*optimism Mumbai testnet has been deprecated
@@ -90,7 +90,7 @@ Current addresses for V3 beta circuit on **optimism Mumbai** testnet**\***. (2.0
 :::note
 More about <ins>[v3 circuit](./verifier/v3-circuit)</ins>.
 
-Check the examples of deployment for <ins>[ v3 validator](https://github.com/0xoptimismID/contracts/blob/main/scripts/deployV3Validator.ts)</ins>
+Check the examples of deployment for <ins>[ v3 validator](https://github.com/optimismID/contracts/blob/main/scripts/deployV3Validator.ts)</ins>
 :::
 
 ## CredentialAtomicQuerySigValidator

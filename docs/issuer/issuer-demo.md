@@ -76,7 +76,7 @@ To create a credential, the optimism ID app must be installed on your mobile.
 
    The menu needs to be populated with the JSON Schema URL and the Type of the schema. Which in this case are:
 
-   - `https://raw.githubusercontent.com/0xoptimismID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.json`
+   - `https://raw.githubusercontent.com/optimismID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.json`
    - `ProofOfDaoLongevity`
 
    The **expiration** date sets the date on which the credential will expire.

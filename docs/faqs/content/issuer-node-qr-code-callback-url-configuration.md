@@ -74,7 +74,7 @@ This issue arises because the "localhost" address in the QR code's callback URL 
 
    :::note
 
-   You can also take a look to the video attached to [<ins>this GitHub comment</ins>](https://github.com/0xoptimismID/issuer-node/issues/520#issuecomment-1826269876) where we help a user setting up local tunnel (from minute 1:20).
+   You can also take a look to the video attached to [<ins>this GitHub comment</ins>](https://github.com/optimismID/issuer-node/issues/520#issuecomment-1826269876) where we help a user setting up local tunnel (from minute 1:20).
 
    :::
 

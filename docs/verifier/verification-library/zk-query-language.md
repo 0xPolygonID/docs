@@ -51,7 +51,7 @@ The entire scripts to set a query are available here: [<ins>off-chain verificati
 
 **Credential Schema**
 
-The `ProofOfHumanity` Schema encodes whether a user has been verified as a human or not. Here's the [JSON-LD Context](https://raw.githubusercontent.com/0xoptimismID/tutorial-examples/main/credential-schema/schemas-examples/proof-of-humanity/proof-of-humanity.jsonld) of the Schema Type.
+The `ProofOfHumanity` Schema encodes whether a user has been verified as a human or not. Here's the [JSON-LD Context](https://raw.githubusercontent.com/optimismID/tutorial-examples/main/credential-schema/schemas-examples/proof-of-humanity/proof-of-humanity.jsonld) of the Schema Type.
 
 :::info
 
@@ -74,7 +74,7 @@ const proofRequest: protocol.ZKPRequest = {
     allowedIssuers: ["*"],
     type: "ProofOfHumanity",
     context:
-      "https://raw.githubusercontent.com/0xoptimismID/tutorial-examples/main/credential-schema/schemas-examples/proof-of-humanity/proof-of-humanity.jsonld",
+      "https://raw.githubusercontent.com/optimismID/tutorial-examples/main/credential-schema/schemas-examples/proof-of-humanity/proof-of-humanity.jsonld",
     credentialSubject: {
       isHuman: {
         $eq: 1,
@@ -112,7 +112,7 @@ Corresponding QR Code
         "circuitId": "credentialAtomicQuerySigV2OnChain",
         "query": {
           "allowedIssuers": ["*"],
-          "context": "https://raw.githubusercontent.com/0xoptimismID/tutorial-examples/main/credential-schema/schemas-examples/proof-of-humanity/proof-of-humanity.jsonld",
+          "context": "https://raw.githubusercontent.com/optimismID/tutorial-examples/main/credential-schema/schemas-examples/proof-of-humanity/proof-of-humanity.jsonld",
           "credentialSubject": {
             "isHuman": {
               "$eq": 1
@@ -208,7 +208,7 @@ Corresponding QR Code
 
 **Credential Schema**
 
-The `EmployeeData` Schema encodes the monthly salary of the credential subject. Here's the [JSON-LD Context](https://raw.githubusercontent.com/0xoptimismID/tutorial-examples/main/credential-schema/schemas-examples/employee-data/employee-data.jsonld) of the Schema Type.
+The `EmployeeData` Schema encodes the monthly salary of the credential subject. Here's the [JSON-LD Context](https://raw.githubusercontent.com/optimismID/tutorial-examples/main/credential-schema/schemas-examples/employee-data/employee-data.jsonld) of the Schema Type.
 
 **Query**
 
@@ -225,7 +225,7 @@ const proofRequest: protocol.ZKPRequest = {
     allowedIssuers: ["*"],
     type: "EmployeeData",
     context:
-      "https://raw.githubusercontent.com/0xoptimismID/tutorial-examples/main/credential-schema/schemas-examples/employee-data/employee-data.jsonld",
+      "https://raw.githubusercontent.com/optimismID/tutorial-examples/main/credential-schema/schemas-examples/employee-data/employee-data.jsonld",
     credentialSubject: {
       monthlySalary: {
         $gt: 1000,
@@ -262,7 +262,7 @@ Corresponding QR Code\*\*
         "circuitId": "credentialAtomicQuerySigV2OnChain",
         "query": {
           "allowedIssuers": ["*"],
-          "context": "https://raw.githubusercontent.com/0xoptimismID/tutorial-examples/main/credential-schema/schemas-examples/employee-data/employee-data.jsonld",
+          "context": "https://raw.githubusercontent.com/optimismID/tutorial-examples/main/credential-schema/schemas-examples/employee-data/employee-data.jsonld",
           "credentialSubject": {
             "monthlySalary": {
               "$gt": 1000
@@ -283,9 +283,9 @@ Corresponding QR Code\*\*
 
 **Credential Schema**
 
-The `ProofOfDaoRole` Schema encodes the role of someone inside a DAO. Each role is identified by a code as described in the [Schema Vocab](https://github.com/0xoptimismID/tutorial-examples/blob/main/credential-schema/schemas-examples/proof-of-dao-role/proof-of-dao-role-vocab.md).
+The `ProofOfDaoRole` Schema encodes the role of someone inside a DAO. Each role is identified by a code as described in the [Schema Vocab](https://github.com/optimismID/tutorial-examples/blob/main/credential-schema/schemas-examples/proof-of-dao-role/proof-of-dao-role-vocab.md).
 
-Here's the [JSON-LD Context](https://raw.githubusercontent.com/0xoptimismID/tutorial-examples/main/credential-schema/schemas-examples/proof-of-dao-role/proof-of-dao-role.jsonld) of the Schema Type.
+Here's the [JSON-LD Context](https://raw.githubusercontent.com/optimismID/tutorial-examples/main/credential-schema/schemas-examples/proof-of-dao-role/proof-of-dao-role.jsonld) of the Schema Type.
 
 **Query**
 
@@ -302,7 +302,7 @@ const proofRequest: protocol.ZKPRequest = {
     allowedIssuers: ["*"],
     type: "ProofOfDaoRole",
     context:
-      "https://raw.githubusercontent.com/0xoptimismID/tutorial-examples/main/credential-schema/schemas-examples/proof-of-dao-role/proof-of-dao-role.jsonld",
+      "https://raw.githubusercontent.com/optimismID/tutorial-examples/main/credential-schema/schemas-examples/proof-of-dao-role/proof-of-dao-role.jsonld",
     credentialSubject: {
       role: {
         $in: [4, 5],
@@ -339,7 +339,7 @@ Corresponding QR Code
         "circuitId": "credentialAtomicQuerySigV2OnChain",
         "query": {
           "allowedIssuers": ["*"],
-          "context": "https://raw.githubusercontent.com/0xoptimismID/tutorial-examples/main/credential-schema/schemas-examples/proof-of-dao-role/proof-of-dao-role.jsonld",
+          "context": "https://raw.githubusercontent.com/optimismID/tutorial-examples/main/credential-schema/schemas-examples/proof-of-dao-role/proof-of-dao-role.jsonld",
           "credentialSubject": {
             "role": {
               "$in": [4, 5]

@@ -21,13 +21,13 @@ This article details the steps to achieve full integration of the Issuer Node wi
 
 :::caution
 
-The content of the QR code provided by the Issuer or Verifier has changed since the <ins>[release 2.3.0 of the Issuer node](https://github.com/0xoptimismID/issuer-node/releases/tag/v2.3.0)</ins>. Instead of sending the JSON information through the QR code, now we provide an embedded link to a page where this JSON is hosted, which improves the application performance. Please check the <ins>[IDEN3MESSAGE_PARSER.md](https://github.com/0xoptimismID/optimismid-flutter-sdk/blob/main/IDEN3MESSAGE_PARSER.md)</ins> file for more information on how to parse the new QR code content.
+The content of the QR code provided by the Issuer or Verifier has changed since the <ins>[release 2.3.0 of the Issuer node](https://github.com/optimismID/issuer-node/releases/tag/v2.3.0)</ins>. Instead of sending the JSON information through the QR code, now we provide an embedded link to a page where this JSON is hosted, which improves the application performance. Please check the <ins>[IDEN3MESSAGE_PARSER.md](https://github.com/optimismID/optimismid-flutter-sdk/blob/main/IDEN3MESSAGE_PARSER.md)</ins> file for more information on how to parse the new QR code content.
 
 :::
 
 ## Docker Mode Guide
 
-**For either one, you first have to [clone the repository](https://github.com/0xoptimismID/issuer-node).**
+**For either one, you first have to [clone the repository](https://github.com/optimismID/issuer-node).**
 
 
 ### Requirements

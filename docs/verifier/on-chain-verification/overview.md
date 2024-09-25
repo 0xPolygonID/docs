@@ -80,7 +80,7 @@ The prerequisite is that users have the [optimism ID Wallet app](/docs/wallet/wa
 
 :::note
 
-Some executable code related to this tutorial is in <ins><a href="https://github.com/0xoptimismID/contracts" target="_blank">this repository</a></ins>.
+Some executable code related to this tutorial is in <ins><a href="https://github.com/optimismID/contracts" target="_blank">this repository</a></ins>.
 
 :::
 
@@ -417,7 +417,7 @@ Calculate query hash:
 ```js
 const { poseidon } = require("@iden3/js-crypto");
 const { SchemaHash } = require("@iden3/js-iden3-core");
-const { prepareCircuitArrayValues } = require("@0xoptimismid/js-sdk");
+const { prepareCircuitArrayValues } = require("@optimismid/js-sdk");
 
 function calculateQueryHash(values, schema, slotIndex, operator, claimPathKey, claimPathNotExists) {
   const expValue = prepareCircuitArrayValues(values, 64);
@@ -453,7 +453,7 @@ import hre from "hardhat";
 import Web3 from "web3";
 import { poseidon } from "@iden3/js-crypto";
 import { SchemaHash } from "@iden3/js-iden3-core";
-import { prepareCircuitArrayValues } from "@0xoptimismid/js-sdk";
+import { prepareCircuitArrayValues } from "@optimismid/js-sdk";
 
 // Put your values here
 const ERC20_VERIFIER_ADDRESS = "0x610178dA211FEF7D417bC0e6FeD39F05609AD788";
@@ -676,7 +676,7 @@ Note that the request resembles, in most of its parts, the one designed for [off
 - `chain_id`, the ID of the chain where the Smart Contract has been deployed.
 - `network`, the name of the network where the Smart contract has been deployed.
 
-> To display the QR code inside your frontend, you can use the `express.static` built-in middleware function together with this <a href="https://github.com/0xoptimismID/tutorial-examples/tree/main/verifier-integration/js/static" target="_blank">Static Folder</a> or this [Code Sandbox](https://codesandbox.io/s/yp1pmpjo4z?file=/index.js).
+> To display the QR code inside your frontend, you can use the `express.static` built-in middleware function together with this <a href="https://github.com/optimismID/tutorial-examples/tree/main/verifier-integration/js/static" target="_blank">Static Folder</a> or this [Code Sandbox](https://codesandbox.io/s/yp1pmpjo4z?file=/index.js).
 
 Scanning the QR with their optimism ID Wallet, users will be able to generate proofs and send transactions to the Smart Contract in order to request credentials for their airdrops.
 
@@ -709,7 +709,7 @@ This function is defined by `IZKPVerifier` interface and therefore implemented i
 
 ## Extend it to Your Own Logic
 
-Now that you have been able to create your first on-chain ZK-based application, you can extend it to accommodate any type of imaginable logic. The target Smart Contract doesn't have to be an ERC20 but it can be an ERC721, a DeFi pool, a voting Smart Contract or whatever contract you can think of. Equally, the query can be extended to any type of existing Credential and based on the different operators available inside the <a href="https://0xoptimismid.github.io/tutorials/verifier/verification-library/zk-query-language/" target="_blank">ZK Query Language</a>.
+Now that you have been able to create your first on-chain ZK-based application, you can extend it to accommodate any type of imaginable logic. The target Smart Contract doesn't have to be an ERC20 but it can be an ERC721, a DeFi pool, a voting Smart Contract or whatever contract you can think of. Equally, the query can be extended to any type of existing Credential and based on the different operators available inside the <a href="https://optimismid.github.io/tutorials/verifier/verification-library/zk-query-language/" target="_blank">ZK Query Language</a>.
 
 Another possibility to customize your Smart Contract involves setting different ZK requests. First of all, multiple `REQUEST_ID` must be defined inside the main Smart Contract. Therefore, the contract deployer can set a different query for each request ID and create different outcomes inside `_afterProofSubmit` according to the type of proof received. For example, an airdrop contract can verify the role of a user inside a DAO and distribute a different amount of tokens based on the role.
 

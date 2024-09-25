@@ -35,7 +35,7 @@ In this example, the verifier will set up the query: "Prove that you were born b
 
 :::note
 
-The executable code for this section can be found <ins><a href="https://github.com/0xoptimismID/tutorial-examples/tree/main/verifier-integration" target="_blank">here</a></ins>.
+The executable code for this section can be found <ins><a href="https://github.com/optimismID/tutorial-examples/tree/main/verifier-integration" target="_blank">here</a></ins>.
 
 :::
 
@@ -295,7 +295,7 @@ A Verifier can work with multiple networks simultaneously. Even users and issuer
 
 :::note
 
-The public verification keys for Iden3 circuits generated after the trusted setup can be found <ins><a href="https://github.com/0xoptimismID/phase2ceremony" target="_blank">here</a></ins> and must be added to your project inside a folder called `keys`.
+The public verification keys for Iden3 circuits generated after the trusted setup can be found <ins><a href="https://github.com/optimismID/phase2ceremony" target="_blank">here</a></ins> and must be added to your project inside a folder called `keys`.
 
 :::
 
@@ -474,7 +474,7 @@ This tutorial showcased a minimalistic application that leverages Privado ID lib
 
 **Step 1: Include the Static Folder**
 
-Add the <a href="https://github.com/0xoptimismID/tutorial-examples/tree/main/verifier-integration/static" target="_blank">Static Folder</a> to your Verifier repository. 
+Add the <a href="https://github.com/optimismID/tutorial-examples/tree/main/verifier-integration/static" target="_blank">Static Folder</a> to your Verifier repository. 
 
 This folder contains:
 

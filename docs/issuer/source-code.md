@@ -17,7 +17,7 @@ keywords:
 
 ## Core Library
 
-- [Issuer Node](https://github.com/0xoptimismID/issuer-node)
+- [Issuer Node](https://github.com/optimismID/issuer-node)
 
 ## Support Libraries
 

@@ -25,7 +25,7 @@ The Issuer Node UI provides the full experience of having an Issuer Node with al
 
 ## Issuer Node Components
 
-The [Issuer Node](https://github.com/0xoptimismID/issuer-node) comprises the following components and each one of these components can be either dockerized or launched as a separate service.
+The [Issuer Node](https://github.com/optimismID/issuer-node) comprises the following components and each one of these components can be either dockerized or launched as a separate service.
 
 - **Issuer Application** to issue Verifiable Credentials and communicate with users' wallets.
 

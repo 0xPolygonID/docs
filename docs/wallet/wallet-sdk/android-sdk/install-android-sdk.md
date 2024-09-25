@@ -17,7 +17,7 @@ This native SDK enables Android developers to use the [optimismID solution](http
 
 ### Prerequisite
 
-Follow the steps from the up-to-date [README GitHub repository prerequisites](https://github.com/0xoptimismID/optimismid-android-sdk#prerequisite).
+Follow the steps from the up-to-date [README GitHub repository prerequisites](https://github.com/optimismID/optimismid-android-sdk#prerequisite).
 
 ### Initialization
 
@@ -44,7 +44,7 @@ Once initialized, you can use the SDK through its singleton `optimismIdSdk.getIn
 
 :::info "Under the hood"
 
-This SDK is calling the [<ins>Flutter SDK</ins>](https://github.com/0xoptimismID/optimismid-flutter-sdk) through `MethodChannel`, that's why each method has a `Context` param to initialize the get `FlutterEngine`.
+This SDK is calling the [<ins>Flutter SDK</ins>](https://github.com/optimismID/optimismid-flutter-sdk) through `MethodChannel`, that's why each method has a `Context` param to initialize the get `FlutterEngine`.
 You don't need to install or know anything about Flutter.
 
 :::

@@ -7,15 +7,15 @@
 <br>
 
 <p align="center">
-   <a href="https://github.com/0xoptimismID/docs/network/members"><img src="https://img.shields.io/github/forks/0xoptimismID/docs?style=social"></a>
-   <img src="https://img.shields.io/github/stars/0xoptimismID/docs?style=social">
-   <a href="https://x.com/PrivadoID"><img src="https://img.shields.io/twitter/follow/0xoptimismID.svg?style=social"></a>
+   <a href="https://github.com/optimismID/docs/network/members"><img src="https://img.shields.io/github/forks/optimismID/docs?style=social"></a>
+   <img src="https://img.shields.io/github/stars/optimismID/docs?style=social">
+   <a href="https://x.com/PrivadoID"><img src="https://img.shields.io/twitter/follow/optimismID.svg?style=social"></a>
    <br>
-   <img src="https://img.shields.io/github/languages/count/0xoptimismID/docs">
-   <a href="https://github.com/0xoptimismID/docs/issues"><img src="https://img.shields.io/github/issues/0xoptimismID/docs"></a>
-   <a href="https://github.com/0xoptimismID/docs/pulls"><img src="https://img.shields.io/github/issues-pr-raw/0xoptimismID/docs"></a>
-   <a href="https://github.com/0xoptimismID/docs/graphs/contributors"><img src="https://img.shields.io/github/contributors-anon/0xoptimismID/docs"></a>
-   <img src="https://img.shields.io/github/languages/code-size/0xoptimismID/docs">
+   <img src="https://img.shields.io/github/languages/count/optimismID/docs">
+   <a href="https://github.com/optimismID/docs/issues"><img src="https://img.shields.io/github/issues/optimismID/docs"></a>
+   <a href="https://github.com/optimismID/docs/pulls"><img src="https://img.shields.io/github/issues-pr-raw/optimismID/docs"></a>
+   <a href="https://github.com/optimismID/docs/graphs/contributors"><img src="https://img.shields.io/github/contributors-anon/optimismID/docs"></a>
+   <img src="https://img.shields.io/github/languages/code-size/optimismID/docs">
 </p>
 
 Privado ID Documentation is the documentation hub providing extensive documentation, community resources, and guides for enthusiasts and developers interested in learning about or building solutions using Privado ID.
@@ -52,7 +52,7 @@ Note that on macOS, you also need Xcode and Command Line Tools.
    > For help, see [GitHub Docs: Configuring a remote for a fork](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork).
    
     ```
-    git remote add upstream https://github.com/0xoptimismID/docs
+    git remote add upstream https://github.com/optimismID/docs
     ```
 
 5. If you have already cloned the repository, be sure to sync your fork with the latest changes. 
@@ -109,7 +109,7 @@ your PR. Note that you must have a GitHub account and an understanding of Markdo
     git push
     ```
 
-4. Submit a PR against the `main` branch of the `0xoptimismID/docs` repo.
+4. Submit a PR against the `main` branch of the `optimismID/docs` repo.
    
 5. Add a title to your PR with appropriate labels.
    > For example, if you want to suggest edits to the "Develop" page, name your PR: *update: develop.md*.
@@ -157,7 +157,7 @@ Acceptable PRs will be approved & merged into the `main` branch.
 
 ## Submit an Issue
 
-- Create a [new issue](https://github.com/0xoptimismID/docs/issues) to report a bug, request a feature, 
+- Create a [new issue](https://github.com/optimismID/docs/issues) to report a bug, request a feature, 
   or suggest changes.
 
 - Comment on the issue if you want to be assigned to it so [our team can assign the issue to you](https://github.blog/2019-06-25-assign-issues-to-issue-commenters/).

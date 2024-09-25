@@ -23,7 +23,7 @@ This is the easiest way to add custom business logic to retrieve data from a dat
 
 ## 2. Flexible HTTP package
 
-Utilize the [flexible HTTP package](https://github.com/0xoptimismID/refresh-service/blob/main/providers/flexiblehttp/http.go) to configure HTTP requests to a data provider. Refer to the [configuration guide](https://github.com/0xoptimismID/refresh-service/blob/main/README.md) for instructions on how to set this up.
+Utilize the [flexible HTTP package](https://github.com/optimismID/refresh-service/blob/main/providers/flexiblehttp/http.go) to configure HTTP requests to a data provider. Refer to the [configuration guide](https://github.com/optimismID/refresh-service/blob/main/README.md) for instructions on how to set this up.
 
 ## 3. Refresh service from scratch
 

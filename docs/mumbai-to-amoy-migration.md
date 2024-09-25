@@ -20,8 +20,8 @@ To migrate to the Amoy testnet, developers must set up a new Issuer node configu
 
 1. Setting up a new Issuer node using the latest configuration guidelines.
 
-   - To set up a new issuer node, please refer to [this installation guide](https://github.com/0xoptimismID/issuer-node/tree/develop). It includes the latest configuration for the Amoy testnet.
-   - An Issuer will need to create a new identity for Amoy, through the core API specifying the proper "network": "amoy". If you do it with the make generate-issuer-did command, then the program will ge the variables from the .env files that must be properly filled. (.env-samples are available at [Issuer Node GitHub repository](https://github.com/0xoptimismID/issuer-node/tree/main)).
+   - To set up a new issuer node, please refer to [this installation guide](https://github.com/optimismID/issuer-node/tree/develop). It includes the latest configuration for the Amoy testnet.
+   - An Issuer will need to create a new identity for Amoy, through the core API specifying the proper "network": "amoy". If you do it with the make generate-issuer-did command, then the program will ge the variables from the .env files that must be properly filled. (.env-samples are available at [Issuer Node GitHub repository](https://github.com/optimismID/issuer-node/tree/main)).
    - Here you can find more details about issuer configuration ([advanced Issuer Node configuration](https://devs.optimismid.com/docs/issuer/issuer-configuration)).
 
 2. Deprecating and shutting down existing Issuer nodes configured for the Mumbai testnet.
@@ -31,14 +31,14 @@ The identities and the states won’t be migrated from Mumbai to Amoy.
 :::
 
 :::note
-Latest Issuer Node version: https://github.com/0xoptimismID/issuer-node/releases/tag/v2.5.0
+Latest Issuer Node version: https://github.com/optimismID/issuer-node/releases/tag/v2.5.0
 :::
 
 ## Verifier
 
 To ensure compatibility with the Amoy testnet, you need to install the latest version of Verifier SDK. For instances where the Verifier SDK is already integrated into existing systems, you should proceed by updating it to the latest version. Tools:
 
-- JS-SDK ([v1.10.0](https://github.com/0xoptimismID/js-sdk/releases/tag/v1.10.0) or greater) is updated and compatible with the Amoy testnet.
+- JS-SDK ([v1.10.0](https://github.com/optimismID/js-sdk/releases/tag/v1.10.0) or greater) is updated and compatible with the Amoy testnet.
 - [Query Builder](https://schema-builder.optimismid.me/query-builder) is updated and compatible with the Amoy testnet.
 
 ## Wallet

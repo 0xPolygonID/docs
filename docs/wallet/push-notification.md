@@ -54,7 +54,7 @@ Current notification flow:
 }
 ```
 
-You can add information about keys / authentication info optionally. Follow [this specification](https://github.com/0xoptimismID/did-optimismid/blob/main/did-optimismid-method-draft.md)
+You can add information about keys / authentication info optionally. Follow [this specification](https://github.com/optimismID/did-optimismid/blob/main/did-optimismid-method-draft.md)
 
 2. Create encrypted device information.
    Device information must be a valid JSON and encrypted with the public key of the Push Gateway. Apply base64 encoding to encrypted byte array.

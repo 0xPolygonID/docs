@@ -21,9 +21,9 @@ The Wallet SDK is a Flutter-based SDK that can be used by developers to build ap
 
 These are the modules (SDKs) we provide:
 
-- [optimismid-flutter-sdk](https://github.com/0xoptimismID/optimismid-flutter-sdk) \[Dart plugin\]
+- [optimismid-flutter-sdk](https://github.com/optimismID/optimismid-flutter-sdk) \[Dart plugin\]
 - optimismid-ios-wrapper-sdk \[Swift lib (Framework)\] (_work in progress_)
-- [optimismid-android-wrapper-sdk](https://github.com/0xoptimismID/optimismid-android-sdk) \[Kotlin lib (.aar)\]
+- [optimismid-android-wrapper-sdk](https://github.com/optimismID/optimismid-android-sdk) \[Kotlin lib (.aar)\]
 - optimismid-react-native-wrapper-sdk \[RN lib\] (_work in progress_)
 
 Depending on which type of developer (integrator) you are, you can use different modules (SDK):

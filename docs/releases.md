@@ -24,6 +24,6 @@ keywords:
 
 You can find release data about each of optimism ID's products on the following links:
 
-- Flutter SDK: [https://github.com/0xoptimismID/optimismid-flutter-sdk/releases](https://github.com/0xoptimismID/optimismid-flutter-sdk/releases)
-- Issuer Node: [https://github.com/0xoptimismID/issuer-node/releases](https://github.com/0xoptimismID/issuer-node/releases)
-- JS-SDK: [https://github.com/0xoptimismID/js-sdk/releases](https://github.com/0xoptimismID/js-sdk/releases)
+- Flutter SDK: [https://github.com/optimismID/optimismid-flutter-sdk/releases](https://github.com/optimismID/optimismid-flutter-sdk/releases)
+- Issuer Node: [https://github.com/optimismID/issuer-node/releases](https://github.com/optimismID/issuer-node/releases)
+- JS-SDK: [https://github.com/optimismID/js-sdk/releases](https://github.com/optimismID/js-sdk/releases)

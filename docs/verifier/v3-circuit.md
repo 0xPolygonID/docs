@@ -33,7 +33,7 @@ We want to introduce new circuits - СredentialAtomicQueryV3 and CredentialAtomi
 
 More about new supported operators [here](./verification-library/zk-query-language.md#exists---operator-11).
 
-Link to latest sdk circuit wrappers: [js](https://github.com/0xoptimismID/js-sdk/pull/181) / [go](https://github.com/iden3/go-circuits/releases/tag/v2.1.0)
+Link to latest sdk circuit wrappers: [js](https://github.com/optimismID/js-sdk/pull/181) / [go](https://github.com/iden3/go-circuits/releases/tag/v2.1.0)
 
 In general it's an improved version of V2 circuits with several important key features:
 
@@ -88,7 +88,7 @@ In general it's an improved version of V2 circuits with several important key fe
     }
 ```
 
-Beta Validator is also deployed: [Repository](https://github.com/0xoptimismID/contracts)
+Beta Validator is also deployed: [Repository](https://github.com/optimismID/contracts)
 
 1. Possibility to use linked proofs. This means that verifier can be sure that user used the same credential to proof different queries. This is achievable by using `groupId` property in the proof request.
 

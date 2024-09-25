@@ -9,7 +9,7 @@ module.exports = {
   url: "https://devs.optimismid.com",
   baseUrl: "/",
   favicon: "/img/privado_favicon.png",
-  organizationName: "0xoptimismID",
+  organizationName: "optimismID",
   projectName: "docs",
   customFields: {
     description: "Build your next blockchain dApp using Privado ID.",
@@ -180,7 +180,7 @@ module.exports = {
           ],
         },
         {
-          href: "https://github.com/0xoptimismID",
+          href: "https://github.com/optimismID",
           position: "right",
           className: "header-github-link",
           "aria-label": "GitHub repository",
@@ -208,7 +208,7 @@ module.exports = {
         docs: {
           routeBasePath: "/docs",
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/0xoptimismID/docs/blob/main",
+          editUrl: "https://github.com/optimismID/docs/blob/main",
           path: "docs",
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,

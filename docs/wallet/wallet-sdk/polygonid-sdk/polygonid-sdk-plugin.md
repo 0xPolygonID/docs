@@ -29,12 +29,12 @@ To use the optimism ID Flutter SDK plugin, you need to add this plugin as a depe
 
    where x stands for the major version, y stands for the minor version, and z stands for the patch version of the optimism ID Flutter SDK.
 
-If you are working on a branch of the [optimism ID Flutter SDK repository](https://github.com/0xoptimismID/optimismid-flutter-sdk.git), you can add the dependency in the following way:
+If you are working on a branch of the [optimism ID Flutter SDK repository](https://github.com/optimismID/optimismid-flutter-sdk.git), you can add the dependency in the following way:
 
 ```yaml
 dependencies:
   optimismid_flutter_sdk:
     git:
-      url: ssh://git@github.com/0xoptimismID/optimismid-flutter-sdk.git
+      url: ssh://git@github.com/optimismID/optimismid-flutter-sdk.git
       ref: branchPathName
 ```

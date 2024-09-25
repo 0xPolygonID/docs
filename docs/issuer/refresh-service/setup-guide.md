@@ -16,12 +16,12 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-> **NOTE: Current implementation of [refresh service](https://github.com/0xoptimismID/refresh-service) works only with [issuer-node](https://github.com/0xoptimismID/issuer-node/).**
+> **NOTE: Current implementation of [refresh service](https://github.com/optimismID/refresh-service) works only with [issuer-node](https://github.com/optimismID/issuer-node/).**
 
 ## Preparation
 
-1. Run the issuer-node locally by following the [quick-start installation guide](https://github.com/0xoptimismID/issuer-node/#quick-start-installation).
-1. Clone the refresh service using the command `git clone git@github.com:0xoptimismID/refresh-service.git`.
+1. Run the issuer-node locally by following the [quick-start installation guide](https://github.com/optimismID/issuer-node/#quick-start-installation).
+1. Clone the refresh service using the command `git clone git@github.com:optimismID/refresh-service.git`.
 1. Build JSON and JSONLD schemas, utilizing the provided examples:
 
 - [JSON](https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json/non-zero-balance.json)
@@ -33,7 +33,7 @@ Generate custom schemas through the [schema builder](https://schema-builder.opti
 
 Consider an example of integrating [optimism scan](https://optimismscan.com/) as a data provider for the refresh service.
 
-1. Integrate the custom data provider into the [data provider module](https://github.com/0xoptimismID/refresh-service/tree/main/providers):
+1. Integrate the custom data provider into the [data provider module](https://github.com/optimismID/refresh-service/tree/main/providers):
 
 ```go
 const optimismBalanceURL = "https://api.optimismscan.com/api?module=account&action=balance&address=%s&apikey=%s"

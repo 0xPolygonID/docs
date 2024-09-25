@@ -11,11 +11,11 @@ keywords:
   - wallet sdk
 ---
 
-You can find an executable [example app](https://github.com/0xoptimismID/optimismid-android-sdk/tree/main/app) in the source with several calls to the SDK, which can guide you through your development.
+You can find an executable [example app](https://github.com/optimismID/optimismid-android-sdk/tree/main/app) in the source with several calls to the SDK, which can guide you through your development.
 
 ## Initial Setup
 
-1. **Clone Repository**: Clone the [optimismid-android-sdk repository](https://github.com/0xoptimismID/optimismid-android-sdk.git).
+1. **Clone Repository**: Clone the [optimismid-android-sdk repository](https://github.com/optimismID/optimismid-android-sdk.git).
 
 2. **Run the app**:
 
