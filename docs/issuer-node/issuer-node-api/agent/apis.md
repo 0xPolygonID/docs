@@ -105,4 +105,4 @@ A typical response looks like this:
 }
 ```
 
-<a href="https://self-hosted-platform.polygonid.me/#post-/v1/agent" target="_blank">API Reference</a>
+<a href="https://issuer-node-core-api-testing.privado.id/#post-/v2/agent" target="_blank">API Reference</a>
