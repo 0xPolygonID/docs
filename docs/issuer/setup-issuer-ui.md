@@ -46,11 +46,17 @@ make run-all
 
 > **UI** - http://localhost:8088
 
+Upon launching the UI for the first time, you'll be prompted to enter the name and details of the identity for your issuer node. Please note that you can create and manage multiple identities for your issuer node through the UI at a later stage.
+
+<div align="center">
+<img src= "/img/issuer_node_first_install_screen.png" align="center" />
+</div>
+
 ---
 
 ### Related guides:
 
-[How to Set Up Issuer Node Core API Guide](setup-issuer-core.md)
+[How to Set Up Issuer Node  API Guide](setup-issuer-core.md)
 
 [Advanced Issuer Node Configuration](issuer-configuration.md)
 
