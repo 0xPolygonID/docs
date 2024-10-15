@@ -65,3 +65,57 @@ You, at some point in time, must have used crypto wallets such as Metamask, Trus
 
 - General wallets store cryptographic keys while the Polygon ID Wallet stores users' identities. While both types of wallets are based on private-public key cryptography, the two are different in the sense that in a wallet like MetaMask, the elliptic curve used is `secp256k1`, which is used to convert a private key to a public key and eventually to an Ethereum Address. On the other hand, Polygon ID Wallet is based on the `Baby Jubjub Key` which generates a Polygon ID Identifier, that serves as the identifier for your wallet instead of the Ethereum Wallet Address.
 
+## Identity recovery for Local Accounts
+
+The Privado ID app provides an identity recovery feature using your private key, ensuring users can securely recover their identity and credentials even if they lose access to their original device. To recover your identity, follow these steps to export and use your locally created private key:
+
+** Steps to Export Your Private Key: **
+1. Open the Privado ID app and navigate to Settings.
+<div align="center">
+<img src={useBaseUrl("img/recovery-1.png")}  width="300" align="center" />
+</div>
+
+2. Select Backup Private Key.
+<div align="center">
+<img src={useBaseUrl("img/recovery-2.png")}  width="300" align="center" />
+</div>
+
+3. Click on Reveal Private Key.
+<div align="center">
+<img src={useBaseUrl("img/recovery-3.png")}  width="300" align="center" />
+</div>
+
+4. Enter your PIN to confirm.
+
+5. Click Copy to Clipboard to copy your private key.
+<div align="center">
+<img src={useBaseUrl("img/recovery-4.png")}  width="300" align="center" />
+</div>
+
+** Steps to Import Your Private Key into a Crypto Wallet: **
+1. Install a crypto wallet such as MetaMask.
+
+2. After installation, open MetaMask and click Get Started.
+
+3. Select Create a New Wallet.
+<div align="center">
+<img src={useBaseUrl("img/recovery-5.png")}  width="300" align="center" />
+</div>
+
+4. Set a strong password for your new wallet and backup your Secret Recovery Phrase as per MetaMask's instructions.
+
+5. Once the wallet is created, MetaMask will automatically create a default Account 1. Click on Account 1 in MetaMask.
+<div align="center">
+<img src={useBaseUrl("img/recovery-6.png")}  width="300" align="center" />
+</div>
+
+6. Select Add Account or Hardware Wallet and choose Import Account.
+<div align="center">
+<img src={useBaseUrl("img/recovery-7.png")}  width="300" align="center" />
+</div>
+7. Paste the private key copied from the Privado ID app and click IMPORT. This will create a second account labeled as Account 2 (Imported).
+<div align="center">
+<img src={useBaseUrl("img/recovery-8.png")}  width="300" align="center" />
+</div>
+
+Now, if you ever lose access to your device or the Privado ID app, you can log back into the app using this imported account and regain access to your identity and credentials.
