@@ -16,10 +16,10 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Privado ID app offers an identity backup and recovery feature using your private key, allowing users to securely restore their identity and credentials if they lose access to their original device. To back up your identity, follow these steps to export your locally generated private key and import it into a crypto wallet, such as MetaMask, for recovery.
+The Privado ID Wallet app offers an identity backup and recovery feature using your private key, allowing users to securely restore their identity and credentials if they lose access to their original device. To back up your identity, follow these steps to export your locally generated private key and import it into a crypto wallet, such as MetaMask, for recovery.
 
 ### Steps to Export Your Private Key:
-1. Open the Privado ID app and navigate to Settings.
+1. Open the Privado ID Wallet app and navigate to Settings.
 <div align="center">
 <img src={useBaseUrl("img/recovery-1.png")}  width="300" align="center" />
 </div>
@@ -63,15 +63,15 @@ The Privado ID app offers an identity backup and recovery feature using your pri
 <img src={useBaseUrl("img/recovery-7.png")}  width="300" align="center" />
 </div>
 
-7. Paste the private key copied from the Privado ID app and click IMPORT. This will create a second account labeled as Account 2 (Imported).
+7. Paste the private key copied from the Privado ID Wallet app and click IMPORT. This will create a second account labeled as Account 2 (Imported).
 <div align="center">
 <img src={useBaseUrl("img/recovery-8.png")}  width="300" align="center" />
 </div>
 
-Now, if you ever lose access to your device or the Privado ID app, you can log back into the Privado ID Wallet app using this imported account and regain access to your identity and credentials.
+Now, if you ever lose access to your device or the Privado ID Wallet app, you can log back into the Privado ID Wallet app using this imported account and regain access to your identity and credentials.
 
 ### Steps to Recover Your Identity and Credentials
-1. Open the Privado ID app and click Connect via crypto wallet.
+1. Open the Privado ID Wallet app and click Connect via crypto wallet.
 <div align="center">
 <img src={useBaseUrl("img/recovery-9.png")}  width="300" align="center" />
 </div>

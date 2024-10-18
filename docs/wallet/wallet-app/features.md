@@ -23,10 +23,19 @@ The Privado ID Wallet App supports the following features:
 
   Additionally, users can also create local accounts. In this case, the app generates an Ethereum wallet in the background and creates a derived identity wallet. This option is ideal for users who prefer to store credentials locally without using cloud storage or for those who do not have a wallets such as Metamask on their phone.
 
-:::note
+
+:::info
 \*The Cloud Storage serves as a secure repository for encrypted credentials, offering users the convenience of multi-device access to credentials and serving as a reliable backup solution. When a user signs the message using their Ethereum private key, an identity is derived and storage keys are generated. The digital signature scheme employed is ed25519. All the documents stored in the storage are end-to-end encrypted using AES256-GCM, guaranteeing that only the user with the storage keys can access his credentials, reinforcing the security of the stored information.
 :::
 
+<div align="center">
+<img src={useBaseUrl("img/wallet-login.png")}  width="300" align="center" />
+</div>
+<br></br>
+
+:::note
+To sync the identity and its associated credentials between the Privado ID Web Wallet and the Privado ID Wallet App, the user must log in with the same crypto wallet account in both platforms.
+:::
 
 - Zero-Knowledge Proofs Generation: The app enables users to generate cost-optimized zero-knowledge proofs (ZKPs) for the purpose of credential verification, ensuring privacy-preserving authentication.
 
@@ -35,8 +44,19 @@ The Privado ID Wallet App supports the following features:
 - Identity recovery using private key: In case of local accounts, the App includes an identity recovery feature using private key. Users can securely recover their identity and credentials even if they lose access to their original device.
 
 - Credential Marketplace: The app provides a credential marketplace, allowing users to proactively claim certain credentials in advance of verification. While users can still receive credential offers directly from issuers during the normal flow, the marketplace provides a convenient way to obtain select credentials beforehand, making future verifications quicker and smoother.
+<div align="center">
+<img src={useBaseUrl("img/credential-marketplace.png")}  width="300" align="center" />
+</div>
 
 - Embedded Issuance: The App provides embedded issuance, allowing users to claim their credentials within the verification flow if they haven't done so before.
+
+:::note
+Currently, the tool provides Credential Marketplace and Embedded Issuance with limited number of credentials only:
+
+- Proof of Identity (refer to the schema <ins>[here](https://github.com/anima-protocol/claims-polygonid/blob/main/schemas/json-ld/poi-v1.json-ld)</ins>)
+- Proof of Life (refer to the schema <ins>[here](https://github.com/anima-protocol/claims-polygonid/blob/main/schemas/json-ld/pol-v1.json-ld)</ins>)
+- Proof of Uniqueness refer to the schema <ins>[here](https://github.com/anima-protocol/claims-polygonid/blob/main/schemas/json-ld/pou-v1.json-ld)</ins>)
+:::
 
 
 

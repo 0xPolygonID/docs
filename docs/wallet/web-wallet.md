@@ -27,8 +27,12 @@ The Web Wallet is available on the browser [here](https://wallet.privado.id/). T
 
 - **Seamless Authentication and Credential Management**: This tool enables users to authenticate via their Ethereum wallets, and automatically creates a derived identity wallet. Credentials undergo encryption using keys and are securely stored in end-to-end encrypted cloud storage\*, facilitating effortless access across multiple devices while streamlining processes.
 
-:::note
+:::info
 \*The Cloud Storage serves as a secure repository for encrypted credentials, offering users the convenience of multi-device access to credentials and serving as a reliable backup solution. When a user signs the message using their Ethereum private key, an identity is derived and storage keys are generated. The digital signature scheme employed is ed25519. All the documents stored in the storage are end-to-end encrypted using AES256-GCM, guaranteeing that only the user with the storage keys can access his credentials, reinforcing the security of the stored information.
+:::
+
+:::note
+To sync the identity and its associated credentials between the Privado ID Web Wallet and the Privado ID Wallet App, the user must log in with the same crypto wallet account in both platforms.
 :::
 
 - **Enhanced User Experience**: Prioritizing simplicity, the Web Wallet presents a user-friendly interface. From identity creation to credential claiming and verification, all steps seamlessly integrate, minimizing complexity.
@@ -58,11 +62,6 @@ Currently, the tool supports embedded issuance for a limited number of credentia
 
 - **Simplified Integration**: Integration into your application is effortless, reducing the development workload and ensuring swift implementation.
 - **On-Chain and Off-Chain Query Verification**: Supporting both on-chain and off-chain query verification, the Web Wallet offers flexibility to meet diverse verification needs.
-- **Consistency and Accuracy**: With a standardized interface, the tool promotes uniformity across users and organizations, minimizing errors.
-
-:::note
-Currently, only Polygon and Linea chains are supported for on-chain verification.
-:::
 
 
 ## User Interface and Experience

@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A digital wallet is an application that can hold and manage users' `Credentials`. Based on the principles of Self-Sovereign Identity (SSI) and cryptography, a wallet helps its Holder share data with others without exposing any other sensitive private information. Only the wallet holder has the right to decide which information to share and what needs to remain private.
 
-Privado ID offers some interesting ways to get started with leveraging a credential-focused wallet: [**the Wallet SDK**](#wallet-sdk), [**the Web Wallet**](#web-wallet) and the [**the Privado ID Wallet app**](#privado-id-wallet-app).
+Privado ID offers some interesting ways to get started with leveraging a credential-focused wallet: [**the Wallet SDK**](#wallet-sdk), [**the Privado ID Web Wallet**](#web-wallet) and the [**the Privado ID Wallet app**](#privado-id-wallet-app).
 
 :::info
 When the Web Wallet and the Privado ID Wallet app are signed in with the same crypto wallet, the credentials are synced, enabling effortless access across multiple devices.
@@ -41,7 +41,7 @@ Depending on which type of developer (integrator) you are, you can use different
   - "polygonid-react-native-wrapper-sdk" (_work in progress_)
 
 
-## Web Wallet
+## Privado ID Web Wallet
 
 The Web Wallet is a web based identity wallet developed to streamline the issuance and verification of credentials. It is a reference implementation built using our [JS SDK](/docs/js-sdk/js-sdk-overview.md). Learn more about the Web Wallet [here](./web-wallet.md).
 
@@ -51,9 +51,9 @@ The Web Wallet is available on the browser [here](https://wallet.privado.id/).
     <img src={useBaseUrl("../img/web-wallet-1.png")}></img>
 </div>
 
-## Privado ID Wallet app
+## Privado ID Wallet App
 
-The Privado ID Wallet app is a reference implementation built using our Wallet SDK. It has a simple user interface and seamless UX to facilitate its main uses: managing credentials and generating proofs for verifiers. [Learn more about the wallet here](./wallet-sdk/polygonid-app.md).
+The Privado ID Wallet app is a reference implementation built using our Wallet SDK. It has a simple user interface and seamless UX to facilitate its main uses: managing credentials and generating proofs for verifiers. Learn more about the Wallet App [here](./wallet-app/privadoid-app.md).
 
 The app is available for Android and IOS:
 
