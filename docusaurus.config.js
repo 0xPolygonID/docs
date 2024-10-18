@@ -94,10 +94,6 @@ module.exports = {
               label: "Verifier",
             },
             {
-              href: "/docs/web-wallet",
-              label: "Web Wallet",
-            },
-            {
               href: "/docs/wallet/wallet-overview/",
               label: "Wallet",
             },
