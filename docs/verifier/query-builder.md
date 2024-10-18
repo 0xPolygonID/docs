@@ -218,10 +218,6 @@ On-chain verification enables smart contracts to execute logic based on query re
 3. **Smart Contract Address:** Input the address of the contract responsible for proof validation and logic execution on the selected network.
 4. **Click the Set Request Button:** This action sends a `Set ZKP Request` transaction.
 
-:::caution
-Any verifier address can be used to set requests. However, only three specific <ins>[validator unified addresses](/docs/smart-contracts#unified-contract-addresses)</ins> are hardcoded into the Query Builder. This means the verifier must have these addresses whitelisted; otherwise, the setRequest operation will fail. For our UniversalVerifier, this is not an issue since these validators are already included, but it's important to keep in mind for custom verifiers (embedded or standalone).
-:::
-
 After setting up the contract, the Query Builder generates a QR code for the prover's wallet to scan.
 
 Once the wallet scans the QR code and the user approves the request, a zero-knowledge proof is generated. This proof is submitted to the contract through a `Submit ZKP Response` transaction, triggering the contract's logic.

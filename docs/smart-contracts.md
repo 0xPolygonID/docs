@@ -2,7 +2,7 @@
 id: smart-contracts
 title: Smart Contracts
 sidebar_label: Smart Contracts
-description: Smart Contracts used by the Polygon ID solution.
+description: Smart Contracts used by the Privado ID
 keywords:
   - docs
   - polygon id
@@ -11,7 +11,7 @@ keywords:
 ---
 
 
-<a href="https://github.com/0xPolygonID/contracts" target="_blank">Polygon ID Smart Contracts - Github</a>
+<a href="https://github.com/0xPolygonID/contracts" target="_blank">Privado ID Smart Contracts - Github</a>
 
 As part of our unified address methodology, we deployed contracts via the CREATE2 EVM opcode. This method ensures that the final address of the contract depends on the contract's initialization bytecode and a salt. To support deployments across various networks, we utilized [CreateX](https://createx.rocks/) contract factories. Specifically, the [deployCreate2](https://github.com/pcaversaccio/createx/blob/main/src/CreateX.sol#L332) method was used to handle the deployments.
 
@@ -21,18 +21,18 @@ We have deployed contracts across the following mainnets and testnets so far:
 
 **Mainnets**:
 
-- Ethereum
-- Polygon POS
-- Polygon zkEVM
-- Linea
+- [Ethereum](https://etherscan.io/address/0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896)
+- [Polygon POS](https://polygonscan.com/address/0x624ce98d2d27b20b8f8d521723df8fc4db71d79d)
+- [Polygon zkEVM](https://zkevm.polygonscan.com/address/0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896)
+- [Linea](https://lineascan.build/address/0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896)
 - Privado Mainnet
 
 **Testnets**:
 
-- Ethereum Sepolia
-- Polygon Amoy
-- Polygon zkEVM Cardona
-- Linea-Sepolia
+- [Ethereum Sepolia](https://sepolia.etherscan.io/address/0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896)
+- [Polygon Amoy](https://amoy.polygonscan.com/address/0x1a4cc30f2aa0377b0c3bc9848766d90cb4404124)
+- [Polygon zkEVM Cardona](https://cardona-zkevm.polygonscan.com/address/0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896)
+- [Linea-Sepolia](https://sepolia.lineascan.build/address/0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896)
 - Privado Testnet
 
 ## Unified contract addresses
