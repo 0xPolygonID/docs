@@ -1,7 +1,7 @@
 ---
 id: web-wallet
-title: Web Wallet
-sidebar_label: Web Wallet
+title: Privado ID Web Wallet
+sidebar_label: Privado ID Web Wallet
 description: Links to Polygon ID product releases.
 keywords:
   - docs

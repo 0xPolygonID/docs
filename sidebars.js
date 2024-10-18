@@ -170,6 +170,20 @@ module.exports = {
         "wallet/web-wallet",
         {
           type: "category",
+          label: "Privado ID Wallet App",
+          link: {
+            type: "generated-index",
+          },
+          collapsed: true,
+          items: [
+            "wallet/wallet-app/privadoid-app",
+            "wallet/wallet-app/features",
+            "wallet/wallet-app/identity-recovery"
+
+          ]
+        },
+        {
+          type: "category",
           label: "Wallet SDK",
           link: {
             type: "generated-index",
@@ -333,18 +347,6 @@ module.exports = {
 
               ]
             }
-          ]
-        },
-        {
-          type: "category",
-          label: "Polygon ID App",
-          link: {
-            type: "generated-index",
-          },
-          collapsed: true,
-          items: [
-            "wallet/wallet-sdk/polygonid-app",
-            "wallet/features"
           ]
         },
         "wallet/push-notification"

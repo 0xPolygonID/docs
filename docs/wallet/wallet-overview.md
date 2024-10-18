@@ -57,8 +57,9 @@ The Privado ID Wallet app is a reference implementation built using our Wallet S
 
 The app is available for Android and IOS:
 
-- For Android: <a href="https://play.google.com/store/apps/details?id=com.polygonid.wallet" target="_blank">Privado ID on Google Play</a>
-- For iOS: <a href="https://apps.apple.com/us/app/polygon-id/id1629870183" target="_blank">Privado ID on the App Store</a>
+- For Android: <a href="https://play.google.com/store/apps/details?id=id.privado.wallet" target="_blank">Privado ID Wallet on Google Play</a>
+- For iOS: <a href="https://apps.apple.com/us/app/privadoid/id6566184703" target="_blank">Privado ID Wallet on the App Store</a>
+
 
 <div align="center">
 <img src={useBaseUrl("img/wallet/wallet-main-page.jpeg")} alt="Polygon ID app as a reference implementation" width="250" align="center" />
