@@ -11,7 +11,7 @@ keywords:
 ---
 
 
-<a href="https://github.com/0xPolygonID/contracts" target="_blank">Privado ID Smart Contracts - Github</a>
+<a href="https://github.com/iden3/contracts" target="_blank">Privado ID Smart Contracts - Github</a>
 
 As part of our unified address methodology, we deployed contracts via the CREATE2 EVM opcode. This method ensures that the final address of the contract depends on the contract's initialization bytecode and a salt. To support deployments across various networks, we utilized [CreateX](https://createx.rocks/) contract factories. Specifically, the [deployCreate2](https://github.com/pcaversaccio/createx/blob/main/src/CreateX.sol#L332) method was used to handle the deployments.
 
@@ -64,8 +64,9 @@ We have released a set of reusable stateless contracts, deployed to unified addr
 
 - SMT_LIB: 0x682364078e26C1626abD2B95109D2019E241F0F6
 - POSEIDON_1: 0xC72D76D7271924a2AD54a19D216640FeA3d138d9
--  POSEIDON_2: 0x72F721D9D5f91353B505207C63B56cF3d9447edB
+- POSEIDON_2: 0x72F721D9D5f91353B505207C63B56cF3d9447edB
 - POSEIDON_3: 0x5Bc89782d5eBF62663Df7Ce5fb4bc7408926A240
+- POSEIDON_4: 0x0695cF2c6dfc438a4E40508741888198A6ccacC2
 
 These libraries can be leveraged for various purposes, such as building custom verifiers, state management, or identity trees, allowing for flexible integration into other projects. By using these pre-deployed contracts, developers can significantly reduce the gas costs typically incurred during deployment.
 :::
