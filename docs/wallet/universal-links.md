@@ -228,7 +228,7 @@ For security reasons, integration of this tool via IFrame is not supported. Redi
 :::
 
 ## Example
-Let's consider an example where a verifier needs to verify the humanity of its users. To achieve this, the verifier must share the verification request with the user's wallet. The protocol message in this case is a [Request](https://docs.privado.id/docs/verifier/verification-library/request-api)].
+Let's consider an example where a verifier needs to verify the humanity of its users. To achieve this, the verifier must share the verification request with the user's wallet. The protocol message in this case is a [Request](https://docs.privado.id/docs/verifier/verification-library/request-api).
 
 Below is a JavaScript code example to configure the Universal Link for this scenario:
 
