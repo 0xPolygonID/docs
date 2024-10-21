@@ -2,10 +2,10 @@
 id: on-chain-tutorial
 title: Tutorial
 sidebar_label: Tutorial
-description: Learn how on-chain issuance works on Polygon ID through a simple tutorial.
+description: Learn how on-chain issuance works on Privado ID through a simple tutorial.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - on-chain issuer
   - claim
   - verifiable credentials

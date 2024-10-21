@@ -2,7 +2,7 @@
 id: setup-issuer-core
 title: Set up Issuer Node API
 sidebar_label: Setup Guide
-description: Learn how to set up an Issuer Core API.
+description: Learn how to set up an Issuer API.
 keywords:
   - docs
   - privado id
