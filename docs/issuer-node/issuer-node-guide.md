@@ -5,7 +5,7 @@ sidebar_label: Issuer Node UI Guide
 description: Learn how to use the Issuer Node UI to import schemas, create credentials and manage connections.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer node
   - claim
   - verifiable credentials
@@ -16,7 +16,7 @@ keywords:
 
 :::info
 
-Before you actually act as an Issuer and provide credentials, you need to set up a Polygon ID Issuer Node. You can find instructions to get your Issuer Node up and running [<ins>here</ins>](/docs/issuer/setup-issuer-ui.md).
+Before you actually act as an Issuer and provide credentials, you need to set up a Privado ID Issuer Node. You can find instructions to get your Issuer Node up and running [<ins>here</ins>](/docs/issuer/setup-issuer-ui.md).
 
 :::
 
@@ -70,10 +70,6 @@ The Credentials main page shows information about all the credentials that have 
 :::info "Revocation and Issuer state publication"
 
 Whenever an Issuer decides to revoke a credential, they have to publish the issuer state to the blockchain. This can be done on the **Issuer state**. Notice that there will be a **Pending actions** right next to the sidebar button.
-
-<div align="center">
-<img src= "/img/issuer-state.png" align="center" width="350"/>
-</div>
 
 :::
 
@@ -154,7 +150,7 @@ When the user interacts with the [<ins>Universal Link</ins>](../wallet/universal
 
 Privado ID Web Wallet:
 
-The holder will just have to **Sign in** using a crypto wallet which creates/retrieves the user identity,  click **Add to my wallet**. The holder finally claims and receives their credential in the wallet.
+The holder will just have to **Sign in** using a crypto wallet which creates/retrieves the user identity, click **Add to my wallet**. The holder finally claims and receives their credential in the wallet.
 
 <div align="center">
 <img src= "/img/issuer-holder-web.png" align="center" width="1000" height="1000"/>

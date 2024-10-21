@@ -5,7 +5,7 @@ sidebar_label: Overview
 description: Definition of an Issuer.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer
   - claim
   - verifiable credentials
@@ -38,9 +38,9 @@ There are some different ways one can perform issuer-related actions, that is, m
 
 - Adapting the [JS SDK](/docs/js-sdk/js-sdk-overview.md) to your application that issues credentials.
 
-- Using [SaaS vendors](https://marketplace.polygonid.me/ecosystem) that leverage Polygon ID solutions.
+- Using [SaaS vendors](https://marketplace.privado.id/ecosystem) that leverage Privado ID solutions.
 
-- Making use of Polygon ID smart contracts for [on-chain issuance](/docs/issuer/on-chain-issuer/on-chain-overview.md/).
+- Making use of Privado ID smart contracts for [on-chain issuance](/docs/issuer/on-chain-issuer/on-chain-overview.md/).
 
 ## Issuer Nodes
 

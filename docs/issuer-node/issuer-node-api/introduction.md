@@ -1,11 +1,11 @@
 ---
 id: introduction
-title: Polygon ID Issuer Node APIs
+title: Privado ID Issuer Node APIs
 sidebar_label: Introduction
 description: Introduction to the Issuer Node APIs and its functionalities.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer node
   - claim
   - verifiable credentials

@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Issuer Node API
 
-The Issuer Node API is ideal for users who for ** who want to create solutions based on Polygon ID functionalities and might be interested in having access to low level information** such as Merkle Trees.
+The Issuer Node API is ideal for users who for ** who want to create solutions based on Privado ID functionalities and might be interested in having access to low level information** such as Merkle Trees.
 
 <div align="center">
 <img src= {useBaseUrl("img/3001-v2.png")} align="center" />

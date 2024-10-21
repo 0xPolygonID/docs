@@ -5,7 +5,7 @@ sidebar_label: Identity
 description: Identity API endpoints and their description.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer node
   - claim
   - verifiable credentials
@@ -14,7 +14,7 @@ keywords:
   - Identity
 ---
 
-The identity endpoint is used to create and retrieve identities for a user/issuer. Polygon ID supports the creation of identities in the form of DIDs (Decentralized Identifiers). A user can have multiple DIDs.
+The identity endpoint is used to create and retrieve identities for a user/issuer. Privado ID supports the creation of identities in the form of DIDs (Decentralized Identifiers). A user can have multiple DIDs.
 
 :::note
 
