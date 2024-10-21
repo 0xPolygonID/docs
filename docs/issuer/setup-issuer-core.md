@@ -119,7 +119,7 @@ cp .env-issuer.sample .env-issuer
 
   Build and run the Issuer Node API:
   ```bash
-  make up && make build && make run
+  make up && make build-api && make run-api
   ```
 
 **Issuer Node API specification **

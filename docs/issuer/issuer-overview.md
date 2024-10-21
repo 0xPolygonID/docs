@@ -57,7 +57,7 @@ There are basically two ways the Issuer Node can be operated:
 - Issuer Node UI
 
 <div align="center">
-<img src= {useBaseUrl("img/whole-infra.png")} align="center" />
+<img src= {useBaseUrl("img/issuer-node-architecture.png")} align="center" />
 </div>
 
 ### Issuer Node API
