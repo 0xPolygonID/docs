@@ -20,7 +20,7 @@ As part of our unified address methodology, we deployed contracts via the CREATE
 We have deployed contracts across the following mainnets and testnets so far:
 
 **Mainnets**:
-- [Privado Idenity Chain](/docs/privado-idenity-chain)
+- [Privado Identity Chain](/docs/privado-identity-chain)
 - [Ethereum](https://etherscan.io/address/0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896)
 - [Polygon POS](https://polygonscan.com/address/0x624ce98d2d27b20b8f8d521723df8fc4db71d79d)
 - [Polygon zkEVM](https://zkevm.polygonscan.com/address/0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896)

@@ -339,7 +339,7 @@ module.exports = {
         "wallet/push-notification"
       ],
     },
-    "privado-idenity-chain",
+    "privado-identity-chain",
     {
       type: "category",
       label: "JS-SDK",

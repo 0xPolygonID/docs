@@ -1,11 +1,11 @@
 ---
-id: privado-idenity-chain
+id: privado-identity-chain
 title: Privado Identity Chain
 sidebar_label: Privado Identity Chain
 keywords:
   - privado id
   - chain
-  - idenity
+  - identity
   - privado identity chain
   - network
 ---
