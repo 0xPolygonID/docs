@@ -270,7 +270,7 @@ const finishUrl = encodeURIComponent("https://my-app.org/finish");
 const base64EncodedRequest = btoa(JSON.stringify(request));
 
 
-// Configure the Wallet URL(universal link)
+// Configure the Wallet URL (universal link)
 walletUrlWithMessage = `https://wallet.privado.id/#i_m=${base64EncodedRequest}&back_url=${backUrl}&finish_url=${finishUrl}`;
 
 // Open the Wallet URL to start the verification process
@@ -286,7 +286,7 @@ Note
 
 const requestUrl = encodeURIComponent("https://raw.githubusercontent.com/0xpulkit/Examples_Privado-ID/main/KYCV3.json");
 
-// Configure the Wallet URL using `request_uri` instead of `i_m`
+// Configure the Wallet URL (universal link) using `request_uri` instead of `i_m`
 walletUrlWithRequestUri = `https://wallet.privado.id/#request_uri=${requestUrl}&back_url=${backUrl}&finish_url=${finishUrl}`);
 
 // Open the Wallet URL with the `request_uri`
