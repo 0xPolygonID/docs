@@ -5,7 +5,7 @@ sidebar_label: On-chain verification
 description: On-chain verification tutorials.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - ID holder
   - issuer
   - verifier
