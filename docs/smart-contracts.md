@@ -20,12 +20,11 @@ As part of our unified address methodology, we deployed contracts via the CREATE
 We have deployed contracts across the following mainnets and testnets so far:
 
 **Mainnets**:
-
+- Privado Idenity Chain
 - [Ethereum](https://etherscan.io/address/0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896)
 - [Polygon POS](https://polygonscan.com/address/0x624ce98d2d27b20b8f8d521723df8fc4db71d79d)
 - [Polygon zkEVM](https://zkevm.polygonscan.com/address/0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896)
 - [Linea](https://lineascan.build/address/0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896)
-- Privado Mainnet
 
 **Testnets**:
 
@@ -33,7 +32,7 @@ We have deployed contracts across the following mainnets and testnets so far:
 - [Polygon Amoy](https://amoy.polygonscan.com/address/0x1a4cc30f2aa0377b0c3bc9848766d90cb4404124)
 - [Polygon zkEVM Cardona](https://cardona-zkevm.polygonscan.com/address/0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896)
 - [Linea-Sepolia](https://sepolia.lineascan.build/address/0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896)
-- Privado Testnet
+
 
 ## Unified contract addresses
 
@@ -47,8 +46,8 @@ It’s important to note that the State contracts for the following two networks
 |   Smart Contract Type        |                 Unified Address                   |
 | :----------------------: | :----------------------------------------: |
 |   **STATE* **    |  0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896 |
-|   **VALIDATOR_MTP**    | 0x27bDFFCeC5478a648f89764E22fE415486A42Ede |
-| **VALIDATOR_SIG** | 0x59B347f0D3dd4B98cc2E056Ee6C53ABF14F8581b |
+|   **VALIDATOR_MTP_V2**    | 0x27bDFFCeC5478a648f89764E22fE415486A42Ede |
+| **VALIDATOR_SIG_V2** | 0x59B347f0D3dd4B98cc2E056Ee6C53ABF14F8581b |
 | **VALIDATOR_V3** | 0xd179f29d00Cd0E8978eb6eB847CaCF9E2A956336 |
 | **UNIVERSAL_VERIFIER** | 0xfcc86A79fCb057A8e55C6B853dff9479C3cf607c |
 | **IDENTITY_TREE_STORE** | 0x7dF78ED37d0B39Ffb6d4D527Bb1865Bf85B60f81 |
