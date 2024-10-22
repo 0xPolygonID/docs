@@ -41,7 +41,7 @@ The fragment of the URL (specs after `#`) should consist of a protocol message (
 
 :::note
 The `i_m` request must be Base64 encoded while `request_uri`, `back_url` and `finish_url` must be URI encoded before adding them to the fragment of the URL. 
-URI encoding the params will translate characters like ?, =, /, and & into their encoded equivalents so that they don’t interfere with the outer URL's query parameters.
+URI encoding ensures that special characters such as ?, =, /, and & are converted to their percent-encoded equivalents, preventing conflicts with the URL's query parameters. URLs should always use percent-encoded rather than unicode escape sequences for special characters.
 :::
 
 Standard query string delimiters (=, &, )should be used for the params.
@@ -269,19 +269,32 @@ const finishUrl = encodeURIComponent("https://my-app.org/finish");
 // Base64 encode the verification request
 const base64EncodedRequest = btoa(JSON.stringify(request));
 
-// URL encode the verification request with the parameters
-const encodedRequestWithParams =(`i_m=${base64EncodedRequest}&back_url=${backUrl}&finish_url=${finishUrl}`);
 
-// Open the Web Wallet URL with the encoded request
-window.open(`https://wallet-dev.privado.id/#${encodedRequestWithParams}`);
+// Configure the Wallet URL(universal link)
+walletUrlWithMessage = `https://wallet-dev.privado.id/#i_m=${base64EncodedRequest}&back_url=${backUrl}&finish_url=${finishUrl}`;
 
-//Note:
+// Open the Wallet URL to start the verification process
+window.open(walletUrlWithMessage);
 
-// You can also use the `request_uri` param instead of `i_m`, For that first define the Url containing the request.
+
+/*
+Note
+=================================================
+
+// You can also use the `request_uri` parameter instead of `i_m`. 
+// For that, first define the URL containing the request, and URI encode it.
+
 const requestUrl = encodeURIComponent("https://raw.githubusercontent.com/0xpulkit/Examples_Privado-ID/main/KYCV3.json");
 
-// Configure the Web Wallet URL
+// Configure the Wallet URL using `request_uri` instead of `i_m`
 walletUrlWithRequestUri = `https://wallet-dev.privado.id/#request_uri=${requestUrl}&back_url=${backUrl}&finish_url=${finishUrl}`);
+
+// Open the Wallet URL with the `request_uri`
+window.open(walletUrlWithRequestUri);
+
+==================================================
+*/
+
 ```
 
 
