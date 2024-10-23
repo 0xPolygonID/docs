@@ -37,7 +37,7 @@ We have deployed contracts across the following mainnets and testnets so far:
 ## Unified contract addresses
 
 :::warning *EXCEPTIONS
-It’s important to note that the State contracts for the following two networks are exceptions. These contracts were already deployed at these addresses, and they are not being redeployed because they contain a significant amount of historically collected data. Redeploying them to a unified address would result in data loss, which we aim to avoid:
+It’s important to note that the State contract addresses for the following two networks are exceptions. These contracts were already deployed at these addresses, and they are not being redeployed because they contain a significant amount of historically collected data. Redeploying them to a unified address would result in data loss, which we aim to avoid:
 - Polygon Amoy State Contract: <ins>[0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124](https://amoy.polygonscan.com/address/0x1a4cc30f2aa0377b0c3bc9848766d90cb4404124)</ins>
 - Polygon Mainnet State Contract : <ins>[0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D](https://polygonscan.com/address/0x624ce98d2d27b20b8f8d521723df8fc4db71d79d)</ins>
 
