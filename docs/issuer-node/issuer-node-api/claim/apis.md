@@ -103,7 +103,7 @@ You can retrieve a set of credentials based on different filters or criteria. Th
 
 - `schemaHash` _String_: hash of the schema. For example, c9b2370371b7fa8b3dab2a5ba81b6838.
 
-- `credentialSubject` _String_: represents the subject of the credentials being retrieved. It should contain the identifier (DID of the user) and the associated values for the attributes specified in the credential schema file.
+- `credentialSubject` _String_: identifier of the Subject for which credentials are to be retrieved. For example, did:polygonid:polygon:amoy:2qE1BZ7gcmEoP2KppvFPCZqyzyb5tK9T6Gec5HFANQ.
 
 - `status` _enum_: retrieve credentials based on if they are revoked or expired. Default is `all` which would retrieve all the credentials.
 
