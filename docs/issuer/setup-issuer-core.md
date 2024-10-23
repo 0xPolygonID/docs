@@ -1,11 +1,11 @@
 ---
 id: setup-issuer-core
-title: Set up Issuer Node Core API
+title: Set up Issuer Node API
 sidebar_label: Setup Guide
-description: Learn how to set up an Issuer Core API.
+description: Learn how to set up an Issuer API.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer node
   - claim
   - verifiable credentials
@@ -17,11 +17,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This article details the steps to set up your own Issuer Node Core API.
+This article details the steps to set up your own Issuer Node API.
 
 :::caution
 
-The content of the QR code provided by the Issuer or Verifier has changed since the <ins>[release 2.3.0 of the Issuer node](https://github.com/0xPolygonID/issuer-node/releases/tag/v2.3.0)</ins>. Instead of sending the JSON information through the QR code, now we provide an embedded link to a page where this JSON is hosted, which improves the application performance. Please check the <ins>[IDEN3MESSAGE_PARSER.md](https://github.com/0xPolygonID/polygonid-flutter-sdk/blob/main/IDEN3MESSAGE_PARSER.md)</ins> file for more information on how to parse the new QR code content.
+Issuer Node v2 is now available, bringing enhanced features and optimizations. If you are using the previous version of Issuer Node (v1), we recommend upgrading to the latest version as soon as possible. To ensure a smooth transition, please follow the migration guide provided [<ins> here </ins>](migration-v1-v2.md/).
+
+Below is the installation guide for Issuer Node v2.
 
 :::
 
@@ -29,86 +31,114 @@ The content of the QR code provided by the Issuer or Verifier has changed since 
 
 For an advance configuration of the Issuer Node (RHS, Ethereum Identities and more), visit the [Advanced Issuer Node configuration](issuer-configuration.md#Advanced-Issuer-Node-configuration) guide.
 
-There are two options for installing and running the server alongside the UI:
+**You have to first [clone the repository](https://github.com/0xPolygonID/issuer-node).**
 
-1. [Docker Setup Guide](https://github.com/0xPolygonID/issuer-node)
-2. [Standalone Mode Guide](#standalone-mode-guide)
+## Docker Mode Guide
 
-:::note
-We encourage the use of **Standalone** for production environments.
-:::
-
-**For either one, you first have to [clone the repository](https://github.com/0xPolygonID/issuer-node).**
-
-## Standalone Mode Guide
-
-### Standalone Mode Guide Requirements
+### Requirements
 
 - [Docker Engine](https://docs.docker.com/engine/) 1.27
 - Makefile toolchain
 - Unix-based operating system (e.g. Debian, Arch, Mac OS X)
 - [Go](https://go.dev/) version 1.19 or higher
-- [Postgres](https://www.postgresql.org/)
-- [Redis](https://redis.io/)
-- [Hashicorp Vault](https://github.com/hashicorp/vault)
 
-### Standalone Mode Setup
+### Issuer Node API Setup (basic configuration building docker images)
 
-1. Env files configuration:
+Before you start, ensure the `resolvers_setting_sample.yaml` in the root directory. For information on configuration, see [Setting up networks and chains](issuer-configuration.md#Advanced-Issuer-Node-configuration) in Advanced Configuration guide.
 
-   1.1. Copy the config sample files
+Follow these steps to get started:
+
+1. Configure Environment File:
+
+  Copy the sample configuration file:
 
 ```bash
 cp .env-issuer.sample .env-issuer
-cp .env-api.sample .env-api
 ```
 
-1.2. Fill the .env-issuer config file with the proper variables
+2. Set Environment Variables
 
-:::info
-For **advanced** Issuer Node **configurations**, visit the [**Advanced Issuer Node configuration**](issuer-configuration.md#Advanced-Issuer-Node-configuration) guide.
-:::
+  Fill in the `.env-issuer` config file to match your environment, especially the ISSUER_SERVER_URL and any other relevant variables. 
 
-_.env-issuer_
+  _.env-issuer_
 
-```bash
-ISSUER_ETHEREUM_URL=<YOUR_RPC_PROVIDER_URI_ENDPOINT>
-ISSUER_DATABASE_URL=<YOUR_POSTGRESQL_DB_INSTANCE>
-ISSUER_REDIS_URL=<YOUR_REDIS_INSTANCE>
-ISSUER_KEY_STORE_ADDRESS=<YOUR_VAULT_INSTANCE>
-ISSUER_SERVER_URL=<PUBLICLY_ACCESSIBLE_URL_POINTING_TO_ISSUER_SERVER_PORT>
-```
+  ```bash
+  ISSUER_SERVER_URL=<PUBLIC_SERVER_API_URL>
+  ```
 
-1.3. Enable vault authentication
+3. Key Management System (KMS) Setup
 
-```bash
-make add-vault-token
-```
+  Please Look at the [KMS configuration](https://github.com/0xPolygonID/issuer-node/blob/main/.env-issuer.sample#L21) in the sample file and file your .env-issuer config file accordingly.
 
-1.4. Write the private key in the vault. This step is needed in order to be able to transit the issuer's state. To perform that action the given account has to be funded. For Amoy network you can request some testing Matic [here](https://www.alchemy.com/faucets/polygon-amoy).
+  The Issuer Node allows you to choose between two key management systems for managing private keys: local storage (default) or [Vault](https://www.vaultproject.io/). It is recommended to use Vault for production environments for enhanced security.
 
-```bash
-make private_key=<YOUR_WALLET_PRIVATE_KEY> add-private-key
-```
+  - Local Storage:
+    - If you opt for local storage, set the following in your .env-issuer file:
 
-2. Run `make build-local`. This will generate a binary for each of the following commands:
-   - `platform`
-   - `platform_ui`
-   - `migrate`
-   - `pending_publisher`
-   - `notifications`
-3. Run `make db/migrate`. This command checks the database structure and applies the necessary changes to the database schema.
-4. Run `./bin/platform` command to start the issuer.
-5. Run `./bin/pending_publisher`. This checks that publishing transactions to the blockchain works.
-6. _(Optional)_ Run `./bin/notifications`. This enables push notifications when issuing credentials to PID Wallet.
+    ```bash
+    ISSUER_KMS_BJJ_PROVIDER=localstorage
+    ISSUER_KMS_ETH_PROVIDER=localstorage
+    ```
 
-> **Core API specification** - http://localhost:3001
+    - Specify the path for local storage:
+
+    ```bash
+    ISSUER_KMS_PROVIDER_LOCAL_STORAGE_FILE_PATH=./localstoragekeys
+    ```
+  
+  - Vault:
+    - For Vault configuration, ensure that you set the Vault address, plugin, and authentication method properly:
+
+    ```bash
+    ISSUER_KMS_BJJ_PROVIDER=vault
+    ISSUER_KMS_ETH_PROVIDER=vault
+    ISSUER_KEY_STORE_ADDRESS=http://vault:8200
+    ISSUER_KEY_STORE_PLUGIN_IDEN3_MOUNT_PATH=iden3
+    ```
+
+    - Optionally, configure authentication and TLS if necessary:
+
+    ```bash
+    ISSUER_VAULT_USERPASS_AUTH_ENABLED=true
+    ISSUER_VAULT_USERPASS_AUTH_PASSWORD=<your_password>
+    ISSUER_VAULT_TLS_ENABLED=false  # Set to true if TLS is needed
+    ISSUER_VAULT_TLS_CERT_PATH=<path_to_certificate>
+    ```
+
+
+
+3. Import Ethereum Private Key
+
+  Import your Ethereum private key into the KMS provider you have configured. The associated account must be funded for state transitions. For Amoy network you can request some testing Matic [here](https://www.alchemy.com/faucets/polygon-amoy).
+
+  ```bash
+  make private_key=<YOUR_WALLET_PRIVATE_KEY> import-private-key-to-kms
+  ```
+
+4. Start the Issuer Node API
+
+  Build and run the Issuer Node API:
+  ```bash
+  make up && make build-api && make run-api
+  ```
+
+**Issuer Node API specification **
+
+ The Issuer Node API will be accessible at:
+ >http://localhost:3001 or http://<PUBLIC_SERVER_API_URL>:3001
+
+
+
 
 ---
 
 ### Related guides:
 
 [How to Set Up Issuer Node UI Guide](setup-issuer-ui.md)
+
+[Migrating from Issuer Node v1 to v2 Guide](migration-v1-v2.md)
+
+
 
 [Advanced Issuer Node Configuration](issuer-configuration.md)
 

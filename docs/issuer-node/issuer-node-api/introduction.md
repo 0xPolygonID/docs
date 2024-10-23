@@ -1,11 +1,11 @@
 ---
 id: introduction
-title: Polygon ID Issuer Node APIs
+title: Privado ID Issuer Node APIs
 sidebar_label: Introduction
 description: Introduction to the Issuer Node APIs and its functionalities.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer node
   - claim
   - verifiable credentials
@@ -18,12 +18,14 @@ The Issuer Node APIs provide the following functionalities:
 - Create and retrieve Identities
 - Create a Verifiable Credential (VC)
 - Retrieve a Verifiable Credential or a list of Verifiable Credentials
-- Generate JSON to create a QR Code and use that to accept credentials in a wallet
+- Generate Universal Link to accept credentials in a wallet
 - Revoke a Verifiable Credential
 - Retrieve the Revocation Status of a Verifiable Credential
-- Call Agent Endpoint using the Wallet App
+- Import and retrieve JSON Schemas
+- Manage Authentication Connections 
+- Call Agent Endpoint using the Wallet 
 
-These APIs can be tested locally on a <a href="https://self-hosted-platform.polygonid.me/#overview" target="_blank">Self Hosted Platform</a>.
+These API can be tested locally on a <a href="https://issuer-node-core-api-testing.privado.id/" target="_blank">Issuer Node</a>.
 
 :::note
 

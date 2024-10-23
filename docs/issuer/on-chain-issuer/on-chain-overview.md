@@ -2,10 +2,10 @@
 id: on-chain-overview
 title: Overview
 sidebar_label: Overview
-description: Learn how on-chain issuance works on Polygon ID.
+description: Learn how on-chain issuance works on Privado ID.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - on-chain issuer
   - claim
   - verifiable credentials

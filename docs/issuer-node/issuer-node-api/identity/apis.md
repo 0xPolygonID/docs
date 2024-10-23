@@ -5,7 +5,7 @@ sidebar_label: Identity
 description: Identity API endpoints and their description.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer node
   - claim
   - verifiable credentials
@@ -14,7 +14,7 @@ keywords:
   - Identity
 ---
 
-The identity endpoint is used to create and retrieve identities for a user/issuer. Polygon ID supports the creation of identities in the form of DIDs (Decentralized Identifiers). A user can have multiple DIDs.
+The identity endpoint is used to create and retrieve identities for a user/issuer. Privado ID supports the creation of identities in the form of DIDs (Decentralized Identifiers). A user can have multiple DIDs.
 
 :::note
 
@@ -45,7 +45,8 @@ An example of a `didMetaData` passed in the request body of the `Create Identity
         "blockchain":"polygon",
         "network": "amoy",
         "type": "BJJ"
-    }
+    },
+    "credentialStatusType": "Iden3commRevocationStatusv1.0",
 }
 ```
 
@@ -88,7 +89,7 @@ The Issuer Node responds by sending a response message that contains:
 
 For each call to the `Create Identity`, a random Identifier is created.
 
-<a href="https://self-hosted-platform.polygonid.me/#post-/v1/identities" target="_blank">API Reference</a>
+<a href="https://issuer-node-core-api-testing.privado.id/#post-/v2/identities" target="_blank">API Reference</a>
 
 ## Get Identities
 
@@ -102,7 +103,7 @@ The Issuer Node responds by sending a response message that contains:
 
 `did:polygonid:polygon:amoy:2qNBWSAsyvaGBpqQVHk3E4cgChaN6ogaZnYCQUyoRQ`
 
-<a href="https://self-hosted-platform.polygonid.me/#get-/v1/identities" target="_blank">API Reference</a>
+<a href="https://issuer-node-core-api-testing.privado.id/#get-/v2/identities" target="_blank">API Reference</a>
 
 ## Publish State On-Chain
 
@@ -122,4 +123,4 @@ The Issuer Node responds by sending a response message that indicates the publis
 
 - `txID`: transaction ID of the Published state on-chain. For example, 0xaed59e4195e73ee6c4278be1a5e01ecbdf2ff9565511916200dedda9bb20ff38
 
-<a href="https://self-hosted-platform.polygonid.me/#post-/v1/-identifier-/state/publish" target="_blank">API Reference</a>
+<a href="https://issuer-node-core-api-testing.privado.id/#post-/v2/-identifier-/state/publish" target="_blank">API Reference</a>

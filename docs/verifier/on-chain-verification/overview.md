@@ -5,7 +5,7 @@ sidebar_label: On-chain verification
 description: On-chain verification tutorials.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - ID holder
   - issuer
   - verifier
@@ -627,7 +627,7 @@ main()
         });
 ```
 
-The contract is now correctly deployed on Amoi Polygon Testnet and the query has been set up, congratulations! Now it is time to launch the airdrop!
+The contract is now correctly deployed on Polygon Amoy Testnet and the query has been set up, congratulations! Now it is time to launch the airdrop!
 
 ### Add the Proof Request Inside a QR Code
 

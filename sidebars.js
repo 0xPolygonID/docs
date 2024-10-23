@@ -21,15 +21,15 @@ module.exports = {
         "issuer/features",
         {
           type: "category",
-          label: "Issuer Node Core API",
+          label: "Issuer Node API",
           link: {
             type: "generated-index",
           },
           collapsed: true,
           items: [
             "issuer/issuer-core",
-            "issuer/issuer-configuration",
             "issuer/setup-issuer-core",
+            "issuer/issuer-configuration",
             {
               type: "category",
               label: "API Reference",
@@ -53,7 +53,6 @@ module.exports = {
             type: "generated-index",
           },
           items: [
-            "issuer/issuer-node-ui",
             "issuer/setup-issuer-ui",
             "issuer-node/issuer-node-guide",
           ]
@@ -67,17 +66,6 @@ module.exports = {
           items: [
             "issuer/on-chain-issuer/on-chain-overview",
             "issuer/on-chain-issuer/on-chain-tutorial"
-          ]
-        },
-        {
-          type: "category",
-          label: "Install the Issuer Node",
-          link: {
-            type: "generated-index",
-          },
-          items: [
-            "issuer-node/install-gcm",
-            "issuer-node/install-kubernetes"
           ]
         },
         {
@@ -110,7 +98,6 @@ module.exports = {
         "issuer/credential-marketplace",
         "contracts/credential-linkage",
         "issuer/cred-issue-methods",
-        "issuer-node/issue-credential-cli",
         "issuer/source-code",
       ],
     },
@@ -157,7 +144,6 @@ module.exports = {
 
       ],
     },
-    "web-wallet",
     {
       type: "category",
       label: "Wallet",
@@ -167,6 +153,22 @@ module.exports = {
       collapsed: true,
       items: [
         "wallet/wallet-overview",
+        "wallet/universal-links",
+        "wallet/web-wallet",
+        {
+          type: "category",
+          label: "Privado ID Wallet App",
+          link: {
+            type: "generated-index",
+          },
+          collapsed: true,
+          items: [
+            "wallet/wallet-app/privadoid-app",
+            "wallet/wallet-app/features",
+            "wallet/wallet-app/identity-recovery"
+
+          ]
+        },
         {
           type: "category",
           label: "Wallet SDK",
@@ -334,21 +336,10 @@ module.exports = {
             }
           ]
         },
-        {
-          type: "category",
-          label: "Polygon ID App",
-          link: {
-            type: "generated-index",
-          },
-          collapsed: true,
-          items: [
-            "wallet/wallet-sdk/polygonid-app",
-            "wallet/features"
-          ]
-        },
         "wallet/push-notification"
       ],
     },
+    "privado-identity-chain",
     {
       type: "category",
       label: "JS-SDK",

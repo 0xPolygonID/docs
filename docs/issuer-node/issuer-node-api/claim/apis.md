@@ -1,22 +1,22 @@
 ---
 id: apis
-title: Claim API
-sidebar_label: Claim
-description: Claim API endpoints and their description.
+title: Credentials API
+sidebar_label: Credentials
+description: Credentials API endpoints and their description.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer node
-  - claim
+  - credentials
   - verifiable credentials
   - core
   - API
   - revoke
 ---
 
-# Claim
+# Credentials
 
-The collection of Claim endpoints is used to provide the following set of functionalities:
+The collection of Credential endpoints is used to provide the following set of functionalities:
 
 - Create a Verifiable Credential (VC)
 - Retrieve a credential or a set of credentials
@@ -27,7 +27,7 @@ The collection of Claim endpoints is used to provide the following set of functi
 
 A credential ID is assigned to a Verifiable Credential when it is created by an Issuer. A user can then retrieve a VC via its ID. If a credential is no longer valid or lost, it can be revoked (rendered inactive and cannot be used).
 
-## Create Claim
+## Create Credential
 
 **Function**: endpoint to create a Verifiable Credential for a user.
 
@@ -48,11 +48,11 @@ Depending on the schema a user opts for, the request body may contain some field
 
 The Issuer Node responds by sending a response message that contains the string `id`, which is the ID of the Verifiable Credential created by the Issuer Node.
 
-<a href="https://self-hosted-platform.polygonid.me/#post-/v1/-identifier-/claims" target="_blank">API Reference</a>
+<a href="https://issuer-node-core-api-testing.privado.id/#post-/v2/identities/-identifier-/credentials" target="_blank">API Reference</a>
 
-## Get Claim
+## Get Credential
 
-**Function**: endpoint to retrieve a Verifiable Credential based on its Claim ID (CID). This way, you can retrieve a credential issued by an Issuer based on this credential's ID.
+**Function**: endpoint to retrieve a Verifiable Credential based on its Credential ID (CID). This way, you can retrieve a credential issued by an Issuer based on this credential's ID.
 
 **How it Works**: the DID (the identifier string retrieved from calling the `Create Identity` endpoint) and the Claim ID, i.e.`id` (or CID) of the Verifiable Credential (retrieved from calling the `Create Claim` endpoint) are passed as path variables in the request URL.
 
@@ -87,9 +87,11 @@ The server responds by sending the following data about the Verifiable Credentia
   - `authclaim`: Value of authclaim along with its mtp `existence` (proof of its existence/non-existence in the Merkle tree).
   - `coreclaim`: Value of coreclaim along with `signature` (Issuer's signature which verifies that the credential is issued by a valid Issuer).
 
-<a href="https://self-hosted-platform.polygonid.me/#get-/v1/-identifier-/claims/-id-" target="_blank">API Reference</a>
+- `proofTypes`: `types` of proof for example, BJJSignature2021 and SparseMerkleTreeProof
 
-## Get Claims
+<a href="https://issuer-node-core-api-testing.privado.id/#get-/v2/identities/-identifier-/credentials/-id-" target="_blank">API Reference</a>
+
+## Get Credentials
 
 **Function**: endpoint to retrieve all the Verifiable Credentials issued by an Issuer.
 
@@ -101,78 +103,39 @@ You can retrieve a set of credentials based on different filters or criteria. Th
 
 - `schemaHash` _String_: hash of the schema. For example, c9b2370371b7fa8b3dab2a5ba81b6838.
 
-- `subject` _String_: identifier of the Subject for which credentials are to be retrieved. For example, did:polygonid:polygon:amoy:2qE1BZ7gcmEoP2KppvFPCZqyzyb5tK9T6Gec5HFANQ.
+- `credentialSubject` _String_: identifier of the Subject for which credentials are to be retrieved. For example, did:polygonid:polygon:amoy:2qE1BZ7gcmEoP2KppvFPCZqyzyb5tK9T6Gec5HFANQ.
 
-- `revoked` _Boolean_: if the credential is revoked or not. It can be "true" or "false".
+- `status` _enum_: retrieve credentials based on if they are revoked or expired. Default is `all` which would retrieve all the credentials.
 
-- `self` _Boolean_: retrieve credentials of the provided Identifier. It can be "true" or "false".
+- `query` _String_: retrieve credentials based on the filters applied to the data of the credential.
 
-- `query-field` _String_: retrieve credentials based on the filters applied to the data of the credential.
 
-:::note
+The Issuer Node responds by sending a response message that contains the Verifiable Credential and all the information related to it. 
 
-The "subject" and "self" filters cannot be applied together.
+<a href="https://issuer-node-core-api-testing.privado.id/#get-/v2/identities/-identifier-/credentials/search" target="_blank">API Reference</a>
 
-:::
-
-The Issuer Node responds by sending a response message that contains the Verifiable Credential and all the information related to it. The response consists of information related to **authclaim** (which authorizes the user that requests for credential) and **coreclaim** (the actual credential issued by an Issuer to the user). Depending on these two claims, the information related to these two may differ in the response body. Here, we are going to provide an overview of some of these fields:
-
-- `Context`: URL pointing to the JSON-LD documents that define how the credential schema (here we are using BJJAuthCredential) and the claim-schema-vocab (here we are using SparseMerkleTreeProof) are defined.
-
-- `credentialSchema`: URL pointing to the credential schema of type JSON. It could be a schema for `authclaim` or `coreclaim`.
-
-- `credentialStatus`: shows credentialStatus `id`, which is the Revocation status of the credential (presence or absence of the revocation nonce value), `revocationNonce` (zero or any value) and `type`(type of Proof, for example, SparseMerkleTreeProof).
-
-- `credentialSubject`: contains details of the subject (to whom the credential is issued) and includes the subject's date of birth, claim ID, documentType, and other details.
-
-- `type`: type of credential for credentialSubject (AuthBJJCredential or KYCAgeCredential)
-
-- `id`: it is the ID of the Verifiable Credential.
-
-- `expiration`: the date on which the credential shall expire.
-
-- `issuer`: DID of the Issuer.
-
-- `issuanceDate`: the date on which the credential was issued by the Issuer.
-
-- `proof`: the proof that the user creates to prove that s/he is the real owner of the Verifiable Credential issued from the Issuer and that the Verifiable Credential that it holds is valid. It includes:
-
-  - `type` of proof (for example, BJJSignature2021 or SparseMerkleTreeProof)
-  - `issuerData`: it includes the Issuer's `id` (DID of the Issuer) and its `state` (value of its Claims Tree Root, i.e. the root of the claims tree).
-  - `authclaim`: value of authclaim along with its MTP `existence` (proof of its existence/non-existence in the Merkle tree).
-  - `coreclaim`: value of coreclaim along with `signature` (Issuer's signature which verifies that the credential is issued by a valid Issuer).
-
-<a href="https://self-hosted-platform.polygonid.me/#get-/v1/-identifier-/claims" target="_blank">API Reference</a>
-
-## Get Claim QR Code
+## Get Credential QR Code
 
 :::note
 
-In order to communicate with the Polygon ID Wallet App, the Issuer Node must be hosted on a public URL.
+In order to communicate with the Web Wallet or the Wallet App, the Issuer Node must be hosted on a public URL.
 
 :::
 
-**Function**: endpoint to generate a JSON which is then used to generate a QR code on a third-party app. The user can then scan this QR code and accept credentials to his/her wallet.
+**Function**: endpoint to generate a Universal Link. The user can then click this link and accept credentials to his/her wallet.
 
-**How it Works**: the Issuer DID (identifier string retrieved from calling the `Create Identity` endpoint) and credential Identifier (or `cid` retrieved from the `Create Claim` endpoint) are passed as path variables in the request URL.
+**How it Works**: the Issuer DID (identifier string retrieved from calling the `Create Identity` endpoint) and credential Identifier (or `cid` retrieved from the `Create Credential` endpoint) are passed as path variables in the request URL.
 
 The Issuer Node responds by sending a response message that contains a JSON which carries the following fields:
 
-- `credentials` contains the credential ID (`cid`) and a link to the schema associated with the credential.
+- `universalLink` contains the universal link which the user can click to accept the credential in the wallet.
 
-- `url` is the address at which the user's wallet makes a call to the endpoint.
+- `schemaType` is the type of the schema used for the credential.
 
-- `from` is the `did` of the Issuer.
 
-- `to` is the `did` of the user's wallet.
+<a href="https://issuer-node-core-api-testing.privado.id/#get-/v2/identities/-identifier-/credentials/-id-/qrcode" target="_blank">API Reference</a>
 
-- `typ` and `type` indicate the way the user's wallet interacts with the Node.
-
-This JSON can then be pasted on a third-party app's interface that supports generating QR codes. Once a QR code is generated, the user can scan it via Polygon ID app on mobile and accept a credential on his/her wallet.
-
-<a href="https://self-hosted-platform.polygonid.me/#get-/v1/-identifier-/claims/-id-/qrcode" target="_blank">API Reference</a>
-
-## Revoke Claim
+## Revoke Credential
 
 **Function**: endpoint to revoke a Verifiable Credential
 
@@ -180,7 +143,7 @@ This JSON can then be pasted on a third-party app's interface that supports gene
 
 The server responds by showing the Revocation Status of the credential.
 
-<a href="https://self-hosted-platform.polygonid.me/#post-/v1/-identifier-/claims/revoke/-nonce-" target="_blank">API Reference</a>
+<a href="https://issuer-node-core-api-testing.privado.id/#post-/v2/identities/-identifier-/credentials/revoke/-nonce-" target="_blank">API Reference</a>
 
 ## Get Revocation Status
 
@@ -196,4 +159,4 @@ The server responds by sending the following details:
 - `mtp`
   - `existence`: Existence or Non-existence of the Revocation Nonce on the Revocation Merkle Tree. For retrieving the revocation status from this endpoint, we need to first send a transaction and after that, the state is published on-chain. Once that is done, the existence of the revocation nonce on Merkle Tree changes to "true".
 
-<a href="https://self-hosted-platform.polygonid.me/#get-/v1/-identifier-/claims/revocation/status/-nonce-" target="_blank">API Reference</a>
+<a href="#get-/v2/identities/-identifier-/credentials/revocation/status/-nonce-" target="_blank">API Reference</a>

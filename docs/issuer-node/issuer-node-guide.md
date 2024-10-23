@@ -5,7 +5,7 @@ sidebar_label: Issuer Node UI Guide
 description: Learn how to use the Issuer Node UI to import schemas, create credentials and manage connections.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer node
   - claim
   - verifiable credentials
@@ -16,7 +16,7 @@ keywords:
 
 :::info
 
-Before you actually act as an Issuer and provide credentials, you need to set up a Polygon ID Issuer Node. You can find instructions to get your Issuer Node up and running [<ins>here</ins>](/docs/issuer/setup-issuer-ui.md).
+Before you actually act as an Issuer and provide credentials, you need to set up a Privado ID Issuer Node. You can find instructions to get your Issuer Node up and running [<ins>here</ins>](/docs/issuer/setup-issuer-ui.md).
 
 :::
 
@@ -70,10 +70,6 @@ The Credentials main page shows information about all the credentials that have 
 :::info "Revocation and Issuer state publication"
 
 Whenever an Issuer decides to revoke a credential, they have to publish the issuer state to the blockchain. This can be done on the **Issuer state**. Notice that there will be a **Pending actions** right next to the sidebar button.
-
-<div align="center">
-<img src= "/img/issuer-state.png" align="center" width="350"/>
-</div>
 
 :::
 
@@ -144,26 +140,30 @@ If you clicked on the **Issue credential** button, you will later be prompted to
 <img src= "/img/issue-credential-5.png" align="center" width="1000" height="1000"/>
 </div>
 
-5. You can also generate a QR code embedding that previous link, by clicking on **View link**:
-
-<div align="center">
-<img src= "/img/issue-credential-6.png" align="center" />
-</div>
- 
-<br/>
-
 :::info
-There are 3 QR code options available: Link, Raw JSON and Base64 encoded. The preferred option is link because it is the most compact and the easiest to scan. It contains a link to download the original raw content of the QR code. Raw and Base64 encoded formats are useful for cautious users who prefer not to follow that redirection or for wallets that do not yet support Link mode.  
+When the user interacts with the [<ins>Universal Link</ins>](../wallet/universal-links.md) , it will launch the Privado ID Web Wallet in the browser or Privado ID Wallet app in case of a mobile phone displaying the credential offer to claim the credential. Deep link could be handled only by mobile wallet app though.
 :::
 
 <br/>
 
 :::info "What happens on the Holder's side?"
 
-The holder will just have to log into his Polygon ID wallet, tap Connect, scan the QR code and choose **Connect Wallet**. After authentication, the holder finally receives their credential.
+Privado ID Web Wallet:
+
+The holder will just have to **Sign in** using a crypto wallet which creates/retrieves the user identity, click **Add to my wallet**. The holder finally claims and receives their credential in the wallet.
 
 <div align="center">
-<img src= "/img/issuer-holder.png" align="center" width="1000" height="1000"/>
+<img src= "/img/issuer-holder-web.png" align="center" width="1000" height="1000"/>
+</div>
+
+<br/>
+
+Privado ID Wallet mobile app:
+
+The holder will just have to log into his Privado ID wallet mobile app, scan the QR code and choose **Sign in**. After authentication, the holder finally receives their credential.
+
+<div align="center">
+<img src= "/img/issuer-holder-app.png" align="center" width="1000" height="1000"/>
 </div>
 
 :::
@@ -183,3 +183,28 @@ The Details page shows some useful information, such as identifier(DID), creatio
 <div align="center">
 <img src= "/img/connection-details.png" align="center" />
 </div>
+
+## Identities
+
+This area of the Issuer Node UI where you can add new identities and view existing identity details.
+
+To add a new identity, click on **Add identity**
+
+<div align="center">
+<img src= "/img/identities-1.png" align="center" />
+</div>
+
+Fill in the name and details related to this identity. Clicking **Add identity** would add a new identity for your issuer node.
+
+<div align="center">
+<img src= "/img/identities-2.png" align="center" />
+</div>
+
+To switch between different identities for the issuer node, click on the switch and select the desired identity.
+
+<div align="center">
+<img 
+src= "/img/identities-3.png" align="center" 
+width="300"/>
+</div>
+

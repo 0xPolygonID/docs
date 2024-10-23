@@ -2,10 +2,10 @@
 id: on-chain-tutorial
 title: Tutorial
 sidebar_label: Tutorial
-description: Learn how on-chain issuance works on Polygon ID through a simple tutorial.
+description: Learn how on-chain issuance works on Privado ID through a simple tutorial.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - on-chain issuer
   - claim
   - verifiable credentials
@@ -181,7 +181,10 @@ Here is the credential on the mobile app:
 
 ## Use already deployed demo
 
-You can use already deployed demo: https://onchain-merklized-issuer-demo.polygonid.me
+You can use already deployed demos:
+
+1. [Onchain merklized issuer](https://onchain-merklized-issuer-demo.privado.id)
+2. [Onchain non-merklized issuer](https://onchain-non-merklized-issuer-demo.privado.id)
 
 ## How to verify the balance claim
 
@@ -189,6 +192,7 @@ You can use already deployed demo: https://onchain-merklized-issuer-demo.polygon
 
 2. You now need to define the query.
 
+   Verify credential from onchain merklized issuer:
    - **URL**: ipfs://QmbbTKPTJy5zpS2aWBRps1duU8V3zC84jthpWDXE9mLHBX ([Schema builder link](https://schema-builder.polygonid.me/schemas/7b470cbc-0d97-4022-9c70-e393e6ebc0d5))
    - **Schema type**: BalanceCredential
    - **Attribute field**: balance

@@ -5,12 +5,13 @@ sidebar_label: Overview
 description: Definition of an Issuer.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer
   - claim
   - verifiable credentials
 ---
-
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 An Issuer is any subject that issues Verifiable Credentials. You can think of a credential as a statement: something an Issuer says about another subject. For example, when a university (Issuer) claims that a student (subject) has a degree, this is a credential.
@@ -34,13 +35,12 @@ There are some different ways one can perform issuer-related actions, that is, m
 
 - Running an [Issuer Node](/docs/issuer/issuer-core) directly in your infrastructure.
 
-- Utilizing the issuer node available in the[ Google Cloud Marketplace](https://console.cloud.google.com/marketplace/product/polygon-public/polygon-id-issuer-node?pli=1) (soon available also on the AWS Marketplace).
 
 - Adapting the [JS SDK](/docs/js-sdk/js-sdk-overview.md) to your application that issues credentials.
 
-- Using [SaaS vendors](https://marketplace.polygonid.me/ecosystem) that leverage Polygon ID solutions.
+- Using [SaaS vendors](https://marketplace.privado.id/ecosystem) that leverage Privado ID solutions.
 
-- Making use of Polygon ID smart contracts for [on-chain issuance](/docs/issuer/on-chain-issuer/on-chain-overview.md/).
+- Making use of Privado ID smart contracts for [on-chain issuance](/docs/issuer/on-chain-issuer/on-chain-overview.md/).
 
 ## Issuer Nodes
 
@@ -51,18 +51,18 @@ To operate, an Issuer must run an Issuer Node, which is a self-hosted Node that 
 </div>
 <br></br>
 
-There are basically two ways the Issuer Node can be implemented:
+There are basically two ways the Issuer Node can be operated:
 
-- Issuer Node Core API
+- Issuer Node API
 - Issuer Node UI
 
 <div align="center">
-<img src= {useBaseUrl("img/whole-infra.png")} align="center" />
+<img src= {useBaseUrl("img/issuer-node-architecture.png")} align="center" />
 </div>
 
-### Issuer Node Core API
+### Issuer Node API
 
-The [Issuer Node Core API](issuer-core.md) is ideal for users who need multiple identities and for **integrator profiles, who want to create solutions based on Polygon ID functionalities and might be interested in having access to low-level information** such as Merkle Trees.
+The [Issuer Node API](issuer-core.md) is designed for developers and integrators looking to build custom solutions leveraging Privado ID's functionalities. It is ideal for those who might be interested in having access to low-level information** such as Merkle Trees.
 
 <div align="center">
 <img src= {useBaseUrl("img/3001.png")} align="center" />
@@ -70,16 +70,10 @@ The [Issuer Node Core API](issuer-core.md) is ideal for users who need multiple 
 
 ### Issuer Node UI
 
-The [Issuer Node UI](issuer-node-ui.md) provides the full experience of having an Issuer Node with all its capabilities. Although it offers only a single identity, it also presents a few extra features, such as establishing connections and importing schemas. It comes in an API format but there is also the possibility of generating a full-fledged user interface.
-
-Issuer Node User Interface with a more visual experience:
+The [Issuer Node UI](issuer-node-ui.md) provides the full experience of having an Issuer Node with all its capabilities in a easy-to-use interface for handling essential functions such as issuing and revoking credentials, publishing states, managing schemas, connections and identities. Powered by the Issuer Node API, it offers full control of these features without requiring direct API use.
 
 <div align="center">
 <img src= {useBaseUrl("img/8088.png")} align="center" />
 </div>
 
-Issuer Node API UI with Managing Schemas, Credentials and other functionalities:
 
-<div align="center">
-<img src= {useBaseUrl("img/3002.png")} align="center" />
-</div>

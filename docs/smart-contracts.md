@@ -2,97 +2,79 @@
 id: smart-contracts
 title: Smart Contracts
 sidebar_label: Smart Contracts
-description: Smart Contracts used by the Polygon ID solution.
+description: Smart Contracts used by the Privado ID
 keywords:
   - docs
   - polygon id
   - smart
   - contract
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<a href="https://github.com/0xPolygonID/contracts" target="_blank">Polygon ID Smart Contracts - Github</a>
+<a href="https://github.com/iden3/contracts" target="_blank">Privado ID Smart Contracts - Github</a>
 
-:::caution
-\*Polygon Mumbai testnet has been deprecated
+As part of our unified address methodology, we deployed contracts via the CREATE2 EVM opcode. This method ensures that the final address of the contract depends on the contract's initialization bytecode and a salt. To support deployments across various networks, we utilized [CreateX](https://createx.rocks/) contract factories. Specifically, the [deployCreate2](https://github.com/pcaversaccio/createx/blob/main/src/CreateX.sol#L332) method was used to handle the deployments.
+
+
+## Networks 
+We have deployed contracts across the following mainnets and testnets so far:
+
+**Mainnets**:
+- [Privado Identity Chain](/docs/privado-identity-chain)
+- [Ethereum](https://etherscan.io/address/0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896)
+- [Polygon POS](https://polygonscan.com/address/0x624ce98d2d27b20b8f8d521723df8fc4db71d79d)
+- [Polygon zkEVM](https://zkevm.polygonscan.com/address/0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896)
+- [Linea](https://lineascan.build/address/0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896)
+
+**Testnets**:
+
+- [Ethereum Sepolia](https://sepolia.etherscan.io/address/0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896)
+- [Polygon Amoy](https://amoy.polygonscan.com/address/0x1a4cc30f2aa0377b0c3bc9848766d90cb4404124)
+- [Polygon zkEVM Cardona](https://cardona-zkevm.polygonscan.com/address/0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896)
+- [Linea-Sepolia](https://sepolia.lineascan.build/address/0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896)
+
+
+## Unified contract addresses
+
+:::warning *EXCEPTIONS
+It’s important to note that the State contract addresses for the following two networks are exceptions. These contracts were already deployed at these addresses, and they are not being redeployed because they contain a significant amount of historically collected data. Redeploying them to a unified address would result in data loss, which we aim to avoid:
+- Polygon Amoy State Contract: <ins>[0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124](https://amoy.polygonscan.com/address/0x1a4cc30f2aa0377b0c3bc9848766d90cb4404124)</ins>
+- Polygon Mainnet State Contract : <ins>[0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D](https://polygonscan.com/address/0x624ce98d2d27b20b8f8d521723df8fc4db71d79d)</ins>
+
 :::
 
-## State Contract addresses
+|   Smart Contract Type        |                 Unified Address                   |
+| :----------------------: | :----------------------------------------: |
+|   **STATE* **    |  0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896 |
+|   **VALIDATOR_MTP_V2**    | 0x27bDFFCeC5478a648f89764E22fE415486A42Ede |
+| **VALIDATOR_SIG_V2** | 0x59B347f0D3dd4B98cc2E056Ee6C53ABF14F8581b |
+| **VALIDATOR_V3** | 0xd179f29d00Cd0E8978eb6eB847CaCF9E2A956336 |
+| **UNIVERSAL_VERIFIER** | 0xfcc86A79fCb057A8e55C6B853dff9479C3cf607c |
+| **IDENTITY_TREE_STORE** | 0x7dF78ED37d0B39Ffb6d4D527Bb1865Bf85B60f81 |
 
-For situations where one needs to publish data on the blockchain, such as creating an MTP-type credential, generating on-chain proofs and making credential revocations effective, it is important to have the following Smart Contracts addresses:
-
-- Testnet(amoy) -> `0x1a4cC30f2aA0377b0c3bc9848766D90cb4404124`
-- Mainnet -> `0x624ce98D2d27b20b8f8d521723Df8fC4db71D79D`
-- Testnet(mumbai)**\*** -> `0x134B1BE34911E39A8397ec6289782989729807a4`
 
 :::info
-Check a contract codebase and algorithms of work <ins>[docs](https://docs.iden3.io/contracts/state/)</ins>, <ins>[repository](https://github.com/iden3/contracts/tree/master/contracts/state)</ins>.
+State Contracts are used for publishing data on the blockchain in scenarios such as issuing MTP-type credentials, generating on-chain proofs, enforcing credential revocations, and providing a timestamping service for tracking expirations during on-chain proof verifications.
+Check the contract codebase and algorithms of work <ins>[docs](https://docs.iden3.io/contracts/state/)</ins>, <ins>[repository](https://github.com/iden3/contracts/tree/master/contracts/state)</ins>.
 :::
 
-## IdentityTreeStore contract (On-chain RHS)
+:::info Stateless Contract Libraries
+We have released a set of reusable stateless contracts, deployed to unified addresses, that can be integrated into any contract. These can be used for standalone deployments of contracts from the ecosystem.
 
-|         Network          |                  Address                   |
-| :----------------------: | :----------------------------------------: |
-|   **Polygon Mainnet**    | 0xbEeB6bB53504E8C872023451fd0D23BeF01d320B |
-| **Polygon Amoy testnet** | 0x3d3763eC0a50CE1AdF83d0b5D99FBE0e3fEB43fb |
-| Polygon Mumbai testnet\* | 0x16A1ae4c460C0a42f0a87e69c526c61599B28BC9 |
+- SMT_LIB: 0x682364078e26C1626abD2B95109D2019E241F0F6
+- POSEIDON_1: 0xC72D76D7271924a2AD54a19D216640FeA3d138d9
+- POSEIDON_2: 0x72F721D9D5f91353B505207C63B56cF3d9447edB
+- POSEIDON_3: 0x5Bc89782d5eBF62663Df7Ce5fb4bc7408926A240
+- POSEIDON_4: 0x0695cF2c6dfc438a4E40508741888198A6ccacC2
 
-## UniversalVerifier contract
+These libraries can be leveraged for various purposes, such as building custom verifiers, state management, or identity trees, allowing for flexible integration into other projects. By using these pre-deployed contracts, developers can significantly reduce the gas costs typically incurred during deployment.
+:::
 
-|         Network          |                  Address                   |
-| :----------------------: | :----------------------------------------: |
-|   **Polygon Mainnet**    | 0x394d1dad46907bd54d15926A1ab4535EF2BF47b1 |
-| **Polygon Amoy testnet** | 0x1B20320042b29AE5c1a3ADc1674cb6bF8760530f |
-
-## Validator addresses
-
-Current addresses on **Polygon Mainnet** (V2.0.1 V2 validators):
-
-|                   |                                Sig                                |                               MTP                                |
-| :---------------: | :---------------------------------------------------------------: | :--------------------------------------------------------------: |
-|   **Verifier**    |            0xa0495df44ABBDbfCD1da30638869A3307BF21532             |            0x068b3dDE10b55643b55aA4820c7a977dEEEc3c07            |
-|  **Validators**   |            0xEF8540a5e0F4f53B436e7C3A273dCAe1C05d764D             |            0x03Ee09635E9946165dd9538e9414f0ACE57e42e1            |
-| **ERC20 example** | 0xB9Ac8e785f854f9B76bBF6d495213d58226DE813 (request id = 1 (sig)) | 0xB9Ac8e785f854f9B76bBF6d495213d58226DE813 (request id = 2 (mtp) |
-
-Current addresses on **Polygon Amoy** testnet. (V2.0.1 V2 validators)
-
-|                   |                             Sig                             |                             MTP                             |
-| :---------------: | :---------------------------------------------------------: | :---------------------------------------------------------: |
-|   **Verifier**    |         0x35178273C828E08298EcB0C6F1b97B3aFf14C4cb          |         0x789D95794973034BFeDed6D4693e7cc3Eb253B3a          |
-|  **Validators**   |         0x8c99F13dc5083b1E4c16f269735EaD4cFbc4970d          |         0xEEd5068AD8Fecf0b9a91aF730195Fef9faB00356          |
-| **ERC20 example** | 0x2b23e5cF70D133fFaA7D8ba61E1bAC4637253880 (request id = 1) | 0x2b23e5cF70D133fFaA7D8ba61E1bAC4637253880 (request id = 2) |
-
-Current addresses on **Polygon Mumbai** testnet**\***. (V2.0.1 V2 validators):
-
-|                   |                             Sig                             |                             MTP                             |
-| :---------------: | :---------------------------------------------------------: | :---------------------------------------------------------: |
-|   **Verifier**    |         0x81ef49013627F363570a1C60B0D2215E23651B01          |         0xe5DB0489979C5671D9785cF1cBA9D9028041c9Bf          |
-|  **Validators**   |         0x59f2a6D94D0d02F3a2F527a8B6175dc511935624          |         0xb9b51F7E8C83C90FE48e0aBd815ef0418685CcF6          |
-| **ERC20 example** | 0x3a4d4E47bFfF6bD0EF3cd46580D9e36F3367da03 (request id = 1) | 0x3a4d4E47bFfF6bD0EF3cd46580D9e36F3367da03 (request id = 2) |
-
-Current addresses for V3 beta circuit on **Polygon Amoy** testnet. (2.0.1-beta.1 V3 validator):
-
-|                      |                                         V3 validator 2.0.1-beta.1                                          |
-| :------------------: | :--------------------------------------------------------------------------------------------------------: |
-|     **Verifier**     |                                 0x07Bbd95505c44B65D7FA3B08dF6F5859373Fa1DC                                 |
-|    **Validators**    |                                 0xa5f08979370AF7095cDeDb2B83425367316FAD0B                                 |
-| **ERC20 SD example** |                        0xc5Cd536cb9Cc3BD24829502A39BE593354986dc4 (request id = 3)                         |
-|  **ERC20 example**   | 0xc5Cd536cb9Cc3BD24829502A39BE593354986dc4 (request id = 100 - 1100 merklized / 10000 - 65000 nonmerklized |
-
-Current addresses for V3 beta circuit on **Polygon Mumbai** testnet**\***. (2.0.1-beta.1 V3 validator):
-
-|                      |                                         V3 validator 2.0.1-beta.1                                          |
-| :------------------: | :--------------------------------------------------------------------------------------------------------: |
-|     **Verifier**     |                                 0xDE27fc243Bf4eDAaB72E1008c9828C480582f672                                 |
-|    **Validators**    |                                 0x3412AB64acFf5d94Da4914F176A43aCbDdC7Fc4a                                 |
-| **ERC20 SD example** |                        0x36eB0E70a456c310D8d8d15ae01F6D5A7C15309A (request id = 3)                         |
-|  **ERC20 example**   | 0x36eB0E70a456c310D8d8d15ae01F6D5A7C15309A (request id = 100 - 1100 merklized / 10000 - 65000 nonmerklized |
-
-:::note
+:::info
 More about <ins>[v3 circuit](./verifier/v3-circuit)</ins>.
 
 Check the examples of deployment for <ins>[ v3 validator](https://github.com/0xPolygonID/contracts/blob/main/scripts/deployV3Validator.ts)</ins>
 :::
-
 ## CredentialAtomicQuerySigValidator
 
 <a href="https://github.com/iden3/contracts/blob/master/contracts/validators/CredentialAtomicQuerySigValidator.sol" target="_blank">CredentialAtomicQuerySigValidator.sol - Github</a>
@@ -101,8 +83,8 @@ The CredentialAtomicQuerySigValidator contract is used to verify any credential-
 
 The core of the contract is its <a href="https://github.com/iden3/contracts/blob/master/contracts/validators/CredentialAtomicQuerySigValidator.sol#L53" target="_blank">verify</a> function that takes the proof generated by a user and executes a set of verifications:
 
-- Verifies that the proof is valid. This verification is actually performed inside the
-  <a href="https://github.com/iden3/contracts/blob/master/contracts/lib/VerifierSig.sol" target="_blank">verifierSig</a> contract which is automatically generated using circom.
+- Verifies that the proof is valid. This verification is actually performed inside the 
+  <a href="https://github.com/iden3/contracts/blob/master/contracts/lib/groth16-verifiers/Groth16VerifierSig.sol" target="_blank">Groth16VerifierSig</a> contract which is automatically generated using circomlibjs library.
 - Verifies that the input used to generate the proof matches the query associated to that specific Request.
 - Verifies that the user's and the Issuer's identity states are valid based on the State Contract.
 

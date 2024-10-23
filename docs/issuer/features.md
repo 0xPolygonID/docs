@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## DID with Ethereum address
 
-Currently available only on the [Issuer Node Core API](/docs/issuer/issuer-core.md), this feature enables the creation of Ethereum-controlled identities. Ethereum accounts are used here to authenticate, prove statements and control identity.
+This feature enables the creation of Ethereum-controlled identities. Ethereum accounts are used here to authenticate, prove statements and control identity.
 The representation of the DID for this case follows the same canonical form, where the identifier `2qCU58EJgrELSJT6EzT27Rw9DhvwamAdbMLpePztYq` actually originates from the Ethereum address:
 
 ```
