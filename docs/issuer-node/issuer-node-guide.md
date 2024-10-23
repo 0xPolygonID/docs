@@ -141,7 +141,7 @@ If you clicked on the **Issue credential** button, you will later be prompted to
 </div>
 
 :::info
-When the user interacts with the [<ins>Universal Link</ins>](../wallet/universal-links.md) , it will launch the Privado ID Web Wallet on browser in or Privado ID Wallet mobile app in case of a mobile phone displaying the credential offer to claim the credential. Deep link could be handled only by mobile wallet app though.
+When the user interacts with the [<ins>Universal Link</ins>](../wallet/universal-links.md) , it will launch the Privado ID Web Wallet in the browser or Privado ID Wallet app in case of a mobile phone displaying the credential offer to claim the credential. Deep link could be handled only by mobile wallet app though.
 :::
 
 <br/>
