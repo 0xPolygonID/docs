@@ -89,6 +89,10 @@ The Web Wallet can be seamlessly integrated into the credential issuance flow by
 
 You can experience a demo of the Web Wallet integration [here](https://web-wallet-demo.privado.id/).
 
+:::caution
+The prior method of integrating the Web Wallet using `https://wallet.privado.id/#base64EncodedData` is now deprecated and will no longer be supported after Release 9.
+:::
+
 
 
 
