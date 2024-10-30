@@ -1,6 +1,6 @@
 
 
-# ZK Airdrop: A Secure Cross-Chain Token Distribution Tutorial
+# ZKAirdrop: A Secure Onchain Token Distribution Tutorial
 
 ## Introduction
 
