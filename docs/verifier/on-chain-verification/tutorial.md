@@ -8,7 +8,7 @@ Imagine a scenario where a new "XYZ Protocol" is launching and wants to distribu
 
 ## Key Requirements for the Airdrop:
 
-- **PoH Credential Verification**: Users must possess PoH credentials.
+- **PoH Credential Verification**: Users must possess Proof Of Human(PoH) credentials.
 - **Cross-Chain Participation**: Users can prove their eligibility from different chains, such as Ethereum, Polygon, etc.
 - **Privacy Preservation**: Use zero-knowledge proofs to maintain user privacy while verifying credentials.
 
