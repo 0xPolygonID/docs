@@ -32,7 +32,7 @@ module.exports = {
     announcementBar: {
       id: "learn_more",
       content:
-        'Polygon ID spins out as Privado ID.<a class="announcement-link" rel="noopener noreferrer" href="https://www.privado.id/blog/introducing-privado-id-moving-beyond-polygon-to-deliver-independent-privacy-preserving-identity-solutions">Official Announcement</a>',
+        'The latest Release 8 is live..<a class="announcement-link" rel="noopener noreferrer" href="/docs/release-notes/r8">Release Notes</a>',
       backgroundColor: "#20232a",
       textColor: "#131313",
       isCloseable: false,
