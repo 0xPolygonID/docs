@@ -243,7 +243,7 @@ export const contentData = {
     head: {
       title: "FAQ",
       description: "Can’t find an answer? Contact our always helpful support.",
-      link: "https://support.polygon.technology/support/solutions/82000473421",
+      link: "https://t.me/PrivadoID_Official/2",
       linkText: "Contact support",
     },
     faqList: [
