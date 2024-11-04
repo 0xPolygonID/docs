@@ -67,7 +67,7 @@ The first step in using XYZ Protocol is to set up an airdrop request that specif
 
 For setting up the ZKP request, please visit Set ZKP Request section:
 
-[Set ZKP Request](https://docs.privado.id/docs/verifier/on-chain-verification/set-zkp-request)
+[Set ZKP Request](/docs/verifier/on-chain-verification/set-zkp-request.md)
 
 ## Step 2: Creating Secure Airdrop System
 

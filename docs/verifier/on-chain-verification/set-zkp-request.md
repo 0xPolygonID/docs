@@ -13,7 +13,7 @@ keywords:
   - on-chain
 ---
 
-#Setting Up the Query Request
+# Setting Up the Query Request
 
 ### Approach - A Setting Request using Query Builder:
 
