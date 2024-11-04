@@ -67,18 +67,18 @@ The first step in using XYZ Protocol is to set up an airdrop request that specif
 
 We provide a deployment script that you can use as a starting point to set up your own query. To get started, follow these steps:
 
-1. Clone the XYZ Protocol contracts repository using Git:  
+1. Clone the Privado ID Protocol contracts repository using Git:  
    `git clone https://github.com/iden3/contracts.git`
 
 2. Navigate into the cloned repository:  
-   `cd scripts/maintenance`
+   `cd contracts`
 
 3. Add your Private Key and JSON RPC URL strings for the desired blockchain network (e.g., Polygon Amoy). This will allow you to deploy the query on your chosen chain.
 
 4. Configure the `hardhat.config` file according to your preferences.
 
 5. Next, replace the placeholders in the script with your own query values. For this example, we'll use a PoH query:  
-   `npx hardhat run scripts/setProofRequest.ts --network amoy`
+   `npx hardhat run scripts/maintenance/setProofRequest.ts --network amoy`
 
 This command will set up the airdrop request and print out the query used for convenience. You can then create a QR code using this query, which can be scanned by users with Privado ID mobile to verify their credentials.
 
