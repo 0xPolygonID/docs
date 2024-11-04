@@ -43,7 +43,7 @@ The first step in using XYZ Protocol is to set up an airdrop request that specif
 
 6. Next, click on the **“Create query”**.
 
-7. Add the Universal Verifier Smart contract address for the selected network (e.g., for Polygon Amoy: `0xfcc86A79fCb057A8e55C6B853dff9479C3cf607c`) in the Smart Contract Address input.
+7. Add the Universal Verifier Smart contract address for the selected network (e.g.,`0xfcc86A79fCb057A8e55C6B853dff9479C3cf607c`) in the Smart Contract Address input.
 ![Query Builder Step 1](../../../static/img/onchain-verifier/querybuilder-3.png)
 
 8. Click on the **Set request** to submit the on-chain request.
@@ -68,10 +68,10 @@ The first step in using XYZ Protocol is to set up an airdrop request that specif
 We provide a deployment script that you can use as a starting point to set up your own query. To get started, follow these steps:
 
 1. Clone the XYZ Protocol contracts repository using Git:  
-   `git clone https://github.com/0xPolygonID/contracts.git`
+   `git clone https://github.com/iden3/contracts.git`
 
 2. Navigate into the cloned repository:  
-   `cd contracts`
+   `cd scripts/maintenance`
 
 3. Add your Private Key and JSON RPC URL strings for the desired blockchain network (e.g., Polygon Amoy). This will allow you to deploy the query on your chosen chain.
 
