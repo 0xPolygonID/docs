@@ -1,8 +1,8 @@
 ---
 id: issuer-node-qr-code-callback-url-configuration
-title: "Configuring QR Code Callback URL for Issuer Node"
-sidebar_label: QR Code Callback URL Configuration
-description: Explains how to address the issue with the QR code callback URL during credential issuance and provides a tutorial on using ngrok or local tunnel to make the issuer node API address public.
+title: "Configuring QR Code or Universal Link Callback URL for Issuer Node"
+sidebar_label: QR Code or Universal Link Callback URL Configuration
+description: Explains how to resolve issues with QR code or Universal Link callback URLs during credential issuance, including a tutorial on using ngrok or local tunnel to make the issuer node API address accessible.
 keywords:
   - faq
   - issuer-node
@@ -11,78 +11,73 @@ keywords:
   - ngrok
   - local tunnel
   - mobile app
-  - Polygon ID
 ---
 
 ## Question
 
-How can I solve the error occurring when the Polygon ID mobile app scans a QR code with a callback URL that is not properly configured (typically using "localhost")?
+How can I resolve the error that occurs when the mobile app wallet or web wallet scans a QR code or opens a Universal Link with a callback URL that is not properly configured (e.g., using "localhost")?
 
 ## Answer
 
-This issue arises because the "localhost" address in the QR code's callback URL is not accessible from external networks, including mobile devices scanning the QR code. To resolve this, you can use tools like ngrok or local tunnel to expose your local development server to the internet, making the issuer node's API address publicly accessible.
+This issue arises when the "localhost" address in the QR code’s or Universal Link’s callback URL isn’t accessible from external networks, preventing mobile devices or our [web wallet](https://wallet.privado.id) from connecting to it. To make the issuer node's API address publicly accessible during development, you can use tools like ngrok or local tunnel to expose your local server to the internet.
+
+:::caution
+These tools are intended only for testing or development environments. In production, ensure that required ports are securely opened in your proxy or router.
+:::
 
 ### Using Ngrok
 
-1. **Download and Install Ngrok**: Visit [ngrok's website](https://ngrok.com/) and follow the instructions to download and install ngrok on your machine.
+1. **Download and Install Ngrok**: Visit [ngrok's website](https://ngrok.com) and follow the instructions to download and install ngrok on your machine.
 
-2. **Start Ngrok**: Run ngrok to expose your port 3002 to the internet:
+2. **Start Ngrok**: Use ngrok to expose your local server’s port 3001 to the internet:
 
+   ```bash
+   ngrok http 3001
    ```
-   ngrok http 3002
-   ```
 
-   Ngrok will display a URL that forwards to your local server.
+   Ngrok will provide a public URL forwarding to your local server.
 
    :::caution
-
-   Visit the URL and make sure you can see there the API docs UI. If you see a page from Ngrok, you might need to click the button "Visit site"
-
+   Visit the provided URL to ensure it displays your API docs UI. If you see a page from ngrok, click "Visit site" if prompted.
    :::
 
    <div align="center">
-
    ![Ngrok Visit Site](/img/faqs/ngrok-visit-site.png)
-
    </div>
 
-3. **Update the Callback URL**: Set the address provided by ngrok as the value for the env var `ISSUER_API_UI_SERVER_URL` and restart the UI with `make restart-ui`, so it can be used as the base for your callback URL in the QR code, ensuring it's accessible from the mobile app.
+3. **Update the Callback URL**: Use the URL provided by ngrok as the value for the `ISSUER_SERVER_URL` environment variable, then restart the services to apply it as the base URL for your callback. This ensures external accessibility.
 
 ### Using Local Tunnel
 
-1. **Install Local Tunnel**: You can install local tunnel globally on your machine using npm:
+1. **Install Local Tunnel**: Install local tunnel globally on your machine using npm:
 
-   ```
+   ```bash
    npm install -g localtunnel
    ```
 
-2. **Start Local Tunnel**: Run local tunnel to expose your port 3002 to the internet:
+2. **Start Local Tunnel**: Use local tunnel to expose your local server’s port 3001 to the internet:
 
-   ```
-   lt --port 3002
+   ```bash
+   lt --port 3001
    ```
 
-   Local Tunnel will provide you with a URL that forwards to your local server.
+   Local tunnel will generate a URL forwarding to your local server.
 
    :::caution
-
-   Visit the URL and make sure you can see there the API docs UI. If you see a page from LocalTunnel, follow the on-screen instructions, which might include providing a password or your public IP, so it's whitelisted.
-
+   Visit the generated URL to confirm it displays your API docs UI. Follow any additional prompts from local tunnel, such as entering a password or whitelisting your IP if required.
    :::
 
-3. **Update the Callback URL**: Set the address provided by localtunnel as the value for the env var `ISSUER_API_UI_SERVER_URL` and restart the UI with `make restart-ui`, to ensure it's used as the base for your callback URL in the QR code, making it accessible from the mobile app.
+3. **Update the Callback URL**: Set the URL provided by local tunnel as the value for `ISSUER_SERVER_URL`, then restart your services. This makes the callback URL accessible externally.
 
    :::note
-
-   You can also take a look to the video attached to [<ins>this GitHub comment</ins>](https://github.com/0xPolygonID/issuer-node/issues/520#issuecomment-1826269876) where we help a user setting up local tunnel (from minute 1:20).
-
+   For a visual guide, refer to [this GitHub comment](https://github.com/0xPolygonID/issuer-node/issues/520#issuecomment-1826269876), where a setup demonstration begins at minute 1:20.
    :::
 
 ### Final Steps
 
-After setting up ngrok or local tunnel and obtaining a public URL, ensure this URL is correctly integrated into the QR code generation process for the callback URL. This configuration allows the Polygon ID mobile app to successfully communicate with your issuer node API over the internet.
+Once you've set up ngrok or local tunnel and obtained a public URL, integrate it into the QR code and Universal Link generation process as the callback URL. This configuration will enable seamless communication between your issuer node API and the mobile app or web wallet.
 
-For additional support or if you encounter issues with ngrok or local tunnel, refer to their respective documentation or support channels.
+For additional assistance or troubleshooting, consult the documentation for ngrok or local tunnel.
 
 <div className="hidden">
 Wrong answer:
