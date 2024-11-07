@@ -21,9 +21,9 @@ This article details the steps to set up your own Issuer Node API.
 
 :::caution
 
-Issuer Node v2 is now available, bringing enhanced features and optimizations. If you are using the previous version of Issuer Node (v1), we recommend upgrading to the latest version as soon as possible. To ensure a smooth transition, please follow the migration guide provided [<ins> here </ins>](migration-v1-v2.md/).
+Issuer Node v3 is now available, bringing enhanced features and optimizations. If you are using the previous version of Issuer Node (v2), we recommend upgrading to the latest version as soon as possible. To ensure a smooth transition, please follow the migration guide provided [<ins> here </ins>](issuer-migration-guide).
 
-Below is the installation guide for Issuer Node v2.
+Below is the installation guide for Issuer Node v3.
 
 :::
 
@@ -136,7 +136,7 @@ cp .env-issuer.sample .env-issuer
 
 [How to Set Up Issuer Node UI Guide](setup-issuer-ui.md)
 
-[Migrating from Issuer Node v1 to v2 Guide](migration-v1-v2.md)
+[Migrating from Issuer Node v2 to v3 Guide](issuer-migration-guide)
 
 
 
