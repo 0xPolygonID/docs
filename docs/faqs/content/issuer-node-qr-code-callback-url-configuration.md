@@ -67,6 +67,10 @@ These tools are intended only for testing or development environments. In produc
    Visit the generated URL to confirm it displays your API docs UI. Follow any additional prompts from local tunnel, such as entering a password or whitelisting your IP if required.
    :::
 
+   <div align="center">
+   ![Local Tunnel Visit Site](/img/faqs/local-tunnel-visit-site.png)
+   </div>
+
 3. **Update the Callback URL**: Set the URL provided by local tunnel as the value for `ISSUER_SERVER_URL`, then restart your services. This makes the callback URL accessible externally.
 
    :::note
