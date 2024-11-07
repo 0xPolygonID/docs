@@ -33,7 +33,7 @@ The first step in setting up the issuer node is to define the networks it will s
 The github repository provides an example file called `resolvers_setting_sample.yaml` this file can be used as a reference to configure the issuer node networks.
 You must create a file called resolvers_settings.yaml which must be in the root directory.
 
-Let's see an example of how to configure the issuer node for the Polygon amoy network.
+Let's see an example of how to configure the issuer node for the Polygon amoy network and [Privado Identity Chain](/docs/privado-identity-chain.md)
 ```yaml
 polygon:
   amoy:
@@ -55,7 +55,33 @@ polygon:
       rhsUrl: https://rhs-staging.polygonid.me # RHS URL (setup this if you are using OffChain or All mode)
       chainID: 80002 # Polygon amoy chain ID
       publishingKey: pbkey # Publishing key path. Left this value as this.
+
+privado:
+  main:
+    contractAddress: 0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896
+    networkURL: https://rpc-mainnet.privado.id
+    defaultGasLimit: 600000
+    confirmationTimeout: 10s
+    confirmationBlockCount: 5
+    receiptTimeout: 600s
+    minGasPrice: 0
+    maxGasPrice: 1000000
+    rpcResponseTimeout: 5s
+    waitReceiptCycleTime: 30s
+    waitBlockCycleTime: 30s
+    gasLess: false
+    rhsSettings:
+      mode: None
+      contractAddress: 0x7dF78ED37d0B39Ffb6d4D527Bb1865Bf85B60f81
+      rhsUrl: https://rhs-staging.polygonid.me
+      chainID: 21000
+      publishingKey: pbke
 ```
+
+:::note
+Configuring Privado Idenity Chain (privado:main) is necessary as identities on the Privado ID Web Wallet and the Privado ID Wallet App are asociated to this chain. This configuration ensures issuance of credentials to these identities.
+:::
+
 Notes about **rhsSettings** mode:
 Types:
 * Iden3commRevocationStatusV1.0: Centralized mode
