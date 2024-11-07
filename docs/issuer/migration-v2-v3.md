@@ -1,14 +1,14 @@
 ---
 id: issuer-migration-guide
-title: Migration Guide (v1 to v2)
-sidebar_label: Migration Guide (v1 to v2)
-description: Guide for migrating from issuer node v1 to v2
+title: Migration Guide (v2 to v3)
+sidebar_label: Migration Guide (v2 to v3)
+description: Guide for migrating from issuer node v2 to v3
 keywords:
   - docs
   - privado id
   - issuer node
-  - v1
   - v2
+  - v3
   - core
   - API
   - UI
@@ -18,24 +18,24 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migration Guide: Upgrading from Issuer Node v1 to v2
+# Migration Guide: Upgrading from Issuer Node v2 to v3
 
-We are excited to announce the release of Issuer Node v2. If you are currently running Issuer Node v1, we recommend migrating to the new version as soon as possible.
+We are excited to announce the release of Issuer Node v3. If you are currently running Issuer Node v2, we recommend migrating to the new version as soon as possible.
 
 :::note
 The migration process is designed to be seamless, with no disruption to previously issued credentials, connections, or the overall functionality of your system.
 :::
 
-## Key Enhancements in Issuer Node v2
+## Key Enhancements in Issuer Node v3
 
-- **Unified API**: The previous two separate APIs (Core API and UI API) have been consolidated into a single, unified API. This simplifies development, enhances developer experience, and introduces new features like improved credentials status check while retaining all functionalities from v1.
-- **Streamlined Credential Issuance**: Issuer Node v2 introduces a simplified credential issuance flow. Now, users can authenticate and receive credentials in a single step using universal links.
-- **Flexible Key Management**: The vault setup is now optional, giving developers the freedom to choose their preferred key management tool. Additionally, Issuer Node v2 supports AWS Key Management Service (KMS).
+- **Unified API** (v2): The previous two separate APIs (Core API and UI API) have been consolidated into a single, unified API. This simplifies development, enhances developer experience, and introduces new features like improved credentials status check while retaining all functionalities from API v1.
+- **Streamlined Credential Issuance**: Issuer Node v3 introduces a simplified credential issuance flow. Now, users can authenticate and receive credentials in a single step using universal links.
+- **Flexible Key Management**: The vault setup is now optional, giving developers the freedom to choose their preferred key management tool. Additionally, Issuer Node v3 supports AWS Key Management Service (KMS).
 - **Enhanced UI**: The new UI enables the creation of multiple identities supported on multiple networks for an issuer and supports credential issuance through universal links, all seamlessly integrated with the Unified API.
 
 ## Migration Steps
 
-If you were using Docker to run Issuer Node and wish to migrate to v2, please follow these steps after backing up your project folder.
+If you were using Docker to run Issuer Node and wish to migrate to 3, please follow these steps after backing up your project folder.
 
 #### 1. **Backup Your Database**
 
@@ -61,7 +61,7 @@ make stop
 
 #### 4. **Pull Changes**
 
-Pull the latest changes for v2 from the main branch of the repository
+Pull the latest changes for v3 from the main branch of the repository
 ```bash
 git pull
 ```
@@ -129,10 +129,10 @@ make run-all
 ## Additional Notes
 
 - New makefile commands have been added in this release. We recommend reviewing the README file for a comprehensive list.
-- Issuer Node v2 continues to support the following endpoints from v1 to ensure compatibility with previously issued credentials:
+- Issuer Node API v2 continues to support the following endpoints from v1 to ensure compatibility with previously issued credentials:
     - /v1/agent (API reference here)
     - /v1/{identifier}/claims/revocation/status/{nonce} (API reference here)
-- By following these steps, you should be able to migrate to Issuer Node v2 smoothly and take advantage of the new features and improvements.
+- By following these steps, you should be able to migrate to Issuer Node v3 smoothly and take advantage of the new features and improvements.
 
 
 
