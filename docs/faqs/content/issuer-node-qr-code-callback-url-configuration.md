@@ -42,7 +42,9 @@ These tools are intended only for testing or development environments. In produc
    :::
 
    <div align="center">
+
    ![Ngrok Visit Site](/img/faqs/ngrok-visit-site.png)
+
    </div>
 
 3. **Update the Callback URL**: Use the URL provided by ngrok as the value for the `ISSUER_SERVER_URL` environment variable, then restart the services to apply it as the base URL for your callback. This ensures external accessibility.
@@ -68,7 +70,9 @@ These tools are intended only for testing or development environments. In produc
    :::
 
    <div align="center">
+
    ![Local Tunnel Visit Site](/img/faqs/local-tunnel-visit-site.png)
+
    </div>
 
 3. **Update the Callback URL**: Set the URL provided by local tunnel as the value for `ISSUER_SERVER_URL`, then restart your services. This makes the callback URL accessible externally.
