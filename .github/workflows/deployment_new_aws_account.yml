@@ -8,6 +8,7 @@ on:
 
 env:
   AWS_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+  AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
   ECR_REPOSITORY: devs-ecr
   ECS_SERVICE: devs-ecs-service
 
@@ -26,27 +27,24 @@ jobs:
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
-        env:
-          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
         with:
           aws-region: ${{ env.AWS_REGION }}
           role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/PolygonIDActionsRole
           role-session-name: GithubActionsSession
 
       - name: Login to Amazon ECR
-        id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
-        with:
-          mask-password: 'true'
 
       - name: Install dependencies
         run: rm -rf node_modules && npm ci
 
       - name: Create .env file
-        run: echo 'ALGOLIA_API_KEY=${{ secrets.ALGOLIA_API_KEY }}' >> .env
-        run: echo 'ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }}' >> .env
+        run: |
+          cat <<EOF >> .env
+          ALGOLIA_API_KEY=${{ secrets.ALGOLIA_API_KEY }}
+          ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }}
+          EOF
 
-      # Runs a single command using the runners shell
       - name: Build
         run: npm run build
 
@@ -56,7 +54,7 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker build --cache-from $ECR_REGISTRY/$ECR_REPOSITORY:latest -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
