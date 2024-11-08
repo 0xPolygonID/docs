@@ -12,203 +12,313 @@ keywords:
   - on-chain
 ---
 
-# ZK Airdrop: A Secure Cross-Chain Token Distribution Tutorial
-
-## Introduction
-
-Imagine a scenario where a new "XYZ Protocol" is launching and wants to distribute tokens to users via an airdrop. However, to ensure the quality and compliance of the distribution, XYZ Protocol wants to restrict participation to users who have Proof of Humanity (PoH) Credential to restrict bots from participating in the airdrop. This airdrop will be conducted using cross-chain verification, allowing users from different blockchain networks to participate securely.
-
-## Key Requirements for the Airdrop:
-
-- **PoH Credential Verification**: Users must possess PoH credentials.
-- **Cross-Chain Participation**: Users can prove their eligibility from different chains, such as Ethereum, Polygon, etc.
-- **Privacy Preservation**: Use zero-knowledge proofs to maintain user privacy while verifying credentials.
-
-### Components Involved:
-
-- **User Chain**: The chain where users hold their identity and credentials.
-- **Issuer Chain**: The chain where issuers manage and verify credential validity.
-- **Verification Chain**: The chain where the airdrop verification occurs.
-- **Universal Verifier**: A smart contract on verification chain that handles the verification of ZK proofs and the issuance of airdrop tokens.
-
-## Step 1: Setting Up the Query Request
-
-The first step in using XYZ Protocol is to set up an airdrop request that specifies the verification criteria. This criteria can be customized to fit your needs, but for this example, we'll demonstrate how to check if a user has a Proof Of Humanity (PoH) credential and verify their isHuman value.
-
-**NOTE:** Schema URLs used for this tutorial:  
-- `"jsonLdContext": "https://ilvcs.github.io/JsonHosting/poh-context.json"`  
-- `"jsonSchema": "https://ilvcs.github.io/JsonHosting/poh-json-schema.json"`
-
-### Approach - A Setting Request using Query Builder:
-
-1. Go to the **PrivadoID Query Builder** and paste the JSON-LD Context URL (mentioned above) in the input box.
-2. Select the schema type to `pohcheck` and select the `human` in the Attribute field.
-![Query Builder Step 1](../../../static/img/onchain-verifier/querybuilder-1.png)
-3. Select the Proof type "Signature-based (SIG)" and Circuit ID Credential Atomic Query v3 On Chain.
-
-4. Set the query type as Condition and Operator as "Is equal to," and select `true` in the Attribute value.
-
-5. Set the Issuer DID field to "*" to accept credentials from any issuer or, if you want, you can use any specific DID to restrict allowed issuers for the query.
-
-![Query Builder Step 1](../../../static/img/onchain-verifier/querybuilder-2.png)
 
 
-6. Next, click on the **“Create query”**.
+## Implementing an ERC20 ZK Airdrop
 
-7. Add the Universal Verifier Smart contract address for the selected network (e.g.,`0xfcc86A79fCb057A8e55C6B853dff9479C3cf607c`) in the Smart Contract Address input.
-![Query Builder Step 1](../../../static/img/onchain-verifier/querybuilder-3.png)
+In this tutorial, we will create an ERC20 ZK Airdrop Contract. The chosen query criterium is to be born before `01/01/2002`. Users that can prove that they were born before that date will be able to get the airdrop. Otherwise, they will not. The proof submitted to the Smart Contract will not reveal any information about the specific date of birth of the user as we are using zero knowledge.
 
-8. Click on the **Set request** to submit the on-chain request.
+:::note
 
-9. Click on **Confirm** in the Metamask to accept and submit the request.
-![Query Builder Step 1](../../../static/img/onchain-verifier/querybuilder-4.png)
+To set up a different query check out the [<ins>ZK Query Language section</ins>](/docs/verifier/verification-library/zk-query-language.md).
 
-   **NOTE:** Make sure you have sufficient Gas tokens (e.g., MATIC in the Polygon network) in your wallet to submit the transaction.
+:::
 
-10. Once the transaction is successful, you can click on the **Test Query** button to easily create the query request, where you will be presented with a QR code that can be scanned by users to generate the proof or copy the URL and use it for verification with the web wallet.
-![Query Builder Step 1](../../../static/img/onchain-verifier/querybuilder-5.png)
+This tutorial is based on the verification of a Credential of Type `KYCAgeCredential` with an attribute `birthday` with a Schema URL `https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v3.json-ld`.
 
-![Query Builder Step 1](../../../static/img/onchain-verifier/querybuilder-6.png)
+The prerequisite is that users have the [Polygon ID Wallet app](/docs/wallet/wallet-overview.md) installed and self-issued a Credential of type `KYC Age Credential Merklized` using our [Demo Issuer](https://issuer-demo.polygonid.me/)
 
-![Query Builder Step 1](../../../static/img/onchain-verifier/querybuilder-7.png)
-**NOTE:** You only need to set the request once (per query), and it can be used by all users to scan, generate, and submit the proof to the smart contract via the Privado ID Mobile Wallet app or Privado ID Web Wallet. 
+:::note
 
-   **Note:** Make sure you note down the **Request ID** as it is used in the Logic smart contract.
+Some executable code related to this tutorial is in <ins><a href="https://github.com/0xPolygonID/contracts" target="_blank">this repository</a></ins>.
 
-### Approach - B Setting Request Programmatically:
+:::
 
-We provide a deployment script that you can use as a starting point to set up your own query. To get started, follow these steps:
 
-1. Clone the Privado ID Protocol contracts repository using Git:  
-   `git clone https://github.com/iden3/contracts.git`
+## Design the ERC20 zk Airdrop Contract with ZK-proof verification
 
-2. Navigate into the cloned repository:  
-   `cd contracts`
+### Embedded ZKPVerifier Smart Contract
+This is an abstract smart contract, which implements the logic of verifying ZK Proofs and saving the verification result. It is designed to be inherited by another smart contract with own business logic, which may consume proof verification functionality.
 
-3. Add your Private Key and JSON RPC URL strings for the desired blockchain network (e.g., Polygon Amoy). This will allow you to deploy the query on your chosen chain.
+The contract is designed to work with different ZK Validator contracts and different proof requests, both or which are set by the contract owner.
 
-4. Configure the `hardhat.config` file according to your preferences.
+### Universal Verifier Smart Contract
+This smart contract implements the same functionality as `EmbeddedZKPVerifier` Smart Contract, however it is not an abstract but a standalone contract.
 
-5. Next, replace the placeholders in the script with your own query values. For this example, we'll use a PoH query:  
-   `npx hardhat run scripts/maintenance/setProofRequest.ts --network amoy`
+The `UniversalVerifier` is designed to be used by multiple external contracts. Not only a `UniversalVerifier` owner but actually any address can set a `ZKPRequest` in `UniversalVerifier`. The only restriction for the proof request at the moment is that it should use a ZK Validator, which is whitelisted. The whitelisting is managed by the contract owner. 
 
-This command will set up the airdrop request and print out the query used for convenience. You can then create a QR code using this query, which can be scanned by users with Privado ID mobile to verify their credentials.
+### Let us jump into the code by writing the ERC20Verifier contract in each of the two ways.
 
-## Step 2: Creating Secure Airdrop System
+#### Inheriting EmbeddedZKPVerifier abstract smart contract
 
-### A. Implementing Airdrop Smart Contract:
+We'll create a `ERC20Verifier`, which is an ERC20 standard contract. The extra functionality is given by the zero-knowledge proof verification. All the functions dedicated to the ZK verification are contained inside the `EmbeddedZKPVerifier` Contract and inherited within the `ERC20Verifier`. For example, users will submit their proof to claim the airdrop by calling `submitZKPResponse`.
 
-Now we need to create an Airdrop smart contract that can check if the user has already presented proofs to the Universal Verifier (and has been verified). If so, mint tokens for the user. 
+The `ERC20Verifier` contract must define at least a single `TRANSFER_REQUEST_ID`. This is the Identifier of the request that the contract is making to the user.
 
-Clone the repo, add your private key and JSON RPC URL for Amoy in your `.env` file as specified in the sample.env file. Check the `ZKAirdroverifer.sol` smart contract in the contracts directory that looks like this: 
+The `EmbeddedZKPVerifier` Contract provides 2 hooks: `_beforeProofSubmit` and `_afterProofSubmit`.
+
+These hooks are called before and after any proof gets submitted and can be used to create personalized logic inside your Smart Contract. In this specific case, it must be checked that the sender of the proof matches the address contained in the proof challenge. This requirement is necessary to prevent proof front-running. This condition is added inside `_beforeProofSubmit`.
+
+In this specific example, the airdrop token minting is inside `_afterProofSubmit`, which is executed if the proof is correctly verified. Of course, the airdrop logic can be personalized according to the needs of the project. As another option, you may mint tokens to a user via a separate `mint` function call if the user address was verified before.
+
+Finally, we will add another element of security inside the Smart Contract: prevent any type of token transfer unless there is a proof verification from a destination address. This last condition is added by overriding the ERC20 `_update` function and checking that the receiver address `to` of the transfer is included inside the `proofs` mapping.
 
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.20;
-
-import {ERC20} from '@openzeppelin/contracts/token/ERC20/ERC20.sol';
+import {ERC20Upgradeable} from '@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol';
 import {PrimitiveTypeUtils} from '@iden3/contracts/lib/PrimitiveTypeUtils.sol';
 import {ICircuitValidator} from '@iden3/contracts/interfaces/ICircuitValidator.sol';
-import {UniversalVerifier} from '@iden3/contracts/verifiers/UniversalVerifier.sol';
-
-contract ZKAirdropVerifier is ERC20 {
-  uint64 public constant REQUEST_ID = 12345; // replace with your request ID
-
-  UniversalVerifier public verifier;
-
-  uint256 public TOKEN_AMOUNT_FOR_AIRDROP_PER_ID = 5 * 10 ** uint256(decimals());
-
-  mapping(address => bool) public isClaimed;
-
-  modifier beforeTokenTransfer(address to) {
-     // only one airdrop per address is allowed
-     require(
-        !isClaimed[to],
-        'only one airdrop per address is allowed'
-     );
-
-     require(
-        verifier.getProofStatus(to, REQUEST_ID).isVerified ,
-        'only identities who provided sig or mtp proof for transfer requests are allowed to receive tokens'
-     );
-     _;
-  }
-
-  constructor(
-     UniversalVerifier verifier_,
-     string memory name_,
-     string memory symbol_
-  ) ERC20(name_, symbol_) {
-     verifier = verifier_;
-  }
-
-  function mint() public {
-     
-     require(msg.sender == tx.origin, 'only EOA can mint');
-     require(msg.sender != address(0), 'invalid address');
-     _mint(msg.sender, TOKEN_AMOUNT_FOR_AIRDROP_PER_ID);
-     // mark the address as claimed
-     isClaimed[msg.sender] = true;
-  }
-
-  function _update(
-     address from,
-     address to,
-     uint256 value
-  ) internal override beforeTokenTransfer(to) {
-     super._update(from, to, value);
-  }
+import {EmbeddedZKPVerifier} from '@iden3/contracts/verifiers/EmbeddedZKPVerifier.sol';
+contract ERC20Verifier is ERC20Upgradeable, EmbeddedZKPVerifier {
+   uint64 public constant TRANSFER_REQUEST_ID_SIG_VALIDATOR = 1;
+   uint64 public constant TRANSFER_REQUEST_ID_MTP_VALIDATOR = 2;
+   /// @custom:storage-location erc7201:polygonid.storage.ERC20Verifier
+   struct ERC20VerifierStorage {
+      mapping(uint256 => address) idToAddress;
+      mapping(address => uint256) addressToId;
+      uint256 TOKEN_AMOUNT_FOR_AIRDROP_PER_ID;
+   }
+   // keccak256(abi.encode(uint256(keccak256("polygonid.storage.ERC20Verifier")) - 1)) & ~bytes32(uint256(0xff))
+   bytes32 private constant ERC20VerifierStorageLocation =
+   0x3b1c3bd751d9cd42a3739426a271cdc235017946663d56eeaf827d70f8b77000;
+   function _getERC20VerifierStorage() private pure returns (ERC20VerifierStorage storage $) {
+      assembly {
+         $.slot := ERC20VerifierStorageLocation
+      }
+   }
+   modifier beforeTransfer(address to) {
+      require(
+         isProofVerified(to, TRANSFER_REQUEST_ID_SIG_VALIDATOR) ||
+         isProofVerified(to, TRANSFER_REQUEST_ID_MTP_VALIDATOR),
+         'only identities who provided sig or mtp proof for transfer requests are allowed to receive tokens'
+      );
+      _;
+   }
+   function initialize(string memory name, string memory symbol) public initializer {
+      ERC20VerifierStorage storage $ = _getERC20VerifierStorage();
+      super.__ERC20_init(name, symbol);
+      super.__EmbeddedZKPVerifier_init(_msgSender());
+      $.TOKEN_AMOUNT_FOR_AIRDROP_PER_ID = 5 * 10 ** uint256(decimals());
+   }
+   function _beforeProofSubmit(
+      uint64 /* requestId */,
+      uint256[] memory inputs,
+      ICircuitValidator validator
+   ) internal view override {
+      // check that challenge input is address of sender
+      address addr = PrimitiveTypeUtils.uint256LEToAddress(
+         inputs[validator.inputIndexOf('challenge')]
+      );
+      // this is linking between msg.sender and
+      require(_msgSender() == addr, 'address in proof is not a sender address');
+   }
+   function _afterProofSubmit(
+      uint64 requestId,
+      uint256[] memory inputs,
+      ICircuitValidator validator
+   ) internal override {
+      ERC20VerifierStorage storage $ = _getERC20VerifierStorage();
+      if (
+         requestId == TRANSFER_REQUEST_ID_SIG_VALIDATOR ||
+         requestId == TRANSFER_REQUEST_ID_MTP_VALIDATOR
+      ) {
+         // if proof is given for transfer request id ( mtp or sig ) and it's a first time we mint tokens to sender
+         uint256 id = inputs[1];
+         if ($.idToAddress[id] == address(0) && $.addressToId[_msgSender()] == 0) {
+            super._mint(_msgSender(), $.TOKEN_AMOUNT_FOR_AIRDROP_PER_ID);
+            $.addressToId[_msgSender()] = id;
+            $.idToAddress[id] = _msgSender();
+         }
+      }
+   }
+   function _update(
+      address from /* from */,
+      address to,
+      uint256 amount /* amount */
+   ) internal override beforeTransfer(to) {
+      super._update(from, to, amount);
+   }
+   function getIdByAddress(address addr) public view returns (uint256) {
+      return _getERC20VerifierStorage().addressToId[addr];
+   }
+   function getAddressById(uint256 id) public view returns (address) {
+      return _getERC20VerifierStorage().idToAddress[id];
+   }
+   function getTokenAmountForAirdropPerId() public view returns (uint256) {
+      return _getERC20VerifierStorage().TOKEN_AMOUNT_FOR_AIRDROP_PER_ID;
+   }
 }
 ```
 
-You can see that the smart contract's construction requires the address of the deployed Universal Verifier smart contract.
+#### Using Universal Verifier Smart Contract
 
-Make sure to add the request ID used to set the `ZKPRequest` for the `uint64 public constant REQUEST_ID`.
+Unlike, the previous example, the `ERC20LinkedUniversalVerifier` contract does not inherit the `EmbeddedZKPVerifier` contract. Instead, it uses the `UniversalVerifier` contract to check the proof result.
 
-The `beforeTokenTransfer` modifier checks the Universal Verifier smart contract to see if the user has been verified and if they have already claimed the airdrop.
+Unlike `ERC20Verifier` the `ERC20LinkedUniversalVerifier` does not need to implement the `_beforeProofSubmit` and `_afterProofSubmit` hooks as proof verification is assumed to be done directly to the `UniversalVerifier` contract by some other transaction.
 
-We override the `_update` function to use the `beforeTokenTransfer` modifier, ensuring that every time a user calls the `mint` function, it will trigger this check. The contract verifies that the user has submitted the necessary proofs and is verified before allowing token minting. Once the tokens are minted, the `mint` function sets the `isClaimed` status to `true` to prevent users from reclaiming the airdrop.
+In the same way the `ERC20LinkedUniversalVerifier` contract must define at least one `TRANSFER_REQUEST_ID` to get proof statuses for this request id from the `UniversalVerifier`.
 
-In summary, when a user calls the `mint` function, the smart contract checks if the user has been verified (submitted proofs and got verified by Universal Verifier). If verified, it mints 5 tokens for the user.
+In this example, you may mint tokens to a user via the `mint` function call.
 
-**Note:** You can observe that you don't need to implement the Universal Verifier smart contract yourself. Instead, you only need the address of the deployed Universal Verifier smart contract to use in your custom smart contract implementation.
+Any token transfers are prevented inside `beforeTokenTransfer` modifier (which is invoked via `mint -> _mint -> update` call chain) unless there is already verification proof in UniversalVerifier, which corresponds to `msg.sender` address.
 
-### B. Deploy the Smart Contract:
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.20;
+import {ERC20} from '@openzeppelin/contracts/token/ERC20/ERC20.sol';
+import {PrimitiveTypeUtils} from '@iden3/contracts/lib/PrimitiveTypeUtils.sol';
+import {ICircuitValidator} from '@iden3/contracts/interfaces/ICircuitValidator.sol';
+import {EmbeddedZKPVerifier} from '@iden3/contracts/verifiers/EmbeddedZKPVerifier.sol';
+import {UniversalVerifier} from '@iden3/contracts/verifiers/UniversalVerifier.sol';
+contract ERC20LinkedUniversalVerifier is ERC20 {
+   uint64 public constant TRANSFER_REQUEST_ID_SIG_VALIDATOR = 0;
+   uint64 public constant TRANSFER_REQUEST_ID_MTP_VALIDATOR = 1;
+   UniversalVerifier public verifier;
+   uint256 public TOKEN_AMOUNT_FOR_AIRDROP_PER_ID = 5 * 10 ** uint256(decimals());
+   modifier beforeTokenTransfer(address to) {
+      require(
+         verifier.getProofStatus(to, TRANSFER_REQUEST_ID_SIG_VALIDATOR).isVerified ||
+         verifier.getProofStatus(to, TRANSFER_REQUEST_ID_MTP_VALIDATOR).isVerified,
+         'only identities who provided sig or mtp proof for transfer requests are allowed to receive tokens'
+      );
+      _;
+   }
+   constructor(
+      UniversalVerifier verifier_,
+      string memory name_,
+      string memory symbol_
+   ) ERC20(name_, symbol_) {
+      verifier = verifier_;
+   }
+   function mint(address to) public {
+      _mint(to, TOKEN_AMOUNT_FOR_AIRDROP_PER_ID);
+   }
+   function _update(
+      address from,
+      address to,
+      uint256 value
+   ) internal override beforeTokenTransfer(to) {
+      super._update(from, to, value);
+   }
+}
+```
 
-Run the deploy command after installing dependencies with `npm i`. Note down the smart contract address for use in the claiming process.
+### Deploy the Contract
 
-`npx hardhat run scripts/deploy.js --network amoy`
+:::note "Hardhat"
 
-## Step 3: User Claiming The Airdrop
+For this tutorial, we are using the Hardhat development environment to facilitate the contract deployment. You can learn how to get started with this tool by checking [<ins>their documentation</ins>](https://hardhat.org/hardhat-runner/docs/getting-started).
 
-### A. Obtaining and Signing the Verifiable Credential
+:::
 
-Users need to obtain a `POH Credential`, which proves their Proof of Humanity (PoH). This credential can be issued by a trusted identity provider on the Issuer Chain.
+#### Deploy your custom contract inherited from EmbeddedZKPVerifier
 
-On the Privado ID issuer node, credentials will be issued using the Privado chain, which acts like a base layer for issuing identities.
-
-**Note:** Follow this tutorial to learn how to get a Proof of Humanity (PoH) credential from the Privado ID demo issuer.
-
-### B. User Submitting Proof to Verification Chain
-
-The user submits the ZK proof and signed data to the Universal Verifier smart contract on the verification chain. For this example, we are using Polygon Amoy to submit proof.
-
-The Universal Verifier smart contract verifies the ZK proof and checks the signed GIST Root and issuer state data.
-
-Once the user submits the proof and gets verified by the Universal Verifier, they can claim tokens by calling the `mint` function in the `ZKAirdropVerifier` smart contract.
-
-### C. Claiming Airdrop
-
-Once the user submits the proof and gets verified by the Universal Verifier, they can claim tokens by calling the `mint` function in the `ZKAirdropVerifier` smart contract.
-
-**Note:** Use the same Ethereum wallet account that was used to submit proofs for claiming tokens. Ideally, protocol developers should create a website that connects with the `ZKAirdropVerifier` smart contract. However, for demonstration purposes, here is a Hardhat project with a script to claim tokens.
+Execute this Hardhat script to deploy either `ERC20Verifier`. Change the `verifierContract` variable to the desired contract name.
 
 
-## Conclusion
+```js
+import { ethers } from "hardhat";
+import { upgrades } from "hardhat";
 
-In this tutorial, we have walked through the process of setting up a secure token distribution system using zero-knowledge proofs. By leveraging the Universal Verifier smart contract and the Privado ID platform, we ensure that only verified users with Proof of Humanity credentials can participate in the airdrop, thereby preventing bots and ensuring compliance.
 
-This approach not only enhances the security and integrity of the airdrop but also preserves user privacy. By following the steps outlined, you can implement a similar system for your own token distribution needs, ensuring a fair and secure process for all participants.
+async function main() {
+   const verifierContract = "ERC20Verifier";
+   const verifierName = "ERC20zkAirdrop";
+   const verifierSymbol = "zkERC20";
 
-Happy coding!
+   const ERC20Verifier = await ethers.getContractFactory(verifierContract);
+   const erc20Verifier = await upgrades.deployProxy(
+           ERC20Verifier,
+           [verifierName, verifierSymbol]
+   );
 
+   await erc20Verifier.waitForDeployment();
+   console.log(verifierName, " contract address:", await erc20Verifier.getAddress());
+}
+
+main()
+        .then(() => process.exit(0))
+        .catch((error) => {
+           console.error(error);
+           process.exit(1);
+        });
+```
+
+#### Deploy your custom contract linked to Universal Verifier smart contract
+
+```js
+import { ethers } from 'hardhat';
+
+async function main() {
+   const universalVerifierAddress = '<universal verifier address here>';
+   const verifierName = 'ERC20LinkedUniversalVerifier';
+   const verifierSymbol = 'zkERC20';
+
+   const verifier = await ethers.deployContract(
+           verifierName,
+           [ universalVerifierAddress, verifierName, verifierSymbol ]
+   );
+   await verifier.waitForDeployment();
+   console.log(verifierName, ' contract address:', await verifier.getAddress());
+}
+
+main()
+        .then(() => process.exit(0))
+        .catch((error) => {
+           console.error(error);
+           process.exit(1);
+        });
+```
+
+:::note
+
+The contract ERC20Verifier preferably to be deployed on the Amoi test network as there is a set of supporting validator contracts.
+
+:::
+
+### Set the ZKP Request  & Add the Proof Request Inside a QR Code
+To set up the ZKP request and easily generate a request to present to users, please visit the "Set ZKP Request" section.
+
+[Set ZKP Request](/docs/verifier/on-chain-verification/set-zkp-request.md)
+
+### Things to Note
+
+> The scope section inside the JSON file must match the query previously set when calling the `setZKPRequest` function.
+Note that the request resembles, in most of its parts, the one designed for [off-chain verification](/docs/verifier/verification-library/request-api-guide.md). The extra part that has been added here is the `transcation_data` that includes:
+
+- `contract_address`, namely the address of the Verifier contract, in this case, ERC20Verifier.
+- `method_id`, namely the [Function Selector](https://solidity-by-example.org/function-selector/) of the `submitZKPResponse` function.
+- `chain_id`, the ID of the chain where the Smart Contract has been deployed.
+- `network`, the name of the network where the Smart contract has been deployed.
+
+> To display the QR code inside your frontend, you can use the `express.static` built-in middleware function together with this <a href="https://github.com/0xPolygonID/tutorial-examples/tree/main/verifier-integration/js/static" target="_blank">Static Folder</a> or this [Code Sandbox](https://codesandbox.io/s/yp1pmpjo4z?file=/index.js).
+Scanning the QR with their Polygon ID Wallet, users will be able to generate proofs and send transactions to the Smart Contract in order to request credentials for their airdrops.
+
+The same proof generation request can also be delivered to users via Deep Linking. In order to do so, it is necessary to [encode](https://www.base64encode.org/) the JSON file to Base64 Format. The related deep link would be `iden3comm://?i_m={{base64EncodedJsonHere}}`. For example, in this specific case the deep link would be: `iden3comm://?i_m=ewogICAgImlkIjogIjdmMzhhMTkzLTA5MTgtNGE0OC05ZmFjLTM2YWRmZGI4YjU0MiIsCiAgICAidHlwIjogImFwcGxpY2F0aW9uL2lkZW4zY29tbS1wbGFpbi1qc29uIiwKICAgICJ0eXBlIjogImh0dHBzOi8vaWRlbjMtY29tbXVuaWNhdGlvbi5pby9wcm9vZnMvMS4wL2NvbnRyYWN0LWludm9rZS1yZXF1ZXN0IiwKICAgICJ0aGlkIjogIjdmMzhhMTkzLTA5MTgtNGE0OC05ZmFjLTM2YWRmZGI4YjU0MiIsCiAgICAiYm9keSI6IHsKICAgICAgICAicmVhc29uIjogImFpcmRyb3AgcGFydGljaXBhdGlvbiIsCiAgICAgICAgInRyYW5zYWN0aW9uX2RhdGEiOiB7CiAgICAgICAgICAgICJjb250cmFjdF9hZGRyZXNzIjogIjxFUkMyMFZlcmlmaWVyQWRkcmVzcz4iLAogICAgICAgICAgICAibWV0aG9kX2lkIjogImI2ODk2N2UyIiwKICAgICAgICAgICAgImNoYWluX2lkIjogODAwMDEsCiAgICAgICAgICAgICJuZXR3b3JrIjogInBvbHlnb24tbXVtYmFpIgogICAgICAgIH0sCiAgICAgICAgInNjb3BlIjogWwogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAiaWQiOiAxLAogICAgICAgICAgICAgICAgImNpcmN1aXRJZCI6ICJjcmVkZW50aWFsQXRvbWljUXVlcnlTaWdWMk9uQ2hhaW4iLAogICAgICAgICAgICAgICAgInF1ZXJ5IjogewogICAgICAgICAgICAgICAgICAgICJhbGxvd2VkSXNzdWVycyI6IFsKICAgICAgICAgICAgICAgICAgICAgICAgIioiCiAgICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgICAgICAiY29udGV4dCI6ICJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vaWRlbjMvY2xhaW0tc2NoZW1hLXZvY2FiL21haW4vc2NoZW1hcy9qc29uLWxkL2t5Yy12My5qc29uLWxkIiwKICAgICAgICAgICAgICAgICAgICAiY3JlZGVudGlhbFN1YmplY3QiOiB7CiAgICAgICAgICAgICAgICAgICAgICAgICJiaXJ0aGRheSI6IHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICIkbHQiOiAyMDAyMDEwMQogICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgfSwKICAgICAgICAgICAgICAgICAgICAidHlwZSI6ICJLWUNBZ2VDcmVkZW50aWFsIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9CiAgICAgICAgXQogICAgfQp9`
+
+
+### How is the proof submission executed?
+
+A wallet needs to call the `submitZKPResponse` function before it can submit the proof for the requirements set in the Airdrop Participation process.
+This function is defined by `IZKPVerifier` interface and therefore implemented in both `EmbeddedZKPVerifier` and `UniversalVerifier` contracts. 
+
+
+```solidity
+ function submitZKPResponse(
+     uint64 requestId,
+     uint256[] memory inputs,
+     uint256[2] memory a,
+     uint256[2][2] memory b,
+     uint256[2] memory c
+ ) external;
+```
+
+## Extend it to Your Own Logic
+
+Now that you have been able to create your first on-chain ZK-based application, you can extend it to accommodate any type of imaginable logic. The target Smart Contract doesn't have to be an ERC20 but it can be an ERC721, a DeFi pool, a voting Smart Contract or whatever contract you can think of. Equally, the query can be extended to any type of existing Credential and based on the different operators available inside the <a href="https://0xpolygonid.github.io/tutorials/verifier/verification-library/zk-query-language/" target="_blank">ZK Query Language</a>.
+
+Another possibility to customize your Smart Contract involves setting different ZK requests. First of all, multiple `REQUEST_ID` must be defined inside the main Smart Contract. Therefore, the contract deployer can set a different query for each request ID and create different outcomes inside `_afterProofSubmit` according to the type of proof received. For example, an airdrop contract can verify the role of a user inside a DAO and distribute a different amount of tokens based on the role.
+
+## Estimated Gas Costs for On-Chain Verifier
+The general gas cost depends on the code you put into `_beforeProofSubmit` and `_afterProofSubmit` hooks. The value we observed with our tests for `submitZKPResponce` functions calls was aroung 700K gas and zk proof verification function specifically costs approximately 520k gas as of January 2024.
