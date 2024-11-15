@@ -58,7 +58,7 @@ The general flow of cross-chain verification involves the following steps:
 1. **Obtain PoH Verifiable Credential (VC)**: The user obtains a Verifiable Credential proving their Proof of Humanity.
 2. **Get Signed User and Issuer State**: The user gets a signed User State (Global State / GIST Root) and Issuer State from a trusted Resolver.
 3. **Generate ZK Proof**: The user generates a Zero-Knowledge proof based on their VC and signed User State.
-4. **Submit ZK Proof**: The user submits the ZK proof and signed data to the Universal Verifier in the verification chain.
+4. **Submit ZK Proof**: The user submits the ZK proof and signed data to the Universal Verifier in the verification chain. The new `submitZKPResponseV2` method is used to submit the proof along with the cross-chain data.
 5. **Trigger User Action**: When the user action triggers (e.g., minting tokens), the Logic Smart Contract (here, Airdrop Smart Contract) checks the Universal Verifier Smart Contract for the proof status and issues tokens if the criteria are met.
 
 ## Step 1: Setting Up the Query Request
