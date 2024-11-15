@@ -46,7 +46,7 @@ On the other hand, `UniversalVerifier` is deployed as a standalone contract and 
 1. The Request is generated at verifier backend and delivered to a user within a QR code (or via deep-linking, depending on the implementation).
 1. The user scans the QR code using his/her mobile ID wallet and parses the request.
 1. A ZK proof is generated on mobile or web wallet according to the request of the website and based on the credentials held in his/her wallet.
-1. The user sends the ZK proof to the Verifier Smart Contract via `submitZKPResponse` method.
+1. The user sends the ZK proof to the Verifier Smart Contract via `submitZKPResponse` or `submitZKPResponseV2` method.
 1. The Verifier Smart Contract verifies the ZK Proof.
 1. The Verifier Smart Contract checks that the State of the Issuer of the credential and the State of the user are still valid and have not been revoked.
 1. If the verification is successful, the proof status is recorded on-chain. 
@@ -56,7 +56,7 @@ Note that the Verifier only sets the Request at step 1. All the rest of the inte
 
 ### Universal ZKP Verifier
 
-The beginning of the flow up to submitting Proof Response is similar to that of Embedded ZKP Verifier. The difference is that you should call `setZKPRequest` and `submitZKPResponse` in `UniversalVerifier` but not in client custom contract.
+The beginning of the flow up to submitting Proof Response is similar to that of Embedded ZKP Verifier. The difference is that you should call `setZKPRequest` and `submitZKPResponse` or `submitZKPResponseV2` in `UniversalVerifier` but not in client custom contract.
 
 Once proof response is submitted, any client custom logic should be executed via a separate transaction invoked on client contract directly. The custom logic may refer to `UniversalVerifier` contract to check for user verification.
 
