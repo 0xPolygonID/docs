@@ -76,7 +76,7 @@ The schema used in this demo was built using the Privado ID Schema Builder and i
 
 :::
 
-### Issue the credential
+### Issue a new credential to attest to the ID Holder's attendance to the event
 
 With the new schema in hand, the issuer should now be able to generate a credential.
 
@@ -152,7 +152,7 @@ Here comes the third role in this tutorial: the verifier. This could be represen
 
 Here are the steps to verify the credential:
 
-1. Visit the [Query builder website](https://tools.privado.id/query-builder/). The [Query Builder](/docs/verifier/query-builder/) is an tool designed to simplify the creation of verification queries.
+1. Visit the [Query builder website](https://tools.privado.id/query-builder/). The [Query Builder](/docs/verifier/query-builder/) is a tool designed to simplify the creation of verification queries.
 
 <div align="center">
     <img width="600" src={useBaseUrl("img/quick-start-demo/verifier-home.png")}></img>
