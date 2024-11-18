@@ -68,8 +68,10 @@ The first step in using XYZ Protocol is to set up an airdrop request that specif
 - `"jsonSchema": "https://ilvcs.github.io/JsonHosting/poh-json-schema.json"`
 
 For setting up the ZKP request, please visit Set ZKP Request section:
-
 [Set ZKP Request](/docs/verifier/on-chain-verification/set-zkp-request.md)
+:::note
+This request can be reused for all users for a specific query.
+:::
 
 ### Step 2: Creating Secure Airdrop System
 
@@ -198,9 +200,6 @@ The user submits the ZK proof and signed data to the Universal Verifier smart co
 The Universal Verifier smart contract verifies the ZK proof and checks the signed GIST Root and issuer state data.
 
 Once the user submits the proof and gets verified by the Universal Verifier, they can claim tokens by calling the `mint` function in the `ZKAirdropVerifier` smart contract.
-
-Visit the [Set ZKP Request](/docs/verifier/on-chain-verification/set-zkp-request.md) section to learn how users can submit their proofs. This request can be reused for all users for a specific query.
-
 
 
 #### C. Claiming Airdrop
