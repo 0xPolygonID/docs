@@ -12,11 +12,9 @@ keywords:
   - on-chain
 ---
 
-# ZK Airdrop: A Secure Cross-Chain Token Distribution Tutorial
+## ZK Airdrop: A Secure Cross-Chain Token Distribution Tutorial
 
 In decentralized finance and other blockchain-based applications, airdrops are a popular method to distribute tokens. However, ensuring that only eligible users participate in the airdrop is crucial for maintaining the integrity and security of the process. Cross-chain verification using zero-knowledge (ZK) proofs offers a scalable and secure solution. This tutorial will guide you through implementing a secure airdrop using cross-chain verification, ensuring only users who meet specific criteria can claim tokens.
-
-## Why Cross-Chain Verification is Needed?
 
 ### Challenges with Traditional On-Chain Verification:
 
@@ -30,11 +28,11 @@ In decentralized finance and other blockchain-based applications, airdrops are a
 - **Scalability**: By enabling verification across multiple chains, applications can scale more efficiently, accommodating users and issuers from diverse blockchain environments. This opens up broader participation and adoption of decentralized services.
 - **Streamlined User Experience**: Users can participate in various blockchain-based activities without having to manage multiple identities or credentials. Cross-chain verification provides a unified approach, simplifying the interaction with decentralized services.
 
-# Step-by-Step Implementation
+## Step-by-Step Implementation
 
 Imagine a scenario where a new "XYZ Protocol" is launching and wants to distribute tokens to users via an airdrop. However, to ensure the quality and compliance of the distribution, XYZ Protocol wants to restrict participation to users who have Proof of Humanity (PoH) Credential to restrict bots from participating in the airdrop. This airdrop will be conducted using cross-chain verification, allowing users from different blockchain networks to participate securely.
 
-## Key Requirements for the Airdrop:
+### Key Requirements for the Airdrop:
 
 - **PoH Credential Verification**: Users must possess Proof Of Human(PoH) credentials.
 - **Cross-Chain Participation**: Users can prove their eligibility from different chains, such as Ethereum, Polygon, etc.
@@ -47,7 +45,7 @@ Imagine a scenario where a new "XYZ Protocol" is launching and wants to distribu
 - **Verification Chain**: The chain where the airdrop verification occurs.
 - **Universal Verifier**: A smart contract on verification chain that handles the verification of ZK proofs and the issuance of airdrop tokens.
 
-## General Flow of Cross-Chain Verification:
+### General Flow of Cross-Chain Verification:
 
 To implement on-chain verification user should collect User and Issuer state data from corresponding chains and submit it to the Universal Verifier smart contract on the verification chain. However, the verifier contract can't check the integrity of the states from other chains. So we need a trusted service to sign the States, which is centralised Universal Resolver at the moment but will be substituted by decentralised signer services in the future.
 
@@ -61,7 +59,7 @@ The general flow of cross-chain verification involves the following steps:
 4. **Submit ZK Proof**: The user submits the ZK proof and signed data to the Universal Verifier in the verification chain. The new `submitZKPResponseV2` method is used to submit the proof along with the cross-chain data.
 5. **Trigger User Action**: When the user action triggers (e.g., minting tokens), the Logic Smart Contract (here, Airdrop Smart Contract) checks the Universal Verifier Smart Contract for the proof status and issues tokens if the criteria are met.
 
-## Step 1: Setting Up the Query Request
+### Step 1: Setting Up the Query Request
 
 The first step in using XYZ Protocol is to set up an airdrop request that specifies the verification criteria. This criteria can be customized to fit your needs, but for this example, we'll demonstrate how to check if a user has a Proof Of Humanity (PoH) credential and verify their isHuman value.
 
@@ -73,9 +71,9 @@ For setting up the ZKP request, please visit Set ZKP Request section:
 
 [Set ZKP Request](/docs/verifier/on-chain-verification/set-zkp-request.md)
 
-## Step 2: Creating Secure Airdrop System
+### Step 2: Creating Secure Airdrop System
 
-### A. Implementing Airdrop Smart Contract:
+#### A. Implementing Airdrop Smart Contract:
 
 Now we need to create an Airdrop smart contract that can check if the user has already presented proofs to the Universal Verifier (and has been verified). If so, mint tokens for the user. 
 
@@ -152,7 +150,7 @@ In summary, when a user calls the `mint` function, the smart contract checks if 
 
 **Note:** You can observe that you don't need to implement the Universal Verifier smart contract yourself. Instead, you only need the address of the deployed Universal Verifier smart contract to use in your custom smart contract implementation.
 
-### B. Deploy the Smart Contract:
+#### B. Deploy the Smart Contract:
 
 ```javascript
 const { ethers } = require("hardhat");
@@ -183,9 +181,9 @@ deploy the smart contracts using the following command:
 `npx hardhat run scripts/deploy.js --network amoy`
 
  Ensure that the smart contract address is saved to interact with the DApp.
-## Step 3: User Claiming The Airdrop
+### Step 3: User Claiming The Airdrop
 
-### A. Obtaining and Signing the Verifiable Credential
+#### A. Obtaining and Signing the Verifiable Credential
 
 Users need to obtain a `POH Credential`, which proves their Proof of Humanity (PoH). This credential can be issued by a trusted identity provider on the Issuer Chain.
 
@@ -193,7 +191,7 @@ On the Privado ID issuer node, credentials will be issued using the Privado chai
 
 **Note:** Follow this tutorial to learn how to get a Proof of Humanity (PoH) credential from the Privado ID demo issuer.
 
-### B. User Submitting Proof to Verification Chain
+#### B. User Submitting Proof to Verification Chain
 
 The user submits the ZK proof and signed data to the Universal Verifier smart contract on the verification chain. For this example, we are using Polygon Amoy to submit proof.
 
@@ -205,17 +203,11 @@ Visit the [Set ZKP Request](/docs/verifier/on-chain-verification/set-zkp-request
 
 
 
-### C. Claiming Airdrop
+#### C. Claiming Airdrop
 
 Once the user submits the proof and gets verified by the Universal Verifier, they can claim tokens by calling the `mint` function in the `ZKAirdropVerifier` smart contract.
 
-**Note:** Use the same Ethereum wallet account that was used to submit proofs for claiming tokens. Ideally, protocol developers should create a website that connects with the `ZKAirdropVerifier` smart contract. 
-
-## Conclusion
-
-In this tutorial, we have walked through the process of setting up a secure token distribution system using zero-knowledge proofs. By leveraging the Universal Verifier smart contract and the Privado ID platform, we ensure that only verified users with Proof of Humanity credentials can participate in the airdrop, thereby preventing bots and ensuring compliance.
-
-This approach not only enhances the security and integrity of the airdrop but also preserves user privacy. By following the steps outlined, you can implement a similar system for your own token distribution needs, ensuring a fair and secure process for all participants.
-
-Happy coding!
+:::note
+ Use the same Ethereum wallet account that was used to submit proofs for claiming tokens. Ideally, protocol developers should create a frontend that connects with the `ZKAirdropVerifier` smart contract. 
+:::
 

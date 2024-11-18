@@ -1,6 +1,6 @@
 ---
 id: set-zkp-request
-title: Set ZKP Request
+title: Setting Up the ZKP Query Request
 sidebar_label: Set ZKP Request
 description: Setting ZKP Request for on-chain verification
 keywords:
@@ -12,45 +12,59 @@ keywords:
   - verifier
   - on-chain
 ---
-
-# Setting Up the Query Request
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Approach - A Setting Request using Query Builder:
 
 1. Visit the [PrivadoID Query Builder](https://tools.privado.id/query-builder) and paste the JSON-LD Context URL (mentioned above) in the input box.
 2. Select the schema type to `pohcheck` and select the `human` in the Attribute field.
-![Query Builder Step 1](../../../static/img/onchain-verifier/querybuilder-1.png)
+<div align="center">
+    <img width="600" src={useBaseUrl("img/onchain-verifier/querybuilder-1.png")}></img>
+</div>
+
 3. Select the Proof type "Signature-based (SIG)" and Circuit ID Credential Atomic Query v3 On Chain.
 
 4. Set the query type as Condition and Operator as "Is equal to," and select `true` in the Attribute value.
 
 5. Set the Issuer DID field to "*" to accept credentials from any issuer or, if you want, you can use any specific DID to restrict allowed issuers for the query.
-
-![Query Builder Step 1](../../../static/img/onchain-verifier/querybuilder-2.png)
-
+<div align="center">
+    <img width="600" src={useBaseUrl("img/onchain-verifier/querybuilder-2.png")}></img>
+</div>
 
 6. Next, click on the **“Create query”**.
 
 7. Add the Universal Verifier Smart contract address for the selected network (e.g., for Polygon Amoy: `0xfcc86A79fCb057A8e55C6B853dff9479C3cf607c`) in the Smart Contract Address input.
-![Query Builder Step 1](../../../static/img/onchain-verifier/querybuilder-3.png)
+<div align="center">
+    <img width="600" src={useBaseUrl("img/onchain-verifier/querybuilder-3.png")}></img>
+</div>
 
 8. Click on the **Set request** to submit the on-chain request.
 
 9. Click on **Confirm** in the Metamask to accept and submit the request.
-![Query Builder Step 1](../../../static/img/onchain-verifier/querybuilder-4.png)
+<div align="center">
+    <img width="600" src={useBaseUrl("img/onchain-verifier/querybuilder-4.png")}></img>
+</div>
 
-   **NOTE:** Make sure you have sufficient Gas tokens (e.g., MATIC in the Polygon network) in your wallet to submit the transaction.
+:::note
+Make sure you have sufficient Gas tokens (e.g. POL in case of Polygon Amoy) in your wallet to submit the transaction.
+:::
 
 10. Once the transaction is successful, you can click on the **Test Query** button to easily create the query request, where you will be presented with a QR code that can be scanned by users to generate the proof or copy the URL and use it for verification with the web wallet.
-![Query Builder Step 1](../../../static/img/onchain-verifier/querybuilder-5.png)
 
-![Query Builder Step 1](../../../static/img/onchain-verifier/querybuilder-6.png)
+<div align="center">
+    <img width="600" src={useBaseUrl("img/onchain-verifier/querybuilder-6.png")}></img>
+</div>
 
-![Query Builder Step 1](../../../static/img/onchain-verifier/querybuilder-7.png)
-**NOTE:** You only need to set the request once (per query), and it can be used by all users to scan, generate, and submit the proof to the smart contract via the Privado ID Mobile Wallet app or Privado ID Web Wallet. 
+<div align="center">
+    <img width="600" src={useBaseUrl("img/onchain-verifier/querybuilder-7.png")}></img>
+</div>
 
-   **Note:** Make sure you note down the **Request ID** as it is used in the Logic smart contract.
-
+:::note
+You only need to set the request once (per query), and it can be used by all users to scan, generate, and submit the proof to the smart contract via the Privado ID Mobile Wallet app or Privado ID Web Wallet. 
+:::
+:::note
+ Make sure you note down the **Request ID** as it is used in the Logic smart contract.
+:::
 ### Approach - B Setting Request Programmatically:
 
 We provide a deployment script that you can use as a starting point to set up your own query. To get started, follow these steps:
