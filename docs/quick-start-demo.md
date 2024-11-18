@@ -23,17 +23,17 @@ This guide will briefly touch on the 3 roles of the [Triangle of Trust](introduc
 
 These are the steps we will cover in this article:
 
-1. [Set up a Privado ID wallet](#set-up-a-polygon-id-wallet)
+1. [Set up a Privado ID wallet](#set-up-a-privado-id-wallet)
 2. [Issue a new credential to attest to the ID Holder's attendance to the event](#issue-a-new-credential-to-attest-to-the-id-holders-event-attendance)
 3. [Fetch the newly created credential](#fetch-the-newly-created-credential)
-4. [Verify the credential validity](#verify-the-id-holder-credential)
+4. [Verify the ID holder credential](#verify-the-id-holder-credential)
 
-## Set up a Polygon ID wallet
+## Set up a Privado ID wallet
 
 To store verifiable credentials, the Identity Holder (the individual receiving the credential) needs a compatible wallet. Here, we’ll use the Privado ID Wallet, which supports both mobile and web-based access.
 :::note
 
-You can also use any Privado ID compatible wallet. Please, check our [<ins>Ecosystem page</ins>](https://marketplace.polygonid.me/ecosystem) for other options.
+You can also use any Privado ID compatible wallet. Please, check our [<ins>Ecosystem page</ins>](https://marketplace.privado.id/ecosystem) for other options.
 
 :::
 
@@ -53,7 +53,7 @@ To get started with the Privado ID Wallet, you can either visit the [Privado ID 
 
 A trusted entity, for instance, a private institution will now play the role of an issuer. It will be responsible for creating the credential and sending it to the ID Holder.
 
-We are using <a href="https://issuer-demo.privado.id/">the Issuer Node UI testing environment</a> to manage credentials. This is the place where you as an issuer can can create and manage identities and credentials, generate connections and manage schemas.
+We are using <a href="https://issuer-demo.privado.id/">the Issuer Node UI Demo environment</a> to manage credentials. This is the place where you as an issuer can can create and manage identities and credentials, generate connections and manage schemas.
 
 However, if you are using a new credential type, you actually need to create a schema for that credential, which basically is the set of JSON files that gather all the attributes of that specific credential.
 
@@ -146,30 +146,28 @@ Alternatively, Scan the QR code from the Wallet App. Click **Sign In**. This sho
 </div>
 
 
-
 ## Verify the ID holder credential
 
-Here comes the third role in this tutorial: the verifier. This could be represented by an organization that needs to check the accuracy of someone's credentials. In our use case, this organization wants to verify whether the ID holder actually attended our made-up Paris event.
+Here comes the third role in this tutorial: the verifier. This could be represented by an organization that needs to verify some details of someone's credentials. In our use case, this organization wants to verify whether the ID holder actually attended our made-up Paris event.
 
 Here are the steps to verify the credential:
 
-1. Visit the [Query builder website](https://tools.privado.id/query-builder/). The [Query Builder](/docs/verifier/query-builder/) is an awesome tool designed to simplify the creation of verification queries.
+1. Visit the [Query builder website](https://tools.privado.id/query-builder/). The [Query Builder](/docs/verifier/query-builder/) is an tool designed to simplify the creation of verification queries.
 
 <div align="center">
     <img width="600" src={useBaseUrl("img/quick-start-demo/verifier-home.png")}></img>
 </div>
 
-2. You now need to define the query. You will again make use of the JSON-LD URL which we have also provided: `ipfs://QmdH1Vu79p2NcZLFbHxzJnLuUHJiMZnBeT7SNpLaqK7k9X`. Here is how the query should look like:
+2. You now need to define the query. You will now make use of the JSON-LD URL which we have also provided: `ipfs://QmdH1Vu79p2NcZLFbHxzJnLuUHJiMZnBeT7SNpLaqK7k9X`. Here is how the query should look like:
 
-<div align="center">v
+<div align="center">
     <img width="600" src={useBaseUrl("img/quick-start-demo/verifier-query-1.png")}></img>
-    <img width="600" src={useBaseUrl("img/quick-start-demo/verifier-query-2.png")}></img>
 </div>
 
 3. Click **Create Query**. Now click **Test query** button which will take you the Privado ID Web Wallet
 
 <div align="center">
-    <img width="600" src={useBaseUrl("img/quick-start-demo/verifier-query-3.png")}></img>
+    <img width="600" src={useBaseUrl("img/quick-start-demo/verifier-query-2.png")}></img>
 </div>
 
 4. Click **Sign in** and connect your crypto wallet. As you have already claimed the credential, it shows as 'claimed'. Click **Verify**, after which the process of generating the proof starts.
@@ -178,7 +176,7 @@ Here are the steps to verify the credential:
     <img width="900" src={useBaseUrl("img/quick-start-demo/web-wallet-verification.png")}></img>
 </div>
 
-5. And finally, the proof is generated. The verifier will check the revocation status and some additional information. The proof is then sent and validated by the verifier. You will receive the following response on the Query builder website:
+5. Finally, the proof is generated and sent to the verifier. The verifier will then check the revocation status and any additional information to validate the proof. You will receive the following response on the Query Builder website:
 <div align="center">
     <img width="600" src={useBaseUrl("img/quick-start-demo/verifier-validation.png")}></img>
 </div>
@@ -194,6 +192,6 @@ Click on **Verify**
 
 <br></br>
 
-This was a quick demonstration of Privado ID's basic functionalities. However, Privado ID is far more complex than this. It offers a range of SSI-focused tools that allow for decentralized identity and verifiable credentials management.
+This quick-start guide demonstrates Privado ID’s basic functionalities through a POAP use case, covering wallet setup, credential issuance, retrieval, and verification. While this is a simplified example, Privado ID provides a comprehensive suite of SSI tools for managing decentralized identity and verifiable credentials.
 
 
