@@ -79,7 +79,7 @@ For setting up the ZKP request, please visit Set ZKP Request section:
 
 Now we need to create an Airdrop smart contract that can check if the user has already presented proofs to the Universal Verifier (and has been verified). If so, mint tokens for the user. 
 
-Clone the repo, add your private key and JSON RPC URL for Amoy in your `.env` file as specified in the sample.env file. Check the `ZKAirdropverifer.sol` smart contract in the contracts directory that looks like this: 
+Create a Hardhat project and ensure you add the Amoy testnet JSON RPC URL and a private key with Amoy tokens. Update the `hardhat.config.js` file accordingly. Then, create the `ZKAirdropVerifier.sol` smart contract in the `contracts` folder using the code provided below. 
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -91,7 +91,7 @@ import {ICircuitValidator} from '@iden3/contracts/interfaces/ICircuitValidator.s
 import {UniversalVerifier} from '@iden3/contracts/verifiers/UniversalVerifier.sol';
 
 contract ZKAirdropVerifier is ERC20 {
-  uint64 public constant REQUEST_ID = 12345; // replace with your request ID
+  uint64 public constant REQUEST_ID = 12345; // replace with your own requestID
 
   UniversalVerifier public verifier;
 
@@ -154,10 +154,35 @@ In summary, when a user calls the `mint` function, the smart contract checks if 
 
 ### B. Deploy the Smart Contract:
 
-Run the deploy command after installing dependencies with `npm i`. Note down the smart contract address for use in the claiming process.
+```javascript
+const { ethers } = require("hardhat");
+
+async function main() {
+	const universalVerifierAddress = "0xfcc86A79fCb057A8e55C6B853dff9479C3cf607c"; 
+	const verifierName = "ZKAirdropVerifier";
+	const verifierSymbol = "zkERC20";
+
+	const verifier = await ethers.deployContract(verifierName, [
+		universalVerifierAddress,
+		verifierName,
+		verifierSymbol,
+	]);
+	await verifier.waitForDeployment();
+	console.log(verifierName, " contract address:", await verifier.getAddress());
+}
+
+main()
+	.then(() => process.exit(0))
+	.catch((error) => {
+		console.error(error);
+		process.exit(1);
+	});
+```
+deploy the smart contracts using the following command:
 
 `npx hardhat run scripts/deploy.js --network amoy`
 
+ Ensure that the smart contract address is saved to interact with the DApp.
 ## Step 3: User Claiming The Airdrop
 
 ### A. Obtaining and Signing the Verifiable Credential
@@ -176,12 +201,15 @@ The Universal Verifier smart contract verifies the ZK proof and checks the signe
 
 Once the user submits the proof and gets verified by the Universal Verifier, they can claim tokens by calling the `mint` function in the `ZKAirdropVerifier` smart contract.
 
+Visit the [Set ZKP Request](/docs/verifier/on-chain-verification/set-zkp-request.md) section to learn how users can submit their proofs. This request can be reused for all users for a specific query.
+
+
+
 ### C. Claiming Airdrop
 
 Once the user submits the proof and gets verified by the Universal Verifier, they can claim tokens by calling the `mint` function in the `ZKAirdropVerifier` smart contract.
 
-**Note:** Use the same Ethereum wallet account that was used to submit proofs for claiming tokens. Ideally, protocol developers should create a website that connects with the `ZKAirdropVerifier` smart contract. However, for demonstration purposes, here is a Hardhat project with a script to claim tokens.
-
+**Note:** Use the same Ethereum wallet account that was used to submit proofs for claiming tokens. Ideally, protocol developers should create a website that connects with the `ZKAirdropVerifier` smart contract. 
 
 ## Conclusion
 
