@@ -104,19 +104,19 @@ export const contentData = {
         },
         {
           title: "Build an app with Android SDK",
-          link: "/docs/wallet/wallet-sdk/android-sdk/install-android-sdk",
+          link: "/docs/wallet/wallet-sdk/android-sdk/example-app",
         },
         {
           title: "Wallet APIs",
           link: "/docs/category/wallet-apis",
         },
         {
-          title: "Polygon ID Wallet app: SDK reference implementation",
-          link: "/docs/wallet/wallet-sdk/polygonid-app",
+          title: "Privado ID Wallet app: Wallet SDK reference implementation",
+          link: "/docs/category/privado-id-wallet-app",
         },
         {
-          title: "Web wallet via JS SDK",
-          link: "/docs/js-sdk/js-sdk-browser-wallet-demo",
+          title: "Privado ID Web wallet: JS SDK reference implementation",
+          link: "/docs/wallet/web-wallet",
         },
       ],
     },
