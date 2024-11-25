@@ -63,7 +63,7 @@ module.exports = {
     },
     algolia: {
       // need to update this
-      indexName: "devs-polygonid",
+      indexName: "privado",
       appId: process.env.ALGOLIA_APP_ID,
       apiKey: process.env.ALGOLIA_API_KEY,
       contextualSearch: true,
