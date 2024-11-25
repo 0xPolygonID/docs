@@ -41,10 +41,9 @@ jobs:
 
       - name: Create .env file
         run: |
-          cat <<EOF >> .env
-          ALGOLIA_API_KEY=${{ secrets.ALGOLIA_API_KEY }}
-          ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }}
-          EOF
+          echo -e "ALGOLIA_API_KEY=${{ secrets.ALGOLIA_API_KEY }}" >> .env
+          echo -e "ALGOLIA_APP_ID=${{ secrets.ALGOLIA_APP_ID }}" >> .env
+          cat .env
 
       - name: Build
         run: npm run build
