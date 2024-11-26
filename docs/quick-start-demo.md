@@ -23,57 +23,41 @@ This guide will briefly touch on the 3 roles of the [Triangle of Trust](introduc
 
 These are the steps we will cover in this article:
 
-1. [Set up a Polygon ID wallet](#set-up-a-polygon-id-wallet)
+1. [Set up a Privado ID wallet](#set-up-a-privado-id-wallet)
 2. [Issue a new credential to attest to the ID Holder's attendance to the event](#issue-a-new-credential-to-attest-to-the-id-holders-event-attendance)
 3. [Fetch the newly created credential](#fetch-the-newly-created-credential)
-4. [Verify the credential validity](#verify-the-id-holder-credential)
+4. [Verify the ID holder credential](#verify-the-id-holder-credential)
 
-## Set up a Polygon ID wallet
+## Set up a Privado ID wallet
 
-As an Identity Holder, the individual who wants to have a credential to prove his age, for example, will need an application that can hold their credentials. In our case, we will be using the Polygon ID Wallet.
-
+To store verifiable credentials, the Identity Holder (the individual receiving the credential) needs a compatible wallet. Here, we’ll use the Privado ID Wallet, which supports both mobile and web-based access.
 :::note
 
-You can also use any Polygon ID compatible wallet. Please, check our [<ins>Ecosystem page</ins>](https://marketplace.polygonid.me/ecosystem) for other options.
+You can also use any Privado ID compatible wallet. Please, check our [<ins>Ecosystem page</ins>](https://marketplace.privado.id/ecosystem) for other options.
 
 :::
 
-To get started with the Polygon ID Wallet, download the Polygon ID Wallet App and create an Identity:
+To get started with the Privado ID Wallet, you can either visit the [Privado ID Web Wallet](https://wallet.privado.id/) in your browser or download the mobile app and create an Identity.
 
-- For Android: <a href="https://play.google.com/store/apps/details?id=com.polygonid.wallet" target="_blank">Polygon ID on Google Play</a>
-- For iOS: <a href="https://apps.apple.com/us/app/polygon-id/id1629870183" target="_blank">Polygon ID on the App Store</a>
+- Web Browser: <a href="https://wallet.privado.id/" target="_blank">Privado ID Web Wallet</a>
+- For Android: <a href="https://play.google.com/store/apps/details?id=id.privado.wallet" target="_blank">Privado ID Wallet App on Google Play</a>
+- For iOS: <a href="https://apps.apple.com/us/app/privadoid/id6566184703" target="_blank">Privado ID Wallet App on the App Store</a>
+
 
 :::note
-
-Polygon ID wallet is an implementation of the Wallet SDK, as a way of showcasing its possibilities. Head to [<ins>the Wallet SDK documentation</ins>](./wallet/wallet-sdk/polygonid-sdk/polygonid-sdk-overview.md) to know more about how it works.
-
-:::
-
-The process from downloading to creating an identity on the Polygon ID Wallet is just as it is shown below. You need to download the app, create a wallet, set up a PIN number and the wallet is ready to be used.
-
-<div align="center">
-    <img src={useBaseUrl("img/quick-start-demo/quick-start-demo-wallet.png")}></img>
-</div>
-
-:::caution
-
-This demo is using Polygon Amoy testnet. Go to the gear icon at the top right and ensure "Polygon Amoy network" is selected instead of "Polygon Main network".
-
-<div align="center">
-    <img width="300" src={useBaseUrl("img/quick-start-demo/settings-amoy.jpg")}></img>
-</div>
-
+- The Privado ID Web Wallet is a web based identity wallet. It is a reference implementation built using our [<ins>JS SDK</ins>](/docs/js-sdk/js-sdk-overview.md). Learn more about the Web Wallet [<ins>here</ins>](/docs/wallet/web-wallet.md).
+- Privado ID Wallet App is an implementation of the [<ins>Wallet SDK</ins>](/docs/category/wallet-sdk), as a way of showcasing its possibilities. Learn more about the Wallet App [<ins>here</ins>](/docs/wallet/wallet-app/privadoid-app.md).
 :::
 
 ## Issue a new credential to attest to the ID Holder's event attendance
 
 A trusted entity, for instance, a private institution will now play the role of an issuer. It will be responsible for creating the credential and sending it to the ID Holder.
 
-We are using <a href="https://user-ui:password-ui@issuer-ui.polygonid.me">the Issuer Node UI testing environment</a> to manage credentials. This is the place where the trusted entity can create credentials, manage schemas and generate connections.
+We are using <a href="https://issuer-demo.privado.id/">the Issuer Node UI Demo environment</a> to manage credentials. This is the place where you as an issuer can can create and manage identities and credentials, generate connections and manage schemas.
 
 However, if you are using a new credential type, you actually need to create a schema for that credential, which basically is the set of JSON files that gather all the attributes of that specific credential.
 
-To facilitate this issuance process, we have already created the credential schema whose URLs are the following:
+To facilitate this issuance process, we have already created the credential schema with schema type POAP01 whose URLs are the following:
 
 - JSON schema URL
   `ipfs://QmTSwnuCB9grYMB2z5EKXDagfChurK5MiMCS6efrRbsyVX`
@@ -88,15 +72,15 @@ To learn how to set up your own issuer environment by deploying an issuer node, 
 
 :::info
 
-The schema used in this demo was built using the Privado ID Schema Builder and is available on [<ins>the Privado ID Schema Explorer</ins>](https://schema-builder.polygonid.me/schemas/1fa99457-b2ae-4884-ae12-d658bd6abf69). Learn more about creating new schemas on [<ins>the Schema Builder UI guide</ins>](https://devs.polygonid.com/docs/issuer/schema-builder/).
+The schema used in this demo was built using the Privado ID Schema Builder and is available on [<ins>the Privado ID Schema Explorer</ins>](https://tools.privado.id/schemas/1fa99457-b2ae-4884-ae12-d658bd6abf69). Learn more about creating new schemas on [<ins>the Schema Builder UI guide</ins>](/docs/issuer/schema-builder/).
 
 :::
 
-### Issue the credential
+### Issue a new credential to attest to the ID Holder's attendance to the event
 
 With the new schema in hand, the issuer should now be able to generate a credential.
 
-1. First, go to the <a href="https://user-ui:password-ui@issuer-ui.polygonid.me">the Issuer Node UI testing environment</a>.
+1. First, go to the <a href="https://issuer-demo.privado.id/">the Issuer Node UI testing environment</a>.
 
    :::warning
 
@@ -118,88 +102,96 @@ With the new schema in hand, the issuer should now be able to generate a credent
     <img width="500" src={useBaseUrl("img/quick-start-demo/create-credential.png")}></img>
 </div>
 
-4. After you click on **Create Credential Link**, you can also click on **View Link** on the next screen to check the generated QR code.
+4. After you click on **Create Credential Link**, you'll be presented with a Universal Link and a Deep Link to the credential offer, along with a QR code configured for these links. The QR code can be scanned directly with the Privado ID Wallet app.
 
-<div align="center">
+    :::info
+
+    When the user interacts with the [<ins>Universal Link</ins>](/docs/wallet/universal-links.md) , it will launch the Privado ID Web Wallet in the browser or Privado ID Wallet app in case of a mobile phone displaying the credential offer to claim the credential. Deep link could be handled only by mobile wallet app though.
+
+    :::
+
+    <div align="center">
     <img width="500" src={useBaseUrl("img/quick-start-demo/qr.png")}></img>
-</div>
+    </div>
 
 ## Fetch the newly created credential
 
-Now we are back to the ID Holder role. They will use their mobile application to authenticate themselves by scanning the QR code generated by the issuer in the last step.
+Now we are back to the ID Holder role. You can either use the Web Wallet on the browser or the Wallet App to accept the credential via the link or the QR code generated by the issuer in the last step.
+
+:::note
+To sync the identity and its associated credentials between the Privado ID Web Wallet and the Privado ID Wallet App, the user must log in with the same crypto wallet account on both platforms. Once you claim a credential on one platform, it will be visible on the other.
+:::
+
+#### Web Wallet
+
+After clicking the Universal link, it will take you to the Web Wallet. Click **Sign In** and connect your crypto wallet such as Metamask. Click **Add to my wallet**. This should add the credential to your wallet.
+
 
 <div align="center">
-    <img width="300" src={useBaseUrl("img/quick-start-demo/quick-fetch-1.jpg")}></img>
+    <img src={useBaseUrl("img/quick-start-demo/web-wallet.png")}></img>
 </div>
 
-Connect to the issuer:
+Click on **Manage your credentials** to view and manage the credential in the Web Wallet.
 
 <div align="center">
-    <img width="300" src={useBaseUrl("img/quick-start-demo/quick-fetch-2.jpg")}></img>
+    <img  src={useBaseUrl("img/quick-start-demo/web-wallet-2.png")}></img>
 </div>
 
-This will instantly trigger a notification on the mobile which will look like this:
+#### Mobile Wallet App
+
+Alternatively, Scan the QR code from the Wallet App. Click **Sign In**. This should authenticate and add the credential to the Wallet.
 
 <div align="center">
-    <img width="300" src={useBaseUrl("img/quick-start-demo/quick-notification.jpeg")}></img>
+    <img src={useBaseUrl("img/quick-start-demo/wallet-app.png")}></img>
 </div>
 
-Accept the credential:
-
-<div align="center">
-    <img width="300" src={useBaseUrl("img/quick-start-demo/quick-fetch-4.jpg")}></img>
-</div>
-
-The ID Holder successfully retrieved the credential and it is visible on the app:
-
-<div align="center">
-    <img width="300" src={useBaseUrl("img/quick-start-demo/quick-fetch-6.jpg")}></img>
-</div>
 
 ## Verify the ID holder credential
 
-Here comes the third role in this tutorial: the verifier. This could be represented by an organization that needs to check the accuracy of someone's credentials. In our use case, this organization wants to verify whether the ID holder actually attended our made-up Paris event.
+Here comes the third role in this tutorial: the verifier. This could be represented by an organization that needs to verify some details of someone's credentials. In our use case, this organization wants to verify whether the ID holder actually attended our made-up Paris event.
 
 Here are the steps to verify the credential:
 
-1. Visit the [Query builder website](https://schema-builder.polygonid.me/query-builder/). The [Query Builder](/docs/verifier/query-builder/) is an awesome tool designed to simplify the creation of verification queries.
+1. Visit the [Query builder website](https://tools.privado.id/query-builder/). The [Query Builder](/docs/verifier/query-builder/) is a tool designed to simplify the creation of verification queries.
 
 <div align="center">
     <img width="600" src={useBaseUrl("img/quick-start-demo/verifier-home.png")}></img>
 </div>
 
-2. You now need to define the query. You will again make use of the JSON-LD URL which we have also provided: `ipfs://QmdH1Vu79p2NcZLFbHxzJnLuUHJiMZnBeT7SNpLaqK7k9X`. Here is how the query should look like:
+2. You now need to define the query. You will now make use of the JSON-LD URL which we have also provided: `ipfs://QmdH1Vu79p2NcZLFbHxzJnLuUHJiMZnBeT7SNpLaqK7k9X`. Here is how the query should look like:
 
 <div align="center">
     <img width="600" src={useBaseUrl("img/quick-start-demo/verifier-query-1.png")}></img>
+</div>
+
+3. Click **Create Query**. Now click **Test query** button which will take you the Privado ID Web Wallet
+
+<div align="center">
     <img width="600" src={useBaseUrl("img/quick-start-demo/verifier-query-2.png")}></img>
 </div>
 
-3. Click **Create Query**. Now select the Network as Polygon Amoy (testnet)
+4. Click **Sign in** and connect your crypto wallet. As you have already claimed the credential, it shows as 'claimed'. Click **Verify**, after which the process of generating the proof starts.
 
 <div align="center">
-    <img width="600" src={useBaseUrl("img/quick-start-demo/verifier-query-3.png")}></img>
+    <img width="900" src={useBaseUrl("img/quick-start-demo/web-wallet-verification.png")}></img>
 </div>
 
-4. After clicking on **Test query**, you should scan the resulting QR code and follow the instructions on the mobile app.
-
-<div align="center">
-    <img width="300" src={useBaseUrl("img/quick-start-demo/verifier-request.jpg")}></img>
-</div>
-
-5. Click on Approve. After which, the process of generating the proof starts:
-
-<div align="center">
-    <img width="300" src={useBaseUrl("img/quick-start-demo/verifier-proof.jpg")}></img>
-</div>
-
-6. And finally, the proof is generated. The verifier will check the revocation status and some additional information. The proof is then sent and validated by the verifier. You will receive the following response on the Query builder website:
+5. Finally, the proof is generated and sent to the verifier. The verifier will then check the revocation status and any additional information to validate the proof. You will receive the following response on the Query Builder website:
 <div align="center">
     <img width="600" src={useBaseUrl("img/quick-start-demo/verifier-validation.png")}></img>
 </div>
 
-:::info
+Alternatively, you can also use Privado ID Wallet app to verify.
+After Step 3, once you are redirected to Web Wallet, click on **Continue via app**,
+this should present a QR code. Open the Privado ID Wallet App and scan the QR code.
+Click on **Verify**
+<div align="center">
+    <img width="900" src={useBaseUrl("img/quick-start-demo/wallet-app-verification.png")}></img>
+</div>
 
-This was a quick demonstration of Privado ID's basic functionalities. However, Privado ID is far more complex than this. It offers a range of SSI-focused tools that allow for decentralized identity and verifiable credentials management.
 
-:::
+<br></br>
+
+This quick-start guide demonstrates Privado ID’s basic functionalities through a POAP use case, covering wallet setup, credential issuance, retrieval, and verification. While this is a simplified example, Privado ID provides a comprehensive suite of SSI tools for managing decentralized identity and verifiable credentials.
+
+

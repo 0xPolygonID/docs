@@ -137,7 +137,20 @@ module.exports = {
             "verifier/verification-library/verifier-setup",
           ],
         },
+        {
+          type: "category",
+          label: "On-chain Verification",
+          link: {
+            type: "generated-index",
+          },
+          collapsed: true,
+          items: [
         "verifier/on-chain-verification/overview",
+        "verifier/on-chain-verification/tutorial",
+        "verifier/on-chain-verification/cross-chain",
+        "verifier/on-chain-verification/set-zkp-request"
+                ],
+        },
         "verifier/query-builder",
         "verifier/verification-library/zk-query-language",
         "verifier/v3-circuit",
