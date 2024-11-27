@@ -61,16 +61,6 @@ module.exports = {
       defaultLanguage: "javascript",
       additionalLanguages: ["solidity"],
     },
-    algolia: {
-      // need to update this
-      indexName: "privado",
-      appId: process.env.ALGOLIA_APP_ID,
-      apiKey: process.env.ALGOLIA_API_KEY,
-      contextualSearch: true,
-      algoliaOptions: {
-        attributesToSnippet: ["content:20"],
-      },
-    },
     navbar: {
       hideOnScroll: true,
       logo: {
