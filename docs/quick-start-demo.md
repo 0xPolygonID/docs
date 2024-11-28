@@ -75,7 +75,7 @@ We will use <a href="https://issuer-demo.privado.id/">the Issuer Node UI Demo en
 
 :::note
 
-When an Issuer releases a new credential type, they create a schema for that credential. This requires a set of JSON key pair data or files that gather all the attributes of that specific credential.
+When an Issuer releases a new credential type, they create a schema for that credential. This takes the form of a JSON dataset that gathers all the attributes of that specific credential.
 
 [<ins>Learn how to set up your own Issuer environment by deploying an Issuer node</ins>](/docs/issuer/issuer-overview.md).
 
