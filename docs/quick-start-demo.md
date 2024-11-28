@@ -26,7 +26,7 @@ This guide will briefly touch on the 3 roles of the [Triangle of Trust](introduc
 In this tutorial, you will:
 
 1. [Set up a Privado ID wallet](#set-up-a-privado-id-wallet)
-2. [Issue a new credential to attest to the ID Holder's attendance to the event](#issue-the-poap-credential)
+2. [Issue the POAP credential](#issue-the-poap-credential)
 3. [Fetch the newly created credential](#fetch-the-newly-created-credential)
 4. [Verify the ID holder credential](#verify-the-id-holder-credential)
 
@@ -137,11 +137,15 @@ With the new schema in hand, the Issuer can generate a credential.
     <img width="500" src={useBaseUrl("img/quick-start-demo/create-credential.png")}></img>
 </div>
 
-4. Click on **Create Credential Link** to be presented with a Universal Link and a Deep Link to the credential offer, along with a QR code configured for these links. The QR code can be scanned directly with the Privado ID Wallet app, that is, the Mobile App.
+4. Click on **Create Credential Link** to be presented with links and a QR code configured for these links to claim the credential.
 
     :::info
 
-    When the user interacts with the [<ins>Universal Link</ins>](/docs/wallet/universal-links.md), it will launch the Privado ID Web Wallet in the browser or Privado ID Wallet app in case of a mobile phone displaying the credential offer to claim the credential. The Deep link supports the Mobile Wallet App.
+    Two link types are created, one for the Web App and another for the Mobile App:
+    - Deep Link supports the Mobile Wallet App only
+    - The [<ins>Universal Link</ins>](/docs/wallet/universal-links.md) supports the Web App only
+    
+    The QR code can be scanned directly with the Privado ID Wallet app, that is, the Mobile App.
 
     :::
 
