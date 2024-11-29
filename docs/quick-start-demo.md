@@ -18,12 +18,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This tutorial is a quick demonstration of some of Privado ID's main functionalities. To illustrate how Privado ID works, we will walk you through some of its products and tools by following along a simple POAP use case.
-POAP stands for Proof of Attendance Protocol, which is used to prove that someone has taken part in a given event.
+This tutorial illustrates Privado ID's main functionalities. It walks through Privado ID's products and tools by presenting a simple POAP use case. POAP stands for Proof of Attendance Protocol, which is used to prove that someone has taken part in a given event.
 
-This guide will briefly touch on the 3 roles of the [Triangle of Trust](introduction.md#core-concepts-of-privado-id-verifiable-credentials-identity-holder-issuer-and-verifier), namely the Identity Holder, the Issuer, and the Verifier. For that, we will take the case of an individual who needs to prove that they were able to participate in a particular event.
-
-In this tutorial, you will:
+In this tutorial, you will assume each of the 3 roles required by the [Triangle of Trust](introduction.md#core-concepts-of-privado-id-verifiable-credentials-identity-holder-issuer-and-verifier): the Identity Holder, the Issuer, and the Verifier. You will:
 
 1. [Set up a Privado ID wallet](#set-up-a-privado-id-wallet)
 2. [Issue the POAP credential](#issue-the-poap-credential)
@@ -32,24 +29,24 @@ In this tutorial, you will:
 
 ## Set up a Privado ID wallet
 
-To store verifiable credentials, the Identity Holder (the individual receiving the credential) needs a compatible wallet. Here, we’ll use the Privado ID Wallet, which supports both mobile and web-based access.
+To store verifiable credentials, the Identity Holder (the individual receiving the credential) needs a compatible wallet. Here, we’ll use the Privado ID Wallet, which supports both Mobile and Web-based access.
 
 :::note
 
-You may use any Privado ID compatible wallet. See our [<ins>Ecosystem page</ins>](https://marketplace.privado.id/ecosystem) for other options.
+You may use any Privado ID compatible wallet. Our [<ins>Ecosystem page</ins>](https://marketplace.privado.id/ecosystem) lists all supported wallets.
 
 :::
 
-To get started with the Privado ID Wallet, you either visit the [Privado ID Web Wallet](https://wallet.privado.id/) in your browser or download the Mobile App and create an Identity.
+To get started with the Privado ID Wallet, either visit the [Privado ID Web Wallet](https://wallet.privado.id/) in your browser or download the Mobile App and create an Identity.
 
 
 <Tabs>
-<TabItem value="Web set-up-a-privado-id-wallet">
+<TabItem value="Web Wallet">
 
 <a href="https://wallet.privado.id/" target="_blank">Privado ID Web Wallet</a>
 
 :::note
-The Privado ID Web Wallet is a web-based identity wallet. It is a reference implementation built using our [<ins>JS SDK</ins>](/docs/js-sdk/js-sdk-overview.md). [<ins>Learn more about the Web Wallet</ins>](/docs/wallet/web-wallet.md).
+The Privado ID Web Wallet is a Web-based identity wallet. It is a reference implementation built using our [<ins>JS SDK</ins>](/docs/js-sdk/js-sdk-overview.md). [<ins>Learn more about the Web Wallet</ins>](/docs/wallet/web-wallet.md).
 :::
 
 </TabItem>
@@ -60,7 +57,7 @@ The Privado ID Web Wallet is a web-based identity wallet. It is a reference impl
 - iOS: <a href="https://apps.apple.com/us/app/privadoid/id6566184703" target="_blank">Privado ID Wallet App on the App Store</a>
 
 :::note
-Privado ID Wallet App is an implementation of the [<ins>Wallet SDK</ins>](/docs/category/wallet-sdk), as a way of showcasing its possibilities. [<ins>Learn more about the Wallet App</ins>](/docs/wallet/wallet-app/privadoid-app.md).
+Privado ID Wallet App is an implementation of the [<ins>Wallet SDK</ins>](/docs/category/wallet-sdk), as a way of showcasing its possibilities. [<ins>Learn more about the Molbile Wallet</ins>](/docs/wallet/wallet-app/privadoid-app.md).
 :::
 
 </TabItem>
@@ -69,7 +66,7 @@ Privado ID Wallet App is an implementation of the [<ins>Wallet SDK</ins>](/docs/
 
 ## Issue the POAP credential
 
-You will now take the role of an Issuer, in this example, the private institution/trusted entity that held the event and creates a POAP. The Issuer is responsible for both creating the credential and sending it to the ID Holder.
+You will now take the role of an Issuer, in this example, the private institution/trusted entity that held the event and creates a POAP. The Issuer is responsible for both creating the credential and sending it to the Identity Holder.
 
 We will use <a href="https://issuer-demo.privado.id/">the Issuer Node UI Demo environment</a> to manage credentials. This environment enables an Issuer to create and manage identities and credentials, generate connections, and manage schemas.
 
@@ -93,7 +90,7 @@ To simplify this demo issuance, we provide an existing credential schema with sc
 
 </TabItem>
 
-<TabItem value="JSON-LD Context URL">
+<TabItem value="JSON-LD context URL">
 
 ```ipfs://QmdH1Vu79p2NcZLFbHxzJnLuUHJiMZnBeT7SNpLaqK7k9X```
 
@@ -105,7 +102,7 @@ To simplify this demo issuance, we provide an existing credential schema with sc
 
 :::info
 
-The schema used in this demo was built using the Privado ID Schema Builder and is available on [<ins>the Privado ID Schema Explorer</ins>](https://tools.privado.id/schemas/1fa99457-b2ae-4884-ae12-d658bd6abf69). Learn more about creating new schemas on [<ins>the Schema Builder UI guide</ins>](/docs/issuer/schema-builder/).
+The schema used in this demo was built using the Privado ID Schema Builder and is available on [<ins>the Privado ID Schema Explorer</ins>](https://tools.privado.id/schemas/1fa99457-b2ae-4884-ae12-d658bd6abf69). Learn more about creating new schemas from [<ins>the Schema Builder UI guide</ins>](/docs/issuer/schema-builder/).
 
 :::
 
@@ -141,11 +138,11 @@ With the new schema in hand, the Issuer can generate a credential.
 
     :::info
 
-    Two link types are created, one for the Web App and another for the Mobile App:
-    - Deep Link supports the Mobile Wallet App only
-    - The [<ins>Universal Link</ins>](/docs/wallet/universal-links.md) supports the Web App only
+    Two link types are created, one for the Web Wallet and another for the Mobile Wallet:
+    - Deep Link supports the Mobile Wallet only
+    - The [<ins>Universal Link</ins>](/docs/wallet/universal-links.md) supports the Web Wallet only
     
-    The QR code can be scanned directly with the Privado ID Wallet app, that is, the Mobile App.
+    The QR code can be scanned directly with the Privado ID Wallet app, that is, the Mobile Wallet.
 
     :::
 
@@ -155,47 +152,47 @@ With the new schema in hand, the Issuer can generate a credential.
 
 ## Fetch the newly created credential
 
-Next, you will take the second role in this tutorial: the ID Holder. You can either use the Web Wallet in the browser or the Mobile Wallet App to accept the credential via the link or the QR code generated by the Issuer in the previous step.
+Next, you will take the second role in this tutorial: the ID Holder. You can either use the Web Wallet in the browser or the Mobile Wallet to accept the credential via the link or the QR code generated by the Issuer in the previous step.
 
 :::note
 
-To sync the identity and its associated credentials between the Privado ID Web Wallet and the Privado ID Wallet App, the user must log in with the same crypto wallet account on both platforms. Once you claim a credential on one platform, it will be visible on the other.
+To sync the identity and its associated credentials between the Privado ID Web Wallet and the Privado ID  Mobile Wallet, the user must log in with the same crypto wallet account on both platforms. Once you claim a credential on one platform, it will then be visible on the other.
 
 :::
 
+To fetch the credential:
 
 <Tabs>
 <TabItem value="Web Wallet">
 
-After clicking the Universal link, it will take you to the Web Wallet. Click **Sign In** and connect your crypto wallet such as MetaMask. Click **Add to my wallet**. This should add the credential to your wallet.
+1. Click the Universal link, which will take you to the Web Wallet. Click **Sign In** and connect your crypto wallet such as MetaMask. Click **Add to my wallet**. This should add the credential to your wallet.
 
 
 <div align="center">
     <img src={useBaseUrl("img/quick-start-demo/web-wallet.png")}></img>
 </div>
-
-Click on **Manage your credentials** to view and manage the credential in the Web Wallet.
-
-<div align="center">
-    <img  src={useBaseUrl("img/quick-start-demo/web-wallet-2.png")}></img>
-</div>
 </TabItem>
 
 <TabItem value="Mobile Wallet">
 
-Alternatively, scan the QR code. Click **Sign In**. This should authenticate and add the credential to the Wallet.
+1. Scan the QR code. Click **Sign In**. This should authenticate and add the credential to the Wallet.
 
 <div align="center">
     <img src={useBaseUrl("img/quick-start-demo/wallet-app.png")}></img>
 </div>
-
 </TabItem>
 </Tabs>
 
 
+2. Click on **Manage your credentials** to view and manage the credential in the Wallet.
+
+<div align="center">
+    <img  src={useBaseUrl("img/quick-start-demo/web-wallet-2.png")}></img>
+</div>
+
 ## Verify the ID holder credential
 
-Next, you will take the third role in this tutorial: the Verifier. This might be an organization that needs to verify some details of someone's credentials. In our use case, this organization wants to verify whether the ID holder actually attended our made-up Paris event.
+Next, you will take the third role in this tutorial: the Verifier. This might be an organization that needs to verify some details of a person's credentials. In our use case, this organization wants to verify whether the Identity Holder actually attended our made-up Paris event.
 
 To verify the credential:
 
@@ -211,13 +208,13 @@ To verify the credential:
     <img width="600" src={useBaseUrl("img/quick-start-demo/verifier-query-1.png")}></img>
 </div>
 
-3. Click **Create Query**. Now click **Test query** button which will take you to the Privado ID Web Wallet:
+3. Click **Create Query**. Now click the **Test query** button which will take you to the Privado ID Web Wallet:
 
 <div align="center">
     <img width="600" src={useBaseUrl("img/quick-start-demo/verifier-query-2.png")}></img>
 </div>
 
-4. Click **Sign in** and connect your crypto wallet. As you have already claimed the credential, it shows as 'claimed'. Click **Verify**, after which the process of generating the proof starts.
+4. Click **Sign in** and connect your crypto wallet. As you have already claimed the credential, it shows as 'claimed'. Click **Verify**, to initiate the process of generating the proof.
 
 <div align="center">
     <img width="900" src={useBaseUrl("img/quick-start-demo/web-wallet-verification.png")}></img>
@@ -238,5 +235,5 @@ Click on **Verify**
 
 <br></br>
 
-This quick-start guide demonstrates Privado ID’s basic functionalities through a POAP use case, covering wallet setup, credential issuance, retrieval, and verification. While this is a simplified example, Privado ID provides a comprehensive suite of SSI tools for managing decentralized identity and verifiable credentials.
+This quick-start guide demonstrates Privado ID’s basic functionalities through a POAP use case, covering wallet setup, credential issuance, retrieval, and verification. This example requires the user to participate in all three roles to demonstrate Privado ID's comprehensive suite of Self-Sovereign Identity (SSI) tools for managing decentralized identity and verifiable credentials. In real-world uses cases, a single entity would typically fit just one of these roles.
 
