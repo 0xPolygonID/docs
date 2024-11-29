@@ -44,7 +44,7 @@ To get started with the Privado ID Wallet, you either visit the [Privado ID Web 
 
 
 <Tabs>
-<TabItem value="Web App">
+<TabItem value="Web set-up-a-privado-id-wallet">
 
 <a href="https://wallet.privado.id/" target="_blank">Privado ID Web Wallet</a>
 
@@ -54,7 +54,7 @@ The Privado ID Web Wallet is a web-based identity wallet. It is a reference impl
 
 </TabItem>
 
-<TabItem value="Mobile App">
+<TabItem value="Mobile Wallet">
 
 - Android: <a href="https://play.google.com/store/apps/details?id=id.privado.wallet" target="_blank">Privado ID Wallet App on Google Play</a>
 - iOS: <a href="https://apps.apple.com/us/app/privadoid/id6566184703" target="_blank">Privado ID Wallet App on the App Store</a>
@@ -75,7 +75,7 @@ We will use <a href="https://issuer-demo.privado.id/">the Issuer Node UI Demo en
 
 :::note
 
-When an Issuer releases a new credential type, they create a schema for that credential. This takes the form of a JSON dataset that gathers all the attributes of that specific credential.
+When an Issuer releases a new credential type, they create a schema representation of the credential. This comprises a set of JSON files that gather all the credential's attributes.
 
 [<ins>Learn how to set up your own Issuer environment by deploying an Issuer node</ins>](/docs/issuer/issuer-overview.md).
 
@@ -163,7 +163,9 @@ To sync the identity and its associated credentials between the Privado ID Web W
 
 :::
 
-#### Web Wallet
+
+<Tabs>
+<TabItem value="Web Wallet">
 
 After clicking the Universal link, it will take you to the Web Wallet. Click **Sign In** and connect your crypto wallet such as MetaMask. Click **Add to my wallet**. This should add the credential to your wallet.
 
@@ -177,21 +179,25 @@ Click on **Manage your credentials** to view and manage the credential in the We
 <div align="center">
     <img  src={useBaseUrl("img/quick-start-demo/web-wallet-2.png")}></img>
 </div>
+</TabItem>
 
-#### Mobile Wallet App
+<TabItem value="Mobile Wallet">
 
-Alternatively, Scan the QR code from the Wallet App. Click **Sign In**. This should authenticate and add the credential to the Wallet.
+Alternatively, scan the QR code. Click **Sign In**. This should authenticate and add the credential to the Wallet.
 
 <div align="center">
     <img src={useBaseUrl("img/quick-start-demo/wallet-app.png")}></img>
 </div>
+
+</TabItem>
+</Tabs>
 
 
 ## Verify the ID holder credential
 
 Next, you will take the third role in this tutorial: the Verifier. This might be an organization that needs to verify some details of someone's credentials. In our use case, this organization wants to verify whether the ID holder actually attended our made-up Paris event.
 
-Here are the steps to verify the credential:
+To verify the credential:
 
 1. Visit the [Query Builder website](https://tools.privado.id/query-builder/). The [Query Builder](/docs/verifier/query-builder/) is a tool designed to simplify the creation of verification queries.
 
@@ -229,7 +235,6 @@ Click on **Verify**
 <div align="center">
     <img width="900" src={useBaseUrl("img/quick-start-demo/wallet-app-verification.png")}></img>
 </div>
-
 
 <br></br>
 
