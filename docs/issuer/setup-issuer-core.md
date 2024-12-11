@@ -54,6 +54,7 @@ Follow these steps to get started:
 
 ```bash
 cp .env-issuer.sample .env-issuer
+cp .env-ui.sample .env-ui
 ```
 
 2. Set Environment Variables
