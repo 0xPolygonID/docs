@@ -134,15 +134,13 @@ With the new schema in hand, the Issuer can generate a credential.
     <img width="500" src={useBaseUrl("img/quick-start-demo/create-credential.png")}></img>
 </div>
 
-4. Click on **Create Credential Link** to be presented with links and a QR code configured for these links to claim the credential.
+4. Click on **Create Credential Link** to be presented with links and a QR code configured for these links to claim the credential. The QR code can be scanned directly with supporting mobile apps, e.g. the Privado Mobile Wallet app.
 
     :::info
 
-    Two link types are created, one for the Web Wallet and another for the Mobile Wallet:
-    - Deep Link supports the Mobile Wallet only
-    - The [<ins>Universal Link</ins>](/docs/wallet/universal-links.md) supports the Web Wallet only
-    
-    The QR code can be scanned directly with the Privado ID Wallet app, that is, the Mobile Wallet.
+    Two link types are created to provide access to the credential:
+    - Mobile Wallet apps such as the Privado ID Mobile App and other supported mobile wallets support Deep Link
+    - The Privado ID Web Wallet and other Mobile Wallet apps [<ins> support the Universal Link</ins>](/docs/wallet/universal-links.md)
 
     :::
 
