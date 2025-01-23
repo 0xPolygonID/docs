@@ -6,7 +6,7 @@ require("dotenv").config();
 module.exports = {
   title: "Privado ID Documentation",
   tagline: "The official developer documentation hub for Privado ID.",
-  url: "https://devs.polygonid.com",
+  url: "https://docs.privado.id",
   baseUrl: "/",
   favicon: "/img/privado_favicon.png",
   organizationName: "0xPolygonID",
@@ -112,19 +112,19 @@ module.exports = {
           label: "Tools",
           items: [
             {
-              href: "https://schema-builder.polygonid.me/",
+              href: "https://tools.privado.id",
               label: "Schema Explorer",
             },
             {
-              href: "https://schema-builder.polygonid.me/builder",
+              href: "https://tools.privado.id/builder",
               label: "Schema Builder",
             },
             {
-              href: "https://schema-builder.polygonid.me/query-builder",
+              href: "https://tools.privado.id/query-builder",
               label: "Query Builder",
             },
             {
-              href: "https://jwz.polygonid.me",
+              href: "https://jwz-validator.privado.id",
               label: "JWZ Validator",
             },
           ],
