@@ -57,6 +57,7 @@ module.exports = {
             "issuer-node/issuer-node-guide",
           ]
         },
+        "issuer/key-rotation",
         {
           type: "category",
           label: "On-chain Issuer",
