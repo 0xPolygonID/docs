@@ -26,9 +26,9 @@ We have created a [JS SDK Example repository](https://github.com/0xPolygonID/js-
 1. Download the latest circuits from the following curl command:
 
    ```bash
-   curl https://iden3-circuits-bucket.s3.eu-west-1.amazonaws.com/latest.zip --output latest.zip
+   curl https://circuits.privado.id/latest.zip --output latest.zip
    ```
-
+   
    where s3 is a bucket that has been created for storing the circuits' data in one of the Amazon Simple Storage Service (Amazon S3) for specific regions across the globe.
 
    The `latest.zip` folder is accessed from the s3 bucket and is the output to the local `latest.zip` file.
