@@ -16,7 +16,7 @@ The [Verifier Backend](https://github.com/0xPolygonID/verifier-backend) project 
 
 It is built using libraries developed by the iden3 protocol team. Below, we'll explain how to install it using Docker and how it can be used to perform zero knowledge proofs.
 
-You can try our [Verifier Backend API](https://verifier-backend.polygonid.me/) running.
+You can try our [Verifier Backend API](https://verifier-backend.privado.id/) running.
 
 ## Local Installation
 
