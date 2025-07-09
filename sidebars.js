@@ -57,6 +57,7 @@ module.exports = {
             "issuer-node/issuer-node-guide",
           ]
         },
+        "issuer/key-rotation",
         {
           type: "category",
           label: "On-chain Issuer",
@@ -153,7 +154,9 @@ module.exports = {
         },
         "verifier/query-builder",
         "verifier/verification-library/zk-query-language",
+        "verifier/circuits",
         "verifier/v3-circuit",
+
 
       ],
     },
@@ -377,7 +380,6 @@ module.exports = {
           ],
         },
         "js-sdk/js-sdk-example",
-        "js-sdk/js-sdk-browser-wallet-demo",
         "js-sdk/js-sdk-dynamic-did"
       ],
     },

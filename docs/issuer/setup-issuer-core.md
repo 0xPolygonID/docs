@@ -68,44 +68,14 @@ cp .env-issuer.sample .env-issuer
 
 3. Key Management System (KMS) Setup
 
-  Please Look at the [KMS configuration](https://github.com/0xPolygonID/issuer-node/blob/main/.env-issuer.sample#L21) in the sample file and file your .env-issuer config file accordingly.
+ The Issuer Node supports multiple Key Management System (KMS) options for securely creating, signing, and managing private keys. Depending on your setup, you can choose one or more of the following options:
 
-  The Issuer Node allows you to choose between two key management systems for managing private keys: local storage (default) or [Vault](https://www.vaultproject.io/). It is recommended to use Vault for production environments for enhanced security.
+    - HashiCorp Vault
+    - AWS Secrets Manager
+    - AWS KMS (for ETH keys only)
+    - Local Storage (for testing only)
 
-  - Local Storage:
-    - If you opt for local storage, set the following in your .env-issuer file:
-
-    ```bash
-    ISSUER_KMS_BJJ_PROVIDER=localstorage
-    ISSUER_KMS_ETH_PROVIDER=localstorage
-    ```
-
-    - Specify the path for local storage:
-
-    ```bash
-    ISSUER_KMS_PROVIDER_LOCAL_STORAGE_FILE_PATH=./localstoragekeys
-    ```
-  
-  - Vault:
-    - For Vault configuration, ensure that you set the Vault address, plugin, and authentication method properly:
-
-    ```bash
-    ISSUER_KMS_BJJ_PROVIDER=vault
-    ISSUER_KMS_ETH_PROVIDER=vault
-    ISSUER_KEY_STORE_ADDRESS=http://vault:8200
-    ISSUER_KEY_STORE_PLUGIN_IDEN3_MOUNT_PATH=iden3
-    ```
-
-    - Optionally, configure authentication and TLS if necessary:
-
-    ```bash
-    ISSUER_VAULT_USERPASS_AUTH_ENABLED=true
-    ISSUER_VAULT_USERPASS_AUTH_PASSWORD=<your_password>
-    ISSUER_VAULT_TLS_ENABLED=false  # Set to true if TLS is needed
-    ISSUER_VAULT_TLS_CERT_PATH=<path_to_certificate>
-    ```
-
-
+ To configure your KMS, refer to the [sample .env-issuer file](https://github.com/0xPolygonID/issuer-node/blob/main/.env-issuer.sample#L21) and update your .env-issuer config file accordingly to your selected KMS. Detailed instructions and guidance on how to choose the right option for your use case can be found on the [KMS Configuration section](./issuer-configuration.md/#kms-configuration).
 
 3. Import Ethereum Private Key
 

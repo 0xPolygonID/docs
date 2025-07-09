@@ -980,6 +980,63 @@ In the example below, the verifier requests two different proof queries in the s
 }
 ```
 
+## Multi query from a single Credential
+
+To efficiently query multiple attributes from a single credential, use the [LinkedMultiQuery Circuit](./../circuits#9-linkedmultiquery10circom). It supports up to 10 queries in a single proof response, reducing redundancy while ensuring security.
+
+The LinkedMultiQuery Circuit verifies multiple field-based predicate requests, while the V3 Atomic Query Circuit validates credential integrity (signature, Merkle proof, non-revocation, etc.). Both proofs must be from the same credential and share the same groupId to ensure validity. Verification is only valid when both proofs pass.
+
+** Example Query**
+
+This request includes a LinkedMultiQuery (for multiple fields) and a V3 Atomic Query (for credential validation).
+
+
+```json
+{
+  "id": "f8aee09d-f592-4fcc-8d2a-8938aa26676c",
+  "typ": "application/iden3comm-plain-json",
+  "type": "https://iden3-communication.io/authorization/1.0/request",
+  "thid": "f8aee09d-f592-4fcc-8d2a-8938aa26676c",
+  "from": "did:iden3:polygon:amoy:2qFroxB5kwgCxgVrNGUM6EW3khJgCdHHnKTr3VnTcp",
+  "body": {
+    "callbackUrl": "https://test.com/callback",
+    "reason": "Employee verification",
+    "message": "test message",
+    "scope": [
+      {
+        "id": "1",
+        "circuitId": "linkedMultiQuery10-beta.1",
+        "query": {
+          "groupId": 1,
+          "proofType": "BJJSignature",
+          "allowedIssuers": ["*"],
+          "type": "KYCEmployee",
+          "context": "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v101.json-ld",
+          "credentialSubject": {
+            "documentType": { "$eq": 1 },
+            "position": { "$eq": "boss", "$ne": "employee" }
+          }
+        }
+      },
+      {
+        "id": "2",
+        "circuitId": "credentialAtomicQueryV3-beta.1",
+        "query": {
+          "groupId": 1,
+          "proofType": "BJJSignature",
+          "allowedIssuers": ["*"],
+          "type": "KYCEmployee",
+          "context": "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v101.json-ld",
+          "credentialSubject": {
+            "hireDate": { "$eq": "2023-12-11" }
+          }
+        },
+      }
+    ]
+  }
+}
+```
+
 :::warning "Allowed Issuers"
 
 When we use `*` in the "allowed issuers" segment (`allowedIssuers: ['*']`), we mean that we accept any entity that might have provided the credential. Even though this seems to be convenient for testing purposes, it may also be considered risky. Applying due diligence by **actually choosing trusted specific issuers** should be the best approach. Only in rare cases, a verifier would accept any issuer, so we advise not to use `*`.

@@ -95,7 +95,88 @@ then:
 * OnChain - `Iden3commRevocationStatusV1.0` and `Iden3OnchainSparseMerkleTreeProof2023` credential status type
 * All - All the statuses.
 
+## KMS Configuration
 
+Credentials issued by the issuer node are signed using a private key tied to the identity responsible for issuing them. Each identity can have one or more BabyJubJub (BJJ) type private keys. Additionally, the issuer node supports creating Ethereum-controlled identities, where both a BJJ key and an Ethereum (ETH) key are associated with the identity.
+
+#### Identity Types and State Transitions
+- BJJ-Based Identity:
+  - A BJJ type key is generated for the identity to sign credentials and generate zk-proofs for state transitions.
+  - A shared ETH type key (imported during setup) is used to publish zk-proofs on-chain.
+
+- ETH-Based Identity:
+  - Both a BJJ type key and an ETH type key are generated for the identity.
+  - The BJJ type key is used to signs the credentials.
+  - Only the ETH type key is involved in state transition.
+  
+The issuer node integrates with various key management solutions to create, sign, and store these keys securely. Depending on your setup, here’s an overview of the available options:
+
+| **KMS Service**       | **Supported Key Types** | **Purpose**                              | **Recommended For**      |
+|------------------------|-------------------------|------------------------------------------|--------------------------|
+| HashiCorp Vault        | BJJ, ETH               | Secure key creation and storage          | Production               |
+| AWS Secrets Manager    | BJJ, ETH               | Secure key storage                       | Production               |
+| AWS KMS                | ETH (only)             | Secure ETH key creation and signing      | Production (ETH only)    |
+| Localstorage           | BJJ, ETH               | Local storage for testing                | Testing Only             |
+
+
+### HashiCorp Vault
+The issuer node integrates with HashiCorp Vault, delegating the creation, signing, and secure storage of both BJJ and ETH keys via a Vault plugin. To configure the issuer node to use Vault as a Key Management Service (KMS), update the .env-issuer file as follows:
+
+```bash
+ISSUER_KMS_BJJ_PROVIDER=vault
+ISSUER_KMS_ETH_PROVIDER=vault
+
+ISSUER_VAULT_USERPASS_AUTH_ENABLED=true
+ISSUER_VAULT_USERPASS_AUTH_PASSWORD=<your-vault-issuernode-password>
+ISSUER_KEY_STORE_ADDRESS=<your-vault-url>
+```
+For detailed steps to configure the Vault plugin, refer to the Docker-based setup in the following repository: [HashiCorp Vault Setup](https://github.com/0xPolygonID/issuer-node/blob/main/infrastructure/local/.vault/scripts/init.sh).
+
+### AWS Secrets Manager
+In this configuration, the issuer node handles the creation of private keys, which are securely stored in AWS Secrets Manager.
+
+Update the .env-issuer file as follows:
+
+```bash
+ISSUER_KMS_BJJ_PROVIDER=aws-sm
+ISSUER_KMS_ETH_PROVIDER=aws-sm
+
+ISSUER_KMS_AWS_ACCESS_KEY=<your-aws-access-key>
+ISSUER_KMS_AWS_SECRET_KEY=<your-aws-secret-key>
+ISSUER_KMS_AWS_REGION=<your-aws-region>
+```
+:::note
+ Ensure the credentials you use have the necessary permissions to access AWS Secrets Manager.
+:::
+Learn more about AWS Secrets Manager here: [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/.)
+
+### AWS KMS Service (Only for ETH Keys)
+Alternatively, AWS KMS can be used exclusively for managing and signing ETH keys, delegating their creation and secure storage to the AWS KMS service.
+
+To configure this setup, update the .env-issuer file as follows:
+
+```bash
+ISSUER_KMS_BJJ_PROVIDER=<localstorage | vault | aws-sm>
+ISSUER_KMS_ETH_PROVIDER=aws-kms
+
+ISSUER_KMS_AWS_ACCESS_KEY=<your-aws-access-key>
+ISSUER_KMS_AWS_SECRET_KEY=<your-aws-secret-key>
+ISSUER_KMS_AWS_REGION=<your-aws-region>
+```
+:::note
+Ensure your credentials have the necessary permissions for AWS KMS.
+:::
+Learn more about AWS KMS service: [AWS KMS](https://aws.amazon.com/kms/?nc1=h_ls)
+
+### Localstorage (For Testing Only)
+For testing purposes, both BJJ and ETH keys can be stored locally as flat files. This option is not recommended for production environments due to its lack of security.
+
+To enable this setup, update the .env-issuer file as follows:
+
+```bash
+ISSUER_KMS_BJJ_PROVIDER=localstorage
+ISSUER_KMS_ETH_PROVIDER=localstorage
+```
 
 
 
