@@ -26,17 +26,23 @@ To employ this method, follow these steps:
 
 1. Set the following environment variable in the `.env-issuer` file:
 
-   `ISSUER_VAULT_USERPASS_AUTH_ENABLED=false`
+   ```bash
+   ISSUER_VAULT_USERPASS_AUTH_ENABLED=false
+   ```
 
    Another option is to remove the `ISSUER_VAULT_USERPASS_AUTH_ENABLED` entry from the file to get the default value (false)
 
 2. Run the command below to add the Vault token to the `.env-issuer` configuration file:
 
+   ```bash 
    `make add-vault-token`
+   ```
 
 After step 2, the `.env-issuer` configuration file should contain an entry similar to this:
 
-`ISSUER_KEY_STORE_TOKEN=hvs.HW8Qup9s6LBUA0ff8Q1TO6Uc`
+```bash
+ISSUER_KEY_STORE_TOKEN=hvs.HW8Qup9s6LBUA0ff8Q1TO6Uc
+```
 
 Finally, start or restart the issuer node to ensure it includes the change in the file.
 
@@ -57,16 +63,25 @@ Upon Vault startup, an initialization script is executed. Among its tasks, it cr
 
 1. Set the following environment variables in the `.env-issuer` file:
 
-   `ISSUER_VAULT_USERPASS_AUTH_ENABLED=true`
-
-   `ISSUER_VAULT_USERPASS_AUTH_PASSWORD=issuernodepwd`
+   ```bash
+   ISSUER_VAULT_USERPASS_AUTH_ENABLED=true
+   ISSUER_VAULT_USERPASS_AUTH_PASSWORD=issuernodepwd
+   ```
 
 2. Restart the issuer node if necessary.
 
 You might want to change the password for the `issuernode` user. To do this, follow these steps:
 
-1. Execute `make new_password=new_password change-vault-password`
-2. Update the value of the environment variable in the `.env-issuer` file: `ISSUER_VAULT_USERPASS_AUTH_PASSWORD=new_password`
+1. Execute 
+```bash 
+make new_password=new_password change-vault-password
+```
+
+2. Update the value of the environment variable in the `.env-issuer` file: 
+```bash
+ISSUER_VAULT_USERPASS_AUTH_PASSWORD=new_password
+```
+
 3. Restart the issuer node if necessary.
 
 :::tip Which Option to Choose?
