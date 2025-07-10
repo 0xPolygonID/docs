@@ -83,7 +83,7 @@ PolygonIdSdk.getInstance().getEnv(context = context)
 
 #### **_Get Iden3Message from a String_**
 
-An Integrator uses `iden3Message` to communicate with an Issuer/Verifier. This 'iden3message' is created from the QR code scanned by the user on his/her wallet. The `getIden3Message()` uses a string message (created after scanning the QR code) as the input parameter and generates `iden3Message`.
+An Integrator uses `iden3Message` to communicate with an Issuer/Verifier. This 'iden3message' is created from the QR code scanned by the user on their wallet. The `getIden3Message()` uses a string message (created after scanning the QR code) as the input parameter and generates `iden3Message`.
 
 ```
 PolygonIdSdk.getInstance().getIden3Message(

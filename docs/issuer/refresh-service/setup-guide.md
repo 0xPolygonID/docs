@@ -21,8 +21,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ## Preparation
 
 1. Run the issuer-node locally by following the [quick-start installation guide](https://github.com/0xPolygonID/issuer-node/#quick-start-installation).
-1. Clone the refresh service using the command `git clone git@github.com:0xPolygonID/refresh-service.git`.
-1. Build JSON and JSONLD schemas, utilizing the provided examples:
+
+2. Clone the refresh service using the command `git clone git@github.com:0xPolygonID/refresh-service.git`.
+
+3. Build JSON and JSONLD schemas, utilizing the provided examples:
 
 - [JSON](https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json/non-zero-balance.json)
 - [JSONLD](https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/non-zero-balance.jsonld)

@@ -212,7 +212,7 @@ The `EmployeeData` Schema encodes the monthly salary of the credential subject. 
 
 **Query**
 
-When presented with this query, the user must prove that his/her monthly salary is greater than $1000.
+When presented with this query, the user must prove that their monthly salary is greater than $1000.
 
 <Tabs>
 <TabItem value="off-chain">

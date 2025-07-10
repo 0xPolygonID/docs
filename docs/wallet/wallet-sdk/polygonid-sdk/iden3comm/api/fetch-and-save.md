@@ -2,7 +2,7 @@
 id: fetch-and-save
 title: Fetch and Save Credentials
 sidebar_label: Fetch and Save
-description: An Integrator can fetch credentials stored on an Issuer and then save them in his/her wallet.
+description: An Integrator can fetch credentials stored on an Issuer and then save them in their wallet.
 keywords:
   - docs
   - polygon id
@@ -12,7 +12,7 @@ keywords:
   - wallet sdk
 ---
 
-An Integrator can fetch credentials stored on an Issuer and then save them in his/her wallet. The `fetchAndSaveClaims()` function is called to fetch and save a list of credentials from an Issuer.
+An Integrator can fetch credentials stored on an Issuer and then save them in their wallet. The `fetchAndSaveClaims()` function is called to fetch and save a list of credentials from an Issuer.
 
 ## Fetch and Save Credentials
 

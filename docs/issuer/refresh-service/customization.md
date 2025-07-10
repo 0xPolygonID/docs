@@ -29,4 +29,4 @@ Utilize the [flexible HTTP package](https://github.com/0xPolygonID/refresh-servi
 
 For ultimate customization, consider implementing the refresh service from scratch to tailor it precisely to your specific needs.
 
-Implementing a refresh service from scratch can be useful when you have your own isuer node implementation or have special data processing logic, etc. Check out the [current implementation of the refresh service](/docs/issuer/refresh-service/overview#refresh-service-current-implementation) to create your own.
+Implementing a refresh service from scratch can be useful when you have your own issuer node implementation or have special data processing logic, etc. Check out the [current implementation of the refresh service](/docs/issuer/refresh-service/overview#refresh-service-current-implementation) to create your own.

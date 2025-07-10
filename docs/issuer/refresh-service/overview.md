@@ -53,10 +53,10 @@ Example of refresh service implementation can be found [here](https://github.com
 
 ### Modules
 
-1. **[HTTP Server](https://github.com/0xPolygonID/refresh-service/tree/main/server)**: the http server is a base layer for [iden3comm protocol](https://iden3-communication.io/).
-2. **[Provider Module](https://github.com/0xPolygonID/refresh-service/tree/main/providers)**: this module receives information from external data providers. By itself, it is very flexible in settings, but you can always add your own implementation.
-3. **[Package Manager](https://github.com/0xPolygonID/refresh-service/blob/main/packagemanager/packagemanager.go)**: the package manager handles ZWZ token within the iden3comm protocol.
-4. **[Integration with the Issuer Node](https://github.com/0xPolygonID/refresh-service/blob/main/service/issuer.go)**: this module responsibles for communication with [issuer node](https://github.com/0xPolygonID/issuer-node/).
+1. **[HTTP Server](https://github.com/0xPolygonID/refresh-service/tree/main/server)**: The http server is a base layer for [iden3comm protocol](https://iden3-communication.io/).
+2. **[Provider Module](https://github.com/0xPolygonID/refresh-service/tree/main/providers)**: This module receives information from external data providers. By itself, it is very flexible in settings, but you can always add your own implementation.
+3. **[Package Manager](https://github.com/0xPolygonID/refresh-service/blob/main/packagemanager/packagemanager.go)**: The package manager handles ZWZ token within the iden3comm protocol.
+4. **[Integration with the Issuer Node](https://github.com/0xPolygonID/refresh-service/blob/main/service/issuer.go)**: This module is responsible for communication with [issuer node](https://github.com/0xPolygonID/issuer-node/).
 
 ### Authentication module for setup iden3comm handler
 
@@ -66,7 +66,9 @@ In the context of a refresh service where JWZ tokens are verified, you will requ
 
 To authorise the user’s JWZ token, it is necessary to define a function that verifies proof and the issuer’s state. Once the authorization is complete, the refresh service will be aware of the user’s DID from the JWZ token. Now you can ensure that the credential being refreshed contains the same DID in the credential subject.
 
-> **NOTE:** It is crucial to verify whether a user is the owner of the credential that potentially will be refreshed. Without this verification, an attacker could refresh and obtain a third-party credential.
+:::note
+ It is crucial to verify whether a user is the owner of the credential that potentially will be refreshed. Without this verification, an attacker could refresh and obtain a third-party credential.
+:::
 
 ### Integration with issuer node
 
@@ -114,7 +116,9 @@ To implement credential refreshing in a client side, need to follow next algorit
 
 - After refreshing the credential, checks if the updated credential satisfies the proof request. If it does, generate a proof. If the credential still doesn't meet the proof request, the process repeats, selecting another credential with a refresh service and refreshing it.
 
-> 💡 **NOTE:** If expired credentials are revoked, the current recommended algorithm will not process or update such credentials.
+:::note
+If expired credentials are revoked, the current recommended algorithm will not process or update such credentials.
+:::
 
 ### Client behavior depending on the type of proof in a proof request
 
@@ -126,7 +130,9 @@ To implement credential refreshing in a client side, need to follow next algorit
 
 **Merkle tree proof (MTP):**
 
-> **NOTE:** The workflow for MTP is in development. However, you still can receive notifications about MTP proof on the mobile application after refreshing credential(-s) that have MTP proof are performed.
+:::note
+The workflow for MTP is in development. However, you still can receive notifications about MTP proof on the mobile application after refreshing credential(-s) that have MTP proof are performed.
+:::
 
 1. The holder should decline the proof request. This is because generating an MTP proof might require a significant amount of time to become ready
 1. The `refreshService` informs the holder about the `pending` status.

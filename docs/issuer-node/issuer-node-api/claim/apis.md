@@ -122,7 +122,7 @@ In order to communicate with the Web Wallet or the Wallet App, the Issuer Node m
 
 :::
 
-**Function**: Endpoint to generate a Universal Link. The user can then click this link and accept credentials to his/her wallet.
+**Function**: Endpoint to generate a Universal Link. The user can then click this link and accept credentials to their wallet.
 
 **How it Works**: The Issuer DID (identifier string retrieved from calling the `Create Identity` endpoint) and credential Identifier (or `cid` retrieved from the `Create Credential` endpoint) are passed as path variables in the request URL.
 
