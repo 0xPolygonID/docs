@@ -62,7 +62,7 @@ Example of refresh service implementation can be found [here](https://github.com
 
 To be sure whether a user is the owner of the credentials they want to refresh, it is essential to implement an authentication module. To initiate the process, you should initialize the [Iden3comm package manager](https://github.com/0xPolygonID/refresh-service/blob/main/packagemanager/packagemanager.go).
 
-In the context of a refresh service where JWZ tokens are verified, you will require the verification_key.json for the authV2 circuit. Additionally, to confirm the existence of the user in the issuer's state, one needs to know the issuer's state contract [addresses](https://docs.iden3.io/contracts/state/).
+In the context of a refresh service where JWZ tokens are verified, you will require the verification_key.json for the authV2 circuit. Additionally, to confirm the existence of the user in the issuer's state, one needs to know the issuer's state contract [addresses](https://docs.iden3.io/contracts/contracts/).
 
 To authorise the user’s JWZ token, it is necessary to define a function that verifies proof and the issuer’s state. Once the authorization is complete, the refresh service will be aware of the user’s DID from the JWZ token. Now you can ensure that the credential being refreshed contains the same DID in the credential subject.
 
