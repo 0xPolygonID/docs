@@ -20,7 +20,7 @@ Privado ID’s identity infrastructure facilitates trusted and secure relationsh
 
 ## Why Privado ID?
 
-Privado ID, with the help of zero-knowledge proofs, lets users prove their identity without the need of exposing their private information. This ensures both the **Freedom of Expression** and **Privacy by Default** (user's identities are secured by zero-knowledge cryptography).
+Privado ID, with the help of zero-knowledge proofs, lets users prove their identity without the need to expose their private information. This ensures both the **Freedom of Expression** and **Privacy by Default** (user's identities are secured by zero-knowledge cryptography).
 
 ## Core Concepts of Privado ID: Verifiable Credentials, Identity Holder, Issuer and Verifier
 
@@ -42,7 +42,7 @@ The architecture of the framework is composed of three modules: Identity Holder,
 
 The simplest example of a Verifier is a bar that wants to verify if a client is over 18. In the real world, the Identity Holder would need to provide an ID and show all their personal information. With Privado ID, they only need to pass a proof.
 
-A core concept here is the _trust_ that must exist between a Verifier and an Issuer: the fact that the information contained inside a VC is cryptographically verifiable doesn't guarantee it's true. The Issuer must be a trusted and reputable party so that Verifier can consume the VCs originated by that Issuer.
+A core concept here is the _trust_ that must exist between a Verifier and an Issuer: the fact that the information contained inside a VC is cryptographically verifiable doesn't guarantee that it is true. The Issuer must be a trusted and reputable party so that Verifier can consume the VCs originated by that Issuer.
 
 <div align="center">
 <img src= {useBaseUrl('/img/triangle-of-trust-simple.png')} align="center" width="700"/>
@@ -50,11 +50,11 @@ A core concept here is the _trust_ that must exist between a Verifier and an Iss
 
 ## Role of a Wallet
 
-A [Wallet](./wallet/wallet-overview.md) plays a crucial role in the seamless exchange of VCs with the Issuer, on one hand, and proofs with the Verifier, on the other. As stated above, an Identity Holder carries their personal data, in the form of VC, within their wallet. At its core, the wallet stores the private key of a user, fetch VCs from the Issuer, and create zero-knowledge proofs to be presented to the Verifier. Being the carrier of the sensitive information, the Wallet has been designed to ensure that the identity of its Holder is protected and preserved, and no sensitive data can be revealed to the third party without the consent of the Holder.
+A [Wallet](./wallet/wallet-overview.md) plays a crucial role in the seamless exchange of VCs with the Issuer, on one hand, and proofs with the Verifier, on the other. As stated above, an Identity Holder carries their personal data, in the form of VC, within their wallet. At its core, the wallet stores the private key of a user, fetches VCs from the Issuer, and create zero-knowledge proofs to be presented to the Verifier. Being the carrier of the sensitive information, the Wallet has been designed to ensure that the identity of its Holder is protected and preserved, and no sensitive data can be revealed to the third party without the consent of the Holder.
 
 ## What Can you Achieve Using Privado ID?
 
-1. **Privacy using Zero-Knowledge Proofs**: An Identity Holder, using zero-knowledge proofs, can keep thier personal data private. During the process of VC verification, it just needs to show a proof that they are the owner of a VC that matches certain criteria without letting the Verifier know of the actual VC. For example, an Identity Holder can prove to a Verifier authority that they are above 18 years of age by presenting the proof without revealing their actual age. This ensures minimum data exposure and hence confirms the safety of any sensitive data.
+1. **Privacy using Zero-Knowledge Proofs**: An Identity Holder, using zero-knowledge proofs, can keep their personal data private. During the process of VC verification, it just needs to show a proof that they are the owner of a VC that matches certain criteria without letting the Verifier know of the actual VC. For example, an Identity Holder can prove to a Verifier authority that they are above 18 years of age by presenting the proof without revealing their actual age. This ensures minimum data exposure and hence confirms the safety of any sensitive data.
    Another aspect of privacy comes from the fact that the Issuer would not be able to track the usage of VCs by an individual once it has been issued.
 
 2. **Off-Chain and On-Chain Verification**: Verification of proofs can be done either off-chain or on-chain via Smart Contracts. For example, developers can set up a contract that airdrops tokens only to users that meet certain criteria based on their VCs.

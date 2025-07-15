@@ -44,7 +44,7 @@ By creating a Custom Display Method and referencing it during credential issuanc
 
 ### Step 1: Fill Out Metadata
 1. Open the [Display Method Builder](https://display-method-dev.privado.id/).
-2. Enter all required metadata fields (name, description, type, etc.) as guided by the [Display Method Documentation](https://docs.privado.id/docs/issuer/display-method/).
+2. Enter all required metadata fields (tile, description, issuer name, etc.)
 3. Make sure to follow any restrictions or formatting requirements.
 
 ![Display Method Builder](../../static/img/display_methods/1.png)
