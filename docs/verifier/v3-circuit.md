@@ -5,7 +5,7 @@ sidebar_label: V3 circuit (Beta)
 description: Verifier main features.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - ID holder
   - circuit
   - v3
@@ -13,17 +13,17 @@ keywords:
 
 ## New circuits available
 
-We want to introduce new circuits - СredentialAtomicQueryV3 and CredentialAtomicQueryV3Onchain
+We are introducing two new circuits — CredentialAtomicQueryV3 and CredentialAtomicQueryV3Onchain
 
 :::warning
 
-    Circuits are in the beta version. Trusted setup will be performed in the next release.
+    These circuits are in beta. The trusted setup will be completed in the next release.
     Newest version is СredentialAtomicQueryV3-beta.1
 
   <details><summary>Changelog from beta.0 to beta.1</summary>
 
     1. ValueArrSize input is introduced, which fixes behaviour for IN / NIN operations.
-    2. Exists / Noop / Less Than Or Equal / Greater Than or Equal /  Not between / Between operators support.
+    2. Support for Exists / Noop / Less Than Or Equal / Greater Than Or Equal / Not Between / Between operators.
     3. Query hash calculation algorithm changes.
     4. Constraints and security optimizations.
 
@@ -35,7 +35,7 @@ More about new supported operators [here](./verification-library/zk-query-langua
 
 Link to latest sdk circuit wrappers: [js](https://github.com/0xPolygonID/js-sdk/pull/181) / [go](https://github.com/iden3/go-circuits/releases/tag/v2.1.0)
 
-In general it's an improved version of V2 circuits with several important key features:
+Overall, it is an improved version of the V2 circuits with several important features:
 
 1. SIG and MTP checks are united in single circuit. Now you can use only one circuit without sig/mtp suffixes. Proof will be taken from user wallet and authorization response will contain information about verifiable credential proof type which has been used. It is possible to request the needed proof from user by using `proofType` property in the authorization request message. Possible values are `Iden3SparseMerkleTreeProof` and `BJJSignature2021`. If `proofType` is not provided - available proof will be used. In case there are two proofs available - MTP will be used as more prior.
 
@@ -56,7 +56,7 @@ In general it's an improved version of V2 circuits with several important key fe
 
 2. Support of new type of operators modifiers: now selective disclosed value will be present in the output value - this will give a possibility for onchain verification to work with selective disclosure workflows. The format of the request hasn't been changed.
 
-3. Support of nullifiers generation for proof of uniqueness use cases. Imagine the scenario when verifier needs to make sure that credential can be used only once for the proof generation from specific user. Now it's possible. If credential is issued on profile, verifier id is present and nullifier session id is provided - unique value for such credential will be generated and persist in the proof outputs.
+3. Support of nullifiers generation for proof of uniqueness use cases. Imagine the scenario when verifier needs to make sure that credential can be used only once for the proof generation from specific user. This is now possible, if a credential is issued on a profile, the verifier ID is present, and a nullifier session ID is provided - unique value for such credential will be generated and persist in the proof outputs.
 
 ```json
 ...
@@ -75,8 +75,8 @@ In general it's an improved version of V2 circuits with several important key fe
 ...
 ```
 
-4. For onchain circuit now it is possible to disable default authentication. Ethereum-based identities can generate zero-knowledge proofs without having the bjj keys, and verification will be successful.
-   In this scenario user id myst be derived from the sender address. Bellow is an example of V3 circuit.
+4. For onchain circuit now it is possible to disable default authentication. Ethereum-based identities can generate zero-knowledge proofs without having the BJJ keys, and verification will be successful.
+   In this scenario user id must be derived from the sender address. Below is an example of a V3 circuit.
 
 ```js
 
@@ -90,7 +90,7 @@ In general it's an improved version of V2 circuits with several important key fe
 
 Beta Validator is also deployed: [Repository](https://github.com/0xPolygonID/contracts)
 
-1. Possibility to use linked proofs. This means that verifier can be sure that user used the same credential to proof different queries. This is achievable by using `groupId` property in the proof request.
+5. Possibility to use linked proofs. This means the verifier can be sure that the user used the same credential to prove different queries. This is achievable by using `groupId` property in the proof request.
 
 ```json
 ...
@@ -144,7 +144,7 @@ Example of complex request with v3 circuit proof request:
         },
         "query": {
           "groupId": 1,
-          "proofType": "BJJSignature",
+          "proofType": "BJJSignature2021",
           "allowedIssuers": ["*"],
           "context": "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v101.json-ld",
           "type": "KYCEmployee",

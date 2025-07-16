@@ -5,7 +5,7 @@ sidebar_label: Verifier Backend API
 description: Verifier Backend API.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - ID holder
   - verifier
 ---

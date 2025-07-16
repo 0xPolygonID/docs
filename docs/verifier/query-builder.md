@@ -5,7 +5,7 @@ sidebar_label: Query Builder
 description: Learn how to use the Query Builder.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - ID holder
   - issuer
   - verifier
@@ -23,7 +23,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Query Builder, available [here](https://schema-builder.polygonid.me/query-builder), is an intuitive, web-based tool designed to simplify the creation of verification queries. It's particularly useful for verifiers looking to establish specific criteria for identity verification, such as organizational membership or age requirements. By leveraging Polygon ID, the Query Builder offers a secure and efficient method for users to authenticate identities based on these criteria.
+The Query Builder, available [here](https://tools.privado.id/query-builder), is an intuitive, web-based tool designed to simplify the creation of verification queries. It's particularly useful for verifiers looking to establish specific criteria for identity verification, such as organizational membership or age requirements. By leveraging Privado ID, the Query Builder offers a secure and efficient method for users to authenticate identities based on these criteria.
 
 ## Features
 
@@ -48,12 +48,20 @@ Here's a glimpse of the main user interface of the Query Builder:
 <img src={useBaseUrl("img/query-builder.png")} align="center" width="600"/>
 </div>
 <br/>
+<div align="center">
+<img src={useBaseUrl("img/query-circuit.png")} align="center" width="600"/>
+</div>
+<br/>
+<div align="center">
+<img src={useBaseUrl("img/query-test.png")} align="center" width="600"/>
+</div>
+<br/>
 
 ## Building a query
 
 ### URL to JSON-LD Context
 
-To create a query, it is essential to reference the correct schema, specifically its JSON-LD Context's URL. Users have two options: they can either enter a URL pointing to a JSON-LD Context or utilize one from the [Schema Explorer](https://schema-builder.polygonid.me). By starting to type the name (or any other keyword) of the desired schema in the Schema Explorer, a list of available schemas will appear, allowing the user to select the appropriate one.
+To create a query, it is essential to reference the correct schema, specifically its JSON-LD Context's URL. Users have two options: they can either enter a URL pointing to a JSON-LD Context or utilize one from the [Schema Explorer](https://tools.privado.id/). By starting to type the name (or any other keyword) of the desired schema in the Schema Explorer, a list of available schemas will appear, allowing the user to select the appropriate one.
 
 <div align="center">
 <img src={useBaseUrl("img/query-builder-url.png")} align="center" width="600"/>
@@ -72,6 +80,9 @@ Credentials consist of various primitive attributes such as strings, integers, b
 
 <div align="center">
 <img src={useBaseUrl("img/query-builder-attribute-field.png")} align="center" width="600"/>
+</div>
+<div align="center">
+<img src={useBaseUrl("img/query-add-condition.png")} align="center" width="600"/>
 </div>
 <br/>
 
@@ -132,9 +143,9 @@ The protocol allows selection between three query types:
 
 1. **Condition:** This type allows the prover to demonstrate that a specific condition is met without revealing the underlying data. It maintains data privacy by cryptographically verifying the condition. An example is proving legal age for entry into a venue without disclosing the actual age.
 
-2. **Selective disclosure:** Use this when you need the prover to reveal specific data stored in their credential. This option discloses the actual value of an attribute to the verifier. For instance, instead of just requesting proof proving legal age, it would disclose the prover's actual age to the verifier.
+2. **Selective disclosure:** Use this when you need the prover to reveal specific data stored in their credential. This option discloses the actual value of an attribute to the verifier. For instance, instead of just requesting proof of legal age, it would disclose the prover's actual age to the verifier.
 
-3. **Credential issued:** Use this when you need the prove that credential with a specific type has been issued, but not to reveal any information.
+3. **Credential issued:** Use this when you need to prove that a credential with a specific type has been issued, but not to reveal any information.
 
 Choose "Condition" for privacy-preserving verification, "Selective disclosure" for cases where revealing specific information is necessary, "Credential issued" when you need to ensure the fact of credential issuance.
 
@@ -198,7 +209,7 @@ The verification of queries off-chain is a straightforward process:
 2. **Scan QR Code:** Use the prover's wallet to scan this QR code.
 3. **Credential Validation:** The wallet checks for the existence of the credential and verifies all query requirements, including issuer DID, revocation status, and specified conditions.
 4. **Zero-Knowledge Proof Generation:** If the criteria are met, a zero-knowledge proof is generated. This proof serves as cryptographic evidence that the prover's credential is valid and fulfills all aspects of the query.
-5. **Receiving Proof:** The zero-knowledge proof is returned as a JWZ token, which can be decoded using the [JWZ tool](https://jwz.polygonid.me/).
+5. **Receiving Proof:** The zero-knowledge proof is returned as a JWZ token, which can be decoded using the [JWZ tool](hhttps://jwz-validator.privado.id/).
 
 For a detailed walkthrough, refer to the provided video illustrating the complete process of creating and verifying an off-chain query.
 
