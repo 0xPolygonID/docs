@@ -5,7 +5,7 @@ sidebar_label: Schema Builder UI
 description: Create schemas intuitively by using the Schema Builder UI.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer node
   - claim
   - verifiable credentials

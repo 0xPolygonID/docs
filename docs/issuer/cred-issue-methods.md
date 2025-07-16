@@ -5,7 +5,7 @@ sidebar_label: Credential Issuance Methods
 description: Description of the Credential Issuance Methods.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - credential
   - method
   - SIG

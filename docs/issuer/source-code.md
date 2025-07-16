@@ -5,7 +5,7 @@ sidebar_label: Source Code
 description: Important library links.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer node
   - claim
   - verifiable credentials

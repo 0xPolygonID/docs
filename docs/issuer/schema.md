@@ -5,7 +5,7 @@ sidebar_label: Create Custom Schemas
 description: Learn how to create custom schemas manually.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer node
   - claim
   - verifiable credentials

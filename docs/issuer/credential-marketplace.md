@@ -5,7 +5,7 @@ sidebar_label: Credential Marketplace
 description: "Features of the Credential Marketplace"
 keywords:
   - docs
-  - polygon id
+  - privado id
   - credential
   - marketplace
   - issuer

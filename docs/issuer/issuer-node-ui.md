@@ -5,7 +5,7 @@ sidebar_label: Overview
 description: Issuer Node UI description and its components.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer node
   - claim
   - verifiable credentials

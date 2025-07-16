@@ -5,7 +5,7 @@ sidebar_label: Features
 description: Issuer main features.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer node
   - claim
   - verifiable credentials

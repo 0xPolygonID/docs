@@ -5,7 +5,7 @@ sidebar_label: Customization
 description: Customization of refresh service
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer node
   - claim
   - verifiable credentials
