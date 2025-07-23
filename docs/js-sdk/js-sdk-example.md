@@ -2,10 +2,10 @@
 id: js-sdk-example
 title: JS SDK Example
 sidebar_label: Example
-description: Steps to run different modules of the Polygon ID JS SDK with exampling code.
+description: Steps to run different modules of the Privado ID JS SDK with exampling code.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - holder
   - issuer
   - verifier
@@ -15,49 +15,68 @@ keywords:
   - proof
 ---
 
-# JS SDK Example
+# Privado ID JS SDK Example
 
-This tutorial shows the steps to run different modules of the Polygon ID JS SDK with exampling code. After the steps for each module, you will find a sample output which is generated when these modules are run.
+This comprehensive tutorial demonstrates how to implement different modules of the Privado ID JS SDK through practical examples. Each section includes detailed setup instructions, complete code samples, and expected outputs to help you understand the full credential lifecycle.
 
-## Steps to Run Example Code
+## Prerequisites
 
-We have created a [JS SDK Example repository](https://github.com/0xPolygonID/js-sdk-examples) that you can download and run. Follow these steps:
+- Node.js and npm installed on your system
+- Basic understanding of TypeScript/JavaScript
+- Access to Polygon Amoy testnet
+- Wallet with MATIC balance for testnet transactions
 
-1. Download the latest circuits from the following curl command:
+## Initial Setup to Run Example Code
 
-   ```bash
-   curl https://iden3-circuits-bucket.s3.eu-west-1.amazonaws.com/latest.zip --output latest.zip
-   ```
+We provide a complete [JS SDK Example repository](https://github.com/0xPolygonID/js-sdk-examples) that you can download and run. Follow these steps:
 
-   where s3 is a bucket that has been created for storing the circuits' data in one of the Amazon Simple Storage Service (Amazon S3) for specific regions across the globe.
+### 1. Download Required Circuits
 
-   The `latest.zip` folder is accessed from the s3 bucket and is the output to the local `latest.zip` file.
+Download the latest zero-knowledge proof circuits using the following command:
 
-   Unzip the `latest.zip` folder downloaded above to the `circuits` folder in the repository:
+```bash
+curl https://iden3-circuits-bucket.s3.eu-west-1.amazonaws.com/latest.zip --output latest.zip
+```
 
-   ```bash
-   unzip latest.zip -d circuits
-   ```
+**Note:** The circuits are stored in an Amazon S3 bucket optimized for global distribution. These circuits are essential for generating and verifying zero-knowledge proofs.
 
-2. To run the scripts, set the values for the following variables:
+Extract the downloaded circuits to the appropriate directory:
 
-   ```bash
-   export WALLET_KEY="...key in hex format with matic balance"
-   export RPC_URL="...url to polygon amoy network rpc node"
-   export RHS_URL="..reverse hash service url"
-   export CONTRACT_ADDRESS="..state v2 contract address in the amoy network"
-   export CIRCUITS_PATH="..path to the circuits folder"
-   ```
+```bash
+unzip latest.zip -d circuits
+```
 
-3. Run the **_npm_** command. For this, Node.js (which contains the npm package) must be installed on your system.
+### 2. Configure Environment Variables
 
-   ```bash
-     npm run start
-   ```
+Set up the required environment variables for your development environment:
 
-### Identity Creation
+```bash
+export WALLET_KEY="your_private_key_in_hex_format_with_matic_balance"
+export RPC_URL="https://rpc-amoy.polygon.technology"
+export RHS_URL="https://rhs-staging.polygonid.me"
+export CONTRACT_ADDRESS="state_v2_contract_address_on_amoy_network"
+export CIRCUITS_PATH="./circuits"
+```
 
-1. Initialize `DataStorage`: To initialize `DataStorage`, we need a new `CredentialStorage`, which could be as simple as a Memory Data Storage (`InMemoryDataSource`). Using Memory Data Storage for new credential storage is not recommended for the production environment. Instead, we could use Browser Data Storage or any other data storage.
+**Security Note:** Never commit private keys to version control. Use environment files or secure key management systems in production.
+
+### 3. Install Dependencies and Run
+
+Install the required npm packages and start the example:
+
+```bash
+npm install
+npm run start
+```
+
+
+## Module 1: Identity Creation
+
+Identity creation is the foundation of the Privado ID system. Each identity is represented by a Decentralized Identifier (DID) and associated cryptographic materials.
+
+### Step 1: Initialize `DataStorage`
+
+To initialize `DataStorage`, we need a new `CredentialStorage`, which could be as simple as a Memory Data Storage (`InMemoryDataSource`). Using Memory Data Storage for new credential storage is not recommended for the production environment. Instead, we could use Browser Data Storage or any other data storage.
 
    ```typescript
    const dataStorage = {
@@ -81,7 +100,9 @@ The `CredentialStorage` accepts the interface of the Data Storage; it does not r
 `mt` stores Merkle Trees.
 `states` stores Ethereum states of identities.
 
-2. Initialize `CredentialWallet` and `IdentityWallet`: To initialize Identity Wallet, we need `dataStorage`, and `kms` (Key Management System).
+### Step 2: Initialize Wallets and Key Management
+
+To initialize Identity Wallet, we need `dataStorage`, and `kms` (Key Management System).
 
    ```typescript
    const memoryKeyStore = new InMemoryPrivateKeyStore();
@@ -101,7 +122,9 @@ The `CredentialStorage` accepts the interface of the Data Storage; it does not r
 
    For `kms`, we need to define a `provider` that works with keys. For example, we can provide a Baby Jubjub Provider (`BJJProvider`), an Ethereum Key Provider, or a Register Key Provider(`registerKeyProvider`), to name a few. For each Provider, we need to pass the storage: `AbstractPrivateKeyStore`. This storage allows you to create customized encrypted storage. For demo purposes, we have used `memoryKeyStore`. So in a nutshell, we create storage(`memoryKeyStore`), pass it to the Provider(`BJJProvider`), and register this Provider in the Key Management System(`registerKeyProvider`).
 
-3. After initialization is complete, to create identity, we need to pass some options, which are accepted by the `IdentityCreationOptions` interface. The options are as follows:
+### Step 3: Create Identity
+
+After initialization is complete, to create identity, we need to pass some options, which are accepted by the `IdentityCreationOptions` interface. The options are as follows:
 
 ```typescript
 export interface IdentityCreationOptions {
@@ -142,9 +165,11 @@ If we do not use `rhsUrl` within createIdentity() method, we get a `credentialSt
 
 :::
 
-### Issue Credential
+## Module 2: Credential Issuance
 
-1. #### Initialize all storage types
+Credential issuance involves creating verifiable credentials that can be cryptographically proven without revealing the underlying data.
+
+### Step 1: Initialize Storage and Wallets
 
    ```typescript
    const dataStorage = {
@@ -177,7 +202,7 @@ If we do not use `rhsUrl` within createIdentity() method, we get a `credentialSt
    const wallet = new IdentityWallet(kms, dataStorage, credWallet);
    ```
 
-2. #### Create Issuer's Identity
+### Step 2: Create Issuer Identity
 
    ```typescript
    const seedPhraseIssuer: Uint8Array = byteEncoder.encode("seedseedseedseedseedseedseedseed");
@@ -193,7 +218,7 @@ If we do not use `rhsUrl` within createIdentity() method, we get a `credentialSt
    });
    ```
 
-3. #### Create User's Identity
+### Step 3: Create User Identity
 
    ```typescript
    const seedPhraseUser: Uint8Array = byteEncoder.encode("userseedseedseedseedseedseeduser");
@@ -209,7 +234,7 @@ If we do not use `rhsUrl` within createIdentity() method, we get a `credentialSt
    });
    ```
 
-4. #### Create Credential Request (`credentialRequest`) and Issue Credential (`issueCredential`):
+### Step 4: Create Credential Request (`credentialRequest`) and Issue Credential (`issueCredential`):
 
    ```typescript
    const claimReq: CredentialRequest = {
@@ -230,7 +255,7 @@ If we do not use `rhsUrl` within createIdentity() method, we get a `credentialSt
    const issuerCred = await wallet.issueCredential(issuerDID, claimReq);
    ```
 
-#### Output of Run Command
+### Expected Output
 
 ```json
 {
@@ -290,7 +315,7 @@ If we do not use `rhsUrl` within createIdentity() method, we get a `credentialSt
 
   <br />
 
-### Generate Proof
+## Module 3: Zero-Knowledge Proof Generation
 
 1. [Initialize all storages](#initialize-all-storage-types) including `dataStorage`, `identityWallet`, `credentialWallet`, `circuitStorage`, and `stateStorage`.
 
@@ -518,7 +543,7 @@ If we do not use `rhsUrl` within createIdentity() method, we get a `credentialSt
 }
 ```
 
-### Verify Proof
+## Module 4: Proof Verification
 
 1. Once the proof is generated, the Verifier can verify the proof (Signature or MTP).
 

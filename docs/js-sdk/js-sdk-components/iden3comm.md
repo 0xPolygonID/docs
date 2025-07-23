@@ -5,7 +5,7 @@ sidebar_label: Iden3comm
 description: Iden3comm components and capabilities.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - holder
   - issuer
   - verifier
@@ -17,13 +17,16 @@ keywords:
   - revocation
 ---
 
-Iden3comm is the implementation of the messages that exist in the Iden3 protocol. It deals with different protocol message types; a few messages supported by the protocol are related to authentication, credentials, proof, and revocation.
+Iden3comm is the reference implementation for message handling within the Iden3 protocol. It processes various protocol message types, including authentication requests, credential operations, proof generation, and revocation management.
 
 ## Packers
 
-Iden3comm supports packers that receive some data as payload and create an envelope for different types of messages.
+Iden3comm uses packers to encapsulate payload data into protocol-specific message envelopes. These components transform raw data into standardized message formats for secure transmission.
 
-The Iden3 protocol supports packers for messages of 2 media types: plain messages and zero-knowledge proof (ZKP) messages. These packers let you generate tokens.
+The Iden3 protocol supports packers for messages of 2 media types: - **Plain messages**: Standard unencrypted message format
+- **Zero-knowledge proof (ZKP) messages**: Cryptographically secured messages with privacy-preserving properties
+
+These packers let you generate tokens.
 
 ### ZKP Packer
 
@@ -51,7 +54,7 @@ For the messages of the type **ZKP**, the packer receives a payload (a serialize
 
 ## Handler
 
-In Iden3, a handler manages the packers described above. There are two types of handlers that the protocol supports: Authentication and Fetch Handlers.
+In Iden3, a handler manages the packers and orchestrate message processing workflows. There are two types of handlers that the protocol supports: Authentication Handler and Fetch Handler.
 
 ### Authentication Handler
 
@@ -83,7 +86,7 @@ It gets the payload and an identity (that can handle that request) as the input 
 
 Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.authhandler.handleauthorizationrequest" target="_blank">API Reference</a>.
 
-:::note
+:::note **Privacy Consideration**
 
 When a user logs into a Verifier, it does not have to share its identity. Instead, it can share with it the profile as the user does not receive a credential on his/her identifier but on his/her profile. Sharing one's profile instead of his/her identity prevents the possible identity tracking by a Verifier.
 
@@ -100,23 +103,33 @@ handleCredentialOffer(
   ): Promise<W3CCredential[]>
 ```
 
-The offer should just be passed to the function. The DID that is supposed to fetch the credential will be determined from the offer message itself.
+**Parameters:**
+- `offer` is the offer message that the Fetch handler receives.
 
-`offer` is the offer message that the Fetch handler receives.
-
-The handler returns a Verifiable Credential in the W3C format.
+**Process:**
+- Automatically determines the target DID from the offer message content
+- Processes the offer and retrieves the credential from the issuer
+- Returns verifiable credentials in W3C standard format
 
 Read more about iden3comm [here](https://github.com/iden3/iden3comm/tree/main/protocol).
 
 Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.fetchhandler.handlecredentialoffer#fetchhandlerhandlecredentialoffer-method" target="_blank">API Reference</a>.
 
-If you want to work with JWS instead of JWZ technology during the authorization or credential fetching you need to pass parameters to these functions.
+## Alternative Message Formats
+
+For applications requiring JSON Web Signature (JWS) instead of JSON Web Zero-knowledge (JWZ) technology, you can specify alternative packer parameters:
 
 ```typescript
-let params = {
+const params = {
   mediaType: MediaType;
   packerOptions?: JWSPackerParams;
 }
 ```
 
-where `mediaType` is the media type of iden3comm protocol and `packerOptions` are JWS required parameters.
+**Configuration:**
+- `mediaType`: Specifies the iden3comm protocol media type
+- `packerOptions`: JWS-specific parameters for signature-based authentication
+
+## Additional Resources
+
+For comprehensive protocol specifications and implementation details, refer to the [Iden3comm Protocol Documentation](https://github.com/iden3/iden3comm/tree/main/protocol).
