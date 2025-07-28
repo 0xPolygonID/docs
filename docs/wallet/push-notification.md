@@ -5,33 +5,39 @@ sidebar_label: Push Notifications
 description: Implement push notifications on your app.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - wallet
   - push notification
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-## Guide
+# Push Notifications Implementation Guide
 
-Currently, to be able to implement a notification flow for a certain app, this app must be registered in the push gateway config. This can result in a centralization point for developers who want to use such feature and some expenses and efforts on support of the current gateway.
+Push notifications in the Privado ID ecosystem enable real-time communication between verifiers and wallet applications while maintaining privacy and security standards. This guide provides comprehensive instructions for implementing secure push notification functionality in your applications.
 
-For the Polygon ID wallet, this push service is used: [https://push-staging.polygonid.com/api/v1](https://push-staging.polygonid.com/api/v1).
+## Overview
+
+Currently, to be able to implement a notification flow for a certain app, the app must be registered in the push gateway config. This can result in a centralization point for developers who want to use such feature and some expenses and efforts on support of the current gateway.
+
+For the Privado ID wallet, this push service is used: [https://push-staging.polygonid.com/api/v1](https://push-staging.polygonid.com/api/v1).
 
 Current notification flow:
 
 ![push](/img/wallet/push.png)
 
-1. User creates a device push token. After scanning the authorization request, the user must prepare an authorization response according to the current rules, but with an addition: the inclusion of the DID document. This
-   DID document contains the user DID and service to send push notifications. The user encrypts the device push token with the Push Gateway public encryption key and embeds it onto the DID document.
-2. Verifier sends a message to Push Gateway with information from the user DID document.
-3. Push Gateway decrypts push token, stores messages, and sends the push notification to the wallet.
-4. The wallet gets the message with the message ID and PPG URL. The application fetches notifications from the service, handles protocol messages and asks the user if he wants to perform a needed action, e.g. fetch credential.
+1. The user creates a device push token and prepares an authorization response that includes a DID document containing the user's DID and push notification service information. The device push token is encrypted using the Push Gateway's public encryption key and embedded in the DID document.
+
+2. The verifier sends a message to the PG using information extracted from the user's DID document, including the encrypted device token and service endpoint.
+
+3. The PG decrypts the push token, stores the message securely, and sends the push notification to the registered wallet application.
+
+4. The wallet receives the notification containing a message ID and PG URL, fetches the complete message from the service, processes the protocol message, and prompts the user for appropriate action (e.g., credential retrieval).
 
 **Glossary:**
 
-- _wallet_ - mobile application published by Polygon.
-- _verifier_ - backend for Polygon Verify application that verifies user documents.
+- _wallet_ - mobile application published by Privado.
+- _verifier_ - backend for Privado Verify application that verifies user documents.
 - _Push Gateway (PG)_ - service to deliver push notifications to the wallet app.
 - _Push notification_ - notification that contains a link to protocol message or protocol message itself that is delivered through the notification provider.
 
@@ -104,7 +110,7 @@ You can add information about keys / authentication info optionally. Follow [thi
 
 ## How to send a push from verifier
 
-1. Parse a dDIDd document from the authorization response
+1. Parse a DID document from the authorization response
 2. Proxy device info to push service using serviceEndpoint using the following format
 
    1. Message is the protocol message that is meant to be delivered to users
@@ -112,7 +118,7 @@ You can add information about keys / authentication info optionally. Follow [thi
 
    ```json
    {
-     "message": "JSON stringlied message",
+     "message": "JSON stringified message",
      "metadata": {
        "devices": [
          {
@@ -123,3 +129,8 @@ You can add information about keys / authentication info optionally. Follow [thi
      }
    }
    ```
+
+
+## Conclusion
+
+Implementing push notifications in the Privado ID ecosystem requires careful attention to security, privacy, and performance. By following this guide, you can create a robust notification system that maintains the principles of self-sovereign identity while providing excellent user experience.

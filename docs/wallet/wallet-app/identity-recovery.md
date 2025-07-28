@@ -41,6 +41,12 @@ The Privado ID Wallet app offers an identity backup and recovery feature using y
 <img src={useBaseUrl("img/recovery-4.png")}  width="300" align="center" />
 </div>
 
+:::note Security Reminder
+- **Never share your private key** with anyone.  
+- **Do not store your private key in plaintext** (e.g., notes app, email, or cloud services).  
+- Consider storing it in a secure, offline password manager or a hardware-based vault.
+:::
+
 ### Steps to Import Your Private Key into a Crypto Wallet: 
 1. Install a crypto wallet such as MetaMask.
 
@@ -100,3 +106,7 @@ Now, if you ever lose access to your device or the Privado ID Wallet app, you ca
 <div align="center">
 <img src={useBaseUrl("img/recovery-14.png")}  width="300" align="center" />
 </div>
+
+:::caution 🧠 **Remember**
+Anyone with access to your private key can fully control your identity. Handle it with the same caution as your most sensitive personal information.
+:::

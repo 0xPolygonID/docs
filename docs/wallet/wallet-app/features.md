@@ -15,17 +15,25 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+# Privado ID Wallet Features
 
-The Privado ID Wallet App supports the following features:
+The Privado ID Wallet App provides comprehensive identity management capabilities with the following core features:
 
-- Privacy by design and Self-sovereignty: The user is in full control of his/her identity data and exchanges credentials with other identities without the need for an intermediary or centralized authority.
-- Seamless Authentication and Credential Management: This App enables users to authenticate via their Ethereum wallets, and automatically creates a derived identity wallet. Users can easily fetch, store, and manage their credentials. Credentials undergo encryption using keys and are securely stored in end-to-end encrypted cloud storage*, facilitating effortless access across multiple devices while streamlining processes.
+## Core Features
 
-  Additionally, users can also create local accounts. In this case, the app generates an Ethereum wallet in the background and creates a derived identity wallet. This option is ideal for users who prefer to store credentials locally without using cloud storage or for those who do not have a wallets such as Metamask on their phone.
+### Privacy-First Design and Self-Sovereignty
+Users maintain complete control over their identity data and credential exchanges. The system operates without intermediaries or centralized authorities, ensuring true self-sovereign identity management.
+
+### Seamless Authentication and Credential Management
+The application offers two authentication methods: 
+
+**Ethereum Wallet Integration**: This App enables users to authenticate via their Ethereum wallets, and automatically creates a derived identity wallet. Users can easily fetch, store, and manage their credentials. Credentials undergo encryption using keys and are securely stored in end-to-end encrypted cloud storage*, facilitating effortless access across multiple devices while streamlining processes.
+
+**Local Account Creation**: Additionally, users can also create local accounts. In this case, the app generates an Ethereum wallet in the background and creates a derived identity wallet. This option is ideal for users who prefer to store credentials locally without using cloud storage or for those who do not have a wallets such as Metamask on their phone.
 
 
-:::info
-\*The Cloud Storage serves as a secure repository for encrypted credentials, offering users the convenience of multi-device access to credentials and serving as a reliable backup solution. When a user signs the message using their Ethereum private key, an identity is derived and storage keys are generated. The digital signature scheme employed is ed25519. All the documents stored in the storage are end-to-end encrypted using AES256-GCM, guaranteeing that only the user with the storage keys can access his credentials, reinforcing the security of the stored information.
+:::info Cloud Storage Security
+The cloud storage system serves as a secure repository for encrypted credentials, providing multi-device access and reliable backup capabilities. When users sign messages using their Ethereum private key, the system derives an identity and generates storage keys using the ed25519 digital signature scheme. All the documents stored in the storage are end-to-end encrypted using AES256-GCM, guaranteeing that only the user with the storage keys can access his credentials, reinforcing the security of the stored information.
 :::
 
 <div align="center">
@@ -33,24 +41,37 @@ The Privado ID Wallet App supports the following features:
 </div>
 <br></br>
 
-:::note
-To sync the identity and its associated credentials between the Privado ID Web Wallet and the Privado ID Wallet App, the user must log in with the same crypto wallet account in both platforms.
+:::note Synchronization Requirements
+To synchronize identity and associated credentials between the Privado ID Web Wallet and the Privado ID Wallet App, users must authenticate with the same crypto wallet account on both platforms.
 :::
 
-- Zero-Knowledge Proofs Generation: The app enables users to generate cost-optimized zero-knowledge proofs (ZKPs) for the purpose of credential verification, ensuring privacy-preserving authentication.
+### Zero-Knowledge Proof Generation
+The application enables users to generate cost-optimized zero-knowledge proofs (ZKPs) for credential verification, ensuring privacy-preserving authentication while maintaining cryptographic integrity.
 
-- Communication with Issuer and Verifier: The app facilitates seamless communication between users, credential issuers, and verifiers, allowing for secure and smooth credential exchanges.
+### Multi-Party Communication
+The app facilitates secure communication between three key parties:
+- **Users**: Identity holders managing their credentials
+- **Issuers**: Entities that create and distribute credentials
+- **Verifiers**: Organizations that validate presented credentials
 
-- Identity recovery using private key: In case of local accounts, the App includes an identity recovery feature using private key. Users can securely recover their identity and credentials even if they lose access to their original device.
+This tri-party communication ensures secure and efficient credential exchange workflows.
 
-- Credential Marketplace: The app provides a credential marketplace, allowing users to proactively claim certain credentials in advance of verification. While users can still receive credential offers directly from issuers during the normal flow, the marketplace provides a convenient way to obtain select credentials beforehand, making future verifications quicker and smoother.
+### Identity Recovery System
+For local accounts, the application includes a robust identity recovery mechanism using private keys. Users can securely restore their identity and credentials even after losing access to their original device, ensuring continuity of their digital identity.
+
+### Credential Marketplace
+The integrated marketplace allows users to proactively claim credentials before verification requests occur. While users can still receive credential offers directly from issuers during standard workflows, the marketplace provides:
+- Convenient advance credential acquisition
+- Faster verification processes
+- Reduced friction during authentication scenarios
+
 <div align="center">
 <img src={useBaseUrl("img/credential-marketplace.png")}  width="300" align="center" />
 </div>
 
 - Embedded Issuance: The App provides embedded issuance, allowing users to claim their credentials within the verification flow if they haven't done so before.
 
-:::note
+:::note Current Credential Limitations
 Currently, the tool provides Credential Marketplace and Embedded Issuance with limited number of credentials only:
 
 - Proof of Identity (refer to the schema <ins>[here](https://github.com/anima-protocol/claims-polygonid/blob/main/schemas/json-ld/poi-v1.json-ld)</ins>)
@@ -60,13 +81,39 @@ Currently, the tool provides Credential Marketplace and Embedded Issuance with l
 
 
 
-## How is Privado ID Wallet Different from Other Wallets?
+## How Privado ID Wallet Differs from Traditional Crypto Wallets
 
-You, at some point in time, must have used crypto wallets such as Metamask, Trust Wallet, Coinbase Wallet, Ledger, and so many more. How is Privado ID Wallet different from all these hot and cold storage wallets? Let us see:
+While you may be familiar with cryptocurrency wallets such as MetaMask, Trust Wallet, Coinbase Wallet, and Ledger, the Privado ID Wallet serves a fundamentally different purpose. How is Privado ID Wallet different from all these hot and cold storage wallets? Let us see:
 
-- The wallets like Metamask and Trust Wallet are used for sending and receiving crypto transactions on-chain. Privado ID Wallet, on the other hand, is used for creating and storing unique identities for the wallet so that these identities can be used to authenticate with the Issuer and the Verifier. This Identity wallet helps an Integrator fetch and save credentials from Issuers and also present proof of these credentials to the Verifiers.
+### Functional Differences
 
-- While the commonly-used crypto wallets let you interact with Ethereum and other blockchain networks using RPCs (Remote Procedure Calls), this is not the case with Privado ID Wallet - it functions solely to store credentials linked to an identity and lets these credentials get verified by creating zero-knowledge proofs.
+**Traditional Crypto Wallets** (MetaMask, Trust Wallet):
+- Primary function: Execute cryptocurrency transactions on-chain
+- Interaction method: Communicate with blockchain networks via RPCs (Remote Procedure Calls)
+- Storage focus: Cryptographic keys for asset management
 
-- General wallets store cryptographic keys while the Privado ID Wallet stores users' identities. While both types of wallets are based on private-public key cryptography, the two are different in the sense that in a wallet like MetaMask, the elliptic curve used is `secp256k1`, which is used to convert a private key to a public key and eventually to an Ethereum Address. On the other hand, Privado ID Wallet is based on the `Baby Jubjub Elliptic Curve Key` which generates a Privado ID Identifier, that serves as the identifier for your wallet instead of the Ethereum Wallet Address.
+**Privado ID Wallet**:
+- Primary function: Create and manage unique digital identities
+- Interaction method: Generate zero-knowledge proofs for credential verification
+- Storage focus: Identity-linked credentials and verification capabilities
+
+### Technical Architecture Differences
+
+**Cryptographic Implementation**:
+- **Traditional wallets**: Utilize the `secp256k1` elliptic curve to derive public keys from private keys, ultimately generating Ethereum addresses
+- **Privado ID Wallet**: Employs the `Baby Jubjub Elliptic Curve` to generate Privado ID Identifiers, which serve as unique identity markers rather than transaction addresses
+
+**Key Management**:
+- **Traditional wallets**: Store cryptographic keys for asset control
+- **Privado ID Wallet**: Manages identity-specific keys for credential encryption and zero-knowledge proof generation
+
+### Use Case Distinctions
+
+The Privado ID Wallet enables integrators to:
+- Fetch and securely store credentials from authorized issuers
+- Generate privacy-preserving proofs for credential verification
+- Maintain sovereign control over identity data
+- Facilitate trustless interactions between identity holders, issuers, and verifiers
+
+This contrasts with traditional crypto wallets, which focus primarily on asset custody and blockchain transaction execution.
 

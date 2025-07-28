@@ -4,51 +4,100 @@ title: Privado ID Web Wallet
 sidebar_label: Privado ID Web Wallet
 description: The Privado ID Web Wallet is a secure, web-based identity wallet designed for streamlined credential issuance and verification.
 keywords:
+  - privado id
   - web wallet
   - identity
   - embedded issuance
+  - zero-knowledge proofs
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The Web Wallet is a secure, web-based identity wallet designed for streamlined credential issuance and verification. It enables users to manage their identity credentials with ease, offering seamless integration with Ethereum wallets for authentication and encryption. The wallet provides features such as multi-device access, embedded credential issuance, and both on-chain and off-chain verification, making it a powerful tool for managing and verifying digital credentials across platforms.
+The Privado ID Web Wallet is a secure, browser-based identity management solution designed to streamline credential issuance and verification processes. It empowers users to manage their digital identity credentials efficiently while providing seamless integration with Ethereum wallets for authentication and encryption. The wallet offers comprehensive features including multi-device synchronization, embedded credential issuance, and support for both on-chain and off-chain verification workflows, making it an essential tool for managing and verifying digital credentials across platforms.
+
 
 ## Quick Start
-The Web Wallet is available in the browser at [https://wallet.privado.id](https://wallet.privado.id). To get started, sign in with your crypto wallet and create an identity.
 
-A great starting point to experience the Web Wallet is by using our demo application available at [https://web-wallet-demo.privado.id](https://web-wallet-demo.privado.id), where you can receive Proof of Liveness and Proof of Uniqueness credentials through the Web Wallet’s embedded issuance and then complete a verification request.
+The Web Wallet is accessible through any modern browser at [https://wallet.privado.id](https://wallet.privado.id). To begin using the wallet:
+
+1. Navigate to the Web Wallet URL
+2. Connect your Ethereum-compatible crypto wallet
+3. Create your derived identity wallet
+
+**Try the Demo**: Experience the Web Wallet's capabilities using our interactive demo at [https://web-wallet-demo.privado.id](https://web-wallet-demo.privado.id). The demo allows you to:
+- Receive Proof of Liveness and Proof of Uniqueness credentials
+- Experience embedded issuance workflows
+- Complete verification requests end-to-end
 
 ## Features
 
-- **Seamless Authentication and Credential Management**: This tool enables users to authenticate via their Ethereum wallets, and automatically creates a derived identity wallet. Credentials undergo encryption using keys and are securely stored in end-to-end encrypted cloud storage\*, facilitating effortless access across multiple devices while streamlining processes.
+### Seamless Authentication and Credential Management
 
-:::info
-\*The cloud storage serves as a secure repository for encrypted credentials, offering users the convenience of multi-device access to credentials and serving as a reliable backup solution. When a user signs a message using their Ethereum private key, an identity is derived and storage keys are generated. The digital signature scheme employed is ed25519. All documents stored in the storage are end-to-end encrypted using AES256-GCM, ensuring that only the user with the storage keys can access their credentials, reinforcing the security of the stored information.
+The Web Wallet leverages Ethereum wallet integration to provide secure authentication and automated identity wallet derivation. Key security features include:
+
+- **Derived Identity Creation**: Automatically generates a derived identity wallet upon Ethereum wallet authentication
+- **End-to-End Encryption**: Credentials are encrypted using AES256-GCM encryption with user-controlled storage keys
+- **Secure Cloud Storage**: Encrypted credentials are stored in cloud infrastructure, enabling cross-device access and serving as a reliable backup solution
+- **Ed25519 Digital Signatures**: Employs industry-standard ed25519 cryptographic signatures for enhanced security
+
+:::info Security Architecture
+The cloud storage infrastructure serves as a secure repository for encrypted credentials. When users sign a message using their Ethereum private key, the system derives an identity and generates storage keys. All stored documents undergo end-to-end encryption using AES256-GCM, ensuring that only users with valid storage keys can access their credentials.
 :::
 
-:::note
-To sync the identity and its associated credentials between the Privado ID Web Wallet and the Privado ID Wallet App, the user must log in with the same crypto wallet account on both platforms.
+:::note Wallet Synchronization
+To synchronize identity and credentials between the Privado ID Web Wallet and the Privado ID mobile application, users must authenticate using the same crypto wallet account on both platforms.
 :::
 
-- **Enhanced User Experience**: Prioritizing simplicity, the Web Wallet presents a user-friendly interface. From identity creation to credential claiming and verification, all steps seamlessly integrate, minimizing complexity.
-- **Dashboard**: Users can conveniently view and manage their credentials stored in their Identity Wallet from the Dashboard.
+### Enhanced User Experience
+
+The Web Wallet prioritizes usability through:
+
+- **Intuitive Interface**: Streamlined user interface that simplifies complex identity operations
+- **Seamless Integration**: All processes—from identity creation to credential verification—are integrated into unified workflows
+- **Minimal Complexity**: Reduces technical barriers for end users while maintaining security standards
+
+### Comprehensive Dashboard
+
+The dashboard provides centralized credential management capabilities:
+
+- **Credential Overview**: View all stored credentials in a unified interface
+- **Credential Status**: Monitor the validity and expiration of stored credentials
+- **Access Control**: Manage credential sharing permissions and access controls
 
 <div align="center">
-    <img src={useBaseUrl("../img/web-wallet-1.png")}></img>
+    <img src={useBaseUrl("../img/web-wallet-1.png")} alt="Web Wallet Dashboard Interface"></img>
 </div>
 
-- **Query Verification**: Users can quickly approve verification requests by validating them against the credentials stored in their wallet. 
-- **Credential Issuance**: Users can easily claim the credentials and store them in their wallet issued by an Issuer.
+### Query Verification System
 
-- **Embedded Issuance**: The Web Wallet provides embedded issuance, allowing users to claim their credentials within the verification flow if they haven't done so before.
+The verification system enables rapid credential validation:
+
+- **Real-time Verification**: Instantly validate verification requests against stored credentials
+- **Zero-Knowledge Proofs**: Generate privacy-preserving proofs without revealing underlying credential data
+
+### Credential Issuance
+
+Streamlined credential acquisition process:
+
+- **Direct Issuance**: Claim credentials directly from authorized issuers
+- **Secure Storage**: Automatically store issued credentials in encrypted wallet storage
+- **Batch Processing**: Support for multiple credential issuance in single transactions
+
+### Embedded Issuance
+
+The Web Wallet's embedded issuance feature enables in-flow credential acquisition:
+
+- **Contextual Issuance**: Claim required credentials within verification workflows
+- **Seamless Experience**: Eliminates the need for separate credential acquisition processes
+- **Real-time Processing**: Immediate credential availability upon successful issuance
 
 <div align="center">
     <img src={useBaseUrl("../img/web-wallet-2.png")}></img>
 </div>
 
-:::note
+:::note Supported Embedded Credentials
 
 Currently, the tool supports embedded issuance for a limited number of credentials only:
 
@@ -57,8 +106,14 @@ Currently, the tool supports embedded issuance for a limited number of credentia
 - Proof of Uniqueness refer to the schema <ins>[here](https://github.com/anima-protocol/claims-polygonid/blob/main/schemas/json-ld/pou-v1.json-ld)</ins>)
 :::
 
-- **Simplified Integration**: Integration into your application is effortless, reducing the development workload and ensuring swift implementation.
-- **On-Chain and Off-Chain Query Verification**: Supporting both on-chain and off-chain query verification, the Web Wallet offers flexibility to meet diverse verification needs.
+### Developer-Friendly Integration
+
+Technical integration features:
+
+- **Simplified APIs**: Reduced development overhead through streamlined integration APIs
+- **Universal Links**: Support for universal link-based integration patterns
+- **Flexible Verification**: Compatible with both on-chain and off-chain verification architectures
+- **Cross-Platform Support**: Works across different web browsers and devices
 
 ## User Interface and Experience
 
@@ -84,6 +139,6 @@ The Web Wallet can be seamlessly integrated into the credential issuance flow by
 
 You can experience a demo of the Web Wallet integration [here](https://web-wallet-demo.privado.id/).
 
-:::caution
+:::caution Deprecation Notice
 The prior method of integrating the Web Wallet using `https://wallet.privado.id/#base64EncodedData` is now deprecated and will no longer be supported after Release 9.
 :::
