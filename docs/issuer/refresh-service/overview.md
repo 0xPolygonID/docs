@@ -55,7 +55,7 @@ Example of refresh service implementation can be found [here](https://github.com
 
 1. **[HTTP Server](https://github.com/0xPolygonID/refresh-service/tree/main/server)**: The http server is a base layer for [iden3comm protocol](https://iden3-communication.io/).
 2. **[Provider Module](https://github.com/0xPolygonID/refresh-service/tree/main/providers)**: This module receives information from external data providers. By itself, it is very flexible in settings, but you can always add your own implementation.
-3. **[Package Manager](https://github.com/0xPolygonID/refresh-service/blob/main/packagemanager/packagemanager.go)**: The package manager handles ZWZ token within the iden3comm protocol.
+3. **[Package Manager](https://github.com/0xPolygonID/refresh-service/blob/main/packagemanager/packagemanager.go)**: The package manager handles JWZ token within the iden3comm protocol.
 4. **[Integration with the Issuer Node](https://github.com/0xPolygonID/refresh-service/blob/main/service/issuer.go)**: This module is responsible for communication with [issuer node](https://github.com/0xPolygonID/issuer-node/).
 
 ### Authentication module for setup iden3comm handler
