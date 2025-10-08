@@ -270,4 +270,4 @@ Once DID-based login is in place, it can power any authentication experience —
 
 ---
 
-This implementation provides a solid foundation for Privado ID basic authentication. For advanced use cases involving credential verification and zero-knowledge proofs, refer to the official Privado ID documentation and explore the query-based authentication examples.
+This implementation provides a solid foundation for Privado ID basic authentication. For advanced use cases involving credential verification and zero-knowledge proofs, refer to the [query-based authentication](../verifier/verification-library/verifier-set-up.md) example.
