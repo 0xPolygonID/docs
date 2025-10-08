@@ -36,41 +36,36 @@ This guide walks you through setting up **basic authentication** using Privado I
 The Login with Privado ID flow authenticates users by verifying control over their DID.
 Below is a high-level breakdown of how the flow works end-to-end:
 
-- The user clicks “Login with Privado ID” on the app, which triggers a request to the backend(`/api/sign-in` endpoint) to generate a new authentication request for the user
+1. The user clicks “Login with Privado ID” on the app, which triggers a request to the backend(`/api/sign-in` endpoint) to generate a new authentication request for the user
 
-:::note
+:::info
 
-💡 You may also display a QR code that users can scan with the Privado ID Wallet app to start the same flow
+You may also display a QR code that users can scan with the Privado ID Wallet app to start the same flow
 
 :::
 
-- The frontend takes the authentication request from the backend, encodes it in Base64, and configures it into a [Universal Link](./universal-links.md). This link opens the Privado ID Web Wallet, prompting the user to sign-in with their crypto wallet
+2. The frontend takes the authentication request from the backend, encodes it in Base64, and configures it into a [Universal Link](./universal-links.md). This link opens the Privado ID Web Wallet, prompting the user to sign-in with their crypto wallet
 
-- Once sign-in with crypto wallet is approved by user, the Privado wallet generates a `signed JWZ` (JSON Web Zero-knowledge) token — a verifiable proof of DID ownership.
+3. Once sign-in with crypto wallet is approved by user, the Privado wallet generates a `signed JWZ` (JSON Web Zero-knowledge) token — a verifiable proof of DID ownership.
 
-- The wallet then automatically sends a POST request to the backend’s `/api/callback` endpoint containing the `sessionId` and the `signed JWZ` token for verification
+4. The wallet then automatically sends a POST request to the backend’s `/api/callback` endpoint containing the `sessionId` and the `signed JWZ` token for verification
 
-- The backend verifies the signed JWZ token against the stored authentication request using the Privado Verifier
+5. The backend verifies the signed JWZ token against the stored authentication request using the Privado Verifier
 
-- Once the JWZ is validated, you can consider the user’s DID as verified and proceed to create or update their record in your database.
+6. Once the JWZ is validated, you can consider the user’s DID as verified and proceed to create or update their record in your database.
 
-- From here, your application can decide what to do with this verified DID — such as enabling login, granting access, or allowing participation in specific flows like airdrops or allowlists
+7. From here, your application can decide what to do with this verified DID — such as enabling login, granting access, or allowing participation in specific flows like airdrops or allowlists
 
-## Dependencies
+## Setup
 
 ```bash 
 npm install @iden3/js-iden3-auth express cors raw-body
 ```
 
-### Setup
-
 To get started with Login with Privado ID, ensure the following environment requirements are met:
 
-- **Verifier DID**: Your application’s DID used to verify authentication requests
 -  **Keys Directory**: Contains circuit and verification key files for validation. A sample structure is available in the [verifier-integration](https://github.com/0xPolygonID/tutorial-examples/tree/main/verifier-integration) repository under the `keys/` folder
 -  **Public URL**: For receiving authentication callbacks (use ngrok for development)
-
-## Step-by-Step Implementation
 
 ### 1. Server Configuration
 Sets up Express server with required middleware and routes for handling authentication requests and callbacks.
@@ -103,7 +98,7 @@ app.listen(port, () => {
 
 :::info
 
-💡 **Testing Frontend**: The `./static` directory includes a simple frontend to test the full authentication flow — QR code generation, Universal Link handling, and callback processing.
+**Testing Frontend**: The `./static` directory includes a simple frontend to test the full authentication flow — QR code generation, Universal Link handling, and callback processing.
 Once the flow works locally, integrate the same endpoints into your production frontend, update the callback to your live URL, and secure configurations with environment variables and HTTPS.
 
 :::
@@ -130,7 +125,6 @@ async function getAuthRequest(req, res) {
       uri             // Callback URL
     );
 
-    // KEY: Remove scope to disable proof requirements
     request.body.scope = [];
 
     // Store for later verification
@@ -146,7 +140,11 @@ async function getAuthRequest(req, res) {
 }
 ```
 
-💡 **Getting Your Verifier DID**: Sign in to your [Privado ID Wallet](https://wallet.privado.id/) and use the DID displayed there as your verifier DID for simplicity during development.
+:::info
+
+**Getting Your Verifier DID**: Sign in to your [Privado ID Wallet](https://wallet.privado.id/) and use the DID displayed there as your verifier DID for simplicity during development.
+
+:::
 
 ## How Does `getAuthRequest` Connect to Privado ID Wallet?
 
@@ -260,10 +258,6 @@ With **Login with Privado ID**, you’re not just authenticating users — you�
 Once DID-based login is in place, it can power any authentication experience — from crypto wallet sign-ins to Privado credentials, or even Google 2FA — all anchored to a single decentralized identity.
 
 ## Resources
-
-### Documentation
-- [Verification Library API](https://docs.privado.id/docs/verifier/verification-library/verification-api/)
-- [Verifier Integration Examples](https://github.com/0xPolygonID/tutorial-examples)
 
 ### Example Repository
 - [Repo](https://github.com/0xPolygonID/tutorial-examples/tree/main/verifier-integration/login-privado)
