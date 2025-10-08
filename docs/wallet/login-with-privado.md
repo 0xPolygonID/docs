@@ -219,13 +219,7 @@ async function callback(req, res) {
     console.log(`Authentication successful for session: ${sessionId}`);
     console.log("User DID:", authResponse.from);
 
-    return res.status(200).json({
-      success: true,
-      message: "Basic authentication successful",
-      userDID: authResponse.from,
-      timestamp: new Date().toISOString(),
-      sessionId: sessionId
-    });
+    return res.status(200).set("Content-Type", "application/json").send(authResponse);
 
   } catch (error) {
     console.error("Authentication error:", error);
