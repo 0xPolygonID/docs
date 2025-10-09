@@ -185,6 +185,7 @@ module.exports = {
 
           ]
         },
+        "wallet/login-with-privado",
         {
           type: "category",
           label: "Wallet SDK",
