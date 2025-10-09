@@ -79,7 +79,7 @@ jobs:
           cat "${{ steps.task-def.outputs.task-definition }}" | jq -r '.containerDefinitions[].name'
 
       - name: Deploy Amazon ECS task definition
-        uses: aws-actions/amazon-ecs-deploy-task-definition@v2
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
           service: ${{ env.ECS_SERVICE }}
