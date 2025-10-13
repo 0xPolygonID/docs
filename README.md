@@ -8,7 +8,7 @@
 
 <p align="center">
    <a href="https://github.com/0xPolygonID/docs/network/members"><img src="https://img.shields.io/github/forks/0xPolygonID/docs?style=social"></a>
-   <img src="https://img.shields.io/github/stars/0xPolygonID/docs?style=social">
+   <a href="https://github.com/0xPolygonID/docs/stargazers"><img src="https://img.shields.io/github/stars/0xPolygonID/docs?style=social">
    <a href="https://x.com/PrivadoID"><img src="https://img.shields.io/twitter/follow/0xPolygonID.svg?style=social"></a>
    <br>
    <img src="https://img.shields.io/github/languages/count/0xPolygonID/docs">
