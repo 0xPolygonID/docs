@@ -16,11 +16,12 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-A hands-on developer guide to integrate Login with Privado ID — a simple, decentralized authentication method using Decentralised Identifiers (DIDs), without any zero-knowledge proofs required.
+Enable decentralized, privacy-preserving authentication in your application using Privado ID. This integration lets users authenticate with their Decentralized Identifiers (DIDs), providing a secure, trustless login flow that preserves the familiar simplicity of Web2 sign-in experiences.
 
 ## Overview
 
-Implement **Login with Privado ID** to add a secure, decentralized authentication experience to your application — similar to “Login with Google,” but powered by Decentralized Identifiers (DIDs).
+Privado ID allows your users to sign in using their DID profile — a self-sovereign identity they fully control.
+Think of it as “Login with Google,” but decentralized and trustless, privacy-preserving, and self-sovereign.
 
 This guide walks you through setting up **basic authentication** using Privado ID. It verifies user identity through DID ownership
 
@@ -33,7 +34,7 @@ This guide walks you through setting up **basic authentication** using Privado I
 
 ## How Basic Authentication Works
 
-The Login with Privado ID flow authenticates users by verifying control over their DID.
+The Login with Privado ID flow establishes the user’s identity by validating DID ownership.
 Below is a high-level breakdown of how the flow works end-to-end:
 
 1. The user clicks “Login with Privado ID” on the app, which triggers a request to the backend(`/api/sign-in` endpoint) to generate a new authentication request for the user
@@ -230,8 +231,7 @@ async function callback(req, res) {
   }
 }
 ```
-
-You’ve successfully verified DID ownership.
+Once the JWZ token validates, You’ve successfully verified DID ownership.
 
 To turn this into a complete login, store user session details by their DID in your database. The DID acts as a persistent identity, allowing your app to recognize returning users.
 
