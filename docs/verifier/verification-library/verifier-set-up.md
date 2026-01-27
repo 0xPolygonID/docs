@@ -348,7 +348,7 @@ func Callback(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-	authResponse, err := verifier.FullVerify(
+	_, err = verifier.FullVerify(
 		r.Context(),
 		string(tokenBytes),
 		authRequest.(protocol.AuthorizationRequestMessage),
@@ -359,17 +359,7 @@ func Callback(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	//marshal auth resp
-	messageBytes, err := json.Marshal(authResponse)
-	if err != nil {
-		log.Println(err.Error())
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
-
 	w.WriteHeader(http.StatusOK)
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(messageBytes)
 	log.Println("verification passed")
 }
 ```
@@ -415,11 +405,11 @@ async function callback(req, res) {
     const opts = {
       AcceptedStateTransitionDelay: 5 * 60 * 1000, // 5 minute
     };
-    authResponse = await verifier.fullVerify(tokenStr, authRequest, opts);
+    await verifier.fullVerify(tokenStr, authRequest, opts);
   } catch (error) {
     return res.status(500).send(error);
   }
-  return res.status(200).set("Content-Type", "application/json").send(authResponse);
+  return res.status(200);
 }
 ```
 
