@@ -43,13 +43,13 @@ docker-compose up -d
 2. Copy schema.sql to the db container
 
 ```bash
-docker cp schema.sql reverse-hash-service_db_1:/
+docker cp schema.sql reverse-hash-service-db-1:/
 ```
 
 3. Exec db container
 
 ```bash
-docker exec -it reverse-hash-service_db_1 /bin/bash
+docker exec -it reverse-hash-service-db-1 /bin/bash
 ```
 
 4. Create RHS DB
