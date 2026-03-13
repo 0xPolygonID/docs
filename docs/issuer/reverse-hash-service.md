@@ -32,33 +32,27 @@ Docker set up should only be used for testing purposes only
 ### Requirements
 
 - Unix-based operating system (e.g. Debian, Arch, Mac OS X)
-- [Docker Engine](https://docs.docker.com/engine/) 1.27
+- [Docker Engine](https://docs.docker.com/engine/) 1.48
 
 1. Start the services
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 2. Copy schema.sql to the db container
 
 ```bash
-docker cp schema.sql reverse-hash-service_db_1:/
+docker cp schema.sql reverse-hash-service-db-1:/
 ```
 
 3. Exec db container
 
 ```bash
-docker exec -it reverse-hash-service_db_1 /bin/bash
+docker exec -it reverse-hash-service-db-1 /bin/bash
 ```
 
-4. Create RHS DB
-
-```bash
-createdb -U iden3 -h localhost rhs
-```
-
-5. Upload schema.sql inside on docker container
+4. Upload schema.sql inside on docker container
 
 ```bash
 psql -h localhost -U iden3  -d rhs < schema.sql
