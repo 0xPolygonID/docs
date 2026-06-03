@@ -29,14 +29,6 @@ module.exports = {
     },
   },
   themeConfig: {
-    announcementBar: {
-      id: "learn_more",
-      content:
-        'The latest Release 8 is live.<a class="announcement-link" rel="noopener noreferrer" href="/docs/release-notes/r8">Release Notes</a>',
-      backgroundColor: "#20232a",
-      textColor: "#131313",
-      isCloseable: false,
-    },
     metadata: [
       {
         name: "description",
