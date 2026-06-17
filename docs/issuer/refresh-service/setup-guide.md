@@ -5,7 +5,7 @@ sidebar_label: Setup guide
 description: Setup guide for refresh service
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer node
   - claim
   - verifiable credentials
@@ -16,22 +16,31 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-> **NOTE: Current implementation of [refresh service](https://github.com/0xPolygonID/refresh-service) works only with [issuer-node](https://github.com/0xPolygonID/issuer-node/).**
+:::note
+
+Current implementation of **[refresh service](https://github.com/0xPolygonID/refresh-service)** works only with **[issuer-node](https://github.com/0xPolygonID/issuer-node/).**
+
+:::
 
 ## Preparation
 
 1. Run the issuer-node locally by following the [quick-start installation guide](https://github.com/0xPolygonID/issuer-node/#quick-start-installation).
-1. Clone the refresh service using the command `git clone git@github.com:0xPolygonID/refresh-service.git`.
-1. Build JSON and JSONLD schemas, utilizing the provided examples:
+
+2. Clone the refresh service using the command 
+```bash 
+git clone git@github.com:0xPolygonID/refresh-service.git
+```
+
+3. Build JSON and JSONLD schemas, utilizing the provided examples:
 
 - [JSON](https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json/non-zero-balance.json)
 - [JSONLD](https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/non-zero-balance.jsonld)
 
-Generate custom schemas through the [schema builder](https://schema-builder.polygonid.me/builder). Additional details can be found in the [schema builder documentation](/docs/issuer/schema-builder/).
+Generate custom schemas through the [schema builder](https://tools.privado.id/builder). Additional details can be found in the [schema builder documentation](/docs/issuer/schema-builder/).
 
 ## Setup with custom data provider
 
-Consider an example of integrating [polygon scan](https://polygonscan.com/) as a data provider for the refresh service.
+Consider an example of integrating [Polygon Scan](https://polygonscan.com/) as a data provider for the refresh service.
 
 1. Integrate the custom data provider into the [data provider module](https://github.com/0xPolygonID/refresh-service/tree/main/providers):
 
@@ -74,7 +83,7 @@ func GetBalanceByAddress(address string) (map[string]any, error) {
 }
 ```
 
-1. Use the custom data provider within the refresh service:
+2. Use the custom data provider within the refresh service:
 
    1. Remove the default data provider:
 
@@ -92,7 +101,7 @@ func GetBalanceByAddress(address string) (map[string]any, error) {
    }
    ```
 
-   1. Use the new polygon scan data provider:
+   2. Use the new polygon scan data provider:
 
    ```go
    // confirm the credentialType matches a supported type in the refresh service,
@@ -107,7 +116,7 @@ func GetBalanceByAddress(address string) (map[string]any, error) {
    }
    ```
 
-1. Populate the .env variables:
+3. Populate the .env variables:
    ```
    export IPFS_GATEWAY_URL="https://infura..."
    export SUPPORTED_RPC="137=https://infura..."
@@ -115,13 +124,13 @@ func GetBalanceByAddress(address string) (map[string]any, error) {
    export SUPPORTED_ISSUERS="*=https://my-issuer-node.com"
    export ISSUERS_BASIC_AUTH="*=myuser:mypassword"
    ```
-1. Generate a blank config.yaml file:
+4. Generate a blank config.yaml file:
 
 ```bash
 touch config.yaml
 ```
 
-1. Run the refresh service:
+5. Run the refresh service:
 
 ```bash
 source .env
@@ -130,7 +139,7 @@ go run .
 
 ## Setup with default provider
 
-To integrate [polygon scan](https://polygonscan.com/) data provider with the default data provider, follow these general steps:
+To integrate [Polygon Scan](https://polygonscan.com/) data provider with the default data provider, follow these general steps:
 
 1. Create a `config.yaml` file with the following content:
 
@@ -185,7 +194,7 @@ go run .
     </div>
   </details>
 
-2. Retrieve the credential through the PolygonID mobile application. If the expiration date in the credential request was set in the past, the credential is supposed to be expired:
+2. Retrieve the credential through the PrivadoID mobile application. If the expiration date in the credential request was set in the past, the credential is supposed to be expired:
 
   <details>
     <summary>Expired credential</summary>
@@ -194,7 +203,7 @@ go run .
     </div>
   </details>
 
-3. Visit [https://verifier-demo.polygonid.me/](https://verifier-demo.polygonid.me/) to create a proof request. This is necessary because [https://schema-builder.polygonid.me/query-builder](https://schema-builder.polygonid.me/query-builder) does not currently support the `xsd:positiveInteger` type:
+3. Visit [https://verifier-demo.polygonid.me/](https://verifier-demo.polygonid.me/) to create a proof request. This is necessary because [https://tools.privado.id/query-builder](https://tools.privado.id/query-builder) does not currently support the `xsd:positiveInteger` type:
 
   <details>
     <summary>Proof request</summary>
@@ -203,7 +212,7 @@ go run .
     </div>
   </details>
 
-4. Scan the QR using the PolygonID mobile application. During the refreshing process, you are expected to encounter the following message:
+4. Scan the QR using the PrivadoID mobile application. During the refreshing process, you are expected to encounter the following message:
 
   <details>
     <summary>Refresh process</summary>

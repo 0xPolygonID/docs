@@ -80,7 +80,7 @@ Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/
 
 ## Create Profiles using createProfile()
 
-This method creates profiles based on the genesis identifier. To keep the user's identity hidden from a Verifier, we can generate different profiles from his/her existing identifier. Therefore, a user has the option to select a particular profile for a particular Verifier so that his real identity is not revealed.
+This method creates profiles based on the genesis identifier. To keep the user's identity hidden from a Verifier, we can generate different profiles from their existing identifier. Therefore, a user has the option to select a particular profile for a particular Verifier so that his real identity is not revealed.
 
 ```typescript
 createProfile(did: DID, nonce: number, verifier: string): Promise<DID>;

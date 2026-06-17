@@ -14,7 +14,7 @@ keywords:
   - Identity
 ---
 
-The identity endpoint is used to create and retrieve identities for a user/issuer. Privado ID supports the creation of identities in the form of DIDs (Decentralized Identifiers). A user can have multiple DIDs.
+The identity endpoint is used to create and retrieve identities for a user and issuer. Privado ID supports the creation of identities in the form of DIDs (Decentralized Identifiers). A user can have multiple DIDs.
 
 :::note
 
@@ -28,7 +28,7 @@ A DID can be represented as:
 did: did method: did method-specific identifier.
 ```
 
-This is a standard form of expressing a Decentralised Identifier as defined by the <a href="https://www.w3.org/TR/did-core" target="_blank">W3C DID Core 1.0 Specifications</a>.
+This is a standard form of expressing a Decentralized Identifier as defined by the <a href="https://www.w3.org/TR/did-core" target="_blank">W3C DID Core 1.0 Specifications</a>.
 
 ## Create Identity
 
@@ -40,13 +40,13 @@ An example of a `didMetaData` passed in the request body of the `Create Identity
 
 ```
 {
-    "didMetadata":{
-        "method": "polygonid",
-        "blockchain":"polygon",
-        "network": "amoy",
-        "type": "BJJ"
-    },
-    "credentialStatusType": "Iden3commRevocationStatusv1.0",
+  "didMetadata": {
+    "method": "iden3",
+    "blockchain": "privado",
+    "network": "main",
+    "type": "BJJ"
+  },
+  "credentialStatusType": "Iden3ReverseSparseMerkleTreeProof"
 }
 ```
 
@@ -59,7 +59,10 @@ A few variations of the metadata can be:
 
 - blockchain:
 
+  - "privado"
+  - "billions"
   - "polygon"
+  - "linea"
   - "eth"
 
 - network:
@@ -74,8 +77,8 @@ A few variations of the metadata can be:
 
 :::info Identity Types
 
-As you can see above, there are two options for Identity types: Baby Jubjub and Ethereum DID.
-Baby Jubjub keys are used to create regular identities, but that method can't create an identity out of an Ethereum address. Instead, users can choose the "ETH" type to use Ethereum accounts to authenticate, prove statements and control identity. It is important to note that the Ethereum address must have funds to publish its state onchain.
+As you can see above, there are two options for Identity types: Baby JubJub and Ethereum DID.
+Baby JubJub keys are used to create regular identities, but that method can't create an identity out of an Ethereum address. Instead, users can choose the "ETH" type to use Ethereum accounts to authenticate, prove statements and control identity. It is important to note that the Ethereum address must have funds to publish its state onchain.
 
 Read more about Identity types on <ins>[Iden3 Docs](https://docs.iden3.io/getting-started/identity/identity-types/)</ins>.
 
@@ -83,7 +86,8 @@ Read more about Identity types on <ins>[Iden3 Docs](https://docs.iden3.io/gettin
 
 The Issuer Node responds by sending a response message that contains:
 
-- `identifier`: Identifier of the Issuer in the standard DID format. For example: `did:polygonid:polygon:amoy:2qNBWSAsyvaGBpqQVHk3E4cgChaN6ogaZnYCQUyoRQ`
+- `identifier`: Identifier of the Issuer in the standard DID format. For example: 
+`did:iden3:privado:main:2qNBWSAsyvaGBpqQVHk3E4cgChaN6ogaZnYCQUyoRQ`
 
 - `identity state`: It is the state of the identity and contains fields that include `claimsTreeRoot` (Verifiable Credentials are added to the Claims Tree and its root is calculated), `state` (state of identity), and `status` (whether the status of the identity state is confirmed or pending). `identity state` also contains the timestamp when the identity was created (`createdAt`) or updated(`modifiedAt`).
 
@@ -101,7 +105,7 @@ The Issuer Node responds by sending a response message that contains:
 
 - `identifier`: Identifier of the Issuer in the standard DID format. For example:
 
-`did:polygonid:polygon:amoy:2qNBWSAsyvaGBpqQVHk3E4cgChaN6ogaZnYCQUyoRQ`
+`did:iden3:privado:main:2qNBWSAsyvaGBpqQVHk3E4cgChaN6ogaZnYCQUyoRQ`
 
 <a href="https://issuer-node-core-api-testing.privado.id/#get-/v2/identities" target="_blank">API Reference</a>
 

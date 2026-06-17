@@ -85,7 +85,7 @@ Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/
 
 :::note
 
-When a user logs into a Verifier, it does not have to share its identity. Instead, it can share with it the profile as the user does not receive a credential on his/her identifier but on his/her profile. Sharing one's profile instead of his/her identity prevents the possible identity tracking by a Verifier.
+When a user logs into a Verifier, it does not have to share its identity. Instead, it can share with it the profile as the user does not receive a credential on their identifier but on their profile. Sharing one's profile instead of their identity prevents the possible identity tracking by a Verifier.
 
 :::
 

@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This article details the steps to set up your own Issuer Node API.
+This documentation provides comprehensive instructions for setting up your own Issuer Node API.
 
 :::caution
 
@@ -29,18 +29,24 @@ Below is the installation guide for Issuer Node v3.
 
 ## Installation
 
-For an advance configuration of the Issuer Node (RHS, Ethereum Identities and more), visit the [Advanced Issuer Node configuration](issuer-configuration.md#Advanced-Issuer-Node-configuration) guide.
+For an advanced configuration of the Issuer Node (RHS, Ethereum Identities and more), visit the [Advanced Issuer Node configuration](issuer-configuration.md#Advanced-Issuer-Node-configuration) guide.
 
-**You have to first [clone the repository](https://github.com/0xPolygonID/issuer-node).**
+**Prerequisites: Clone the repository from [GitHub](https://github.com/0xPolygonID/issuer-node).**
 
 ## Docker Mode Guide
 
 ### Requirements
 
-- [Docker Engine](https://docs.docker.com/engine/) 1.27
+- [Docker Engine](https://docs.docker.com/engine/) 1.27 or higher
 - Makefile toolchain
 - Unix-based operating system (e.g. Debian, Arch, Mac OS X)
 - [Go](https://go.dev/) version 1.19 or higher
+
+:::note
+
+Make sure Docker daemon is running in your background
+
+:::
 
 ### Issuer Node API Setup (basic configuration building docker images)
 
@@ -48,17 +54,18 @@ Before you start, ensure the `resolvers_setting_sample.yaml` in the root directo
 
 Follow these steps to get started:
 
-1. Configure Environment File:
+#### 1. Configure Environment File:
 
   Copy the sample configuration file:
 
 ```bash
 cp .env-issuer.sample .env-issuer
+cp .env-ui.sample .env-ui
 ```
 
-2. Set Environment Variables
+#### 2. Set Environment Variables
 
-  Fill in the `.env-issuer` config file to match your environment, especially the ISSUER_SERVER_URL and any other relevant variables. 
+  Configure the `.env-issuer` config file to match your environment, especially the ISSUER_SERVER_URL and any other relevant variables. 
 
   _.env-issuer_
 
@@ -66,7 +73,7 @@ cp .env-issuer.sample .env-issuer
   ISSUER_SERVER_URL=<PUBLIC_SERVER_API_URL>
   ```
 
-3. Key Management System (KMS) Setup
+#### 3. Key Management System (KMS) Setup
 
  The Issuer Node supports multiple Key Management System (KMS) options for securely creating, signing, and managing private keys. Depending on your setup, you can choose one or more of the following options:
 
@@ -77,7 +84,7 @@ cp .env-issuer.sample .env-issuer
 
  To configure your KMS, refer to the [sample .env-issuer file](https://github.com/0xPolygonID/issuer-node/blob/main/.env-issuer.sample#L21) and update your .env-issuer config file accordingly to your selected KMS. Detailed instructions and guidance on how to choose the right option for your use case can be found on the [KMS Configuration section](./issuer-configuration.md/#kms-configuration).
 
-3. Import Ethereum Private Key
+#### 4. Import Ethereum Private Key
 
   Import your Ethereum private key into the KMS provider you have configured. The associated account must be funded for state transitions. For Amoy network you can request some testing Matic [here](https://www.alchemy.com/faucets/polygon-amoy).
 
@@ -85,20 +92,25 @@ cp .env-issuer.sample .env-issuer
   make private_key=<YOUR_WALLET_PRIVATE_KEY> import-private-key-to-kms
   ```
 
-4. Start the Issuer Node API
+#### 5. Deploy the Issuer Node API
 
   Build and run the Issuer Node API:
   ```bash
   make up && make build-api && make run-api
   ```
 
-**Issuer Node API specification **
 
- The Issuer Node API will be accessible at:
- >http://localhost:3001 or http://<PUBLIC_SERVER_API_URL>:3001
+### API Access
 
+**Issuer Node API Specification**
 
+Upon successful deployment, the Issuer Node API will be accessible at:
 
+**Local Environment:**
+> http://localhost:3001
+
+**Production Environment:**
+> http://<PUBLIC_SERVER_API_URL>:3001
 
 ---
 

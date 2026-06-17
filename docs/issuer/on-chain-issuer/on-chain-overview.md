@@ -12,7 +12,7 @@ keywords:
   - smart contract
 ---
 
-The On-chain Issuer is a way of issuing credentials by leveraging the full power of a smart contract. As it is commonly known, a smart contract is software that resides in a blockchain network, meaning that its code and data aren’t necessarily stored in a server, but rather distributed in a decentralized manner. Therefore, an on-chain issuer could be considered a decentralized issuer, as all the underlying logic of the credentials is written on a smart contract with its inherent publicity.
+The On-chain Issuer issues credentials by leveraging the full power of a smart contract. As it is commonly known, a smart contract is software that resides in a blockchain network, meaning that its code and data aren’t necessarily stored in a server, but rather distributed in a decentralized manner. Therefore, an on-chain issuer could be considered a decentralized issuer, as all the underlying logic of the credentials is written on a smart contract with its inherent publicity.
 
 This issuance method then serves as an alternative to the [Issuer Node](/docs/issuer/issuer-overview.md), whose implementation depends on a dedicated setup and its own infrastructure.
 
@@ -20,7 +20,7 @@ The fact that all this logic is present on the blockchain enables credential iss
 
 ## On-chain issuance
 
-On-chain issuance is trustless or trust-minimized, depending on smart contract business logic. It reduces dependency on non-auditable decisions for issuing credentials.
+On-chain issuance is either trustless or trust-minimized, depending on smart contract business logic. It reduces dependency on non-auditable decisions for issuing credentials.
 The properties of smart contracts make them good candidates to act as trusted attestation services since the attestation mechanism is transparent and auditable to everyone. This serves as an alternative to a number of centralized issuers for use cases when an Identity needs to issue credentials about themselves or their activity, which can be verified by the smart contract logic.
 
 In simple words, you can see everything happening: all the logic used to generate the credential is live on the blockchain and ready to be checked and verified.
@@ -59,7 +59,7 @@ In fact, on-chain issuers enable two categories of credentials: public and priva
 
 A public credential will leverage all the available data of a particular address and aggregate it to generate a claim, such as a reputation score, linked to an identity. There is no personal information revealed and it can be made available on-chain.
 
-In this case, the value is in the aggregation of large amounts of information into ready-to-use credentials that are linked to an identity. This way, the identity holder could prove his assets without disclosing the Ethereum accounts that control these assets.
+In this case, the value is in the aggregation of large amounts of information into ready-to-use credentials that are linked to an identity. This way, the identity holder could prove ownership of assets without disclosing the Ethereum accounts that control these assets.
 
 Some interesting examples of public use cases would be:
 

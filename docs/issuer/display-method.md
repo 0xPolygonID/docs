@@ -19,32 +19,79 @@ keywords:
   - digital identity
 ---
 
+## Overview
 
-# Custom Display Methods
+Custom Display Methods define the visual presentation and branding of verifiable credentials issued through the Privado Issuer Node. They enable organizations to create professional, branded credentials that maintain consistency across all issued documents while building trust with credential holders.
+
+### Key Benefits
+
+- **Brand Consistency**: Ensure all credentials follow your organization's visual identity
+- **Professional Appearance**: Create visually appealing credentials that enhance credibility
+- **Customization**: Tailor the look and feel to match specific use cases or credential types
+- **User Trust**: Professional presentation increases confidence in credential authenticity
+- **Reusability**: Create once and apply to multiple credential schemas
+
+---
+
+## Custom Display Methods
 
 **What are Custom Display Methods?**  
 They define how a credential is presented to its holder. For instance, a university may issue digital diplomas in a specific layout (with the university’s logo, official colors, etc.) that is visually appealing. A Custom Display Method ensures consistency and brand adherence across all issued credentials.
 
----
+### Example: KYC Age Verification Display Method
 
-## Example Use Case
+**Assets Required:**
+- Issuer logo (64x64px PNG)
+- KYC background (320x200px JPEG)
+- Brand colors from Issuer guidelines
 
-**Scenario**: A company wants to issue secure digital certificates as Verifiable Credentials for its employees' achievements or training. Instead of generic text-based credentials, they want a branded, visually appealing credential that includes:
+**metadata.json:**
+```json
+{
+  "title": "KYC Age Credential",
+  "description": "Know Your Customer Verification",
+  "issuerName": "PrivadoID Issuer",
+  "titleTextColor": "#f2743a",
+  "descriptionTextColor": "#f2743a",
+  "issuerTextColor": "#f2743a",
+  "backgroundImageUrl": "ipfs://QmecKDMotkM8a6vxw35CB7iHfToBJnzJrPcmA3gHit9jt9",
+  "logo": {
+    "uri": "ipfs://QmWkSgmHbKRfhndWqHwVgfVpZSrWNiWZMTHb6k5KxY8ySc",
+    "alt": "Logo PrivadoID Issuer"
+  }
+}
+```
 
-- Company logo  
-- Employee photo  
-- Distinct color scheme  
-- Signature of the HR manager  
-
-By creating a Custom Display Method and referencing it during credential issuance, they ensure each certificate is displayed exactly as intended, maintaining brand identity and professionalism.
-
+**Credential Issuance:**
+```json
+{
+  "credentialSchema": "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json/KYCAgeCredential-v3.json",
+  "type": "KYCAgeCredential",
+  "credentialSubject": {
+    "id": "<USER_DID>",
+    "birthday": 19960424,
+    "documentType": 2
+  },
+  "expiration": 1735689600,
+  "displayMethod": {
+    "id": "<IPFS_LINK_OR_HTTP_URL_TO_METADATA_FILE>",
+    "type": "Iden3BasicDisplayMethodV1"
+  }
+}
+```
 ---
 
 ## Building a Display Method
 
+Restrictions:
+
+1. `backgroundImageUrl` and `logo` only support .png and .jpeg formats.
+2. Maximum length for `title` is 60 characters.
+3. Maximum length for `description` is 120 characters.
+
 ### Step 1: Fill Out Metadata
 1. Open the [Display Method Builder](https://display-method-dev.privado.id/).
-2. Enter all required metadata fields (name, description, type, etc.) as guided by the [Display Method Documentation](https://docs.privado.id/docs/issuer/display-method/).
+2. Enter all required metadata fields (tile, description, issuer name, etc.)
 3. Make sure to follow any restrictions or formatting requirements.
 
 ![Display Method Builder](../../static/img/display_methods/1.png)
@@ -59,6 +106,7 @@ By creating a Custom Display Method and referencing it during credential issuanc
 3. This link uniquely references your Display Method and will be used in the Issuer Node.
 
 ![Obtain the IPFS Link](../../static/img/display_methods/2.png)
+
 ---
 
 ## Usage of a Display Method in Issuer Node
@@ -130,5 +178,6 @@ Below is a summary of the relevant API endpoints to manage Display Methods and s
 
 ## Conclusion
 
-With these steps, you can create, manage, and apply custom Display Methods to credentials in the Privado Issuer Node. By leveraging custom layouts, organizations, and institutions can ensure consistent branding and meaningful designs for their verifiable credentials. This not only adds professionalism but also improves the user’s trust and recognition of your issued credentials.
+Custom Display Methods provide a powerful way to enhance the presentation and branding of verifiable credentials. By following the guidelines and best practices outlined in this documentation, organizations can create professional, trustworthy credentials that serve their users effectively while maintaining brand consistency and technical excellence.
 
+The combination of flexible design capabilities, robust technical architecture, and comprehensive management tools makes Display Methods an essential component of any professional credential issuance system. Whether you're issuing educational certificates, professional licenses, or corporate credentials, Display Methods ensure your credentials make the right impression while maintaining the highest standards of security and usability.

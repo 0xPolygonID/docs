@@ -5,7 +5,7 @@ sidebar_label: Credential Marketplace
 description: "Features of the Credential Marketplace"
 keywords:
   - docs
-  - polygon id
+  - privado id
   - credential
   - marketplace
   - issuer
@@ -20,7 +20,7 @@ It also offers an environment for issuers to display the credentials they are of
 
 The marketplace is convenient for all the players in the self-sovereign identity environment: it is trustworthy for the verifier as it provides a curated set of trusted issuers and brings potential new customers for issuers.
 
-The Credential Marketplace provides visibility for everyone involved in the decentralized identity business, be they an issuer, verifier, wallet provider, trust network, or system integrator, The ecosystem page, coming together with Marketplace, gathers all those participants and presents a comprehensive description of their businesses.
+The Credential Marketplace provides visibility for everyone involved in the decentralized identity business, be they an issuer, verifier, wallet provider, trust network, or system integrator. The ecosystem page, coming together with Marketplace, gathers all those participants and presents a comprehensive description of their businesses.
 
 ## Credential Marketplace Walkthrough
 

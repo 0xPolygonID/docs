@@ -29,15 +29,15 @@ A credential ID is assigned to a Verifiable Credential when it is created by an 
 
 ## Create Credential
 
-**Function**: endpoint to create a Verifiable Credential for a user.
+**Function**: Endpoint to create a Verifiable Credential for a user.
 
-**How it Works**: the DID (identifier string retrieved from calling the `Create Identity` endpoint) is passed as a path variable in the request URL. This is your DID identifier that you use as an issuer of credentials.
+**How it Works**: The DID (identifier string retrieved from calling the `Create Identity` endpoint) is passed as a path variable in the request URL. This is your DID identifier that you use as an issuer of credentials.
 
 The following parameters are passed in the body of the request:
 
 - `credentialSchema`: it is a template for a Verifiable Credential that guarantees the structure of a credential. This way, an Issuer, a Holder, and a Verifier can reference the data in a known way. Further details on the `credentialSchema` can be found in the [Create Custom Schema](../../../issuer/schema.md) section.
 - `type`: the type of the credential schema sent.
-- `credentialSubject`: contains DID (Decentralized Identifier), i.e. `did`, of the user and the fields related to the data to be attested. You should have previously obtained this identifier from the user by performing a "basic auth" step, this can be done through the [Authentication/QRcode step](https://issuer-admin.polygonid.me/#get-/v1/authentication/qrcode).
+- `credentialSubject`: contains DID (Decentralized Identifier), i.e. `did`, of the user and the fields related to the data to be attested. You should have previously obtained this identifier from the user by performing a "basic auth" step, this can be done through the [Authentication / QRcode step](https://issuer-admin.polygonid.me/#get-/v1/authentication/qrcode).
 - `expiration`: Date of expiry of the Verifiable Credential.
 
 :::note
@@ -52,11 +52,11 @@ The Issuer Node responds by sending a response message that contains the string 
 
 ## Get Credential
 
-**Function**: endpoint to retrieve a Verifiable Credential based on its Credential ID (CID). This way, you can retrieve a credential issued by an Issuer based on this credential's ID.
+**Function**: Endpoint to retrieve a Verifiable Credential based on its Credential ID (CID). This way, you can retrieve a credential issued by an Issuer based on this credential's ID.
 
-**How it Works**: the DID (the identifier string retrieved from calling the `Create Identity` endpoint) and the Claim ID, i.e.`id` (or CID) of the Verifiable Credential (retrieved from calling the `Create Claim` endpoint) are passed as path variables in the request URL.
+**How it Works**: The DID (the identifier string retrieved from calling the `Create Identity` endpoint) and the Claim ID, i.e.`id` (or CID) of the Verifiable Credential (retrieved from calling the `Create Claim` endpoint) are passed as path variables in the request URL.
 
-The endpoint requires to pass the issuer `did` and the Verifiable Credential `CID` as path variables in the request URL.
+The endpoint requires passing the issuer `did` and the Verifiable Credential `CID` as path variables in the request URL.
 
 The server responds by sending the following data about the Verifiable Credential:
 
@@ -93,9 +93,9 @@ The server responds by sending the following data about the Verifiable Credentia
 
 ## Get Credentials
 
-**Function**: endpoint to retrieve all the Verifiable Credentials issued by an Issuer.
+**Function**: Endpoint to retrieve all the Verifiable Credentials issued by an Issuer.
 
-**How it Works**: the DID (the identifier string retrieved from calling the `Create Identity` endpoint) is passed as path variables in the request URL.
+**How it Works**: The DID (the identifier string retrieved from calling the `Create Identity` endpoint) is passed as path variables in the request URL.
 
 You can retrieve a set of credentials based on different filters or criteria. These criteria can be added as the query-string parameters in the request URL. These filters (and their data types) are listed below:
 
@@ -122,9 +122,9 @@ In order to communicate with the Web Wallet or the Wallet App, the Issuer Node m
 
 :::
 
-**Function**: endpoint to generate a Universal Link. The user can then click this link and accept credentials to his/her wallet.
+**Function**: Endpoint to generate a Universal Link. The user can then click this link and accept credentials to their wallet.
 
-**How it Works**: the Issuer DID (identifier string retrieved from calling the `Create Identity` endpoint) and credential Identifier (or `cid` retrieved from the `Create Credential` endpoint) are passed as path variables in the request URL.
+**How it Works**: The Issuer DID (identifier string retrieved from calling the `Create Identity` endpoint) and credential Identifier (or `cid` retrieved from the `Create Credential` endpoint) are passed as path variables in the request URL.
 
 The Issuer Node responds by sending a response message that contains a JSON which carries the following fields:
 
@@ -137,9 +137,9 @@ The Issuer Node responds by sending a response message that contains a JSON whic
 
 ## Revoke Credential
 
-**Function**: endpoint to revoke a Verifiable Credential
+**Function**: Endpoint to revoke a Verifiable Credential
 
-**How it Works**: the Issuer DID (The identifier string retrieved from calling the `Create Identity` endpoint) and `nonce` of the VC to be revoked (Revocation Nonce) are passed as a path variable in the request URL.
+**How it Works**: The Issuer DID (The identifier string retrieved from calling the `Create Identity` endpoint) and `nonce` of the VC to be revoked (Revocation Nonce) are passed as a path variable in the request URL.
 
 The server responds by showing the Revocation Status of the credential.
 
@@ -147,9 +147,9 @@ The server responds by showing the Revocation Status of the credential.
 
 ## Get Revocation Status
 
-**Function**: endpoint to retrieve the Revocation Status of the Verifiable Credential.
+**Function**: Endpoint to retrieve the Revocation Status of the Verifiable Credential.
 
-**How it Works**: the DID (The identifier string retrieved from calling the `Create Identity` endpoint) and `nonce` (Revocation Nonce) are passed as a path variable in the request URL. For the credential to be marked "revoked", we need to publish the state first on-chain, and then wait for 5 confirmation blocks.
+**How it Works**: The DID (The identifier string retrieved from calling the `Create Identity` endpoint) and `nonce` (Revocation Nonce) are passed as a path variable in the request URL. For the credential to be marked "revoked", we need to publish the state first on-chain, and then wait for 5 confirmation blocks.
 
 The server responds by sending the following details:
 

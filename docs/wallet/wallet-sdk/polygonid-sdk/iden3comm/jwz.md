@@ -251,9 +251,9 @@ JWT relies on digital signatures for the secure transmission of information. In 
 
 - The `header` and the `payload` get hashed together using the Poseidon hash.
 
-- The JWZ initiator signs the hashed content using his/her private key.
+- The JWZ initiator signs the hashed content using their private key.
 
-- The JWZ creator generates a proof using the authorization circuit to demonstrate that his/her identity signed the content.
+- The JWZ creator generates a proof using the authorization circuit to demonstrate that their identity signed the content.
 
 - The proof gets included in the zero- knowledge proof of the JWZ together with the public inputs used inside the circuit to generate the proof.
 
@@ -263,7 +263,7 @@ JWT relies on digital signatures for the secure transmission of information. In 
 
 JWZ represents the main instrument to communicate securely between parties off-chain. This data primitive integrates seamlessly within web2 architectures for authentication purposes.
 
-> Here, we used the JWZ to manage the communication between the user and the Verifier. A JWZ can also be used in the communication between the user and the Issuer so that the user can prove his/her identity in order to fetch the claims associated with his/her identity.
+> Here, we used the JWZ to manage the communication between the user and the Verifier. A JWZ can also be used in the communication between the user and the Issuer so that the user can prove their identity in order to fetch the claims associated with their identity.
 
 ## Libraries
 

@@ -5,7 +5,7 @@ sidebar_label: Demo Issuer
 description: Demonstration of an Issuer.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer
   - claim
   - demo

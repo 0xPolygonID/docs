@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This article details the steps to achieve full integration of the Issuer Node with the Privado ID APIs, as well as instructs on how to set up an intuitive user interface to manage credentials.
+This article provides comprehensive instructions for implementing full integration of the Issuer Node with the Privado ID APIs, including deployment of an intuitive user interface for credential management.
 
 :::caution
 
@@ -27,24 +27,24 @@ The content of the QR code provided by the Issuer or Verifier has changed since 
 
 ## Docker Mode Guide
 
-**For either one, you first have to [clone the repository](https://github.com/0xPolygonID/issuer-node).**
+**Prerequisites: Complete the repository cloning process before proceeding [GitHub](https://github.com/0xPolygonID/issuer-node).**
 
 
 ### Requirements
 
-- Have followed the [Core-API Standalone Mode Guide](setup-issuer-core.md#standalone-mode-guide).
+- Successful completion of the [Core-API Standalone Mode Guide](setup-issuer-core.md#standalone-mode-guide).
 
 ### Setup
 
-1. Env file configuration, copy `ui.env.sample` as `.env-ui`:
+1. Environment Configuration, copy `ui.env.sample` as `.env-ui`:
 
-2. Run the Issuer Node UI:
+2. Deploy the Issuer Node UI:
 
 ```bash
 make run-all
 ```
 
-> **UI** - http://localhost:8088
+> **Access Point** - http://localhost:8088
 
 Upon launching the UI for the first time, you'll be prompted to enter the name and details of the identity for your issuer node. Please note that you can create and manage multiple identities for your issuer node through the UI at a later stage.
 

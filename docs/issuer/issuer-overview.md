@@ -62,7 +62,7 @@ There are basically two ways the Issuer Node can be operated:
 
 ### Issuer Node API
 
-The [Issuer Node API](issuer-core.md) is designed for developers and integrators looking to build custom solutions leveraging Privado ID's functionalities. It is ideal for those who might be interested in having access to low-level information** such as Merkle Trees.
+The [Issuer Node API](issuer-core.md) is designed for developers and integrators looking to build custom solutions leveraging Privado ID's functionalities. It is ideal for those who might be interested in having access to low-level information such as Merkle Trees.
 
 <div align="center">
 <img src= {useBaseUrl("img/3001.png")} align="center" />
@@ -70,7 +70,7 @@ The [Issuer Node API](issuer-core.md) is designed for developers and integrators
 
 ### Issuer Node UI
 
-The [Issuer Node UI](issuer-node-ui.md) provides the full experience of having an Issuer Node with all its capabilities in a easy-to-use interface for handling essential functions such as issuing and revoking credentials, publishing states, managing schemas, connections and identities. Powered by the Issuer Node API, it offers full control of these features without requiring direct API use.
+The [Issuer Node UI](issuer-node-ui.md) provides the full experience of having an Issuer Node with all its capabilities in an easy-to-use interface for handling essential functions such as issuing and revoking credentials, publishing states, managing schemas, connections and identities. Powered by the Issuer Node API, it offers full control of these features without requiring direct API use.
 
 <div align="center">
 <img src= {useBaseUrl("img/8088.png")} align="center" />

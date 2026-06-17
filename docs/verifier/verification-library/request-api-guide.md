@@ -81,7 +81,7 @@ const request : protocol.AuthorizationRequestMessage = auth.createAuthorizationR
 
 ## Query-based Request
 
-The Query-based Auth Request allows verifiers to interact with a wallet by setting up specific requirements for authentication. These requirements are the conditions that the user has to satisfy based on the credentials held in his/her wallet.
+The Query-based Auth Request allows verifiers to interact with a wallet by setting up specific requirements for authentication. These requirements are the conditions that the user has to satisfy based on the credentials held in their wallet.
 
 :::info
 

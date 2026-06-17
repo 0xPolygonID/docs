@@ -14,7 +14,7 @@ keywords:
   - agent
 ---
 
-The agent endpoint acts as a port to communicate messages between the mobile app and the server. The user, using the agent endpoint, can access the functionality through his/her mobile app.
+The agent endpoint acts as a port to communicate messages between the mobile app and the server. The user, using the agent endpoint, can access the functionality through their mobile app.
 
 The core feature of message-based communication initiation in messaging specification is the process of looking up the two main properties of each identity:
 
@@ -26,9 +26,9 @@ The [JWZ](/docs/wallet/wallet-sdk/polygonid-sdk/iden3comm/jwz.md) is generated w
 
 ## Agent Endpoint
 
-**Function**: endpoint to send a JWZ token from the user's mobile app.
+**Function**: Endpoint to send a JWZ token from the user's mobile app.
 
-**How it Works**: the user's app sends a JWZ token in the request body.
+**How it Works**: The user's app sends a JWZ token in the request body.
 
 The Issuer Node responds by sending a response message that contains details related to Verifiable Credential and Issuer. It also includes metadata such as:
 
@@ -36,8 +36,8 @@ The Issuer Node responds by sending a response message that contains details rel
 - `to`: to which Issuer's DID the message is sent.
 - `id`: a random UUID generated for a transaction.
 - `threadID`: part of the JWZ token.
-- `typ`: the way of communication between protocol and mobile.
-- `type`: the way of communication between protocol and mobile.
+- `typ`: the way of communication between protocol and mobile. Also indicates how the message is formatted and should be processed
+- `type`: the way of communication between protocol and mobile. Specifies what kind of operation or response the message represents
 
 A typical response looks like this:
 

@@ -5,7 +5,7 @@ sidebar_label: RHS Setup
 description: Reverse Hash Service Setup.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer node
   - rhs
   - reverse hash service
@@ -14,7 +14,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# Reverse Hash Service Set up
+# Reverse Hash Service Setup
 
 Repository: https://github.com/iden3/reverse-hash-service
 
@@ -32,12 +32,12 @@ Docker set up should only be used for testing purposes only
 ### Requirements
 
 - Unix-based operating system (e.g. Debian, Arch, Mac OS X)
-- [Docker Engine](https://docs.docker.com/engine/) 1.27
+- [Docker Engine](https://docs.docker.com/engine/) 1.48
 
 1. Start the services
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 2. Copy schema.sql to the db container
@@ -52,13 +52,7 @@ docker cp schema.sql reverse-hash-service_db_1:/
 docker exec -it reverse-hash-service_db_1 /bin/bash
 ```
 
-4. Create RHS DB
-
-```bash
-createdb -U iden3 -h localhost rhs
-```
-
-5. Upload schema.sql inside on docker container
+4. Upload schema.sql inside on docker container
 
 ```bash
 psql -h localhost -U iden3  -d rhs < schema.sql
@@ -70,7 +64,7 @@ psql -h localhost -U iden3  -d rhs < schema.sql
 
 - Unix-based operating system (e.g. Debian, Arch, Mac OS X)
 - [Go](https://go.dev/) version 1.18 or higher
-- [Postgres](https://www.postgresql.org/)
+- [PostgreSQL](https://www.postgresql.org/)
 
 1. Access PostgreSQL instance and create database
 
@@ -84,7 +78,7 @@ createdb rhs && psql -d rhs < ./schema.sql
 export RHS_DB="host=localhost password=pgpwd user=postgres database=rhs"
 ```
 
-3. Build and run RHS servoce
+3. Build and run RHS service
 
 ```
 go build && ./reverse-hash-service

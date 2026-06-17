@@ -5,7 +5,7 @@ sidebar_label: Create Custom Schemas
 description: Learn how to create custom schemas manually.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer node
   - claim
   - verifiable credentials
@@ -18,7 +18,7 @@ keywords:
 
 :::info
 
-Polygon ID offers an intuitive, user-friendly interface to create schemas: the Schema Builder. [<ins>Here</ins>](schema-builder.md) you can find a tutorial for this tool. You can also access it on <ins>[https://schema-builder.polygonid.me/](https://schema-builder.polygonid.me/)</ins>.
+Privado ID offers an intuitive, user-friendly interface to create schemas: the Schema Builder. [<ins>Here</ins>](schema-builder.md) you can find a tutorial for this tool. You can also access it on <ins>[https://tools.privado.id/](https://tools.privado.id/)</ins>.
 
 :::
 
@@ -71,14 +71,12 @@ The JSON-LD Context contains:
 - its unique identifier `@id` which is a public URL where the context can be resolved.
 
   If you are working on Github, you can fetch the URL directly from your published repository based on the file path. In this case it is
-
-  `https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.jsonld#ProofOfDaoLongevity`
+  [`here`](https://raw.githubusercontent.com/0xPolygonID/tutorial-examples/main/credential-schema/proof-of-dao-longevity.jsonld#ProofOfDaoLongevity)
 
 - the definition of the vocabulary with its URL
 
   In this case we create a field defined `vocab` and attach the URL that identifies the vocabulary. In this case it is
-
-  `https://github.com/0xPolygonID/tutorial-examples/blob/main/credential-schema/proof-of-dao-longevity-vocab.md#`
+  [`here`](https://github.com/0xPolygonID/tutorial-examples/blob/main/credential-schema/proof-of-dao-longevity-vocab.md#)
 
 - The field that we want to include inside the credential, defined together with its identifier and its data type (all xsd data type are available)
 
@@ -124,7 +122,7 @@ This is a document that contains the serialization rule and the instruction for 
 - Add the URIs to your specific `jsonLdContext` and `jsonSchema`:
 - Inside `CredentialSubject` update the information related to your field:
 
-```json {6,7,109,117,118}
+```json {6,7,82-93}
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",

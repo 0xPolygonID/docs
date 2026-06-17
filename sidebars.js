@@ -53,6 +53,7 @@ module.exports = {
             type: "generated-index",
           },
           items: [
+            "issuer/issuer-node-ui",
             "issuer/setup-issuer-ui",
             "issuer-node/issuer-node-guide",
           ]

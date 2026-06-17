@@ -217,7 +217,7 @@ The authentication includes two steps:
 
   **a. Generate Iden3Message**
 
-  An Integrator uses `iden3Message` to communicate with an Issuer/Verifier. This 'iden3message' is created from the QR code scanned by the Integrator on his/her wallet. The `getIden3Message()` uses a message (created after scanning the QR code) as the input parameter and generates `iden3Message`.
+  An Integrator uses `iden3Message` to communicate with an Issuer/Verifier. This 'iden3message' is created from the QR code scanned by the Integrator on their wallet. The `getIden3Message()` uses a message (created after scanning the QR code) as the input parameter and generates `iden3Message`.
 
   ```dart
   Iden3MessageEntity getIden3MessageFromString(String message){

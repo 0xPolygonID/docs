@@ -5,7 +5,7 @@ sidebar_label: Features
 description: Issuer main features.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - issuer node
   - claim
   - verifiable credentials
@@ -20,18 +20,18 @@ This feature enables the creation of Ethereum-controlled identities. Ethereum ac
 The representation of the DID for this case follows the same canonical form, where the identifier `2qCU58EJgrELSJT6EzT27Rw9DhvwamAdbMLpePztYq` actually originates from the Ethereum address:
 
 ```
-did:polygonid:polygon:amoy:2qCU58EJgrELSJT6EzT27Rw9DhvwamAdbMLpePztYq
+did:iden3:privado:main:2qCU58EJgrELSJT6EzT27Rw9DhvwamAdbMLpePztYq
 ```
 
 :::note
 
-Due to its public nature, the Ethereum Polygon DID doesn't support private profiles.
+Due to its public nature, the Ethereum Privado DID doesn't support private profiles.
 
 :::
 
 ## Revocation Status
 
-Mobile applications can get the Revocation Status of a particular credential by requesting that information straight from the Issuer Node. However, if the Issuer Node is offline for some reason, that communication would not work. The Reverse Hash Service and the On-chain Revocation Status are two solutions for this issue.
+Mobile applications can get the Revocation Status of a particular credential by requesting that information directly from the Issuer Node. However, if the Issuer Node is offline for some reason, that communication would not work. The Reverse Hash Service and the On-chain Revocation Status are two solutions for this issue.
 
 <div align="center">
 <img src= {useBaseUrl("img/without-rhs.png")} align="center" />
@@ -49,7 +49,7 @@ As the diagram shows, the Issuer Node sends the revocation information to the RH
 
 ### On-chain Revocation
 
-On-chain Revocation status leverages the blockchain decentralized storage to make the revocation information permanent on the network. That means that, even if the Issuer Node or the Reverse Hash Service is down, the data is still available on-chain.
+On-chain Revocation status leverages the blockchain decentralized storage to make the revocation information permanent on the network. This means that, even if the Issuer Node or the Reverse Hash Service is down, the data is still available on-chain.
 
 <div align="center">
 <img src= {useBaseUrl("img/blockchain.png")} align="center" />
@@ -57,8 +57,8 @@ On-chain Revocation status leverages the blockchain decentralized storage to mak
 
 ## Non-merklized credentials
 
-Non-merklized credentials are specially important for on-chain issuers, because smart contracts built on Solidity can't fetch JSON-LD schemas directly via HTTP or IPFS.
+Non-merklized credentials are especially important for on-chain issuers, because smart contracts built on Solidity can't fetch JSON-LD schemas directly via HTTP or IPFS.
 
 Here is an example of [a non-merklized schema](https://github.com/iden3/claim-schema-vocab/blob/main/schemas/json-ld/player-nonmerklized.jsonld). Compare it to [this merklized one](https://github.com/iden3/claim-schema-vocab/blob/main/schemas/json-ld/kyc-v4.jsonld). Notice that the schema is defined by utilizing an `iden3_serialization` attribute.
 
-Read more about non-merklized credentials on the [Iden3 documentation](https://docs.iden3.io/protocol/non-merklized/).
+Read more about non-merklized credentials in the [Iden3 documentation](https://docs.iden3.io/protocol/non-merklized/).

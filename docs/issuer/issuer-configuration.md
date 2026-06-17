@@ -79,7 +79,7 @@ privado:
 ```
 
 :::note
-Configuring Privado Idenity Chain (privado:main) is necessary as identities on the Privado ID Web Wallet and the Privado ID Wallet App are asociated to this chain. This configuration ensures issuance of credentials to these identities.
+Configuring Privado Idenity Chain (privado:main) is necessary as identities on the Privado ID Web Wallet and the Privado ID Wallet App are associated to this chain. This configuration ensures issuance of credentials to these identities.
 :::
 
 Notes about **rhsSettings** mode:

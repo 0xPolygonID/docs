@@ -25,7 +25,7 @@ The Issuer Node APIs provide the following functionalities:
 - Manage Authentication Connections 
 - Call Agent Endpoint using the Wallet 
 
-These API can be tested locally on a <a href="https://issuer-node-core-api-testing.privado.id/" target="_blank">Issuer Node</a>.
+These APIs can be tested locally on a <a href="https://issuer-node-core-api-testing.privado.id/" target="_blank">Issuer Node</a>.
 
 :::note
 

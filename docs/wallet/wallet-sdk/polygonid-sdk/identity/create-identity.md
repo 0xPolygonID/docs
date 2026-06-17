@@ -31,7 +31,7 @@ Future<PrivateIdentityEntity> addIdentity({String? secret})
 
 The `addIdentity()` function creates and stores an `IdentityEntity` from a secret if it doesn't exist already on the Polygon ID SDK. If the secret is omitted or null, a random one will be used to create a new identity. It returns an identity as a `PrivateIdentityEntity`. It throws `IdentityException` if an error occurs.
 
-A `secret` is a random 32-bytes length array. An Integrator can create this secret in the way he finds it better suited for his/her application. It could be an encrypted mnemonic seed phrase generated with BIP39 (a way of creating mnemonic codes) or an Ethereum private key. If, however, no secret is passed as the input parameter, a random one can be generated. The Identity's private key is derived using this secret; this secret is then hashed using Keccak 256 to create the identity's private key. This private key is then used to sign messages.
+A `secret` is a random 32-bytes length array. An Integrator can create this secret in the way he finds it better suited for their application. It could be an encrypted mnemonic seed phrase generated with BIP39 (a way of creating mnemonic codes) or an Ethereum private key. If, however, no secret is passed as the input parameter, a random one can be generated. The Identity's private key is derived using this secret; this secret is then hashed using Keccak 256 to create the identity's private key. This private key is then used to sign messages.
 
 :::note
 
