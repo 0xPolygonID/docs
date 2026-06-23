@@ -289,7 +289,7 @@ A Verifier can work with multiple networks simultaneously. Even users and issuer
 
 :::note
 
-The public verification keys for Iden3 circuits generated after the trusted setup can be found <ins><a href="https://github.com/0xPolygonID/phase2ceremony" target="_blank">here</a></ins> and must be added to your project inside a folder called `keys`.
+The public verification keys for Iden3 circuits generated after the trusted setup can be found <ins><a href="https://circuits.privado.id/latest.zip" target="_blank">here</a></ins> and must be added to your project inside a folder called `keys`.
 
 :::
 
