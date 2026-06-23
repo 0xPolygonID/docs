@@ -90,17 +90,6 @@ import(
 	"github.com/iden3/iden3comm/v2/protocol"
 )
 
-const VerificationKeyPath = "verification_key.json"
-
-type KeyLoader struct {
-	Dir string
-}
-
-// Load keys from embedded FS
-func (m KeyLoader) Load(id circuits.CircuitID) ([]byte, error) {
-	return os.ReadFile(fmt.Sprintf("%s/%v/%s", m.Dir, id, VerificationKeyPath))
-}
-
 func main() {
 	http.HandleFunc("/api/sign-in", GetAuthRequest)
 	http.HandleFunc("/api/callback", Callback)
@@ -287,11 +276,6 @@ A Verifier can work with multiple networks simultaneously. Even users and issuer
 
 :::
 
-:::note
-
-The public verification keys for Iden3 circuits generated after the trusted setup can be found <ins><a href="https://github.com/0xPolygonID/phase2ceremony" target="_blank">here</a></ins> and must be added to your project inside a folder called `keys`.
-
-:::
 
 <Tabs>
 <TabItem value="Golang">
@@ -309,13 +293,9 @@ func Callback(w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 		return
 	}
-	
 
 	// Add IPFS url - needed to load schemas from IPFS
 	ipfsURL := "https://ipfs.io"
-
-	// Locate the directory that contains circuit's verification keys
-	keyDIR := "../keys"
 
 	// fetch authRequest from sessionID
 	authRequest := requestMap[sessionID]
@@ -323,8 +303,6 @@ func Callback(w http.ResponseWriter, r *http.Request) {
 	// print authRequest
 	log.Println(authRequest)
 
-	// load the verifcation key
-	var verificationKeyLoader = &KeyLoader{Dir: keyDIR}
 
 	resolver := state.ETHResolver{
 		"polygon:amoy": {
@@ -334,7 +312,7 @@ func Callback(w http.ResponseWriter, r *http.Request) {
 		"privado:main": {
 			RPCUrl: "https://rpc-mainnet.privado.id",
 			ContractAddress: common.HexToAddress("0x3C9acB2205Aa72A05F6D77d708b5Cf85FCa3a896"),
-		}
+		},
 	}
 
 	resolvers := map[string]pubsignals.StateResolver{
@@ -342,7 +320,7 @@ func Callback(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// EXECUTE VERIFICATION
-	verifier, err := auth.NewVerifier(verificationKeyLoader, resolvers, auth.WithIPFSGateway(ipfsURL))
+	verifier, err := auth.NewVerifier(resolvers, auth.WithIPFSGateway(ipfsURL))
 	if err != nil {
 		log.Println(err.Error())
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -376,8 +354,6 @@ async function callback(req, res) {
   const raw = await getRawBody(req);
   const tokenStr = raw.toString().trim();
   console.log(tokenStr);
-
-  const keyDIR = "../keys";
  
   const resolvers = {
       ["polygon:amoy"]: new resolver.EthStateResolver(
@@ -397,7 +373,6 @@ async function callback(req, res) {
   // EXECUTE VERIFICATION
   const verifier = await auth.Verifier.newVerifier({
     stateResolver: resolvers,
-    circuitsDir: path.join(__dirname, "./circuits-dir"),
     ipfsGatewayURL: "<gateway url>",
   });
 
