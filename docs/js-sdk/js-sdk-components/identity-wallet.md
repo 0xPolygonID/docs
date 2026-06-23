@@ -5,7 +5,7 @@ sidebar_label: Identity Wallet
 description: Identity Wallet components and capabilities.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - holder
   - issuer
   - verifier
@@ -14,19 +14,21 @@ keywords:
   - identity
 ---
 
-An identity wallet holds the identity of the user and carries the following components:
+An identity wallet manages a user's decentralized identity and comprises the following core components:
 
-- Key Management Store (kms): it allows the user to sign data using keys and offers the storage that is allocated to these keys. It’s an abstraction that allows for communication with different kinds of key storage.
+## Core Components
 
-- Data Storage Interface: it is an interface that allows you to communicate with Credential storage, Identity storage, Merkle tree storage, and State interfaces. This interface lets you create an identity for the user.
+- **Key Management Store (KMS)**: Enables users to sign data using cryptographic keys and provides secure storage for these keys. This abstraction layer facilitates communication with various types of key storage systems.
 
-- Credential Wallet: it contains business logic on the top of the Credential storage. An Identity Wallet uses a Credential Wallet for mapping the credentials issued to an Identity.
+- **Data Storage Interface**: Provides an interface for communicating with multiple storage systems including credential storage, identity storage, Merkle tree storage, and state interfaces. This interface enables identity creation and management for users.
+
+- **Credential Wallet**: Contains business logic built on top of credential storage. The Identity Wallet utilizes a Credential Wallet to map credentials issued to specific identities.
 
 The methods described below let you create and manage an identity wallet.
 
 ## Create an Identity using createIdentity()
 
-This method creates an Auth Baby Jubjub Credential (for signing on behalf of an identity) and an Identifier for an Identity. The Baby Jubjub Key is the elliptic curve implementation used in Iden3.
+Creates an Auth Baby JubJub Credential for identity signing and generates a unique identifier for the identity. Baby JubJub is the elliptic curve implementation used in the Iden3 protocol.
 
 Firstly, to create an Identity, the three Merkle trees (Claims tree, Revocation tree, and Roots of Root tree) are created. Auth BJJ key is then added to the Claims tree. The hash of these three trees creates a root that is used to create an Identity State. The first state created is called the Genesis State and it is from this Genesis State that a unique Identifier (in the DID format) is generated.
 
@@ -60,9 +62,9 @@ where `method` is the type of `did` method used to create an identity.
 
 The `createIdentity` method returns a `did` (Decentralised Identifier) in the DID format and a credential based on the W3C standard for a Verifiable Credential.
 
-:::note
+:::note About DIDs
 
-It is worth noting that `did` is a Decentralized Identifier associated with an identity and enables verifiable identities. A `did` could be a person, thing, organization, or even an abstract entity. The controller of the `did` can prove that it is the real owner of the identity without the need to seek permissions/approvals from any centralized authority.
+A Decentralized Identifier (DID) is associated with an identity and enables verifiable, self-sovereign identities. A `did` could be a person, thing, organization, or even an abstract entity. The controller of the `did` can prove that it is the real owner of the identity without the need to seek permissions/approvals from any centralized authority.
 
 :::
 
@@ -80,7 +82,7 @@ Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/
 
 ## Create Profiles using createProfile()
 
-This method creates profiles based on the genesis identifier. To keep the user's identity hidden from a Verifier, we can generate different profiles from his/her existing identifier. Therefore, a user has the option to select a particular profile for a particular Verifier so that his real identity is not revealed.
+This method creates profiles based on the genesis identifier. To keep the user's identity hidden from a Verifier, we can generate different profiles from their existing identifier. Therefore, a user has the option to select a particular profile for a particular Verifier so that his real identity is not revealed.
 
 ```typescript
 createProfile(did: DID, nonce: number, verifier: string): Promise<DID>;
@@ -100,9 +102,7 @@ Other methods to work with profiles:
 
 ```typescript
   /**
-   *
-   * gets profile identity by genesis identifiers
-   *
+   * Retrieves all profiles associated with a genesis identifier
    * @param {string} did - genesis identifier from which profile has been derived
    * @returns `{Promise<Profile[]>}`
    */
@@ -132,7 +132,7 @@ This method creates a new Baby Jubjub or ECDSA type of key.
 
 where `keyType` is the type of key supported by the Key Management System.
 
-This method returns a `Promise<KmsKeyId>` which generates the key of the type mentioned in `keyType` parameter.
+**Returns:** A `Promise<KmsKeyId>` containing the generated key of the specified type.
 
 Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.identitywallet.generatekey#identitywalletgeneratekey-method" target="_blank">API Reference</a>.
 
@@ -269,7 +269,7 @@ Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/
 
 ## Generate Iden3 Sparse Merkle Tree Proof using generateIden3SparseMerkleTreeProof() Method
 
-This method generates the Iden3 SparseMerkleTree (SMTP) proof that an Issuer state of a specific credential is included in the Merkle Tree or not.
+This method generates Iden3 Sparse Merkle Tree (SMT) proof demonstrating whether an issuer's state for specific credentials is included in the Merkle Tree.
 
 With the IssueCredential() method, a Credential is generated along with the Signature Proof. This credential is then added to the Claims Merkle tree and therefore, the state of the tree is changed. For this, another proof called SMTP is required. This proof generates the changed state of the tree by taking Issuer DID, transaction data, and the list of credentials that are part of the changed state as the input parameters. The JS SDK updates the credential with this SMT Proof, which is included in the state, the transaction data, and the Issuer.
 

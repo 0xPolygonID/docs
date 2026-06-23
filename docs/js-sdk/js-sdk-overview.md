@@ -5,7 +5,7 @@ sidebar_label: Overview
 description: An overview of the JS SDK components and capabilities.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - holder
   - issuer
   - verifier
@@ -13,11 +13,14 @@ keywords:
   - js sdk
 ---
 
-Based on the Iden3 core protocol libraries, the Polygon ID JS SDK is used for interacting with REST APIs and developing browser-based applications.
+## Overview
+The PrivadoID JS SDK is built upon the foundational Iden3 core protocol libraries, providing developers with comprehensive tools for creating browser-based applications and interacting with REST APIs in the decentralized identity ecosystem.
 
-The Polygon ID JS SDK allows developers to create applications like mobile or web wallets, browser extensions, and issuer nodes. Using this SDK, developers can start creating and issuing verifiable credentials, and generating zero knowledge proofs based on our [Iden3 protocol](https://docs.iden3.io/). Individuals and organizations can use this SDK for their existing applications.
 
-:::note
+## Introducation
+The Privado ID JS SDK allows developers to create applications like mobile or web wallets, browser extensions, and issuer nodes. Using this SDK, developers can start creating and issuing verifiable credentials, and generating zero knowledge proofs based on our [Iden3 protocol](https://docs.iden3.io/). Individuals and organizations can use this SDK for their existing applications.
+
+:::note **Extensibility and Customization**
 
 With JS SDK, you can build custom applications/modules by providing your own implementation of our core interfaces. The functionalities that we provide in these tutorials can be extended as per your requirements. For example, JS SDK does not provide a codebase for database storage but you can implement that by extending the SDK's functionalities.
 
@@ -25,29 +28,31 @@ With JS SDK, you can build custom applications/modules by providing your own imp
 
 ## Why JS SDK?
 
-The Polygon ID JS SDK has been developed to provide the following functionalities for a user's browser-based wallet:
+The Privado ID JS SDK has been developed to provide the following functionalities for a user's browser-based wallet:
 
-- Create and manage Identity wallet
-- Issue and manage credentials
-- Generate zero-knowledge proofs after credential issuance
-- Publish the updated state of the Issuer once a credential is added to the claims Merkle tree
-- Handle authorization requests
+### Core Capabilities
+- **Identity Management**: Create and manage decentralized identity wallets
+- **Credential Operations**: Issue, store, and manage verifiable credentials
+- **Zero-Knowledge Proofs**: Generate privacy-preserving proofs following credential issuance
+- **State Management**: Publish updated issuer states when credentials are added to claims Merkle trees
+- **Protocol Communication**: Handle authorization requests and protocol messages
 
 ## Components of JS SDK
 
-The following components form the inherent part of the JS SDK. In the upcoming tutorials, we shall read more about the implementation of these components in JS SDK. To know what each of these components stands for, go through their links:
+The following components form the inherent part of the JS SDK. In the upcoming tutorials, we shall read more about the implementation of these components in JS SDK. To know what each of these components stands for, please visit:
 
-- [Identity Wallet](/docs/category/identity)
+- **[Identity Wallet](/docs/js-sdk/js-sdk-components/identity-wallet.md)**: Manages decentralized identities and cryptographic key operations
+- **[Credential Wallet](/docs/js-sdk/js-sdk-components/credential-wallet.md)**: Handles verifiable credential storage, management, and operations
+- **[Iden3comm](/docs/js-sdk/js-sdk-components/iden3comm.md)**: Implements protocol message handling and communication
+- **[Proof](/docs/js-sdk/js-sdk-components/proof.md)**: Manages zero-knowledge proof generation and verification
 
-- [Credential Wallet](/docs/category/credential)
+Each component is designed with specific responsibilities while maintaining seamless integration with other SDK components.
 
-- [Iden3comm](/docs/wallet/wallet-sdk/polygonid-sdk/iden3comm/overview.md)
+## System Requirements
 
-- [Proof](/docs/wallet/wallet-sdk/polygonid-sdk/proof/overview.md)
+### Prerequisites
 
-## Prerequisites
-
-- Node.js must be installed on your system. Version 16.14 or above is required for Polygon ID JS SDK.
+- Node.js must be installed on your system. Version 16.14 or above is required for Privado ID JS SDK.
 
 :::note
 
@@ -57,7 +62,7 @@ While installing Node.js, make sure that you select all the checkboxes related t
 
 - A browser where you can install and manage your browser wallet.
 
-## Dependencies
+### Dependencies
 
 You can install project dependencies using either one of the following ways:
 
@@ -92,7 +97,7 @@ npm install @0xpolygonid/js-sdk
 
 ## Core Libraries
 
-JS SDK is a fully-functional wrapper on top of our Iden3 core libraries. The following set of core Iden3 libraries has been used to implement Polygon ID JS SDK:
+JS SDK is a fully-functional wrapper on top of our Iden3 core libraries. The following set of core Iden3 libraries has been used to implement Privado ID JS SDK:
 
 - <a href="https://github.com/iden3/js-crypto" target="_blank">Iden3 JS Crypto</a>: Implementation of the Elliptic Curve for Baby Jubjub Key, Poseidon hash and other cryptographic elements.
 
@@ -115,13 +120,18 @@ Follow the links below to learn more about W3C standards for DID (Decentralised 
 
 ## What Can Be Built Upon JS SDK?
 
-On the Polygon ID JS SDK, you can build the following functionalities:
+On the Privado ID JS SDK, you can build the following functionalities:
 
 - An Issuer on a Merkle Tree
 - A Verifier that can verify zero-knowledge proofs generated by a user's identity wallet
 - An Identity Wallet based on the Iden3 core protocol
 - The JS SDK also provides a revocation feature for credentials and proof generation
 
-<br/>
+### Use Cases
+- Digital identity wallets for individuals
+- Enterprise credential management systems
+- Educational credential verification platforms
+- Healthcare record management applications
+- Supply chain verification systems
 
-
+The SDK's modular architecture and extensive API surface enable developers to create both simple proof-of-concept applications and production-ready identity management systems.

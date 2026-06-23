@@ -5,7 +5,7 @@ sidebar_label: Support of custom networks and dids
 description: Ecosystem extension.
 keywords:
   - did
-  - polygon id
+  - privado id
   - ID holder
   - network
   - custom

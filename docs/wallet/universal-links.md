@@ -2,28 +2,33 @@
 id: universal-links
 title: Universal Links
 sidebar_label: Universal Links
-description: Tutorial on how to configure universal links.
+description: Comprehensive guide for implementing universal links with Privado ID wallets across web and mobile platforms.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - ID holder
   - issuer
   - verifier
   - auth
+  - verification
+  - credentials
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-[Universal Links](https://developer.apple.com/ios/universal-links/) are a convenient way to create a single URL that works across all platforms. This URL can open content within an app on a mobile device or within a web browser, ensuring a seamless user experience. 
+# Universal Links Implementation Guide
 
-In context with our protocol, a single URL can be configured to work with Web Wallet in case of a browser and Privado ID mobile app in case of a mobile phone.
+[Universal Links](https://developer.apple.com/ios/universal-links/) provide a seamless way to create cross-platform URLs that intelligently route users to the appropriate application or web interface. In the Privado ID ecosystem, universal links enable a single URL to open the Web Wallet in browsers and the Privado ID mobile app on mobile devices, ensuring optimal user experience across all platforms.
 
-## Advantages 
-- **Supports Any Protocol Message**: Enables communication between the web wallet or mobile app, regardless of the type of protocol message being sent. The protocol message for instance can be a [Verification Request](https://iden3-communication.io/authorization/1.0/request/) or a [Credential Offer](https://iden3-communication.io/credentials/1.0/offer/)
-- **More Flexible than Deep Links**: Universal Links offer greater flexibility in their usage and compatibility across platforms.
-- **Single Format for Multiple Platforms**: Provides a single URL format that works both on mobile apps and web wallets.
+## Overview
+
+Universal links in Privado ID create a unified entry point for credential and verification operations. When a user clicks a universal link:
+
+- **On Desktop/Web**: Opens the Privado ID Web Wallet in the browser
+- **On Mobile**: Opens the Privado ID mobile app (if installed) or falls back to the web wallet
+- **Cross-Platform**: Maintains consistent functionality regardless of the platform
 
 <Tabs>
 <TabItem value="Universal Link Domain">
@@ -35,23 +40,88 @@ https://wallet.privado.id/
 </TabItem>
 </Tabs>
 
-## Configuration
+## Advantages 
+
+- **Supports Any Protocol Message**: Enables communication between the web wallet or mobile app, regardless of the type of protocol message being sent. The protocol message for instance can be a [Verification Request](https://iden3-communication.io/authorization/1.0/request/) or a [Credential Offer](https://iden3-communication.io/credentials/1.0/offer/)
+- **More Flexible than Deep Links**: Universal Links offer greater flexibility in their usage and compatibility across platforms.
+- **Single Format for Multiple Platforms**: Provides a single URL format that works both on mobile apps and web wallets.
+
+## URL Structure and Configuration
+
+### Basic URL Format
 
 The fragment of the URL (specs after `#`) should consist of a protocol message (i_m or request_uri) and in case of Web Wallet some optional parameters like back_url and finish_url.
 
-:::note
-The `i_m` request must be Base64 encoded while `request_uri`, `back_url` and `finish_url` must be URI encoded before adding them to the fragment of the URL. 
-URI encoding ensures that special characters such as ?, =, /, and & are converted to their percent-encoded equivalents, preventing conflicts with the URL's query parameters. URLs should always use percent-encoded rather than unicode escape sequences for special characters.
+### Core Parameters
+
+#### Protocol Message Parameters
+
+<Tabs>
+<TabItem value="Short Messages (i_m)">
+
+**Parameter**: `i_m`
+**Format**: Base64-encoded protocol message
+**Use Case**: Direct message embedding for smaller payloads
+
+```
+i_m={base64_encoded_message}
+```
+
+</TabItem>
+<TabItem value="Long Messages (request_uri)">
+
+**Parameter**: `request_uri`
+**Format**: URI-encoded URL pointing to the message
+**Use Case**: Reference to externally hosted messages for larger payloads
+
+```
+request_uri={uri_encoded_url}
+```
+
+</TabItem>
+</Tabs>
+
+#### Web Wallet Navigation Parameters
+
+<Tabs>
+<TabItem value="Back URL">
+
+**Parameter**: `back_url`
+**Format**: URI-encoded URL
+**Purpose**: Defines where users are redirected when clicking the 'Back' button
+
+```
+back_url={uri_encoded_return_url}
+```
+
+</TabItem>
+<TabItem value="Finish URL">
+
+**Parameter**: `finish_url`
+**Format**: URI-encoded URL
+**Purpose**: Defines where users are redirected after successful completion
+
+```
+finish_url={uri_encoded_completion_url}
+```
+
+</TabItem>
+</Tabs>
+
+### Parameter Priority and Validation
+
+:::note Message Parameter Priority
+When both `i_m` and `request_uri` are present, `i_m` takes priority and `request_uri` is ignored. This ensures predictable behavior and prevents conflicts.
 :::
 
-Standard query string delimiters (=, &, )should be used for the params.
-
-`i_m`: Base64-encoded protocol message (used for **short messages**)
-
-`request_uri`: A URI-encoded shortened URL to the message. (used for **long messages**)
+:::caution Encoding Requirements
+- **`i_m`**: Must be Base64 encoded to handle binary data and special characters
+- **`request_uri`**, **`back_url`**, **`finish_url`**: Must be URI encoded to prevent URL parsing conflicts
+- **Query String Format**: Use standard delimiters (`=`, `&`) for parameter separation
+:::
 
 :::note
-If both params are present `i_m` is prioritized and `request_uri` is ignored.
+URI encoding ensures that special characters such as ?, =, /, and & are converted to their percent-encoded equivalents, preventing conflicts with the URL's query parameters. URLs should always use percent-encoded rather than unicode escape sequences for special characters.
 :::
 
 **Shortened URL algorithm:**
@@ -213,18 +283,18 @@ app.listen(3000, () => {
 
 #### Valid Links Formats:
 ```
-https://wallet.privado.id#i_m={base64 encoded message}=&back_url={url}&finish_url={url}` // mobile and web wallet friendly for short messages 
+https://wallet.privado.id#i_m={base64_encoded_message}=&back_url={url}&finish_url={url}` // mobile and web wallet friendly for short messages 
 ```
 ```
-https://wallet.privado.id#request_uri={shortenedUrl to message}=&back_url={url}&finish_url={url}` //  mobile and web wallet friendly for big messages
+https://wallet.privado.id#request_uri={shortenedUrl_to_message}=&back_url={url}&finish_url={url}` //  mobile and web wallet friendly for big messages
 ```
 
-:::caution
+:::caution Privacy Protection
+All parameters must be placed in the URL fragment (after `#`) to ensure they remain client-side and are not transmitted to servers during navigation. This prevents sensitive protocol data from being logged or intercepted by intermediate services.
+:::
 
-For privacy reasons, all the parameters must be placed in the fragment part of the URL, i.e after the initial #. This ensures that all parameters stay on the client and are not sent to the server.
-
-For security reasons, integration of this tool via IFrame is not supported. Redirecting users is the recommended method for accessing our Web Wallet to ensure secure interaction.
-
+:::caution IFrame Restrictions
+For security reasons, integration via IFrame is not supported. Direct navigation or new window opening is the recommended method for accessing the Web Wallet to ensure secure interaction and prevent clickjacking attacks.
 :::
 
 ## Example
@@ -271,7 +341,7 @@ const base64EncodedRequest = btoa(JSON.stringify(request));
 
 
 // Configure the Wallet URL (universal link)
-walletUrlWithMessage = `https://wallet.privado.id/#i_m=${base64EncodedRequest}&back_url=${backUrl}&finish_url=${finishUrl}`;
+const walletUrlWithMessage = `https://wallet.privado.id/#i_m=${base64EncodedRequest}&back_url=${backUrl}&finish_url=${finishUrl}`;
 
 // Open the Wallet URL to start the verification process
 window.open(walletUrlWithMessage);
@@ -287,7 +357,7 @@ Note
 const requestUrl = encodeURIComponent("https://raw.githubusercontent.com/0xpulkit/Examples_Privado-ID/main/KYCV3.json");
 
 // Configure the Wallet URL (universal link) using `request_uri` instead of `i_m`
-walletUrlWithRequestUri = `https://wallet.privado.id/#request_uri=${requestUrl}&back_url=${backUrl}&finish_url=${finishUrl}`);
+const walletUrlWithRequestUri = `https://wallet.privado.id/#request_uri=${requestUrl}&back_url=${backUrl}&finish_url=${finishUrl}`);
 
 // Open the Wallet URL with the `request_uri`
 window.open(walletUrlWithRequestUri);
@@ -297,6 +367,8 @@ window.open(walletUrlWithRequestUri);
 
 ```
 
-
 The Verifier can present this Universal Link as a button within the application, allowing the user to open the Web Wallet in a browser or the Privado ID App on a mobile device, where the wallet will retrieve the verification request and user can take further action.
 
+## Conclusion
+
+Universal links provide a powerful and flexible way to integrate Privado ID wallet functionality across platforms. By following the patterns outlined in this guide, you can create seamless user experiences that work reliably across web and mobile environments while maintaining the highest standards of security and privacy.

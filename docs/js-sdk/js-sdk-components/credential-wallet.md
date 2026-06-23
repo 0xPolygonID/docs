@@ -5,7 +5,7 @@ sidebar_label: Credential Wallet
 description: Credential Wallet components and capabilities.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - holder
   - issuer
   - verifier
@@ -14,156 +14,206 @@ keywords:
   - credential
 ---
 
-A Credential Wallet holds the credentials issued by the Issuer. The Credential Wallet is implemented with a Credential Interface that lets you interact with the credential storage.
+A Credential Wallet manages credentials issued by issuers and provides secure storage and retrieval capabilities. The Credential Wallet is implemented through a Credential Interface that enables interaction with the underlying credential storage system.
 
-The methods described below let you create and manage a credential wallet:
+The methods described below enable you to create and manage credential wallets effectively:
 
-## Get List of Credentials with list() method
+## Credential Retrieval
 
-This method retrieves a set of Verifiable Credentials in the W3C format:
+### list()
+
+Retrieves all stored Verifiable Credentials in W3C format from the wallet.
 
 ```typescript
 list(): Promise<W3CCredential[]>;
 ```
 
-Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.list#credentialwalletlist-method" target="_blank">API Reference</a>.
+**Returns:** An array of all W3C Verifiable Credentials stored in the wallet.
 
-## Save Credentials with save() method
+[API Reference](https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.list#credentialwalletlist-method)
 
-This method saves the W3C Credentials to the database using upsert.
+### findByQuery()
+
+Searches for credentials using the Iden3 protocol's query language, enabling precise credential filtering based on multiple criteria.
+
+```typescript
+findByQuery(query: ProofQuery): Promise<W3CCredential[]>;
+```
+
+**Parameters:**
+- `query`: Query object containing search criteria
+
+**ProofQuery Interface:**
+```typescript
+export interface ProofQuery {
+  allowedIssuers?: string[];              // Authorized credential issuers
+  credentialSubject?: { [key: string]: unknown }; // Subject attributes to match
+  schema?: string;                        // JSON schema URL for credential validation
+  claimId?: string;                      // Specific credential identifier
+  credentialSubjectId?: string;          // Subject's unique identifier
+  context?: string;                      // Credential context information
+  type?: string;                         // Credential type specification
+}
+```
+
+**Query Parameters:**
+- `allowedIssuers`: Array of issuer DIDs authorized to issue matching credentials
+- `claimId`: Unique identifier of the target credential
+- `credentialSubjectId`: Identifier of the credential subject (recipient)
+- `type`: Specific credential type to filter by
+- `schema`: JSON schema URL used for credential creation and validation
+- `credentialSubject`: Subject attributes and claims to match against
+
+**Returns:** Array of W3C Verifiable Credentials matching the query criteria.
+
+The returned credentials can be used for proof generation in verification scenarios.
+
+:::info Query Language
+
+Learn more about the Iden3 query language capabilities in the [Query Language documentation](https://docs.iden3.io/protocol/querylanguage/).
+
+:::
+
+[API Reference](https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.findbyquery#credentialwalletfindbyquery-method)
+
+## Credential Storage
+
+### save()
+
+Stores a single W3C Verifiable Credential in the database using upsert operation (insert or update if exists).
 
 ```typescript
 save(credential: W3CCredential): Promise<void>;
 ```
 
-Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.save#credentialwalletsave-method" target="_blank">API Reference</a>.
+**Parameters:**
+- `credential`: W3C Verifiable Credential to be stored
 
-## Save All Credentials with saveAll() method
+**Operation:** Uses upsert logic to either insert new credentials or update existing ones based on credential identifier.
 
-This method saves a batch of W3C Credentials to the database using upsert.
+[API Reference](https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.save#credentialwalletsave-method)
+
+### saveAll()
+
+Performs batch storage of multiple W3C Verifiable Credentials using upsert operations for improved performance.
 
 ```typescript
 saveAll(credentials: W3CCredential[]): Promise<void>;
 ```
 
-Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.saveall#credentialwalletsaveall-method" target="_blank">API Reference</a>.
+**Parameters:**
+- `credentials`: Array of W3C Verifiable Credentials to be stored
 
-## Remove Credential with remove() method
+**Benefits:** Optimized for bulk operations, reducing database transaction overhead compared to multiple individual save operations.
 
-This method removes a W3C credential from data storage.
+[API Reference](https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.saveall#credentialwalletsaveall-method)
+
+### remove()
+
+Permanently removes a specific W3C Verifiable Credential from storage.
 
 ```typescript
 remove(id: string): Promise<void>;
 ```
 
-Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.remove#credentialwalletremove-method" target="_blank">API Reference</a>.
+**Parameters:**
+- `id`: Unique identifier of the credential to be removed
 
-## Find Credentials with Query with findByQuery() method
+**Warning:** This operation is irreversible. Ensure proper backup procedures before credential removal.
 
-This method lets you find credentials using the Iden3 protocol's query language.
+[API Reference](https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.remove#credentialwalletremove-method)
 
-```typescript
-findByQuery(query: ProofQuery): Promise<W3CCredential[]>;
+## Authentication Credentials
 
-```
+### getAuthBJJCredential()
 
-where `ProofQuery` can contain parameters including:
-
-- `allowedIssuers`: issuers that are allowed to issue a credential,
-- `claimId`: ID of the credential issued,
-- `credentialSubjectId : ID of the subject of the credential to whom a credential is issued,
-- `type`: type of credential issued,
-- `schema`: JSON schema used to create a credential,
-- `credentialSubject`: subject of the credential to whom a credential is issued.
-
-This credential is then used to create a proof.
+Retrieves the Auth Baby Jubjub credential for a specific user, enabling cryptographic signing operations.
 
 ```typescript
-export interface ProofQuery {
-  allowedIssuers?: string[];
-  credentialSubject?: { [key: string]: unknown };
-  schema?: string; // string url
-  claimId?: string;
-  credentialSubjectId?: string;
-  context?: string;
-  type?: string;
-}
+getAuthBJJCredential(did: DID): Promise<W3CCredential>;
 ```
 
-Read more on Query Language [here](https://docs.iden3.io/protocol/querylanguage/).
+**Parameters:**
+- `did`: DID of the credential holder (not the issuer)
 
-Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.findbyquery#credentialwalletfindbyquery-method" target="_blank">API Reference</a>.
+**Returns:** W3C Verifiable Credential of Auth BJJ type, containing the public key and signing capabilities.
 
-## Retrieve Auth BJJ Credential with getAuthBJJCredential() method
+**Use Case:** Essential for identity authentication and message signing within the Iden3 ecosystem.
 
-This method allows you to retrieve a credential of Auth BJJ type for a specific user so that it can be used for signing.
+[API Reference](https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.getauthbjjcredential#credentialwalletgetauthbjjcredential-method)
 
-```typescript
- getAuthBJJCredential(did: DID): Promise<W3CCredential>;
-```
+## Revocation Status Management
 
-where `did` is the DID of the issuer that has issued the credential.
+### getRevocationStatusFromCredential()
 
-This method returns a Verifiable Credential of the type Auth BJJ.
-
-Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.getauthbjjcredential#credentialwalletgetauthbjjcredential-method" target="_blank">API Reference</a>.
-
-## Get Revocation Status for a Credential with getRevocationStatusFromCredential() method
-
-This method retrieves or builds revocation status for a given credential.
+Retrieves or constructs the current revocation status for a given credential, determining whether it remains valid.
 
 ```typescript
 getRevocationStatusFromCredential(cred: W3CCredential): Promise<RevocationStatus>;
 ```
 
-where `cred` is the Credential for which the revocation status is to be retrieved.
+**Parameters:**
+- `cred`: W3C Verifiable Credential to check for revocation
 
-The method returns a revocation status of the credential (whether a credential is revoked or not). The credential status could be either the **SparseMerkleTreeProof** or **Iden3ReverseSparseMerkleTreeProof** (if Reverse Hash Service is used) type.
+**Returns:** `RevocationStatus` indicating whether the credential is currently valid or has been revoked.
 
-Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.getrevocationstatusfromcredential#credentialwalletgetrevocationstatusfromcredential-method" target="_blank">API Reference</a>.
+**Supported Status Types:**
+- **SparseMerkleTreeProof**: Standard on-chain revocation verification
+- **Iden3ReverseSparseMerkleTreeProof**: Revocation verification using Reverse Hash Service
 
-## Get Revocation Status Depending on Type of Credential Status with getRevocationStatus() method
+[API Reference](https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.getrevocationstatusfromcredential#credentialwalletgetrevocationstatusfromcredential-method)
 
-This method retrieves the revocation status for a given credential depending on the type of its credential status.
+### getRevocationStatus()
 
-```typescript
- /**
-   *
-   *
-   * @param {(CredentialStatus )} credStatus - credentialStatus field of the Verifiable Credential.
-   * @param {CredentialStatusResolveOptions} credentialStatusResolveOptions - options to resolve credential status
-   * @returns `Promise<RevocationStatus>`
-   */
-  getRevocationStatus(
-    credStatus: CredentialStatus,
-    credentialStatusResolveOptions?: CredentialStatusResolveOptions
-  ): Promise<RevocationStatus>;
-```
-
-where `credStatus` is the credential status type: with or without Reverse Hash Service / Agent / Onchain.
-
-`credentialStatusResolveOptions` are:
-
-- `issuerDID` is the DID of the Issuer.
-- `userDID` is the DID of the user who retrieves the status.
-- `issuerData` is the metadata related to an Issuer. This metadata is contained in either the Signature Proof (BJJ Signature Proof) or Iden3SparseMerkleTreeProof (Merkle Tree Proof).
-
-The method returns the revocation status of the credential (a credential is revoked or not).
-
-Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.getrevocationstatus#credentialwalletgetrevocationstatus-method" target="_blank">API Reference</a>.
-
-## Create a Credential using createCredential() method
-
-This method creates a Verifiable Credential in the W3C format.
+Retrieves revocation status based on the specific credential status type and configuration.
 
 ```typescript
-  createCredential(issuer: DID, request: CredentialRequest, schema: JSONSchema): W3CCredential;
+getRevocationStatus(
+  credStatus: CredentialStatus,
+  credentialStatusResolveOptions?: CredentialStatusResolveOptions
+): Promise<RevocationStatus>;
 ```
 
-where `Issuer` is the DID of the Issuer.
-`request` is the specification for the credential creation parameters.
-`schema` is the JSON schema used for creating a credential.
+**Parameters:**
+- `credStatus`: Credential status configuration specifying the revocation checking method
+- `credentialStatusResolveOptions`: (Optional) Additional resolution parameters
 
-The method returns a Verifiable Credential in the W3C format.
+**CredentialStatusResolveOptions:**
+- `issuerDID`: DID of the credential issuer
+- `userDID`: DID of the user requesting status verification  
+- `issuerData`: Issuer metadata from either Signature Proof (BJJ) or Iden3SparseMerkleTreeProof
 
-Click here for the <a href="https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.createcredential#credentialwalletcreatecredential-property" target="_blank">API Reference</a>.
+**Supported Status Types:**
+- Standard revocation checking (on-chain verification)
+- Reverse Hash Service integration
+- Agent-based status resolution
+- On-chain status verification
+
+**Returns:** Current revocation status indicating credential validity.
+
+[API Reference](https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.getrevocationstatus#credentialwalletgetrevocationstatus-method)
+
+## Credential Creation
+
+### createCredential()
+
+Creates a new W3C Verifiable Credential based on provided specifications and JSON schema validation.
+
+```typescript
+createCredential(issuer: DID, request: CredentialRequest, schema: JSONSchema): W3CCredential;
+```
+
+**Parameters:**
+- `issuer`: DID of the credential issuer
+- `request`: Credential creation specification containing subject data and requirements
+- `schema`: JSON schema for credential structure validation and type definition
+
+**Process:**
+1. Validates the credential request against the provided JSON schema
+2. Creates credential claims based on the request specifications  
+3. Formats the credential according to W3C Verifiable Credential standards
+4. Returns the properly structured credential ready for issuance
+
+**Returns:** W3C-compliant Verifiable Credential ready for signing and issuance.
+
+[API Reference](https://0xpolygonid.github.io/js-sdk-tutorials/docs/api/js-sdk.credentialwallet.createcredential#credentialwalletcreatecredential-property)
