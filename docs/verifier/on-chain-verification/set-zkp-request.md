@@ -16,33 +16,41 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Approach - A Setting Request using Query Builder:
 
-1. Visit the [PrivadoID Query Builder](https://tools.privado.id/query-builder) and paste the JSON-LD Context URL (mentioned above) in the input box.
-2. Select the schema type to `pohcheck` and select the `human` in the Attribute field.
+1. Visit the [PrivadoID Query Builder](https://tools.privado.id/query-builder) and paste the JSON-LD Context URL (mentioned below).
+`ipfs://QmfEEiU1UqkH5eXSFurSbu6g87k6R6YhKtxyRnd534Wn6E`
+
+2. Select the schema type to `Proof of Age`, click on `Add condition` and select the `minAgeRange` in the Attribute field.
 <div align="center">
     <img width="600" src={useBaseUrl("img/onchain-verifier/querybuilder-1.png")}></img>
 </div>
-
-3. Select the Proof type "Signature-based (SIG)" and Circuit ID Credential Atomic Query v3 On Chain.
-
-4. Set the query type as Condition and Operator as "Is equal to," and select `true` in the Attribute value.
-
-5. Set the Issuer DID field to "*" to accept credentials from any issuer or, if you want, you can use any specific DID to restrict allowed issuers for the query.
+<br/>
 <div align="center">
     <img width="600" src={useBaseUrl("img/onchain-verifier/querybuilder-2.png")}></img>
 </div>
 
-6. Next, click on the **“Create query”**.
+3. Set the Issuer DID field to "*" to accept credentials from any issuer or, if you want, you can use any specific DID to restrict allowed issuers for the query.
 
-7. Add the Universal Verifier Smart contract address for the selected network (e.g., for Polygon Amoy: `0xfcc86A79fCb057A8e55C6B853dff9479C3cf607c`) in the Smart Contract Address input.
+4. Set the Operator as "Is equal to," and input value `20` in the Attribute value
+
+5. Select verification type as `on-chain` and click on Advanced options and select the Proof type `BJJSignature2021` and Circuit ID `Credential Atomic Query v3`.
+
 <div align="center">
     <img width="600" src={useBaseUrl("img/onchain-verifier/querybuilder-3.png")}></img>
 </div>
-
-8. Click on the **Set request** to submit the on-chain request.
-
-9. Click on **Confirm** in the Metamask to accept and submit the request.
+<br/>
 <div align="center">
     <img width="600" src={useBaseUrl("img/onchain-verifier/querybuilder-4.png")}></img>
+</div>
+
+6. Add the Universal Verifier Smart contract address for the selected network (e.g., for Polygon Amoy: `0xfcc86A79fCb057A8e55C6B853dff9479C3cf607c`) in the Smart Contract Address input.
+
+7. Click on the **Set query** to submit the on-chain request.
+
+8. Click on **Confirm** in the Metamask to accept and submit the request.
+
+9. Next, click on the **“Test query”**.
+<div align="center">
+    <img width="600" src={useBaseUrl("img/onchain-verifier/querybuilder-5.png")}></img>
 </div>
 
 :::note

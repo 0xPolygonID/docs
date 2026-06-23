@@ -5,7 +5,7 @@ sidebar_label: ZK Query Language
 description: Learn how to build verification requests with the ZK query language.
 keywords:
   - docs
-  - polygon id
+  - privado id
   - verifier
   - on-chain
   - off-chain
@@ -22,7 +22,7 @@ The <a href="https://docs.iden3.io/protocol/main-circuits/#credentialatomicquery
 
 The Query Language sits on top of these circuits to provide a simple way for developers to design customized authentication requirements for someone's credentials. As long as the user holds a credential of a specific type, the Verifier can design a query based on 6 operators, for example:
 
-- Must be a verified human to vote for a DAO specific proposal - `equals` (operator 1).
+- Must be a verified human to vote for a DAO-specific proposal - `equals` (operator 1).
 - Must have been born before 2000-01-01 to access a specific website - `less-than` (operator 2).
 - Must have a monthly salary greater than $1000 to get a loan - `greater-than` (operator 3).
 - Must be an admin or a hacker of a DAO to enter a platform - `in` (operator 4).
@@ -88,7 +88,7 @@ const proofRequest: protocol.ZKPRequest = {
  
   <TabItem value="on-chain">
 
-Please, check out our [Onchain verification tutorial to build a query](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
+Please, check out our [On-chain verification tutorial to build a query](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for on-chain
 
 Corresponding QR Code
 
@@ -163,7 +163,7 @@ const proofRequest: protocol.ZKPRequest = {
 </TabItem>
 <TabItem value="on-chain">
 
-Please, check out our [Onchain verification tutorial to build a query](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
+Please, check out our [On-chain verification tutorial to build a query](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for on-chain
 
 Corresponding QR Code
 
@@ -238,7 +238,7 @@ const proofRequest: protocol.ZKPRequest = {
 </TabItem>
 <TabItem value="on-chain">
 
-Please, check out our [Onchain verification tutorial to build a query](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
+Please, check out our [On-chain verification tutorial to build a query](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for on-chain
 
 Corresponding QR Code\*\*
 
@@ -315,7 +315,7 @@ const proofRequest: protocol.ZKPRequest = {
 </TabItem>
 <TabItem value="on-chain">
 
-Please, check out our [Onchain verification tutorial to build a query](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
+Please, check out our [On-chain verification tutorial to build a query](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for on-chain
 
 Corresponding QR Code
 
@@ -389,7 +389,7 @@ const proofRequest: protocol.ZKPRequest = {
 </TabItem>
 <TabItem value="on-chain">
 
-Please, check out our [Onchain verification tutorial to build a query](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
+Please, check out our [On-chain verification tutorial to build a query](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for on-chain
 
 Corresponding QR Code
 
@@ -464,7 +464,7 @@ const proofRequest: protocol.ZKPRequest = {
 </TabItem>
 <TabItem value="on-chain">
 
-Please, check out our [Onchain verification tutorial to build a query](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
+Please, check out our [On-chain verification tutorial to build a query](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for on-chain
 
 Corresponding QR Code
 
@@ -514,11 +514,11 @@ Operators 7-11 are supported only by [V3 circuit](../v3-circuit.md)
 
 **Credential Schema**
 
-The `KYCCountryOfResidenceCredential` Schema encodes the countryCode of residence of the credential subject according to the [ISO Standard](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes). Here's the [JSON-LD Context](https://github.com/iden3/claim-schema-vocab/blob/main/schemas/json-ld/kyc-v4.jsonld) of the Schema Type.
+The `KYCAgeCredential` Schema encodes the countryCode of residence of the credential subject according to the [ISO Standard](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes). Here's the [JSON-LD Context](https://github.com/iden3/claim-schema-vocab/blob/main/schemas/json-ld/kyc-v4.jsonld) of the Schema Type.
 
 **Query**
 
-When presented with this query, the user must prove that he/she has been born before or including 2001/01/01
+When presented with this query, the user must prove that he/she was born on or before 2001/01/01
 
 <Tabs>
 <TabItem value="off-chain">
@@ -529,7 +529,7 @@ const proofRequest: protocol.ZKPRequest = {
   circuitId: "credentialAtomicQuerySigV2",
   query: {
     allowedIssuers: ["*"],
-    type: "KYCCountryOfResidenceCredential",
+    type: "KYCAgeCredential",
     context:
       "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v4.jsonld",
     credentialSubject: {
@@ -544,7 +544,7 @@ const proofRequest: protocol.ZKPRequest = {
 </TabItem>
 <TabItem value="on-chain">
 
-Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
+Please, check out our [<ins>On-chain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for on-chain
 
 Corresponding QR Code
 
@@ -574,7 +574,7 @@ Corresponding QR Code
               "$lte": 20010101
             }
           },
-          "type": "KYCCountryOfResidenceCredential"
+          "type": "KYCAgeCredential"
         }
       }
     ]
@@ -589,11 +589,11 @@ Corresponding QR Code
 
 **Credential Schema**
 
-The `KYCCountryOfResidenceCredential` Schema encodes the countryCode of residence of the credential subject according to the [ISO Standard](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes). Here's the [JSON-LD Context](https://github.com/iden3/claim-schema-vocab/blob/main/schemas/json-ld/kyc-v4.jsonld) of the Schema Type.
+The `KYCAgeCredential` Schema encodes the countryCode of residence of the credential subject according to the [ISO Standard](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes). Here's the [JSON-LD Context](https://github.com/iden3/claim-schema-vocab/blob/main/schemas/json-ld/kyc-v4.jsonld) of the Schema Type.
 
 **Query**
 
-When presented with this query, the user must prove that he/she has been born after or including 2001/01/01
+When presented with this query, the user must prove that he/she has been born on or after 2001/01/01
 
 <Tabs>
 <TabItem value="off-chain">
@@ -604,7 +604,7 @@ const proofRequest: protocol.ZKPRequest = {
   circuitId: "credentialAtomicQuerySigV2",
   query: {
     allowedIssuers: ["*"],
-    type: "KYCCountryOfResidenceCredential",
+    type: "KYCAgeCredential",
     context:
       "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v4.jsonld",
     credentialSubject: {
@@ -619,7 +619,7 @@ const proofRequest: protocol.ZKPRequest = {
 </TabItem>
 <TabItem value="on-chain">
 
-Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
+Please, check out our [<ins>On-chain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for on-chain
 
 Corresponding QR Code
 
@@ -649,7 +649,7 @@ Corresponding QR Code
               "$gte": 20010101
             }
           },
-          "type": "KYCCountryOfResidenceCredential"
+          "type": "KYCAgeCredential"
         }
       }
     ]
@@ -664,11 +664,11 @@ Corresponding QR Code
 
 **Credential Schema**
 
-The `KYCCountryOfResidenceCredential` Schema encodes the countryCode of residence of the credential subject according to the [ISO Standard](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes). Here's the [JSON-LD Context](https://github.com/iden3/claim-schema-vocab/blob/main/schemas/json-ld/kyc-v4.jsonld) of the Schema Type.
+The `KYCAgeCredential` Schema encodes the countryCode of residence of the credential subject according to the [ISO Standard](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes). Here's the [JSON-LD Context](https://github.com/iden3/claim-schema-vocab/blob/main/schemas/json-ld/kyc-v4.jsonld) of the Schema Type.
 
 **Query**
 
-When presented with this query, the user must prove that he/she has been born before 2001/01/01, but after 1996/01/01
+When presented with this query, the user must prove that he/she has been born between 2001/01/01 and 1996/01/01
 
 <Tabs>
 <TabItem value="off-chain">
@@ -679,7 +679,7 @@ const proofRequest: protocol.ZKPRequest = {
   circuitId: "credentialAtomicQuerySigV2",
   query: {
     allowedIssuers: ["*"],
-    type: "KYCCountryOfResidenceCredential",
+    type: "KYCAgeCredential",
     context:
       "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v4.jsonld",
     credentialSubject: {
@@ -694,7 +694,7 @@ const proofRequest: protocol.ZKPRequest = {
 </TabItem>
 <TabItem value="on-chain">
 
-Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
+Please, check out our [<ins>On-chain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for on-chain
 
 Corresponding QR Code
 
@@ -724,7 +724,7 @@ Corresponding QR Code
               "$between": [19960101, 20010101]
             }
           },
-          "type": "KYCCountryOfResidenceCredential"
+          "type": "KYCAgeCredential"
         }
       }
     ]
@@ -743,7 +743,7 @@ The `KYCCountryOfResidenceCredential` Schema encodes the countryCode of residenc
 
 **Query**
 
-When presented with this query, the user must prove that he/she has been born not after 1996/01/01 and and not till 2001/01/01
+When presented with this query, the user must prove that he/she has not been born between 1996/01/01 and 2001/01/01
 
 <Tabs>
 <TabItem value="off-chain">
@@ -754,7 +754,7 @@ const proofRequest: protocol.ZKPRequest = {
   circuitId: "credentialAtomicQuerySigV2",
   query: {
     allowedIssuers: ["*"],
-    type: "KYCCountryOfResidenceCredential",
+    type: "KYCAgeCredential",
     context:
       "https://raw.githubusercontent.com/iden3/claim-schema-vocab/main/schemas/json-ld/kyc-v4.jsonld",
     credentialSubject: {
@@ -769,7 +769,7 @@ const proofRequest: protocol.ZKPRequest = {
 </TabItem>
 <TabItem value="on-chain">
 
-Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
+Please, check out our [<ins>On-chain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for on-chain
 
 Corresponding QR Code
 
@@ -799,7 +799,7 @@ Corresponding QR Code
               "$nonbetween": [19960101, 20010101]
             }
           },
-          "type": "KYCCountryOfResidenceCredential"
+          "type": "KYCAgeCredential"
         }
       }
     ]
@@ -845,7 +845,7 @@ const proofRequest: protocol.ZKPRequest = {
 </TabItem>
 <TabItem value="on-chain">
 
-Please, check out our [<ins>Onchain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for onchain
+Please, check out our [<ins>On-chain verification tutorial to build a query</ins>](/docs/verifier/on-chain-verification/overview.md) to learn more how to set zk request for on-chain
 
 Corresponding QR Code
 
